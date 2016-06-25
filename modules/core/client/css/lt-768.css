@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+	a.button.fit.small.fit-cx {
+	    width: 11.5em;
+	    margin-left: 0;
+	    padding-right: 2em;
+	}
+	section.one-half.btn-wrapper {
+	    position: relative;
+	    width: 18em;
+	    margin: 0 auto 0 auto;
+	    padding-top: .75em;
+	    /*border: 1px solid black;*/
+	}
+	.nav-tabs {
+	    border-bottom: 1px solid #ddd;
+	    display: none;
+	}
+	/*header#header {
+		display: none;
+	}*/
+}

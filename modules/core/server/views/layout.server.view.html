@@ -33,6 +33,16 @@
 
   <!-- Application CSS Files -->
   {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
+
+  <style type="text/css">
+    form.tab-form-demo .tab-pane {
+      margin: 20px 20px;
+    }
+  </style>
+  <link rel="stylesheet" href="/modules/core/client/css/lt-1000.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/lt-768.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/gte-1001.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/gt-1600.css"/>
 </head>
 
 <body class="ng-cloak">
@@ -58,6 +68,11 @@
   <!--Livereload script rendered -->
   <script type="text/javascript" src="{{host}}:35729/livereload.js"></script>
   {% endif %}
+  <script src="/modules/core/client/controllers/map.client.controller.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC-reO4jDrH1PqVkRX7qp5t4PQMWoBmls&libraries=places&callback=onGoogleReady" async defer></script>
+  <script src="/modules/core/client/lib/tabs.js"></script>
+  <script src="/modules/core/client/lib/event.js"></script>
+  <script src="/modules/core/client/lib/ui-map.js"></script>
 </body>
 
 </html>

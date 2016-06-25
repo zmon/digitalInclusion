@@ -1,5 +1,6 @@
 .content {
-  margin-top: 50px;
+  /* margin-top: 8.5em; */
+  padding: 19.5em 0 18.5em 0;
 }
 .undecorated-link:hover {
   text-decoration: none;
@@ -40,4 +41,44 @@ a:hover .header-profile-image {
 }
 .has-error .help-inline.error-text {
   display: inline;
+}
+
+section#rcMap {
+    height: 400px;
+    width: 100%;
+    border: 1px solid #b5b5b5;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    box-shadow: 0 0 3px;
+}
+
+/*section.one-half {
+  width: 50%;
+}*/
+
+section.one-half.btn-wrapper {
+    position: relative;
+    width: 55%; 
+  }
+
+section.contact-footer-section {
+  margin-left: .5em;
+}
+
+h2.contact {
+  margin-left: 3.5em;
+}
+
+#winCtrl {
+  display:none;
+}
+
+section#sw {
+    position: relative;
+    top: -24em;
+    left: 34%;
+}
+
+section#first {
+    height: 760px;
 }

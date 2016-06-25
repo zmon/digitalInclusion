@@ -1,0 +1,98 @@
+ <header id="header">
+            <h1>Map of Free Services</h1>
+            <p>Kansas City</p>
+</header>
+ <div id="main" class="fix-height">
+
+            
+            <!-- First Section -->
+              <section id="first" class="main special" ng-controller="MapController">
+
+                <!-- <header class="major">
+                  <h2>Map of Free Services</h2>
+                </header> -->
+                <section class="one-half btn-wrapper">
+                    <ul class="actions fit small">
+                      <li><a href="#" class="button special fit small fit-cx">Free WiFi</a></li>
+                      <li><a href="#" class="button normal fit small fit-cx right">Public Computers</a></li>
+                    </ul>
+                    <ul class="actions fit small">
+                      <li><a href="#" class="button normal fit small fit-cx">Computer Training</a></li>
+                      <li><a href="#" class="button normal fit small fit-cx right">Low Cost Computers</a></li>
+      
+                    </ul>
+                   <!--  <ul class="actions">
+                      <li><a href="#" class="button special">Special</a></li>
+                      <li><a href="#" class="button">Default</a></li>
+
+                    </ul>
+                    <ul class="actions">
+                      <li><a href="#" class="button special">Special</a></li>
+                      <li><a href="#" class="button">Default</a></li>
+                    </ul> -->
+                </section>
+                <section id="rcMap" class="fullmap">
+
+
+                    <div ui-map="map" ui-options="mapOptions" class="map-canvas" ui-event="{'map-click': 'addMarker($event, $params)', 'map-zoom_changed': 'setZoomMessage(myMap.getZoom())' }"></div>
+
+                    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+
+                    <ui-gmap-map-control template="control.tpl.html" position="top-right" controller="controlCtrl" index="1"></ui-gmap-map-control>
+
+                    <!--  <div id="class" ng-repeat="marker in mapMarkers | orderBy : 'title'">
+                         <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+                    </div> -->
+
+
+                  </section>
+                  <section id="sw" class="full-side sidewin-ctrl">
+                    <a id="winCtrl" ng-click="removeWindow()" class="rmv">
+                       <span id="rmv-glyph" class="glyphicon glyphicon-remove"></span>
+                    </a>
+                    <div id="info-wrapper">
+                      <!-- category -->
+                      <div id="placeCategory" class="f1"></div>
+                      <!--  -->
+                      <div id="placeTitle" class="f2"></div>
+                      <!--  -->
+                      <div id="placeAddress"></div>
+                      <!--  -->
+                      <div id="placePhone"></div>
+                      <span id="placeCity"></span>, <span id="placeState"></span><span id="placeZip"></span>
+                      <!--  -->
+                      <div id="placeDescription"></div>
+                      <!--  -->
+                      <div id="placeUrl"></div>
+                    </div>
+                  </section>
+                 <!--  <ul class="features">
+                  <li> -->
+                   <!--  <span class="icon major style1 fa-code"></span>
+                    <h3>Ipksum consequat</h3>
+                    <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p> -->
+        <!--           </li>
+                  <li>
+                    <span class="icon major style3 fa-copy"></span>
+                    <h3 id="placeTitle">Amed sed feugiat</h3>
+                    <p id="placeDescription">Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+                  </li>
+                  <li>
+                    
+                  </li>
+                </ul> -->
+               <!--  <footer class="major">
+                  <ul class="actions">
+                    <li><a href="generic.html" class="button">Learn More</a></li>
+                  </ul>
+                </footer> -->
+              </section>
+
+            <!-- Second Section -->
+             
+          </div>
+
+        <!-- Footer -->
+          <section ng-include="'/modules/core/client/views/footer.client.view.html'"></section>
+
+      </div>

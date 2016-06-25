@@ -1,84 +1,56 @@
-<section>
-  <div class="jumbotron text-center">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
-        <img alt="MEAN.JS" class="img-responsive text-center" src="modules/core/client/img/brand/logo.png" />
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <p class="lead">
-        Open-Source Full-Stack Solution For MEAN Applications
-      </p>
-    </div>
-    <div class="row">
-      <p>
-        <a class="btn btn-primary btn-lg" href="http://meanjs.org" target="_blank">Learn more</a>
-      </p>
-    </div>
-  </div>
-  <div>
-    <h2>Congrats! You've configured and run the sample application.</h2>
-    <p>MEAN.JS is a web application boilerplate, which means you should start changing everything :-)</p>
-    <p>This sample application tracks users and articles.</p>
-    <ul>
-      <li>
-        Click
-        <em>Sign Up</em> to get started.
-      </li>
-      <li>
-        Configure your app to work with your social accounts, by editing the
-        <em>/config/env/*.js</em> files.
-      </li>
-      <li>
-        Edit your users module.
-      </li>
-      <li>
-        Add new CRUD modules.
-      </li>
-      <li>
-        Have fun...
-      </li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-      <h2><strong>M</strong>ongoDB</h2>
-      <p><a target="_blank" href="http://mongodb.org/">MongoDB</a> is a NoSQL database. MongoDB's <a target="_blank" href="http://docs.mongodb.org/manual/">great manual</a> is the place to get started with NoSQL and MongoDB.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>E</strong>xpress</h2>
-      <p><a target="_blank" href="http://expressjs.com/"> Express</a> is a NodeJS server-side application web framework. Check out <a target="_blank" href="http://expressjs.com/4x/api.html">The ExpressJS API reference for more information</a> or <a target="_blank" href="http://stackoverflow.com/questions/8144214/learning-express-for-node-js">StackOverflow</a> for more info.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>A</strong>ngularJS</h2>
-      <p><a target="_blank" href="http://angularjs.org/">AngularJS</a> is client-side web application framework. The <a target="_blank" href="http://www.thinkster.io/">Thinkster Popular Guide</a> and <a target="_blank" href="https://egghead.io/">Egghead Videos</a> are great resources.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>N</strong>ode.js</h2>
-      <p><a target="_blank" href="http://nodejs.org/">Node.js</a> is a JavaScript run-time, popular for being a web server platform. Node's website and this <a target="_blank" href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">stackOverflow thread</a> offer excellent starting points to get to grasps with node.</p>
-    </div>
-  </div>
-  <div class="well">
-    <h2>MEAN.JS Documentation</h2>
-    <p>
-      Once you're familiar with the foundation technology, check out the MEAN.JS Documentation:
-      <ul>
-        <li><a target="_blank" href="http://meanjs.org/docs.html">MEAN.JS Documentation</a>
-        </li>
-        <!-- <li><a target="_blank" href="http://meanjs.org/generator.html">Yeoman Generator</a>
-				</li> -->
-        <li><a target="_blank" href="http://meanjs.org/modules.html">Modules</a>
-        </li>
-        <li><a target="_blank" href="http://meanjs.org/changelog.html">Changelog</a>
-        </li>
-        <li><a target="_blank" href="http://meanjs.org/community.html">Community</a>
-        </li>
-        <li><a target="_blank" href="http://blog.meanjs.org">Blog</a>
-        </li>
-      </ul>
-    </p>
-  </div>
-  <br>Enjoy &amp; Keep Us Updated,
-  <br>The MEAN.JS Team.
-</section>
+<div id="wrapper" ng-controller="UibTabsetController">
+          <header id="header">
+         
+             <form name="outerForm" class="tab-form">
+              <uib-tabset active="activeForm">
+                <uib-tab index="0" heading="Map of Free Services">
+                  <!-- <ng-form name="nestedForm">
+                    <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" class="form-control" required ng-model="model.name"/>
+                    </div>
+                  </ng-form> -->
+                  <section ng-include="'/modules/core/client/views/main.client.view.html'"></section>
+                </uib-tab>
+                <uib-tab index="1" heading="Add Service">
+                   <section ng-include="'/modules/core/client/views/material.client.view.html'"></section>
+                </uib-tab>
+                <uib-tab index="2" heading="Internet at Home (ISPs)">
+                  <section ng-include="'/modules/core/client/views/elements.client.view.html'"></section>
+                </uib-tab>
+
+                <uib-tab index="3" heading="Training Online">
+                  <section ng-include="'/modules/core/client/views/training.client.view.html'"></section>
+                </uib-tab>
+                <uib-tab index="4" heading="About Us">
+                  <section ng-include="'/modules/core/client/views/about.client.view.html'"></section>
+                </uib-tab>
+                <uib-tab index="5" heading="Contact Us">
+                  <section ng-include="'/modules/core/client/views/contact.client.view.html'"></section>
+                </uib-tab>
+
+              </uib-tabset>
+            </form>
+           <!--  <p>Ipsum dolor sit amet nullam</p> -->
+          </header>
+
+        <!-- Header -->
+         <!--  <header id="header" class="alt">
+            <span class="logo"><img src="images/logo.svg" alt="" /></span>
+            <h1>Stellar</h1>
+            <p>Just another free, fully responsive site template<br />
+            built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.</p>
+          </header>
+ -->
+        <!-- Nav -->
+        <!--   <nav id="nav">
+            <ul>
+              <li><a href="#intro" class="active">Introduction</a></li>
+              <li><a href="#first">First Section</a></li>
+              <li><a href="#second">Second Section</a></li>
+              <li><a href="#cta">Get Started</a></li>
+            </ul>
+          </nav> -->
+
+        <!-- Main -->
+         </div>

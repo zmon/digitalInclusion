@@ -33,6 +33,14 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .state('material', {
+        url:'/material',
+        templateUrl:'modules/core/client/views/material.client.view.html'
+      })
+      .state('elements', {
+        url:'/elements',
+        templateUrl:'modules/core/client/views/elements.client.view.html'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: 'modules/core/client/views/404.client.view.html',
