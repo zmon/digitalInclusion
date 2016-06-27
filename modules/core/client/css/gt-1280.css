@@ -1,0 +1,18 @@
+@media (min-width: 1281px) {
+	section#sw {
+	    position: relative;
+	    top: -20.4em;
+	    left: 34%;
+	}
+	#main > .main:first-child {
+	    border-top: 0;
+	    border-top: 3px double;
+	    /* background: #f7f7f7; */
+	    border-bottom: 3px double;
+	    padding-top: 7.5em;
+	    border: 1px solid #dadada;
+	}
+	section#first {
+	    height: 750px;
+	}
+}

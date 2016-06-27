@@ -1,6 +1,7 @@
 .content {
   /* margin-top: 8.5em; */
   padding: 19.5em 0 18.5em 0;
+  overflow: hidden;
 }
 .undecorated-link:hover {
   text-decoration: none;
@@ -47,9 +48,12 @@ section#rcMap {
     height: 400px;
     width: 100%;
     border: 1px solid #b5b5b5;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-bottom: 3em;
-    box-shadow: 0 0 3px;
+    box-shadow: 0 0 1px #c1c1c1;
+    border: 1px solid #bbbaba;
+    box-shadow: 0 0 1px #ececec;
+    border: 1px solid #cecece;
 }
 
 /*section.one-half {
@@ -58,7 +62,8 @@ section#rcMap {
 
 section.one-half.btn-wrapper {
     position: relative;
-    width: 55%; 
+    width: 55%;
+    margin-top: -4em;
   }
 
 section.contact-footer-section {
@@ -69,10 +74,6 @@ h2.contact {
   margin-left: 3.5em;
 }
 
-#winCtrl {
-  display:none;
-}
-
 section#sw {
     position: relative;
     top: -24em;
@@ -80,5 +81,135 @@ section#sw {
 }
 
 section#first {
-    height: 760px;
+    height: 690px;
+}
+
+div#info-wrapper {
+    background: #f3f3f3;
+    border: 1px solid #bbbaba;
+    box-shadow: inset 0 0 100px #f3f3f3;
+    width: 40.5%;
+    margin-left: 26.25%;
+    height: 400px;
+    border: 1px solid #e2e2e2;
+    position: relative;
+    font-weight: 400;
+    top: -5.6em;
+}
+
+#winCtrl {
+  display: inline;
+  z-index: 99999;
+  position: relative;
+  top: -4em;
+  color: #443101;
+  left: 7.25em;
+}
+
+#winCtrl:hover {
+    color: black;
+    cursor: pointer;
+}
+
+#sw {
+  display:none;
+}
+
+section#add-resources {
+    margin-left: 5%;
+    padding-right: 7em;
+    margin-top: -3em;
+    text-align: left;
+}
+
+.lks:hover {
+  cursor: pointer;
+}
+
+a.lks {
+    color: cornflowerblue;
+    text-align: left;
+}
+
+.f1 {
+  font-size: .6em;
+}
+
+.f2 {
+  font-size: 1.3em;
+  line-height: 17px;
+  font-weight: 600;
+  margin-top: .65em;
+  margin-bottom: .75em;
+}
+.f3 {
+  font-size: .9em;
+  line-height: 6px;
+  font-weight: 500;
+}
+.f4 {
+  font-size: .8em;
+  line-height: 14px;
+  margin-top: .5em;
+  font-weight: 200;
+  padding-left: .895em;
+  padding-right: .895em;
+  text-align: center;
+}
+
+.mission {
+  line-height: 24px;
+}
+
+
+section#queryForm {
+  position: relative;
+  top: -.42.5em;
+  left: .5em;
+  height: 3em;
+}
+
+input#zip {
+    width: 20%;
+    height: 2em;
+    display: inline;
+}
+
+button.fc-in {
+  display: inline;
+  line-height: 12px;
+  width: 6.2em;
+  height: 2.19em;
+}
+
+.inline-group {
+  display: inline;
+}
+
+#main > .main:first-child {
+    background: radial-gradient(#eaeaea,snow);
+    box-shadow: inset 0 0 200px #e4e4e4;
+    border: 1px solid #c3c3c3;
+}
+
+.resize {
+  width: 30%;
+}
+
+.third {
+  width: 18.5em;
+}
+
+.change-control {
+  height: 2em;
+}
+
+input.change-control {
+    height: 1.8em;
+}
+
+input.form-control.fc-sm {
+    width: 25%;
+    display: inline;
+    height: 2em;
 }

@@ -2,14 +2,47 @@
 
 
 // Places controller
-angular.module('places').controller('PlacesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Places',
-  function ($scope, $stateParams, $location, Authentication, Places) {
+angular.module('places').controller('PlacesController', ['$scope', '$http', '$stateParams', '$location', 'Authentication', 'findPlacesByZipService', 'Places',
+  function ($scope, $http, $stateParams, $location, Authentication, findPlacesByZipService, Places) {
     $scope.authentication = Authentication;
     // $scope.status = "not created";
  
     var geocoder = new google.maps.Geocoder();
     var resultsArr = [];
     $scope.xArray = [];
+
+
+
+    // $scope.places = getPlacesService.getPlaces(function(places) {
+    // $scope.sendPost = function() {
+    //     var data = $.param({
+    //         json: JSON.stringify({
+    //             name: $scope.newName
+    //         })
+    //     });
+    //     $http.post("/echo/json/", data).success(function(data, status) {
+    //         $scope.hello = data;
+    //     })
+    // }    
+    // $scope.searchResults = [];
+    // $scope.resetSearch = function() {
+      // $scope.place.zip = "";
+      // console.log(zipcode);
+      // $scope.placesInZipCode = findPlacesByZipService.findPlacesByZip(zipcode, function(places) {
+      //   $scope.placesInZipCode = places;
+      //   var number = $scope.placesInZipCode.length;
+      //   console.log("count in zipcode: " + number);
+      //   console.log($scope.placesInZipCode);
+      //   var i;
+      //   for (i = 0; i < number; i++) {
+      //     var place = $scope.placesInZipCode[i];
+      //     $scope.searchResults.push(place._id);
+      //   }
+      //   console.log($scope.searchResults);
+      // });
+
+
+    // };
 
     $scope.hoist = function(arg1) {
       console.log("hoist: " + arg1);
@@ -193,3 +226,10 @@ angular.module('places').controller('PlacesController', ['$scope', '$stateParams
 
   }
 ]);
+
+
+
+
+
+
+

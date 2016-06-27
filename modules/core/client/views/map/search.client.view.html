@@ -1,0 +1,21 @@
+<span ng-controller="SearchController">
+  <form name="vm.form.searchForm" ng-submit="vm.search(vm.form.searchForm.$valid)" class="" novalidate autocomplete="off">
+      <fieldset>
+        <div class="form-group inline-group" show-errors>
+          <!-- <label for="zip">Zip</label> -->
+          <input type="text" id="zip" name="zip" class="form-control fc-sm" ng-model="vm.place.zip" placeholder="Zip" required>
+          <!-- <div ng-messages="vm.userForm.username.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Username is required.</p>
+          </div> -->
+        </div>
+      
+        <div class="text-center inline-group">
+          <button type="submit" class="fc-in btn-search small">Search</button>
+        </div>
+         
+<!--         <uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
+          <span ng-bind="vm.error"></span>
+        </uib-alert> -->
+      </fieldset>
+    </form>
+</span>

@@ -18,4 +18,12 @@
 	/*header#header {
 		display: none;
 	}*/
-}
+	#wrapper {
+	    max-width: calc(100% - .4em);
+	    margin: 0 auto;
+	    position: relative;
+	    top: -10em;
+	    background: radial-gradient(#bbbbbb,#e8e8e8,#e2e2e2);
+	    box-shadow: 0 0 40px black;
+	}
+}	

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('core')
+    .module('core.tabs')
     .controller('TabsController', TabsController);
 
 

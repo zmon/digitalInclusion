@@ -32,6 +32,42 @@ exports.create = function (req, res) {
   });
 };
 
+exports.find = function (req, res) {
+  console.log("finding");
+  var zip = Number(req.body.zip);
+  console.log(zip);
+  // var response = "string";
+  // res.json(response);
+  Place.find().
+  where('zip').equals(zip).exec(function(err,places) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(places);
+    }
+  });
+  // Place.find().sort('-zip').exec(function (err, places) {
+  //   if (err) {
+  //     return res.status(400).send({
+  //       message: errorHandler.getErrorMessage(err)
+  //     });
+  //   } else {
+  //     res.json(places);
+  //   }
+  // });
+  // res.json(req.place);
+};
+
+exports.placeByQuery = function (req, res, next, query) {
+  console.log(req.body);
+  console.log("JJJ");
+  console.log(next);
+  console.log("IOUDH");
+  console.log(query);
+};
+
 /**
  * Show the current place
  */

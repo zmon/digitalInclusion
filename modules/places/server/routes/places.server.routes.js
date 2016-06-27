@@ -12,6 +12,8 @@ module.exports = function (app) {
     .get(places.list)
     .post(places.create);
 
+  app.route('/api/places/query')
+    .post(places.find);
   // Single place routes
   app.route('/api/places/:placeId').all(placesPolicy.isAllowed)
     .get(places.read)
@@ -19,5 +21,6 @@ module.exports = function (app) {
     .delete(places.delete);
 
   // Finish by binding the place middleware
+  app.param('query', places.placeByQuery);
   app.param('placeId', places.placeByID);
 };

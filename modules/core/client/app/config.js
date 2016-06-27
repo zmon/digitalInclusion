@@ -1,11 +1,11 @@
 (function (window) {
   'use strict';
 
-  var applicationModuleName = 'mean';
+  var applicationModuleName = 'digitalInclusion';
 
   var service = {
     applicationModuleName: applicationModuleName,
-    applicationModuleVendorDependencies: ['ngResource', 'ngAnimate', 'ui.map', 'ngMessages', 'ui.router', 'ui.bootstrap', 'ui.bootstrap.tabs', 'angularFileUpload'],
+    applicationModuleVendorDependencies: ['ngResource', 'ngAnimate', 'ui.map', 'ngMessages', 'ui.router', 'ui.bootstrap', 'ui.bootstrap.tabs', 'ui.bootstrap.modal', 'angularFileUpload'],
     registerModule: registerModule
   };
 

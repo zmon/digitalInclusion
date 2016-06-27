@@ -2,7 +2,7 @@
             <h1>Map of Free Services</h1>
             <p>Kansas City</p>
 </header>
- <div id="main" class="fix-height">
+ <div id="main" class="fix-height" ng-controller="PlacesController">
 
             
             <!-- First Section -->
@@ -13,12 +13,12 @@
                 </header> -->
                 <section class="one-half btn-wrapper">
                     <ul class="actions fit small">
-                      <li><a href="#" class="button special fit small fit-cx">Free WiFi</a></li>
-                      <li><a href="#" class="button normal fit small fit-cx right">Public Computers</a></li>
+                      <li><a id="e1" href="#" class="button special fit small fit-cx">Free WiFi</a></li>
+                      <li><a id="e3" href="#" class="button normal fit small fit-cx right">Public Computers</a></li>
                     </ul>
                     <ul class="actions fit small">
-                      <li><a href="#" class="button normal fit small fit-cx">Computer Training</a></li>
-                      <li><a href="#" class="button normal fit small fit-cx right">Low Cost Computers</a></li>
+                      <li><a id="e2" href="#" class="button normal fit small fit-cx">Computer Training</a></li>
+                      <li><a id="e4" href="#" class="button normal fit small fit-cx right">Low Cost Computers</a></li>
       
                     </ul>
                    <!--  <ul class="actions">
@@ -31,6 +31,9 @@
                       <li><a href="#" class="button">Default</a></li>
                     </ul> -->
                 </section>
+                                <section id="queryForm" ng-include="'modules/places/client/views/search-map.client.view.html'">
+                    
+                  </section>
                 <section id="rcMap" class="fullmap">
 
 
@@ -56,16 +59,18 @@
                       <!--  -->
                       <div id="placeTitle" class="f2"></div>
                       <!--  -->
-                      <div id="placeAddress"></div>
+                      <div id="placeAddress" class="f3"></div>
                       <!--  -->
-                      <div id="placePhone"></div>
-                      <span id="placeCity"></span>, <span id="placeState"></span><span id="placeZip"></span>
+                     
+                      <span id="placeCity" class="f3"></span>, <span id="placeState" class="f3"></span><span id="placeZip" class="f3"></span>
+                       <div id="placePhone"></div>
                       <!--  -->
-                      <div id="placeDescription"></div>
+                      <div class="f4" id="placeDescription"></div>
                       <!--  -->
                       <div id="placeUrl"></div>
                     </div>
                   </section>
+  
                  <!--  <ul class="features">
                   <li> -->
                    <!--  <span class="icon major style1 fa-code"></span>

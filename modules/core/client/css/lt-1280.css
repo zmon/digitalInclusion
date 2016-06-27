@@ -1,0 +1,10 @@
+@media (max-width: 1280px) {
+	#main > .main:first-child {
+	  /*  border-top: 0;
+	    border-top: 3px double;
+	    
+	    border-bottom: 3px double;*/
+	    padding-top: 7.5em;
+	  
+	}
+}

@@ -9,4 +9,10 @@
 	    font-weight: 500;
 	    margin: 0 -.75em 0 -.75em;
 	}
+	section#queryForm {
+	    position: relative;
+	    top: .25em;
+	    left: .5em;
+	    height: 3em;
+	}
 }

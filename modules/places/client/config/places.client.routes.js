@@ -1,9 +1,13 @@
-'use strict';
+(function () {
+  'use strict';
 
-// Setting up route
-angular.module('places').config(['$stateProvider',
-  function ($stateProvider) {
-    // Articles state routing
+  angular
+    .module('places.routes')
+    .config(routeConfig);
+
+  routeConfig.$inject = ['$stateProvider'];
+
+  function routeConfig($stateProvider) {
     $stateProvider
       .state('places', {
         abstract: true,
@@ -33,4 +37,18 @@ angular.module('places').config(['$stateProvider',
         }
       });
   }
-]);
+
+  getPlace.$inject = ['$stateParams', 'PlacesService'];
+
+  function getPlace($stateParams, PlacesService) {
+    return PlacesService.get({
+      placeId: $stateParams.placeId
+    }).$promise;
+  }
+
+  newPlace.$inject = ['PlacesService'];
+
+  function newPlace(PlacesService) {
+    return new PlacesService();
+  }
+}());

@@ -2623,7 +2623,8 @@
 			}
 
 	dl {
-		margin: 0 0 2em 0;
+		margin: 0 0 2em 3em;
+		line-height: 18px;
 	}
 
 		dl dt {
@@ -2645,7 +2646,7 @@
 		}
 
 		dl.alt dd {
-			margin: 0 0 0.85em 5.5em;
+			margin: 0 0 .65em .5em;
 		}
 
 		dl.alt:after {
@@ -3105,7 +3106,7 @@
 		}
 
 		#header p {
-			font-size: 1.25em;
+			font-size: 1em;
 			letter-spacing: -0.025em;
 			color: #525252;
 		}
@@ -3608,9 +3609,9 @@
 			#main > .main:first-child {
 				border-top: 0;
 				border-top: 3px double;
-				background: #f7f7f7;
+				/*background: #f7f7f7;*/
 				border-bottom: 3px double;
-				border: 1px solid #b7b5b5;
+				border: 1px solid #dadada;
 			}
 
 			#main > .main > .image.main:first-child {
@@ -3789,12 +3790,13 @@
 
 	#wrapper {
 		width: 64em;
-		max-width: calc(100% - 4em);
+		max-width: calc(100% - -.4em);
 		margin: 0 auto;
 		position: relative;
 		top: -10em;
-		background: radial-gradient(#bbbbbb,#e8e8e8,#e2e2e2);
+		background: radial-gradient(#f1f1f1,#e8e8e8,#e2e2e2);
 		box-shadow: 0 0 40px black;
+		border: 4px double #444444;
 	}
 
 		@media screen and (max-width: 480px) {
