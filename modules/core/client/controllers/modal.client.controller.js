@@ -17,14 +17,14 @@ angular.module('core.modal').controller('ModalController', function ($scope, $ui
   	$log.info("the hell");
   };
 
-  $scope.openA = function (size) {
+  $scope.newHotspot = function (size) {
     console.log("open modal a");
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
       // backdrop: true,
       bindToController: true,
       controllerAs: 'ModalInstanceController',
-      templateUrl: 'aModal.html',
+      templateUrl: 'newHotspotModal.html',
       backdrop: 'bdrop.html',
       windowTemplateUrl: '/modules/core/client/views/templates/window.client.view.html',
       windowTopClass: 'wintop',
@@ -60,14 +60,14 @@ angular.module('core.modal').controller('ModalController', function ($scope, $ui
 
   };
 
-  $scope.openB = function (size) {
+  $scope.newTrainingLocation = function (size) {
 
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
-      backdrop: false,
+      // backdrop: false,
       bindToController: true,
       controllerAs: 'ModalInstanceController',
-      templateUrl: 'bModal.html',
+      templateUrl: 'newTrainingLocationModal.html',
       backdropUrl: '/modules/core/client/views/templates/backdrop.client.view.html',
       windowTemplateUrl: '/modules/core/client/views/templates/window.client.view.html',
       windowTopClass: 'wintop',
@@ -103,14 +103,14 @@ angular.module('core.modal').controller('ModalController', function ($scope, $ui
 
   };
 
-  $scope.openC = function (size) {
+  $scope.newPublicAccessLocation = function (size) {
 
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
-      backdrop: false,
+      // backdrop: false,
       bindToController: true,
       controllerAs: 'ModalInstanceController',
-      templateUrl: 'cModal.html',
+      templateUrl: 'newPublicAccessLocationModal.html',
       backdropUrl: '/modules/core/client/views/templates/backdrop.client.view.html',
       windowTemplateUrl: '/modules/core/client/views/templates/window.client.view.html',
       windowTopClass: 'wintop',
@@ -146,14 +146,14 @@ angular.module('core.modal').controller('ModalController', function ($scope, $ui
 
   };
 
-  $scope.openD = function (size) {
+  $scope.newLowCostResellerLocation = function (size) {
 
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
-      backdrop: false,
+      // backdrop: false,
       bindToController: true,
       controllerAs: 'ModalInstanceController',
-      templateUrl: 'dModal.html',
+      templateUrl: 'newLowCostResellerLocationModal.html',
       backdropUrl: '/modules/core/client/views/templates/backdrop.client.view.html',
       windowTemplateUrl: '/modules/core/client/views/templates/window.client.view.html',
       windowTopClass: 'wintop',

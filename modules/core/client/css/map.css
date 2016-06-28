@@ -1,0 +1,28 @@
+section#mapLegend {
+    /*position: absolute;
+    top: 19.3em;
+    left: 30em;*/
+}
+
+.tbody-legend {
+	border: 1px solid gainsboro;
+}
+
+.legend-table {
+    width: 20em;
+    font-size: .75em;
+}
+
+.see-row {
+	
+	border: 2px solid black;
+}
+
+.see-col {
+	border: 1px solid blue;
+}
+
+.map-row {
+	position: relative;
+	top: -3em;
+}

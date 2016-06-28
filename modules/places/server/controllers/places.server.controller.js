@@ -34,20 +34,48 @@ exports.create = function (req, res) {
 
 exports.find = function (req, res) {
   console.log("finding");
-  var zip = Number(req.body.zip);
-  console.log(zip);
-  // var response = "string";
-  // res.json(response);
-  Place.find().
-  where('zip').equals(zip).exec(function(err,places) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    } else {
-      res.json(places);
-    }
-  });
+
+  if (isNaN(req.body.zip)) {
+    // get isps
+    console.log("isps");
+    Place.find().
+    where('primaryCategory').equals('isp').exec(function(err,places) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        res.json(places);
+      }
+    });
+  } else {
+    console.log("zip code results");
+    var zip = Number(req.body.zip);
+    console.log(zip);
+    Place.find().
+    where('zip').equals(zip).exec(function(err,places) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        res.json(places);
+      }
+    });
+  }
+
+  // var zip = Number(req.body.zip);
+  // console.log(zip);
+  // Place.find().
+  // where('zip').equals(zip).exec(function(err,places) {
+  //   if (err) {
+  //     return res.status(400).send({
+  //       message: errorHandler.getErrorMessage(err)
+  //     });
+  //   } else {
+  //     res.json(places);
+  //   }
+  // });
   // Place.find().sort('-zip').exec(function (err, places) {
   //   if (err) {
   //     return res.status(400).send({

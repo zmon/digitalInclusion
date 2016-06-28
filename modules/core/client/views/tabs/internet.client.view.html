@@ -2,10 +2,32 @@
 	<h1>Internet at Home</h1>
 	<p>Service Providers</p>
 </header>
-<div id="main">
-	<section id="content" class="main">
-		<h2></h2>
-		<p></p>
+<div id="main" ng-controller="PlacesListController">
+	<section id="content" class="main isp-main">
+<!-- 		<h2></h2> -->
+		<script type="text/ng-template" id="group-template.html">
+		    <div class="panel-heading">
+		      <h4 class="panel-title" style="color:#fa39c3">
+		        <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
+		          <span uib-accordion-header ng-class="{'text-muted': isDisabled}">
+		            {{heading}}
+		          </span>
+		        </a>
+		      </h4>
+		    </div>
+		    <div class="panel-collapse collapse" uib-collapse="!isOpen">
+		      <div class="panel-body" style="text-align: right" ng-transclude></div>
+		    </div>
+		</script>
+		<uib-accordion close-others="oneAtATime" class="override-accordion">
+			<div uib-accordion-group class="panel-default" heading="{{i.title}}" ng:repeat="i in isps">
+
+				<span class="isp-details">ISP Details:</span><br>
+				<strong>{{i.title}}</strong><br>
+		        {{i.readableAddress}}<br>
+		        <a class="isp-links" ng-href="{{i.url}}">Visit website</a><br><br>
+		    </div>
+		</uib-accordion>
 	</section>
 </div>
-<section ng-include="'/modules/core/client/views/footer.client.view.html'"></section>	
+<!-- <section ng-include="'/modules/core/client/views/footer.client.view.html'"></section>	 -->

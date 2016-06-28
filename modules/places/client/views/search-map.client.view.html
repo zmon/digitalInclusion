@@ -1,37 +1,12 @@
-<!-- <span ng-controller="PlacesController"> -->
-  <!-- <form name="vm.form.searchForm" ng-submit="vm.search(vm.form.searchForm.$valid)" class="" novalidate autocomplete="off">
-      <fieldset>
-        <div class="form-group inline-group" show-errors>
-
-          <input type="text" id="zip" name="zip" class="form-control fc-sm" ng-model="vm.place.zip" placeholder="Zip" required>
-
-        </div>
-      
-        <div class="text-center inline-group">
-          <button type="submit" class="fc-in btn-search small">Search</button>
-        </div>
-         
-
-      </fieldset>
-    </form> -->
-    <form name="searchForm" novalidate class="search-form">
-      <div class="form-group inline-group">
-          <input type="text" class="form-control fc-sm" name="zip" ng-model="place.zip" placeholder="Zip">
-        </div>
-        <div class="text-center inline-group">
-          <button id="searchButton" type="submit" class="fc-in btn-search small" ng-click="searchByZip(place.zip); resetForm();">Search</button>
-        </div>
-    </form>
-<!-- </span> -->
-
-
-<!-- <form name="personForm" novalidate>
-      <label for="firstNameEdit">First name:</label>
-      <input id="firstNameEdit" type="text" name="firstName" ng-model="person.firstName" required /><br />
-      <label for="lastNameEdit">Last name:</label>
-      <input id="lastNameEdit" type="text" name="lastName" ng-model="person.lastName" required /><br />
-      <br />
-      <button type="button"
-              ng-click="resetForm()"
-              ng-disabled="!isPersonChanged()">Reset</button>
-    </form> -->
+<span ng-controller="PlacesController">
+  <span ng-controller="MapController">
+      <form name="searchForm" novalidate class="search-form">
+        <div class="form-group inline-group">
+            <input type="text" class="form-control fc-sm" name="zip" ng-model="place.zip" placeholder="Zip">
+          </div>
+          <div class="text-center inline-group">
+            <button id="searchButton" type="submit" class="fc-in btn-search small" ng-click="searchByZip(place.zip); resetForm();">Search</button>
+          </div>
+      </form>
+    </span>
+</span>

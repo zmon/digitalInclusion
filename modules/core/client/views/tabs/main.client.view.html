@@ -1,40 +1,62 @@
- <header id="header">
-            <h1>Map of Free Services</h1>
-            <p>Kansas City</p>
+<header id="header">
+  <h1>Map of Free Services</h1>
+  <p>Kansas City</p>
 </header>
- <div id="main" class="fix-height" ng-controller="PlacesController">
+<div id="main" class="fix-height" ng-controller="PlacesController">
+  <section id="first" class="main special" ng-controller="MapController">
+    <main id="main-page">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+          <ul class="actions fit small">
+            <li><a id="e1" href="#" class="button special fit small">Free WiFi</a></li>
+            <li><a id="e3" href="#" class="button normal fit small">Public Computers</a></li>
+          </ul>
+          <ul class="actions fit small">
+            <li><a id="e2" href="#" class="button normal fit small">Computer Training</a></li>
+            <li><a id="e4" href="#" class="button normal fit small">Low Cost Computers</a></li>
+          </ul>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+          <div class="table-wrapper">
+            <table class="legend-table">
+              <thead>
+                <tr>
+                  <th>Map Legend</th>
+                </tr>
+              </thead>
+              <tbody class="tbody-legend">
+                <tr>
+                  <td>Public Wifi</td>
+                  <td>Computer training<br>(daytime)</td>
+                </tr>
+                <tr>
+                  <td>WiFi with Purchase</td>
+                  <td>Computer Training<br>(evening after 6pm)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
-            
-            <!-- First Section -->
-              <section id="first" class="main special" ng-controller="MapController">
+      <div class="row"">
+        <div class="col-md-2"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+        <section id="queryForm" ng-include="'modules/places/client/views/search-map.client.view.html'"></section>
 
-                <!-- <header class="major">
-                  <h2>Map of Free Services</h2>
-                </header> -->
-                <section class="one-half btn-wrapper">
-                    <ul class="actions fit small">
-                      <li><a id="e1" href="#" class="button special fit small fit-cx">Free WiFi</a></li>
-                      <li><a id="e3" href="#" class="button normal fit small fit-cx right">Public Computers</a></li>
-                    </ul>
-                    <ul class="actions fit small">
-                      <li><a id="e2" href="#" class="button normal fit small fit-cx">Computer Training</a></li>
-                      <li><a id="e4" href="#" class="button normal fit small fit-cx right">Low Cost Computers</a></li>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2"></div>
+      </div>
+
       
-                    </ul>
-                   <!--  <ul class="actions">
-                      <li><a href="#" class="button special">Special</a></li>
-                      <li><a href="#" class="button">Default</a></li>
+      <div class="row map-row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-md-12">
 
-                    </ul>
-                    <ul class="actions">
-                      <li><a href="#" class="button special">Special</a></li>
-                      <li><a href="#" class="button">Default</a></li>
-                    </ul> -->
-                </section>
-                                <section id="queryForm" ng-include="'modules/places/client/views/search-map.client.view.html'">
-                    
-                  </section>
-                <section id="rcMap" class="fullmap">
+          <section id="rcMap" class="fullmap">
 
 
                     <div ui-map="map" ui-options="mapOptions" class="map-canvas" ui-event="{'map-click': 'addMarker($event, $params)', 'map-zoom_changed': 'setZoomMessage(myMap.getZoom())' }"></div>
@@ -70,27 +92,13 @@
                       <div id="placeUrl"></div>
                     </div>
                   </section>
-  
-                 <!--  <ul class="features">
-                  <li> -->
-                   <!--  <span class="icon major style1 fa-code"></span>
-                    <h3>Ipksum consequat</h3>
-                    <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p> -->
-        <!--           </li>
-                  <li>
-                    <span class="icon major style3 fa-copy"></span>
-                    <h3 id="placeTitle">Amed sed feugiat</h3>
-                    <p id="placeDescription">Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-                  </li>
-                  <li>
-                    
-                  </li>
-                </ul> -->
-               <!--  <footer class="major">
-                  <ul class="actions">
-                    <li><a href="generic.html" class="button">Learn More</a></li>
-                  </ul>
-                </footer> -->
+
+        </div>
+      </div>
+
+
+
+                </main>
               </section>
 
             <!-- Second Section -->
