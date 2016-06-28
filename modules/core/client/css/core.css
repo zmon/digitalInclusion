@@ -258,3 +258,7 @@ main#main-page {
 section#first {
     height: 720px;
 }
+
+.nav-tabs > li > a {
+    font-weight: 700;
+}

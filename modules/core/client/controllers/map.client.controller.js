@@ -1,60 +1,60 @@
 'use strict';
 
-var showMarkers = {
-                    trainingClasses: new Boolean(),
-                    computerRetail: new Boolean(),
-                    freeWifi: new Boolean(),
-                    publicComputers: new Boolean()
-                  };
+var showMarkers               = {
+                                  trainingClasses: new Boolean(),
+                                  computerRetail: new Boolean(),
+                                  freeWifi: new Boolean(),
+                                  publicComputers: new Boolean()
+                                };
 
 function onGoogleReady() {
   angular.bootstrap(document.getElementById("rcMap"), ['core.map']);
-  showMarkers.freeWifi = true;
+  showMarkers.freeWifi        = true;
   showMarkers.publicComputers = false;
-  showMarkers.computerRetail = false;
+  showMarkers.computerRetail  = false;
   showMarkers.trainingClasses = false;
 }
 
 angular.module('core.map', ['ngResource']).controller('MapController', ['$scope', '$window', '$timeout', '$http', '$state', '$stateParams', 'Authentication', 'getPlacesService', 'findPlacesByZipService', 'Places', '$location',
     function ($scope, $window, $timeout, $http, $state, $stateParams, Authentication, getPlacesService, $location, findPlacesByZipService, Places) {
    
-    $scope.array = { 
-                   wifi: { free: [], customer: [] },
-                       computers: { retail: [], access: [] },
-                       training: { day: [], night: [] }, 
-                       isps: []
-                     };
+    $scope.array              =    { 
+                                     wifi      : { free  : [], customer: [] },
+                                     computers : { retail: [], access  : [] },
+                                     training  : { day   : [], night   : [] }, 
+                                     isps      : []
+                                    };
 
-    $scope.markers = { 
-                   wifi: { free: [], customer: [] },
-                       computers: { retail: [], access: [] },
-                       training: { day: [], night: [] }, 
-                       isps: []
-                     };
+    $scope.markers            =  { 
+                                   wifi      : { free   : [], customer : [] },
+                                   computers : { retail : [], access   : [] },
+                                   training  : { day    : [], night    : [] }, 
+                                   isps      : []
+                                 };
 
-    var pattern1 = new RegExp("normal");
-    var pattern2 = new RegExp("special");
+   
     
-    var e1 = angular.element(document.getElementById("e1"));
-    var e2 = angular.element(document.getElementById("e2"));
-    var e3 = angular.element(document.getElementById("e3"));
-    var e4 = angular.element(document.getElementById("e4"));
+    var e1                    = angular.element(document.getElementById("e1"));
+    var e2                    = angular.element(document.getElementById("e2"));
+    var e3                    = angular.element(document.getElementById("e3"));
+    var e4                    = angular.element(document.getElementById("e4"));
 
-    var mapCanvasElement = document.getElementById("rcMap");
-    var sideWindowElement = document.getElementById("sw");
+    var mapCanvasElement      = document.getElementById("rcMap");
+    var sideWindowElement     = document.getElementById("sw");
 
     $scope.browserSupportFlag = new Boolean();
-    $scope.lat = "0";
-    $scope.lng = "0";
-    $scope.accuracy = "0";
-    $scope.error = "";
-    $scope.siteVisitor, $scope.id;
+    $scope.lat                = "0";
+    $scope.lng                = "0";
+    $scope.accuracy           = "0";
+    $scope.error              = "";
+    $scope.siteVisitor;
+    $scope.id;
     $scope.watchOptions;
 
-    var iconoriginx = null;
-      var iconoriginy = null;
-      var iconSize = new google.maps.Size(30, 30);
-      var iconAnchor = new google.maps.Point(15, 30);
+    var iconoriginx           = null;
+    var iconoriginy           = null;
+    var iconSize              = new google.maps.Size(30, 30);
+    var iconAnchor            = new google.maps.Point(15, 30);
 
     function resetToNormal() {
       var arr = [e1,e2,e3,e4];
@@ -155,8 +155,11 @@ angular.module('core.map', ['ngResource']).controller('MapController', ['$scope'
     }
 
     function setTrainingMarkers() {
+      console.log("setTrainingMarkers");
       var dayLocations = $scope.array.training.day;
       var nightLocations = $scope.array.training.night;
+      console.log(dayLocations);
+      console.log(nightLocations);
       var i;
       var n;
       var dayLength=dayLocations.length;
@@ -271,7 +274,7 @@ angular.module('core.map', ['ngResource']).controller('MapController', ['$scope'
     };
 
     function clearWifiMarkers() {
-      var freeWifiSpots = $scope.markers.wifi.free;
+      var freeWifiSpots     = $scope.markers.wifi.free;
       var customerWifiSpots = $scope.markers.wifi.customer;
       var i;
       var n;
@@ -280,14 +283,15 @@ angular.module('core.map', ['ngResource']).controller('MapController', ['$scope'
       for (i=0;i<l;i++) {
         freeWifiSpots[i].setMap(null);
       }
+      freeWifiSpots=[];
       for (n=0;n<m;n++){
         customerWifiSpots[n].setMap(null);
       }
-      freeWifiSpots=[];
       customerWifiSpots=[];
     }
     
     function clearTrainingMarkers() {
+      console.log('clearTrainingMarkers');
       var dayCourses = $scope.markers.training.day;
       var nightCourses = $scope.markers.training.night;
       for (var i = 0; i < dayCourses.length; i++) {
@@ -320,85 +324,189 @@ angular.module('core.map', ['ngResource']).controller('MapController', ['$scope'
       markers = [];
     }
 
-    e1.on('click', function(event) {
-      var cqP = event.toElement.className;
-      var cqC = event.target.parentElement.className;
-      if (pattern1.test(cqP) || pattern1.test(cqC)) {
-        e1.removeClass('normal');
-        e1.addClass('special');
-        showMarkers.freeWifi = true;
-        if (showMarkers.freeWifi) {
-          setWifiMarkers();
-        } 
-      } else if (pattern2.test(cqP) || pattern2.test(cqC)) {
-        e1.removeClass('special');
-        e1.addClass('normal');
-        showMarkers.freeWifi = false;
-        if (!showMarkers.freeWifi) {
-          clearWifiMarkers();
-        }
-      } 
-    });
 
-    e2.on('click', function(event) {
-      var cqP = event.toElement.className;
-      var cqC = event.target.parentElement.className;
-      if (pattern1.test(cqP) || pattern1.test(cqC)) {
-        e2.removeClass('normal');
-        e2.addClass('special');
-        showMarkers.computerTraining = true;
-        if (showMarkers.computerTraining) {
-          setTrainingMarkers();
-         } 
-      } else if (pattern2.test(cqP) || pattern2.test(cqC)) {
-        e2.removeClass('special');
-        e2.addClass('normal');
-        showMarkers.computerTraining = false;
-        if (!showMarkers.computerTraining) {
-          clearTrainingMarkers();
-        }
-      } 
-    });
+    var pattern1              =               new RegExp("normal");
+    var pattern2              =              new RegExp("special");
 
-    e3.on('click', function(event) {
-      var cqP = event.toElement.className;
-      var cqC = event.target.parentElement.className;
-      if (pattern1.test(cqP) || pattern1.test(cqC)) {
-        e3.removeClass('normal');
-        e3.addClass('special');
-        showMarkers.publicComputers = true;
-        if (showMarkers.publicComputers) {
-          setAccessMarkers();
-        } 
-      } else if (pattern2.test(cqP) || pattern2.test(cqC)) {
-        e3.removeClass('special');
-        e3.addClass('normal');
-        showMarkers.publicComputers = false;
-        if (!showMarkers.publicComputers) {
-          clearAccessMarkers();
-        }
-      } 
-    });
+    // e1.on('click', function(event) {
+    //   var cqP = event.toElement.className;
+    //   var cqC = event.target.parentElement.className;
+    //   console.log(event);
+    //   if (pattern1.test(cqP) || pattern1.test(cqC)) {
+    //     e1.removeClass('normal');
+    //     e1.addClass('special');
+    //     showMarkers.freeWifi = true;
+    //     if (showMarkers.freeWifi) {
+    //       setWifiMarkers();
+    //     } else {}
+    //   } else if (pattern2.test(cqP) || pattern2.test(cqC)) {
+    //     e1.removeClass('special');
+    //     e1.addClass('normal');
+    //     showMarkers.freeWifi = false;
+    //     if (!showMarkers.freeWifi) {
+    //       clearWifiMarkers();
+    //     }
+    //   } 
+    // });
 
-    e4.on('click', function(event) {
-      var cqP = event.toElement.className;
-      var cqC = event.target.parentElement.className;
-      if (pattern1.test(cqP) || pattern1.test(cqC)) {
-        e4.removeClass('normal');
-        e4.addClass('special');
-        showMarkers.computerRetail = true;
-        if (showMarkers.computerRetail) {
-          setRetailMarkers();
-        } 
-      } else if (pattern2.test(cqP) || pattern2.test(cqC)) {
-        e4.removeClass('special');
-        e4.addClass('normal');
-        showMarkers.computerRetail = false;
-        if (!showMarkers.computerRetail) {
-            clearRetailMarkers();
-        }
-      } 
-    });
+
+    // e2.on('click', function(event) {
+    //   var cqP = event.toElement.className;
+    //   var cqC = event.target.parentElement.className;
+    //   console.log(cqP);
+    //   console.log(cqC);
+    //   if (pattern1.test(cqP) || pattern1.test(cqC)) {
+    //     console.log("condition a - 1");
+    //     e2.removeClass('normal');
+    //     e2.addClass('special');
+    //     showMarkers.computerTraining = true;
+    //     setTrainingMarkers();
+        // if (showMarkers.computerTraining) {
+        //   console.log('condition a -2');
+        //   setTrainingMarkers();
+        //  } 
+         
+    //   } else if (pattern2.test(cqP) || pattern2.test(cqC)) {
+    //     e2.removeClass('special');
+    //     e2.addClass('normal');
+    //     showMarkers.computerTraining = false;
+    //     if (!showMarkers.computerTraining) {
+    //         clearTrainingMarkers();
+    //      }
+    //   } else {}
+    // });
+
+
+    function resetCss(elm, boolean) {
+      if (boolean) {
+        elm.removeClass('button normal fit small');
+        elm.addClass('button special fit small');
+      } else {
+        elm.removeClass('button special fit small');
+        elm.addClass('button normal fit small');
+      }
+    }
+
+    $scope.trainingVisibility = new Boolean();
+    $scope.toggleTrainingMarkers = function() {
+      if ($scope.trainingVisibility) {
+        console.log('true');
+        resetCss(e2, true);
+        
+        setTrainingMarkers();
+        $scope.trainingVisibility = false;
+      } else {
+        console.log('false');
+        resetCss(e2, false);
+        clearTrainingMarkers();
+        $scope.trainingVisibility = true;
+      }
+    }
+
+    $scope.computersVisibility = new Boolean();
+    $scope.toggleComputersMarkers = function() {
+      if ($scope.computersVisibility) {
+        console.log('true');
+        resetCss(e3, true);
+        setAccessMarkers();
+        $scope.computersVisibility = false;
+      } else {
+        console.log('false');
+        resetCss(e3, false);
+        clearAccessMarkers();
+        $scope.computersVisibility = true;
+      }
+    }
+
+    $scope.wifiVisibility = new Boolean();
+    $scope.toggleWifiMarkers = function() {
+      if ($scope.wifiVisibility) {
+        console.log('true');
+        resetCss(e1, true);
+        setWifiMarkers();
+        $scope.wifiVisibility = false;
+      } else {
+        console.log('false');
+        resetCss(e1, false);
+        clearWifiMarkers();
+        $scope.wifiVisibility = true;
+      }
+    }
+
+    $scope.refurbsVisibility = new Boolean();
+    $scope.toggleRefurbsMarkers = function() {
+      if ($scope.refurbsVisibility) {
+        console.log('true');
+        resetCss(e4, true);
+        setRetailMarkers();
+        $scope.refurbsVisibility = false;
+      } else {
+        console.log('false');
+        resetCss(e4, false);
+        clearRetailMarkers();
+        $scope.refurbsVisibility = true;
+      }
+    }
+
+
+
+
+
+
+
+
+    //   else if (pattern2.test(cqP) || pattern2.test(cqC)) {
+    //     console.log("condition b - 1");
+    //     e2.removeClass('special');
+    //     e2.addClass('normal');
+    //     showMarkers.computerTraining = false;
+    //     if (showMarkers.computerTraining) {
+
+    //     } else if (!showMarkers.computerTraining) {
+    //       clearTrainingMarkers();
+    //     } else {}
+    //   } 
+    // });
+
+    // e3.on('click', function(event) {
+    //   var cqP = event.toElement.className;
+    //   var cqC = event.target.parentElement.className;
+    //   if (pattern1.test(cqP) || pattern1.test(cqC)) {
+    //     e3.removeClass('normal');
+    //     e3.addClass('special');
+    //     showMarkers.publicComputers = true;
+    //     if (showMarkers.publicComputers) {
+    //       setAccessMarkers();
+    //     } 
+    //   } else if (pattern2.test(cqP) || pattern2.test(cqC)) {
+    //     e3.removeClass('special');
+    //     e3.addClass('normal');
+    //     showMarkers.publicComputers = false;
+    //     if (!showMarkers.publicComputers) {
+    //       clearAccessMarkers();
+    //     }
+    //   } 
+    // });
+
+    // e4.on('click', function(event) {
+    //   var cqP = event.toElement.className;
+    //   var cqC = event.target.parentElement.className;
+    //   if (pattern1.test(cqP) || pattern1.test(cqC)) {
+    //     e4.removeClass('normal');
+    //     e4.addClass('special');
+    //     showMarkers.computerRetail = true;
+    //     if (showMarkers.computerRetail) {
+    //       setRetailMarkers();
+    //     } 
+    //   } else if (pattern2.test(cqP) || pattern2.test(cqC)) {
+    //     e4.removeClass('special');
+    //     e4.addClass('normal');
+    //     showMarkers.computerRetail = false;
+    //     if (!showMarkers.computerRetail) {
+    //         clearRetailMarkers();
+    //     }
+    //   } 
+    // });
 
     $scope.success = function (pos) {
       var coords = pos.coords;
@@ -408,9 +516,9 @@ angular.module('core.map', ['ngResource']).controller('MapController', ['$scope'
       }
     }
 
-    $scope.geolocationError = function (err) {
-      console.warn('ERROR(' + err.code + '): ' + err.message);
-    }
+    // $scope.geolocationError = function (err) {
+    //   console.warn('ERROR(' + err.code + '): ' + err.message);
+    // }
 
     $scope.visitor = {
       latitude : 0,

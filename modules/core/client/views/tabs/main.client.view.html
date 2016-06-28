@@ -9,12 +9,12 @@
         <div class="col-md-1"></div>
         <div class="col-md-5">
           <ul class="actions fit small">
-            <li><a id="e1" href="#" class="button special fit small">Free WiFi</a></li>
-            <li><a id="e3" href="#" class="button normal fit small">Public Computers</a></li>
+            <li><a ng-click="toggleWifiMarkers();" id="e1" href="#" class="button special fit small">Free WiFi</a></li>
+            <li><a ng-click="toggleComputersMarkers();" id="e3" href="#" class="button normal fit small">Public Computers</a></li>
           </ul>
           <ul class="actions fit small">
-            <li><a id="e2" href="#" class="button normal fit small">Computer Training</a></li>
-            <li><a id="e4" href="#" class="button normal fit small">Low Cost Computers</a></li>
+            <li><a id="e2" ng-click="toggleTrainingMarkers();" href="#" class="button normal fit small">Computer Training</a></li>
+            <li><a id="e4" ng-click="toggleRefurbsMarkers();" href="#" class="button normal fit small">Low Cost Computers</a></li>
           </ul>
         </div>
         <div class="col-md-1"></div>
