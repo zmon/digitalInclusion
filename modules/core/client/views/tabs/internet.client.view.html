@@ -22,7 +22,8 @@
 		<uib-accordion close-others="oneAtATime" class="override-accordion">
 			<div uib-accordion-group class="panel-default" heading="{{i.title}}" ng:repeat="i in isps">
 
-				<span class="isp-details">ISP Details:</span><br>
+		<!-- 		<span class="isp-details">ISP Details:</span><br> -->
+			<br>
 				<strong>{{i.title}}</strong><br>
 		        {{i.readableAddress}}<br>
 		        <a class="isp-links" ng-href="{{i.url}}">Visit website</a><br><br>

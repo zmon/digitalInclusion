@@ -2767,7 +2767,7 @@
 			border: none;
 			/* font-weight: 300; */
 			line-height: 12px;
-			font-size: .75em;
+			font-size: .85em;
 		}
 
 		table th {
@@ -3113,7 +3113,7 @@
 
 		#header h1 {
 			margin: 0 0 0.25em 0;
-			font-weight: 600;
+			font-weight: 200;
 		}
 
 		#header p {
@@ -3371,7 +3371,7 @@
 /* Main */
 
 	#main {
-		background-color: #ffffff;
+		background-color: #635f5f;
 		color: #636363;
 		border-radius: 0.25em;
 	}
@@ -3627,7 +3627,10 @@
 				/*background: #f7f7f7;*/
 				border-bottom: 3px double;
 				background: #f7fbff;
+				background: radial-gradient(#f6fbff,#f9f9f9);
 				border: 1px solid #dadada;
+				background: white;
+				box-shadow: 0 0 3px #c7c7c7;
 			}
 
 			#main > .main > .image.main:first-child {
@@ -3810,7 +3813,7 @@
 		margin: 0 auto;
 		position: relative;
 		top: -10em;
-		background: radial-gradient(#f1f1f1,#e8e8e8,#f1f1f1);
+		background: radial-gradient(#f1f1f1,#fdfdfd,#f1f1f1);
 		box-shadow: 0 0 40px black;
 		border: 4px double #444444;
 		min-height: 760px;

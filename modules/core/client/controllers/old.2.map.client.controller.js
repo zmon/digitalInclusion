@@ -233,111 +233,10 @@ function onGoogleReady() {
 	      };
 	    }
 
-	    function formatString(str) {
-	    	var obj = str.replace(/ /g, "+");
-	    	console.log(obj);
-	    	return obj;
-	    }
-
-	    $scope.getDirections = function(address, city, state, zipcode) {
+	    $scope.getDirections = function(address) {
 	    	console.log("getAddress");
 	    	console.log(address);
-	    	// console.log(city);
-	    	// console.log(state);
-	    	// console.log(zipcode);
-	    	// var destination = ;
-	    	var fstr = formatString(address);
-	    	var fcity = formatString(city);
-
-	    	var origin = "origin=" + $scope.lat + "," + $scope.lng;
-	    	var org = { lat: $scope.lat, lng: $scope.lng };
-	    	var dst = fstr + "+" + fcity + "+" + state;
-	    	var destination = "destination=" + fstr + "+" + fcity + "+" + state;
-
-	    	var url = "https://maps.googleapis.com/maps/api/directions/json?" + origin + "&" + destination + "&key=AIzaSyBqZ_zfcyUUJDi6OuXq4QYpkdHPeaqFkms";
-	    	console.log(url);
-
-	    	// $http.post(url).success(function(res){
-	    	// 	console.log(res);
-	    	// })	
-
-	    	$http({
-			    method: 'POST',
-			    url: '/api/places/directions', 
-			    data: {
-			    	url: url, 
-			    	origin: org, 
-			    	destination: dst
-			    }
-			}).then(function(response) {
-				// console.log(response);
-			    if (response.statusText === 'OK') {
-			        // success
-			        console.log("ok");
-			        console.log(response);
-			        $scope.drawRoute(response);
-			        // $scope.directionsDisplay.setDirections(response.data.bounds);
-			    } else {
-			       console.log("not ok");
-			    }
-			});
-	    	// origin=24+Sussex+Drive+Ottawa+ON
-	    	// https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood4&key=YOUR_API_KEY
-
 	    }
-
-
-	    $scope.drawRoute = function(res) {
-	    	// var wps = res.
-	    	var data = res.data;
-	    	console.log(data);
-	    	var steps = data.routes[0].legs[0].steps;
-	    	// console.log(steps);
-	    	var i;
-	    	
-	    	var routePlanCoordinates = [
-	          // {lat: 37.772, lng: -122.214},
-	          // {lat: 21.291, lng: -157.821},
-	          // {lat: -18.142, lng: 178.431},
-	          // {lat: -27.467, lng: 153.027}
-	        ];
-
-	        for (i=0;i<steps.length;i++) {
-	    		console.log(steps[i]);
-	    		var step = steps[i];
-	    		var start = step.start_location;
-	    		var end = step.end_location;
-	    		routePlanCoordinates.push(start,end);
-	    	}
-
-	        $scope.routePath = new google.maps.Polyline({
-	          path: routePlanCoordinates,
-	          geodesic: true,
-	          strokeColor: '#000000',
-	          strokeOpacity: 1.0,
-	          strokeWeight: 3
-	        });
-	        removeWindow();
-        	$scope.routePath.setMap($scope.map);
-	    	
-
-
-	    }
-
-
-// distance
-// duration
-// end_location
-// html_instructions
-// "Turn <b>left</b> at the 1st cross street onto <b>E 51st St</b>"
-// maneuver
-// "turn-left"
-// polyline
-// start_location
-// travel_mode
-
-
-
 
 	    function addListener(json, marker) {
 	      // console.log("listener");
@@ -362,15 +261,14 @@ function onGoogleReady() {
 	        descriptor.textContent = desc;
 	        document.getElementById('placePhone').textContent = json.phone;
 	        $scope.addr = document.getElementById('placeAddress').textContent = json.address1;
-	        $scope.city = document.getElementById('placeCity').textContent = json.city;
-	        $scope.state = document.getElementById('placeState').textContent = json.state;
-	        $scope.zip = document.getElementById('placeZip').textContent = json.zip;
+	        document.getElementById('placeCity').textContent = json.city;
+	        document.getElementById('placeState').textContent = json.state;
+	        document.getElementById('placeZip').textContent = json.zip;
 	        document.getElementById('placeHours').textContent = json.hoursOpen;
 	      });
 	    }
 
 	    function createMarker(json) {
-	      // console.log(json);
 
 	      var category = json.primaryCategory;
 	      var iconUrl = getIcon(category);
@@ -607,31 +505,7 @@ function onGoogleReady() {
 	    console.log('isLoaded1');
 	    console.log($scope.isLoaded);
 
-
-
-
-	    $scope.directionsDisplay;
-        var directionsService = new google.maps.DirectionsService();
-
-       //  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-	      //   directionsService.route({
-	      //     origin: document.getElementById('start').value,
-	      //     destination: document.getElementById('end').value,
-	      //     travelMode: google.maps.TravelMode.DRIVING
-	      //   }, function(response, status) {
-	      //     if (status === google.maps.DirectionsStatus.OK) {
-	      //       directionsDisplay.setDirections(response);
-	      //     } else {
-	      //       window.alert('Directions request failed due to ' + status);
-	      //     }
-	      //   });
-	      // }
-
-
 	    $scope.showMap = function(position) {
-
-
-	      $scope.directionsDisplay = new google.maps.DirectionsRenderer();
 	      
 	      $scope.lat = position.coords.latitude;
 	      $scope.lng = position.coords.longitude;
@@ -639,7 +513,7 @@ function onGoogleReady() {
 
 	      $scope.mapOptions = {
 	        center: {lat: $scope.lat, lng: $scope.lng},
-	        zoom: 10,
+	        zoom: 12,
 	        mapTypeId: google.maps.MapTypeId.ROADMAP
 	      };
 
@@ -655,15 +529,6 @@ function onGoogleReady() {
 	          map: $scope.map,
 	          icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
 	      });
-
-
-	      $scope.directionsDisplay.setMap($scope.map);
-
-	      var onChangeHandler = function() {
-	        calculateAndDisplayRoute(directionsService, $scope.directionsDisplay);
-	       };
-	       document.getElementById('start').addEventListener('change', onChangeHandler);
-	       document.getElementById('end').addEventListener('change', onChangeHandler);
 
 	      $scope.isLoaded = true;
 	      console.log('isLoaded2');

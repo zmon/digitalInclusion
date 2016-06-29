@@ -9,7 +9,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-5">
           <ul class="actions fit small">
-            <li><a ng-click="toggleWifiMarkers();" id="e1" href="#" class="button special fit small">Free WiFi</a></li>
+            <li><a ng-click="toggleWifiMarkers(); getData('wifi-free');" id="e1" href="#" class="button special fit small">Free WiFi</a></li>
             <li><a ng-click="toggleComputersMarkers();" id="e3" href="#" class="button normal fit small">Public Computers</a></li>
           </ul>
           <ul class="actions fit small">
@@ -28,12 +28,12 @@
               </thead>
               <tbody class="tbody-legend">
                 <tr>
-                  <td>Public Wifi</td>
-                  <td>Computer training<br>(daytime)</td>
+                  <td><img class="small-img" src="modules/core/client/img/wifi-free.svg"> Public WiFi</td>
+                  <td class="toleft"><img class="small-img" src="modules/core/client/img/user-orange2.png"> Computer training (daytime)</td>
                 </tr>
                 <tr>
-                  <td>WiFi with Purchase</td>
-                  <td>Computer Training<br>(evening after 6pm)</td>
+                  <td class="move-up"><img class="small-img" src="modules/core/client/img/wifi-purchase.svg"> Customer WiFi</td>
+                  <td class="toleft move-up"><img class="small-img" src="modules/core/client/img/user-blue2.png"> Computer Training<br>(after 6pm)</td>
                 </tr>
               </tbody>
             </table>
@@ -42,8 +42,7 @@
       </div>
 
       <div class="row"">
-        <div class="col-md-2"></div>
-        <div class="col-md-1"></div>
+         <div class="col-md-1"></div>
         <div class="col-md-6">
         <section id="queryForm" ng-include="'modules/places/client/views/search-map.client.view.html'"></section>
 
@@ -53,59 +52,45 @@
       </div>
 
       
-      <div class="row map-row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-md-12">
+        <div class="row map-row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-md-12">
 
-          <section id="rcMap" class="fullmap">
-
-
-                    <div ui-map="map" ui-options="mapOptions" class="map-canvas" ui-event="{'map-click': 'addMarker($event, $params)', 'map-zoom_changed': 'setZoomMessage(myMap.getZoom())' }"></div>
-
-                    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
-
-                    <ui-gmap-map-control template="control.tpl.html" position="top-right" controller="controlCtrl" index="1"></ui-gmap-map-control>
-
-                    <!--  <div id="class" ng-repeat="marker in mapMarkers | orderBy : 'title'">
-                         <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
-                    </div> -->
-
+            <section id="rcMap" class="fullmap">
 
                   </section>
-                  <section id="sw" class="full-side sidewin-ctrl">
-                    <a id="winCtrl" ng-click="removeWindow()" class="rmv">
-                       <span id="rmv-glyph" class="glyphicon glyphicon-remove"></span>
-                    </a>
-                    <div id="info-wrapper">
-                      <!-- category -->
-                      <div id="placeCategory" class="f1"></div>
-                      <!--  -->
-                      <div id="placeTitle" class="f2"></div>
-                      <!--  -->
-                      <div id="placeAddress" class="f3"></div>
-                      <!--  -->
-                     
-                      <span id="placeCity" class="f3"></span>, <span id="placeState" class="f3"></span><span id="placeZip" class="f3"></span>
-                       <div id="placePhone"></div>
-                      <!--  -->
-                      <div class="f4" id="placeDescription"></div>
-                      <!--  -->
-                      <div id="placeUrl"></div>
-                    </div>
-                  </section>
+      
+            <section id="sw" class="full-side sidewin-ctrl">
+              <a id="winCtrl" ng-click="removeWindow()" class="rmv">
+                 <span id="rmv-glyph" class="glyphicon glyphicon-remove"></span>
+              </a>
+              <div id="info-wrapper">
+                <!-- category -->
+                <div id="placeCategory" class="f1"></div>
+                <!--  -->
+                <div id="placeTitle" class="f2"></div>
+                <!--  -->
+                <div id="placePhone"></div>
+                <div id="placeAddress" class="f3"></div>
+         
 
-        </div>
-      </div>
-
-
-
-                </main>
-              </section>
-
-            <!-- Second Section -->
-             
+                <div>
+                <span id="placeCity" class="f3"></span>, <span id="placeState" class="f3"></span><span id="placeZip" class="f3"></span></div>
+                 <a ng-click="getDirections(addr, city, state, zip)" class="f6 lnk-hov">View directions on Google Maps</a><br>
+                <div id="placeHours"></div>
+                <!--  -->
+                <div class="f4" id="placeDescription"></div>
+                <!--  -->
+                <div id="placeUrl"></div>
+              </div>
+            </section>
+      
           </div>
+        </div>
 
-        <!-- Footer -->
-          <section ng-include="'/modules/core/client/views/footer.client.view.html'"></section>
 
-      </div>
+
+      </main>
+    </section>    
+  </div>
+  <section ng-include="'/modules/core/client/views/footer.client.view.html'"></section>
+</div>

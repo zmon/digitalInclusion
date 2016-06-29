@@ -12,6 +12,9 @@ module.exports = function (app) {
     .get(places.list)
     .post(places.create);
 
+  app.route('/api/places/directions')
+    .post(places.locate);
+
   app.route('/api/places/query')
     .post(places.find);
   // Single place routes
