@@ -293,3 +293,12 @@ section#first {
   position: relative;
   top: -2em;
 }
+
+.links {
+  color: steelblue;
+  text-decoration: underline;
+}
+
+.links:hover {
+  cursor: pointer;
+}
