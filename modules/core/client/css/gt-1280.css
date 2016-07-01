@@ -1,8 +1,5 @@
 @media (min-width: 1281px) {
 	section#sw {
-	    position: relative;
-	    top: -20.4em;
-	    left: 34%;
 	}
 	#main > .main:first-child {
 	    border-top: 0;

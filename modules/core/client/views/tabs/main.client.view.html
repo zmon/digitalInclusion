@@ -6,6 +6,7 @@
   <section id="first" class="main special" ng-controller="MapController">
     <main id="main-page">
       <div class="row">
+
         <div class="col-md-1"></div>
         <div class="col-md-5">
           <ul class="actions fit small">
@@ -41,7 +42,8 @@
         </div>
       </div>
 
-      <div class="row"">
+      <div class="row">
+            
          <div class="col-md-1"></div>
         <div class="col-md-6">
         <section id="queryForm" ng-include="'modules/places/client/views/search-map.client.view.html'"></section>
@@ -51,19 +53,21 @@
         <div class="col-md-2"></div>
       </div>
 
-      
-        <div class="row map-row">
+      <div class="row map-row">
+    
           <div class="col-xs-12 col-sm-12 col-md-12 col-md-12">
 
-            <section id="rcMap" class="fullmap">
+            <section id="customMap" class="">
 
-                  </section>
+            </section>
       
+            
+
             <section id="sw" class="full-side sidewin-ctrl">
               <a id="winCtrl" ng-click="removeWindow()" class="rmv">
                  <span id="rmv-glyph" class="glyphicon glyphicon-remove"></span>
               </a>
-              <div id="info-wrapper">
+              <div id="info-wrapper slide-pop.ng-enter">
                 <!-- category -->
                 <div id="placeCategory" class="f1"></div>
                 <!--  -->
@@ -83,11 +87,82 @@
                 <div id="placeUrl"></div>
               </div>
             </section>
-      
+
+         <!--    <div id="directions-panel" class="pt-page-rotateUnfoldLeft">
+              <h4 id="show-start">
+                  Starting location:<br>{{directions.origin.startAddress}}
+              </h4>
+              <h4 id="show-dest">
+              {{}}
+              </h4>
+              <ul id="step-array">
+                <li ng-repeat="direction in directions" class="dir-steps">
+
+                  {{direction.html_instructions}}
+                  
+                </li>
+              </ul>
+            </div>
+
+
+            <section id="directions">
+
+              <div ng-repeat="step in steps" ng-animate=" 'animate' ">
+
+              </div>
+               
+
+              <div ng-repeat="direction in directions" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+                
+              </div>  
+            </section>
+        -->
+
           </div>
+
+        </div>
+      
+       <!--  <div class="row map-row">
+    
+          <div class="col-xs-12 col-sm-12 col-md-12 col-md-12">
+
+            <section id="rcMap" class="fullmap">
+
+            </section>
+      
+            
+
+            <section id="sw" class="full-side sidewin-ctrl">
+              <a id="winCtrl" ng-click="removeWindow()" class="rmv">
+                 <span id="rmv-glyph" class="glyphicon glyphicon-remove"></span>
+              </a>
+              <div id="info-wrapper">
+             
+                <div id="placeCategory" class="f1"></div>
+              
+                <div id="placeTitle" class="f2"></div>
+               
+                <div id="placePhone"></div>
+                <div id="placeAddress" class="f3"></div>
+         
+
+                <div>
+                <span id="placeCity" class="f3"></span>, <span id="placeState" class="f3"></span><span id="placeZip" class="f3"></span></div>
+                 <a ng-click="getDirections(addr, city, state, zip)" class="f6 lnk-hov">View directions on Google Maps</a><br>
+                <div id="placeHours"></div>
+
+                <div class="f4" id="placeDescription"></div>
+   
+                <div id="placeUrl"></div>
+              </div>
+            </section>
+       
+
+          </div>
+
         </div>
 
-
+ -->
 
       </main>
     </section>    

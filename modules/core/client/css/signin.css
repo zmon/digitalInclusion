@@ -1,0 +1,19 @@
+input.ng-pristine {
+    border: 1px solid #c9cece;
+    box-shadow: 0 0 1px #535d59;
+}
+
+input.ng-not-empty {
+    background: #ffffff;
+    color: #353425;
+    border: 1px solid #194625;
+    box-shadow: 0 0 5px #4a5a29;
+}
+
+h3.col-md-12.text-center.log {
+    margin-bottom: 2em;
+}
+
+.si {
+	color:white;
+}

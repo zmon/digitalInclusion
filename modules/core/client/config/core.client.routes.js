@@ -33,13 +33,20 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
-      .state('material', {
-        url:'/material',
-        templateUrl:'modules/core/client/views/material.client.view.html'
+      .state('about', {
+        url: '/about',
+        templateUrl:'modules/core/client/views/tabs/about.client.view.html', 
+        controller: 'AboutController'
       })
-      .state('elements', {
-        url:'/elements',
-        templateUrl:'modules/core/client/views/elements.client.view.html'
+      .state('contact', {
+        url: '/contact',
+        templateUrl:'modules/core/client/views/tabs/contact.client.view.html', 
+        controller: 'ContactController'
+      })
+      .state('test', {
+        url: '/test',
+        templateUrl: 'modules/core/client/views/test.client.view.html', 
+        controller: 'TestController'
       })
       .state('not-found', {
         url: '/not-found',

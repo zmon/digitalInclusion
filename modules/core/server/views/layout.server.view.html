@@ -41,15 +41,33 @@
     .panel-default {
       border:none;
     }
-    input.ng-pristine {
+/*    input.ng-pristine {
       border: 1px solid #829494;
     }
    input.ng-not-empty {
       background: #fbfbef;
       color: #353425;
       border: 1px solid gainsboro;
-   }
+   }*/
+   h3.col-md-12.text-center {
+    color: #ececec;
+}
+
+h3.col-md-12.text-center.log.up {
+    position: relative;
+    top: -8em;
+}
+
+form.signin.ng-pristine.ng-invalid.ng-invalid-required.ng-valid-email.ng-valid-requirements.ng-submitted {
+    position: relative;
+    top: -10em;
+}
+
+button.button.normal.sign {
+    margin: 2em 0;
+}
   </style>
+  <link rel="stylesheet" href="/modules/core/client/css/signin.css"/>
   <link rel="stylesheet" href="/modules/core/client/css/map.css"/>
   <link rel="stylesheet" href="/modules/core/client/css/lt-1280.css"/>
   <link rel="stylesheet" href="/modules/core/client/css/lt-1000.css"/>
@@ -62,12 +80,18 @@
 </head>
 
 <body class="ng-cloak">
+
+  <div class="codrops-top clearfix">
+      <a class="codrops-icon codrops-icon-prev" ng-href="/authentication/signin"><span>Login/Sign-Up</span></a>
+      <span class="right"><a class="codrops-icon codrops-icon-drop" ng-href="/test"><span>Testing Feedback</span></a></span>
+    </div>
   <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
   <section class="content">
     <section class="container">
       {% block content %}{% endblock %}
     </section>
   </section>
+
 
   <!--Embedding The User Object-->
   <script type="text/javascript">

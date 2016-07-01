@@ -53,12 +53,7 @@
 }
 
 @media (min-width: 1680px) {
-	section#sw {
-	    position: relative;
-	    top: -16.7em;
-	    left: 34%;
-	}
-
+	
 	section#first {
 	    height: 780px;
 	}

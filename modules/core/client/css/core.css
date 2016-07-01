@@ -75,9 +75,6 @@ h2.contact {
 }
 
 section#sw {
-    position: relative;
-    top: -24em;
-    left: 34%;
 }
 
 section#first {
@@ -88,23 +85,21 @@ div#info-wrapper {
     background: #f3f3f3;
     border: 1px solid #bbbaba;
     /* box-shadow: inset 0 0 100px #f3f3f3; */
-    width: 40.5%;
-    margin-left: 26.25%;
-    height: 500px;
+    width: 100%;
+    display: inline-block;
+    height: 420px;
     border: 1px solid #e2e2e2;
-    position: relative;
     font-weight: 400;
-    top: -11.9em;
-    box-shadow: 0 0 2px #3e3e3e;
+    box-shadow: 0 0 12px #3e3e3e;
 }
 
 #winCtrl {
   display: inline;
   z-index: 99999;
   position: relative;
-  top: -4em;
+  top: -.24em;
   color: #443101;
-  left: 7.25em;
+  left: 6.84em;
 }
 
 #winCtrl:hover {
@@ -114,6 +109,15 @@ div#info-wrapper {
 
 #sw {
   display:none;
+  position: absolute;
+  left: 81%;
+  width: 15em;
+  background: radial-gradient(white,#f4ffff);
+  clear: both;
+  border: 1px solid #a9a9ad;
+  top: -3.85em;
+  margin-left: 0;
+  padding: 0 0 2em 0;
 }
 
 section#add-resources {
@@ -192,7 +196,7 @@ button.fc-in {
 #main > .main:first-child {
     background: radial-gradient(#eaeaea,snow);
     box-shadow: inset 0 0 200px #e4e4e4;
-    border: 1px solid #c3c3c3;
+    border: 1px solid #9a9595;
 }
 
 .resize {
@@ -233,11 +237,11 @@ input.form-control.fc-sm {
 }
 
 .fieldset-override {
-  background: snow;
+  background: white;
   /* color: darkgray; */
-  border: 3px double #cecece;
-  box-shadow: inset 0 0 100px #e8e8e8;
-  padding: 1.5em 4.5em 0 4.5em;
+  border: 3px double #c7c7c7;
+  box-shadow: 0 0 5px #fdfdfd;
+  padding: 1.5em 5.5em 0 5.5em;
   overflow-y:   scroll;
   max-height: 730px;
 }
@@ -301,4 +305,30 @@ section#first {
 
 .links:hover {
   cursor: pointer;
+}
+
+.xwell {
+  width: 110%;
+}
+
+section#customMap {
+    height: 420px;
+    border: 1px solid gainsboro;
+    box-shadow: 0 0 15px;
+    box-shadow: 0 1px 0px 0px #7d7d7d, 0 -1px 0px 0px #7d7d7d, 8px 0 10px -4px rgba(54, 59, 64, 0.8), -8px 0 10px -4px rgba(51, 53, 56, 0.8);
+}
+
+#wrapper {
+    width: 64em;
+    max-width: calc(100% - -.4em);
+    margin: 0 auto;
+    position: relative;
+    top: -10em;
+    background: radial-gradient(#f1f1f1,#fdfdfd,#f1f1f1);
+    box-shadow: 0 0 40px black;
+    border: 4px double #444444;
+    min-height: 760px;
+    border-right: none;
+    border-left: none;
+    border-radius: .5em;
 }

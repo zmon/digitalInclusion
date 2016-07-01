@@ -6,7 +6,7 @@ var showMarkers = {
 };
 
 function onGoogleReady() {
-  angular.bootstrap(document.getElementById("rcMap"), ['core.map']);
+  angular.bootstrap(document.getElementById("customMap"), ['core.map']);
   showMarkers.freeWifi        = true;
   showMarkers.publicComputers = false;
   showMarkers.computerRetail  = false;
@@ -45,7 +45,7 @@ function onGoogleReady() {
 	    var e3                    = angular.element(document.getElementById("e3"));
 	    var e4                    = angular.element(document.getElementById("e4"));
 
-	    var mapCanvasElement      = document.getElementById("rcMap");
+	    var mapCanvasElement      = document.getElementById("customMap");
 	    var sideWindowElement     = document.getElementById("sw");
 
 	    $scope.browserSupportFlag = new Boolean();
@@ -286,13 +286,78 @@ function onGoogleReady() {
 
 	    }
 
+	    $scope.steps = [];
+	    var directions = [];
 
+	    var stores = [];
+	    // $scope.parseStep = function(step, i) {
+	    // 	console.log("step: " + i);
+	    // 	console.log(step);
+	    // 	// var html 
+	    // 	$scope.polyline = {};
+	    // 	$scope.directions = [];
+	    // 	$scope.directions.push(step);
+	    // 	stores.push(step.html_instructions);
+	    // }
+
+var panel = angular.element(document.getElementById("directions-panel"));
+
+	    // var desth4 = angular.element(document.getElementById("show-dest"));
 	    $scope.drawRoute = function(res) {
 	    	// var wps = res.
 	    	var data = res.data;
 	    	console.log(data);
 	    	var steps = data.routes[0].legs[0].steps;
+	    	$scope.directions = steps;
+	    	var listo = angular.element(document.getElementById("step-array"));
+	    	console.log(panel);
+	    	panel[0].style.zIndex=9999;
+
+	    	// h3.textContent = 
+	    	// desth4.style.display = "block";
+	    	// $scope.directionsDisplay = new google.maps.DirectionsRenderer;
+      //   	$scope.directionsDisplay.setMap($scope.map);
+      //       $scope.directionsDisplay.setPanel(document.getElementById('right-panel'));
+      //       $scope.directionsDisplay.setDirections(res.data);
+
+	    	// $scope.steps = steps;
+
+	    	 var remarker = new google.maps.Marker({
+												    position: $scope.map.getCenter(),
+												    icon: {
+												      path: google.maps.SymbolPath.CIRCLE,
+												      scale: 6
+												    },
+								          		    map: $scope.map
+												  });
+
+	    	var pl = res.data.routes[0].overview_polyline.points;
+
+	    	$scope.routePath = new google.maps.Polyline({
+	          path: pl,
+	          geodesic: true,
+	          strokeColor: 'fff',
+	          strokeOpacity: 1.0,
+	          strokeWeight: 3
+	        });
+
+
+	    	$scope.requestDestination = res.config.data.destination;
+	    	$scope.directions = {};
+	    	$scope.directions.origin = {};
+	    	$scope.directions.origin.distance = data.routes[0].legs[0].distance.text;
+	    	$scope.directions.origin.startAddress = data.routes[0].legs[0].start_address;
+	    	$scope.directions.origin.startLocation = data.routes[0].legs[0].start_location;
 	    	// console.log(steps);
+
+
+	    	// var originMarker = new google.maps.Marker({
+	     //      position: $scope.directions.origin.startLocation,
+	     //      animation: google.maps.Animation.DROP,
+	     //      map: $scope.map,
+	     //      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+		    // });
+
 	    	var i;
 	    	
 	    	var routePlanCoordinates = [
@@ -303,12 +368,16 @@ function onGoogleReady() {
 	        ];
 
 	        for (i=0;i<steps.length;i++) {
-	    		console.log(steps[i]);
+	    		// console.log(steps[i]);
 	    		var step = steps[i];
 	    		var start = step.start_location;
 	    		var end = step.end_location;
 	    		routePlanCoordinates.push(start,end);
+	    		listo.append(step.html_instructions + '<br>');
+	    		// $scope.parseStep(step, i);
 	    	}
+
+	   		console.log(listo);
 
 	        $scope.routePath = new google.maps.Polyline({
 	          path: routePlanCoordinates,
@@ -320,8 +389,7 @@ function onGoogleReady() {
 	        removeWindow();
         	$scope.routePath.setMap($scope.map);
 	    	
-
-
+        
 	    }
 
 
@@ -343,7 +411,31 @@ function onGoogleReady() {
 	      // console.log("listener");
 	      // console.log(json);
 	      google.maps.event.addListener(marker, 'click', function(){
-	        resizeMap();
+	        resizeMap();	
+	        console.log("marker");
+	        console.log(json);
+	        var lat = json.location[0].lat;
+	        var lng = json.location[0].lng;
+	        var ll = new google.maps.LatLng(lat,lng);
+	        console.log(ll);
+	        console.log(marker.position);
+	        var highlightCircle           =  new google.maps.Marker({
+												    position: ll,
+												    icon: {
+												      path: google.maps.SymbolPath.CIRCLE,
+												      scale: 6
+												    },
+								          		    map: $scope.map
+												  });
+
+	        console.log(highlightCircle);
+
+
+
+
+
+
+
 	        var anchor = new google.maps.MVCObject();
 	        anchor.set("position",event.latLng);
 	        var target = json.url;
@@ -572,7 +664,7 @@ function onGoogleReady() {
 	    }
 
 	    var resizeMap = function() {
-	      mapCanvasElement.style.width = "60%";
+	      mapCanvasElement.style.width = "80%";
 	      sideWindowElement.style.display = "initial";
 	    }
 
@@ -610,8 +702,8 @@ function onGoogleReady() {
 
 
 
-	    $scope.directionsDisplay;
-        var directionsService = new google.maps.DirectionsService();
+	    // $scope.directionsDisplay;
+     //    var directionsService = new google.maps.DirectionsService();
 
        //  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 	      //   directionsService.route({
@@ -627,11 +719,14 @@ function onGoogleReady() {
 	      //   });
 	      // }
 
+	      $scope.removeWindow = function() { 
+	      	console.log("?");
+	        removeWindow();
+	      }
 
 	    $scope.showMap = function(position) {
 
 
-	      $scope.directionsDisplay = new google.maps.DirectionsRenderer();
 	      
 	      $scope.lat = position.coords.latitude;
 	      $scope.lng = position.coords.longitude;
@@ -639,13 +734,13 @@ function onGoogleReady() {
 
 	      $scope.mapOptions = {
 	        center: {lat: $scope.lat, lng: $scope.lng},
-	        zoom: 10,
+	        zoom: 16,
 	        mapTypeId: google.maps.MapTypeId.ROADMAP
 	      };
 
-	      $scope.map = new google.maps.Map(document.getElementById('rcMap'), $scope.mapOptions);
-	      $scope.input = document.getElementById('plac');
-	      $scope.searchBox = new google.maps.places.SearchBox($scope.input);
+	      $scope.map = new google.maps.Map(document.getElementById('customMap'), $scope.mapOptions);
+	      // $scope.input = document.getElementById('plac');
+	      // $scope.searchBox = new google.maps.places.SearchBox($scope.input);
 	      $scope.map.controls[google.maps.ControlPosition.TOP_LEFT].push($scope.input);
 	      $scope.initialLocation = new google.maps.LatLng($scope.lat, $scope.lng);
 
@@ -657,13 +752,13 @@ function onGoogleReady() {
 	      });
 
 
-	      $scope.directionsDisplay.setMap($scope.map);
+	      // $scope.directionsDisplay.setMap($scope.map);
 
-	      var onChangeHandler = function() {
-	        calculateAndDisplayRoute(directionsService, $scope.directionsDisplay);
-	       };
-	       document.getElementById('start').addEventListener('change', onChangeHandler);
-	       document.getElementById('end').addEventListener('change', onChangeHandler);
+	      // var onChangeHandler = function() {
+	      //   calculateAndDisplayRoute(directionsService, $scope.directionsDisplay);
+	      //  };
+	      //  document.getElementById('start').addEventListener('change', onChangeHandler);
+	      //  document.getElementById('end').addEventListener('change', onChangeHandler);
 
 	      $scope.isLoaded = true;
 	      console.log('isLoaded2');
@@ -675,9 +770,7 @@ function onGoogleReady() {
 	      	clearAll();
 	      }
 
-	      $scope.removeWindow = function() { 
-	        removeWindow();
-	      }
+	      
 
 	      var center;
 
@@ -700,59 +793,6 @@ function onGoogleReady() {
 
 
 
-
-
-
-    // function searchResultsMap(position) {
-      
-    //   $scope.lat = position.coords.latitude;
-    //   $scope.lng = position.coords.longitude;
-    //   $scope.accuracy = position.coords.accuracy;
-
-    //   $scope.mapOptions = {
-    //     center: {lat: position.lat, lng: position.lng},
-    //     zoom: 12,
-    //     mapTypeId: google.maps.MapTypeId.ROADMAP
-    //   };
-
-    //   $scope.map = new google.maps.Map(document.getElementById('rcMap'), $scope.mapOptions);
-
-    //   $scope.searchBox = new google.maps.places.SearchBox($scope.input);
-    //   $scope.map.controls[google.maps.ControlPosition.TOP_LEFT].push($scope.input);
-
-
-    //   var marker = new google.maps.Marker({
-    //       position: position,
-    //       animation: google.maps.Animation.DROP,
-    //       map: $scope.map,
-    //       icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-    //   });
-
-    //   $scope.clearAll = function() {
-    //   	clearAll();
-    //   }
-
-    //   $scope.removeWindow = function() { 
-    //     removeWindow();
-    //   }
-
-    //   var center;
-
-    //   function calculateCenter() {
-    //     center = $scope.map.getCenter();
-    //   }
-
-    //   google.maps.event.addDomListener($scope.map, 'idle', function() {
-    //     calculateCenter();
-    //   });
-
-    //   google.maps.event.addDomListener(window, 'resize', function() {
-    //     console.log("resizing");
-    //     $scope.map.setCenter(center);
-    //   });
-        
-    //   $scope.$apply();
-    // };
 
     $scope.getLocation();
   }

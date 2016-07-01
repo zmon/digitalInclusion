@@ -1688,6 +1688,8 @@
 		text-decoration: none;
 		/* border-bottom: dotted 1px; */
 		color: inherit;
+		color: white;
+		font-weight: 300;
 	}
 
 		a:hover {
@@ -1841,8 +1843,8 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
-		color: black;
+		color: #313131;
+		font-weight: 600;
 	}
 
 	blockquote {
@@ -2087,7 +2089,9 @@
 		input[type="email"]:invalid,
 		select:invalid,
 		textarea:invalid {
-			box-shadow: none;
+			box-shadow: 0 0 2px #6eabab;
+			background: white;
+			color: black;
 		}
 
 	.select-wrapper {
@@ -2219,8 +2223,9 @@
 
 	label {
 		color: #ffffff;
-		color: #5f5f5f;
-		font-weight: 400;
+		color: #314034;
+		font-weight: 300;
+		text-shadow: 0 0 2px #a0a0a0;
 	}
 
 	input[type="text"],
@@ -2237,8 +2242,8 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #8cc9f0;
-			box-shadow: 0 0 0 1px #8cc9f0;
+			border-color: #30678a;
+			box-shadow: 0 0 0 1px #66c2ff;
 		}
 
 	.select-wrapper:before {
@@ -3371,9 +3376,10 @@
 /* Main */
 
 	#main {
-		background-color: #635f5f;
+		background-color: #fff;
 		color: #636363;
 		border-radius: 0.25em;
+		border-radius: .5em;
 	}
 
 		#main input, #main select, #main textarea {
@@ -3628,9 +3634,10 @@
 				border-bottom: 3px double;
 				background: #f7fbff;
 				background: radial-gradient(#f6fbff,#f9f9f9);
-				border: 1px solid #dadada;
-				background: white;
-				box-shadow: 0 0 3px #c7c7c7;
+				/* border: none; */
+				background: transparent;
+				box-shadow: 0 0 5p;
+				border-radius: .25em;
 			}
 
 			#main > .main > .image.main:first-child {
@@ -3817,6 +3824,9 @@
 		box-shadow: 0 0 40px black;
 		border: 4px double #444444;
 		min-height: 760px;
+		border-right: none;
+		border-left: none;
+		border-radius: .5em;
 	}
 
 		@media screen and (max-width: 480px) {
@@ -3834,3 +3844,8 @@
 			}
 
 		}
+
+
+		button.button.special.sign {
+		    margin: 2em 0;
+		}}
