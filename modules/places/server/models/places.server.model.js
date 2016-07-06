@@ -27,6 +27,6 @@ var PlaceSchema = new Schema({
   user: { type: Schema.ObjectId, ref: 'User' }
 });
 
-PlaceSchema.index({location: '2dsphere'});
+// PlaceSchema.index({location: '2dsphere'});
 
 mongoose.model('Place', PlaceSchema);

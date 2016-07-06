@@ -1,21 +1,21 @@
 <header id="header">
-  <h1>Map of Free Services</h1>
+  <h1>Map of Services</h1>
   <p>Kansas City</p>
 </header>
 <div id="main" class="fix-height" ng-controller="PlacesController">
-  <section id="first" class="main special" ng-controller="MapController">
+  <section id="first" class="main special bg-wrapper" ng-controller="MapController">
     <main id="main-page">
-      <div class="row">
+      <div class="row butane">
 
         <div class="col-md-1"></div>
         <div class="col-md-5">
           <ul class="actions fit small">
-            <li><a ng-click="toggleWifiMarkers(); getData('wifi-free');" id="e1" href="#" class="button special fit small">Free WiFi</a></li>
-            <li><a ng-click="toggleComputersMarkers();" id="e3" href="#" class="button normal fit small">Public Computers</a></li>
+            <li><a ng-click="toggleWifiMarkers(); getData('wifi-free');" id="e1" href="#" class="button normal fit small">Free WiFi</a></li>
+            <li class="realign"><a ng-click="toggleComputersMarkers();" id="e3" href="#" class="button normal fit small">Public Computers</a></li>
           </ul>
           <ul class="actions fit small">
             <li><a id="e2" ng-click="toggleTrainingMarkers();" href="#" class="button normal fit small">Computer Training</a></li>
-            <li><a id="e4" ng-click="toggleRefurbsMarkers();" href="#" class="button normal fit small">Low Cost Computers</a></li>
+            <li class="realign"><a id="e4" ng-click="toggleRefurbsMarkers();" href="#" class="button normal fit small">Low Cost Computers</a></li>
           </ul>
         </div>
         <div class="col-md-1"></div>
@@ -24,13 +24,13 @@
             <table class="legend-table">
               <thead>
                 <tr>
-                  <th>Map Legend</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody class="tbody-legend">
                 <tr>
                   <td><img class="small-img" src="modules/core/client/img/wifi-free.svg"> Public WiFi</td>
-                  <td class="toleft"><img class="small-img" src="modules/core/client/img/user-orange2.png"> Computer training (daytime)</td>
+                  <td class="toleft"><img class="small-img" src="modules/core/client/img/user-orange2.png"> Computer Training (daytime)</td>
                 </tr>
                 <tr>
                   <td class="move-up"><img class="small-img" src="modules/core/client/img/wifi-purchase.svg"> Customer WiFi</td>
@@ -42,11 +42,21 @@
         </div>
       </div>
 
+      <div class="row data-row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+          <div id="kv" class="hemp">
+          <span class="text-small-custom">
+          {{"Finding nearby matching locations:"}}<br>1) {{proximity1.address}} ({{proximity1.distance}} feet)<br>2) {{proximity2.address}} ({{proximity2.distance}} feet)
+          </span>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
             
          <div class="col-md-1"></div>
         <div class="col-md-6">
-        <section id="queryForm" ng-include="'modules/places/client/views/search-map.client.view.html'"></section>
+        <!-- <section id="queryForm" ng-include="'modules/places/client/views/search-map.client.view.html'"></section> -->
 
         </div>
         <div class="col-md-1"></div>
@@ -56,7 +66,7 @@
       <div class="row map-row">
     
           <div class="col-xs-12 col-sm-12 col-md-12 col-md-12">
-
+              <input id="pac-input" class="controls" type="text" placeholder="Search Box">
             <section id="customMap" class="">
 
             </section>
@@ -79,7 +89,7 @@
 
                 <div>
                 <span id="placeCity" class="f3"></span>, <span id="placeState" class="f3"></span><span id="placeZip" class="f3"></span></div>
-                 <a ng-click="getDirections(addr, city, state, zip)" class="f6 lnk-hov">View directions on Google Maps</a><br>
+         <!--         <a ng-click="getDirections(addr, city, state, zip)" class="f6 lnk-hov">View directions on Google Maps</a><br> -->
                 <div id="placeHours"></div>
                 <!--  -->
                 <div class="f4" id="placeDescription"></div>

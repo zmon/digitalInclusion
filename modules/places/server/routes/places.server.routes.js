@@ -15,6 +15,12 @@ module.exports = function (app) {
   app.route('/api/places/directions')
     .post(places.locate);
 
+  app.route('/api/places/matrix')
+    .post(places.measure);
+
+  app.route('/api/places/location')
+    .post(places.match);
+
   app.route('/api/places/query')
     .post(places.find);
   // Single place routes

@@ -536,7 +536,7 @@
 		}
 
 		.row {
-			margin: 0 0 -1px -1.5em;
+			margin: 0 0 25px -1.5em;
 		}
 
 		.row.uniform > * {
@@ -544,7 +544,7 @@
 		}
 
 		.row.uniform {
-			margin: -1.5em 0 -1px -1.5em;
+			margin: .5em 1.5em -1px 1.5em;
 		}
 
 		.row.\32 00\25 > * {
@@ -1843,7 +1843,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #313131;
+		color: #b7b7b7;
 		font-weight: 600;
 	}
 
@@ -2589,13 +2589,15 @@
 					}
 
 				ul.actions.fit.small {
-					margin-left: -0.5em;
-					width: calc(100% + 0.5em);
-					margin-top: -1.4em;
+					margin-left: -2.25em;
+					width: calc(100% + .5em);
+					margin-top: -.75em;
 				}
 
 					ul.actions.fit.small li {
-						padding: 0 0 0 0.5em;
+						padding: 0 0 0 2em;
+						width: 180px;
+						font-size: .9em;
 					}
 
 			@media screen and (max-width: 480px) {
@@ -2752,8 +2754,13 @@
 		-webkit-overflow-scrolling: touch;
 		position: relative;
 		overflow-x: auto;
-		top: -3em;
-		left: -.75em;
+		padding: 1.5em .83em 0 1.25em;
+		top: -1.3em;
+		border: none;
+		/* left: .75em; */
+		background: none;
+		margin-top: -1.25em;
+		margin-right: 1.65em;
 	}
 
 	table {
@@ -2768,10 +2775,11 @@
 		}
 
 		table td {
-			padding: 1.7em 0 1.75em 0;
+			padding: 1.25em .2em 1.25em .2em;
 			border: none;
-			/* font-weight: 300; */
+			font-weight: 500;
 			line-height: 12px;
+			color: #293c3c;
 			font-size: .85em;
 		}
 
@@ -3118,13 +3126,15 @@
 
 		#header h1 {
 			margin: 0 0 0.25em 0;
-			font-weight: 200;
+			font-weight: 400;
+			letter-spacing: .1em;
 		}
 
 		#header p {
-			font-size: 1em;
-			letter-spacing: -0.025em;
-			color: #525252;
+			font-size: .9em;
+			letter-spacing: 0.15em;
+			color: #bbbbbb;
+			font-weight: 200;
 		}
 
 		#header.alt {
@@ -3218,7 +3228,7 @@
 		@media screen and (max-width: 480px) {
 
 			#header {
-				padding: 3em 1.5em 0.1em 1.5em ;
+				padding: 3.5em 1.5em 0.1em 1.5em;
 			}
 
 				#header.alt {
@@ -3380,6 +3390,27 @@
 		color: #636363;
 		border-radius: 0.25em;
 		border-radius: .5em;
+		background-color: #09001c;
+		background-image: url("http://www.transparenttextures.com/patterns/mooning.png");
+		background-color: #09001c;
+		background-image: url("http://www.transparenttextures.com/patterns/mooning.png");
+		background-color: #1b1b1c;
+		background-image: url("http://www.transparenttextures.com/patterns/mooning.png"); /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+		border: none;
+		box-shadow: nonr;
+		background-color: #2c3a3a;
+		/* background-image: url("http://www.transparenttextures.com/patterns/cartographer.png"); */ /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+		outline: none;
+		/* outline-offset: -4.2em; */
+		outline-style: none;
+		background-color: #ababab;
+		background-color: #d2cfcf;
+		/* background-image: url("http://www.transparenttextures.com/patterns/cross-stripes.png"); */ /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+		/* background-color: #cbdad8; */
+		background-image: url("http://www.transparenttextures.com/patterns/escheresque.png"); /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+		background-color: #ffedca;
+		background-image: url("https://www.transparenttextures.com/patterns/brilliant.png"); /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+		border: none;
 	}
 
 		#main input, #main select, #main textarea {
@@ -3420,9 +3451,18 @@
 		#main input[type="button"],
 		#main button,
 		#main .button {
-			background-color: transparent;
-			box-shadow: inset 0 0 0 1px #dddddd;
-			color: #636363 !important;
+			background-color: #f5f5f5;
+			box-shadow: 0 0 0 2px #e9fff9, 2px 2px 2px #3c3b3b, 2px 2px 2px #805f0c;
+			color: #000000 !important;
+			font-weight: 400;
+			letter-spacing: .1em;
+			border-radius: .81em;
+			width: 135px;
+			border-radius: 12px;
+			text-shadow: 0 0 4px #a2a6af;
+			padding-top: .4em;
+			height: 29px;
+			box-shadow: 0 0 0 1px #e9fff9, 2px 2px 2px black, 3px 3px 3px #805f0c;
 		}
 
 			#main input[type="submit"]:hover,
@@ -3454,9 +3494,15 @@
 			#main input[type="button"].special,
 			#main button.special,
 			#main .button.special {
-				background-color: #8cc9f0;
-				color: #ffffff !important;
-				box-shadow: none;
+				background-color: #88b9d4;
+				color: #f1faff !important;
+				box-shadow: 0 0 0 1px #67b2ff, 2px 2px 2px black, 3px 3px 3px #805f0c;
+				height: 29px;
+				width: 135px;
+				text-shadow: 0 0 4px black;
+				box-shadow: 0 0 0 1px #7ef3ff, 1px 1px 1px #3c3b3b, 1px 1px 1px #805f0c;
+				border-radius: 12px;
+				border: 1px solid #a1e8ff;
 			}
 
 				#main input[type="submit"].special:hover,
@@ -3492,8 +3538,8 @@
 		#main input[type="email"],
 		#main select,
 		#main textarea {
-			background: rgba(222, 222, 222, 0.25);
-			border-color: #dddddd;
+			background: rgba(219, 228, 234, 0.99);
+			border-color: #598fa2;
 		}
 
 			#main input[type="text"]:focus,
@@ -3501,8 +3547,8 @@
 			#main input[type="email"]:focus,
 			#main select:focus,
 			#main textarea:focus {
-				border-color: #8cc9f0;
-				box-shadow: 0 0 0 1px #8cc9f0;
+				border-color: #a0d5f7;
+				box-shadow: 0 0 0 1.5px #aac8dc;
 			}
 
 		#main .select-wrapper:before {
@@ -3575,7 +3621,7 @@
 			}
 
 		#main ul.alt li {
-			border-top-color: #dddddd;
+			border-top-color: #526565;
 		}
 
 		#main dl dt {
@@ -3629,15 +3675,16 @@
 
 			#main > .main:first-child {
 				border-top: 0;
-				border-top: 3px double;
+				border-top: none;
 				/*background: #f7f7f7;*/
-				border-bottom: 3px double;
+				border-bottom: none;
 				background: #f7fbff;
 				background: radial-gradient(#f6fbff,#f9f9f9);
 				/* border: none; */
-				background: transparent;
+				background: rgba(60, 53, 53, 0);
 				box-shadow: 0 0 5p;
 				border-radius: .25em;
+				border: 2px solid #353c04;
 			}
 
 			#main > .main > .image.main:first-child {
@@ -3749,7 +3796,7 @@
 
 		#footer > * {
 			width: calc(50% - 2em);
-			margin-left: 2em;
+			margin-left: 13em;
 		}
 
 		#footer .copyright {
@@ -3821,8 +3868,9 @@
 		position: relative;
 		top: -10em;
 		background: radial-gradient(#f1f1f1,#fdfdfd,#f1f1f1);
+		background: radial-gradient(#929e79, #4c4a2e, #423434, #382828, #290808, #150303,  #100808, #150d0d, #041313,black);
 		box-shadow: 0 0 40px black;
-		border: 4px double #444444;
+		border: 1px double #444444;
 		min-height: 760px;
 		border-right: none;
 		border-left: none;
@@ -3849,3 +3897,76 @@
 		button.button.special.sign {
 		    margin: 2em 0;
 		}}
+
+
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+/* apply texture */
+.bg-wrapper {
+	background-color: #09001c;
+	background-image: url("http://www.transparenttextures.com/patterns/mooning.png");
+}
+
+input#pac-input {
+    box-shadow: 0 0 0 2px lightblue, 0 0 20px black;
+}
+
+#main {
+    border-radius: .1em;
+    outline: 0;
+    background-color: #d6d6d6;
+    background-image: url(https://www.transparenttextures.com/patterns/brilliant.png);
+    border: 1px solid #3c3434;
+    box-shadow: 0 0 0 1px #151531,inset 0 0 100px #fff,0 0 30px #0e0e0e;
+    background: none;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+#main .button.special, #main button.special, #main input[type=submit].special, #main input[type=reset].special, #main input[type=button].special {
+    background-color: #a6dfff;
+    color: #f1faff!important;
+    /*height: 29px;*/
+    /*width: 135px;*/
+    text-shadow: 0 0 4px #000;
+    box-shadow: 0 0 0 1px #bef9ff,1px 1px 1px #3c3b3b,1px 1px 1px #805f0c;
+    border-radius: 12px;
+    border: 1px solid #62d9ff;
+}
+
+#main input[type=text], #main input[type=password], #main input[type=email], #main select, #main textarea {
+    background: rgba(219,228,234,.99);
+    border-color: #2d4f5a;
+}
+
+#main input[type=email], #main input[type=password], #main input[type=text], #main select, #main textarea {
+    background: rgba(219,228,234,.99);
+    border-color: #b2c2c7;
+}
+#main input[type=text], #main input[type=password], #main input[type=email], #main select, #main textarea {
+    background: rgba(219,228,234,.99);
+    border-color: #598fa2;
+}
+input#pac-input {
+    box-shadow: 0 0 0 2px #9ad4d4,0 0 20px #000;
+}
+#wrapper {
+    width: 64em;
+    max-width: calc(100% - -.4em);
+    margin: 0 auto;
+    top: -10em;
+    background: radial-gradient(#46522e,#33321d,#192d2d,#192110,#101b1a,#131b1d,#0d1719,#0a1113,#0a0e0e,#0a1517);
+    box-shadow: 0 0 40px #000;
+    border: 1px double #444;
+    min-height: 760px;
+    border-right: none;
+    border-left: none;
+    border-radius: .5em;
+}
+#footer>* {
+    width: calc(50% - 2em);
+    margin-left: 13em;
+    border: 1px solid #2f2e2e;
+    background: black;
+    padding: .3em .8em;
+    box-shadow: 0 0 20px black;
+}

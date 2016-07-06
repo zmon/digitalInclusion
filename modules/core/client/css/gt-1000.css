@@ -3,14 +3,40 @@
 	    margin-right: 2px;
 	    line-height: 1.42857143;
 	    border: 1px solid transparent;
-	    color: gray;
+	    color: #fffefe;
+	    letter-spacing: .14pc;
+	    font-weight: 600;
+	    text-shadow: 1px 1px 1px #313113;
 	    border-radius: 4px 4px 0 0;
-	    font-size: .75em;
+	    font-size: .6em;
 	}
 
 	
 	
 	section#first {
-	    height: 810px;
+	    height: 870px;
+	}
+
+	main#main-page {
+	    position: relative;
+	    top: -3.4em;
+	    margin-left: .3em;
+	    background: radial-gradient(#929292,#868484,#9e9677,#a09a80,#929187);
+	    outline: 3px solid #3e3e3e;
+	    box-shadow: inset 0 0 400px #afb7b9, 0 0 50px #1f1e1e, 0 0 50px #737373, 0 0 0 5px #989898, 0 0 100px #1f1e1e;
+	    background: silver;
+	    background: radial-gradient(#ebf0ff,#bedbf9,#88a6b9,#9fc3d0);
+	    border: 2px solid #676767;
+	}
+
+	.row.butane {
+	    margin-left: .01em;
+	    margin-bottom: .1em;
+	    margin-top: .05em;
+	    top: .002em;
+	    background: radial-gradient(#eaeaea,#bbbbbb);
+	    box-shadow: 0 0 1px #909090,0 0 1px #1a222d,0 0 1px #a0a0a0,0 0 1px #313129;
+	    padding-top: 3.15em;
+	    padding-right: .5em;
 	}
 }

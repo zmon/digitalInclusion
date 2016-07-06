@@ -1,5 +1,5 @@
 {
-  "name": "meanjs",
+  "name": "Digital Inclusion",
   "description": "Fullstack JavaScript with MongoDB, Express, AngularJS, and Node.js.",
   "homepage": "http://meanjs.org/",
   "license": "MIT",
@@ -13,7 +13,8 @@
     "angular-resource": "~1.5.0",
     "angular-ui-router": "~0.2.18",
     "bootstrap": "~3.3.6",
-    "owasp-password-strength-test": "~1.3.0"
+    "owasp-password-strength-test": "~1.3.0",
+    "angular-google-distance": "*"
   },
   "overrides": {
     "bootstrap": {

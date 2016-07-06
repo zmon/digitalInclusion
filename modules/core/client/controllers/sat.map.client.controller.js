@@ -18,11 +18,11 @@ function onGoogleReady() {
 
 	angular
 		.module('core.map')
-		.controller('MapController', MapController);
+		.controller('SatController', SatController);
 
-	MapController.$inject = ['$scope', '$window', '$timeout', '$http', '$state', '$stateParams', 'Authentication', 'getPlacesService', 'findPlacesByZipService', 'Places', '$location'];
+	SatController.$inject = ['$scope', '$window', '$timeout', '$http', '$state', '$stateParams', 'Authentication', 'getPlacesService', 'findPlacesByZipService', 'Places', '$location'];
 
-	function MapController($scope, $window, $timeout, $http, $state, $stateParams, Authentication, getPlacesService, $location, findPlacesByZipService, Places) {
+	function SatController($scope, $window, $timeout, $http, $state, $stateParams, Authentication, getPlacesService, $location, findPlacesByZipService, Places) {
 		
 	    $scope.array              =    { 
 	                                     wifi      : { free  : [], customer: [] },
@@ -40,11 +40,6 @@ function onGoogleReady() {
 
 
 	    $scope.mapMarkers = [];
-	    $scope.viewportActiveLocations = [];
-	    $scope.closest = [];
-	    $scope.closestMap = [];
-
-	    var net = document.getElementById("net");
 
 	    var e1                    = angular.element(document.getElementById("e1"));
 	    var e2                    = angular.element(document.getElementById("e2"));
@@ -53,11 +48,6 @@ function onGoogleReady() {
 
 	    var mapCanvasElement      = document.getElementById("customMap");
 	    var sideWindowElement     = document.getElementById("sw");
-	    var resultsHtml           = document.getElementById("kv");
-	    var iconoriginx           = null;
-	    var iconoriginy           = null;
-	    var iconSize              = new google.maps.Size(30, 30);
-	    var iconAnchor            = new google.maps.Point(15, 30);
 
 	    $scope.browserSupportFlag = new Boolean();
 	    $scope.lat                = "0";
@@ -69,11 +59,15 @@ function onGoogleReady() {
 	    $scope.watchOptions;
 
 
-	    resultsHtml.style.display = "none";
+	    $scope.viewportActiveLocations = [];
+
+	    var iconoriginx           = null;
+	    var iconoriginy           = null;
+	    var iconSize              = new google.maps.Size(30, 30);
+	    var iconAnchor            = new google.maps.Point(15, 30);
 
 	    Array.prototype.unique = function() {
 		    var a = [];
-		    var i;
 		    for ( i = 0; i < this.length; i++ ) {
 		        var current = this[i];
 		        if (a.indexOf(current) < 0) a.push(current);
@@ -1223,7 +1217,7 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    var resetViewportActive = function () {
 	    	console.log("reset");
 	    	console.log($scope.viewportActiveLocations.length);
-	    	// $scope.viewportActiveLocations = [];
+	    	$scope.viewportActiveLocations = [];
 	    	getAllLocationsInViewport($scope.map.getBounds());
 	    	console.log($scope.viewportActiveLocations.length);
 	    }
@@ -1277,7 +1271,7 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    function getViewportCurrentlyActive() {
 	    	console.log("check for end result");
 	    	console.log($scope.index);
-	    	// $scope.index = $scope.endResult;
+	    	$scope.index = $scope.endResult;
 
 
 
@@ -1292,31 +1286,25 @@ var panel = angular.element(document.getElementById("directions-panel"));
 
 	    var checkIndex = function(location) {
 	    	console.log("checkIndex");
-	    	console.log(location);
-	    	console.log(currentIndex);
-	    	
-	    	
+	    	// console.log(location);
 	    	var lat = parseFloat(location.lat).toFixed(5);
 	    	var lng = parseFloat(location.lng).toFixed(5);
 	    	var ll = {lat: lat, lng: lng};
 	    	// console.log(ll);
-	    	var index = currentIndex;
+	    	var index = $scope.index;
 
 	    	var i;
 
 	    	for (i=0;i<index.length;i++) {
-	    		console.log("index[i].location");
+	    		// console.log("index[i].location");
 	    		if (ll.lat === index[i].latlng.lat && ll.lng === index[i].latlng.lng) {
 	    			console.log("match found");
 	    			// console.log(index[i].id);
-	    			var gotPlace = getFromBackend(index[i].id);
-	    			// console.log(gotPlace);
+	    			getFromBackend(index[i].id);
 	    			// console.log(gotten);
 	    		}
 	    	}
-	    	var cn = $scope.viewportActiveLocations.length;
-	    	console.log("number in array binding $scope.viewportActiveLocations");
-	    	console.log(cn);
+
 	    }
 
 
@@ -1328,15 +1316,9 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    		// getFromBackend(arr[1]);
 	    	} 
 	    }
-	    var viewIndex = [];
-	    var cbReturns = function (obj) {
-	    	console.log("cbReturns");
-	    	console.log(obj);
-	    	$scope.viewportActiveLocations.push(obj);
-	    	viewIndex.push(obj);
-	    	viewIndex.unique();
 
-	    	// currentIndex.push(obj);
+	    var cbReturns = function (obj) {
+	    	$scope.viewportActiveLocations.push(obj);
 	    }
 
 	    var getFromBackend = function (id) {
@@ -1351,7 +1333,7 @@ var panel = angular.element(document.getElementById("directions-panel"));
 			        // console.log(response.data);
 			        // $scope.viewportActiveLocations.push(response.data);
 			         cbReturns(response.data);
-			         console.log($scope.viewportActiveLocations.unique());
+			         console.log($scope.viewportActiveLocations);
 			        // $scope.directionsDisplay.setDirections(response.data.bounds);
 			    } else {
 			       console.log("not ok");
@@ -1366,49 +1348,35 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    	var pl = $scope.places;
 	    	var i;
 	    	for (i=0;i<pl.length;i++) {
-	    		formatToIndex(pl[i].location[0], pl[i]._id, pl[i].title, pl[i].readableAddress);
+	    		formatToIndex(pl[i].location[0], pl[i]._id);
 	    	}
 	    }
 
 	    $scope.index = [];  
 
-	    $scope.viewportIndex = new Array;
-
-	    $scope.getViewportIndexData = function () {
-
-	    }
 	    // Array.prototype.push = function() {
 
 	    // }
 	    var currentIndex = [];
 
-	    var formatToIndex = function (loc, id, name, address) {
-	    	console.log("formatToIndex");
-	    	console.log(loc);
+	    var formatToIndex = function (loc, id) {
 	    	var lat = parseFloat(loc.lat).toFixed(5);
 		    var lng = parseFloat(loc.lng).toFixed(5);
 		    var location = {lat: lat, lng: lng};
-		    var indexed = {latlng: location, id: id, title: name, address: address};
+		    var indexed = {latlng: location, id: id};
 		    // console.log($scope.index);
 		   currentIndex.push(indexed);
-		   // console.log("currentIndex");
-		   // console.log(currentIndex);
-	    }
-
-
-	    var triggerReporting = function () {
-
+		   console.log("currentIndex");
+		   console.log(currentIndex);
 	    }
 
 
 
 
-	    var reportView = function () {
-	    	console.log("reportView");
-	    	console.log(currentIndex);
-	    	// console.log(viewIndex);
 
-	    }
+
+
+
 
 
 
@@ -1432,273 +1400,6 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    //     return distanceMatrix;
 	    //  });
 
-	    var scanIndex = function(item, indexArray) {
-	    	console.log("scanIndex");
-	    	console.log(item);
-	    	var i; 
-	    	for (i=0;i<indexArray.length;i++) {
-	    		console.log(indexArray[i]);
-	    		// if (item === indexArray[i].)
-	    	}
-	    }
-
-
-	    // arr1 is currentIndex
-	    // arr2 is viewIndex
-	    $scope.inViewNow = [];
-	    var reportViewIndex = function(arr1, arr2) {
-	    	console.log("reportIndex");
-	    	var ci = arr1;
-	    	var vi = arr2;
-	    	console.log(ci);
-	    	console.log(vi);
-
-	    	var i;
-	    	for (i=0;i<vi.length;i++) {
-	    		var v = vi[i];
-	    		console.log(v.title);
-	    		$scope.inViewNow.push(v);
-	    	}
-	    	// measureDistances($scope.inViewNow);
-	    }
-
-
-
-	    var callDistanceApi = function(place) {
-	    	console.log("callDistanceApi");
-	    	console.log(place);
-	    	console.log($scope.currentLocation);
-	    	var data = {
-	    		origin: 	{
-	    			location: place.location[0]
-	    		},
-	    		target: 	{
-	    			location: $scope.currentLocation
-	    		}
-	    	}
-
-	    	$http({
-			    method: 'POST',
-			    url: '/api/places/matrix', 
-			    data: data 
-			}).then(function(response) {
-				// console.log(response);
-			    if (response.statusText === 'OK') {
-			        // success
-			        console.log("ok");
-			        // console.log(response.data);
-			        // $scope.viewportActiveLocations.push(response.data);
-			       
-			        // $scope.directionsDisplay.setDirections(response.data.bounds);
-			    } else {
-			       console.log("not ok");
-			    }
-			});
-	    }
-
-	    var getZip = function(zip) {
-	    	if (zip === "undefined") {
-	    		return "+";
-	    		} else {
-	    			return zip;	
-	    		}
-	    }
-
-	    var removeUndefined = function(str) {
-	    	var fix = str.replace(/,undefined/g, "");
-	    	console.log(fix);
-	    	return fix;
-	    }
-
-	    var measureDistances = function(array) {
-	    	console.log("measureDistances");
-	    	console.log(array);
-	    	var results = [];
-	    	var i;
-	    	var destinations = [];
-	    	var arrayLength = array.length;
-	    		var mapIndex = [];
-
-	    	var toFormattedString = function(string) {
-	    		var obj = string.replace(/ /g, "+");
-		    	console.log(obj);
-		    	return obj;
-	    	}
-
-	    	var checkForLast = function(num) {
-	    		if (num === arrayLength) {
-	    			return true;
-	    		} else {
-	    			return false;
-	    		}
-	    	}	
-
-	    	var buildResultsIndex = function(array) {
-	    		var index = [];
-	    	
-	    		var i; 
-	    		console.log("resultsIndex");
-	    		// console.log(array);
-	    		for (i=0;i<array.length;i++) {
-	    			var val = array[i].data.elements[0].distance.value;
-	    			// var key = val.;
-	    			// console.log(val.toString());
-	    			var vs = val.toString();
-	    			var dest = array[i].config.data.destination_addresses;
-	    			console.log("ri");
-	    			console.log(vs);
-	    			console.log(dest);
-	    			var ds = dest.replace(/\+/g, " ");
-	    			index.push(vs);
-	    			var object = {key: vs, address: ds}
-	    			mapIndex.push(object);
-	    			// var fixD = dest.replace(/+/g, " ");credit514
-	    			// var obj = {distance: vs, address: fixD, data: results[i]}
-	    			// var obj = {val.toString(): results[i]}
-	    			// console.log(obj);
-	    			// index.push(obj);
-	    		}
-	    	}
-
-	    	function sortNumber(a,b) {
-			    return a > b;
-			}
-
-			function startTable(value, index) {
-				var num = (index + 1);
-				return {position: num, distance: value};
-			}
-
-			function buildHashTable(arr1, arr2) {
-				//arr1 is values
-				//arr2 is kv pairs
-				console.log("buildHashTable");
-				console.log(arr2);
-				var tmp = [];
-				var i;
-				for (i=0;i<arr1.length;i++) {
-					// arr1[i]
-					// addKeyValue(arr2[i].key, arr2[i].address);
-					var row = startTable(arr1[i], i);
-					console.log("row");
-					console.log(row);
-					addKeyValue(row, arr2)
-				}
-			}
-			var c = 0;
-
-			function addKeyValue(row1, array) {
-				console.log("addKeyValue");
-				// console.log(row1);
-				var d = row1.distance.toString();
-				console.log(d);
-				var i;
-				for (i=0;i<array.length;i++) {
-					console.log(array[i]);
-					if(array[i].key === d) {
-						console.log("distance match found");
-						
-						row1.address = array[i].address;
-						console.log(row1);
-						$scope.closest.push(row1);
-					}
-				}
-				// c+=1;
-				// var r = {position: c, distance: k, address: v};
-				// console.log("addKeyValue");
-				// console.log(r);
-				// return r;
-			}
-
-			var readTable = function() {
-				console.log("readTable");
-				console.log($scope.closest);
-				console.log($scope.closestMap);
-
-				$scope.proximity1 = $scope.closest[0];
-				$scope.proximity2 = $scope.closest[1];
-				// console.log($scope.proximity1);
-
-			}
-
-
-// var numArray = [140000, 104, 99];
-// numArray.sort(sortNumber);
-// alert(numArray.join(","));
-
-	    	var executeLast = function(boolean, results) {
-
-	    		var i;
-	    		if (boolean) {
-	    			var allDistances = [];
-	    			var ri = buildResultsIndex(results);
-	    			console.log(ri);
-	    			for (i=0;i<results.length;i++) {
-	    				var val = results[i].data.elements[0].distance.value;
-	    				console.log(val);
-	    				allDistances.push(val);
-	    				// console.log(results[i].data.elements[0].distance.value);
-	    			}
-	    			var asc = allDistances.sort(sortNumber);
-	    			console.log(asc);
-	    			console.log(mapIndex);
-	    			buildHashTable(asc,mapIndex);
-	    			readTable();
-	    			// return allDistances.sort();
-	    		}
-	    	}
-
-	    	for (i=0;i<array.length;i++) {
-	    		// results.push(callDistanceApi(array[i]));
-
-	    		var add1 = toFormattedString(array[i].address1);
-	    		var city = toFormattedString(array[i].city);
-	    		var state = array[i].state;
-	    		var zip = getZip(array[i].zip);
-	    		console.log(zip);
-	    		var counter = 0;
-	    		
-	    		var str = add1 + "," + city + "," + state + "," + zip;
-	    		var newStr = removeUndefined(str);
-	    		console.log(newStr);
-	    		$http({
-					    method: 'POST',
-					    url: '/api/places/matrix', 
-					    data: {
-					    	origin_addresses: [$scope.currentLocation],
-					    	destination_addresses: newStr
-					    } 
-				}).then(function(response) {
-						// console.log(response);
-					    if (response.statusText === 'OK') {
-					        // success
-					        console.log("ok");
-					        console.log(response);
-					        results.push(response);
-					        // $scope.viewportActiveLocations.push(response.data);
-					       
-					        // $scope.directionsDisplay.setDirections(response.data.bounds);
-					    } else {
-					       console.log("not ok");
-					    }
-					    counter = (counter+=1);
-					    console.log(counter);
-					    var bool = checkForLast(counter);
-					    executeLast(bool, results);
-
-
-				});
-	    		
-	    	}
-
-
-	    	// var destAdds = destinations.toString();
-	    	// var fixed = removeUndefined(destAdds);
-	    	// console.log(fixed);
-	    	
-
-	    	// console.log(results);
-	    }
 	
 
 	    $scope.showMap = function(position) {
@@ -1732,65 +1433,26 @@ var panel = angular.element(document.getElementById("directions-panel"));
 
 	      google.maps.event.addListenerOnce($scope.map, 'tilesloaded', function(){
 			    // do something only the first time the map is loaded
-			    console.log("============================tilesloaded");
+			    console.log("tilesloaded");
 			    $timeout(6000, loadMarkersOnInit(true), true);
 			    initFreeWifiButton();
 			    setWifiMarkers();
 			    initTrainingButtons();
+
 			    setTrainingMarkers();
 			    buildIndex();
-			    setViewportData();
-			    checkViewport();
-			    console.log('vp');
-			    console.log(viewIndex);
-			    console.log($scope.map);
-			    console.log($scope.map.data);
-
-			    reportView();
-			    // executes getAllLocationsInViewport($scope.currentBounds);
-			    	// gets getCurrentlyHighlighted(); 
-			    		// iterates results array
-			    			// if location is within bounds 
-			    				// then executes callbackSendsData with arg ([boolean,location or null])
-			    			// executes getViewportCurrentlyActive();
-
-
-
-
-			    
-
-
-
-
-
-
-
-
-
-
-
-	       		// sortByProximity($scope.initialLocation);
-	       		
-				// countMarkers();
-				
+	       		sortByProximity($scope.initialLocation);
+	       		setViewportData();
+				countMarkers();
+				checkViewport();
 				// getAllCurrentlyHighlightedInViewport();
 				
 		  });
 
 
-          google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-			    console.log("***********************************idle");
-			    console.log("map");
-			    console.log($scope.map);
-			    console.log("tilesloaded");
-			    console.log($scope.map.tilesloaded);
-			    // setViewportData();
-			    // checkViewport();
-
-
-
-
-
+          google.maps.event.addListener($scope.map, 'idle', function(){
+			    // do something only the first time the map is loaded
+			    console.log("idle");
 			 //    $timeout(6000, loadMarkersOnInit(true), true);
 			 //    initFreeWifiButton();
 			 //    setWifiMarkers();
@@ -1801,29 +1463,10 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	   //     		sortByProximity($scope.initialLocation);
 	   //     		setViewportData();
 				// countMarkers();
-			
-				// getAllCurrentlyHighlightedInViewport();
+				checkViewport();
+				getAllCurrentlyHighlightedInViewport();
 				
 		  });
-
-
-
-          google.maps.event.addListener(net, 'mouseover', function() {
-          	// console.log("mouse in net");
-          	console.log(viewIndex);
-          })
-
-          google.maps.event.addListenerOnce($scope.map, 'mouseover', function() {
-          	console.log("mousover map");
-          	console.log(currentIndex);
-          	console.log(viewIndex);
-
-          	reportViewIndex(currentIndex, viewIndex);
-          	measureDistances($scope.inViewNow);
-          })
-
-
-
 
 
         // Bias the SearchBox results towards current map's viewport.
@@ -1886,7 +1529,7 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	      google.maps.event.addDomListener($scope.map, 'idle', function() {
 	        calculateCenter();
 	      });
- 
+
 	      google.maps.event.addDomListener(window, 'resize', function() {
 	        console.log("resizing");
 	        $scope.map.setCenter(center);

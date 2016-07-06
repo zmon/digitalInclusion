@@ -99,7 +99,7 @@ div#info-wrapper {
   position: relative;
   top: -.24em;
   color: #443101;
-  left: 6.84em;
+  left: 4.94em;
 }
 
 #winCtrl:hover {
@@ -110,13 +110,20 @@ div#info-wrapper {
 #sw {
   display:none;
   position: absolute;
-  left: 81%;
-  width: 15em;
-  background: radial-gradient(white,#f4ffff);
+  left: 81.05%;
+  height: 420px;
+  width: 9.5em;
+  background: radial-gradient(#e1ecf5,#e4eef1,#dff6ff);
   clear: both;
   border: 1px solid #a9a9ad;
-  top: -3.85em;
+  box-shadow: 0 0 0 1px #9bbbba;
+  border-left: .2em solid gray;
+  top: 86px;
+  border-left: 1px solid #070a0a;
+  /* border-left: none; */
+  border-right: none;
   margin-left: 0;
+  /* box-shadow: 0 0 0 3px gray; */
   padding: 0 0 2em 0;
 }
 
@@ -133,9 +140,9 @@ section#add-resources {
 
 a.lks {
     color: cornflowerblue;
-    color: steelblue;
+    color: #557692;
     text-align: left;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .f1 {
@@ -143,7 +150,7 @@ a.lks {
 }
 
 .f2 {
-  font-size: 1.3em;
+  font-size: .9em;
   line-height: 17px;
   font-weight: 600;
   margin-top: .65em;
@@ -171,7 +178,7 @@ a.lks {
 
 section#queryForm {
   position: relative;
-  top: -7em;
+  top: -3.5em;
   left: -1.75em;
   height: 3em;
 }
@@ -195,7 +202,7 @@ button.fc-in {
 
 #main > .main:first-child {
     background: radial-gradient(#eaeaea,snow);
-    box-shadow: inset 0 0 200px #e4e4e4;
+    box-shadow: inset 0 0 200px #1b1a1a;
     border: 1px solid #9a9595;
 }
 
@@ -240,7 +247,7 @@ input.form-control.fc-sm {
   background: white;
   /* color: darkgray; */
   border: 3px double #c7c7c7;
-  box-shadow: 0 0 5px #fdfdfd;
+  box-shadow: 0 0 5px #636363;
   padding: 1.5em 5.5em 0 5.5em;
   overflow-y:   scroll;
   max-height: 730px;
@@ -257,7 +264,13 @@ section#toggleButtons {
 
 main#main-page {
   position: relative;
-  top: -2.5em;
+  top: -4em;
+  margin-left: .3em;
+  background: radial-gradient(#929292,#868484,#9e9677,#a09a80,#929187);
+  outline: 1px solid #9c9c9c;
+  box-shadow: inset 0 0 400px #afb7b9;
+  background: silver;
+  background: radial-gradient(#ebf0ff,#bedbf9,#88a6b9,#9fc3d0);
 }
 
 section#first {
@@ -295,7 +308,7 @@ section#first {
 
 .move-up {
   position: relative;
-  top: -2em;
+  top: -2.5em;
 }
 
 .links {
@@ -313,9 +326,16 @@ section#first {
 
 section#customMap {
     height: 420px;
-    border: 1px solid gainsboro;
-    box-shadow: 0 0 15px;
-    box-shadow: 0 1px 0px 0px #7d7d7d, 0 -1px 0px 0px #7d7d7d, 8px 0 10px -4px rgba(54, 59, 64, 0.8), -8px 0 10px -4px rgba(51, 53, 56, 0.8);
+    border-left: 1px solid #626f64;
+    border-right: 1px solid #637766;
+    box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
+    border: 2px solid #676f03;
+    /* box-shadow: 0 0 50px black; */
+    margin-top: 3.24em;
+    margin-bottom: -2.7em;
+    border: none;
+    border-bottom: none;
+    border-top: none;
 }
 
 #wrapper {
@@ -331,4 +351,69 @@ section#customMap {
     border-right: none;
     border-left: none;
     border-radius: .5em;
+}
+
+.butane {
+  position: relative;
+  top: 3em;
+}
+.row.butane {
+    /* border: 2px solid red; */
+    margin-left: .01em;
+    margin-bottom: .1em;
+    margin-top: -.5em;
+    position: relative;
+    top: .002em;
+    background: radial-gradient(#e4e2cf,#848886);
+    border-bottom: none;
+    border-top: none;
+    box-shadow: 0 0 1px #909090, 0 0 1px #1a222d, 0 0 1px #a0a0a0, 0 0 1px #313129;
+}
+
+.row.butane {
+    padding-top: 3.15em;
+    padding-right: .5em;
+}
+
+
+
+
+.angular-form {
+  background: white;
+  padding: 1em 2em 1em 2em;
+  box-shadow: 0 0 30px #3c3c3c, 0 0 0 1px #b7b3a9, inset 0 0 200px #cecece;
+  text-align: left;
+  width: 50%;
+  margin-left: 25%;
+  /* margin-right: auto; */
+}
+
+
+.text-small-custom {
+  font-size: .8em;
+  font-weight: 500;
+  line-height: 14px;
+  position: absolute;
+  background: pink;
+  width: 200px;
+}
+
+.hemp{
+  position: absolute;
+  left: -30%;
+  background: green;
+  width: 250px;
+  height: 50px;
+}
+
+.realign {
+  position: relative;
+  left: -1em;
+}
+
+input#subject {
+    background: rgba(255, 255, 255, 0.075);
+    border: 1px solid #6d6d6d;
+    height: 44px;
+    box-shadow: none;
 }

@@ -31,6 +31,7 @@ module.exports.initLocalVariables = function (app) {
   if (config.secure && config.secure.ssl === true) {
     app.locals.secure = config.secure.ssl;
   }
+  app.locals.googleMapsApiServerKey = config.app.googleMapsApiServerKey;
   app.locals.keywords = config.app.keywords;
   app.locals.googleAnalyticsTrackingID = config.app.googleAnalyticsTrackingID;
   app.locals.facebookAppId = config.facebook.clientID;

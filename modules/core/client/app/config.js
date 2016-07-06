@@ -1,7 +1,7 @@
 (function (window) {
   'use strict';
 
-  var applicationModuleName = 'digitalInclusion';
+  var applicationModuleName = 'app';
 
   var service = {
     applicationModuleName: applicationModuleName,

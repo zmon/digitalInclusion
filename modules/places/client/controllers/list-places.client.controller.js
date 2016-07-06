@@ -35,7 +35,7 @@
           $scope.isps.push(place);
         };
       }
-      console.log($scope.isps.length);
+      // console.log($scope.isps.length);
 	 });
 
     

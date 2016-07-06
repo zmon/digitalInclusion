@@ -7,10 +7,15 @@ var path = require('path'),
   mongoose = require('mongoose'),
   Place = mongoose.model('Place'),
   GoogleMapsAPI = require('googlemaps'),
+  request  = require('request'),
   util = require('util'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
+
 var key = 'AIzaSyAaZSOnzTVjMqppRfkOQUNIiDKVGtLnjtI';
-// gm.config('key', 'AIzaSyAaZSOnzTVjMqppRfkOQUNIiDKVGtLnjtI');
+// var key = process.env.GOOGLE_MAPS_API_SERVER_KEY;
+console.log("key");
+console.log(key);
+
 var publicConfig = {
   key: key,
   stagger_time:       1000, // for elevationPath 
@@ -97,19 +102,30 @@ exports.find = function (req, res) {
 
   if (isNaN(req.body.zip)) {
     // get isps
-    console.log("cat");
+   
 
-    var cat = req.body.primaryCategory;
+    // var cat = req.body.primaryCategory;
+    var title = req.body.title;
 
     Place.find().
-    where('primaryCategory').equals(cat).exec(function(err,places) {
+    // where('primaryCategory').equals(cat).exec(function(err,places) {
+    //   if (err) {
+    //     return res.status(400).send({
+    //       message: errorHandler.getErrorMessage(err)
+    //     });
+    //   } else {
+    //     console.log(places);
+    //     res.json(places);
+    //   }
+    // });
+    where('title').equals(title).exec(function(err,place) {
       if (err) {
         return res.status(400).send({
           message: errorHandler.getErrorMessage(err)
         });
       } else {
-        console.log(places);
-        res.json(places);
+        console.log(place);
+        res.json(place);
       }
     });
   } else {
@@ -166,9 +182,9 @@ exports.find = function (req, res) {
 
 exports.placeByQuery = function (req, res, next, query) {
   console.log(req.body);
-  console.log("JJJ");
+  console.log("pbq");
   console.log(next);
-  console.log("IOUDH");
+  console.log("next");
   console.log(query);
 };
 
@@ -189,6 +205,7 @@ exports.update = function (req, res) {
     console.log(req.body);
 
   var place = req.place;
+  console.log(place);
 
   place.name = req.body.name;
   place.url = req.body.url;
@@ -200,6 +217,7 @@ exports.update = function (req, res) {
   place.city = req.body.city;
   place.zip = req.body.zip;
   place.state = req.body.state;
+  place.latlng = req.body.latlng;
   // place.lat = req.body.lat;
   // place.lng = req.body.lng;
   place.location = req.body.location;
@@ -259,6 +277,129 @@ exports.list = function (req, res) {
     }
   });
 };
+
+ 
+
+exports.measure = function (req, res) {
+  var callbackDistance = function(response) {
+      res.json(response);
+  }
+
+  console.log("measure");
+  console.log(req.body);
+  // var params = req.body.
+  var oas = req.body.origin_addresses[0].lat + ","+req.body.origin_addresses[0].lng;
+  console.log(oas);
+  var ads = req.body.destination_addresses.toString();
+  console.log(ads);
+  // var buildString = function(array) {
+  //   var i;
+  //   for (i=0;i<array.length;array[i]) {
+  //     ads + ","
+  //   }
+  // }
+
+  var params1 = {
+    latlng: oas
+  }
+
+  
+
+  gm.reverseGeocode(params1, function(err,data) {
+    // util.puts(JSON.stringify(data));
+    // callback(data);
+    var results = JSON.stringify(data.results[0].formatted_address);
+    var r2 = results.replace(/ /g, "+");
+  
+   
+    console.log("address lookup results");
+    console.log(r2);
+    var base_url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=";
+    var origin = r2 + "&destinations=";
+    var destinations  = "304+E+51st+St,Kansas+City,MO,64112" + "&key=" + key;
+    var url = base_url + origin + destinations;
+    console.log(url);
+    var params2 = {
+      origins: r2,
+      destinations: ads
+    }
+
+    gm.distance(params2, function(err, data) {
+      if (err) {
+        console.log(err);
+        return err;
+      } else {
+          console.log(data.rows[0].elements);
+          callbackDistance(data.rows[0]);
+      }
+    
+    })
+    // request(url, function (error, response, body) {
+    //   if (!error && response.statusCode == 200) {
+    //     console.log(body) // Show the HTML for the Google homepage.
+    //     res.json(body);
+    //   }
+    // })
+  })
+
+
+  // console.log(addressLookup);
+
+  
+  // https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=5050+Main+St+Kansas+City+MO+64112&destinations=304+E+51st+St,Kansas+City,MO,64112,5107+Main+St,Kansas+City,MO,64112&key=YOUR_API_KEY
+
+  // gm.distance(params, function(err, result) {
+    
+    
+      // gm.directions(params, function(err,data) {
+      //   util.puts(JSON.stringify(data));
+      //   callback(data);
+      //   // console.log(data);
+      //   // res.json(data);
+      // });
+
+      // var dstLat = result.geometry.latitude;
+      // arr.push(loc);
+    // })
+  // Place.find().sort('-created').populate('user', 'displayName').exec(function (err, places) {
+  //   if (err) {
+  //     return res.status(400).send({
+  //       message: errorHandler.getErrorMessage(err)
+  //     });
+  //   } else {
+  //     res.json(places);
+  //   }
+  // });
+};
+
+
+exports.match = function (req, res) {
+
+  var lat = parseFloat(req.body.location.lat).toFixed(5);
+  var lng = parseFloat(req.body.location.lng).toFixed(5);
+  var loc = [{lat: lat, lng: lng}];
+  console.log(loc);
+
+  var cb = function(data) {
+      res.json(data);
+  }
+
+  Place.find().
+    where('location').equals(loc).exec(function(err,place) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        console.log(place);
+        cb(place);
+      }
+    });
+}
+
+
+
+
 
 /**
  * Place middleware
