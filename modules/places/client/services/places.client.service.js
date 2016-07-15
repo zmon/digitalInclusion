@@ -3,9 +3,12 @@
 
   angular
     .module('places.services')
-    .factory('PlacesService', PlacesService);
+    .factory('PlacesService', PlacesService)
+    // .factory('ListPlacesService', ListPlacesService)
 
-  PlacesService.$inject = ['$resource'];
+  PlacesService.$inject = ['$resource', '$http'];
+
+  // ListPlacesService.$inject = ['$http'];
 
   function PlacesService($resource) {
     return $resource('api/places/:placeId', {
@@ -16,7 +19,56 @@
       }
     });
   }
+
+  // function ListPlacesService($http) {
+  //   var fn = function(data) {
+  //     return data;
+  //   }
+  //   var listPlaces = $http.get('/api/places').success(function(data) {
+  //     fn(data);
+  //   })
+  //   return {
+  //     listPlaces: listPlaces
+  //   };
+  // }
 }());
+
+var fn = function(data) {
+  console.log("fn");
+  return data;
+}
+
+angular.module('places.services').factory('ListPlacesService', ['$http',
+  // function ListPlaces($http) {
+  //   $http.get('/api/places').success(function(data) {
+  //     fn(data);
+  //   })
+  //   return {
+  //     listPlaces: listPlaces
+  //   };
+  // }
+ 
+  function listPlaces($http) {
+    var listPlaces = function(fn) {
+      $http.get('/api/places').success(function(data) {
+        var mm = fn(data);
+        console.log(mm);
+      });
+    }
+
+      // $http.get('/api/places').success(function(data) {
+      //   var mm = fn(data);
+      //   console.log(mm);
+      // });
+    return {
+      listPlaces: listPlaces
+    } 
+  }
+]);
+
+
+
+
 
 angular.module('places.services').factory('Places', ['$resource',
   function ($resource) {

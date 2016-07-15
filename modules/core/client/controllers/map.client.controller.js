@@ -825,6 +825,7 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	      if ($scope.wifiVisibility) {
 	        console.log('true');
 	        resetCss(e1, true);
+	        $scope.buttonToggled = true;
 	        setWifiMarkers();
 	        $scope.wifiVisibility = false;
 	      } else {
@@ -887,6 +888,7 @@ var panel = angular.element(document.getElementById("directions-panel"));
 
 	    var resizeMap = function() {
 	      mapCanvasElement.style.width = "80%";
+	      mapCanvasElement.style.borderRight = "1px solid #4e4e4e";
 	      sideWindowElement.style.display = "initial";
 	    }
 

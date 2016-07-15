@@ -9,8 +9,10 @@ section#mapLegend {
     position: relative;
     background: radial-gradient(#e5ecf1,#f8fcff);
     left: 1em;
+    box-shadow: inset 0 0 100px black;
+    background: #fefff5;
     top: -7em;
-    border: 1px solid #9e9e9e;
+    border: 1px solid #a9a287;
     outline: none;
 }
 .legend-table {

@@ -5,9 +5,9 @@
     .module('places')
     .controller('PlacesListController', PlacesListController);
 
-  PlacesListController.$inject = ['$scope', 'getPlacesService', '$http'];
+  PlacesListController.$inject = ['$scope', 'ListPlacesService', 'getPlacesService', '$http'];
 
-  function PlacesListController($scope, getPlacesService, $http) {
+  function PlacesListController($scope, ListPlacesService, getPlacesService, $http) {
     
     var vm = this;
     var i;
@@ -40,7 +40,7 @@
 
     
 
-  	  $scope.oneAtATime = true;
+  	$scope.oneAtATime = true;
 
 	  $scope.groups = [
 	    {

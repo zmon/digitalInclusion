@@ -1843,7 +1843,8 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #b7b7b7;
+		color: #9e9e80;
+		text-shadow: 0 0 12px #d7daac;
 		font-weight: 600;
 	}
 
@@ -2503,6 +2504,8 @@
 		ul.alt {
 			list-style: none;
 			padding-left: 0;
+			margin-left: 38%;
+			text-align: center;
 		}
 
 			ul.alt li {
@@ -2777,10 +2780,12 @@
 		table td {
 			padding: 1.25em .2em 1.25em .2em;
 			border: none;
-			font-weight: 500;
+			font-weight: 600;
 			line-height: 12px;
-			color: #293c3c;
-			font-size: .85em;
+			font-family: 'Source Sans Pro';
+			text-shadow: none;
+			font-size: .7em;
+			letter-spacing: .71px;
 		}
 
 		table th {
@@ -3126,15 +3131,16 @@
 
 		#header h1 {
 			margin: 0 0 0.25em 0;
-			font-weight: 400;
+			font-weight: 700;
 			letter-spacing: .1em;
 		}
 
 		#header p {
 			font-size: .9em;
 			letter-spacing: 0.15em;
-			color: #bbbbbb;
-			font-weight: 200;
+			color: #545454;
+			font-weight: 400;
+			text-shadow: none;
 		}
 
 		#header.alt {
@@ -3203,7 +3209,7 @@
 		@media screen and (max-width: 736px) {
 
 			#header {
-				padding: 3em 2em 0.1em 2em ;
+				padding: 3.8em 2em 0.1em 2em;
 			}
 
 				#header p {
@@ -3418,7 +3424,7 @@
 		}
 
 		#main a:hover {
-			color: #636363;
+			color: #daebef;
 		}
 
 		#main strong, #main b {
@@ -3451,7 +3457,7 @@
 		#main input[type="button"],
 		#main button,
 		#main .button {
-			background-color: #f5f5f5;
+			background-color: #f5f9eb;
 			box-shadow: 0 0 0 2px #e9fff9, 2px 2px 2px #3c3b3b, 2px 2px 2px #805f0c;
 			color: #000000 !important;
 			font-weight: 400;
@@ -3462,7 +3468,7 @@
 			text-shadow: 0 0 4px #a2a6af;
 			padding-top: .4em;
 			height: 29px;
-			box-shadow: 0 0 0 1px #e9fff9, 2px 2px 2px black, 3px 3px 3px #805f0c;
+			box-shadow: 0 0 0 1px #e2eace, 2px 2px 2px black, 3px 3px 3px #805f0c;
 		}
 
 			#main input[type="submit"]:hover,
@@ -3498,7 +3504,7 @@
 				color: #f1faff !important;
 				box-shadow: 0 0 0 1px #67b2ff, 2px 2px 2px black, 3px 3px 3px #805f0c;
 				height: 29px;
-				width: 135px;
+				width: 137.5px;
 				text-shadow: 0 0 4px black;
 				box-shadow: 0 0 0 1px #7ef3ff, 1px 1px 1px #3c3b3b, 1px 1px 1px #805f0c;
 				border-radius: 12px;
@@ -3621,7 +3627,7 @@
 			}
 
 		#main ul.alt li {
-			border-top-color: #526565;
+			border-top-color: transparent;
 		}
 
 		#main dl dt {
@@ -3683,8 +3689,11 @@
 				/* border: none; */
 				background: rgba(60, 53, 53, 0);
 				box-shadow: 0 0 5p;
+				background: none;
 				border-radius: .25em;
 				border: 2px solid #353c04;
+				box-shadow: none;
+				border: none;
 			}
 
 			#main > .main > .image.main:first-child {
@@ -3801,9 +3810,11 @@
 
 		#footer .copyright {
 			width: 100%;
-			margin: 2.5em 0 2em 0;
+			margin: 7.5em 0 -5em 0;
 			font-size: 0.8em;
 			text-align: center;
+			position: relative;
+			top: 16em;
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -3838,7 +3849,7 @@
 		@media screen and (max-width: 736px) {
 
 			#footer {
-				padding: 3em 2em 1em 2em ;
+				padding: 5em 2em 1em 4em;
 			}
 
 		}
@@ -3896,7 +3907,17 @@
 
 		button.button.special.sign {
 		    margin: 2em 0;
-		}}
+		}
+
+
+		    #header p.mont {
+			    font-size: .9em;
+			    letter-spacing: 0.15em;
+			    color: #f9f9f9;
+			    font-weight: 900;
+			    text-shadow: 0 0 8px #484747;
+			}
+	}
 
 
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
@@ -3947,26 +3968,80 @@ input#pac-input {
     border-color: #598fa2;
 }
 input#pac-input {
-    box-shadow: 0 0 0 2px #9ad4d4,0 0 20px #000;
+    box-shadow: 0 0 0 2px #b6fdfd,0 0 20px #62bdd2;
 }
 #wrapper {
     width: 64em;
     max-width: calc(100% - -.4em);
     margin: 0 auto;
-    top: -10em;
-    background: radial-gradient(#46522e,#33321d,#192d2d,#192110,#101b1a,#131b1d,#0d1719,#0a1113,#0a0e0e,#0a1517);
-    box-shadow: 0 0 40px #000;
-    border: 1px double #444;
+    top: -4em;
+    background: #f5fbe1;
+    box-shadow: inset 0 0 800px #eef3e5, inset 0 0 0 800px #dce6c8, 0 0 0 1px #baccba;
+    border: 1px double #3c7182;
+    /* background: radial-gradient(lightgrey,black); */
     min-height: 760px;
-    border-right: none;
-    border-left: none;
+    /* background: radial-gradient(#eff6ff,#d3d8de); */
+    /* border-right: none; */
+    /* border-left: none; */
     border-radius: .5em;
+     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 #footer>* {
     width: calc(50% - 2em);
     margin-left: 13em;
-    border: 1px solid #2f2e2e;
-    background: black;
+    border: 1px solid #faffef;
+    background: #f9ffee;
+    border-radius: .25em;
     padding: .3em .8em;
-    box-shadow: 0 0 20px black;
+    box-shadow: inset 0 0 200px #fbfff4, inset 0 0 0 300px #f8ffe9, 0 0 0 1px #c1c1c1;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+    -ms-overflow-style: scrollbar;
+    color: rgba(255,255,255,.65);
+    background-color: #546e00;
+    background-image: url(https://www.transparenttextures.com/patterns/robots.png);
+    box-shadow: inset 0 0 300px #000;
+    background-color: #0f4825;
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+}
+
+#main .button.special, #main button.special, #main input[type=button].special, #main input[type=reset].special, #main input[type=submit].special {
+    background-color: #4ef5ff;
+    color: #d2feff!important;
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: 0 0 0 1px #94f5ff,1px 1px 1px #3c3b3b,1px 1px 1px #805f0c;
+    border-radius: 12px;
+    border: 1px solid #81e0ff;
+}
+
+#main .button.special, #main button.special, #main input[type=button].special, #main input[type=reset].special, #main input[type=submit].special {
+    background-color: #a9f6fb;
+    color: #5b969a!important;
+    text-shadow: 0 0 12px #aeeeff;
+    box-shadow: 0 0 0 1px #77f3ff,1px 1px 1px #3c3b3b,1px 1px 1px #675a3a;
+    border-radius: 12px;
+    border: 1px solid #bdf8ff;
+    padding-top: .01em;
+    font-weight: 600;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+    -ms-overflow-style: scrollbar;
+    color: rgba(255,255,255,.65);
+    background-color: #546e00;
+    background-image: url(https://www.transparenttextures.com/patterns/robots.png);
+    box-shadow: inset 0 0 300px #000;
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+}
+
+
+
+
+
+.mission-h2 {
+	color: dimgrey;
+	text-shadow: none;
 }

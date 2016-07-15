@@ -18,7 +18,7 @@
 	    margin: 0 auto;
 	    position: relative;
 	    top: -10em;
-	    background: radial-gradient(#929e79, #4c4a2e, #423434, #382828, #290808, #150303,  #100808, #150d0d, #041313,black);
+	    background: radial-gradient(#eff6ff,#d3d8de);
 	    box-shadow: 0 0 40px black;
 	    /* padding-left: .1em; */
 	    border: 4px double #444444;
@@ -28,7 +28,7 @@
 	#header p {
 	    font-size: .91em;
 	    letter-spacing: -0.025em;
-	    color: #525252;
+	    color: #a9a8a8;
 	}
 
 	.nav-tabs > li > a {
@@ -37,7 +37,7 @@
 	    border: 1px solid transparent;
 	    color: gray;
 	    border-radius: 4px 4px 0 0;
-	    font-size: .65em;
+	    font-size: .5em;
 	}
 
 	#footer > * {
@@ -134,17 +134,17 @@
 	    border-radius: 12px;
 	    text-shadow: 0 0 4px #a2a6af;
 	    padding-top: .01em;
-	    height: 29px;
+	    height: 34px;
 	    box-shadow: 0 0 0 1px #e9fff9, 2px 2px 2px black, 3px 3px 3px #805f0c;
 	}
 
 	#main input[type="submit"].special, #main input[type="reset"].special, #main input[type="button"].special, #main button.special, #main .button.special {
-	    background-color: #88b9d4;
-	    color: #f1faff !important;
+	    background-color: #80d2ff;
+	    color: #357192 !important;
 	    box-shadow: 0 0 0 1px #67b2ff, 2px 2px 2px black, 3px 3px 3px #805f0c;
-	    height: 29px;
+	    height: 34px;
 	    width: 155px;
-	    text-shadow: 0 0 4px black;
+	    text-shadow: 0 0 4px #f1f1f1;
 	    box-shadow: 0 0 0 1px #7ef3ff, 1px 1px 1px #3c3b3b, 1px 1px 1px #805f0c;
 	    border-radius: 12px;
 	    border: 1px solid #a1e8ff;
@@ -159,18 +159,19 @@
 	#sw {
 	    display: none;
 	    position: absolute;
-	    left: 81.05%;
-	    height: 420px;
-	    width: 9.5em;
+	    left: 81.65%;
+	    height: 412px;
+	    width: 9.2em;
 	    background: radial-gradient(#e1ecf5,#e4eef1,#dff6ff);
 	    clear: both;
-	    border: 1px solid #a9a9ad;
-	    box-shadow: 0 0 0 1px #9bbbba;
+	    border-top: 28px solid #c0d8dc;
+	    box-shadow: 0 0 0 1px #9bbbba, 0 0 0 2px #bdefef, 0 0 5px black;
 	    border-left: .2em solid gray;
-	    top: 112px;
+	    top: 118px;
 	    border-left: 1px solid #070a0a;
-	    /* border-left: none; */
-	    border-right: none;
+	    border-left: 4px solid #c0d8dc;
+	    border-right: 4px solid #c0d8dc;
+	    border-bottom: 28px solid #c0d8dc;
 	    margin-left: 0;
 	    /* box-shadow: 0 0 0 3px gray; */
 	    padding: 0 0 2em 0;

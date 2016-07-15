@@ -1,10 +1,29 @@
-'use strict';
-
+(function () {
+  'use strict';
 
 // Places controller
-angular.module('places').controller('PlacesController', ['$scope', '$http', '$stateParams', '$location', 'Authentication', 'findPlacesByZipService', 'Places',
-  function ($scope, $http, $stateParams, $location, Authentication, findPlacesByZipService, Places) {
+  angular
+    .module('places')
+    .controller('PlacesController', PlacesController);
+
+
+
+  PlacesController.$inject = ['$scope', 'placeResolve', '$http', '$stateParams', '$location', 'Authentication', 'findPlacesByZipService', 'Places'];
+
+      console.log("??");
+
+  function PlacesController($scope, $http, placeResolve, $stateParams, $location, Authentication, findPlacesByZipService, Places) {
+    console.log("?");
     $scope.authentication = Authentication;
+    var vm = this;
+    vm.place = placeResolve;
+    vm.authentication = Authentication;
+    vm.error = null;
+    vm.form = {};
+    vm.remove = remove;
+    vm.save = save;
+
+
     // $scope.status = "not created";
  
     var geocoder = new google.maps.Geocoder();
@@ -161,6 +180,36 @@ angular.module('places').controller('PlacesController', ['$scope', '$http', '$st
       });
     };
 
+    function remove() {
+      if ($window.confirm('Are you sure you want to delete?')) {
+        vm.place.$remove($state.go('places.list'));
+      }
+    }
+
+    // Save place
+    function save(isValid) {
+      if (!isValid) {
+        $scope.$broadcast('show-errors-check-validity', 'vm.form.placeForm');
+        return false;
+      }
+
+      // TODO: move create/update logic to service
+      if (vm.place._id) {
+        vm.place.$update(successCallback, errorCallback);
+      } else {
+        vm.place.$save(successCallback, errorCallback);
+      }
+
+      function successCallback(res) {
+        $state.go('places.view', {
+          placeId: res._id
+        });
+      }
+
+      function errorCallback(res) {
+        vm.error = res.data.message;
+      }
+    }
 
     // Remove existing Place
     $scope.remove = function (place) {
@@ -225,11 +274,6 @@ angular.module('places').controller('PlacesController', ['$scope', '$http', '$st
     };
 
   }
-]);
 
 
-
-
-
-
-
+}());

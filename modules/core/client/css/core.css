@@ -244,9 +244,9 @@ input.form-control.fc-sm {
 }
 
 .fieldset-override {
-  background: white;
+  background: ivory;
   /* color: darkgray; */
-  border: 3px double #c7c7c7;
+  border: 2px solid #a3b155;
   box-shadow: 0 0 5px #636363;
   padding: 1.5em 5.5em 0 5.5em;
   overflow-y:   scroll;
@@ -271,6 +271,7 @@ main#main-page {
   box-shadow: inset 0 0 400px #afb7b9;
   background: silver;
   background: radial-gradient(#ebf0ff,#bedbf9,#88a6b9,#9fc3d0);
+  box-shadow: 0 0 5px #383838;
 }
 
 section#first {
@@ -313,6 +314,7 @@ section#first {
 
 .links {
   color: steelblue;
+  font-weight: 900;
   text-decoration: underline;
 }
 
@@ -364,7 +366,7 @@ section#customMap {
     margin-top: -.5em;
     position: relative;
     top: .002em;
-    background: radial-gradient(#e4e2cf,#848886);
+    background: radial-gradient(#e4e2cf,#fefff4);
     border-bottom: none;
     border-top: none;
     box-shadow: 0 0 1px #909090, 0 0 1px #1a222d, 0 0 1px #a0a0a0, 0 0 1px #313129;

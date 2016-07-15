@@ -24,17 +24,25 @@
 	    display: none;
 	    position: absolute;
 	    left: 81.05%;
-	    height: 420px;
+	    height: 414px;
 	    width: 9.5em;
 	    background: radial-gradient(#e1ecf5,#e4eef1,#dff6ff);
 	    clear: both;
 	    border: 1px solid #a9a9ad;
 	    box-shadow: 0 0 0 1px #9bbbba;
 	    border-left: .2em solid gray;
-	    top: 92px;
+	    top: 95px;
 	    border-left: 1px solid #070a0a;
 	    /* border-left: none; */
 	    border-right: none;
+	    border-top: 28px solid #c0d8dc;
+	    box-shadow: 0 0 0 1px #9bbbba, 0 0 0 2px #bbe4e4;
+	    border-left: .2em solid gray;
+	    /* top: 118px; */
+	    border-left: 1px solid #070a0a;
+	    border-left: 4px solid #c0d8dc;
+	    border-right: 4px solid #c0d8dc;
+	    border-bottom: 28px solid #c0d8dc;
 	    margin-left: 0;
 	    /* box-shadow: 0 0 0 3px gray; */
 	    padding: 0 0 2em 0;

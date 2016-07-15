@@ -1,6 +1,6 @@
 <header id="header">
   <h1>Map of Services</h1>
-  <p>Kansas City</p>
+  <p class="">Kansas City</p>
 </header>
 <div id="main" class="fix-height" ng-controller="PlacesController">
   <section id="first" class="main special bg-wrapper" ng-controller="MapController">
@@ -10,7 +10,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-5">
           <ul class="actions fit small">
-            <li><a ng-click="toggleWifiMarkers(); getData('wifi-free');" id="e1" href="#" class="button normal fit small">Free WiFi</a></li>
+            <li><a ng-click="toggleWifiMarkers(); getData('wifi-free');" id="e1" href="#" class="button normal fit small">Free WiFi</a><span ng-show="{{buttonToggled}}" class="glyphicon glyphicon-ok"></span></li>
             <li class="realign"><a ng-click="toggleComputersMarkers();" id="e3" href="#" class="button normal fit small">Public Computers</a></li>
           </ul>
           <ul class="actions fit small">
@@ -66,7 +66,7 @@
       <div class="row map-row">
     
           <div class="col-xs-12 col-sm-12 col-md-12 col-md-12">
-              <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+              <input id="pac-input" class="controls" type="text" placeholder="Search by Zip">
             <section id="customMap" class="">
 
             </section>

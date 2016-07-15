@@ -1,0 +1,19 @@
+<section ng-controller="PlacesListController">
+  <div class="page-header">
+    <h1>Locations</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="place in places" ui-sref="places.view({ placeId: place._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="place.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="place.user" ng-bind="place.user.displayName"></span>
+        <span ng-if="!place.user">Site Admin</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="place.title"></h4>
+      <!-- <p class="list-group-item-text" ng-bind="place._id"></p> -->
+      <a class="list-group-item-heading" ng-href="/places/{{place._id}}">Edit</a>
+    </a>
+  </div>
+</section>

@@ -16,7 +16,12 @@
       })
       .state('places.list', {
         url: '',
-        templateUrl: 'modules/places/client/views/list-places.client.view.html'
+        templateUrl: 'modules/places/client/views/list-places.client.view.html',
+        controller: 'PlacesListController',
+        controllerAs: 'vm',
+        data: {
+          pageTitle: 'Places List'
+        }
       })
       .state('places.create', {
         url: '/create',
@@ -27,7 +32,15 @@
       })
       .state('places.view', {
         url: '/:placeId',
-        templateUrl: 'modules/places/client/views/view-place.client.view.html'
+        templateUrl: 'modules/places/client/views/view-place.client.view.html', 
+        controller: 'PlacesController',
+        controllerAs: 'vm',
+        resolve: {
+          placeResolve: getPlace
+        },
+        data: {
+          pageTitle: 'Place {{ placeResolve.title }}'
+        }
       })
       .state('places.edit', {
         url: '/:placeId/edit',
