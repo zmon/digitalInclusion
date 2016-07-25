@@ -5,13 +5,15 @@
     .module('core')
     .controller('HeaderController', HeaderController);
 
+  console.log("header 1");
+
   HeaderController.$inject = ['$scope', '$state', 'Authentication', 'menuService'];
 
   function HeaderController($scope, $state, Authentication, menuService) {
     var vm = this;
 
     // vm.accountMenu = menuService.getMenu('account').items[0];
-    console.log("header.client.controller 1");
+    console.log("header 2");
     vm.homeMenu = menuService.getMenu('home').items[0];
     vm.showHomeMenu = true;
     vm.authentication = Authentication;

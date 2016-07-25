@@ -46,8 +46,9 @@
     //   <option value="shopping-mall">Shopping Mall</option>
     // </select>
 
-
+    console.log("before");
     console.log("places.client.controller-2");
+    console.log("after");
     console.log(vm.place);
     // console.log(place);
     

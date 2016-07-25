@@ -8,6 +8,7 @@
   InternetController.$inject = ['$scope', '$state', 'Authentication', 'menuService', '$http'];
 
   function InternetController($scope, $state, Authentication, menuService, $http) {
+    console.log("internet controller 1")
     var vm = this;
    	$scope.isps = [];
 

@@ -5,7 +5,10 @@
     .module('core')
     .factory('menuService', menuService);
 
+  console.log("menu.client.service 1");
+
   function menuService() {
+    console.log("menu-service 2 -- menuService()");
     var shouldRender;
     var service = {
       addMenu: addMenu,
@@ -181,6 +184,8 @@
 
     // Validate menu existance
     function validateMenuExistence(menuId) {
+      console.log("menu service - validateMenuExistence");
+      console.log(menuId);
       if (menuId && menuId.length) {
         if (service.menus[menuId]) {
           return true;

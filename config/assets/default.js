@@ -7,7 +7,9 @@ module.exports = {
         // bower:css
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css'
-        // endbower
+        // 'modules/core/client/css/bs/bootstrap.css',
+        // 'modules/core/client/css/bs/bootstrap-theme.css'
+        // // endbower
       ],
       js: [
         // bower:js
@@ -24,7 +26,8 @@ module.exports = {
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
     css: [
-      'modules/*/client/css/*.css'
+      'modules/*/client/css/*.css',
+      'modules/*/client/css/*/*.css'
     ],
     less: [
       'modules/*/client/less/*.less'
