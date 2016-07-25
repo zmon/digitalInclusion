@@ -1,8 +1,8 @@
-<section>
+<section class="view-page">
   <div class="page-header">
     <h1 ng-bind="vm.place.title"></h1>
   </div>
-  <div class="pull-right" ng-show="vm.place.isCurrentUserOwner">
+  <div class="pull-right">
     <a class="btn btn-primary" ui-sref="places.edit({ placeId: vm.place._id })">
       <i class="glyphicon glyphicon-edit"></i>
     </a>
@@ -16,8 +16,38 @@
       <span ng-bind="vm.place.created | date:'mediumDate'"></span>
       by
       <span ng-if="vm.place.user" ng-bind="vm.place.user.displayName"></span>
-      <span ng-if="!vm.place.user">Deleted User</span>
+      <span ng-if="!vm.place.user">Site Admin</span>
     </em>
   </small>
   <p class="lead" ng-bind="vm.place.title"></p>
+  <p class="lead lead-again" ng-bind="vm.place.readableAddress"></p>
+
+  <pre>
+
+      {
+        _id: {{ place._id }}, 
+        created: {{ vm.place.created }}, 
+        __v: {{vm.place.__v}},      
+        title: {{ vm.place.title }},
+        phone: {{vm.place.phone}},
+        readableAddress: {{ vm.place.readableAddress }},
+        locationType: {{vm.place.locationType}},
+        address1: {{vm.place.address1}},        
+        address2: {{vm.place.address2}},
+        city: {{vm.place.city}},
+        state: {{vm.place.state}},
+        zip: {{vm.place.zip}},
+        location: {{ vm.place.location }},
+        latlng: {{ vm.place.latlng }},
+        url: {{vm.place.url}},
+        description: {{vm.place.description}},
+        caption: {{ vm.place.caption }},
+        hoursOpen: {{vm.place.hoursOpen}},
+        courseSchedule: {{ vm.place.courseSchedule }},
+        wifi: {{vm.place.wifi}},
+        categories: {{vm.place.categories}},
+        primaryCategory: {{vm.place.primaryCategory}}
+      }
+  </pre>
+
 </section>

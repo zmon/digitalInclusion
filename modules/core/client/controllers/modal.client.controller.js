@@ -14,7 +14,50 @@ angular.module('core.modal').controller('ModalController', function ($scope, $ui
   $scope.updateStatus = function () {
   	$scope.status = "updarted";
   	console.log("function function");
-  	$log.info("the hell");
+  	$log.info("info");
+  };
+
+  $scope.newLocation = function (size) {
+
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      // backdrop: false,
+      bindToController: true,
+      controllerAs: 'ModalInstanceController',
+      templateUrl: 'newLocationModal.html',
+      backdropUrl: '/modules/core/client/views/templates/backdrop.client.view.html',
+      windowTemplateUrl: '/modules/core/client/views/templates/window.client.view.html',
+      windowTopClass: 'wintop',
+      controller: 'ModalInstanceController',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+      // $scope.updateStatus;
+
+      if (selectedItem == item1.name) {
+        $log.info("yes")
+      } else {
+        $log.info("not yes")
+      };
+      // $scope.html = selected
+      // console.log("selected " + $scope.selected);
+      // if (selectedItem.name == 'item1') {
+      //  $log.info('true');
+      // } else {
+      //  $log.info('untrue');
+      // }
+      // selectedItem.html;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+
   };
 
   $scope.newHotspot = function (size) {

@@ -43,10 +43,24 @@
         templateUrl:'modules/core/client/views/tabs/contact.client.view.html', 
         controller: 'ContactController'
       })
+      .state('training-online', {
+        url: '/training-online',
+        templateUrl:'modules/core/client/views/tabs/training-online.client.view.html', 
+        controller: 'TrainingOnlineController'
+      })
+      .state('internet', {
+        url: '/internet',
+        templateUrl:'modules/core/client/views/tabs/internet.client.view.html', 
+        controller: 'InternetController'
+      })
       .state('test', {
         url: '/test',
         templateUrl: 'modules/core/client/views/test.client.view.html', 
         controller: 'TestController'
+      })
+      .state('tmp', {
+        url: '/tmp',
+        templateUrl: 'modules/core/client/views/tmp.client.view.html'
       })
       .state('not-found', {
         url: '/not-found',

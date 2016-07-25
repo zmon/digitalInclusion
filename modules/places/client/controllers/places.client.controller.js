@@ -1,193 +1,99 @@
 (function () {
   'use strict';
 
-// Places controller
   angular
     .module('places')
     .controller('PlacesController', PlacesController);
 
+  PlacesController.$inject = ['$scope', '$state', 'placeResolve', '$window', 'Authentication', 'findPlacesByZipService'];
 
+  // console.log("places.client.controller-1");
 
-  PlacesController.$inject = ['$scope', 'placeResolve', '$http', '$stateParams', '$location', 'Authentication', 'findPlacesByZipService', 'Places'];
+  function PlacesController($scope, $state, place, $window, Authentication, findPlacesByZipService) {
 
-      console.log("??");
-
-  function PlacesController($scope, $http, placeResolve, $stateParams, $location, Authentication, findPlacesByZipService, Places) {
-    console.log("?");
-    $scope.authentication = Authentication;
     var vm = this;
-    vm.place = placeResolve;
+
+    vm.place = place;
+    vm.category = vm.place.primaryCategory;
     vm.authentication = Authentication;
     vm.error = null;
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
 
+    $scope.categoryOptions = [
+      { value: "wifi-free", label: "Free WiFi"}, 
+      { value: "wifi-customer", label: "Customer WiFi"}, 
+      { value: "computers-access", label: "Public Computer Access"}, 
+      { value: "computers-retail", label: "Low Cost or Refurb. Equipment" },
+      { value: "training-day", label: "Day Courses" },
+      { value: "training-night", label: "Evening Courses " }
+    ];
 
-    // $scope.status = "not created";
- 
-    var geocoder = new google.maps.Geocoder();
-    var resultsArr = [];
-    $scope.xArray = [];
+    $scope.locationTypes = [
+      { value: "Library", label: "Library" },
+      { value: "Community Center", label: "Community Center" },
+      { value: "Restaurant", label: "Restaurant" },
+      { value: "Coffee Shop", label: "Coffee Shop" },
+      { value: "Shopping Mall", label: "Shopping Mall"}
+    ];
 
-
-
-    // $scope.places = getPlacesService.getPlaces(function(places) {
-    // $scope.sendPost = function() {
-    //     var data = $.param({
-    //         json: JSON.stringify({
-    //             name: $scope.newName
-    //         })
-    //     });
-    //     $http.post("/echo/json/", data).success(function(data, status) {
-    //         $scope.hello = data;
-    //     })
-    // }    
-    // $scope.searchResults = [];
-    // $scope.resetSearch = function() {
-      // $scope.place.zip = "";
-      // console.log(zipcode);
-      // $scope.placesInZipCode = findPlacesByZipService.findPlacesByZip(zipcode, function(places) {
-      //   $scope.placesInZipCode = places;
-      //   var number = $scope.placesInZipCode.length;
-      //   console.log("count in zipcode: " + number);
-      //   console.log($scope.placesInZipCode);
-      //   var i;
-      //   for (i = 0; i < number; i++) {
-      //     var place = $scope.placesInZipCode[i];
-      //     $scope.searchResults.push(place._id);
-      //   }
-      //   console.log($scope.searchResults);
-      // });
+    // <select name="locationType" ng-model="vm.place.locationType" id="locationType" class="form-control">
+    //   <option value="library">Library</option>
+    //   <option value="community-center">Community Center</option>
+    //   <option value="restaurant">Restaurant</option>
+    //   <option value="coffee-shop">Coffee Shop</option>
+    //   <option value="shopping-mall">Shopping Mall</option>
+    // </select>
 
 
-    // };
+    console.log("places.client.controller-2");
+    console.log(vm.place);
+    // console.log(place);
+    
 
-    $scope.hoist = function(arg1) {
-      console.log("hoist: " + arg1);
-      var latLng = new google.maps.LatLng(arg1[0], arg1[1]);
-      console.log("very res");
-      console.log(latLng);
-      return latLng;
+    $scope.retail = new Boolean();
+    $scope.dayTraining = new Boolean();
+    $scope.nightTraining = new Boolean();
+    $scope.publicWifi = new Boolean();
+    $scope.customerWifi = new Boolean();
+    $scope.computerAccess = new Boolean();
+
+    // console.log("load page");
+   
+    function sortByCategories(str) {
+      console.log("sortByCategories");
+      console.log(str);
+      if (str === "computers-retail") {
+        $scope.retail = true;
+        console.log($scope.retail);
+      } else if (str === "computers-access") {
+        $scope.computerAccess = true;
+      } else if (str === "training-day") {
+        $scope.dayTraining = true;
+      } else if (str === "training-night") {
+        $scope.nightTraining = true;
+      } else if (str === "wifi-free") {
+        $scope.publicWifi = true;
+      } else if (str === "wifi-customer") {
+        $scope.customerWifi = true;
+      }
+
     }
-    // geocode existing Place object
-    // arg1 => readable address (string)
-    // arg2 => place
-    $scope.hoisted = [];
-    $scope.geocode = function(isValid, arg2, arg3) {
-      console.log("***** geocoding => " + isValid + " " + arg2);
-      console.log(arg3);
 
-      $scope.error = null;
+    sortByCategories(vm.category);
 
-      if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'placeForm');
-
-        return false;
-      }
-
-      var place = $scope.place;
-
-      place.$update(function () {
-        $location.path('/');
-      }, function (errorResponse) {
-        $scope.error = errorResponse.data.message;
-      });
-
-    };
-    // arg2 => subcategory(public,customer,access,retail,day,evening)
-    // arg3 => category(wifi,training,computers)
-    $scope.create = function (isValid, arg2, arg3) {
-      $scope.error = null;
-       $scope.status = "Successfully created resource";
-       
-      if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'placeForm');
-
-        return false;
-      }
-
-      var readableAddress = this.address1 + ", " + this.address2 + ", " + this.city + ", " + this.state + " " + this.zip;
-
-      // console.log("code " + $scope.code);
-      // console.log($scope.code);
-      // console.log("then " + $scope.hoisted);
-      // console.log($scope.hoisted);
-      // console.log("arg 2, 3");
-      //  console.log(arg2);
-      //  console.log(arg3);
-       // console.log("& this");
-       // console.log(this.xArray);
-      // console.log("readable address: " + readableAddress);
-      // console.log("& code");
-      // console.log($scope.code);
-      // console.log("& xArray");
-      // console.log($scope.xArray);
-      // console.log($scope.xArray[0]);
-      // console.log(this.x);
-
-      // geocoder.geocode(readableAddress, function (err, res) {
-
-      // });
-      // $scope.latLng;
-      // $scope.arr = [];
-      
-      // console.log('tmpREsults');
-      // console.log(tmpResults);
-      // console.log($scope.arr[0]);
-
-      // console.log("$scope.geolocation");
-      // console.log(this.geolocation);
-      // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
-
-
-      // Create new Place object
-      var place = new Places({
-        title: this.title,
-        readableAddress: readableAddress,
-        address1: this.address1,
-        address2: this.address2,
-        city: this.city,
-        state: this.state,
-        zip: this.zip,
-        url: this.url,
-        phone: this.phone,
-        description: this.description, 
-        subcategory: arg2,
-        category: arg3
-      });
-
-
-      // Redirect after save
-      place.$save(function (response) {
-        // $location.path('places/' + response._id);
-        // console.log("response");
-        // console.log(response.$resolved);
-        // $scope.showStatus = true;
-        // $scope.res = response;
-        console.log("place");
-        console.log(readableAddress);
-        console.log(response);
-        console.log(response._id);
-        var oid = response._id;
-        // var tmpRes = $scope.geocode(readableAddress, place);
-         $location.path('confirm-location-details/' + response._id);
-        // Clear form fields
-        // $scope.title = '';
-        // $scope.content = '';
-      }, function (errorResponse) {
-        $scope.error = errorResponse.data.message;
-      });
-    };
-
+    // Remove existing Place
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
         vm.place.$remove($state.go('places.list'));
       }
     }
 
-    // Save place
+    // Save Place
     function save(isValid) {
+      console.log("save");
+      console.log(this.form.placeForm);
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.placeForm');
         return false;
@@ -201,79 +107,25 @@
       }
 
       function successCallback(res) {
+        console.log("successCallback");
+        console.log(res);
         $state.go('places.view', {
           placeId: res._id
         });
       }
 
       function errorCallback(res) {
+        console.log("errorCallback");
+        console.log(res);
         vm.error = res.data.message;
       }
     }
 
-    // Remove existing Place
-    $scope.remove = function (place) {
-      if (place) {
-        place.$remove();
-
-        for (var i in $scope.places) {
-          if ($scope.places[i] === place) {
-            $scope.places.splice(i, 1);
-          }
-        }
-      } else {
-        $scope.place.$remove(function () {
-          $location.path('/');
-        });
-      }
-    };
-
-    // Update existing Place
-    $scope.update = function (isValid) {
-      $scope.error = null;
-
-      if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'placeForm');
-
-        return false;
-      }
-
-      var place = $scope.place;
-
-      place.$update(function () {
-        $location.path('places/' + place._id);
-      }, function (errorResponse) {
-        $scope.error = errorResponse.data.message;
-      });
-    };
-
-    // Find a list of Places
-    $scope.find = function () {
-      $scope.places = Places.query();
-    };
-
-    // Find existing Place
-    $scope.findOne = function () {
-      console.log("finding one");
-      console.log($stateParams.placeId);
-      $scope.place = Places.get({
-        placeId: $stateParams.placeId
-      });
-    };
-
-    $scope.findCategory = function(string) {
-      $scope.places = Places.get({
-        primaryCategory: string
-      });
-    }
 
     $scope.findById = function(id) {
       $scope.place = Places.get({
         placedId: id
       });
     };
-
   }
-
-
 }());

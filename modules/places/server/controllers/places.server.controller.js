@@ -202,12 +202,22 @@ exports.read = function (req, res) {
 
 exports.update = function (req, res) {
   console.log("update **");
-    console.log(req.body);
+  console.log("req.body.location");
+  console.log(req.body.location.lat);
+  // var loc = req.body.location;
+  // console.log(loc);
 
   var place = req.place;
+  console.log("place");
   console.log(place);
 
-  place.name = req.body.name;
+  // var x = req.body.location.lat;
+  // var y = req.body.location.lng;
+  // var lat = parseFloat(x.toFixed(5));
+  // var lng = parseFloat(y.toFixed(5));
+  // var arr = [lat,lng];
+  // console.log(arr);
+  place.title = req.body.title;
   place.url = req.body.url;
   place.caption = req.body.caption;
   place.category = req.body.category;
@@ -218,19 +228,19 @@ exports.update = function (req, res) {
   place.zip = req.body.zip;
   place.state = req.body.state;
   place.latlng = req.body.latlng;
-  // place.lat = req.body.lat;
-  // place.lng = req.body.lng;
+  place.readableAddress = req.body.readableAddress;
   place.location = req.body.location;
   place.phone = req.body.phone;
+  place.locationType = req.body.locationType;
   // place.contactName = req.body.contactName;
   // place.contactEmail = req.body.contactEmail;
   // place.contactPhone = req.body.contactPhone;
   place.hoursOpen = req.body.hoursOpen;
-  // place.offersWifi = req.body.offersWifi;
-  // place.wifiTerms = req.body.wifiTerms;
-  // place.offersCourses = req.body.offersCourses;
-  // place.computerReseller = req.body.computerReseller;
-  // place.iconMatcher = req.body.iconMatcher;
+  place.courseSchedule = req.body.courseSchedule;
+  place.wifi = req.body.wifi;
+  place.categories = req.body.categories;
+  place.primaryCategory = req.body.primaryCategory;
+
 
 
   place.save(function (err) {

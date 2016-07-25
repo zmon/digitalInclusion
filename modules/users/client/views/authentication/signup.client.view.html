@@ -1,7 +1,7 @@
 <div>
-  <h3 class="col-md-12 text-center log">Create new account or sign-in</h3>
+  <h3 class="col-md-12 text-center log">Create an account</h3>
   <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
-    <form name="vm.userForm" ng-submit="vm.signup(vm.userForm.$valid)" class="signin" novalidate autocomplete="off">
+    <form name="vm.userForm" ng-submit="vm.signup(vm.userForm.$valid)" class="signin west" novalidate autocomplete="off">
       <fieldset>
         <div class="form-group" show-errors>
           <label class="si" for="firstName">First Name</label>
@@ -47,7 +47,7 @@
           <uib-progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></uib-progressbar>
         </div>
         <div class="text-center form-group">
-          <button type="submit" class="button normal sign up">Sign Up</button>
+          <button type="submit" class="button normal sign up sh-up">Sign Up</button>
           &nbsp; or&nbsp;
           <a ui-sref="authentication.signin" class="show-signup">Go to Sign-In</a>
         </div>

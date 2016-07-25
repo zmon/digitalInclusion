@@ -5,6 +5,202 @@ var showMarkers = {
   publicComputers: new Boolean()
 };
 
+var masterZips = [ { zip: 64024, lat: 39.327618, lng: -94.226953 },
+  { zip: 64029, lat: 39.005925, lng: -94.216381 },
+  { zip: 64030, lat: 38.881359, lng: -94.522744 },
+  { zip: 64034, lat: 38.858551, lng: -94.297554 },
+  { zip: 64035, lat: 39.290513, lng: -93.812219 },
+  { zip: 64036, lat: 39.193758, lng: -93.936807 },
+  { zip: 64037, lat: 39.054756, lng: -93.732729 },
+  { zip: 64040, lat: 38.72376, lng: -93.98766 },
+  { zip: 64048, lat: 39.437763, lng: -94.363579 },
+  { zip: 64050, lat: 39.11586, lng: -94.41055 },
+  { zip: 64052, lat: 39.073415, lng: -94.450236 },
+  { zip: 64053, lat: 39.109351, lng: -94.465282 },
+  { zip: 64054, lat: 39.110355, lng: -94.439036 },
+  { zip: 64055, lat: 39.050847, lng: -94.397998 },
+  { zip: 64056, lat: 39.113273, lng: -94.319762 },
+  { zip: 64057, lat: 39.071957, lng: -94.319308 },
+  { zip: 64058, lat: 39.173856, lng: -94.31356 },
+  { zip: 64060, lat: 39.368922, lng: -94.363744 },
+  { zip: 64061, lat: 38.783394, lng: -94.084862 },
+  { zip: 64062, lat: 39.455731, lng: -94.163205 },
+  { zip: 64063, lat: 38.911994, lng: -94.351673 },
+  { zip: 64064, lat: 38.974484, lng: -94.345181 },
+  { zip: 64065, lat: 38.952177, lng: -94.404444 },
+  { zip: 64066, lat: 39.135995, lng: -94.125836 },
+  { zip: 64067, lat: 39.154284, lng: -93.836041 },
+  { zip: 64068, lat: 39.258315, lng: -94.389653 },
+  { zip: 64070, lat: 38.886623, lng: -94.14889 },
+  { zip: 64071, lat: 39.027828, lng: -93.831717 },
+  { zip: 64072, lat: 39.242022, lng: -94.293828 },
+  { zip: 64074, lat: 39.083651, lng: -94.071296 },
+  { zip: 64075, lat: 38.999631, lng: -94.145273 },
+  { zip: 64076, lat: 38.983162, lng: -93.948056 },
+  { zip: 64077, lat: 39.224578, lng: -94.139126 },
+  { zip: 64078, lat: 38.702692, lng: -94.458131 },
+  { zip: 64079, lat: 39.359017, lng: -94.793273 },
+  { zip: 64080, lat: 38.764216, lng: -94.260423 },
+  { zip: 64081, lat: 38.907046, lng: -94.403932 },
+  { zip: 64082, lat: 38.862111, lng: -94.40832 },
+  { zip: 64083, lat: 38.797393, lng: -94.445534 },
+  { zip: 64084, lat: 39.385681, lng: -94.069434 },
+  { zip: 64085, lat: 39.334841, lng: -93.945283 },
+  { zip: 64086, lat: 38.899171, lng: -94.272385 },
+  { zip: 64088, lat: 39.151558, lng: -94.181903 },
+  { zip: 64089, lat: 39.393886, lng: -94.5609 },
+  { zip: 64090, lat: 38.759359, lng: -94.163578 },
+  { zip: 64092, lat: 39.217578, lng: -94.811119 },
+  { zip: 64093, lat: 38.792472, lng: -93.730884 },
+  { zip: 64096, lat: 39.208822, lng: -93.552504 },
+  { zip: 64097, lat: 39.104909, lng: -93.984271 },
+  { zip: 64098, lat: 39.468076, lng: -94.891475 },
+  { zip: 64101, lat: 39.103463, lng: -94.600614 },
+  { zip: 64102, lat: 39.093844, lng: -94.604041 },
+  { zip: 64105, lat: 39.104725, lng: -94.590375 },
+  { zip: 64106, lat: 39.104839, lng: -94.572176 },
+  { zip: 64108, lat: 39.084895, lng: -94.58647 },
+  { zip: 64109, lat: 39.065794, lng: -94.566343 },
+  { zip: 64110, lat: 39.034503, lng: -94.572806 },
+  { zip: 64111, lat: 39.05758, lng: -94.593879 },
+  { zip: 64112, lat: 39.035975, lng: -94.59519 },
+  { zip: 64113, lat: 39.014065, lng: -94.595652 },
+  { zip: 64114, lat: 38.957802, lng: -94.598599 },
+  { zip: 64116, lat: 39.148811, lng: -94.575242 },
+  { zip: 64117, lat: 39.164449, lng: -94.522657 },
+  { zip: 64118, lat: 39.212864, lng: -94.573951 },
+  { zip: 64119, lat: 39.209967, lng: -94.514665 },
+  { zip: 64120, lat: 39.135007, lng: -94.514957 },
+  { zip: 64123, lat: 39.114346, lng: -94.523234 },
+  { zip: 64124, lat: 39.107225, lng: -94.539212 },
+  { zip: 64125, lat: 39.106463, lng: -94.494153 },
+  { zip: 64126, lat: 39.091093, lng: -94.495978 },
+  { zip: 64127, lat: 39.089138, lng: -94.538537 },
+  { zip: 64128, lat: 39.065566, lng: -94.534623 },
+  { zip: 64129, lat: 39.047897, lng: -94.491958 },
+  { zip: 64130, lat: 39.033683, lng: -94.540754 },
+  { zip: 64131, lat: 38.936041, lng: -94.585011 },
+  { zip: 64132, lat: 38.988304, lng: -94.542261 },
+  { zip: 64133, lat: 39.013884, lng: -94.45772 },
+  { zip: 64134, lat: 38.928031, lng: -94.487653 },
+  { zip: 64136, lat: 39.012794, lng: -94.405733 },
+  { zip: 64137, lat: 38.93536, lng: -94.542668 },
+  { zip: 64138, lat: 38.967119, lng: -94.467927 },
+  { zip: 64139, lat: 38.968342, lng: -94.416366 },
+  { zip: 64145, lat: 38.873529, lng: -94.59402 },
+  { zip: 64146, lat: 38.882969, lng: -94.57196 },
+  { zip: 64147, lat: 38.852781, lng: -94.550532 },
+  { zip: 64149, lat: 38.865403, lng: -94.471632 },
+  { zip: 64150, lat: 39.172185, lng: -94.632532 },
+  { zip: 64151, lat: 39.215355, lng: -94.630084 },
+  { zip: 64152, lat: 39.219074, lng: -94.724733 },
+  { zip: 64153, lat: 39.274581, lng: -94.726643 },
+  { zip: 64154, lat: 39.279265, lng: -94.637168 },
+  { zip: 64155, lat: 39.272316, lng: -94.580107 },
+  { zip: 64156, lat: 39.273306, lng: -94.519995 },
+  { zip: 64157, lat: 39.279003, lng: -94.483504 },
+  { zip: 64158, lat: 39.234381, lng: -94.482919 },
+  { zip: 64161, lat: 39.158585, lng: -94.450909 },
+  { zip: 64163, lat: 39.344563, lng: -94.688192 },
+  { zip: 64164, lat: 39.329423, lng: -94.627074 },
+  { zip: 64165, lat: 39.321428, lng: -94.576265 },
+  { zip: 64166, lat: 39.322075, lng: -94.523041 },
+  { zip: 64167, lat: 39.320589, lng: -94.487141 },
+  { zip: 66018, lat: 38.963864, lng: -94.967153 },
+  { zip: 66019, lat: 38.94544, lng: -95.003284 },
+  { zip: 66020, lat: 39.339341, lng: -95.116107 },
+  { zip: 66021, lat: 38.76628, lng: -95.015 },
+  { zip: 66023, lat: 39.512289, lng: -95.392403 },
+  { zip: 66024, lat: 39.736869, lng: -94.881484 },
+  { zip: 66025, lat: 38.891903, lng: -95.08334 },
+  { zip: 66026, lat: 38.395871, lng: -94.866312 },
+  { zip: 66027, lat: 39.368428, lng: -94.911265 },
+  { zip: 66030, lat: 38.815137, lng: -94.940266 },
+  { zip: 66031, lat: 38.831963, lng: -94.890082 },
+  { zip: 66032, lat: 38.286777, lng: -95.278214 },
+  { zip: 66033, lat: 38.36329, lng: -95.122266 },
+  { zip: 66035, lat: 39.870996, lng: -95.253591 },
+  { zip: 66039, lat: 38.104411, lng: -95.164855 },
+  { zip: 66040, lat: 38.354477, lng: -94.748388 },
+  { zip: 66041, lat: 39.600303, lng: -95.307974 },
+  { zip: 66042, lat: 38.422786, lng: -95.079886 },
+  { zip: 66043, lat: 39.252392, lng: -94.879551 },
+  { zip: 66044, lat: 39.023294, lng: -95.208909 },
+  { zip: 66045, lat: 38.958845, lng: -95.247749 },
+  { zip: 66046, lat: 38.904524, lng: -95.209753 },
+  { zip: 66047, lat: 38.893051, lng: -95.34616 },
+  { zip: 66048, lat: 39.28233, lng: -94.995995 },
+  { zip: 66049, lat: 38.978096, lng: -95.344129 },
+  { zip: 66050, lat: 39.011834, lng: -95.442516 },
+  { zip: 66052, lat: 39.015766, lng: -95.048266 },
+  { zip: 66053, lat: 38.581078, lng: -94.668065 },
+  { zip: 66054, lat: 39.206199, lng: -95.19835 },
+  { zip: 66056, lat: 38.151453, lng: -94.844282 },
+  { zip: 66058, lat: 39.541067, lng: -95.520384 },
+  { zip: 66060, lat: 39.418161, lng: -95.33223 },
+  { zip: 66061, lat: 38.893764, lng: -94.879975 },
+  { zip: 66062, lat: 38.835491, lng: -94.778691 },
+  { zip: 66064, lat: 38.480714, lng: -94.988936 },
+  { zip: 66066, lat: 39.203002, lng: -95.330593 },
+  { zip: 66067, lat: 38.623617, lng: -95.276284 },
+  { zip: 66070, lat: 39.20569, lng: -95.450917 },
+  { zip: 66071, lat: 38.573078, lng: -94.864562 },
+  { zip: 66072, lat: 38.309431, lng: -94.963963 },
+  { zip: 66073, lat: 39.082417, lng: -95.368342 },
+  { zip: 66075, lat: 38.200521, lng: -94.693412 },
+  { zip: 66076, lat: 38.632455, lng: -95.443013 },
+  { zip: 66078, lat: 38.48469, lng: -95.258501 },
+  { zip: 66079, lat: 38.542467, lng: -95.108134 },
+  { zip: 66080, lat: 38.4081, lng: -95.259688 },
+  { zip: 66083, lat: 38.732299, lng: -94.830141 },
+  { zip: 66085, lat: 38.798768, lng: -94.656684 },
+  { zip: 66086, lat: 39.119526, lng: -95.08123 },
+  { zip: 66087, lat: 39.802081, lng: -95.122122 },
+  { zip: 66088, lat: 39.339329, lng: -95.461198 },
+  { zip: 66090, lat: 39.787949, lng: -94.973367 },
+  { zip: 66091, lat: 38.178278, lng: -95.312532 },
+  { zip: 66092, lat: 38.7015, lng: -95.097953 },
+  { zip: 66093, lat: 38.20781, lng: -95.494138 },
+  { zip: 66094, lat: 39.951286, lng: -95.34244 },
+  { zip: 66095, lat: 38.441094, lng: -95.438861 },
+  { zip: 66097, lat: 39.328599, lng: -95.246083 },
+  { zip: 66101, lat: 39.118982, lng: -94.625983 },
+  { zip: 66102, lat: 39.108964, lng: -94.692538 },
+  { zip: 66103, lat: 39.060338, lng: -94.626797 },
+  { zip: 66104, lat: 39.150159, lng: -94.689533 },
+  { zip: 66105, lat: 39.087011, lng: -94.638934 },
+  { zip: 66106, lat: 39.069454, lng: -94.702613 },
+  { zip: 66109, lat: 39.165351, lng: -94.829341 },
+  { zip: 66111, lat: 39.084029, lng: -94.789887 },
+  { zip: 66112, lat: 39.11452, lng: -94.773577 },
+  { zip: 66115, lat: 39.148258, lng: -94.605084 },
+  { zip: 66118, lat: 39.103981, lng: -94.613129 },
+  { zip: 66202, lat: 39.02315, lng: -94.669466 },
+  { zip: 66203, lat: 39.020331, lng: -94.705787 },
+  { zip: 66204, lat: 38.990381, lng: -94.678214 },
+  { zip: 66205, lat: 39.031176, lng: -94.630762 },
+  { zip: 66206, lat: 38.960717, lng: -94.620277 },
+  { zip: 66207, lat: 38.955644, lng: -94.643247 },
+  { zip: 66208, lat: 38.997529, lng: -94.628369 },
+  { zip: 66209, lat: 38.8996, lng: -94.638358 },
+  { zip: 66210, lat: 38.922144, lng: -94.704779 },
+  { zip: 66211, lat: 38.925118, lng: -94.63562 },
+  { zip: 66212, lat: 38.955565, lng: -94.679875 },
+  { zip: 66213, lat: 38.898859, lng: -94.708219 },
+  { zip: 66214, lat: 38.967425, lng: -94.714087 },
+  { zip: 66215, lat: 38.957701, lng: -94.744269 },
+  { zip: 66216, lat: 39.013774, lng: -94.741577 },
+  { zip: 66217, lat: 39.009521, lng: -94.782287 },
+  { zip: 66218, lat: 39.02069, lng: -94.818802 },
+  { zip: 66219, lat: 38.952366, lng: -94.77622 },
+  { zip: 66220, lat: 38.959691, lng: -94.819014 },
+  { zip: 66221, lat: 38.863682, lng: -94.708453 },
+  { zip: 66223, lat: 38.863482, lng: -94.668479 },
+  { zip: 66224, lat: 38.863539, lng: -94.626804 },
+  { zip: 66226, lat: 39.030311, lng: -94.859415 },
+  { zip: 66227, lat: 38.972676, lng: -94.874826 } ];
+
+
 function onGoogleReady() {
   angular.bootstrap(document.getElementById("customMap"), ['core.map']);
   showMarkers.freeWifi        = true;
@@ -12,6 +208,40 @@ function onGoogleReady() {
   showMarkers.computerRetail  = false;
   showMarkers.trainingClasses = false;
 }
+
+var list = {};
+	list.access = [];
+	list.wifi = [];
+
+function sortListToArrays(places) {
+	      console.log("sortListToArrays");
+	      console.log(places.length);
+	     
+	      var lng = places.length;
+	      console.log(lng);
+	      var i;
+	      for (i = 0; i < lng; i++) {
+	        var place = places[i];
+	        console.log(place);
+	        var category = place.primaryCategory;
+	        if (category === "computers-access") {
+	           list.access.push(place);
+	           // $scope.array.computers.access.push(place);
+	        } else if (category === "training-day") {
+	           $scope.array.training.day.push(place);
+	        } else if (category === "training-night") {
+	           $scope.array.training.night.push(place);
+	        } else if (category === "wifi-free") {
+	           $scope.array.wifi.free.push(place);
+	        } else if (category === "wifi-customer") {
+	          $scope.array.wifi.customer.push(place);
+	        } else if (category === "computers-retail") {
+	          $scope.array.computers.retail.push(place);
+	        } else if (category === "isp") {
+	          $scope.array.isps.push(place);
+	        };
+	      }
+	    }
 		
 (function () {
 	'use strict';
@@ -19,11 +249,11 @@ function onGoogleReady() {
 	angular
 		.module('core.map')
 		.controller('MapController', MapController);
-
-	MapController.$inject = ['$scope', '$window', '$timeout', '$http', '$state', '$stateParams', 'Authentication', 'getPlacesService', 'findPlacesByZipService', 'Places', '$location'];
-
-	function MapController($scope, $window, $timeout, $http, $state, $stateParams, Authentication, getPlacesService, $location, findPlacesByZipService, Places) {
 		
+	MapController.$inject = ['$scope', '$window', '$timeout', '$http', '$state', '$stateParams', 'Authentication', 'findPlacesByZipService', '$location', 'PlacesService'];
+	// console.log("map.client.controller - 1");
+	function MapController($scope, $window, $timeout, $http, $state, $stateParams, Authentication, $location, findPlacesByZipService, PlacesService) {
+		// console.log("map.client.controller - 2");
 	    $scope.array              =    { 
 	                                     wifi      : { free  : [], customer: [] },
 	                                     computers : { retail: [], access  : [] },
@@ -44,12 +274,18 @@ function onGoogleReady() {
 	    $scope.closest = [];
 	    $scope.closestMap = [];
 
+      $scope.showMapControls = false
+
+      $scope.bool = false
+
 	    var net = document.getElementById("net");
 
 	    var e1                    = angular.element(document.getElementById("e1"));
 	    var e2                    = angular.element(document.getElementById("e2"));
 	    var e3                    = angular.element(document.getElementById("e3"));
 	    var e4                    = angular.element(document.getElementById("e4"));
+
+      var frontdoor             = angular.element(document.getElementById("frontdoor"));
 
 	    var mapCanvasElement      = document.getElementById("customMap");
 	    var sideWindowElement     = document.getElementById("sw");
@@ -88,6 +324,212 @@ function onGoogleReady() {
 		}
 
 
+
+// var zipBoundaries = [
+// { zip: 66101,
+//   coords: [[-94.635045,39.091501], [-94.635045,39.123394], [-94.630647,39.144839], [-94.61525,39.113496], [-94.612501,39.09755], [-94.635045,39.091501]]},
+// { zip: 66102,
+//   coords: [[-94.710928,39.093701], [-94.737321,39.102499], [-94.740071,39.128343], [-94.735672,39.128343], [-94.635045,39.123394], [-94.635045,39.091501], [-94.671337,39.09535], [-94.710928,39.093701] ]},
+// { zip: 66103,
+//   coords: [[-94.607002,39.089852], [-94.607002,39.083253], [-94.607552,39.072256], [-94.607552,39.044762], [-94.607552,39.044213], [-94.643843,39.044213], [-94.649892,39.076105], [-94.607002,39.089852]] },
+// { zip: '66104',
+//   coords: '-94.635045,39.123394, -94.735672,39.128343, -94.74227,39.169033, -94.647693,39.151987, -94.630647,39.144839, -94.635045,39.123394,' }
+// { zip: '66105',
+//   coords: '-94.607002,39.090951, -94.607002,39.089852, -94.649892,39.076105, -94.671337,39.09535, -94.635045,39.091501, -94.612501,39.09755, -94.607002,39.090951,' }
+// { zip: '66106',
+//   coords: '-94.724124,39.044213, -94.758766,39.043663, -94.792858,39.043663, -94.710928,39.093701, -94.671337,39.09535, -94.649892,39.076105, -94.643843,39.044213, -94.649342,39.044213, -94.664189,39.044213, -94.724124,39.044213,' }
+// { zip: '66109',
+//   coords: '-94.797807,39.128343, -94.853894,39.116245, -94.908331,39.116245, -94.900633,39.202025, -94.835748,39.220171, -94.74227,39.169033, -94.735672,39.128343, -94.740071,39.128343, -94.797807,39.128343,' }
+// { zip: '66111',
+//   coords: '-94.792858,39.043663, -94.87039,39.059059, -94.853894,39.116245, -94.797807,39.128343, -94.737321,39.102499, -94.710928,39.093701, -94.792858,39.043663,' }
+// { zip: '66112',
+//   coords: '-94.797807,39.128343, -94.740071,39.128343, -94.737321,39.102499, -94.797807,39.128343,' }
+// { zip: '66113', coords: 'coords' }
+// { zip: '66115',
+//   coords: '-94.630647,39.144839, -94.647693,39.151987, -94.609751,39.114046, -94.61525,39.113496, -94.630647,39.144839,' }
+// { zip: '66118',
+//   coords: '-94.607552,39.112396, -94.607002,39.108547, -94.607002,39.099749, -94.607002,39.090951, -94.612501,39.09755, -94.61525,39.113496, -94.609751,39.114046, -94.607552,39.112396,' }
+// { zip: '66160', coords: 'coords' }
+// { zip: 66202,
+//   coords: [[-94.693882,39.007371], [-94.664189,39.044213], [-94.649342,39.044213], [-94.648792,39.015069], [-94.648792,39.007371], [-94.693882,39.007371]] },
+// { zip: 66203,
+//   coords: [[-94.704879,38.993075], [-94.723575,38.993075], [-94.724124,39.044213], [-94.664189,39.044213], [-94.693882,39.007371], [-94.704879,38.993075]] },
+// { zip: 66204,
+//   coords: [[-94.704879,38.978228], [-94.704879,38.993075], [-94.693882,39.007371], [-94.648792,39.007371], [-94.65814,38.978778], [-94.704879,38.978228]] },
+// { zip: 66205,
+//   coords: [[-94.607552,39.033765], [-94.648792,39.015069], [-94.649342,39.044213], [-94.643843,39.044213], [-94.607552,39.044213], [-94.607552,39.033765]] }
+// { zip: '66207',
+//   coords: '-94.630097,38.933139, -94.65814,38.934788, -94.65814,38.978778, -94.630097,38.978778, -94.630097,38.933139,' }
+// { zip: '66209',
+//   coords: '-94.649342,38.88365, -94.668038,38.8864, -94.667488,38.912794, -94.608102,38.912794, -94.608102,38.88365, -94.649342,38.88365,' }
+// { zip: '66210',
+//   coords: '-94.74227,38.912794, -94.723575,38.935338, -94.704879,38.935338, -94.668038,38.932039, -94.667488,38.912794, -94.74227,38.912794,' }
+// { zip: '66211',
+//   coords: '-94.667488,38.912794, -94.667488,38.912794, -94.668038,38.932039, -94.65814,38.934788, -94.630097,38.933139, -94.608102,38.936988, -94.608102,38.912794, -94.667488,38.912794,' }
+// { zip: '66212',
+//   coords: '-94.668038,38.932039, -94.704879,38.935338, -94.704879,38.978228, -94.65814,38.978778, -94.65814,38.934788, -94.668038,38.932039,' }
+// { zip: '66213',
+//   coords: '-94.668038,38.8864, -94.686733,38.88365, -94.74227,38.88365, -94.74227,38.912794, -94.667488,38.912794, -94.667488,38.912794, -94.668038,38.8864,' }
+// { zip: '66214',
+//   coords: '-94.723575,38.935338, -94.723575,38.985376, -94.723575,38.993075, -94.704879,38.993075, -94.704879,38.978228, -94.704879,38.935338, -94.723575,38.935338,' }
+// { zip: '66215',
+//   coords: '-94.74227,38.912794, -94.760966,38.923241, -94.760966,38.985376, -94.723575,38.985376, -94.723575,38.935338, -94.74227,38.912794,' }
+// { zip: '66216',
+//   coords: '-94.760966,38.985376, -94.758766,39.043663, -94.724124,39.044213, -94.723575,38.993075, -94.723575,38.985376, -94.760966,38.985376,' }
+// { zip: '66217',
+//   coords: '-94.760966,38.985376, -94.793958,38.985376, -94.808804,39.040363, -94.792858,39.043663, -94.758766,39.043663, -94.760966,38.985376,' }
+// { zip: '66218',
+//   coords: '-94.793958,38.985376, -94.817052,38.984827, -94.843996,38.985376, -94.841797,38.999123, -94.808804,39.040363, -94.793958,38.985376,' }
+// { zip: '66219',
+//   coords: '-94.760966,38.923241, -94.770863,38.914993, -94.807155,38.941937, -94.817052,38.984827, -94.793958,38.985376, -94.760966,38.985376, -94.760966,38.923241,' }
+// { zip: '66220',
+//   coords: '-94.844546,38.941387, -94.843996,38.985376, -94.817052,38.984827, -94.807155,38.941937, -94.844546,38.941387,' }
+// { zip: '66221',
+//   coords: '-94.686733,38.88365, -94.686183,38.840211, -94.705429,38.840211, -94.74227,38.88365, -94.686733,38.88365,' }
+// { zip: '66223',
+//   coords: '-94.686183,38.840211, -94.686733,38.88365, -94.668038,38.8864, -94.649342,38.88365, -94.649342,38.840211, -94.686183,38.840211,' }
+// { zip: '66224',
+//   coords: '-94.649342,38.88365, -94.608102,38.88365, -94.608102,38.850108, -94.649342,38.840211, -94.649342,38.88365,' }
+// { zip: '66226',
+//   coords: '-94.87039,39.059059, -94.792858,39.043663, -94.808804,39.040363, -94.841797,38.999123, -94.909431,38.988676, -94.908881,38.990875, -94.87039,39.059059,' }
+// { zip: '66227',
+//   coords: '-94.844546,38.941387, -94.905032,38.950735, -94.909431,38.988676, -94.841797,38.999123, -94.843996,38.985376, -94.844546,38.941387,' }
+// ];
+
+// var zipBoundaries = [
+// { zip: 66101,
+//   coords: [[-94.635045,39.091501], [-94.635045,39.123394], [-94.630647,39.144839], [-94.61525,39.113496], [-94.612501,39.09755], [-94.635045,39.091501]]},
+// { zip: 66102,
+//   coords: [[-94.710928,39.093701], [-94.737321,39.102499], [-94.740071,39.128343], [-94.735672,39.128343], [-94.635045,39.123394], [-94.635045,39.091501], [-94.671337,39.09535], [-94.710928,39.093701] ]},
+// { zip: 66103,
+//   coords: [[-94.607002,39.089852], [-94.607002,39.083253], [-94.607552,39.072256], [-94.607552,39.044762], [-94.607552,39.044213], [-94.643843,39.044213], [-94.649892,39.076105], [-94.607002,39.089852]] },
+// { zip: 66202,
+//   coords: [[-94.693882,39.007371], [-94.664189,39.044213], [-94.649342,39.044213], [-94.648792,39.015069], [-94.648792,39.007371], [-94.693882,39.007371]] },
+// { zip: 66203,
+//   coords: [[-94.704879,38.993075], [-94.723575,38.993075], [-94.724124,39.044213], [-94.664189,39.044213], [-94.693882,39.007371], [-94.704879,38.993075]] },
+// { zip: 66204,
+//   coords: [[-94.704879,38.978228], [-94.704879,38.993075], [-94.693882,39.007371], [-94.648792,39.007371], [-94.65814,38.978778], [-94.704879,38.978228]] },
+// { zip: 66205,
+//   coords: [[-94.607552,39.033765], [-94.648792,39.015069], [-94.649342,39.044213], [-94.643843,39.044213], [-94.607552,39.044213], [-94.607552,39.033765]] }
+// ];
+
+
+function getZipBounds(zip) {
+  console.log("getZipBounds");
+  console.log(zip);
+  var zip2 = parseInt(zip);
+  var i;
+  var l = zipBounds.length;
+  for (i=0;i<l;i++) {
+    var z = zipBounds[i].zip;
+    // console.log('z');
+    // console.log(z);
+    // console.log('zip2');
+    // console.log(zip2);
+    if (z === zip2) {
+      console.log("what if");
+      return stackChips(zipBounds[i]);
+    } else {
+      console.log('not if');
+    }
+  }
+}
+
+
+$scope.thisBounds;
+
+function stackChips(obj) {
+  console.log("stackChips");
+  console.log(obj);
+  var i; 
+  var j;
+  var l = obj.data.length;
+  var geodesicPoly = new google.maps.Polyline({
+                            strokeColor: '#CC0099',
+                            strokeOpacity: 1.0,
+                            strokeWeight: 3,
+                            geodesic: true,
+                            map: $scope.map
+                          });
+  for (i=0;i<l;i++) {
+    var bounds = [];
+    var m = zipBounds[i].data.length;
+    // console.log(m);
+    // console.log(zipBounds[i].data);
+    for (j=0;j<m;j++) {
+      // console.log(zipBounds[i].data[j]);
+      var lat = zipBounds[i].data[j].match(/(-9.[.].{5,6})/g);
+      var lng = zipBounds[i].data[j].match(/(3.[.].{4,6})/g);
+      // console.log('lat, lng');
+      // console.log(lat);
+      // console.log(lng);
+      
+      var lat2 = parseFloat(lat[0]);
+      var lng2 = parseFloat(lng[0]);
+      // console.log('lat2, lng2');
+      // console.log(lat2);
+      // console.log(lng2);
+
+      // var lat = parseFloat(zipBounds[i].data[j][1]);
+      // var lng = parseFloat(zipBounds[i].data[j][0]);
+      // console.log(lat);
+      // console.log(lng);
+      var p = new google.maps.LatLng(lng2,lat2);
+      // console.log('p');
+      // console.log(p);
+      bounds.push(p);
+    }
+
+  }
+  console.log("bounds");
+  console.log(bounds);
+  geodesicPoly.setPath(bounds);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// var z66207 = [];
+		// var z1 = new google.maps.LatLng(38.933139,-94.630097);
+		// var z2 = new google.maps.LatLng(38.934788,-94.65814);
+		// var z3 = new google.maps.LatLng(38.978778,-94.65814);
+		// var z4 = new google.maps.LatLng(38.978778,-94.630097);
+		// var z5 = new google.maps.LatLng(38.933139,-94.630097);
+		// z66207.push(z1, z2, z3, z4, z5);
+
+
 	    function resetToNormal() {
 	      var arr = [e1,e2,e3,e4];
 	      var i; 
@@ -117,15 +559,167 @@ function onGoogleReady() {
 	      }
 	    }
 
+	    function checkZipMatch(arg1, arg2) {
+
+	    }
+
+	    function checkForZip(zipcode) {
+	    	var l = masterZips.length;
+	    	var i;
+	    	var r = [];
+	    	var zipcode = parseInt(zipcode);
+	    	// console.log(zipcode);
+	    	for (i=0;i<l;i++) {
+	    		var z = masterZips[i].zip;
+	    		if (zipcode === z) {
+	    			var x = masterZips[i].lat;
+	    			var y = masterZips[i].lng;
+	    			r.push(x,y);
+	    			// return r;
+	    		}
+	    	}
+	    	return r;
+	    }
+
+
+      function removeAllMapData() {
+        var all = [];
+        var arr1 = $scope.markers.wifi.free;
+        var arr2 = $scope.markers.wifi.customer;
+        var arr3 = $scope.markers.training.day;
+        var arr4 = $scope.markers.training.night;
+        var arr5 = $scope.markers.computers.access;
+        var arr6 = $scope.markers.computers.retail;
+        all.push(arr1, arr2, arr3, arr4, arr5, arr6);
+        var l = all.length;
+        var i;
+        for (i=0;i<l;i++) {
+          var l2 = all[i].length;
+          var j;
+          for (j=0;j<l2;j++) {
+            // $scope.map.setMap()
+            console.log(all[i][j]);
+            all[i][j].setMap(null);
+          }
+        }
+      }
+
+      $scope.zoomOut = function() {
+        $scope.map.setZoom(13);
+        setTimeout(function(){
+            console.log("timeout");
+            $scope.map.setZoom(12);
+        }, 200);
+      }
+
+      $scope.zoomIn = function() {
+        $scope.map.setZoom(14);
+        setTimeout(function(){
+            console.log("timeout");
+            $scope.map.setZoom(15);
+        }, 100);
+      }
+
+
+
+	    function recenterMap(latlng) {
+	    	// var center = marker.getPosition();
+        console.log($scope.map);
+        console.log($scope.markers);
+        removeAllMapData();
+  			// $scope.map.setZoom(13);
+        $scope.zoomIn();
+  			$scope.map.setCenter(latlng);
+
+  			// var eid = "1fzwSGnxD0xzJaiYXYX66zuYvG0c5wcEUi5ZI0Q";
+  			// var geodesicPoly = new google.maps.Polyline({
+    	// 											    strokeColor: '#CC0099',
+    	// 											    strokeOpacity: 1.0,
+    	// 											    strokeWeight: 3,
+    	// 											    geodesic: true,
+    	// 											    map: $scope.map
+    	// 											  });
+
+  			// var p1 = new google.maps.LatLng(38.978778,-94.630097);
+  			// var p2 = new google.maps.LatLng(38.978778,-94.65814);
+  			// var p3 = new google.maps.LatLng(39.007371,-94.648792);
+  			// var p4 = new google.maps.LatLng(39.015069,-94.648792);
+  			// var p5 = new google.maps.LatLng(39.033765,-94.607552);
+  			// var p6 = new google.maps.LatLng(39.028266,-94.607552);
+  			// var p7 = new google.maps.LatLng(39.000223,-94.608102);
+  			// var p8 = new google.maps.LatLng(38.985376,-94.608102);
+  			// var p9 = new google.maps.LatLng(38.978778,-94.630097);
+
+  			// var path = [p1,p2,p3,p4,p5,p6,p7,p8,p9];
+  			// var layer = new google.maps.FusionTablesLayer({
+  			// 											    query: {
+  			// 													      select: 'geometry',
+  			// 													      from: eid,
+  			// 													      where: 'ZIP == 66208'
+  			// 													    }
+  			// 											  });
+  			// layer.setMap($scope.map);
+  			// geodesicPoly.setPath(path);
+  			// var path66207 = z66207;
+  			// new google.maps.Polyline({
+  			// 									    strokeColor: '#CC0099',
+  			// 									    strokeOpacity: 1.0,
+  			// 									    strokeWeight: 3,
+  			// 									    geodesic: true,
+  			// 									    map: $scope.map
+  			// 									  }).setPath(path66207);
+
+	    }
+
+      var mainPageEl = angular.element(document.getElementById("main-page"))[0];
+
+      $scope.setPageHeightNormal = function() {
+        mainPageEl.style.height = "638px";
+      }
+
+      $scope.setPageHeightLong = function() {
+        mainPageEl.style.height = "800px";
+        setTimeout(function(){
+            console.log("timeout");
+            $scope.map.setZoom(14);
+        }, 500);
+      }
+
 	    $scope.searchByZip = function(zipcode) {
 	      resetForm();
-	      
+	      // console.log(masterZips);
+        console.log('searchByZip');
+	      console.log(zipcode);
+	      var ll = checkForZip(zipcode);
+
+	      console.log(ll);
+
+	      // mapCanvasElement.style.height = "800px"l
+        
+        console.log("main-page");
+        console.log(mainPageEl);
+        // mainPageEl.style.height = "800px";
 
 
+	      var r2ll = new google.maps.LatLng(ll[0], ll[1]);
+        recenterMap(r2ll);
+	      // var zipCenter = new google.maps.Marker({
+							// 	    position: r2ll,
+       //              label: zipcode,
+       //              title: zipcode,
+							// 	    animation: google.maps.Animation.DROP,
+							// 	    icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+				   //        	map: $scope.map
+							//  	   });
+	      // recenterMap(zipCenter);
+	      // var theseBounds = getZipBounds(zipcode);
+       //  console.log("theseBounds");
+       //  console.log(theseBounds);
 	      var body = {zip: zipcode};
 
 	      $http.post('/api/places/query', body).success(function(data) {
-
+	      	console.log('zip');
+	      	console.log(data);
 	        callback(data);
 	      });
 
@@ -151,30 +745,77 @@ function onGoogleReady() {
 	      console.log(num + " reaching limit =>" + limit);
 	    }
 
-	    $scope.places = getPlacesService.getPlaces(function(places) {
-	      $scope.places = places;
-	      var lng = $scope.places.length;
-	      var i;
-	      for (i = 0; i < lng; i++) {
-	        var place = $scope.places[i];
-	        var category = place.primaryCategory;
-	        if (category === "computers-access") {
-	           $scope.array.computers.access.push(place);
-	        } else if (category === "training-day") {
-	           $scope.array.training.day.push(place);
-	        } else if (category === "training-night") {
-	           $scope.array.training.night.push(place);
-	        } else if (category === "wifi-free") {
-	           $scope.array.wifi.free.push(place);
-	        } else if (category === "wifi-customer") {
-	          $scope.array.wifi.customer.push(place);
-	        } else if (category === "computers-retail") {
-	          $scope.array.computers.retail.push(place);
-	        } else if (category === "isp") {
-	          $scope.array.isps.push(place);
-	        };
-	      }
-		  });
+	    var vm = this;
+
+	    // var allPlaces = PlacesService.query();
+	  	var master = $http.get('/api/places').success(function(data){
+	  		console.log("success");
+	  		sortResponses(data);
+	  	}).error(function(err) {
+	  		console.log('err');
+	  		console.log(err);
+	  	});
+
+
+	  	function sortResponses(places) {
+	  		console.log("sort");
+	  		console.log(places);
+	  		var length = places.length;
+	  		console.log(length);
+	  		var i;
+	  		for (i = 0; i < length; i++) {
+		        var place = places[i];
+		        // console.log(place);
+		        var category = place.primaryCategory;
+		        if (category === "computers-access") {
+		           // list.access.push(place);
+		           $scope.array.computers.access.push(place);
+		        } else if (category === "training-day") {
+		           $scope.array.training.day.push(place);
+		        } else if (category === "training-night") {
+		           $scope.array.training.night.push(place);
+		        } else if (category === "wifi-free") {
+		           $scope.array.wifi.free.push(place);
+		        } else if (category === "wifi-customer") {
+		          $scope.array.wifi.customer.push(place);
+		        } else if (category === "computers-retail") {
+		          $scope.array.computers.retail.push(place);
+		        } else if (category === "isp") {
+		          $scope.array.isps.push(place);
+		        };
+		      }
+
+	  		
+	  	}
+
+
+	  	$scope.isps = [];
+
+	  	function getIsps(array) {
+	  		var i;
+	  		var l = array.length;
+
+	  		for (i=0;i<l;i++) {
+	  			if (array[i].primaryCategory === "isp") {
+	  				$scope.isps.push(array[i]);
+	  			}
+	  		}
+	  	}
+
+
+	    // console.log(allPlaces);
+	    // console.log(allPlaces.length);
+	    // $scope.places;
+	    // allPlaces.then(function() {
+	    // 	console.log("then");
+	    // 	console.log(allPlaces);
+	    // })
+
+	    // sortListToArrays(allPlaces);
+
+	  //   $scope.places = getPlacesService.getPlaces(function(places) {
+	      
+		 // });
 
 	    function setWifiMarkers() {
 	      console.log("setWifiMarkers");
@@ -186,6 +827,7 @@ function onGoogleReady() {
 	      var coLength = coLocations.length;
 	      for (i=0; i<frLength; i++) {
 	        var place = frLocations[i];
+	        // console.log(place);
 	        createMarker(place);
 	        
 	      }
@@ -328,6 +970,10 @@ function onGoogleReady() {
 
 var panel = angular.element(document.getElementById("directions-panel"));
 
+var mapVeil = angular.element(document.getElementById("map-veil"));
+
+
+
 	    // var desth4 = angular.element(document.getElementById("show-dest"));
 	    $scope.drawRoute = function(res) {
 	    	// var wps = res.
@@ -442,10 +1088,15 @@ var panel = angular.element(document.getElementById("directions-panel"));
 		var markerIndex = {};
 
 		function setActive(marker, latLng, category) {
+      $scope.map.setZoom(14);
+      setTimeout(function(){
+            console.log("timeout");
+            $scope.map.setZoom(16);
+        }, 100);
 			// set marker to highlight active location 
 
-			console.log("setActive");
-			console.log(latLng);
+			// console.log("setActive");
+			// console.log(latLng);
 			// var point = latLng.fromLatLngToPoint(latLng:latLng, point?:"");
 			// console.log(point);
 			var color = getColor(category);
@@ -500,8 +1151,8 @@ var panel = angular.element(document.getElementById("directions-panel"));
 
 		function sortByProximity(position) {
 			var currentPos = position;
-			console.log("sortByProximity");
-			console.log(currentPos);
+			// console.log("sortByProximity");
+			// console.log(currentPos);
 		}
 
 
@@ -509,13 +1160,15 @@ var panel = angular.element(document.getElementById("directions-panel"));
 		function recenterToMarker() {
 
 			var center = $scope.bouncingMarker.getPosition();
-			 $scope.map.setZoom(14);
+			 $scope.map.setZoom(17);
 			    $scope.map.setCenter(center);
 
 			// marker.addListener('click', function() {
 			   
 			// })
 		}
+
+
 
 
 
@@ -593,8 +1246,7 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	      google.maps.event.addListener(marker, 'click', function() {
 	        resizeMap();	
 	        findActive();
-	        console.log("marker");
-	        console.log(json);
+	
 	        var lat = json.location[0].lat;
 	        var lng = json.location[0].lng;
 	        var ll = new google.maps.LatLng(lat,lng);
@@ -770,7 +1422,6 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    }
 
 	    function clearRetailMarkers() {
-	      console.log("clearRetailMarkers");
 	      var markers = $scope.markers.computers.retail;
 	      var i; 
 	      var length = $scope.markers.length;
@@ -793,12 +1444,10 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    $scope.trainingVisibility = new Boolean();
 	    $scope.toggleTrainingMarkers = function() {
 	      if ($scope.trainingVisibility) {
-	        console.log('true');
 	        resetCss(e2, true);
 	        setTrainingMarkers();
 	        $scope.trainingVisibility = false;
 	      } else {
-	        console.log('false');
 	        resetCss(e2, false);
 	        clearTrainingMarkers();
 	        $scope.trainingVisibility = true;
@@ -808,12 +1457,10 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    $scope.computersVisibility = new Boolean();
 	    $scope.toggleComputersMarkers = function() {
 	      if ($scope.computersVisibility) {
-	        console.log('true');
 	        resetCss(e3, true);
 	        setAccessMarkers();
 	        $scope.computersVisibility = false;
 	      } else {
-	        console.log('false');
 	        resetCss(e3, false);
 	        clearAccessMarkers();
 	        $scope.computersVisibility = true;
@@ -823,13 +1470,11 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    $scope.wifiVisibility = new Boolean();
 	    $scope.toggleWifiMarkers = function() {
 	      if ($scope.wifiVisibility) {
-	        console.log('true');
 	        resetCss(e1, true);
 	        $scope.buttonToggled = true;
 	        setWifiMarkers();
 	        $scope.wifiVisibility = false;
 	      } else {
-	        console.log('false');
 	        resetCss(e1, false);
 	        clearWifiMarkers();
 	        $scope.wifiVisibility = true;
@@ -839,12 +1484,10 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    $scope.refurbsVisibility = new Boolean();
 	    $scope.toggleRefurbsMarkers = function() {
 	      if ($scope.refurbsVisibility) {
-	        console.log('true');
 	        resetCss(e4, true);
 	        setRetailMarkers();
 	        $scope.refurbsVisibility = false;
 	      } else {
-	        console.log('false');
 	        resetCss(e4, false);
 	        clearRetailMarkers();
 	        $scope.refurbsVisibility = true;
@@ -920,8 +1563,6 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    }
 
 	    $scope.isLoaded = new Boolean(false);
-	    console.log('isLoaded1');
-	    console.log($scope.isLoaded);
 
 
 
@@ -949,19 +1590,19 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	      }
 
 	     var countMarkers = function () {
-	     	console.log("COUNT");
-	     	console.log("public wifi");
-	     	console.log($scope.markers.wifi.free.length);
-	     	console.log("customer");
-	     	console.log($scope.markers.wifi.customer.length);
-	     	console.log("public access computers");
-	     	console.log($scope.markers.computers.access.length);
-	     	console.log("low cost refurbished computers");
-	     	console.log($scope.markers.computers.retail.length);
-	     	console.log("day training");
-	     	console.log($scope.markers.training.day.length);
-	     	console.log("evening training");
-	     	console.log($scope.markers.training.night.length);
+	     	// console.log("COUNT");
+	     	// console.log("public wifi");
+	     	// console.log($scope.markers.wifi.free.length);
+	     	// console.log("customer");
+	     	// console.log($scope.markers.wifi.customer.length);
+	     	// console.log("public access computers");
+	     	// console.log($scope.markers.computers.access.length);
+	     	// console.log("low cost refurbished computers");
+	     	// console.log($scope.markers.computers.retail.length);
+	     	// console.log("day training");
+	     	// console.log($scope.markers.training.day.length);
+	     	// console.log("evening training");
+	     	// console.log($scope.markers.training.night.length);
 	     }
 
 	    var loadMarkersOnInit = function (boolean) {
@@ -981,13 +1622,13 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    }
 
 	    var initFreeWifiButton = function () {
-	    	console.log("initFreeWifiButton");
+	    	// console.log("initFreeWifiButton");
 	    	e1.removeClass('button normal fit small') && e1.addClass('button special fit small');
 
 	    }
 
 	    var initTrainingButtons = function () {
-	    	console.log("initTrainingButtons");
+	    	// console.log("initTrainingButtons");
 	    	e2.removeClass('button normal fit small') && e2.addClass('button special fit small');
 	    	// e4.removeClass('normal') && e4.addClass('special');
 
@@ -1018,33 +1659,34 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    	var css = btn.className;
 	    	var id = btn.id;
 	    	console.log(btn.className);
-	    	console.log(btn.id);
+	    	// console.log(btn.id);
 	    	if (css.match(activeCss)) {
-	    		console.log("css matches, is highlighted")
+	    		// console.log("css matches, is highlighted")
 	    		return true;
 	    	} else {
-	    		console.log("css not a match, not highlighted");
+	    		// console.log("css not a match, not highlighted");
 	    		return false;
 	    	}
 	    	// if (btn === )
 	    }
 
 	    var checkActiveArray = function() {
-	    	console.log("checkActiveArray");
-	    	console.log($scope.currentlyHighlightedButtons.length);
+	    	// console.log("checkActiveArray");
+	    	// console.log($scope.currentlyHighlightedButtons.length);
 	    	return $scope.currentlyHighlightedButtons
 	    }
 
 	    var getCurrentlyHighlighted = function() {
-	    	console.log("getCurrentlyHighlighted");
+	    	// console.log("getCurrentlyHighlighted");
 	    	$scope.activeNow = [];
-	    	console.log($scope.activeNow);
+	    	// console.log($scope.activeNow);
 	    	var btns = [e1,e2,e3,e4];
 	    	var i;
 	    	for (i=0;i<4;i++) {
 	    		var btn = btns[i][0];
 	    		var s = getBtnStatus(btns[i][0]);
 	    		console.log("is btn highlighted");
+          console.log(btn.id);
 	    		console.log(s);
 	    		callbackStatus(btn, s);
 	    		// if s.css matches string special -- depnds on getBtnStatus console.log obj
@@ -1053,7 +1695,7 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    	lookupActive(arc);
 	 
 	    	var returnVal = parseActive();
-	    	console.log("returnVal");
+	    	// console.log("returnVal");
 	    	return returnVal;
 	    	// console.log(returnVal);
 	    	// var w;
@@ -1061,6 +1703,11 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    	// 	console.log(returnVal[w]);
 	    	// }
 	    }	
+
+
+      $scope.switchToggleState = function() {
+        getCurrentlyHighlighted();
+      }
 
 	    var parseActive = function() {
 	    	var all = $scope.activeNow;
@@ -1084,8 +1731,8 @@ var panel = angular.element(document.getElementById("directions-panel"));
 
 	    var getAllCurrentlyHighlightedInViewport = function () {
 	    	// var cr = getCurrentlyHighlighted();
-	    	console.log("getAllCurrentlyHighlightedInViewport");
-	    	console.log($scope.viewportActiveLocations);
+	    	// console.log("getAllCurrentlyHighlightedInViewport");
+	    	// console.log($scope.viewportActiveLocations);
 
 	    }
 
@@ -1207,35 +1854,35 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    var checkForLocationsInViewport = function (bounds,latLng) {
 	    	var loc = google.maps.LatLng(latLng.lat, latLng.lng);
 	    	if (bounds.contains(loc)) {
-	    		console.log("bounds contains latLng");
+	    		// console.log("bounds contains latLng");
 	    		return [true,loc];
 	    	} else {
-	    		console.log("bounds does not contain latLng");
+	    		// console.log("bounds does not contain latLng");
 	    		return [false,null];
 	    	}
 	    }
 
 
 	    var refreshViewportData = function() {
-	    	console.log("refreshViewportData");
+	    	// console.log("refreshViewportData");
 	    }
 
 
 
 	    var resetViewportActive = function () {
-	    	console.log("reset");
-	    	console.log($scope.viewportActiveLocations.length);
+	    	// console.log("reset");
+	    	// console.log($scope.viewportActiveLocations.length);
 	    	// $scope.viewportActiveLocations = [];
 	    	getAllLocationsInViewport($scope.map.getBounds());
-	    	console.log($scope.viewportActiveLocations.length);
+	    	// console.log($scope.viewportActiveLocations.length);
 	    }
 
 	    var getAllLocationsInViewport = function(bounds) {
-	    	console.log("getAllLocationsInViewport");
+	    	// console.log("getAllLocationsInViewport");
 	    	// $scope.viewportActiveLocations = [];
-	    	console.log("bounds");
-	    	console.log(bounds);
-	    	console.log("now get current");
+	    	// console.log("bounds");
+	    	// console.log(bounds);
+	    	// console.log("now get current");
 
 	    	var rectangle = new google.maps.Rectangle({
 	          bounds: bounds
@@ -1244,8 +1891,8 @@ var panel = angular.element(document.getElementById("directions-panel"));
 
 
 	    	var allCur = getCurrentlyHighlighted();
-	    	console.log("all gotten");
-	    	console.log(allCur);
+
+	    	// console.log(allCur);
 	    	var i;
 	    	for (i=0;i<allCur.length;i++){
 	    		// console.log(allCur[i]);
@@ -1277,8 +1924,8 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    $scope.endResult = {};
 
 	    function getViewportCurrentlyActive() {
-	    	console.log("check for end result");
-	    	console.log($scope.index);
+	    	// console.log("check for end result");
+	    	// console.log($scope.index);
 	    	// $scope.index = $scope.endResult;
 
 
@@ -1293,9 +1940,9 @@ var panel = angular.element(document.getElementById("directions-panel"));
 
 
 	    var checkIndex = function(location) {
-	    	console.log("checkIndex");
-	    	console.log(location);
-	    	console.log(currentIndex);
+	    	// console.log("checkIndex");
+	    	// console.log(location);
+	    	// console.log(currentIndex);
 	    	
 	    	
 	    	var lat = parseFloat(location.lat).toFixed(5);
@@ -1307,9 +1954,9 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    	var i;
 
 	    	for (i=0;i<index.length;i++) {
-	    		console.log("index[i].location");
+	    		// console.log("index[i].location");
 	    		if (ll.lat === index[i].latlng.lat && ll.lng === index[i].latlng.lng) {
-	    			console.log("match found");
+	    			// console.log("match found");
 	    			// console.log(index[i].id);
 	    			var gotPlace = getFromBackend(index[i].id);
 	    			// console.log(gotPlace);
@@ -1317,14 +1964,14 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    		}
 	    	}
 	    	var cn = $scope.viewportActiveLocations.length;
-	    	console.log("number in array binding $scope.viewportActiveLocations");
-	    	console.log(cn);
+	    	// console.log("number in array binding $scope.viewportActiveLocations");
+	    	// console.log(cn);
 	    }
 
 
 	    var callbackSendsData = function (arr) {
 	    	if (arr[0]) {
-	    		console.log("true --33");
+	    		// console.log("true --33");
 	    		// console.log(arr[1].lat);
 	    		checkIndex(arr[1]);
 	    		// getFromBackend(arr[1]);
@@ -1332,8 +1979,8 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    }
 	    var viewIndex = [];
 	    var cbReturns = function (obj) {
-	    	console.log("cbReturns");
-	    	console.log(obj);
+	    	// console.log("cbReturns");
+	    	// console.log(obj);
 	    	$scope.viewportActiveLocations.push(obj);
 	    	viewIndex.push(obj);
 	    	viewIndex.unique();
@@ -1353,18 +2000,18 @@ var panel = angular.element(document.getElementById("directions-panel"));
 			        // console.log(response.data);
 			        // $scope.viewportActiveLocations.push(response.data);
 			         cbReturns(response.data);
-			         console.log($scope.viewportActiveLocations.unique());
+			         // console.log($scope.viewportActiveLocations.unique());
 			        // $scope.directionsDisplay.setDirections(response.data.bounds);
 			    } else {
-			       console.log("not ok");
+			       // console.log("not ok");
 			    }
 			});
 	    }
 
 	    
 	    var buildIndex = function() {
-	    	console.log("buildingIndex");
-	    	console.log($scope.places);
+	    	// console.log("buildingIndex");
+	    	// console.log($scope.places);
 	    	var pl = $scope.places;
 	    	var i;
 	    	for (i=0;i<pl.length;i++) {
@@ -1385,8 +2032,8 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    var currentIndex = [];
 
 	    var formatToIndex = function (loc, id, name, address) {
-	    	console.log("formatToIndex");
-	    	console.log(loc);
+	    	// console.log("formatToIndex");
+	    	// console.log(loc);
 	    	var lat = parseFloat(loc.lat).toFixed(5);
 		    var lng = parseFloat(loc.lng).toFixed(5);
 		    var location = {lat: lat, lng: lng};
@@ -1405,9 +2052,10 @@ var panel = angular.element(document.getElementById("directions-panel"));
 
 
 
+
 	    var reportView = function () {
-	    	console.log("reportView");
-	    	console.log(currentIndex);
+	    	// console.log("reportView");
+	    	// console.log(currentIndex);
 	    	// console.log(viewIndex);
 
 	    }
@@ -1539,7 +2187,7 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    		var index = [];
 	    	
 	    		var i; 
-	    		console.log("resultsIndex");
+	    		// console.log("resultsIndex");
 	    		// console.log(array);
 	    		for (i=0;i<array.length;i++) {
 	    			var val = array[i].data.elements[0].distance.value;
@@ -1547,9 +2195,9 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    			// console.log(val.toString());
 	    			var vs = val.toString();
 	    			var dest = array[i].config.data.destination_addresses;
-	    			console.log("ri");
-	    			console.log(vs);
-	    			console.log(dest);
+	    			// console.log("ri");
+	    			// console.log(vs);
+	    			// console.log(dest);
 	    			var ds = dest.replace(/\+/g, " ");
 	    			index.push(vs);
 	    			var object = {key: vs, address: ds}
@@ -1622,6 +2270,11 @@ var panel = angular.element(document.getElementById("directions-panel"));
 				// console.log($scope.proximity1);
 
 			}
+
+
+
+
+
 
 
 // var numArray = [140000, 104, 99];
@@ -1703,19 +2356,50 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	    }
 	
 
+
+
+      function zoomEnter() {
+        setTimeout(function(){
+            console.log("timeout");
+            $scope.map.setZoom(14);
+        }, 200);
+        setTimeout(function(){
+            console.log("timeout");
+            $scope.map.setZoom(15);
+        }, 400);
+        setTimeout(function(){
+            console.log("timeout");
+            $scope.map.setZoom(16);
+        }, 800);
+      }
+
+      function fadeOutElement(element) {
+        console.log("fadeOut");
+        console.log(element)
+        // element.addClass("fade");
+        // element.removeClass("veil");
+        // var current = element[0];
+        // console.log(current);
+        // element.addClass("am-flip-x-linear");
+        element.addClass("am-fade-and-slide-bottom-remove")
+      }
+      
+
 	    $scope.showMap = function(position) {
 
 
-	      
+	      var cMap = angular.element(document.getElementById("customMap"));
 	      $scope.lat = position.coords.latitude;
 	      $scope.lng = position.coords.longitude;
 	      $scope.accuracy = position.coords.accuracy;
 
 	      $scope.mapOptions = {
 	        center: {lat: $scope.lat, lng: $scope.lng},
-	        zoom: 15,
+	        zoom: 13,
 	        mapTypeId: google.maps.MapTypeId.ROADMAP
 	      };
+
+        
 
 	      $scope.map = new google.maps.Map(document.getElementById('customMap'), $scope.mapOptions);
 	      // $scope.input = document.getElementById('plac');
@@ -1725,30 +2409,45 @@ var panel = angular.element(document.getElementById("directions-panel"));
 
 
 
-	      $scope.input = document.getElementById('pac-input');
-          $scope.searchBox = new google.maps.places.SearchBox($scope.input);
+	      // $scope.input = document.getElementById('pac-input');
+          // $scope.searchBox = new google.maps.places.SearchBox($scope.input);
 
           $scope.initialLocation = new google.maps.LatLng($scope.lat, $scope.lng);
+          // console.log("&&&&&&&&&&&&&&&&&&&&&");
+          // console.log("$scope.initialLocation");
+          // console.log($scope.initialLocation);
 	      $scope.currentLocation = $scope.initialLocation;
 
 
 	      google.maps.event.addListenerOnce($scope.map, 'tilesloaded', function(){
 			    // do something only the first time the map is loaded
-			    console.log("============================tilesloaded");
-			    $timeout(6000, loadMarkersOnInit(true), true);
-			    initFreeWifiButton();
-			    setWifiMarkers();
-			    initTrainingButtons();
-			    setTrainingMarkers();
-			    buildIndex();
-			    setViewportData();
-			    checkViewport();
-			    console.log('vp');
-			    console.log(viewIndex);
-			    console.log($scope.map);
-			    console.log($scope.map.data);
+          $scope.showMapControls = true
+          zoomEnter()
+			    console.log("============================tilesloaded")
+			    $timeout(6000, loadMarkersOnInit(true), true)
+			    initFreeWifiButton()
+			    setWifiMarkers()
+			    // initTrainingButtons()
+			    // setTrainingMarkers()
 
-			    reportView();
+
+          
+          
+          setTimeout(function() {
+              console.log("timeout");
+
+              // cMap.removeClass("vis-off");
+              // cMap.addClass('vis-on');
+          }, 100);
+			    // buildIndex();
+			    // setViewportData();
+			    // checkViewport();
+			    // console.log('vp');
+			    // console.log(viewIndex);
+			    // console.log($scope.map);
+			    // console.log($scope.map.data);
+
+			    // reportView();
 			    // executes getAllLocationsInViewport($scope.currentBounds);
 			    	// gets getCurrentlyHighlighted(); 
 			    		// iterates results array
@@ -1781,11 +2480,11 @@ var panel = angular.element(document.getElementById("directions-panel"));
 
 
           google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-			    console.log("***********************************idle");
-			    console.log("map");
-			    console.log($scope.map);
-			    console.log("tilesloaded");
-			    console.log($scope.map.tilesloaded);
+			    // console.log("***********************************idle");
+			    // console.log("map");
+			    // console.log($scope.map);
+			    // console.log("tilesloaded");
+			    // console.log($scope.map.tilesloaded);
 			    // setViewportData();
 			    // checkViewport();
 
@@ -1812,16 +2511,16 @@ var panel = angular.element(document.getElementById("directions-panel"));
 
           google.maps.event.addListener(net, 'mouseover', function() {
           	// console.log("mouse in net");
-          	console.log(viewIndex);
+          	// console.log(viewIndex);
           })
 
           google.maps.event.addListenerOnce($scope.map, 'mouseover', function() {
-          	console.log("mousover map");
-          	console.log(currentIndex);
-          	console.log(viewIndex);
+          	// console.log("mousover map");
+          	// console.log(currentIndex);
+          	// console.log(viewIndex);
 
-          	reportViewIndex(currentIndex, viewIndex);
-          	measureDistances($scope.inViewNow);
+          	// reportViewIndex(currentIndex, viewIndex);
+          	// measureDistances($scope.inViewNow);
           })
 
 
@@ -1829,12 +2528,12 @@ var panel = angular.element(document.getElementById("directions-panel"));
 
 
         // Bias the SearchBox results towards current map's viewport.
-          $scope.map.addListener('bounds_changed', function() {
-            $scope.searchBox.setBounds($scope.map.getBounds());
-            resetViewportActive();
-            console.log("BOUNDS CHANGED");
+          // $scope.map.addListener('bounds_changed', function() {
+            // $scope.searchBox.setBounds($scope.map.getBounds());
+            // resetViewportActive();
+            // console.log("BOUNDS CHANGED");
             // checkViewport();
-          });
+          // });
 
           $scope.mapReady = true;
 
@@ -1894,7 +2593,7 @@ var panel = angular.element(document.getElementById("directions-panel"));
 	        $scope.map.setCenter(center);
 	        var bounds = $scope.map.getBounds();
 	        console.log(bounds);
-	        refreshViewportData();
+	        // refreshViewportData();
 	      });
 	        
 	      $scope.$apply();

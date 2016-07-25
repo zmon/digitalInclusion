@@ -25,9 +25,28 @@
       })
       .state('places.create', {
         url: '/create',
-        templateUrl: 'modules/places/client/views/create-place.client.view.html',
+        templateUrl: 'modules/places/client/views/form-place.client.view.html',
+        controller: 'PlacesController',
+        controllerAs: 'vm',
+        resolve: {
+          placeResolve: newPlace
+        },
         data: {
-          roles: ['user', 'admin']
+          roles: ['user', 'admin', 'guest'],
+          pageTitle: 'Places Create'
+        }
+      })
+      .state('places.edit', {
+        url: '/:placeId/edit',
+        templateUrl: 'modules/places/client/views/form-place.client.view.html',
+        controller: 'PlacesController',
+        controllerAs: 'vm',
+        resolve: {
+          placeResolve: getPlace
+        },
+        data: {
+          roles: ['user', 'admin', 'guest'],
+          pageTitle: 'Edit Place {{ placeResolve.title }}'
         }
       })
       .state('places.view', {
@@ -40,13 +59,6 @@
         },
         data: {
           pageTitle: 'Place {{ placeResolve.title }}'
-        }
-      })
-      .state('places.edit', {
-        url: '/:placeId/edit',
-        templateUrl: 'modules/places/client/views/edit-place.client.view.html',
-        data: {
-          roles: ['guest','user', 'admin']
         }
       });
   }

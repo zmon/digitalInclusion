@@ -1,0 +1,17 @@
+
+<main class="temp-rain" ng-controller="InternetController">
+  <div ng-repeat="isp in isps" class="am-slide-right">
+    {{ isp.title }}
+  </div>
+  <h5>fade</h5>
+
+<button type="button" class="btn btn-primary" data-animation="am-fade" data-placement="left" bs-popover="popover">popover from left<br><small>(am-fade)</small></button>
+
+<button type="button" class="btn btn-success" data-animation="am-fade" data-placement="right" bs-popover="popover">popover from right<br><small>(am-fade)</small></button><br><br>
+
+<button type="button" class="btn btn-primary" data-animation="am-fade" data-placement="top" bs-tooltip="tooltip">tooltip from top<br><small>(am-fade)</small></button>
+
+<button type="button" class="btn btn-success" data-animation="am-fade" data-placement="bottom" bs-tooltip="tooltip">tooltip from bottom<br><small>(am-fade)</small></button>
+</main>
+
+

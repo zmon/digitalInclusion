@@ -1,19 +1,39 @@
-input.ng-pristine {
-    border: 1px solid #c9cece;
-    box-shadow: 0 0 1px #535d59;
+.navbar {
+    -webkit-box-shadow: none;
+    /* box-shadow: none; */
+    border: none;
+    font-size: 12px;
+}
+.navbar-inverse {
+    background-color: #48382d;
+    border-color: transparent;
 }
 
-input.ng-not-empty {
-    background: #ffffff;
-    color: #353425;
-    border: 1px solid #194625;
-    box-shadow: 0 0 5px #4a5a29;
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
 }
-
-h3.col-md-12.text-center.log {
-    margin-bottom: 2em;
+@media (min-width: 768px)
+.navbar-fixed-top, .navbar-fixed-bottom {
+    border-radius: 0;
 }
-
-.si {
-	color:white;
+.navbar-fixed-top, .navbar-fixed-bottom {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+@media (min-width: 768px)
+.navbar {
+    border-radius: 0;
+}
+.navbar {
+    position: relative;
+    min-height: 40px;
+    margin-bottom: 21px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 60px #291414, inset 0 0 10px #2c2d1b;
+    background: #485563; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #485563 , #29323c); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #485563 , #29323c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

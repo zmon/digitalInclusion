@@ -5,7 +5,7 @@
 
   var service = {
     applicationModuleName: applicationModuleName,
-    applicationModuleVendorDependencies: ['ngResource', 'ngAnimate', 'ui.map', 'ngMessages', 'ui.router', 'ui.bootstrap', 'ui.bootstrap.tabs', 'ui.bootstrap.modal', 'angularFileUpload'],
+    applicationModuleVendorDependencies: ['ngResource', 'ngAnimate', 'ui.map', 'ngMessages', 'ui.router', 'ui.bootstrap', 'ui.bootstrap.tabs', 'ui.bootstrap.modal', 'angularFileUpload', 'selector', 'angular-progress-button-styles', 'angularSpinners'],
     registerModule: registerModule
   };
 

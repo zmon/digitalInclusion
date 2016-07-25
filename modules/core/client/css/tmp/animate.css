@@ -1,0 +1,63 @@
+/*.fade.ng-leave {
+  transition:10.5s linear all;
+  opacity:1;
+  z-index: 0;
+}*/
+/*.fade.ng-leave.ng-leave-active {
+  opacity:0;
+}*/
+
+
+.unveil {
+	display: none;
+}
+
+/* there is no need to define anything inside of the destination
+CSS class since the keyframe will take charge of the animation */
+.fade.ng-leave {
+  animation: fadeOut_animation 2.5s linear;
+  -webkit-animation: fadeOut_animation 2.5s linear;
+}
+
+@keyframes fadeOut_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-webkit-keyframes fadeOut_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+
+
+
+
+
+.change-up-add {
+	transition: background-color linear 1.5s;
+	background-color: green;
+}
+
+.change-up-add.change-up-add-active {
+	background-color: white;
+}
+
+.change-down-add {
+	transition: background-color linear 1.5s;
+	background-color: red;
+}
+
+.change-down-add.change-down-add-active {
+	background-color: white;
+}
+
+
+
+main.temp-rain {
+    width: 100%;
+    height: 50em;
+    background: white;
+    color: black;
+    margin-top: -15em;
+}

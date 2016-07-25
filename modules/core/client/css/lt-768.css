@@ -4,6 +4,12 @@
 	    margin-left: 0;
 	    padding-right: 2em;
 	}
+
+	#header {
+	    padding: 1.8em 2em 0.1em 2em;
+	}
+
+
 	section.one-half.btn-wrapper {
 	    position: relative;
 	    width: 18em;
@@ -30,6 +36,9 @@
 	    background: radial-gradient(#f7f7f7,#f5f5f5,#f1f1f1);
 	    background: radial-gradient(#e4e2cf,#c0ccc6);
 	    box-shadow: inset 0 0 250px #e4e4e4;
+	    background: transparent;
+	    box-shadow: none;
+	    border: none;
 	}
 	.table-wrapper {
 	
@@ -72,13 +81,13 @@
 
 	ul.actions.fit.small {
 	    margin-left: -0.5em;
-	    width: calc(100% + -20.5em);
+	    width: calc(100% + -24.5em);
 	    min-width: 150px;
 	    position: relative;
-	    margin-top: -1.4em;
+	    margin-top: -1.04em;
 	    /* margin-left: 1em; */
-	    left: 25%;
-	    top: 2.84em;
+	    left: 28%;
+	    top: -8em;
 	}
 
 	#main > .main:first-child {
@@ -86,16 +95,16 @@
 	    border-top: 3px double;
 	    background: #f7f7f7;
 	    border-bottom: 3px double;
-	    background: #9a9a9a;
-	    /* background: transparent; */
+	    background: #ffffff;
+	    background: transparent;
 	    border: 1px solid #dadada;
 	    box-shadow: 0 0 3px #c7c7c7;
-	    border: 1px solid #544848;
-	    box-shadow: 0 0 0 2px #b3b3b3, inset 0 0 100px #888888, 0 0 20px black;
+	    border: none;
+	    box-shadow: none;
 	}
 	#main input[type="submit"], #main input[type="reset"], #main input[type="button"], #main button, #main .button {
-	    background-color: transparent;
-	    box-shadow: inset 0 0 0 1px #dddddd;
+	    background-color: rgba(249, 249, 249, 1);
+	    box-shadow: inset 0 0 0 1px #cacaca;
 	    color: #636363 !important;
 	    font-weight: 400;
 	}
@@ -156,27 +165,33 @@
 
 	main#main-page {
 		position: relative;
-		top: -4em;
-		margin-left: 0;
+		top: -4.8em;
+		margin-left: -2em;
 		background: radial-gradient(#929292,#868484,#9e9677,#a09a80,#929187);
 		outline: 1px solid #656161;
 		box-shadow: inset 0 0 400px #afb7b9;
 		background: silver;
 		background: radial-gradient(#ebf0ff,#bedbf9,#88a6b9,#536971);
+		background: none;
+		box-shadow: none;
+		outline: none;
+		border: none;
 	}
 
 	section#customMap {
-		height: 411px;
+		height: 600px;
 		border-left: 1px solid #626f64;
 		border-right: 1px solid #637766;
 		box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
 		border: 2px solid #676f03;
-		/* box-shadow: 0 0 50px black; */
-		margin-top: 2.84em;
+		box-shadow: none;
+		margin-top: -5em;
 		margin-bottom: -2.7em;
+		width: 111.75%;
+		margin-left: -.25em;
 		border: none;
 		border-bottom: .5px solid #423906;
-		border-top: 1.5px solid #5d5b51;
+		border: none;
 	}
 	#header p {
 		color: #f3f1f1;
@@ -207,28 +222,93 @@
 
 		#sw {
 	    display: none;
-	    position: absolute;
-	    left: 81.35%;
-	    height: 404px;
-	    width: 5.5em;
+	    position: fixed;
+	    left: -.01%;
+	    top: -1em;
+	    width: 100%;
+	    height: 1400px;
 	    background: radial-gradient(#e1ecf5,#e4eef1,#f0fbff);
 	    clear: both;
 	    border: 1px solid #a9a9ad;
 	    box-shadow: 0 0 5px;
 	    border-left: .2em solid gray;
-	    border-top: 20px solid #c0d8dc;
+	    border-top: 2px solid #c0d8dc;
 	    box-shadow: 0 0 0 1px #9bbbba, 0 0 0 2px #bbe4e4, 0 0 10px black;
 	    border-left: .2em solid gray;
 	    /* top: 118px; */
 	    border-left: 1px solid #070a0a;
 	    border-left: 2px solid #c0d8dc;
 	    border-right: 2px solid #c0d8dc;
-	    border-bottom: 20px solid #c0d8dc;
-	    top: 89px;
+	    border-bottom: 2px solid #c0d8dc;
+	    top: .015em;
 	    margin-left: 0;
 	    /* box-shadow: 0 0 0 3px gray; */
 	    padding: 0 0 2em 0;
+	    z-index: 99999;
 	}
+
+	#winCtrl {
+		display: inline;
+		z-index: 99999;
+		/* position: relative; */
+		/* top: -.24em; */
+		float: right;
+		margin-right: 4.25em;
+		color: #443101;
+		/* left: 16.5em; */
+	}
+
+	input#pac-input {
+	    display: none;
+	}
+
+	.glyphicon {
+	    /* position: relative; */
+	    /* top: -20px; */
+	    /* left: 16em; */
+	    display: inline-block;
+	    font-family: 'Glyphicons Halflings';
+	    font-style: normal;
+	    font-weight: normal;
+	    line-height: 1;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	}
+
+	div  {
+	    text-align: left;
+	}
+
+	#main .button.special, #main button.special, #main input[type=button].special, #main input[type=reset].special, #main input[type=submit].special {
+	    background-color: #a9f6fb;
+	    color: #2d787d!important;
+	    text-shadow: 0 0 12px #aeeeff;
+	    box-shadow: 0 0 0 2px #55ab32,1px 1px 1px #3c3b3b,1px 1px 1px #675a3a;
+	    border-radius: 12px;
+	    border: 1px solid #bdf8ff;
+	    padding-top: .2em;
+	    margin: 0 auto;
+	    /* font-size: 2.0rem; */
+	    /* padding: 1.25rem 2.5rem; */
+	    display: block;
+	    background-color: #8ce4ff;
+	    border: 1px solid transparent;
+	    color: #ffffff;
+	    font-weight: 300;
+	    -webkit-border-radius: 3px;
+	    border-radius: 3px;
+	    -webkit-transition: all 0.3s ease-in-out;
+	    -moz-transition: all 0.3s ease-in-out;
+	    transition: all 0.3s ease-in-out;
+	    font-weight: 600;
+	}
+
+	.f-class {
+		margin-left: 2em;
+	}
+	section#sw {
+    padding-left: .5em;
+}
 }	
 
 @media (max-width: 480px) {
@@ -239,7 +319,14 @@
 	    position: relative;
 	    margin-top: -1.4em;
 	    /* margin-left: 1em; */
-	    left: 12.5%;
-	    top: 2.84em;
+	    left: 18.5%;
+	    top: -7em;
+	}
+}
+
+
+@media (min-width: 769px) {
+	.hide-guest-menu {
+		display: none;
 	}
 }

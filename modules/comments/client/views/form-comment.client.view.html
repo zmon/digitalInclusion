@@ -1,5 +1,5 @@
-<section>
-  <div class="col-md-12 angular-form">
+<section class="up-10">
+  <div class="col-md-12">
 
  <!-- 
           <div class="form-group" show-errors>
@@ -13,30 +13,30 @@
        
 
         <form name="vm.form.commentForm" class="form-horizontal" ng-submit="vm.save(vm.form.commentForm.$valid)" novalidate>
-         <fieldset>
-            <div class="row uniform">
-            <h2>Let us know what you think</h2>
-              <div class="12u$ form-group">
+         <fieldset class="fieldset-override">
+            <div class="row uniform padding-3050">
+            <h2 class="c-form-label">Please share your feedback</h2>
+             <!--  <div class="12u$ form-group">
                 <label class="control-label" for="title">Subject (optional)</label>
                 <input id="subject" name="subject" type="text" ng-model="vm.comment.subject" id="subject" class="form-control"/>
               </div>
-           
+            -->
 
               <div class="12u$">
                 <div class="form-group">
-                  <label class="control-label" for="title">Leave a Comment</label>
-                  <textarea name="content" data-ng-model="vm.comment.content" id="content" class="form-control" cols="30" rows="6" placeholder="Content" required></textarea>
+                  <textarea name="content" data-ng-model="vm.comment.content" id="content" class="form-control c-form-input" cols="30" rows="6" placeholder="Content"></textarea>
                 </div>
 
               </div>
               <div class="12u$ form-group">
 
-                <button type="submit" class="special">{{vm.comment._id ? 'Update' : 'Create'}}</button>
+                <button id="btn-sub" type="submit" class="special">{{vm.comment._id ? 'Update' : 'Submit'}}</button>
               </div>
               <div ng-show="vm.error" class="text-danger">
                 <strong ng-bind="vm.error"></strong>
               </div>
           </div>
+          <!-- <a class="links"  ng-href="/report-bug">Report a bug</a> -->
          </fieldset>
       </form>
 

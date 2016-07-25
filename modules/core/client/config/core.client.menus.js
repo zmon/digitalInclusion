@@ -8,35 +8,68 @@
   menuConfig.$inject = ['menuService'];
 
   function menuConfig(menuService) {
-    menuService.addMenu('account', {
-      roles: ['user']
+
+    menuService.addMenu('home', {
+      roles: ['guest'],
     });
 
-    menuService.addMenuItem('account', {
-      title: '',
-      state: 'settings',
+    menuService.addMenuItem('home', {
+      title: 'Home',
+      state: 'home',
       type: 'dropdown',
-      roles: ['user']
+      roles: 'guest'
     });
 
-    menuService.addSubMenuItem('account', 'settings', {
-      title: 'Edit Profile',
-      state: 'settings.profile'
+    menuService.addSubMenuItem('home', 'add-locations', {
+      title: 'Add Service',
+      state: 'create'
     });
 
-    menuService.addSubMenuItem('account', 'settings', {
-      title: 'Edit Profile Picture',
-      state: 'settings.picture'
+    menuService.addSubMenuItem('home', 'about', {
+      title: 'About Us',
+      state: 'about'
     });
 
-    menuService.addSubMenuItem('account', 'settings', {
-      title: 'Change Password',
-      state: 'settings.password'
+    menuService.addSubMenuItem('home', 'contact', {
+      title: 'Contact Us',
+      state: 'contact'
     });
 
-    menuService.addSubMenuItem('account', 'settings', {
-      title: 'Manage Social Accounts',
-      state: 'settings.accounts'
-    });
+
+
+
+
+
+
+    // menuService.addMenu('account', {
+    //   roles: ['user']
+    // });
+
+    // menuService.addMenuItem('account', {
+    //   title: '',
+    //   state: 'settings',
+    //   type: 'dropdown',
+    //   roles: ['user']
+    // });
+
+    // menuService.addSubMenuItem('account', 'settings', {
+    //   title: 'Edit Profile',
+    //   state: 'settings.profile'
+    // });
+
+    // menuService.addSubMenuItem('account', 'settings', {
+    //   title: 'Edit Profile Picture',
+    //   state: 'settings.picture'
+    // });
+
+    // menuService.addSubMenuItem('account', 'settings', {
+    //   title: 'Change Password',
+    //   state: 'settings.password'
+    // });
+
+    // menuService.addSubMenuItem('account', 'settings', {
+    //   title: 'Manage Social Accounts',
+    //   state: 'settings.accounts'
+    // });
   }
 }());

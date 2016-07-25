@@ -3,15 +3,22 @@
 	    margin-right: 2px;
 	    line-height: 1.42857143;
 	    border: 1px solid transparent;
-	    color: #3a421b;
+	    color: #1d210c;
 	    letter-spacing: .1pc;
 	    font-weight: 900;
 	    text-shadow: none;
 	    border-radius: 4px 4px 0 0;
-	    font-size: .6em;
+	    font-size: .56em;
 	}
+	input#pac-input {
+    position: relative;
+    left: 7.5em;
+    top: -1.5em;
+}
 
-	
+	#header {
+    padding: 1em 4em 0.1em 4em;
+}
 	
 	section#first {
 	    height: 870px;
@@ -19,16 +26,21 @@
 
 	main#main-page {
 	    position: relative;
-	    top: -3.4em;
+	    top: -12.4em;
 	    margin-left: .3em;
 	    background: radial-gradient(#929292,#868484,#9e9677,#a09a80,#929187);
-	    outline: 1px solid #a5a5a5;
+	    outline: .125em solid #868686;
 	    box-shadow: 0 0 5px #848484;
 	    background: silver;
-	    background: radial-gradient(#ebf0ff,#bedbf9,#88a6b9,#9fc3d0);
+	    background: radial-gradient(#c7e2ff,#b8d4e6,#b4cdd6);
 	    border: none;
 	    <: 1px
 	    solid black;
+	    background: background: #ADD100; /* fallback for old browsers */
+	    background: -webkit-linear-gradient(to left, #ADD100 , #7B920A); /* Chrome 10-25, Safari 5.1-6 */
+	    background: linear-gradient(to left, #eaecdb , #c1c5ac); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	    height: 610px;
+	    box-shadow: 0 0 5px #afafaf, inset 0 0 200px #90928c, 0 0 0 1px #b5b5b5, 0 0 6px #8c8c8c;
 	}
 
 	.row.butane {
@@ -46,4 +58,13 @@
 	     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 	    border-bottom: 1px solid #6d6d66;
 	}
+
+	section#queryForm {
+	    position: relative;
+	    top: -5.5em;
+	    left: -1.75em;
+	    height: 3em;
+	}
+
+
 }

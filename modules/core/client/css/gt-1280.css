@@ -18,6 +18,21 @@
 	    box-shadow: none;
 	    border: none;
 	}
+	.nav-tabs {
+    border: none;
+    border-radius: .125em;
+    box-shadow: inset 0 0 0 300px #ffffff, 0 0 0 1px #c7cec7, 0 0 3px #3c3c3c;
+    opacity: 1;
+    padding: .5em .125em .5em 3.5em;
+    position: relative;
+    width: 104%;
+    top: -2.72em;
+    left: -.5em;
+}
+	#header {
+    padding: 1.5em 5em 1em 5em;
+    text-align: center;
+}
 	section#first {
 	    height: 890px;
 	}
@@ -25,12 +40,14 @@
 	    -webkit-overflow-scrolling: touch;
 	    position: relative;
 	    overflow-x: auto;
-	    padding: 1.5em .83em 0 1.25em;
-	    top: -1.3em;
+	    padding: .5em 1.5em 0 .85em;
+	    top: -.1em;
 	    border: none;
-	    left: -1.75em;
-	    background: none;
-	    margin-top: -1.25em;
+	    width: 15em;
+	    left: -1.2em;
+	    box-shadow: 0 0 2px black;
+	    background: white;
+	    margin-top: -1em;
 	    margin-right: .05em;
 	}
 
@@ -40,25 +57,27 @@
 	    left: 81.05%;
 	    height: 412px;
 	    width: 9.5em;
-	    background: radial-gradient(#c4e0f7,#d0f3ff,#b4e7fb);
+	    background: white;
 	    clear: both;
 	    border: 1px solid #a9a9ad;
 	    box-shadow: 0 0 0 1px #9bbbba;
 	    border-left: .2em solid gray;
-	    top: 105px;
+	    top: 29px;
 	    border-left: 1px solid #070a0a;
 	    /* border-left: none; */
-	    border-top: 28px solid #c0d8dc;
-	    box-shadow: 0 0 0 1px #9bbbba, 0 0 0 2px #bbe4e4;
+	    border-top: 4px solid #c0d8dc;
+	    box-shadow: 0 0 0 1px #727b7b, 0 0 0 2px #113131, inset 0 0 50px #cccbcb, inset 0 0 100px #fefff0;
 	    border-left: .2em solid gray;
 	    /* top: 118px; */
 	    border-left: 1px solid #070a0a;
 	    border-left: 4px solid #c0d8dc;
 	    border-right: 4px solid #c0d8dc;
-	    border-bottom: 28px solid #c0d8dc;
+	    border-bottom: 4px solid #c0d8dc;
 	    /* border-right: none; */
 	    margin-left: 0;
-	    border-color: #cbfdff;
+	    border-width: 1px;
+	    border-right-width: 2px;
+	    border-color: #545454;
 	    /* box-shadow: 0 0 0 3px gray; */
 	    padding: 0 0 2em 0;
 	}
@@ -79,18 +98,69 @@
 	}
 
 	#main input[type="submit"], #main input[type="reset"], #main input[type="button"], #main button, #main .button {
-	    background-color: #e9fff9;
-	    box-shadow: 0 0 0 2px #e9fff9, 2px 2px 2px #3c3b3b, 2px 2px 2px #805f0c;
-	    color: #525252 !important;
-	    font-weight: 400;
 	    letter-spacing: .05em;
-	    border-radius: .81em;
 	    width: 135px;
-	    border-radius: 12px;
-	    text-shadow: 0 0 4px #a2a6af;
-	    text-shadow: none;
-	    padding-top: .01em;
 	    height: 29px;
-	    box-shadow: 0 0 0 1px #b6dcd1, 2px 2px 2px #6e807b, 2px 2px 2px #c1b595;
+	    background-color: #e3fbfd;
+	    color: #5b969a!important;
+	    text-shadow: 0 0 12px #aeeeff;
+	    box-shadow: none;
+	    padding-top: .01em;
+	    margin: 0 auto;
+	    display: block;
+	    border: 1px solid rgba(144, 144, 144, .2);
+	    border-radius: 3px;
+	    -webkit-transition: all 0.3s ease-in-out;
+	    -moz-transition: all 0.3s ease-in-out;
+	    transition: all 0.3s ease-in-out;
+	    font-weight: 600;
+	    letter-spacing: .05em;
+	    width: 135px;
+	    height: 31px;
+	    background-color: #ffffff;
+	    color: #525252!important;
+	    text-shadow: none;
+	    box-shadow: none;
+	    padding-top: .3em;
+	    margin: 0 auto;
+	    display: block;
+	    border: 1px solid rgba(86, 85, 85, .3);
+	    border: 1px solid #7d7d7d;
+	    border-radius: 3px;
+	    -webkit-transition: all 0.3s ease-in-out;
+	    -moz-transition: all 0.3s ease-in-out;
+	    transition: all 0.3s ease-in-out;
+	    font-weight: 600;
+	}
+	input#pac-input {
+	    position: relative;
+	    left: 7.5em;
+	    top: .5em;
+	}
+	button#searchButton {
+	  display: inline;
+	  width: 65px;
+	}
+	section#customMap {
+	    height: 420px;
+	    border-left: 1px solid #626f64;
+	    border-right: 1px solid #637766;
+	    box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
+	    border: 2px solid #676f03;
+	    /* box-shadow: 0 0 50px black; */
+	    margin-top: 1.24em;
+	    margin-bottom: -2.7em;
+	    border: none;
+	    border-bottom: none;
+	    border-top: none;
+	    top: -1.3em;
+	    position: relative;
+	}
+
+	section#queryForm {
+	    position: relative;
+	    top: -3.2em;
+	    left: -1.75em;
+	    height: 3em;
 	}
 }

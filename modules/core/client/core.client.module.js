@@ -5,7 +5,7 @@
   app.registerModule('core.map');
   app.registerModule('core.tabs');
   app.registerModule('core.modal');
-  app.registerModule('core.routes', ['ui.router']);
+  app.registerModule('core.routes', ['ui.router', 'places.services']);
   app.registerModule('core.admin', ['core']);
   app.registerModule('core.admin.routes', ['ui.router']);
 }(ApplicationConfiguration));

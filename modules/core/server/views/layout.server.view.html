@@ -32,16 +32,35 @@
   <link href="{{favicon}}" rel="shortcut icon" type="image/x-icon">
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:900,700,600' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Asap:400,400italic' rel='stylesheet' type='text/css'>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- Application CSS Files -->
   {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
 
   <style type="text/css">
+
     form.tab-form-demo .tab-pane {
       margin: 20px 20px;
     }
+
     .panel-default {
-      border:none;
+      border: none;
     }
+
+
+
 /*    input.ng-pristine {
       border: 1px solid #829494;
     }
@@ -108,11 +127,36 @@ button.button.normal.sign {
     top: 2.7em;
 }
 
+
+
 @media (min-width: 1660px) {
   .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
       margin-left: 55px;
       margin-top: 35px;
   }
+}
+
+.row.butane {
+    margin-left: .01em;
+    margin-bottom: .1em;
+    margin-top: .05em;
+    top: .002em;
+    padding-top: 3.15em;
+    padding-right: .5em;
+    box-shadow: none;
+    background: none;
+    border-bottom: none;
+}
+
+table td {
+    padding: .25em .2em .25em .2em;
+    border: none;
+    font-weight: 400;
+    line-height: 12px;
+    font-family: 'Lucida Grande';
+    text-shadow: none;
+    font-size: .7em;
+    letter-spacing: .1px;
 }
   </style>
   <!-- <link rel="stylesheet" href="/modules/core/client/css/overrides.css"/> -->
@@ -127,18 +171,51 @@ button.button.normal.sign {
   <link rel="stylesheet" href="/modules/core/client/css/gt-1000.css"/>
   <link rel="stylesheet" href="/modules/core/client/css/gt-1280.css"/>
   <link rel="stylesheet" href="/modules/core/client/css/gt-1660.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/or.css"/>
+   <link rel="stylesheet" href="/modules/core/client/css/compass.css"/>
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,900' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/modules/core/client/css/c-form.css"/>
+<link href="http://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" />
+   <!-- <link rel="stylesheet" href="/modules/core/client/css/hvr/hover.css"/> -->
+<link rel="stylesheet" type="text/css" href="/modules/core/client/css/dist/angular-progress-button-styles.css"/>
+
+<link rel="stylesheet" type="text/css" href="/modules/core/client/css/dist/ng-animate.css"/>
+
+
+  <style>
+    table td {
+        padding: .25em .2em .25em .3em;
+        border: none;
+        font-weight: 400;
+        line-height: 12px;
+        font-family: 'Source Sans Pro';
+        text-align: right;
+        text-shadow: none;
+        font-size: .85em;
+        letter-spacing: .71px;
+    }
+    .vis-on {
+        visibility: initial;
+    }
+    .vis-off {
+        visibility: hidden;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="/modules/core/client/css/tmp/animate.css"/>
+  <link rel="stylesheet" type="text/css" href="/modules/core/client/css/angular-motion.css"/>
 </head>
 
 <body class="ng-cloak">
   <span id="net">
 
   <div class="codrops-top clearfix">
-      <!-- <a class="codrops-icon codrops-icon-prev" ng-href="/authentication/signin"><span>Login/Sign-Up</span></a> -->
-      <span class="right"><a class="codrops-icon codrops-icon-drop" ng-href="/feedback"><span>Site Feedback</span></a></span>
-    </div>
+      <a class="codrops-icon codrops-icon-prev" ng-href="/places"><span>Edit</span></a>
+    <span class="right"><a class="codrops-icon codrops-icon-drop" ng-href="/feedback"><span>Feedback</span></a></span>
+  </div>
+
   <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+
   <section class="content">
     <section class="container">
       {% block content %}{% endblock %}
@@ -161,9 +238,18 @@ button.button.normal.sign {
   <!--Livereload script rendered -->
   <script type="text/javascript" src="{{host}}:35729/livereload.js"></script>
   {% endif %}
-  <script src="/modules/core/client/controllers/map.client.controller.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key={{DEV_GOOGLE_MAPS_API_KEY}}&libraries=places,distancematrix,geometry&callback=onGoogleReady" async defer></script>
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC-reO4jDrH1PqVkRX7qp5t4PQMWoBmls&libraries=distancematrix,geometry&callback=onGoogleReady" async defer></script>
+
+  <script src="/lib/angular-progress-button-styles/dist/angular-progress-button-styles.js"></script>
+
+  <script src="/modules/core/client/lib/angular-spinners.js"></script>
+
+  <script src="/modules/core/client/services/spinner.client.service.js"></script>
+
   
+  <script src="/modules/core/client/lib/angular-selector.js"></script>
   <script src="/modules/core/client/lib/tabs.js"></script>
   <script src="/modules/core/client/lib/event.js"></script>
   <script src="/modules/core/client/lib/ui-map.js"></script>

@@ -29,4 +29,21 @@ angular.module('core.modal').controller('ModalInstanceController', function ($sc
   $scope.cancel = function () {
     $uibModalInstance.dismiss('cancel');
   };
+
+  $scope.categoryOptions = [
+      { value: "wifi-free", label: "Free WiFi"}, 
+      { value: "wifi-customer", label: "Customer WiFi"}, 
+      { value: "computers-access", label: "Public Computer Access"}, 
+      { value: "computers-retail", label: "Low Cost or Refurb. Equipment" },
+      { value: "training-day", label: "Day Courses" },
+      { value: "training-night", label: "Evening Courses " }
+    ];
+
+    $scope.locationTypes = [
+      { value: "Library", label: "Library" },
+      { value: "Community Center", label: "Community Center" },
+      { value: "Restaurant", label: "Restaurant" },
+      { value: "Coffee Shop", label: "Coffee Shop" },
+      { value: "Shopping Mall", label: "Shopping Mall"}
+    ];
 });

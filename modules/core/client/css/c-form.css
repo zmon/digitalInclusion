@@ -1,0 +1,752 @@
+.c-form-input {
+    background: #f3f3f3;
+    border: 1px solid #cfd2d1;
+    color: black;
+}
+.c-pattern {
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+-moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+background: #283048; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #283048 , #859398); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #283048 , #859398); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.c-form-label {
+    color: #838483;
+    font-weight: 300;
+    text-shadow: none;  
+}
+
+.up-10 {
+    position: relative;
+    top: -10em;
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+#card figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#card .front {
+  background: #fc00ff; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #fc00ff , #00dbde); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #fc00ff , #00dbde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      
+}
+#card .back {
+  background: blue;
+  transform: rotateY( 180deg );
+}
+
+#card.flipped {
+  transform: rotateY( 180deg );
+}
+
+form.c-form {
+    background: white;
+    padding: 2.5em 3em 4.5em 3em;
+}
+
+h1.c-sat{
+    /* Using the custom font we've included in the HTML tab: */
+    font-family: Satisfy, cursive;
+    font-weight:normal;
+    font-size:24px;
+    padding-top: 60px;
+}
+
+.padding-3050 {
+    padding: 3em 0 5em 0;
+}
+
+form.c-modal-form {
+    margin: 0 0 2em 0;
+    height: 45em;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: #f3f3f3;
+    border: 1px solid #575857;
+    padding-top: .3em;
+}
+
+.left-7 {
+    margin-left: 16em;
+}
+
+.c-button {
+    border: 1px solid #838483;
+}
+
+.c-h3 {
+    color: #838483;
+}
+
+.pos-error {
+    position: relative;
+    top: 3.5em;
+}
+
+.c-container{
+    width: 300px;
+    height:300px;
+    margin: 0 auto;
+    position:relative;
+    overflow:hidden;
+}
+
+.planet{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url(http://demo.tutorialzine.com/2013/10/css3-features-you-can-finally-use/assets/img/planet.png) no-repeat center center;
+}
+
+.rocket{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url(http://demo.tutorialzine.com/2013/10/css3-features-you-can-finally-use/assets/img/rocket.png) no-repeat 50px center;
+
+    /* Chrome still requires the -webkit- prefix */
+    -webkit-animation:orbit 2s linear infinite;
+    animation:orbit 2s linear infinite;
+
+    transition:background-position 0.8s;
+}
+
+.c-container:hover .rocket{
+    background-position:80px center;
+}
+
+/* Define the keyframes of the animation */
+
+@-webkit-keyframes orbit {
+    from {
+        -webkit-transform:rotate(0deg);}
+    to {
+        -webkit-transform:rotate(360deg);
+    }
+}
+
+@keyframes orbit {
+    from {
+        transform:rotate(0deg);
+
+        /* I am including the -webkit-transform properties, because
+           Chrome might start supporting keyframe without prefix in the future,
+           but we can't be certain whether it will support prefix-free transform
+           at the same time */
+
+        -webkit-transform:rotate(0deg);}
+    to {
+        transform:rotate(360deg);
+        -webkit-transform:rotate(360deg);
+    }
+}
+
+
+h1.anaglyph {
+display: inline;
+position: relative;
+letter-spacing: -5px; /* This will push it together giving us a nice 3D vibe */
+color: rgba(0,0,255,0.5); /* This will give us a blue at 50% opacity */
+-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,.5)), to (rgba(0,0,0,1)));
+
+}
+
+h1.anaglyph:after {
+content: “Anaglyph”;
+position: absolute;
+left: 8px; top: 6px; /* These are aligning it to be where we’d like relative to the last word */
+color: rgba (255,0,0,0.5); /* This gives us a red at 50% opacity */
+}
+
+.layering {
+background: #EEE;
+box-shadow: 0 1px 1px rgba(0,0,0,0.15), 0 10px 0 -4px #EEE, 0 10px 2px -5px rgba(0,0,0,0.15), 0 20px 0 -11px #EEE, 0 20px 1px -8px rgba(0,0,0,0.15);
+}
+
+.drip {
+color: #EEE;
+text-shadow: 4px 4px 1px #300000;
+4px 6px 1px #400000; 4px 8px 1px #500000; /*......and so on, until*/ 4px 60px 5px #FF0000;
+}
+
+
+.c-dar {
+    background:repeating-linear-gradient(-45deg, #de9dd4, #de9dd4 5px, white 5px, white 10px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .c-wrapper{
+            position: absolute;
+            float: left;
+            margin: 140px 100px;
+        }
+
+
+        .c-line{
+            position: absolute;
+            top: 0px;
+            width: 2px;
+            height: 8px;
+            background-color: red;
+        }
+
+        .circle{
+            position: absolute;
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: blue;
+        }
+        .circle-top{
+            top: 0px;
+            left: -3.5px;
+        }
+        .circle-bottom{
+            bottom: 0px;
+            left: -3.5px;
+        }
+
+        .dot{
+            position: absolute;
+            display: block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            left: -1.5px;
+        }
+
+        .c-line1{
+            margin-left: 0px;
+            background-color: #2410CB;
+            -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+            animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+        }
+        .c-line1 > span{
+            background-color: #D4141E;
+        }
+        .c-line1 > .dotted > .dot{
+            background-color: #D4141E;
+        }
+        .c-line1 > .dotted > .dot-top{
+            top: 0px;
+            -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+            animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+        }
+        .c-line1 > .dotted > .dot-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+            animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+        }
+        .c-line1 > .dotted > .dot-middle-top{
+            top: 0px;
+            -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+            animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+        }
+        .c-line1 > .dotted > .dot-middle-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+            animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+        }
+
+        .c-line2{
+            margin-left: 35px;
+            background-color: #852DF4;
+            -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+            animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+        }
+        .c-line2 > span{
+            background-color: #FC7E48;
+        }
+        .c-line2 > .dotted > .dot{
+            background-color: #FC7E48;
+        }
+        .c-line2 > .dotted > .dot-top{
+            top: 0px;
+            -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+            animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+        }
+        .c-line2 > .dotted > .dot-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+            animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+        }
+        .c-line2 > .dotted > .dot-middle-top{
+            top: 0px;
+            -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+            animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+        }
+        .c-line2 > .dotted > .dot-middle-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+            animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+        }
+
+        .c-line3{
+            margin-left: 70px;
+            background-color: #F42DF1;
+            -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+            animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+        }
+        .c-line3 > span{
+            background-color: #EDEB29;
+        }
+        .c-line3 > .dotted > .dot{
+            background-color: #EDEB29;
+        }
+        .c-line3 > .dotted > .dot-top{
+            top: 0px;
+            -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+            animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+        }
+        .c-line3 > .dotted > .dot-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+            animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+        }
+        .c-line3 > .dotted > .dot-middle-top{
+            top: 0px;
+            -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+            animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+        }
+        .c-line3 > .dotted > .dot-middle-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+            animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+        }
+
+        .c-line4{
+            margin-left: 105px;
+            background-color: #F91396;
+            -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+            animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+        }
+        .c-line4 > span{
+            background-color: #ACED29;
+        }
+        .c-line4 > .dotted > .dot{
+            background-color: #ACED29;
+        }
+        .c-line4 > .dotted > .dot-top{
+            top: 0px;
+            -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+            animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+        }
+        .c-line4 > .dotted > .dot-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+            animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+        }
+        .c-line4 > .dotted > .dot-middle-top{
+            top: 0px;
+            -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+            animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+        }
+        .c-line4 > .dotted > .dot-middle-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+            animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+        }
+
+        .c-line5{
+            margin-left: 140px;
+            background-color: #D4141E;
+            -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+            animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+        }
+        .c-line5 > span{
+            background-color: #4EF02B;
+        }
+        .c-line5 > .dotted > .dot{
+            background-color: #4EF02B;
+        }
+        .c-line5 > .dotted > .dot-top{
+            top: 0px;
+            -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+            animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+        }
+        .c-line5 > .dotted > .dot-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+            animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+        }
+        .c-line5 > .dotted > .dot-middle-top{
+            top: 0px;
+            -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+            animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+        }
+        .c-line5 > .dotted > .dot-middle-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+            animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+        }
+
+        .c-line6{
+            margin-left: 175px;
+            background-color: #FC7E48;
+            -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+            animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+        }
+        .c-line6 > span{
+            background-color: #38E790;
+        }
+        .c-line6 > .dotted > .dot{
+            background-color: #38E790;
+        }
+        .c-line6 > .dotted > .dot-top{
+            top: 0px;
+            -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+            animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+        }
+        .c-line6 > .dotted > .dot-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+            animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+        }
+        .c-line6 > .dotted > .dot-middle-top{
+            top: 0px;
+            -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+            animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+        }
+        .c-line6 > .dotted > .dot-middle-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+            animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+        }
+
+        .c-line7{
+            margin-left: 210px;
+            background-color: #EDEB29;
+            -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+            animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+        }
+        .c-line7 > span{
+            background-color: #25EACC;
+        }
+        .c-line7 > .dotted > .dot{
+            background-color: #25EACC;
+        }
+        .c-line7 > .dotted > .dot-top{
+            top: 0px;
+            -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+            animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+        }
+        .c-line7 > .dotted > .dot-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+            animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+        }
+        .c-line7 > .dotted > .dot-middle-top{
+            top: 0px;
+            -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+            animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+        }
+        .c-line7 > .dotted > .dot-middle-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+            animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+        }
+
+        .c-line8{
+            margin-left: 245px;
+            background-color: #ACED29;
+            -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+            animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+        }
+        .c-line8 > span{
+            background-color: #309CDF;
+        }
+        .c-line8 > .dotted > .dot{
+            background-color: #309CDF;
+        }
+        .c-line8 > .dotted > .dot-top{
+            top: 0px;
+            -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+            animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+        }
+        .c-line8 > .dotted > .dot-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+            animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+        }
+        .c-line8 > .dotted > .dot-middle-top{
+            top: 0px;
+            -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+            animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+        }
+        .c-line8 > .dotted > .dot-middle-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+            animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+        }
+
+        .c-line9{
+            margin-left: 280px;
+            background-color: #4EF02B;
+            -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+            animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+        }
+        .c-line9 > span{
+            background-color: #2544E7;
+        }
+        .c-line9 > .dotted > .dot{
+            background-color: #2544E7;
+        }
+        .c-line9 > .dotted > .dot-top{
+            top: 0px;
+            -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+            animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+        }
+        .c-line9 > .dotted > .dot-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+            animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+        }
+        .c-line9 > .dotted > .dot-middle-top{
+            top: 0px;
+            -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+            animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+        }
+        .c-line9 > .dotted > .dot-middle-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+            animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+        }
+
+        .c-line10{
+            margin-left: 315px;
+            background-color: #38E790;
+            -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+            animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+        }
+        .c-line10 > span{
+            background-color: #852DF4;
+        }
+        .c-line10 > .dotted > .dot{
+            background-color: #852DF4;
+        }
+        .c-line10 > .dotted > .dot-top{
+            top: 0px;
+            -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+            animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+        }
+        .c-line10 > .dotted > .dot-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+            animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+        }
+        .c-line10 > .dotted > .dot-middle-top{
+            top: 0px;
+            -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+            animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+        }
+        .c-line10 > .dotted > .dot-middle-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+            animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+        }
+
+        .c-line11{
+            margin-left: 350px;
+            background-color: #25EACC;
+            -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+            animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+        }
+        .c-line11 > span{
+            background-color: #F42DF1;
+        }
+        .c-line11 > .dotted > .dot{
+            background-color: #F42DF1;
+        }
+        .c-line11 > .dotted > .dot-top{
+            top: 0px;
+            -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+            animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+
+        }
+        .c-line11 > .dotted > .dot-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+            animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+        }
+        .c-line11 > .dotted > .dot-middle-top{
+            top: 0px;
+            -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+            animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+        }
+        .c-line11 > .dotted > .dot-middle-bottom{
+            bottom: 0px;
+            -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+            animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+        }
+
+        @-webkit-keyframes c-line{
+            0%{height: 4px; top: 0px; left: 0px; -webkit-transform: rotate(-65deg)}
+            10%{height: 220px; top: -110px; left: 15px;}
+            45%{height: 200px; top: -100px; left: 25px;}
+            70%{height: 8px; top: 0px; left: 25px; -webkit-transform: rotate(0deg);}
+            100%{height: 8px; top: 0px; left: 15px; -webkit-transform: rotate(0deg);}
+        }
+        @-webkit-keyframes dot-top{
+            0%{top: -30px}
+            10%{top: -30px;}
+            45%{top: -25px;}
+            60%{top: 0px;}
+            100%{top: 0px;}
+        }
+        @-webkit-keyframes dot-bottom{
+            0%{bottom: -30px}
+            10%{bottom: -30px;}
+            45%{bottom: -25px;}
+            60%{bottom: 0px;}
+            100%{bottom: 0px;}
+        }
+        @-webkit-keyframes dot-middle-top{
+            0%{}
+            10%{}
+            45%{top: 98px;}
+            70%{top: -50px;}
+            85%{top: 0px;}
+            100%{top: 0px;}
+        }
+        @-webkit-keyframes dot-middle-bottom{
+            0%{}
+            10%{}
+            45%{bottom: 98px;}
+            70%{bottom: -50px;}
+            85%{bottom: 0px;}
+            100%{bottom: 0px;}
+        }
+        
+        @keyframes c-line{
+            0%{height: 4px; top: 0px; left: 0px; transform: rotate(-65deg)}
+            10%{height: 220px; top: -110px; left: 15px;}
+            45%{height: 200px; top: -100px; left: 25px;}
+            70%{height: 8px; top: 0px; left: 25px; transform: rotate(0deg);}
+            100%{height: 8px; top: 0px; left: 15px; transform: rotate(0deg);}
+        }
+        @keyframes dot-top{
+            0%{top: -30px}
+            10%{top: -30px;}
+            45%{top: -25px;}
+            60%{top: 0px;}
+            100%{top: 0px;}
+        }
+        @keyframes dot-bottom{
+            0%{bottom: -30px}
+            10%{bottom: -30px;}
+            45%{bottom: -25px;}
+            60%{bottom: 0px;}
+            100%{bottom: 0px;}
+        }
+        @keyframes dot-middle-top{
+            0%{}
+            10%{}
+            45%{top: 78px;}
+            70%{top: -50px;}
+            85%{top: 0px;}
+            100%{top: 0px;}
+        }
+        @keyframes dot-middle-bottom{
+            0%{}
+            10%{}
+            45%{bottom: 78px;}
+            70%{bottom: -50px;}
+            85%{bottom: 0px;}
+            100%{bottom: 0px;}
+        }
+        section.veil {
+            background: transparent;
+            width: 87%;
+            height: 60em;
+            position: absolute;
+            top: 8em;
+            border: none;
+            z-index: 9999;
+        }
+
+        greeting-box.on { transition:0.5s linear all; background:green; color:white; }
+
+        .vis-on {
+            visibility: visible;
+        }
+
+
+.c-loader {
+ height: 6em;
+ margin: 6em 0px 0px -4em;
+ padding: 10px;
+ position: relative;
+ top: 80%;
+ left: 50%;
+ width: 6em;
+ z-index: 9999;
+ }
+ 
+ .c-loader svg {
+ height: 6em;
+ width: 6em;
+ }
+ 
+ .c-loader svg path {
+ stroke-width: 0px;
+ }
+ 
+ .c-loader svg path {
+ fill: #44cbf8;
+ stroke: none;
+ }
+
+ #onloadSpinner {
+    position: absolute;
+    top: .4em;
+ }
+
+ .absolutePos {
+    position: absolute;
+    top: 19.9em;
+    left: .4em;
+    font-style: italic;
+    font-size: 50%;
+ }
+ #svgWrap {
+    position: absolute;
+    margin-left: 37.5%;
+    width: 5em;
+    margin-top: -7em;
+    height: 5em;
+    /*border: 1px solid black;*/
+ }
+
+ #tabset {
+    visibility: hidden;
+ }

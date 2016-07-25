@@ -7,9 +7,10 @@
       <span class="icon-bar"></span>
     </button>
     <a ui-sref="home" class="navbar-brand">DIGITAL INCLUSION</a>
+  
   </div>
   <nav class="navbar-collapse" uib-collapse="!vm.isCollapsed" role="navigation">
-    <ul class="nav navbar-nav" ng-if="vm.menu.shouldRender(vm.authentication.user);">
+   <!--  <ul class="nav navbar-nav" ng-if="vm.menu.shouldRender(vm.authentication.user);">
       <li ng-repeat="item in vm.menu.items | orderBy: 'position'" ng-if="item.shouldRender(vm.authentication.user);" ng-switch="item.type" ng-class="{ dropdown: item.type === 'dropdown' }" ui-sref-active="active" class="{{item.class}}" uib-dropdown="item.type === 'dropdown'">
         <a ng-switch-when="dropdown" class="dropdown-toggle" uib-dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
         <ul ng-switch-when="dropdown" class="dropdown-menu">
@@ -19,14 +20,37 @@
         </ul>
         <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
       </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right" ng-hide="vm.authentication.user">
-  <!--     <li ui-sref-active="active">
-        <a ui-sref="authentication.signup">Sign Up</a>
+    </ul> -->
+    <ul class="nav navbar-nav" ng-if="vm.menu.shouldRender(vm.showHomeMenu);">
+      <li ng-repeat="item in vm.menu.items | orderBy: 'position'" ng-if="item.shouldRender(!vm.authentication.user);" ng-switch="item.type" ng-class="{ dropdown: item.type === 'dropdown' }" ui-sref-active="active" class="{{item.class}}" uib-dropdown="item.type === 'dropdown'">
+        <a ng-switch-when="dropdown" class="dropdown-toggle" uib-dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
+        <ul ng-switch-when="dropdown" class="dropdown-menu">
+          <li ng-repeat="subitem in item.items | orderBy: 'position'" ng-if="subitem.shouldRender(!vm.authentication.user);">
+            <a ui-sref="{{subitem.state}}" ng-bind="subitem.title"></a>
+          </li>
+        </ul>
+        <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
       </li>
-      <li class="divider-vertical"></li> -->
+    </ul>
+    <ul class="nav navbar-nav navbar-right hide-guest-menu" ng-hide="vm.authentication.user">
       <li ui-sref-active="active">
-        <!-- <a ui-sref="authentication.signin">Sign Up / Login</a> -->
+        <a ui-sref="home">Map of Free Services in Kansas City</a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="places.create">Add Service</a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="internet">Internet at Home (service providers)</a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="training-online">Training Online</a>
+      </li>
+      <li class="divider-vertical"></li><br>
+      <li ui-sref-active="active">
+        <a ui-sref="about">About Us</a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="contact">Contact Us</a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">

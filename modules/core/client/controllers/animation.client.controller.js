@@ -1,5 +1,6 @@
-angular.module('ngAnimateChildren', ['ngAnimate'])
-.controller('AnimationController', function() {
+angular.module('ngAnimateChildren', ['ngAnimate', '$scope'])
+.controller('AnimationController', function($scope) {
   this.animateChildren = false;
   this.enterElement = false;
+  $scope.onOff = true;
 });
