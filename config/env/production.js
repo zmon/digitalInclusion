@@ -3,7 +3,7 @@
 module.exports = {
   secure: {
     ssl: true,
-    privateKey: './config/sslcerts/key.pem',
+    privateKey: './config/sslcerts/getonlinekc.org.key',
     // certificate: './config/sslcerts/cert.pem',
     certificate: './config/sslcerts/getonlinekc.org.chained.crt',
     caBundle: './config/sslcerts/getonlinekc_org.ca-bundle'
