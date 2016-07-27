@@ -8,28 +8,22 @@
   InternetController.$inject = ['$scope', '$state', 'Authentication', 'menuService', '$http'];
 
   function InternetController($scope, $state, Authentication, menuService, $http) {
-    console.log("internet controller 1")
     var vm = this;
    	$scope.isps = [];
 
-    var master = $http.get('/api/places').success(function(data){
-  		console.log("success");
+    $http.get('/api/places').success(function(data){
   		sortResponses(data);
   	}).error(function(err) {
-  		console.log('err');
-  		console.log(err);
+  		// console.log('err');
+  		// console.log(err);
   	});
 
 
   	function sortResponses(places) {
-  		console.log("sort");
-  		console.log(places);
   		var length = places.length;
-  		console.log(length);
   		var i;
   		for (i = 0; i < length; i++) {
 	        var place = places[i];
-	        // console.log(place);
 	        var category = place.primaryCategory;
 	        if (category === "isp") {
 	           // list.access.push(place);

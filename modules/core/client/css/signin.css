@@ -28,12 +28,18 @@
     border-radius: 0;
 }
 .navbar {
-    position: relative;
     min-height: 40px;
-    margin-bottom: 21px;
+    margin-bottom: 0;
     border: 1px solid transparent;
-    box-shadow: 0 0 60px #291414, inset 0 0 10px #2c2d1b;
+    box-shadow: 0 0 30px #291414, inset 0 0 130px #3d375d;
     background: #485563; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #485563 , #29323c); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #485563 , #29323c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: black;
+    background: #4b6cb7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4b6cb7 , #182848); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #C04848 , #480048); /* Chrome 10-25, Safari 5.1-6 */
+     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

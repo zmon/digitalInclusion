@@ -7,8 +7,6 @@ module.exports = {
         // bower:css
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css'
-        // 'modules/core/client/css/bs/bootstrap.css',
-        // 'modules/core/client/css/bs/bootstrap-theme.css'
         // // endbower
       ],
       js: [
@@ -27,7 +25,7 @@ module.exports = {
     },
     css: [
       'modules/*/client/css/*.css',
-      'modules/*/client/css/*/*.css'
+      'modules/*/client/css/**/*.css'
     ],
     less: [
       'modules/*/client/less/*.less'

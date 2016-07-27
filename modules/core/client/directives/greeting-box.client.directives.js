@@ -3,5 +3,5 @@ angular.module('core').directive('greetingBox', ['$animate', function($animate) 
     attrs.$observe('active', function(value) {
       value ? $animate.addClass(element, 'on') : $animate.removeClass(element, 'on');
     });
-  });
+  };
 }]);

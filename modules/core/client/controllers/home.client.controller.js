@@ -10,9 +10,9 @@
   function HomeController(PlacesService, spinnerService, $scope) {
     var vm = this;
     vm.places = PlacesService.query();
-    console.log(vm.places);
 
-    $scope.loading = true;
+    
+    
     // spinnerService.show('mapSpinner');
   }
 

@@ -1,8 +1,7 @@
 angular.module('angularSpinners', [])
   .factory('spinnerService', function () {
     var spinners = {};
-    console.log("spinnerService - factory")
-    console.log(spinners)
+
     return {
       _register: function (data) {
         if (!data.hasOwnProperty('name')) {

@@ -3432,7 +3432,7 @@
 
     #main a:hover {
       color: #69bed2;
-      text-shadow: 1px 1px #446309;
+      text-shadow: none;
     }
 
     #main strong, #main b {
@@ -3465,7 +3465,7 @@
     #main input[type="button"],
     #main button,
     #main .button {
-      background-color: #cecece;
+      background-color: #f3f3f3;
       box-shadow: 0 0 0 2px #e9fff9, 2px 2px 2px #3c3b3b, 2px 2px 2px #805f0c;
       color: #000000 !important;
       font-weight: 400;
@@ -3477,15 +3477,15 @@
       padding-top: .4em;
       height: 29px;
       box-shadow: 0 0 0 1px #e2eace, 2px 2px 2px black, 3px 3px 3px #805f0c;
-      letter-spacing: 1px;
+      letter-spacing: .1px;
       width: 125px;
-      height: 31px;
+      height: 26px;
       /* background-color: #ffffff; */
       color: #696767!important;
-      box-shadow: inset 0 0 0 1px #707375,inset 0 5px 30px #becedc;
+      box-shadow: inset 0 0 0 1px #707375,inset 0 5px 30px #e5f3ff;
       text-shadow: none;
       /* box-shadow: none; */
-      padding-top: .3em;
+      padding-top: .2em;
       margin: 0 auto;
       display: block;
       border: 1px solid rgba(232, 225, 225, 0.96);
@@ -3501,7 +3501,7 @@
       #main input[type="button"]:hover,
       #main button:hover,
       #main .button:hover {
-        background-color: rgba(222, 222, 222, 0.25);
+        background-color: rgba(222, 222, 222, 0.95);
       }
 
       #main input[type="submit"]:active,
@@ -4017,6 +4017,7 @@ input#pac-input {
     /* border-left: none; */
     border-radius: .125em;
      /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    height: 60em;
     outline: none;
     background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
     /* border-color: transparent; */
@@ -4063,14 +4064,15 @@ body {
     box-shadow: 0 0 0 2px #70e840,1px 1px 1px #3c3b3b,1px 1px 1px #675a3a, 0 0 10px #33c10f, inset 0 0 20px limegreen;
     border-radius: 12px;
     border: 1px solid #bdf8ff;
-    padding-top: .2em;
+    padding-top: .05em;
     text-shadow: 0 0 12px lime;
-    letter-spacing: 1px;
+    letter-spacing: .1px;
     margin: 0 auto;
     /* font-size: 2.0rem; */
     /* padding: 0; */
     width: 123px;
     display: block;
+    height: 23px;
     /* background-color: #ffffff; */
     border: 1px solid transparent;
     color: #ffffff;
@@ -4095,6 +4097,7 @@ body {
     background: -webkit-linear-gradient(to left, #c2e59c , #64b3f4); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #c2e59c , #64b3f4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: url("https://www.transparenttextures.com/patterns/black-thread.png");
+    overflow-x: hidden;
 }
 
 

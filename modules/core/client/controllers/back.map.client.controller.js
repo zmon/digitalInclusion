@@ -248,11 +248,11 @@ function sortListToArrays(places) {
 
 	angular
 		.module('core.map')
-		.controller('MapController', MapController);
+		.controller('TrapController', TrapController);
 		
-	MapController.$inject = ['$scope', '$window', '$timeout', '$http', 'findPlacesByZipService', '$location', 'zipcode', 'PlacesService'];
+	TrapController.$inject = ['$scope', '$window', '$timeout', '$http', '$state', '$stateParams', 'Authentication', 'findPlacesByZipService', '$location', 'PlacesService'];
 	// console.log("map.client.controller - 1");
-	function MapController($scope, $window, $timeout, $http, $location, findPlacesByZipService, zipcode, PlacesService) {
+	function TrapController($scope, $window, $timeout, $http, $state, $stateParams, Authentication, $location, findPlacesByZipService, PlacesService) {
 		// console.log("map.client.controller - 2");
 	    $scope.array              =    { 
 	                                     wifi      : { free  : [], customer: [] },
@@ -279,7 +279,6 @@ function sortListToArrays(places) {
       $scope.bool = false
 
 	    var net = document.getElementById("net");
-      var headerToggleId = document.getElementById('headerToggleId');
 
 	    var e1                    = angular.element(document.getElementById("e1"));
 	    var e2                    = angular.element(document.getElementById("e2"));
@@ -290,8 +289,6 @@ function sortListToArrays(places) {
 
 	    var mapCanvasElement      = document.getElementById("customMap");
 	    var sideWindowElement     = document.getElementById("sw");
-      var mobileWindowElement   = document.getElementById("wrapMobileWindow");
-      var closeWinTag           = document.getElementById('closeWindow');
 	    var resultsHtml           = document.getElementById("kv");
 	    var iconoriginx           = null;
 	    var iconoriginy           = null;
@@ -781,15 +778,19 @@ setTimeout(function(){
 
 	    // var allPlaces = PlacesService.query();
 	  	var master = $http.get('/api/places').success(function(data){
+	  		console.log("success");
 	  		sortResponses(data);
 	  	}).error(function(err) {
+	  		console.log('err');
 	  		console.log(err);
-        return err;
 	  	});
 
 
 	  	function sortResponses(places) {
+	  		console.log("sort");
+	  		console.log(places);
 	  		var length = places.length;
+	  		console.log(length);
 	  		var i;
 	  		for (i = 0; i < length; i++) {
 		        var place = places[i];
@@ -1111,31 +1112,18 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 		  if (marker.getAnimation() !== null) {
 		    marker.setAnimation(null);
 		  } else {
-		    // marker.setAnimation(google.maps.Animation.BOUNCE);
+		    marker.setAnimation(google.maps.Animation.BOUNCE);
 		  }
 		}
 
 		var markerIndex = {};
 
 		function setActive(marker, latLng, category) {
-	      $scope.map.setZoom(14);
-	      setTimeout(function() {
-	            console.log("timeout1");
-	            $scope.map.setZoom(16);
-	       }, 150);
-	      setTimeout(function() {
-	            console.log("timeout2");
-	            $scope.map.setZoom(17);
-	       }, 150);
-	      setTimeout(function() {
-	            console.log("timeout");
-	            $scope.map.setZoom(18);
-	       }, 150);
-
-
-
-
-
+      $scope.map.setZoom(14);
+      setTimeout(function(){
+            console.log("timeout");
+            $scope.map.setZoom(16);
+        }, 100);
 			// set marker to highlight active location 
 
 			// console.log("setActive");
@@ -1147,10 +1135,10 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 								    position: latLng,
 								    icon: {
 								      path: google.maps.SymbolPath.CIRCLE,
-								      scale: 13, 
-								      anchor: new google.maps.Point(.4, 1.6),
-								      strokeColor: color,
-								      strokeWeight: 1.5
+								      scale: 3, 
+								      anchor: new google.maps.Point(.75, 2),
+								      strokeColor: color
+								      // strokeWeight: 2
 				  			       },
 				          		    map: $scope.map
 							 	   })
@@ -1226,7 +1214,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 	    	} else if (str === "computers-retail") {
 	    		return "#000000"
 	    	} else if (str === "training-day") {
-	    		return "#b37503";
+	    		return "orange";
 	    	} else if (str === "training-night") {
 	    		return "blue";
 	    	} else if (str === "isp") {
@@ -1281,53 +1269,12 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 		}
 
-
-
-    $scope.mobileWindowOpen = false;
-    var innerWidth = $window.innerWidth;
-    var winWrapper = angular.element(document.getElementById("pseudoWrapWindow"));
-    console.log("CHECK FOR MOBILE WIDTH");
-    console.log(innerWidth);
-
-
-    $scope.closeMobileWindow = function() {
-      html.style.overflowY = 'visible';
-      headerToggleId.style.display = "initial";
-      mobileWindowElement.style.display = "none";
-    }
-
-
-    function getCurrentWidth() {
-      console.log("getCurrentWidth");
-      console.log($window.innerWidth);
-      return $window.innerWidth;
-    }
-
 	    function addListener(json, marker) {
-
 	      // console.log("listener");
-	      // console.log(marker);
+	      // console.log(json);
 	      // marker.addListener('click', toggleBounce);
-        // var isMobile;
-        // if (innerWidth <= 768) {
-        //   isMobile = true;
-        // } else if (innerWidth > 768) {
-        //   isMobile = false;
-        // }
 
 	      google.maps.event.addListener(marker, 'click', function() {
-          // if (innerWidth < 768) {
-          //   $scope.mobileWindowOpen = true;
-          // }
-          setMobileInfoWindowData(json);
-          var c = getCurrentWidth();
-          console.log(c);
-          if (c <= 768) {
-            console.log("c <= 768");
-          } else {
-            console.log("c > 768");
-          }
-
 	        resizeMap();	
 	        findActive();
 	
@@ -1336,8 +1283,6 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 	        var ll = new google.maps.LatLng(lat,lng);
 	        var cat = json.primaryCategory;
 	        setActive(marker, ll, cat);
-          // $scope.windowOpen = true;
-          
 	        // var highlightCircle           =  new google.maps.Marker({
 									// 			    position: ll,
 									// 			    icon: {
@@ -1358,7 +1303,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 				marker.setAnimation(null);
 			} else {
 				removeBouncing();
-				// marker.setAnimation(google.maps.Animation.BOUNCE);
+				marker.setAnimation(google.maps.Animation.BOUNCE);
 				markAsBouncing(marker);
 				recenterToMarker();
 			}
@@ -1393,37 +1338,12 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 	        $scope.state = document.getElementById('placeState').textContent = json.state;
 	        $scope.zip = document.getElementById('placeZip').textContent = json.zip;
 	        document.getElementById('placeHours').textContent = json.hoursOpen;
-          
 	      });
 	    }
 
 	    var createIcon = function(str) {
 
 	    }
-
-      $scope.thisPlace = {};
-
-      function setMobileInfoWindowData(json) {
-        $scope.thisPlace.title = json.title;
-        $scope.thisPlace.primaryCategory = json.primaryCategory;
-        // var description = document.getElementById('placeDescriptionM');
-      
-
-        // var category = document.getElementById('placeCategoryM');
-        // var ico = getIcon(json.primaryCategory);
-
-        // $scope.currentCategory = ico;
-
-        // document.getElementById('placeCategory').textContent = categoryIconText(json.primaryCategory);
-        // document.getElementById('placeTitleM').textContent = json.title;
-        // descriptor.textContent = desc;
-        // document.getElementById('placePhoneM').textContent = json.phone;
-        // $scope.addr = document.getElementById('placeAddressM').textContent = json.address1;
-        // $scope.city = document.getElementById('placeCityM').textContent = json.city;
-        // $scope.state = document.getElementById('placeStateM').textContent = json.state;
-        // $scope.zip = document.getElementById('placeZipM').textContent = json.zip;
-        // document.getElementById('placeHours').textContent = json.hoursOpen;
-      }
 
 	    function categoryIconText(str) {
 	    	if (str === "wifi-free") {
@@ -1637,44 +1557,13 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 	    function removeWindow() {
 	      sideWindowElement.style.display = "none";
 	      mapCanvasElement.style.width = "100%";
-        if (innerWidth < 768) {
-            $scope.mobileWindowOpen = false;
-        }
 
 	    }
-      var html = document.getElementsByTagName('html')[0];
-     
-      console.log(html);
-      console.log(document);
-      console.log($window);
-
-      function hideOverflow(element) {
-        element.style.overflowY = "hidden";
-      }
 
 	    var resizeMap = function() {
-        var cWidth = getCurrentWidth();
-        console.log("resize map");
-        console.log(cWidth);
-        if (cWidth <= 768) {
-          $scope.mobileMod = true;
-          headerToggleId.style.display = "none";
-          mobileWindowElement.style.display = "initial";
-          $window.scrollTo(0,0);
-          hideOverflow(html);
-          var diff = (cWidth - 38);
-
-
-
-          var x = diff + "px";
-          document.getElementById('trix').style.width = x;
-        } else {
-          mapCanvasElement.style.width = "80%";
-          mapCanvasElement.style.borderRight = "1px solid #4e4e4e";
-          sideWindowElement.style.display = "initial";
-        }
-	      
-        
+	      mapCanvasElement.style.width = "80%";
+	      mapCanvasElement.style.borderRight = "1px solid #4e4e4e";
+	      sideWindowElement.style.display = "initial";
 	    }
 
 	    $scope.showError = function (error) {
@@ -2536,7 +2425,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 	      $scope.mapOptions = {
 	        center: {lat: $scope.lat, lng: $scope.lng},
-	        zoom: 14,
+	        zoom: 13,
 	        mapTypeId: google.maps.MapTypeId.ROADMAP
 	      };
 

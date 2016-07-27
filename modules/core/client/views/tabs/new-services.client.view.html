@@ -2,6 +2,29 @@
 	<h1>Add Service</h1>
 	<p>Choose type of service you would like to add to map</p>
 </header>
+<script type="text/javascript">
+  
+
+// per css-tricks restarting css animations
+// http://css-tricks.com/restart-css-animation/
+$('label').click(function() {
+  
+  // find the first span which is our circle/bubble
+  var el = $(this).children('span:first-child');
+  
+  // add the bubble class (we do this so it doesnt show on page load)
+  el.addClass('circle');
+  
+  // clone it
+  var newone = el.clone(true);  
+  
+  // add the cloned version before our original
+  el.before(newone);  
+  
+  // remove the original so that it is ready to run on next click
+  $("." + el.attr("class") + ":last").remove();
+}); 
+</script>
 <div id="main">
 	<section id="content" class="main">
 		<!-- <h2>Map Categories</h2> -->
@@ -14,7 +37,7 @@
 
                     <script type="text/ng-template" id="newLocationModal.html">
                       <div class="modal-header">
-                          <h3 class="modal-title">Add Location</h3>
+                          <h3 class="modal-title">New Location</h3>
                       </div>
                       <div class="modal-body">
                         <section>
@@ -22,12 +45,12 @@
                           <section>
                             <div class="col-md-12">
                               <form name="vm.form.placeForm" class="form-horizontal c-modal-form" ng-submit="vm.save(vm.form.placeForm.$valid)" novalidate>
-                                <fieldset>
-                                  <h3 class="custom-form-header">1. Basic Information</h3>
+                                <fieldset id="modalFs">
+                                  <!-- <h3 class="custom-form-header">1. Basic Information</h3> -->
                                   <div class="form-section-custom">
                                     <div class="form-group" show-errors>
                                       <label class="control-label" for="title">* Name</label>
-                                      <input name="title" type="text" ng-model="vm.place.title" id="title" class="form-control" placeholder="Title">
+                                      <input name="title" type="text" ng-model="vm.place.title" id="title" class="form-control">
                                       <div ng-messages="vm.form.placeForm.title.$error" role="alert">
                                         <p class="help-block error-text" ng-message="required">Place title is required.</p>
                                       </div>
@@ -35,7 +58,7 @@
                                     
                                     <div class="form-group" show-errors>
                                       <label class="control-label" for="phone">* Phone</label>
-                                      <input name="phone" type="text" ng-model="vm.place.phone" id="phone" class="form-control" placeholder="Phone">
+                                      <input name="phone" type="text" ng-model="vm.place.phone" id="phone" class="form-control">
                                       <div ng-messages="vm.form.placeForm.phone.$error" role="alert">
                                         <p class="help-block error-text" ng-message="required">Place phone number is required.</p>
                                       </div>
@@ -43,39 +66,41 @@
                                     
                                     <div class="form-group" show-errors>
                                       <label class="control-label" for="url">Website</label>
-                                      <input name="url" type="text" ng-model="vm.place.url" id="url" class="form-control" placeholder="Website Address">
+                                      <input name="url" type="text" ng-model="vm.place.url" id="url" class="form-control">
                                     </div>
 
-                                    <div class="form-group" show-errors>
-                                      <label class="control-label" for="categories">Services offered (choose all that apply from dropdown list)</label>
-                              
-                                      <select selector
-                                        multi="true"
-                                        model="vm.place.categories"
-                                        name="categories"
-                                        options="categoryOptions"
-                                        value-attr="value"></select>
+                                     <div class="form-group">
+                                      <!-- <label class="control-label" for="hoursOpen">Hours Open</label>
+                                      <input name="hoursOpen" type="text" ng-model="vm.place.hoursOpen" id="hoursOpen" class="form-control"> -->
+                                      <div ng-controller="TimepickerCtrl">
+                                        <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+                                         <button type="button" class="btn btn-danger" ng-click="clear()">Clear</button>
+                                      </div>
                                     </div>
 
                                     
+                                   
+                                    
 
                                   </div>
-                                  <h3 class="custom-form-header">2. Address</h3>
+                                  <h3 class="custom-form-header"></h3>
                                   <div class="form-section-custom">
                                     
                                     <div class="form-group" show-errors>
                                       <label class="control-label" for="address1">Address Line 1</label>
-                                      <input name="address1" type="text" ng-model="vm.place.address1" id="address1" class="form-control" placeholder="Address 1"><br>
+                                      <input name="address1" type="text" <main class="container">
+
+
                                       <div ng-messages="vm.form.placeForm.address1.$error" role="alert">
                                         <p class="help-block error-text" ng-message="required">Address is required.</p>
                                       </div>
                                  
                           
-                                      <input name="address2" type="text" ng-model="vm.place.address2" id="address2" class="form-control" placeholder="Address 2">
+                                      <input name="address2" type="text" ng-model="vm.place.address2" id="address2" class="form-control">
                                     </div>
                                     <div class="form-group" show-errors>
                                       <label class="control-label" for="city">City</label>
-                                      <input name="city" type="text" ng-model="vm.place.city" id="city" class="form-control" placeholder="City">
+                                      <input name="city" type="text" ng-model="vm.place.city" id="city" class="form-control">
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label" for="state">State</label>
@@ -86,18 +111,30 @@
                                     </div>
                                     <div class="form-group" show-errors>
                                       <label class="control-label" for="zip">Zip Code</label>
-                                      <input name="zip" type="text" ng-model="vm.place.zip" id="zip" class="form-control" placeholder="Zip Code">
+                                      <input name="zip" type="text" ng-model="vm.place.zip" id="zip" class="form-control">
                                     </div>
 
                                     
                                   </div>
 
-                                  <h3 class="custom-form-header">3. Map</h3>
+                                  <h3 class="custom-form-header"></h3>
 
                                   <div class="form-section-custom">
 
+                                    <div class="form-group" show-errors>
+                                      <label class="control-label" for="categories">Select all services offered (choose all that apply from list)</label>
+                              
+                                      <select selector
+                                        multi="true"
+                                        model="vm.place.categories"
+                                        name="categories"
+                                        options="categoryOptions"
+                                        value-attr="value"></select>
+                                    </div>
+
+
                                     <div class="form-group">
-                                      <label class="control-label" for="primaryCategory">Select a map category (choose one)</label>
+                                      <label class="control-label" for="primaryCategory">Select a primary service category (choose one)</label>
                                       <select selector
                                         model="vm.place.primaryCategory"
                                         id="primaryCategory"
@@ -111,38 +148,43 @@
 
                                     <div class="form-group">
                                       <label class="control-label" for="description">Description</label>
-                                      <textarea name="description" data-ng-model="vm.place.description" id="description" class="form-control" cols="30" rows="4" placeholder="Description"></textarea>
+                                      <textarea name="description" data-ng-model="vm.place.description" id="description" class="form-control" cols="30" rows="4"></textarea>
                                     </div> 
 
-                                    <div class="form-group">
+                                   <!--  <div class="form-group">
                                       <label class="control-label" for="caption">Caption or Tagline</label>
-                                      <input name="caption" type="text" ng-model="vm.place.caption" id="caption" class="form-control" placeholder="Caption">
+                                      <input name="caption" type="text" ng-model="vm.place.caption" id="caption" class="form-control">
                                       
                                     </div>
-                              
+                               -->
                             
-                                    <div class="form-group">
-                                      <label class="control-label" for="hoursOpen">Hours Open</label>
-                                      <input name="hoursOpen" type="text" ng-model="vm.place.hoursOpen" id="hoursOpen" class="form-control" placeholder="Hours Open">
-                                      
-                                    </div>
+                                    
 
                                   
                                     <div class="form-group">
-                                      <label class="control-label" for="courseSchedule">Course Schedule</label>
-                                      <input name="courseSchedule" type="text" ng-model="vm.place.courseSchedule" id="courseSchedule" class="form-control" placeholder="Training Course Schedule">
+                                      <label class="control-label" for="courseSchedule">Training Courses &bull; Calendar Schedule</label>
+                                      <input name="courseSchedule" type="text" ng-model="vm.place.courseSchedule" id="courseSchedule" class="form-control">
                                       
                                     </div>
 
                                    
-                                  </div>
+                                  <!-- </div> -->
 
-                                
-                                  <div class="form-group">
-                                    <button type="submit" class="btn btn-default left-7">Submit</button>
-                                  </div>
-                                  <div ng-show="vm.error" class="text-danger">
-                                    <strong ng-bind="vm.error"></strong>
+                                  
+                                 
+                                  <!-- </div> -->
+                                  <!-- <h3 class="custom-form-header"></h3> -->
+
+                                  <!-- <div class="form-section-custom"> -->
+
+                                    <div class="form-group">
+                                         <div class="form-group">
+                                      <button type="submit" class="btn btn-default left-7">Submit</button>
+                                    </div>
+                                    <div ng-show="vm.error" class="text-danger">
+                                      <strong ng-bind="vm.error"></strong>
+                                    </div>
+                                    </div>
                                   </div>
                                 </fieldset>
                               </form>

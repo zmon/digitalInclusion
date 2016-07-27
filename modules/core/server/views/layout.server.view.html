@@ -30,7 +30,7 @@
 
   <!-- Fav Icon -->
   <link href="{{favicon}}" rel="shortcut icon" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:900,700,600' rel='stylesheet' type='text/css'>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:900,700,600' rel='stylesheet' type='text/css'> -->
   <link href='https://fonts.googleapis.com/css?family=Asap:400,400italic' rel='stylesheet' type='text/css'>
 
 
@@ -160,10 +160,27 @@ table td {
 }
   </style>
   <!-- <link rel="stylesheet" href="/modules/core/client/css/overrides.css"/> -->
+  
+
+  <link rel="stylesheet" href="/modules/core/client/css/bs/bootstrap-theme.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/bs/bootstrap.css"/>
+
+
+  <link rel="stylesheet" href="/modules/core/client/css/core.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/main.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/angular-motion.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/angular-selector.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/animations.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/ng-animations.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/hvr/hover.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/tmp/animate.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/uib/dependencies.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/multilevelmenu.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/superhero.css"/>
   <link rel="stylesheet" href="/modules/core/client/css/signin.css"/>
   <link rel="stylesheet" href="/modules/core/client/css/map.css"/>
   <link rel="stylesheet" href="/modules/core/client/css/lt-1280.css"/>
-   <link rel="stylesheet" href="/modules/core/client/css/lt-1000.css"/>
+  <link rel="stylesheet" href="/modules/core/client/css/lt-1000.css"/>
   
  
   <link rel="stylesheet" href="/modules/core/client/css/lt-768.css"/>
@@ -172,15 +189,15 @@ table td {
   <link rel="stylesheet" href="/modules/core/client/css/gt-1280.css"/>
   <link rel="stylesheet" href="/modules/core/client/css/gt-1660.css"/>
   <link rel="stylesheet" href="/modules/core/client/css/or.css"/>
-   <link rel="stylesheet" href="/modules/core/client/css/compass.css"/>
-  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/modules/core/client/css/compass.css"/>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,900' rel='stylesheet' type='text/css'> -->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/modules/core/client/css/c-form.css"/>
-<link href="http://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" />
+  <link href="http://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" />
    <!-- <link rel="stylesheet" href="/modules/core/client/css/hvr/hover.css"/> -->
-<link rel="stylesheet" type="text/css" href="/modules/core/client/css/dist/angular-progress-button-styles.css"/>
+  <link rel="stylesheet" type="text/css" href="/modules/core/client/css/dist/angular-progress-button-styles.css"/>
 
-<link rel="stylesheet" type="text/css" href="/modules/core/client/css/dist/ng-animate.css"/>
+  <link rel="stylesheet" type="text/css" href="/modules/core/client/css/dist/ng-animate.css"/>
 
 
   <style>
@@ -202,19 +219,69 @@ table td {
         visibility: hidden;
     }
   </style>
+  <link rel="stylesheet" type="text/css" href="/modules/core/client/css/tmp.css"/>
   <link rel="stylesheet" type="text/css" href="/modules/core/client/css/tmp/animate.css"/>
   <link rel="stylesheet" type="text/css" href="/modules/core/client/css/angular-motion.css"/>
+  <style>
+input {
+
+}
+
+input::-webkit-input-placeholder { /* Chrome */
+  color: red;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+  color: red;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: red;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: red;
+  opacity: 1;
+}
+.checkboxdemoBasicUsage div.flex-xs {
+  min-height: 40px; }
+
+.checkboxdemoBasicUsage .checkboxDemo1 div {
+  clear: both; }
+
+.checkboxdemoBasicUsage p {
+  padding-left: 8px; }
+
+.checkboxdemoBasicUsage fieldset.standard {
+  border-style: solid;
+  border-width: 1px; }
+
+.checkboxdemoBasicUsage legend {
+  color: #3F51B5; }
+
+.checkboxdemoBasicUsage legend code {
+  color: #3F51B5;
+  font-weight: normal; }
+
+.checkboxdemoBasicUsage .ipsum {
+  color: saddlebrown; }
+
+
+</style>
 </head>
 
 <body class="ng-cloak">
   <span id="net">
 
-  <div class="codrops-top clearfix">
-      <a class="codrops-icon codrops-icon-prev" ng-href="/places"><span>Edit</span></a>
-    <span class="right"><a class="codrops-icon codrops-icon-drop" ng-href="/feedback"><span>Feedback</span></a></span>
-  </div>
+  
 
-  <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+  <span id="headerToggleId">
+    <div class="codrops-top clearfix">
+      <a class="codrops-icon codrops-icon-prev" ng-href="/places"><span>Edit</span></a>
+      <span class="right"><a class="codrops-icon codrops-icon-drop" ng-href="/feedback"><span>Feedback</span></a></span>
+    </div>
+
+    <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+  </span>
+
 
   <section class="content">
     <section class="container">
@@ -229,6 +296,8 @@ table td {
   </script>
 
   <!--Load The Socket.io File-->
+ <!--  <script type="text/javascript" src="/lib/angular/angular.js"></script>
+  <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script> -->
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
   <!--Application JavaScript Files-->
@@ -248,7 +317,10 @@ table td {
 
   <script src="/modules/core/client/services/spinner.client.service.js"></script>
 
-  
+
+  <script src="/lib/angular-aria/angular-aria.js"></script>
+  <script src="/lib/angular-material/angular-material.js"></script>
+  <script src="/modules/core/client/lib/svg-assets-cache.js"></script>
   <script src="/modules/core/client/lib/angular-selector.js"></script>
   <script src="/modules/core/client/lib/tabs.js"></script>
   <script src="/modules/core/client/lib/event.js"></script>

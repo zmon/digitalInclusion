@@ -1,14 +1,7 @@
-<header id="header" class="pt-page-moveFromLeft" ng-animate="{enter: 'pt-page-rotateFall', leave: 'am-flip-x-remove'}">
-  <div id="svgWrap" class="vis-on">
-    <div id="onloadSpinner"class="c-loader">        
-      <img src="/modules/core/client/img/loaders/puff.svg" />
-    </div>
-    <h4 class="absolutePos">Loading Map</h4>
-  </div>
-
-  
-  <h1 id="headerH1" class="sh-off c-sat vis-off">Map of Services</h1>
-  <p id="headerP" class="vis-off">Kansas City</p>
+<span ng-controller="MapController">
+<header id="header" class="pt-page-moveFromLeft" ng-show="mapReady" ng-animate="{enter: 'pt-page-rotateFall', leave: 'am-flip-x-remove'}">  
+  <h1 id="headerH1" class="sh-up c-sat">Map of Services</h1>
+  <p id="headerP" class="sh-up">Kansas City</p>
 </header>
 
 
@@ -40,18 +33,18 @@
 window.addEventListener('DOMContentLoaded', init, false);
   </script> -->
 <div id="main" class="fix-height">
-  <section id="first" class="main special bg-wrapper" ng-controller="MapController">
+  <section id="first" class="main special bg-wrapper">
     <main id="main-page">
       <div id="frontdoor" class="row butane c-dar">
 
         <div class="col-md-1"></div>
         <div class="col-md-5">
           <section class="meta-w-form">
-            <ul class="actions fit small" ng-show="showMapControls">
+            <ul class="actions fit small upper-btns" ng-show="showMapControls">
               <li><a ng-click="toggleWifiMarkers(); switchToggleState()" id="e1" href="#" class="button normal fit small">Free WiFi</a></li>
               <li class="realign"><a ng-click="toggleComputersMarkers();" id="e3" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Public Computers</a></li>
             </ul>
-            <ul class="actions fit small" ng-show="showMapControls">
+            <ul class="actions fit small lower-btns" ng-show="showMapControls">
               <li><a id="e2" ng-click="toggleTrainingMarkers();" href="#" class="button normal fit small pt-page-rotateRoomRightIn">Computer Training</a></li>
               <li class="realign"><a id="e4" ng-click="toggleRefurbsMarkers();" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Low Cost Computers</a></li>
             </ul>
@@ -89,9 +82,6 @@ window.addEventListener('DOMContentLoaded', init, false);
       <div class="row data-row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
           <div id="kv" class="emp">
-        <!--   <span class="text-small-custom">
-          {{"Finding nearby matching locations:"}}<br>1) {{proximity1.address}} ({{proximity1.distance}} feet)<br>2) {{proximity2.address}} ({{proximity2.distance}} feet)
-          </span> -->
 
           </div>
         </div>
@@ -99,7 +89,7 @@ window.addEventListener('DOMContentLoaded', init, false);
 
       <div class="row">
             
-         <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
         <div class="col-md-6">
         <section id="queryForm" ng-include="'modules/places/client/views/search-map.client.view.html'" class="pt-page-rotateInNewspaper"></section>
 
@@ -107,141 +97,69 @@ window.addEventListener('DOMContentLoaded', init, false);
         <div class="col-md-1"></div>
         <div class="col-md-2">
 
-          
-         <!--  <button id="slide-button" type="button" class="btn btn-primary slide-again" data-animation="am-fade-and-slide-left" data-placement="left" bs-aside="aside">aside from left<br><small>(am-fade-and-slide-left)</small></button> -->
         </div>
       </div>
-      <!-- <div class="row">
-        <div class="c-wrapper">
-        <div class="c-line c-line1">
-            <span class="circle circle-top"></span>
-            <div class="dotted">
-                <span class="dot dot-top"></span>
-                <span class="dot dot-middle-top"></span>
-                <span class="dot dot-middle-bottom"></span>
-                <span class="dot dot-bottom"></span>
-            </div>
-            <span class="circle circle-bottom"></span>
-        </div>
-        <div class="c-line c-line2">
-            <span class="circle circle-top"></span>
-            <div class="dotted">
-                <span class="dot dot-top"></span>
-                <span class="dot dot-middle-top"></span>
-                <span class="dot dot-middle-bottom"></span>
-                <span class="dot dot-bottom"></span>
-            </div>
-            <span class="circle circle-bottom"></span>
-        </div>
-        <div class="c-line c-line3">
-            <span class="circle circle-top"></span>
-            <div class="dotted">
-                <span class="dot dot-top"></span>
-                <span class="dot dot-middle-top"></span>
-                <span class="dot dot-middle-bottom"></span>
-                <span class="dot dot-bottom"></span>
-            </div>
-            <span class="circle circle-bottom"></span>
-        </div>
-        <div class="c-line c-line4">
-            <span class="circle circle-top"></span>
-            <div class="dotted">
-                <span class="dot dot-top"></span>
-                <span class="dot dot-middle-top"></span>
-                <span class="dot dot-middle-bottom"></span>
-                <span class="dot dot-bottom"></span>
-            </div>
-            <span class="circle circle-bottom"></span>
-        </div>
-        <div class="c-line c-line5">
-            <span class="circle circle-top"></span>
-            <div class="dotted">
-                <span class="dot dot-top"></span>
-                <span class="dot dot-middle-top"></span>
-                <span class="dot dot-middle-bottom"></span>
-                <span class="dot dot-bottom"></span>
-            </div>
-            <span class="circle circle-bottom"></span>
-        </div>
-        <div class="c-line c-line6">
-            <span class="circle circle-top"></span>
-            <div class="dotted">
-                <span class="dot dot-top"></span>
-                <span class="dot dot-middle-top"></span>
-                <span class="dot dot-middle-bottom"></span>
-                <span class="dot dot-bottom"></span>
-            </div>
-            <span class="circle circle-bottom"></span>
-        </div>
-        <div class="c-line c-line7">
-            <span class="circle circle-top"></span>
-            <div class="dotted">
-                <span class="dot dot-top"></span>
-                <span class="dot dot-middle-top"></span>
-                <span class="dot dot-middle-bottom"></span>
-                <span class="dot dot-bottom"></span>
-            </div>
-            <span class="circle circle-bottom"></span>
-        </div>
-        <div class="c-line c-line8">
-            <span class="circle circle-top"></span>
-            <div class="dotted">
-                <span class="dot dot-top"></span>
-                <span class="dot dot-middle-top"></span>
-                <span class="dot dot-middle-bottom"></span>
-                <span class="dot dot-bottom"></span>
-            </div>
-            <span class="circle circle-bottom"></span>
-        </div>
-        <div class="c-line c-line9">
-            <span class="circle circle-top"></span>
-            <div class="dotted">
-                <span class="dot dot-top"></span>
-                <span class="dot dot-middle-top"></span>
-                <span class="dot dot-middle-bottom"></span>
-                <span class="dot dot-bottom"></span>
-            </div>
-            <span class="circle circle-bottom"></span>
-        </div>
-        <div class="c-line c-line10">
-            <span class="circle circle-top"></span>
-            <div class="dotted">
-                <span class="dot dot-top"></span>
-                <span class="dot dot-middle-top"></span>
-                <span class="dot dot-middle-bottom"></span>
-                <span class="dot dot-bottom"></span>
-            </div>
-            <span class="circle circle-bottom"></span>
-        </div>
-        <div class="c-line c-line11">
-            <span class="circle circle-top"></span>
-            <div class="dotted">
-                <span class="dot dot-top"></span>
-                <span class="dot dot-middle-top"></span>
-                <span class="dot dot-middle-bottom"></span>
-                <span class="dot dot-bottom"></span>
-            </div>
-            <span class="circle circle-bottom"></span>
-        </div>
-    </div> -->
-      <!-- </div> -->
+
 
       <div class="row map-row">
     
           <div class="col-xs-12 col-sm-12 col-md-12 col-md-12">
+            <div id="svgWrap" ng-show="loading" class="pt-page-moveFromLeft">
+              <div id="onloadSpinner" class="c-loader">        
+                <img src="/modules/core/client/img/loaders/puff.svg" />
+              </div>
+              <h4 class="absolutePos">Loading Map</h4>
+            </div>
               <!-- <input id="pac-input" class="controls" type="text" placeholder="Search by Zip"> -->
                
-           <section id="customMap" class="vis-off">
+           <section id="customMap" class="vis-on" ng-controller="InfoWindowController">
 
-            </section>
+           </section>
       
             
-
-            <section id="sw" class="full-side sidewin-ctrl">
-              <a id="winCtrl" ng-click="removeWindow()" class="rmv">
-                 <span id="rmv-glyph" class="glyphicon glyphicon-remove"></span>
+            <div id="wrapMobileWindow">
+              <a id="closeWindow" ng-click="closeMobileWindow()">
+                <div id="mobileWindowBg"></div>
               </a>
-              <div id="info-wrapper slide-pop.ng-enter">
+           <!--    <div id="wrapExitM">
+                  <a id="winCtrlM" ng-click="removeWindowM()" class="rmv">
+                     <span id="rmv-glyph" class="glyphicon glyphicon-remove"></span>
+                  </a>
+              </div> -->
+              <section id="trix" class="pt-page-rotateSidesIn">
+              <!-- <div id="mobile-info-window" class="slide-pop">
+        
+                <div id="placeCategoryM" class="f1 f-class"></div>
+                
+                <div id="placeTitleM" class="f2 f-class"></div>
+   
+                <div id="placePhoneM" class="f-class"></div>
+                <div id="placeAddressM" class="f3 f-class"></div>
+         
+
+               <div>
+                <span id="placeCityM" class="f3 f-class"></span>, <span id="placeState" class="f3"></span><span id="placeZip" class="f3 f-class"></span></div>
+                <div id="placeHoursM" class="f-class"></div>
+             
+                <div class="f4 f-class" id="placeDescriptionM"></div>
+          
+                <div class="f-class" id="placeUrlM"></div>
+              </div> -->
+                <h1>{{thisPlace.title}}</h1>
+                <p>{{thisPlace.primaryCategory}}</p>
+              </section>
+            </div>
+           
+            <section id="sw" class="full-side sidewin-ctrl pt-page-rotateSidesIn">
+              
+                <div id="wrapExit">
+                  <a id="winCtrl" ng-click="removeWindow()" class="rmv">
+                     <span id="rmv-glyph" class="glyphicon glyphicon-remove"></span>
+                  </a>
+                </div>
+
+
+              <div id="info-wrapper" class="slide-pop.ng-enter">
                 <!-- category -->
                 <div id="placeCategory" class="f1 f-class"></div>
                 <!--  -->
@@ -261,6 +179,7 @@ window.addEventListener('DOMContentLoaded', init, false);
                 <div class="f-class" id="placeUrl"></div>
               </div>
             </section>
+      
 
          <!--    <div id="directions-panel" class="pt-page-rotateUnfoldLeft">
               <h4 id="show-start">
@@ -343,3 +262,5 @@ window.addEventListener('DOMContentLoaded', init, false);
   </div>
   <section ng-include="'/modules/core/client/views/footer.client.view.html'"></section>
 </div>
+
+</span>

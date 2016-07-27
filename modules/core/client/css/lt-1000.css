@@ -5,7 +5,7 @@
 	    border: 1px solid transparent;
 	    color: #474a26;
 	    border-radius: 4px 4px 0 0;
-	    font-size: .53em;
+	    font-size: .45em;
 	    font-weight: 800;
 	    margin: 0 .1em 0 .1em;
 	}
@@ -64,11 +64,11 @@
 	.legend-table {
 		width: 21em;
 		font-size: .6em;
-		padding-right: 2em;
+		/* padding-right: 0; */
 		line-height: 10px;
 		padding-left: 1em;
 		overflow-x: hidden;
-		border-right: 1px solid gray;
+		border-right: none;
 		text-align: center;
 	}
 
@@ -79,7 +79,7 @@
 		box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
 		border: 2px solid #676f03;
 		/* box-shadow: 0 0 50px black; */
-		margin-top: -4em;
+		margin-top: 6em;
 		margin-bottom: -2.7em;
 		border: none;
 		border-bottom: .5px solid #423906;
@@ -105,7 +105,7 @@
 	    border-left: 4px solid #c0d8dc;
 	    border-right: 4px solid #c0d8dc;
 	    border-bottom: 4px solid #c0d8dc;
-	    top: -62px;
+	    top: 22px;
 	    margin-left: 0;
 	    /* box-shadow: 0 0 0 3px gray; */
 	    padding: 0 0 2em 0;
@@ -135,8 +135,9 @@
 	    /* color: #296e94 !important; */
 	    /* box-shadow: 0 0 0 1px #67b2ff, 2px 2px 2px black, 3px 3px 3px #805f0c; */
 	    /* height: 24px; */
-	    width: 100px;
+	    width: 108px;
 	    /* text-shadow: none; */
+	    padding-top: .4em;
 	    /* box-shadow: 0 0 0 1px #5cf0ff, 1px 1px 1px 1px darkgrey; */
 	    /* border-radius: 12px; */
 	    /* border: 1px solid #8be3ff; */
@@ -149,10 +150,11 @@
 	    /* font-weight: 400; */
 	    /* letter-spacing: .1em; */
 	    /* border-radius: .81em; */
-	    width: 100px;
+	    width: 111px;
+	    font-size: .7em;
 	    /* border-radius: 12px; */
 	    /* text-shadow: 0 0 4px #a2a6af; */
-	    /* padding-top: .14em; */
+	    padding-top: .5em;
 	    /* height: 24px; */
 	    /* box-shadow: 0 0 0 1px #e9fff9, 2px 2px 2px black, 3px 3px 3px #805f0c; */
 	}
@@ -161,10 +163,13 @@
 	    padding-left: .4em;
 	    position: relative;
 	    background: none;
-	    left: 15em;
+	    left: -1em;
+	    padding: 2em .1em;
+	    height: 16em;
 	    top: -14em;
-	    border: 1px solid #9e9e9e;
-	    outline: none;
+	    margin-right: 2em;
+	    border: none;
+	    /* outline: none; */
 	    margin-top: -4em;
 	}
 
@@ -201,7 +206,7 @@
 
 	ul.nav.nav-tabs {
 	    position: relative;
-	    top: -6.975em;
+	    top: -2.5em;
 	}
 
 	.mission {
@@ -222,6 +227,14 @@
 	    border: 1px solid #1f1703;
 	    box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a;
 	    width: 31.3em;
+	}
+
+	.nav-tabs {
+		border: 1px solid #b2b5b1;
+		border-radius: .3em;
+		box-shadow: inset 0 0 0 300px #ecf3de, 0 0 1px #c7c7c7;
+		opacity: 1;
+		padding: .5em .5em .5em 2.5em;
 	}
 }
 
@@ -269,17 +282,21 @@
 	    position: relative;
 	    overflow-x: auto;
 	    padding: 1.5em .83em 0 1.25em;
-	    top: -7.2em;
+	    top: -.61em;
 	    border: none;
-	    left: 13.5em;
-	    background: none;
+	    background: white;
+	    overflow-x: hidden;
+	    height: 7.5em;
+	    width: 13em;
+	    left: 11.9em;
+	    /* background: none; */
 	    margin-top: -.25em;
 	    margin-right: .25em;
 	}
 
 	.move-up {
 	    position: relative;
-	    top: -1.5em;
+	    top: .5em;
 	}
 
 	#pac-input {
@@ -297,21 +314,56 @@
     top: -7em;
 }
 	#wrapper {
-    width: 64em;
-    max-width: calc(100% - -.4em);
-    margin: 0 auto;
-    top: -10.5em;
-    background: #f5fbe1;
-    box-shadow: inset 0 0 800px #eef3e5, inset 0 0 0 800px #dce6c8, 0 0 0 1px #baccba;
-    border: 1px double #3c7182;
-    /* background: radial-gradient(lightgrey,black); */
-    min-height: 760px;
-    /* background: radial-gradient(#eff6ff,#d3d8de); */
-    /* border-right: none; */
-    /* border-left: none; */
-    border-radius: .5em;
- }
+	    width: 64em;
+	    max-width: calc(100% - -.4em);
+	    margin: 0 auto;
+	    top: -7.5em;
+	    background: #f5fbe1;
+	    box-shadow: inset 0 0 800px #eef3e5, inset 0 0 0 800px #dce6c8, 0 0 0 1px #baccba;
+	    border: 1px double #3c7182;
+	    /* background: radial-gradient(lightgrey,black); */
+	    min-height: 800px;
+	    /* background: radial-gradient(#eff6ff,#d3d8de); */
+	    /* border-right: none; */
+	    /* border-left: none; */
+	    border-radius: .25em;
+	    box-shadow: inset 0 0 200px #e2eff1, 0 0 1px #5a5959;
+	    /* border-radius: .125em; */
+	    /* height: 60em; */
+	    border: none;
+	    outline: none;
+	    background: linear-gradient(#eef2f3,#dfe6ea);
+	 }
 
+	 .sh-up {
+		position: relative;
+		top: -2.5em;
+	}
+
+	.rbor {
+	    /* border-right: 1px solid gainsboro; */
+	    padding-left: 1em;
+	    text-align: right;
+	    position: relative;
+	    padding-right: 1em;
+	    left: -2.5em;
+	}
+
+	.toleft {
+		position: relative;
+		left: -4em;
+		padding-right: .1em;
+	}	
+
+	a.lks {
+    color: cornflowerblue;
+    color: #557692;
+    text-align: left;
+    text-decoration: underline;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-left: 1em;
+}
 }
 
 @media (min-width: 991px) {

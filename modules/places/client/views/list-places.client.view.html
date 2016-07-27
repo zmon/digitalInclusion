@@ -3,7 +3,7 @@
     <h1>Locations</h1>
   </div>
   <div class="list-group">
-    <a ng-repeat="place in vm.places" ui-sref="places.view({ placeId: place._id })" class="list-group-item">
+    <a ng-repeat="place in vm.places" ui-sref="places.view({ placeId: place._id })" class="list-group-item" ng-click="scrollToTop()">
       <small class="list-group-item-text">
         Posted on
         <span ng-bind="place.created | date:'mediumDate'"></span>

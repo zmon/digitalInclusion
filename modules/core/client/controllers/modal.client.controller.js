@@ -9,7 +9,16 @@ angular.module('core.modal').controller('ModalController', function ($scope, $ui
  
   $scope.items = [item1, item2];
 
+    $scope.data = {};
+  $scope.data.cb1 = true;
+  $scope.data.cb2 = false;
+  $scope.data.cb3 = false;
+  $scope.data.cb4 = false;
+  $scope.data.cb5 = false;
+
   $scope.animationsEnabled = true;
+
+  
 
   $scope.updateStatus = function () {
   	$scope.status = "updarted";
