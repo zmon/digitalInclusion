@@ -5,8 +5,8 @@ module.exports = {
     ssl: true,
     privateKey: './config/sslcerts/key.pem',
     // certificate: './config/sslcerts/cert.pem',
-    certificate: './../getonlinekc.org.chained.crt',
-    caBundle: './../getonlinekc_org.ca-bundle'
+    certificate: './../../getonlinekc.org.chained.crt',
+    caBundle: './../../getonlinekc_org.ca-bundle'
   },
   port: 8556,
   // Binding to 127.0.0.1 is safer in production.
