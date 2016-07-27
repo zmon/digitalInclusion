@@ -28,6 +28,7 @@ module.exports.init = function init(callback) {
     // Initialize express
     var app = express.init(db);
     if (callback) callback(app, db, config);
+      console.log("app db config");
       console.log(app);
       console.log(db);
       console.log(config);
