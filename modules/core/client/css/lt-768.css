@@ -191,8 +191,6 @@
 		width: 100.75%;
 		margin-left: -.3em;
 		border: none;
-		border-bottom: 1px solid gold;
-		border-top: 1px solid gold;
 	}
 	#header p {
 		color: #4a4a4a;
@@ -324,8 +322,8 @@
 	    left: -2em;
 	    padding: 1em .1em 1em .14em;
 	    position: absolute;
-	    height: 12.5em;
-	    top: -6.1em;
+	    height: 48.5em;
+	    top: -6.91em;
 	    border: 1px solid #1f1703;
 	    box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a, 0 0 20px black;
 	    width: 50em;
@@ -368,13 +366,13 @@
 @media (max-width: 480px) {
 	ul.actions.fit.small {
 	    margin-left: -0.5em;
-	    width: calc(100% + -20.5em);
+	    width: calc(100% + -28em);
 	    min-width: 150px;
 	    position: relative;
 	    margin-top: -1.4em;
 	    /* margin-left: 1em; */
-	    left: 18.5%;
-	    top: -7em;
+	    left: 10.5%;
+	    top: .7em;
 	}
 }
 

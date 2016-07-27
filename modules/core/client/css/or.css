@@ -450,6 +450,8 @@ h3.col-md-12.text-center.log {
 
 button#btn-sub {
 	margin: 1.5em 0 0 5em;
+	position: relative;
+	left: -2.5em;
 }
 
 
