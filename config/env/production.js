@@ -3,13 +3,11 @@
 module.exports = {
   secure: {
     ssl: true,
-    privateKey: './../getonlinekc.org.key',
+    privateKey: './config/sslcerts/key.pem',
     // certificate: './config/sslcerts/cert.pem',
     certificate: './../getonlinekc.org.chained.crt',
     caBundle: './../getonlinekc_org.ca-bundle'
   },
-  console.log("secure");
-  console.log(secure);
   port: 8556,
   // Binding to 127.0.0.1 is safer in production.
   host: process.env.HOST || '0.0.0.0',
