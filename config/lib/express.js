@@ -28,6 +28,10 @@ module.exports.initLocalVariables = function (app) {
   // Setting application local variables
   app.locals.title = config.app.title;
   app.locals.description = config.app.description;
+  console.log("$$app");
+  console.log(app);
+  console.log("config secure");
+  console.log(config);
   if (config.secure && config.secure.ssl === true) {
     app.locals.secure = config.secure.ssl;
   }
