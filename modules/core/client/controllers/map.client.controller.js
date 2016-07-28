@@ -329,7 +329,7 @@ function sortListToArrays(places) {
 
      var svgW  = angular.element(document.getElementById("svgWrap"));
           setTimeout(function(){
-              console.log("??12t12ime2OutZZT2OP");
+              console.log("?");
               console.log(svgW[0]);
               svgW.removeClass("vis-off");
               svgW.addClass("vis-on");
@@ -510,7 +510,7 @@ function stackChips(obj) {
 
 
 setTimeout(function(){
-              console.log("??12t12ime2OutZZT2OP");
+              console.log("?P");
               console.log(svgW[0]);
               svgW.removeClass("vis-off");
               svgW.addClass("vis-on");
@@ -1755,7 +1755,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 		          position: $scope.initialLocation,
 		          animation: google.maps.Animation.DROP,
 		          map: $scope.map,
-		          icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+		          icon: 'modules/core/client/img/red-dot.png'
 		      	});
 	    	} else {
 	    		console.log("init false");
