@@ -3,16 +3,16 @@
 module.exports = {
   secure: {
     ssl: true,
-     privateKey: './../etc/ssl/private/getonlinekc.org.key',
+    //  privateKey: './../etc/ssl/private/getonlinekc.org.key',
 
-    certificate: './../etc/ssl/certs/getonlinekc.org.chained.crt',
-    caBundle: './../etc/ssl/certs/ca-certificates.crt'
-    // privateKey: './config/sslcerts/getonlinekc.org.key',
+    // certificate: './../etc/ssl/certs/getonlinekc.org.chained.crt',
+    // caBundle: './../etc/ssl/certs/ca-certificates.crt'
+    privateKey: './config/sslcerts/getonlinekc.org.key',
 
-    // certificate: './config/sslcerts/getonlinekc.org.chained.crt',
-    // caBundle: './config/sslcerts/getonlinekc_org.ca-bundle'
+    certificate: './config/sslcerts/getonlinekc.org.chained.crt',
+    caBundle: './config/sslcerts/getonlinekc_org.ca-bundle'
   },
-  port: 8556,
+  port: 443,
   // Binding to 127.0.0.1 is safer in production.
   host: process.env.HOST || '0.0.0.0',
   db: {
