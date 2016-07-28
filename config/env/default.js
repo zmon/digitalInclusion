@@ -5,6 +5,7 @@ module.exports = {
     title: 'Digital Inclusion',
     description: 'Full-Stack JavaScript ~ Node.js',
     keywords: 'mongodb, express, angularjs, node.js, mongoose, passport',
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || 'GOOGLE_MAPS_API_KEY',
     googleMapsApiServerKey: process.env.GOOGLE_MAPS_API_SERVER_KEY || 'GOOGLE_MAPS_API_SERVER_KEY',
     googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
   },

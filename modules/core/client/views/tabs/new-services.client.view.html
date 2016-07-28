@@ -42,7 +42,7 @@ $('label').click(function() {
                       <div class="modal-body">
                         <section>
                           <!-- <div ng-include="'/modules/places/client/views/form-modal.client.view.html'"></div> -->
-                          <section>
+                          <section ng-controller="PlacesController">
                             <div class="col-md-12">
                               <form name="vm.form.placeForm" class="form-horizontal c-modal-form" ng-submit="vm.save(vm.form.placeForm.$valid)" novalidate>
                                 <fieldset id="modalFs">
@@ -69,15 +69,15 @@ $('label').click(function() {
                                       <input name="url" type="text" ng-model="vm.place.url" id="url" class="form-control">
                                     </div>
 
-                                     <div class="form-group">
+                                     <!-- <div class="form-group"> -->
                                       <!-- <label class="control-label" for="hoursOpen">Hours Open</label>
                                       <input name="hoursOpen" type="text" ng-model="vm.place.hoursOpen" id="hoursOpen" class="form-control"> -->
-                                      <div ng-controller="TimepickerCtrl">
+                                  <!--     <div ng-controller="TimepickerCtrl">
                                         <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
                                          <button type="button" class="btn btn-danger" ng-click="clear()">Clear</button>
                                       </div>
                                     </div>
-
+ -->
                                     
                                    
                                     
@@ -161,11 +161,11 @@ $('label').click(function() {
                                     
 
                                   
-                                    <div class="form-group">
+                               <!--      <div class="form-group">
                                       <label class="control-label" for="courseSchedule">Training Courses &bull; Calendar Schedule</label>
                                       <input name="courseSchedule" type="text" ng-model="vm.place.courseSchedule" id="courseSchedule" class="form-control">
                                       
-                                    </div>
+                                    </div> -->
 
                                    
                                   <!-- </div> -->

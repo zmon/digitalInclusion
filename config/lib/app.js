@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 var config = require('../config'),
+    dotenv = require('dotenv').config(),
   mongoose = require('./mongoose'),
   express = require('./express'),
   chalk = require('chalk'),
@@ -28,10 +29,10 @@ module.exports.init = function init(callback) {
     // Initialize express
     var app = express.init(db);
     if (callback) callback(app, db, config);
-      console.log("app db config");
-      console.log(app);
-      console.log(db);
-      console.log(config);
+      // console.log("app db config");
+      // console.log(app);
+      // console.log(db);
+      // console.log(config);
   });
 };
 
@@ -40,9 +41,11 @@ module.exports.start = function start(callback) {
 
   _this.init(function (app, db, config) {
 
-
+    console.log("process.env");
+    console.log(process.env.GOOGLE_MAPS_API_KEY);
     console.log('config');
-    console.log(config);
+    console.log(config.app.googleMapsApiKey);
+    // console.log(app.locals.googleMapsApiKey);
 
     // Start the app by listening on <port> at <host>
     app.listen(config.port, config.host, function () {

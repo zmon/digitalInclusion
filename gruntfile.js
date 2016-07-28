@@ -289,7 +289,8 @@ module.exports = function (grunt) {
   grunt.registerTask('lint', ['sass', 'less', 'eslint', 'csslint']);
 
   // Lint project files and minify them into two production files.
-  grunt.registerTask('build', ['env:dev', 'lint', 'ngAnnotate', 'uglify', 'cssmin']);
+  // grunt.registerTask('build', ['env:dev', 'lint', 'ngAnnotate', 'uglify', 'cssmin']);
+  grunt.registerTask('build', ['env:dev', 'ngAnnotate', 'uglify']);
 
   // Run the project tests
   grunt.registerTask('test', ['env:test', 'lint', 'mkdir:upload', 'copy:localConfig', 'server', 'mochaTest', 'karma:unit', 'protractor']);

@@ -13,8 +13,7 @@ var path = require('path'),
 
 var key = 'AIzaSyAaZSOnzTVjMqppRfkOQUNIiDKVGtLnjtI';
 // var key = process.env.GOOGLE_MAPS_API_SERVER_KEY;
-console.log("key");
-console.log(key);
+
 
 var publicConfig = {
   key: key,

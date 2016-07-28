@@ -29,12 +29,14 @@ module.exports.initLocalVariables = function (app) {
   app.locals.title = config.app.title;
   app.locals.description = config.app.description;
   console.log("$$app");
-  console.log(app);
-  console.log("config secure");
-  console.log(config);
+  console.log(config.app);
+  // console.log("config secure");
+  // console.log(config);
   if (config.secure && config.secure.ssl === true) {
     app.locals.secure = config.secure.ssl;
   }
+  // app.locals.googleMapsApiKey = config.app.googleMapsApiKey;
+  app.locals.googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY;
   app.locals.googleMapsApiServerKey = config.app.googleMapsApiServerKey;
   app.locals.keywords = config.app.keywords;
   app.locals.googleAnalyticsTrackingID = config.app.googleAnalyticsTrackingID;
@@ -44,6 +46,10 @@ module.exports.initLocalVariables = function (app) {
   app.locals.livereload = config.livereload;
   app.locals.logo = config.logo;
   app.locals.favicon = config.favicon;
+
+  console.log("omg");
+  console.log(app.locals.googleMapsApiKey);
+  console.log(process.env.GOOGLE_MAPS_API_KEY);
 
   // Passing the request url to environment locals
   app.use(function (req, res, next) {
