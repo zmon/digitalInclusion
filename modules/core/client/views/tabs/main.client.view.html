@@ -120,11 +120,11 @@ window.addEventListener('DOMContentLoaded', init, false);
             </div>
               <!-- <input id="pac-input" class="controls" type="text" placeholder="Search by Zip"> -->
                
-           <section id="customMap" class="vis-on" ng-controller="InfoWindowController">
+           <section id="customMap" class="vis-on">
 
            </section>
       
-            
+            <span  ng-controller="InfoWindowController">
             <div id="wrapMobileWindow">
               <a id="closeWindow" ng-click="closeMobileWindow()">
                 <div id="mobileWindowBg"></div>
@@ -157,7 +157,7 @@ window.addEventListener('DOMContentLoaded', init, false);
                 <p>{{thisPlace.primaryCategory}}</p>
               </section>
             </div>
-           
+           </span>
             <section id="sw" class="full-side sidewin-ctrl pt-page-rotateSidesIn">
               
                 <div id="wrapExit">
