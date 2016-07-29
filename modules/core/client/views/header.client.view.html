@@ -32,7 +32,7 @@
         <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
       </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right hide-guest-menu" ng-hide="vm.authentication.user">
+    <ul class="nav navbar-nav navbar-right hide-guest-menu">
       <li ui-sref-active="active">
         <a ui-sref="home">Map of Free Services in Kansas City</a>
       </li>
@@ -45,15 +45,22 @@
       <li ui-sref-active="active">
         <a ui-sref="training-online">Training Online</a>
       </li>
-      <li class="divider-vertical"></li><br>
+      <!-- <li class="divider-vertical"></li><br> -->
       <li ui-sref-active="active">
         <a ui-sref="about">About Us</a>
       </li>
       <li ui-sref-active="active">
         <a ui-sref="contact">Contact Us</a>
       </li>
+      <li class="divider"></li><br>
+      <li ng-show="vm.authentication.user">
+        <a href="/api/places" target="_self">View/Edit Places</a>
+      </li>
+      <li ng-show="vm.authentication.user">
+        <a href="/api/auth/signout" target="_self">Signout</a>
+      </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
+ <!--    <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
       <li class="dropdown" uib-dropdown>
         <a class="dropdown-toggle user-header-dropdown-toggle" uib-dropdown-toggle role="button">
           <img ng-src="{{vm.authentication.user.profileImageURL}}" alt="{{vm.authentication.user.displayName}}" class="header-profile-image" />
@@ -69,6 +76,6 @@
           </li>
         </ul>
       </li>
-    </ul>
+    </ul> -->
   </nav>
 </div>

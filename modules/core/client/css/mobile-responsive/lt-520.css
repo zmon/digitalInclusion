@@ -1,0 +1,40 @@
+@media (max-width: 500px) {
+	form.c-hell {
+	    margin: 0 0 2em 0;
+	    background: whitesmoke;
+	    width: 99.9%;
+	    padding: 5em 6em;
+	    margin-left: .025%;
+	    position: relative;
+	    top: -5em;
+	}
+
+	#footer {
+	    display: -moz-flex;
+	    display: -webkit-flex;
+	    display: -ms-flex;
+	    display: flex;
+	    -moz-flex-wrap: wrap;
+	    position: relative;
+	    text-align: center;
+	    width: 150%;
+	    left: -5.5em;
+	    top: -30em;
+	    font-size: .7em;
+	    color: black;
+	    -webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	    padding: 5em 5em 3em 5em;
+	    /* width: calc(100% + 2em); */
+	    margin: 0;
+	}
+	form.pure-form.angr {
+    background: whitesmoke;
+    width: 96%;
+    box-shadow: 0 0 1px black;
+    margin-top: 5em;
+    margin-left: .6em;
+    padding: 1em 3.25em 0 4.5em;
+}
+}

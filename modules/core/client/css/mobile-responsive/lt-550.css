@@ -1,0 +1,28 @@
+@media (max-width: 550px) {
+	section#add-resources {
+	    margin-left: 20%;
+	    padding-right: 4em;
+	    margin-top: -3em;
+	}
+
+	#footer > * {
+	    width: 70%;
+	    margin-left: 4em;
+	    margin-bottom: 3em;
+	}
+
+	form.c-hell {
+	    margin: 0 0 2em 0;
+	    background: whitesmoke;
+	    width: 90.9%;
+	    padding: 5em 8em;
+	    margin-left: 4.5%;
+	    position: relative;
+	    box-shadow: 0 0 1px black;
+	    top: -5.5em;
+	}
+
+	button#btn-sub {
+	    left: -2em;
+	}
+}

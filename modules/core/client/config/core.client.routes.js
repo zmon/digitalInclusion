@@ -62,6 +62,10 @@
         url: '/tmp',
         templateUrl: 'modules/core/client/views/tmp.client.view.html'
       })
+      .state('confirm-new-resource', {
+        url: '/confirm-new-resource/:placeId',
+        templateUrl: 'modules/core/client/views/confirm-new-resource.client.view.html'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: 'modules/core/client/views/404.client.view.html',

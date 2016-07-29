@@ -13,7 +13,9 @@ background: linear-gradient(to left, #283048 , #859398); /* W3C, IE 10+/ Edge, F
 .c-form-label {
     color: #838483;
     font-weight: 300;
-    text-shadow: none;  
+    text-align: center;
+    margin-left: -.75em;
+    text-shadow: none;
 }
 
 .up-10 {
@@ -55,12 +57,13 @@ background: linear-gradient(to left, #fc00ff , #00dbde); /* W3C, IE 10+/ Edge, F
 
 form.c-form {
     background: white;
-    padding: 2.5em 3em 4.5em 3em;
+    padding: 2.5em 4em 4.5em 4em;
+    margin-bottom: 8em;
 }
 
 h1.c-sat{
     /* Using the custom font we've included in the HTML tab: */
-    font-family: Satisfy, cursive;
+    /* font-family: Satisfy, cursive; */
     font-weight:normal;
     font-size:24px;
     padding-top: 60px;
@@ -85,6 +88,7 @@ form.c-modal-form {
 
 .c-button {
     border: 1px solid #838483;
+    width: 10em;
 }
 
 .c-h3 {
@@ -749,3 +753,16 @@ text-shadow: 4px 4px 1px #300000;
  #tabset {
     visibility: hidden;
  }
+
+
+
+ form.c-hell {
+    margin: 0 0 8em 0;
+    background: whitesmoke;
+    width: 50%;
+    padding: 5em 6em;
+    margin-left: 25%;
+    position: relative;
+    box-shadow: 0 0 1px black;
+    top: -4.5em;
+}

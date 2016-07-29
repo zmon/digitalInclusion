@@ -8,7 +8,7 @@ section#mapLegend {
     padding-left: .4em;
     position: relative;
     background: radial-gradient(#e5ecf1,#f8fcff);
-    left: 1em;
+    left: 2em;
     box-shadow: inset 0 0 100px black;
     background: transparent;
     top: -7em;
@@ -16,9 +16,11 @@ section#mapLegend {
     outline: none;
 }
 .legend-table {
-    width: 16em;
-    font-size: .75em;
+    width: 17em;
+    font-size: .7em;
     border: none;
+    position: relative;
+    left: 3em;
 }
 
 .see-row {

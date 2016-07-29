@@ -1,4 +1,36 @@
+
+
+
 @media (max-width: 768px) {
+	#header h1 {
+		margin: 0 0 0.25em 0;
+		font-weight: 700;
+		letter-spacing: normal;
+		background: steelblue;
+		margin-top: 2.8em;
+		box-shadow: 0 0 6px #505050;
+		padding-top: .5em;
+		padding-bottom: 3em;
+		height: 8em;
+	}
+	li.realign {
+		position: relative;
+		left: 1em;
+	}
+	.row.butane {
+		/* height: 186.5px; */
+		box-shadow: inset 0 0 250px black;
+		background: none;
+		/* border-bottom: none; */
+		background: url("https://www.transparenttextures.com/patterns/black-thread.png");
+		display: inherit;
+		background: linear-gradient(to left, #c2e59c , #64b3f4);
+		background: #83a4d4;
+		background: -webkit-linear-gradient(to left, #83a4d4 , #b6fbff);
+		background: linear-gradient(#cbd3de,#99a7bb);
+		border: 1px solid #4e4200;
+	}
+	
 	a.button.fit.small.fit-cx {
 	    width: 11.5em;
 	    margin-left: 0;
@@ -29,7 +61,7 @@
 	    margin: 0 auto;
 	    margin-left: -.5em;
 	    position: relative;
-	    top: -20em;
+	    top: -12em;
 	    margin-bottom: -19.5em;
 	    /* height: 150em; */
 	    padding-top: 0;
@@ -64,7 +96,7 @@
 	}
 
 	#footer > * {
-	    width: 75%;
+	    width: 60%;
 	    margin-left: 3em;
 	    margin-bottom: 3em;
 	}
@@ -84,9 +116,9 @@
 	    width: calc(100% + -29.5em);
 	    min-width: 150px;
 	    position: relative;
-	    margin-top: -1.04em;
+	    margin-top: -.04em;
 	    /* margin-left: 1em; */
-	    left: 28%;
+	    left: 20%;
 	    top: -.2em;
 	}
 
@@ -104,7 +136,7 @@
 	}
 	#main input[type="submit"], #main input[type="reset"], #main input[type="button"], #main button, #main .button {
 	    background-color: rgba(249, 249, 249, 1);
-	    box-shadow: inset 0 0 0 1px #cacaca;
+	    box-shadow: inset 0 0 0 1px #bbbbbb;
 	    color: #636363 !important;
 	    font-weight: 400;
 	}
@@ -137,16 +169,19 @@
 	.row.butane {
 		/* border: 2px solid red; */
 		margin-left: .01em;
-		margin-bottom: .1em;
-		margin-top: -.5em;
-		height: 11.5em;
+		margin-bottom: .5em;
+		margin-top: 4.5em;
+		height: 7em;
 		position: relative;
-		top: .002em;
-		background: transparent;
-		border-bottom: none;
-		border-top: none;
+		top: -9.5em;
+		width: 44.75%;
+		left: 11em;
+		background: none;
+		border-bottom: 1px solid black;
+		border-top: 1px solid black;
 		/* box-shadow: 0 0 1px #909090, 0 0 1px #1a222d, 0 0 1px #a0a0a0, 0 0 1px #313129; */
 		box-shadow: none;
+		border: none;
 	}
 	#pac-input {
 		background-color: #fff;
@@ -188,12 +223,16 @@
 		box-shadow: none;
 		margin-top: -1.5em;
 		margin-bottom: 2.7em;
-		width: 100.75%;
-		margin-left: -.3em;
+		width: 98.75%;
+		margin-left: .05em;
 		border: none;
+		border-top: 1px solid #2d2d00;
+		border: 1px solid #7b7b76;
 	}
 	#header p {
 		color: #4a4a4a;
+		position: relative;
+		top: -19em;
 	}
 
 	#header p.mission {
@@ -286,17 +325,20 @@
 
 	#main .button.special, #main button.special, #main input[type=button].special, #main input[type=reset].special, #main input[type=submit].special {
 	    background-color: #a9f6fb;
-	    color: #2d787d!important;
+	    color: #046b04!important;
 	    text-shadow: 0 0 12px #aeeeff;
-	    box-shadow: 0 0 0 2px #55ab32,1px 1px 1px #3c3b3b,1px 1px 1px #675a3a;
+	    box-shadow: 0 0 0 1px #5dff1a,1px 1px 1px #3c3b3b,1px 1px 1px #675a3a;
 	    border-radius: 12px;
 	    border: 1px solid #bdf8ff;
-	    padding-top: .5em;
+	    padding-top: .4em;
 	    margin: 0 auto;
+	    width: 128px;
+	    letter-spacing: .84px;
 	    /* font-size: 2.0rem; */
+	    height: 31px;
 	    /* padding: 1.25rem 2.5rem; */
 	    display: block;
-	    background-color: #8ce4ff;
+	    background-color: #0adc1a;
 	    border: 1px solid transparent;
 	    color: #ffffff;
 	    font-weight: 300;
@@ -319,17 +361,19 @@
 
 	section.meta-w-form {
 	    background: #464646;
-	    left: -2em;
 	    padding: 1em .1em 1em .14em;
-	    position: absolute;
-	    height: 48.5em;
-	    top: -6.91em;
+	    position: relative;
+	    height: 5.5em;
+	    left: -.6em;
+	    width: 100%;
+	    top: -2.4em;
 	    border: 1px solid #1f1703;
-	    box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a, 0 0 20px black;
-	    width: 50em;
+	    box-shadow: none;
 	    outline: none;
 	    border-top: .125em solid #272204;
-	    /* outline: 2px solid #4e3a07; */
+	    background: transparent;
+	    border: none;
+	    outline: none;
 	}
 
 	.button {
@@ -361,21 +405,82 @@
 	    left: -1em;
 	    top: -32em;
 	}
+
+	#main input[type="submit"], #main input[type="reset"], #main input[type="button"], #main button, #main .button {
+		/* background-color: #f5f5f5; */
+		/* box-shadow: 0 0 0 2px #e9fff9, 2px 2px 2px #3c3b3b, 2px 2px 2px #805f0c; */
+		/* color: #000000 !important; */
+		/* font-weight: 400; */
+		letter-spacing: .84px;
+		/* border-radius: .81em; */
+		width: 128px;
+		font-size: .9em;
+		height: 32px;
+		position: relative;
+		left: -6.5em;
+		top: -.01em;
+		/* border-radius: 12px; */
+		/* text-shadow: 0 0 4px #a2a6af; */
+		padding-top: .5em;
+		/* height: 24px; */
+		/* box-shadow: 0 0 0 1px #e9fff9, 2px 2px 2px black, 3px 3px 3px #805f0c; */
+	}
+
+	.sh-up {
+	    position: relative;
+	    top: -3.5em;
+	}
+
+	ul.actions.fit.small.lower-btns {
+	    position: relative;
+	    top: -1.7em;
+	}
+
+	li.realign {
+	    position: relative;
+	    left: 1.2em;
+	}
+
+	form.c-hell {
+		margin: 0 0 2em 0;
+		background: whitesmoke;
+		width: 80%;
+		padding: 5em 6em;
+		margin-left: 10.5%;
+		position: relative;
+		box-shadow: 0 0 1px black;
+		top: -8.5em;
+	}
+
+	form.pure-form.angr {
+	    background: whitesmoke;
+	    width: 70%;
+	    box-shadow: 0 0 1px black;
+	    margin-top: 5em;
+	    margin-left: 6em;
+	    padding: 1em 3.25em 0 4.5em;
+	}
+
+	.c-form-label {
+	    color: #838483;
+	    font-weight: 300;
+	    text-align: center;
+	    margin-left: -.2em;
+	    text-shadow: none;
+	}
+		
 }	
 
-@media (max-width: 480px) {
-	ul.actions.fit.small {
-	    margin-left: -0.5em;
-	    width: calc(100% + -28em);
-	    min-width: 150px;
-	    position: relative;
-	    margin-top: -1.4em;
-	    /* margin-left: 1em; */
-	    left: 10.5%;
-	    top: .7em;
+@media (min-width: 735px) {
+	button.navbar-toggle {
+	    width: 4px;
+	    /* height: 12px; */
+	    margin-right: -60px;
+	    border: none;
+	    outline: none;
+	    box-shadow: none;
 	}
 }
-
 
 @media (min-width: 769px) {
 	.hide-guest-menu {
@@ -384,3 +489,16 @@
 
 	#wrapBg {background: transparent;}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

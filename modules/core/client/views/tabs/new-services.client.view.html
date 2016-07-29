@@ -25,13 +25,13 @@ $('label').click(function() {
   $("." + el.attr("class") + ":last").remove();
 }); 
 </script>
-<div id="main">
+<div class="row" id="main">
 	<section id="content" class="main">
 		<!-- <h2>Map Categories</h2> -->
 		<section id="add-resources" ng-controller="ModalController">							
 			<!-- <h3 class="pad-list">Alternate</h3> -->
 					
-			<div class="row">
+			<div class="container">
 		
                     
 
@@ -42,9 +42,10 @@ $('label').click(function() {
                       <div class="modal-body">
                         <section>
                           <!-- <div ng-include="'/modules/places/client/views/form-modal.client.view.html'"></div> -->
-                          <section ng-controller="PlacesController">
+                          <section>
                             <div class="col-md-12">
-                              <form name="vm.form.placeForm" class="form-horizontal c-modal-form" ng-submit="vm.save(vm.form.placeForm.$valid)" novalidate>
+                           <!--    <form name="vm.form.placeForm" class="form-horizontal c-modal-form" ng-submit="vm.save(vm.form.placeForm.$valid)" novalidate> -->
+                           <form name="placeForm" class="form-horizontal c-modal-form" ng-submit="create(placeForm)" novalidate>
                                 <fieldset id="modalFs">
                                   <!-- <h3 class="custom-form-header">1. Basic Information</h3> -->
                                   <div class="form-section-custom">
@@ -83,12 +84,12 @@ $('label').click(function() {
                                     
 
                                   </div>
-                                  <h3 class="custom-form-header"></h3>
+                                  <!-- <h3 class="custom-form-header"></h3> -->
                                   <div class="form-section-custom">
                                     
                                     <div class="form-group" show-errors>
                                       <label class="control-label" for="address1">Address Line 1</label>
-                                      <input name="address1" type="text" <main class="container">
+                                      <input name="address1" type="text" ng-model="vm.place.address1">
 
 
                                       <div ng-messages="vm.form.placeForm.address1.$error" role="alert">
@@ -117,7 +118,7 @@ $('label').click(function() {
                                     
                                   </div>
 
-                                  <h3 class="custom-form-header"></h3>
+                                  <!-- <h3 class="custom-form-header"></h3> -->
 
                                   <div class="form-section-custom">
 
@@ -184,6 +185,7 @@ $('label').click(function() {
                                     <div ng-show="vm.error" class="text-danger">
                                       <strong ng-bind="vm.error"></strong>
                                     </div>
+                                    <h3 class="custom-form-header"></h3>
                                     </div>
                                   </div>
                                 </fieldset>
@@ -195,11 +197,22 @@ $('label').click(function() {
                       </div>
                       <div class="modal-footer"></div>
                     </script>
-              
-				<ul class="alt">
+        
 
-            <li><a class="lks" ng-click="newLocation();">New Location</a></li>
-					</ul>
+
+
+
+
+
+
+    <ul class="alt">
+            <li><a ng-click="newLocation();" class="myButton">New Location</a></li>
+<!--             <a class="lks" ng-click="newLocation();">New Location</a></li>
+ -->    </ul>
+
+
+
+				
 			</div>
 
 		</section>

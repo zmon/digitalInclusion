@@ -1,0 +1,193 @@
+@media (min-width: 1001px) {
+	div#info-wrapper {
+    background: #f3f3f3;
+    border: 1px solid #bbbaba;
+    /* box-shadow: inset 0 0 100px #f3f3f3; */
+    width: 98%;
+    display: inline-block;
+    height: 416px;
+    border: 1px solid #e2e2e2;
+    font-weight: 400;
+    position: relative;
+    box-shadow: 0 0 12px #3e3e3e;
+    top: -1.5em;
+}
+	.row.butane {
+	    margin-left: .01em;
+	    margin-bottom: .1em;
+	    margin-top: .05em;
+	    top: .002em;
+	    padding-top: 2.95em;
+	    /*height: 186.5px;*/
+	    padding-right: .5em;
+	    padding-bottom: 2.7em;
+	    box-shadow: inset 0 0 250px black;
+	    background: none;
+	    /* border-bottom: none; */
+	    /*url("https: //www.transparenttextures.com/patterns/black-thread.png");*/
+	    background: url("https://www.transparenttextures.com/patterns/black-thread.png");
+	    display: inherit;
+	    background: linear-gradient(to left, #c2e59c , #64b3f4);
+	    background: #83a4d4; /* fallback for old browsers */
+	    background: -webkit-linear-gradient(to left, #83a4d4 , #b6fbff); /* Chrome 10-25, Safari 5.1-6 */
+	    background: linear-gradient(#83a4d4,#83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+
+	ul.actions.fit.small.lower-btns {
+	    margin-top: 1em;
+	    clear: both;
+	}
+
+	ul.actions.fit.small.upper-btns {
+	    margin-bottom: .1em;
+	    clear: both;
+	    dominant-baseline: mathematical;
+	}
+
+	.nav-tabs > li > a {
+	    margin-right: 2px;
+	    line-height: 1.42857143;
+	    border: 1px solid transparent;
+	    color: #1d210c;
+	    letter-spacing: .1pc;
+	    font-weight: 900;
+	    text-shadow: none;
+	    border-radius: 4px 4px 0 0;
+	    font-size: .56em;
+	}
+	input#pac-input {
+	    position: relative;
+	    left: 7.5em;
+	    top: -1.5em;
+	}
+
+	#header {
+	    padding: 1em 4em 8em 4em;
+	}
+		
+	section#first {
+	    height: 870px;
+	}
+
+	main#main-page {
+	    position: relative;
+	    top: -13.4em;
+	    margin-left: .3em;
+	    background: radial-gradient(#929292,#868484,#9e9677,#a09a80,#929187);
+	    outline: .125em solid #868686;
+	    box-shadow: 0 0 5px #848484;
+	    background: silver;
+	    background: radial-gradient(#c7e2ff,#b8d4e6,#b4cdd6);
+	    border: none;
+	    <: 1px
+	    solid black;
+	    background: background: #ADD100; /* fallback for old browsers */
+	    background: -webkit-linear-gradient(to left, #ADD100 , #7B920A); /* Chrome 10-25, Safari 5.1-6 */
+	    background: linear-gradient(to left, #eaecdb , #c1c5ac); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	    height: 610px;
+	    box-shadow: 0 0 5px #afafaf, inset 0 0 200px #90928c, 0 0 0 1px #b5b5b5, 0 0 6px #8c8c8c;
+	}
+
+	.row.butane {
+	    margin-left: .01em;
+	    margin-bottom: .1em;
+	    margin-top: .05em;
+	    top: .002em;
+	    padding-top: 3.15em;
+	    padding-right: .5em;
+	     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+	    box-shadow: inset 0 0 200px #ffffe8;
+	    background: #fafbee;
+	     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+	     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+	     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+	    border-bottom: 1px solid #6d6d66;
+	}
+
+	section#queryForm {
+	    position: relative;
+	    top: -5.5em;
+	    left: -1.75em;
+	    height: 3em;
+	}
+
+	header .sh-up {
+	    position: relative;
+	    top: -3em;
+	}
+
+	p#headerP {
+	    margin-top: -3.75em;
+	}
+
+	ul.alt {
+	    list-style: none;
+	    padding-left: 0;
+	    margin-left: 0;
+	    text-align: center;
+	    position: relative;
+	    left: -10.8em;
+	}
+	li.realign {
+	    position: relative;
+	    left: -8em;
+	}
+
+	#wrapper {
+	    width: 64em;
+	    max-width: calc(100% - -.4em);
+	    margin: 0 auto;
+	    top: -8.4em;
+	    background: #b0b990;
+	    box-shadow: inset 0 0 200px #e2eff1, 0 0 1px #5a5959;
+	    border: 1px double #747879;
+	    /* background: radial-gradient(lightgrey,black); */
+	    min-height: 760px;
+	    /* background: radial-gradient(#eff6ff,#d3d8de); */
+	    /* border-right: none; */
+	    /* border-left: none; */
+	    border-radius: .125em;
+	    height: 60em;
+	    outline: none;
+	    background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+	    /* border-color: transparent; */
+	    border: none;
+	    background: #8e9eab;
+	    background: -webkit-linear-gradient(to left, #8e9eab , #eef2f3);
+	    z-index: 99999;
+	    background: linear-gradient(#eef2f3,#dfe6ea);
+	}
+
+	.row.butane {
+	    /* height: 186.5px; */
+	    box-shadow: inset 0 0 250px black;
+	    background: none;
+	    /* border-bottom: none; */
+	    background: url("https://www.transparenttextures.com/patterns/black-thread.png");
+	    display: inherit;
+	    background: linear-gradient(to left, #c2e59c , #64b3f4);
+	    background: #83a4d4;
+	    background: -webkit-linear-gradient(to left, #83a4d4 , #b6fbff);
+	    background: linear-gradient(#83a4d4,#83a4d4);
+	}
+
+	.row.butane {
+	    /* height: 186.5px; */
+	    box-shadow: inset 0 0 250px black;
+	    background: none;
+	    /* border-bottom: none; */
+	    background: url("https://www.transparenttextures.com/patterns/black-thread.png");
+	    display: inherit;
+	    background: linear-gradient(to left, #c2e59c , #64b3f4);
+	    background: #83a4d4;
+	    background: -webkit-linear-gradient(to left, #83a4d4 , #b6fbff);
+	    background: linear-gradient(#83a4d4,#83a4d4);
+	}
+}
+
+@media (min-width: 1200px) {
+	li.realign {
+	    position: relative;
+	    left: -11em;
+	}
+}

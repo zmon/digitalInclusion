@@ -1,0 +1,54 @@
+<section class="confirmation-page">
+  <div class="page-header">
+    <h1 ng-bind="vm.place.title">?</h1>
+  </div>
+ <!--  <div class="pull-right">
+    <a class="btn btn-primary" ui-sref="places.edit({ placeId: vm.place._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div> -->
+  <small>
+    <p class="text-muted">
+      New resource successfully posted!<br><br>All new submissions will be reviewed by site admin prior to being added to map data.
+      <span ng-bind="vm.place.created | date:'mediumDate'"></span>
+      
+<!--       <span ng-if="vm.place.user" ng-bind="vm.place.user.displayName"></span>
+      <span ng-if="!vm.place.user">Site Admin</span> -->
+    </p>
+  </small><br>
+  <a class="redirection" ng-href="/">Return to homepage</a>
+  <!-- <p class="lead" ng-bind="vm.place.title"></p>
+  <p class="lead lead-again" ng-bind="vm.place.readableAddress"></p>
+
+  <pre>
+
+      {
+        _id: {{ place._id }}, 
+        created: {{ vm.place.created }}, 
+        __v: {{vm.place.__v}},      
+        title: {{ vm.place.title }},
+        phone: {{vm.place.phone}},
+        readableAddress: {{ vm.place.readableAddress }},
+        locationType: {{vm.place.locationType}},
+        address1: {{vm.place.address1}},        
+        address2: {{vm.place.address2}},
+        city: {{vm.place.city}},
+        state: {{vm.place.state}},
+        zip: {{vm.place.zip}},
+        location: {{ vm.place.location }},
+        latlng: {{ vm.place.latlng }},
+        url: {{vm.place.url}},
+        description: {{vm.place.description}},
+        caption: {{ vm.place.caption }},
+        hoursOpen: {{vm.place.hoursOpen}},
+        courseSchedule: {{ vm.place.courseSchedule }},
+        wifi: {{vm.place.wifi}},
+        categories: {{vm.place.categories}},
+        primaryCategory: {{vm.place.primaryCategory}}
+      }
+  </pre> -->
+
+</section>

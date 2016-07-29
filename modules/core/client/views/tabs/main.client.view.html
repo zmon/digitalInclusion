@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', init, false);
 <div id="main" class="fix-height">
   <section id="first" class="main special bg-wrapper">
     <main id="main-page">
-      <div id="frontdoor" class="row butane c-dar">
+      <div id="frontdoor" class="row butane c-dar pt-page-delay1000">
 
         <div class="col-md-1"></div>
         <div class="col-md-5">
@@ -49,11 +49,12 @@ window.addEventListener('DOMContentLoaded', init, false);
               <li class="realign"><a id="e4" ng-click="toggleRefurbsMarkers();" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Low Cost Computers</a></li>
             </ul> -->
             <ul class="actions fit small upper-btns" ng-show="showMapControls">
-              <li><a ng-click="toggleWifiMarkers(); switchToggleState()" id="e1" href="#" class="button normal fit small">Free WiFi</a></li>
+              <li><a ng-click="toggleWifiMarkers(); switchToggleState()" id="e1" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Free WiFi</a></li>
               <li class="realign"><a ng-click="toggleComputersMarkers();" id="e3" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Public Computers</a></li>
             </ul>
             <ul class="actions fit small lower-btns" ng-show="showMapControls">
-              <li><a id="e2" ng-click="toggleTrainingMarkers();" href="#" class="button normal fit small pt-page-rotateRoomRightIn">Computer Training</a></li>
+              <li><a id="e2" ng-click="toggleTrainingMarkers();" href="#" class="button normal fit small pt-page-rotateRoomRightIn">Computer Training</a>
+              </li>
               <li class="realign"><a id="e4" ng-click="toggleRefurbsMarkers();" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Low Cost Computers</a></li>
             </ul>
           </section>
@@ -62,7 +63,7 @@ window.addEventListener('DOMContentLoaded', init, false);
         <div class="col-md-5">
 
 
-          <div class="table-wrapper am-fade-and-slide-right" ng-show="showMapControls">
+          <legend class="table-wrapper am-fade-and-slide-right" ng-show="showMapControls">
          
 
             <table class="legend-table">
@@ -73,17 +74,17 @@ window.addEventListener('DOMContentLoaded', init, false);
               </thead>
               <tbody class="tbody-legend">
                 <tr>
-                  <td class="rbor"><img class="small-img" src="modules/core/client/img/wifi-free.svg"> Public WiFi</td>
-                  <td class="toleft"><img class="small-img" src="modules/core/client/img/user-orange2.png"> Training (daytime)</td>
+                  <td class="rbor"><img class="small-img" src="modules/core/client/img/wifi-free.svg"> Public<br>WiFi</td>
+                  <td class="toleft"><img class="small-img" src="modules/core/client/img/user-orange2.png"> Training<br>(daytime)</td>
                 </tr>
                 <tr>
-                  <td class="move-up rbor"><img class="small-img" src="modules/core/client/img/wifi-purchase.svg"> Customer WiFi</td>
-                  <td class="toleft move-up"><img class="small-img" src="modules/core/client/img/user-blue2.png"> Training (after 6pm)</td>
+                  <td class="move-up rbor"><img class="small-img" src="modules/core/client/img/wifi-purchase.svg"> Customer<br>WiFi</td>
+                  <td class="toleft move-up"><img class="small-img" src="modules/core/client/img/user-blue2.png"> Training<br>(after 6pm)</td>
                 </tr>
               </tbody>
             </table>
   
-          </div>
+          </legend>
         </div>
       </div>
 
@@ -120,11 +121,22 @@ window.addEventListener('DOMContentLoaded', init, false);
             </div>
               <!-- <input id="pac-input" class="controls" type="text" placeholder="Search by Zip"> -->
                
-           <section id="customMap" class="vis-on">
+           <section id="customMap" class="vis-on pt-page-rotateUnfoldBottom">
 
            </section>
+           <div id="zipSearchError" class="pt-page-rotateRoomLeftIn">
+
+           <a ng-click="closeErrorWindow()" class="make-vis">
+
+           <span class="glyphicon glyphicon-remove"></span>
+
+           </a><br>
+          {{zipSearchErrorMessage}}
+
+           </div>
+           <!-- <div id="zipSearchError" ng-show="ZipSearchError"></div> -->
       
-            <span  ng-controller="InfoWindowController">
+          <span>
             <div id="wrapMobileWindow">
               <a id="closeWindow" ng-click="closeMobileWindow()">
                 <div id="mobileWindowBg"></div>
@@ -168,23 +180,31 @@ window.addEventListener('DOMContentLoaded', init, false);
 
 
               <div id="info-wrapper" class="slide-pop.ng-enter">
-                <!-- category -->
                 <div id="placeCategory" class="f1 f-class"></div>
-                <!--  -->
-                <div id="placeTitle" class="f2 f-class"></div>
-                <!--  -->
-                <div id="placePhone" class="f-class"></div>
-                <div id="placeAddress" class="f3 f-class"></div>
+                <address>
+                  <strong><div id="placeTitle" class="f2 f-class"></div></strong>
+                 <div id="placeAddress" class="f3 f-class"></div>
+                  <div>
+                <span id="placeCity" class="f3 f-class"></span>, <span id="placeState" class="f3"></span> <span id="placeZip" class="f3 f-class"></span></div><br>
+                  <abbr title="Phone">P:</abbr> <div id="placePhone" class="f-class"></div>
+                </address>
+
+               <!--  <address>
+                  <strong>Full Name</strong><br>
+                  <a href="mailto:#">first.last@example.com</a>
+                </address>
+                 -->
+                
+                
          
 
-                <div>
-                <span id="placeCity" class="f3 f-class"></span>, <span id="placeState" class="f3"></span><span id="placeZip" class="f3 f-class"></span></div>
+                
          <!--         <a ng-click="getDirections(addr, city, state, zip)" class="f6 lnk-hov">View directions on Google Maps</a><br> -->
                 <div id="placeHours" class="f-class"></div>
-                <!--  -->
                 <div class="f4 f-class" id="placeDescription"></div>
-                <!--  -->
                 <div class="f-class" id="placeUrl"></div>
+               
+
               </div>
             </section>
       
@@ -268,7 +288,7 @@ window.addEventListener('DOMContentLoaded', init, false);
       </main>
     </section>    
   </div>
-  <section ng-include="'/modules/core/client/views/footer.client.view.html'"></section>
+  
 </div>
 
 </span>

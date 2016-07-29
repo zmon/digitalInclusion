@@ -1,4 +1,8 @@
-angular.module('core.modal').controller('ModalInstanceController', function ($scope, $uibModalInstance, items) {
+// .controller('MyController', ['myService', function (myService) {
+
+// }]);
+
+angular.module('core.modal').controller('ModalInstanceController', function ($http, $scope, $uibModalInstance, items, $location, $state) {
 
   $scope.items = items;
   $scope.selected = {
@@ -15,6 +19,39 @@ angular.module('core.modal').controller('ModalInstanceController', function ($sc
     console.log("call");
     $scope.wait = "Created";
   };
+
+  function callback(object) {
+    console.log("hooray");
+    // return {place: object};
+    // $location.path('places/' + object._id);
+    $scope.ok();
+    $location.path('confirm-new-resource/' + object._id);
+  }
+
+  $scope.create = function(placeForm) {
+    console.log("create");
+    var form = placeForm;
+    var body = {
+      title: form.title.$modelValue,
+      address1: form.address1.$modelValue,
+      address2: form.address2.$modelValue,
+      city: form.city.$modelValue,
+      state: form.state.$modelValue,
+      zip: form.zip.$modelValue,
+      phone: form.phone.$modelValue,
+      url: form.url.$modelValue,
+      categories: form.categories.$modelValue,
+      primaryCategory: form.primaryCategory.$modelValue,
+      description: form.description.$modelValue
+    };
+    console.log(body);
+    $http.post('/api/places', body).success(function(data) {
+            console.log('place created');
+            console.log(data);
+            callback(data);
+          });
+  }
+
 
   $scope.ok = function () {
     console.log("log");
