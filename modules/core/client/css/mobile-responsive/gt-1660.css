@@ -2,7 +2,37 @@
 	/*a.button.fit.small.fit-cx {
 	    width: 12em;
 	}*/
+	.f2 {
+	    font-size: .9em;
+	    font-weight: 600;
+	    line-height: 18px;
+	    margin: .7em 0 .2em;
+	}
 
+	div#info-wrapper {
+		background: #f3f3f3;
+		border: 1px solid #bbbaba;
+		/* box-shadow: inset 0 0 100px #f3f3f3; */
+		width: 98%;
+		display: inline-block;
+		height: 626px;
+		border: 1px solid #e2e2e2;
+		font-weight: 400;
+		position: relative;
+		box-shadow: 0 0 12px #3e3e3e;
+		top: -1.5em;
+	}
+	.f-desc {
+	    border: none;
+	    padding: .5em 1em;
+	    text-align: start;
+	    margin-left: 1.15em;
+	    width: 85%;
+	    line-height: 16px;
+	    font-size: .575em;
+	    border: 1px solid gainsboro;
+	    background: #ececec;
+	}
 	form.pure-form.angr {
 	    background: whitesmoke;
 	    width: 60%;
@@ -32,6 +62,8 @@
 	    box-shadow: inset 0 0 800px #eef3e5, inset 0 0 0 800px #dce6c8, 0 0 0 1px #baccba, 0 0 10px black;
 	    /* padding-left: .1em; */
 	    border: none;
+	    box-shadow: none;
+	    background: linear-gradient(to left, #6e7b92 , #CFDEF3, #CFDEF3,#6e7b92);
 	}
 
 
@@ -48,6 +80,9 @@
 	    border: 1px solid transparent;
 	    color: gray;
 	    border-radius: 4px 4px 0 0;
+	    color: #e5efc0;
+	    letter-spacing: .1pc;
+	    text-shadow: 0 0 10px #716e04;
 	    font-size: .46em;
 	}
 
@@ -87,8 +122,10 @@
 
 	#wrapper {
 		box-shadow: inset 0 0 200px #e2eff1, 0 0 1px #5a5959;
-		height: 50em;
+		height: 52.5em;
 		background: linear-gradient(#eef2f3,#dfe6ea);
+		box-shadow: none;
+		background: linear-gradient(to left, #6e7b92 , #CFDEF3, #CFDEF3,#6e7b92);
 	}
 
 	section.meta-w-form {
@@ -236,15 +273,15 @@
 	#sw {
 	    display: none;
 	    position: absolute;
-	    left: 81.65%;
-	    height: 412px;
+	    left: 81%;
+	    height: 639px;
 	    width: 9.2em;
 	    background: radial-gradient(#e1ecf5,#e4eef1,#dff6ff);
 	    clear: both;
 	    border-top: 4px solid #c0d8dc;
 	    box-shadow: 0 0 0 1px #9bbbba, 0 0 0 2px #bdefef, 0 0 5px black;
 	    border-left: .2em solid gray;
-	    top: -3px;
+	    top: -1px;
 	    border-left: 1px solid #070a0a;
 	    border-left: 4px solid #c0d8dc;
 	    border-right: 4px solid #c0d8dc;
@@ -312,7 +349,7 @@
 	    margin-left: -5em;
 	    width: 40.5em;
 	    background: radial-gradient(#929292,#868484,#9e9677,#a09a80,#929187);
-	    outline: .125em solid #868686;
+	    outline: none;
 	    box-shadow: 0 0 5px #848484;
 	    background: silver;
 	    background: radial-gradient(#c7e2ff,#b8d4e6,#b4cdd6);

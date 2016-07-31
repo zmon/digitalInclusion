@@ -12,6 +12,11 @@ the padding. We explicitly set the box-model for select elements to border-box,
 so we can ignore the csslint warning.
 */
 
+
+.ver-stripes{
+   background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAK0lEQVQIW02LsQkAMADC4hv+f5tvWCwU6hajAkhS2wKqHwCtXTqYvLMHux2Y7hO1LuUZJgAAAABJRU5ErkJggg==') repeat;
+}
+
 .pure-form input[type="text"],
 .pure-form input[type="password"],
 .pure-form input[type="email"],

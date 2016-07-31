@@ -1,4 +1,4 @@
-@media (max-width: 480px) {
+@media (max-width: 440px) {
 	ul.actions.fit.small {
 	    margin-left: -0.5em;
 	    width: calc(100% + -28em);
@@ -11,8 +11,20 @@
 	}
 }
 
-@media (max-width: 480px) {
-
+@media (max-width: 440px) {
+	.sh-up {
+		position: relative;
+		top: -3.5em;
+		width: 13.65em;
+		left: -1.5em;
+	}
+	#header p {
+		color: #4a4a4a;
+		position: relative;
+		top: -16.3em;
+		left: 1.52em;
+		font-size: .95em;
+	}
 	section.meta-w-form {
 	    background: none;
 	    height: 4em;
@@ -85,7 +97,7 @@
 	section#queryForm {
 	    display: initial;
 	    top: .25em;
-	    left: 9.75em;
+	    left: 6.75em;
 	    height: 2em;
 	    display: initial;
 	    background: none;
@@ -153,8 +165,8 @@
 	    height: 6.5em;
 	    position: relative;
 	    top: -9.75em;
-	    width: 64.25%;
-	    left: 5em;
+	    width: 74.95%;
+	    left: 2.88em;
 	    background: none;
 	    border-bottom: 1px solid black;
 	    border-top: 1px solid black;

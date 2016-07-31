@@ -1,0 +1,35 @@
+@-moz-document url-prefix() { 
+
+	  @media (max-width: 999px) {
+
+
+
+
+
+		.move-up {
+		    position: relative;
+		    top: -3.5em;
+		}
+
+		.f3 {
+		    font-size: .65em;
+		    line-height: 12px;
+		    font-weight: 500;
+		}
+		.f2 {
+		    font-size: .8em;
+		    line-height: 17px;
+		    font-weight: 600;
+		    margin-top: .65em;
+		    margin-bottom: .75em;
+		}
+
+
+
+
+
+
+	  }
+
+
+}

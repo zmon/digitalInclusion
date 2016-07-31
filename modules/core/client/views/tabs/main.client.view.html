@@ -1,5 +1,5 @@
 <span ng-controller="MapController">
-<header id="header" class="pt-page-moveFromLeft" ng-show="mapReady" ng-animate="{enter: 'pt-page-rotateFall', leave: 'am-flip-x-remove'}">  
+<header id="header" class="pt-page-moveFromLeftFade">  
   <h1 id="headerH1" class="sh-up c-sat">Map of Services</h1>
   <p id="headerP" class="sh-up">Kansas City</p>
 </header>
@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', init, false);
 <div id="main" class="fix-height">
   <section id="first" class="main special bg-wrapper">
     <main id="main-page">
-      <div id="frontdoor" class="row butane c-dar pt-page-delay1000">
+      <div class="row butane c-dar">
 
         <div class="col-md-1"></div>
         <div class="col-md-5">
@@ -48,11 +48,11 @@ window.addEventListener('DOMContentLoaded', init, false);
               <li><a id="e2" ng-click="toggleTrainingMarkers();" href="#" class="button normal fit small pt-page-rotateRoomRightIn">Computer Training</a></li>
               <li class="realign"><a id="e4" ng-click="toggleRefurbsMarkers();" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Low Cost Computers</a></li>
             </ul> -->
-            <ul class="actions fit small upper-btns" ng-show="showMapControls">
+            <ul class="actions fit small upper-btns">
               <li><a ng-click="toggleWifiMarkers(); switchToggleState()" id="e1" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Free WiFi</a></li>
               <li class="realign"><a ng-click="toggleComputersMarkers();" id="e3" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Public Computers</a></li>
             </ul>
-            <ul class="actions fit small lower-btns" ng-show="showMapControls">
+            <ul class="actions fit small lower-btns">
               <li><a id="e2" ng-click="toggleTrainingMarkers();" href="#" class="button normal fit small pt-page-rotateRoomRightIn">Computer Training</a>
               </li>
               <li class="realign"><a id="e4" ng-click="toggleRefurbsMarkers();" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Low Cost Computers</a></li>
@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', init, false);
         <div class="col-md-5">
 
 
-          <legend class="table-wrapper am-fade-and-slide-right" ng-show="showMapControls">
+          <legend class="table-wrapper pt-page-rotateSlideIn">
          
 
             <table class="legend-table">
@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded', init, false);
                   <td class="rbor"><img class="small-img" src="modules/core/client/img/wifi-free.svg"> Public<br>WiFi</td>
                   <td class="toleft"><img class="small-img" src="modules/core/client/img/user-orange2.png"> Training<br>(daytime)</td>
                 </tr>
-                <tr>
+                <tr class="ffh">
                   <td class="move-up rbor"><img class="small-img" src="modules/core/client/img/wifi-purchase.svg"> Customer<br>WiFi</td>
                   <td class="toleft move-up"><img class="small-img" src="modules/core/client/img/user-blue2.png"> Training<br>(after 6pm)</td>
                 </tr>
@@ -147,6 +147,16 @@ window.addEventListener('DOMContentLoaded', init, false);
                   </a>
               </div> -->
               <section id="trix" class="pt-page-rotateSidesIn">
+                <div id="primaryCategory-mob" class="f1 f-class"></div>
+                
+                <div id="title-mob" class="f2 f-class"></div>
+                <div id="phone-mob" class=""></div>
+                <div id="address-mob" class=""></div>
+                <div id="city-mob" class=""></div>
+                <div id="state-mob" class=""></div>
+                <div id="zip-mob" class=""></div>
+                <div id="hours-mob" class=""></div>
+                <div id="description-mob" class=""></div>
               <!-- <div id="mobile-info-window" class="slide-pop">
         
                 <div id="placeCategoryM" class="f1 f-class"></div>
@@ -165,8 +175,7 @@ window.addEventListener('DOMContentLoaded', init, false);
           
                 <div class="f-class" id="placeUrlM"></div>
               </div> -->
-                <h1>{{thisPlace.title}}</h1>
-                <p>{{thisPlace.primaryCategory}}</p>
+              
               </section>
             </div>
            </span>
@@ -182,11 +191,23 @@ window.addEventListener('DOMContentLoaded', init, false);
               <div id="info-wrapper" class="slide-pop.ng-enter">
                 <div id="placeCategory" class="f1 f-class"></div>
                 <address>
-                  <strong><div id="placeTitle" class="f2 f-class"></div></strong>
+                  <div id="placeTitle" class="f2 f-class"></div>
+                  <span id="placePhone" class="f-class"></span>
                  <div id="placeAddress" class="f3 f-class"></div>
-                  <div>
-                <span id="placeCity" class="f3 f-class"></span>, <span id="placeState" class="f3"></span> <span id="placeZip" class="f3 f-class"></span></div><br>
-                  <abbr title="Phone">P:</abbr> <div id="placePhone" class="f-class"></div>
+                  
+                <div class="cist">
+                  <span id="placeCity" class="f3 f-class"></span>
+                  <span id="placeState" class="f3"></span><br>
+                  <span id="placeZip" class="f3 f-class"></span>
+                  
+                </div>
+                <a id="map-directions" target="_blank" class="view-dir" href="">Get directions</a>
+                
+
+                
+
+
+                  
                 </address>
 
                <!--  <address>
@@ -201,7 +222,8 @@ window.addEventListener('DOMContentLoaded', init, false);
                 
          <!--         <a ng-click="getDirections(addr, city, state, zip)" class="f6 lnk-hov">View directions on Google Maps</a><br> -->
                 <div id="placeHours" class="f-class"></div>
-                <div class="f4 f-class" id="placeDescription"></div>
+                <a ng-click="printPage()" class="pure-button x-small-custom">Print this description with map</a>
+                <div class="f4 f-class f-desc" id="placeDescription"></div>
                 <div class="f-class" id="placeUrl"></div>
                
 

@@ -12,6 +12,87 @@
     box-shadow: 0 0 12px #3e3e3e;
     top: -1.5em;
 }
+
+
+#wrapper{
+   background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQIW2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEqRgDDwAAAABJRU5ErkJggg==') repeat;
+}
+
+	a.pure-button.x-small-custom {
+		font-size: .5em;
+		position: relative;
+		top: -1.5em;
+	}
+	a#map-directions {
+    color: steelblue;
+    font-size: .7em;
+    position: relative;
+    line-height: 1px;
+    top: -2em;
+}
+	div#placeAddress {
+		margin-top: .4em;
+	}
+	.f3 {
+		font-size: .7em;
+	}
+	span#placeZip {
+		position: relative;
+		top: -1em;
+	}
+	div#placeCategory {
+		margin-top: 1.5em;
+		font-size: .55em;
+	}
+	div#placeHours {
+		font-size: .5em;
+		line-height: 10px;
+		margin-left: 1.5em;
+		text-align: justify;
+		position: relative;
+		width: 80%;
+		top: -2.3em;
+	}
+		.f2 {
+	    font-size: .9em;
+	    font-weight: 600;
+	    line-height: 15px;
+	    margin: .7em 0 .2em;
+	}
+	.cist {
+		position: relative;
+		top: -.5em;
+	}
+	span#placePhone {
+	    font-size: .7em;
+	}
+	#winCtrl {
+	    display: inline;
+	    z-index: 99999;
+	    position: relative;
+	    top: -.5em;
+	    color: #443101;
+	    left: 4.5em;
+	    background: none;
+	    border-radius: 5em;
+	    border-color: black;
+	    border: none;
+	    height: 10em;
+	    width: 10em;
+	}
+/*}
+*/
+	.f-desc {
+	    border: none;
+	    padding: .5em 1em;
+	    text-align: start;
+	    margin-left: .3em;
+	    width: 95%;
+	    line-height: 11px;
+	    font-size: .6em;
+	    border: 1px solid gainsboro;
+	    background: #ececec;
+	}
 	.row.butane {
 	    margin-left: .01em;
 	    margin-bottom: .1em;
@@ -48,12 +129,14 @@
 	    margin-right: 2px;
 	    line-height: 1.42857143;
 	    border: 1px solid transparent;
-	    color: #1d210c;
+	    color: #e5efc0;
 	    letter-spacing: .1pc;
+	    text-shadow: 0 0 10px #716e04;
 	    font-weight: 900;
-	    text-shadow: none;
+	    /* text-shadow: none; */
 	    border-radius: 4px 4px 0 0;
 	    font-size: .56em;
+	    z-index: 99999;
 	}
 	input#pac-input {
 	    position: relative;
@@ -74,13 +157,12 @@
 	    top: -13.4em;
 	    margin-left: .3em;
 	    background: radial-gradient(#929292,#868484,#9e9677,#a09a80,#929187);
-	    outline: .125em solid #868686;
+	    outline: none;
 	    box-shadow: 0 0 5px #848484;
 	    background: silver;
 	    background: radial-gradient(#c7e2ff,#b8d4e6,#b4cdd6);
 	    border: none;
-	    <: 1px
-	    solid black;
+	
 	    background: background: #ADD100; /* fallback for old browsers */
 	    background: -webkit-linear-gradient(to left, #ADD100 , #7B920A); /* Chrome 10-25, Safari 5.1-6 */
 	    background: linear-gradient(to left, #eaecdb , #c1c5ac); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -156,6 +238,10 @@
 	    background: -webkit-linear-gradient(to left, #8e9eab , #eef2f3);
 	    z-index: 99999;
 	    background: linear-gradient(#eef2f3,#dfe6ea);
+	    background: #E0EAFC; /* fallback for old browsers */
+	    background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3); /* Chrome 10-25, Safari 5.1-6 */
+	    box-shadow: none;
+	    background: linear-gradient(to left, #6e7b92 , #CFDEF3, #CFDEF3,#6e7b92); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	}
 
 	.row.butane {
