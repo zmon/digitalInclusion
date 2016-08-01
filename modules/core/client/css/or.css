@@ -475,3 +475,9 @@ button#btn-sub {
 
 
 
+@media (max-width: 768px) {
+	section#queryForm {
+	    display: none;
+	   
+	}
+}

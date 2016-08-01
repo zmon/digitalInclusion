@@ -1,0 +1,214 @@
+
+@media (max-width: 360px) {
+
+
+	html, body {
+	    max-height: 1600px;
+	    overflow-x: hidden;
+	    max-width: 360px;
+	}
+	section.meta-w-form {
+	    background: none;
+	    height: 4em;
+	    width: 100%;
+	}
+
+	#header p {
+    color: #4a4a4a;
+    position: relative;
+    top: -19em;
+    left: 1.52em;
+    font-size: .95em;
+}
+	#header h1 {
+	    margin: 0 0 0.25em 0;
+	    font-weight: 700;
+	    letter-spacing: normal;
+	    background: #dfe9ff;
+	    margin-top: 1.75em;
+	    border: 1px solid #4e555a;
+	    box-shadow: 0 0 1px #505050, inset 0 0 20px #d7edff;
+	    padding-top: .5em;
+	    padding-bottom: 3em;
+	    position: relative;
+	    height: 9.5em;
+	    left: -2.1em;
+	    top: -4em;
+	    width: 13.5em;
+	}
+
+	.row.butane {
+	    /* border: 2px solid red; */
+	    margin-left: .01em;
+	    margin-bottom: .1em;
+	    margin-top: 4.5em;
+	    height: 6em;
+	    position: relative;
+	    top: -9.5em;
+	    /* width: 20em; */
+	    left: 4.6em;
+	    background: linear-gradient(#83a4d4,#83a4d4);
+	    border-bottom: 1px solid black;
+	    border-top: 1px solid black;
+	    /* box-shadow: 0 0 1px #909090, 0 0 1px #1a222d, 0 0 1px #a0a0a0, 0 0 1px #313129; */
+	    box-shadow: inset 0 0 250px black;
+	    border: none;
+	    background: none;
+	    box-shadow: none;
+	}
+
+	.navbar {
+	    min-height: 40px;
+	    max-width: 360px;
+	    margin-bottom: 0;
+	    border: 1px solid transparent;
+	    box-shadow: 0 0 30px #291414, inset 0 0 130px #3d375d;
+	    background: #485563;
+	    background: -webkit-linear-gradient(to left, #485563 , #29323c);
+	    background: linear-gradient(to left, #485563 , #29323c);
+	    color: black;
+	    background: #4b6cb7;
+	    background: -webkit-linear-gradient(to left, #4b6cb7 , #182848);
+	    background: linear-gradient(to left, #182848, #4b6cb7);
+	    background: -webkit-linear-gradient(to left, #C04848 , #480048);
+	}
+
+	ul.actions.fit.small.lower-btns {
+	    position: relative;
+	    top: -2.6em;
+	}
+		form.pure-form.angr {
+	    background: whitesmoke;
+	    width: 96%;
+	    box-shadow: 0 0 1px black;
+	    margin-top: 5em;
+	    margin-left: .6em;
+	    padding: 1em 3.25em 0 4.5em;
+	}
+		ul.actions.fit.small {
+	    margin-left: 1.5em;
+	    width: calc(100% + -29.5em);
+	    min-width: 150px;
+	    background: none;
+	    position: relative;
+	    background: none;
+	    margin-top: -.04em;
+	    /* margin-left: 1em; */
+	    left: 1.25em;
+	    top: -1.5em;
+	}
+
+	ul.actions.fit.small li {
+	    padding: 0 0 0 .7em;
+	    width: 130px;
+	    font-size: .75em;
+	    background: none;
+	}
+	a#searchButton {
+	    background: #a5a2a2;
+	    padding: .225em .4em;
+	    border-radius: .3em;
+	    box-shadow: none;
+	    font-size: .9em;
+	}
+	#main a:hover {
+	    color: #69bed2;
+	    box-shadow: none;
+	    text-shadow: none;
+	}
+	section#queryForm {
+	    display: initial;
+	    top: .25em;
+	    left: 9.75em;
+	    height: 2em;
+	    display: initial;
+	    background: none;
+	    top: -11.8em;
+	}
+	section#add-resources {
+	    margin-left: 20%;
+	    padding-right: 4em;
+	    margin-top: -3em;
+	}
+	section.meta-w-form {
+	 
+	    height: 4em;
+	    width: 100%;
+	    top: -2em;
+	    left: -.51em;
+	}
+	#footer > * {
+	    width: 70%;
+	    margin-left: 4em;
+	    margin-bottom: 3em;
+	}
+
+	form.c-hell {
+	    margin: 0 0 2em 0;
+	    background: whitesmoke;
+	    width: 90.9%;
+	    padding: 5em 8em;
+	    margin-left: 4.5%;
+	    position: relative;
+	    box-shadow: 0 0 1px black;
+	    top: -5.5em;
+	}
+
+	button#btn-sub {
+	    left: -2em;
+	}
+
+	#footer {
+	    display: -moz-flex;
+	    display: -webkit-flex;
+	    display: -ms-flex;
+	    display: flex;
+	    -moz-flex-wrap: wrap;
+	    position: relative;
+	    text-align: center;
+	    width: 150%;
+	    left: -6em;
+	    top: -22em;
+	    font-size: .7em;
+	    color: black;
+	    -webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	    padding: 5em 5em 3em 5em;
+	    /* width: calc(100% + 2em); */
+	    margin: 0;
+	}
+
+	.row.butane {
+	    /* border: 2px solid red; */
+	    margin-left: .01em;
+	    margin-bottom: 2.85em;
+	    margin-top: 3.5em;
+	    height: 6.5em;
+	    position: relative;
+	    top: -9.75em;
+	    width: 64.25%;
+	    left: 5em;
+	    background: none;
+	    border-bottom: 1px solid black;
+	    border-top: 1px solid black;
+	    /* box-shadow: 0 0 1px #909090, 0 0 1px #1a222d, 0 0 1px #a0a0a0, 0 0 1px #313129; */
+	    box-shadow: none;
+	    border: none;
+	}
+
+	ul.actions.fit.small {
+	    margin-left: 1.5em;
+	    width: calc(100% + -29.5em);
+	    min-width: 150px;
+	    background: none;
+	    position: relative;
+	    background: none;
+	    margin-top: -.04em;
+	    /* margin-left: 1em; */
+	    left: -2.6em;
+	    top: -1.5em;
+	}
+}
+
+

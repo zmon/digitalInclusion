@@ -37,10 +37,11 @@ section.meta-w-form {
 	#footer>* {
 	    width: calc(50% - -.3em);
 	    margin-left: 13em;
-	    border: 1px solid #d6d6d6;
+	    border: none;
 	    background: #fdfffa;
 	    border-radius: .25em;
+	    background: linear-gradient(to left, #7d7d7d , #E7E9BB,#E7E9BB, #828282);
 	    padding: 1.3em .8em;
-	    box-shadow: 0 0 1px black;
+	    box-shadow: 0 0 1px #636363;
 	}
 }
