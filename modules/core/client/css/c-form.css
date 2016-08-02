@@ -13,8 +13,9 @@ background: linear-gradient(to left, #283048 , #859398); /* W3C, IE 10+/ Edge, F
 .c-form-label {
     color: #838483;
     font-weight: 300;
+    font-family: Georgia;
     text-align: center;
-    margin-left: -.75em;
+    margin-left: 1.5em;
     text-shadow: none;
 }
 
@@ -759,11 +760,15 @@ text-shadow: 4px 4px 1px #300000;
  form.c-hell {
     margin: 0 0 8em 0;
     background: whitesmoke;
+    background: #ECE9E6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ECE9E6 , #d6d5d5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     width: 50%;
     padding: 5em 6em;
     margin-left: 25%;
+    font-family: Georgia;
     position: relative;
-    box-shadow: 0 0 1px black;
+    box-shadow: 0 0 40px black;
     top: -4.5em;
 }
 

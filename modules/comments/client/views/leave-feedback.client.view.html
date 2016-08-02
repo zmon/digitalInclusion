@@ -1,0 +1,24 @@
+ <form id="fixed-page-bottom" name="vm.form.commentForm" class="pure-form angr" ng-submit="vm.save(vm.form.commentForm.$valid)" novalidate>
+         <fieldset class="pure-group">
+            <div class="row uniform padding-3050">
+            <!-- <h2 class="c-form-label">Please share your feedback</h2> -->
+     
+
+
+              <div class="12u$">
+                <div class="form-group">
+                  <textarea name="content" data-ng-model="vm.comment.content" id="content" class="pure-input-1-2" cols="30" rows="6" placeholder="Content"></textarea>
+                </div>
+
+              </div>
+              <div class="12u$ form-group">
+
+                <button id="btn-sub" type="submit" class="pure-button pure-input-1-2">{{vm.comment._id ? 'Update' : 'Submit'}}</button>
+              </div>
+              <div ng-show="vm.error" class="text-danger">
+                <strong ng-bind="vm.error"></strong>
+              </div>
+          </div>
+          <!-- <a class="links"  ng-href="/report-bug">Report a bug</a> -->
+         </fieldset>
+      </form>

@@ -29,10 +29,6 @@ module.exports.init = function init(callback) {
     // Initialize express
     var app = express.init(db);
     if (callback) callback(app, db, config);
-      // console.log("app db config");
-      // console.log(app);
-      // console.log(db);
-      // console.log(config);
   });
 };
 
@@ -40,12 +36,6 @@ module.exports.start = function start(callback) {
   var _this = this;
 
   _this.init(function (app, db, config) {
-
-    console.log("process.env");
-    console.log(process.env.GOOGLE_MAPS_API_KEY);
-    console.log('config');
-    console.log(config.app.googleMapsApiKey);
-    // console.log(app.locals.googleMapsApiKey);
 
     // Start the app by listening on <port> at <host>
     app.listen(config.port, config.host, function () {

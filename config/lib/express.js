@@ -10,6 +10,7 @@ var config = require('../config'),
   bodyParser = require('body-parser'),
   session = require('express-session'),
   MongoStore = require('connect-mongo')(session),
+  twilio = require('twilio'),
   favicon = require('serve-favicon'),
   compress = require('compression'),
   methodOverride = require('method-override'),
@@ -28,7 +29,7 @@ module.exports.initLocalVariables = function (app) {
   // Setting application local variables
   app.locals.title = config.app.title;
   app.locals.description = config.app.description;
-  console.log("$$app");
+  console.log("checking app settings");
   console.log(config.app);
   // console.log("config secure");
   // console.log(config);

@@ -467,7 +467,7 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
 
 .pure-button {
     font-family: inherit;
-    font-size: 100%;
+    font-size: 80%;
     padding: 0.5em 1em;
     color: #444; /* rgba not supported (IE 8) */
     color: rgba(0, 0, 0, 0.80); /* rgba supported */
@@ -915,5 +915,25 @@ since IE8 won't execute CSS that contains a CSS3 selector.
         font-size: 0.75em;
         /* Increased bottom padding to make it group with its related input element. */
         padding: 0.2em 0 0.8em;
+    }
+}
+
+@media screen {
+    #printSection {
+        display: none;
+    }
+}
+
+@media print {
+    body * {
+        visibility:hidden;
+    }
+    #printSection, #printSection * {
+        visibility:visible;
+    }
+    #printSection {
+        position:absolute;
+        left:0;
+        top:0;
     }
 }

@@ -7,17 +7,17 @@
     /*height: 186.5px;*/
     /*    padding-right: .5em;
     padding-bottom: 2.7em;*/
-    /* box-shadow: inset 0 0 250px black; */
+    box-shadow: inset 0 0 150px #324446;
+    box-shadow: inset 0 0 200px gray;
     /* background: none; */
     /* border-bottom: none; */
     /*url("https: //www.transparenttextures.com/patterns/black-thread.png");*/
     /* background: url("https://www.transparenttextures.com/patterns/black-thread.png"); */
     display: inherit;
     /* background: linear-gradient(to left, #c2e59c , #64b3f4); */
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQIW2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEqRgDDwAAAABJRU5ErkJggg==') repeat;
-    /* background: #83a4d4; */ /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #83a4d4 , #b6fbff); /* Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(#83a4d4,#83a4d4); */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAQ0lEQVQIWxXKMQ0AMAgEwEdAhbAgpA4xggAksCAAAyQVQMN8R+4+IoL3HswM1N0TEchM3HtBVTUrzIydpKqzcs7Bzg++WR+Le2A33AAAAABJRU5ErkJggg==') repeat;
 }
 #modalFs {
 	max-height: 800px;
@@ -31,18 +31,23 @@ body {
     color: rgba(255,255,255,.95);
     background-color: rgba(255,255,255,.5);
     background-image: url(https://www.transparenttextures.com/patterns/robots.png);
-    box-shadow: inset 0 0 300px #130f0f;
+    box-shadow: inset 0 0 60px #000000;
     /* background-image: url("https://www.transparenttextures.com/patterns/black-thread.png"); */
     background: #c2e59c;
     background: -webkit-linear-gradient(to left, #c2e59c , #64b3f4);
-    background: linear-gradient(to left, #c2e59c , #64b3f4);
-    background: #000000;
+    /* background: linear-gradient(to left, #c2e59c , #64b3f4); */
+    /* background: #000000; */
     /* box-shadow: none; */
     background: -webkit-linear-gradient(to left, #000000 , #434343);
     background: linear-gradient(#434343, #000000);
-    background: url("https://www.transparenttextures.com/patterns/black-thread.png");
+    /* background: url("https://www.transparenttextures.com/patterns/black-thread.png"); */
     overflow-x: hidden;
-    background-color: rgba(195, 195, 195, 0.65);
+    /* background-color: rgba(99, 95, 95, 0.85); */
+    background-image: url('/modules/core/client/img/blueprint-white.svg');
+    background-size: 30px 30px;
+    /* border: 12px solid whitesmoke; */
+    /* background: none #272725; */
+    background-position: center center;
 }
 
 body {}
@@ -450,7 +455,7 @@ h3.col-md-12.text-center.log {
 
 
 button#btn-sub {
-	margin: 1.5em 0 0 5em;
+	margin: 1.5em 0 0 7.25em;
 	position: relative;
 	/* left: -1.5em; */
 }

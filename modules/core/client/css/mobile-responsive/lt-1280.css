@@ -29,6 +29,7 @@ section.meta-w-form {
 	    -webkit-flex-wrap: wrap;
 	    -ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
+	    font-family: Georgia;
 	    padding: 5em 5em 3em 5em;
 	    /* width: calc(100% + 2em); */
 	    margin: 0;
@@ -39,9 +40,10 @@ section.meta-w-form {
 	    margin-left: 13em;
 	    border: none;
 	    background: #fdfffa;
-	    border-radius: .25em;
+	    border-radius: 15px;
+	    font-family: Georgia;
 	    background: linear-gradient(to left, #7d7d7d , #E7E9BB,#E7E9BB, #828282);
 	    padding: 1.3em .8em;
-	    box-shadow: 0 0 1px #636363;
+	    box-shadow: 0 0 15px #424242;
 	}
 }

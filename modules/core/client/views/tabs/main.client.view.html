@@ -74,8 +74,18 @@ window.addEventListener('DOMContentLoaded', init, false);
               </thead>
               <tbody class="tbody-legend">
                 <tr>
-                  <td class="rbor"><img class="small-img" src="modules/core/client/img/wifi-free.svg"> Public<br>WiFi</td>
-                  <td class="toleft"><img class="small-img" src="modules/core/client/img/user-orange2.png"> Training<br>(daytime)</td>
+                  <td class="rbor">
+                    <!-- <i class="fa fa-wifi fa-2x" aria-hidden="true"></i> Public<br>WiFi -->
+                  <img class="small-img" src="modules/core/client/img/wifi-free.svg"> Public<br>WiFi
+
+                  </td>
+
+                  <td class="toleft">
+                    <!-- <span id="training-day-user" class="glyphicon glyphicon-user"></span> -->
+                   <!-- Training<br>(daytime). -->
+                  <img class="small-img" src="modules/core/client/img/user-orange2.png"> Training<br>(daytime)
+
+                  </td>
                 </tr>
                 <tr class="ffh">
                   <td class="move-up rbor"><img class="small-img" src="modules/core/client/img/wifi-purchase.svg"> Customer<br>WiFi</td>
@@ -112,7 +122,7 @@ window.addEventListener('DOMContentLoaded', init, false);
 
       <div class="row map-row">
     
-          <div class="col-xs-12 col-sm-12 col-md-12 col-md-12">
+          <div id="printArea" class="col-xs-12 col-sm-12 col-md-12 col-md-12">
             <div id="svgWrap" ng-show="loading" class="pt-page-moveFromLeft">
               <div id="onloadSpinner" class="c-loader">        
                 <img src="/modules/core/client/img/loaders/puff.svg" />
@@ -120,10 +130,11 @@ window.addEventListener('DOMContentLoaded', init, false);
               <h4 class="absolutePos">Loading Map</h4>
             </div>
               <!-- <input id="pac-input" class="controls" type="text" placeholder="Search by Zip"> -->
-               
+          
            <section id="customMap" class="vis-on pt-page-rotateUnfoldBottom">
 
            </section>
+
            <div id="zipSearchError" class="pt-page-rotateRoomLeftIn">
 
            <a ng-click="closeErrorWindow()" class="make-vis">
@@ -183,14 +194,15 @@ window.addEventListener('DOMContentLoaded', init, false);
               
                 <div id="wrapExit">
                   <a id="winCtrl" ng-click="removeWindow()" class="rmv">
-                     <span id="rmv-glyph" class="glyphicon glyphicon-remove"></span>
+                     <span id="rmv-glyph" class="glyphicon glyphicon-remove-circle"></span>
+
                   </a>
                 </div>
 
 
               <div id="info-wrapper" class="slide-pop.ng-enter">
                 <div id="placeCategory" class="f1 f-class"></div>
-                <address>
+                <!-- <address> -->
                   <div id="placeTitle" class="f2 f-class"></div>
                   <span id="placePhone" class="f-class"></span>
                  <div id="placeAddress" class="f3 f-class"></div>
@@ -208,7 +220,7 @@ window.addEventListener('DOMContentLoaded', init, false);
 
 
                   
-                </address>
+                <!-- </address> -->
 
                <!--  <address>
                   <strong>Full Name</strong><br>
@@ -222,7 +234,9 @@ window.addEventListener('DOMContentLoaded', init, false);
                 
          <!--         <a ng-click="getDirections(addr, city, state, zip)" class="f6 lnk-hov">View directions on Google Maps</a><br> -->
                 <div id="placeHours" class="f-class"></div>
-                <a ng-click="printPage()" class="pure-button x-small-custom">Print this description with map</a>
+                <!-- <button class="btn btn-primary" ng-print print-element-id="printThisElement"><i class="fa fa-print"></i> Print</button> -->
+                <!-- ng-click="printPage()"  -->
+                <a class="pure-button x-small-custom" ng-print print-element-id="sw"><i class="fa fa-print"></i> Print description with map</a>
                 <div class="f4 f-class f-desc" id="placeDescription"></div>
                 <div class="f-class" id="placeUrl"></div>
                

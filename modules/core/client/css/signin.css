@@ -31,7 +31,7 @@
     min-height: 40px;
     margin-bottom: 0;
     border: 1px solid transparent;
-    box-shadow: 0 0 30px #291414, inset 0 0 130px #3d375d;
+    box-shadow: 0 0 15px #130909;
     background: #485563; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #485563 , #29323c); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #485563 , #29323c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -42,4 +42,11 @@
      /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #C04848 , #480048); /* Chrome 10-25, Safari 5.1-6 */
      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #343804;
+    /* background-image: url("https://www.transparenttextures.com/patterns/always-grey.png"); */ /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background: #81882a;
+    border-bottom: none;
+    /* background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png"); */ /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background: linear-gradient(to left, #464343 ,#9fa07e, #dcdeb2,#9fa07e, #524e4e);
+    /* box-shadow: 0 0 15px #424242; */
 }

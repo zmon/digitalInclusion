@@ -18,7 +18,7 @@ var list = {};
 
 	function MapController($scope, $window, $timeout, $http, $location, zipcode, PlacesService, zcPosition) {
     var browser = $window.navigator.appCodeName;
-    console.log(browser);
+    // console.log(browser);
     // var broswer = $window.navigator.appCodeName;
    
     var zipcodes = zipcode.getZipcodes();
@@ -135,8 +135,8 @@ var list = {};
 $scope.thisBounds;
 
 setTimeout(function(){
-              console.log("..");
-              console.log(svgW[0]);
+              // console.log("..");
+              // console.log(svgW[0]);
               svgW.removeClass("vis-off");
               svgW.addClass("vis-on");
               $scope.loading = false;
@@ -184,7 +184,7 @@ setTimeout(function(){
 	      resetToNormal();
 	      for (i = 0; i < length; i++) {
 	        var place = data[i];
-          console.log(place);
+          // console.log(place);
 	        createMarker(place);
 	      }
 	    }
@@ -333,14 +333,14 @@ setTimeout(function(){
 
 
 	    var callMethod = function() {
-	       console.log("search results");
-	       console.log($scope.searchResults);
+	       // console.log("search results");
+	       // console.log($scope.searchResults);
 	    };
 
 
 	    var counter = 0;
 	    function incrementToLimit(num) {
-	      console.log(num + " reaching limit =>" + limit);
+	      // console.log(num + " reaching limit =>" + limit);
 	    }
 
 	    
@@ -349,7 +349,7 @@ setTimeout(function(){
 
 
 	    function setWifiMarkers() {
-	      console.log("setWifiMarkers");
+	      // console.log("setWifiMarkers");
 	      var frLocations = data.wifi.free;
 	      var coLocations = data.wifi.customer;
 	      var i;
@@ -614,8 +614,8 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
     $scope.mobileWindowOpen = false;
     var innerWidth = $window.innerWidth;
     var winWrapper = angular.element(document.getElementById("pseudoWrapWindow"));
-    console.log("CHECK FOR MOBILE WIDTH");
-    console.log(innerWidth);
+    // console.log("CHECK FOR MOBILE WIDTH");
+    // console.log(innerWidth);
 
 
     $scope.closeMobileWindow = function() {
@@ -626,8 +626,8 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 
     function getCurrentWidth() {
-      console.log("getCurrentWidth");
-      console.log($window.innerWidth);
+      // console.log("getCurrentWidth");
+      // console.log($window.innerWidth);
       return $window.innerWidth;
     }
 
@@ -671,10 +671,10 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
      var destination = addressToUrlString(addrStr);
      var coords = "/@" + json.location[0].lat + "+" + json.location[0].lng + "/";
      var url = base + destination + coords;
-     console.log(url);
+     // console.log(url);
      var anchorTag = document.getElementById('map-directions');
      anchorTag.href=url;
-     console.log(anchorTag);
+     // console.log(anchorTag);
       // /4928+Main+Street,+Kansas+City,+MO+64112/@39.0374,-94.5875,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x87c0efbc1225668b:0x1bbd092f4ee9f253!2m2!1d-94.5874594!2d39.0373724
 
             // el.primaryCategory.innerText = categoryIconText(json.primaryCategory);
@@ -718,8 +718,8 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 	   function addListener(json, marker) {
 
-        console.log("adding listener");
-          console.log(browser);
+        // console.log("adding listener");
+        //   console.log(browser);
 
           var userDevice = browser;
 
@@ -1135,11 +1135,11 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 	   var getLocation = function () {
 	      if (navigator.geolocation) {
-          console.log("geolocation supported");
+          // console.log("geolocation supported");
 	        navigator.geolocation.getCurrentPosition($scope.showMap, $scope.showError);
 	      }
 	      else {
-          console.log("browser does not support geolocation")
+          // console.log("browser does not support geolocation")
 	        $scope.error = "Geolocation is not supported by this browser.";
 	      }
 	    }
@@ -1148,15 +1148,15 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 
 	      $scope.removeWindow = function() { 
-	      	console.log("?");
+	      	// console.log("?");
 	        removeWindow();
 	      }
 
 
 	    var loadMarkersOnInit = function (boolean) {
-	    	console.log("loadMarkersOnInit");
+	    	// console.log("loadMarkersOnInit");
 	    	if (boolean) {
-	    		console.log("init true");
+	    		// console.log("init true");
 	    		new google.maps.Marker({
 		          position: $scope.initialLocation,
 		          animation: google.maps.Animation.DROP,
@@ -1164,7 +1164,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 		          icon: 'modules/core/client/img/red-dot.png'
 		      	});
 	    	} else {
-	    		console.log("init false");
+	    		// console.log("init false");
 	    	}
 	    	
 	    }
@@ -1211,30 +1211,30 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
       function zoomEnter() {
         setTimeout(function(){
-            console.log("timeout");
+            // console.log("timeout");
             $scope.map.setZoom(14);
         }, 200);
         setTimeout(function(){
-            console.log("timeout");
+            // console.log("timeout");
             $scope.map.setZoom(15);
         }, 400);
         setTimeout(function(){
-            console.log("timeout");
+            // console.log("timeout");
             $scope.map.setZoom(16);
         }, 800);
       }
 
       function fadeOutElement(element) {
-        console.log("fadeOut");
-        console.log(element)
+        // console.log("fadeOut");
+        // console.log(element)
 
         element.addClass("am-fade-and-slide-bottom-remove")
       }
       
 
 	    $scope.showMap = function(position) {
-        console.log("showMap");
-        console.log(position);
+        // console.log("showMap");
+        // console.log(position);
 	      $scope.lat = position.coords.latitude;
 	      $scope.lng = position.coords.longitude;
 
@@ -1267,7 +1267,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 			    // do something only the first time the map is loaded
           $scope.showMapControls = true
           zoomEnter()
-			    console.log("============================tilesloaded")
+			    // console.log("============================tilesloaded")
 			    $timeout(6000, loadMarkersOnInit(true), true)
 			    initFreeWifiButton()
 			    setWifiMarkers()
