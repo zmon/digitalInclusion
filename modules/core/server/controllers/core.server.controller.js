@@ -1,6 +1,12 @@
 'use strict';
 
 var validator = require('validator');
+var twilio = require('twilio');
+var accountSid = 'AC1b703b4f4f07d1927c31acaf2d4ec83f';
+var authToken = '25f054aac6df3cbc8547da7f8a808191';
+var fromNum = '+19133534144';
+var client = new twilio.RestClient(accountSid, authToken);
+// var client = new twilio.RestClient(accountSid, authToken);
 
 /**
  * Render the main application page
@@ -57,5 +63,23 @@ exports.renderNotFound = function (req, res) {
     'default': function () {
       res.send('Path not found');
     }
+  });
+};
+
+exports.sendSms = function (req, res) {
+  console.log("sendSms");
+  console.log(req.body);
+  client.messages.create({
+      body: req.body.content,
+      to: req.body.to,  // Text this number
+      from: fromNum // From a valid Twilio number
+  }, function(err, message) {
+      if(err) {
+          console.error(err.message);
+      } else {
+        return res.status(202).send({
+          message: "Sent"
+        });
+      }
   });
 };

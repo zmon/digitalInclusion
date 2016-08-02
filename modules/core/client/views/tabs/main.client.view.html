@@ -158,6 +158,7 @@ window.addEventListener('DOMContentLoaded', init, false);
                   </a>
               </div> -->
               <section id="trix" class="pt-page-rotateSidesIn">
+               
                 <div id="primaryCategory-mob" class="f1 f-class"></div>
                 
                 <div id="title-mob" class="f2 f-class"></div>
@@ -167,7 +168,39 @@ window.addEventListener('DOMContentLoaded', init, false);
                 <div id="state-mob" class=""></div>
                 <div id="zip-mob" class=""></div>
                 <div id="hours-mob" class=""></div>
+                <a class="pure-button share-resource" ng-click="openSmsForm()">Share with friend</a>
+                <div id="share-window" ng-show="smsFormOpen">
+                  
+
+
+
+                  <form id="sendSmsForm" class="pure-form">
+                    <fieldset>
+                        <div class="pure-control-group">
+                            <label for="phone" class="sms-form-label">Enter phone number (913 or 816 only) </label>
+                            <input name="to" ng-model="sms.to" class="sms-form-input" type="text">
+                        </div>
+
+                        <div class="pure-controls">
+                           <!--  <label for="cb" class="pure-checkbox">
+                                <input id="cb" type="checkbox"> I've read the terms and conditions
+                            </label> -->
+
+                            <a class="pure-button pure-button-primary sms-form-button" ng-click="setSmsSettings(sms.to)">Send</a>
+
+                        </div>
+
+                        <div class="show-sms-response" ng-show="smsResponse">{{sms.responseStatus}}</div>
+                    </fieldset>
+                  </form>
+                </div>
+
+
                 <div id="description-mob" class=""></div>
+
+
+
+   
               <!-- <div id="mobile-info-window" class="slide-pop">
         
                 <div id="placeCategoryM" class="f1 f-class"></div>
@@ -190,6 +223,42 @@ window.addEventListener('DOMContentLoaded', init, false);
               </section>
             </div>
            </span>
+           
+           <section id="printableWindow" class="vis-off">
+             
+            <section id="printableMap" class=""></section>
+            <main class="pw-content">
+              <p class="pw-info">Location: </p><br>
+              <div class="pw-row-up">
+                <div id="title-print" class="print-win"></div><p> - </p>
+                <div id="primaryCategory-print" class="print-win"></div><br>
+                <div class="pw-row-phone">
+                  <div id="phone-print" class="print-win"></div>
+                </div><br>
+                <div class="print-window-row">              
+                  <div id="address-print" class="print-win"></div><p>, </p>
+                  <div id="city-print" class="print-win"></div><p>, </p>
+                  <div id="state-print" class="print-win"></div><p> </p>
+                  <div id="zip-print" class="print-win"></div> 
+                </div><br>
+              </div>
+              <div class="pw-group-rows-up">
+                <div class="pw-row-hours">
+                  <p class="pw-info">Hours: </p>
+                  <div class="pw-row-up">
+                    <div id="hours-print" class="print-win"></div>
+                  </div>
+                </div><br>
+                <div class="pw-row-description">
+                  <p class="pw-info">Description: </p><br>
+                  <div class="pw-row-up">
+                    <div id="description-print" class="print-win"></div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </section>
+
             <section id="sw" class="full-side sidewin-ctrl pt-page-rotateSidesIn">
               
                 <div id="wrapExit">
@@ -236,7 +305,7 @@ window.addEventListener('DOMContentLoaded', init, false);
                 <div id="placeHours" class="f-class"></div>
                 <!-- <button class="btn btn-primary" ng-print print-element-id="printThisElement"><i class="fa fa-print"></i> Print</button> -->
                 <!-- ng-click="printPage()"  -->
-                <a class="pure-button x-small-custom" ng-print print-element-id="sw"><i class="fa fa-print"></i> Print description with map</a>
+                <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i> Print description with map</a>
                 <div class="f4 f-class f-desc" id="placeDescription"></div>
                 <div class="f-class" id="placeUrl"></div>
                

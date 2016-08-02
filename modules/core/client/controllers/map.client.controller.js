@@ -23,6 +23,8 @@ var list = {};
    
     var zipcodes = zipcode.getZipcodes();
 
+    $scope.smsFormOpen = false;
+
     var libertyMemorial = [39.081009, -94.585944];
     var eighteenthAndVine = [39.091804, -94.562090];
 
@@ -632,7 +634,75 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
     }
 
 
+    $scope.sms = { to: ''};
+    $scope.smsFormError = false;
 
+    function validateSmsInput(input) {
+    	return true;
+    }
+
+    $scope.smsResponse = false;
+
+    function handleSmsResponse(res) {
+    	console.log(res);
+    	if (res === 'Sent') {
+    		$scope.smsResponse = true;
+    		$scope.sms.to = '';
+    		$scope.sms.responseStatus = res;
+    	}
+    }
+
+    function postSms(body) {
+    	$http.post('/sms', body).success(function(res) {
+            console.log('sms');
+            console.log(res);
+            handleSmsResponse(res.message);
+         });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $scope.setSmsSettings = function(phoneNumber) {
+    	console.log("setSmsTarget()");
+    	console.log(phoneNumber);
+
+    	var title = document.getElementById('title-mob');
+    	console.log(title.innerText);
+    	var text = title.innerText;
+
+    	var valid = validateSmsInput(phoneNumber);
+    	if (valid) {
+    		var body = {to: phoneNumber, content: text};
+
+    		postSms(body);
+    	}
+    	// this.sms.to = phoneNumber;
+    }
+    // $scope.sms.to;
+
+    $scope.openSmsForm = function() {
+    	console.log("openSmsForm()");
+    	$scope.smsFormOpen = true;
+    }
 
     function setPlaceData(json) {
       // var addrStr = json.address1 + ", " + json.city
@@ -690,6 +760,83 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 
 
+
+
+
+      function showPm(position) {
+			console.log("showPm");
+			console.log(position);
+			// var latLng = [position[0], position[1]];
+
+	      	var pmOptions = {
+	        	center: {lat: parseFloat(position[0]), lng: parseFloat(position[1])},
+	        	zoom: 18,
+	        	disableDefaultUI: true,
+	        	mapTypeId: google.maps.MapTypeId.ROADMAP
+	      	};
+
+	      	$scope.printableMap = new google.maps.Map(document.getElementById('printableMap'), pmOptions);
+
+	      	var marker = new google.maps.Marker({
+		        position: new google.maps.LatLng(position[0], position[1]),
+		        map: $scope.printableMap
+		    });
+
+		    console.log(marker);
+
+	      	console.log($scope.printableMap);
+
+		}
+
+
+
+
+
+
+
+
+    $scope.pmArray = [];
+
+    function buildKeyValue(json) {
+    	var latLng = [json.location[0].lat, json.location[0].lng];
+    	return {id: json._id, position: latLng};
+    }
+
+    function setPrintWindow(json) {
+    	// console.log(json);
+    	// var kv = buildKeyValue(json);
+    	// $scope.pmArray.push(kv);
+    	var latLng = [json.location[0].lat, json.location[0].lng];
+    	showPm(latLng);
+    	// console.log(latLng);
+    	// console.log(latLng.lat);
+    	// $scope.pmLatLng = [latLng.lat, latLng.lng];
+    	// $scope.pmPosition = json.
+	    document.getElementById('address-print').innerText = json.address1;
+	    document.getElementById('city-print').innerText = json.city;
+	    document.getElementById('state-print').innerText = json.state;
+	         
+	    if (typeof json.primaryCategory != 'undefined') {
+	      document.getElementById('primaryCategory-print').innerText = categoryIconText(json.primaryCategory);
+	    }
+	    if (typeof json.title != 'undefined') {
+	      document.getElementById('title-print').innerText = json.title;
+	    }
+	    if (typeof json.zip != "undefined") {
+	      document.getElementById('zip-print').innerText = json.zip;           
+	    }
+	    if (typeof json.hours != "undefined") {
+	      document.getElementById('hours-print').innerText = json.hours;
+	    }
+	    if (typeof json.description != "undefined") {
+	      document.getElementById('description-print').innerText = json.description;
+	    }
+	    if (typeof json.phone != "undefined") {
+	      document.getElementById('phone-print').innerText = json.phone;              
+	    }
+	  }
+
+
       function setMobileInfoWindowData(json) {
         document.getElementById('address-mob').innerText = json.address1;
         document.getElementById('city-mob').innerText = json.city;
@@ -716,6 +863,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
       }
 
 
+
 	   function addListener(json, marker) {
 
         // console.log("adding listener");
@@ -734,7 +882,8 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 
 	      google.maps.event.addListener(marker, 'click', function() {
-       setPlaceData(json);
+       		setPlaceData(json);
+       		setPrintWindow(json);
           setMobileInfoWindowData(json);
 
 

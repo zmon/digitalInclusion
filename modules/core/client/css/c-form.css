@@ -786,3 +786,63 @@ text-shadow: 4px 4px 1px #300000;
     /*background: -webkit-linear-gradient(to left, #83a4d4 , #b6fbff);*/
     /* background: linear-gradient(#83a4d4,#83a4d4); */
 }
+
+section#printableWindow {
+    /*border: 1px solid black;*/
+    position: fixed;
+    /*line-height: 8px;*/
+    height: 20em;
+    width: 20em;
+    /*border-bottom: 1px solid black;*/
+}
+
+.print-win {
+    font-size: .8em;
+    font-family: "Harmattan";
+    line-height: 1px;
+    display: block;
+    margin-top: -3em;
+    margin-bottom: -3.2em;
+    padding: 0 0;
+}
+
+.pw-row-up {
+    position: relative;
+    top: -.7em;
+}
+
+.print-window-row {
+    position: relative;
+    top: -1.3em;
+}
+
+.pw-row-phone {
+    position: relative;
+    top: -.7em;
+}
+
+.pw-info {
+    font-weight: bold;
+    font-size: .6em;
+}
+
+.pw-group-rows-up {
+    position: relative;
+    top: -2.2em;
+}
+
+section#printableMap {
+    margin-top: 10px;
+    z-index: 99999;
+    height: 450px;
+    width: 400px;
+    margin-bottom: -30px;
+    /*visibility: visible;*/
+/*    position: relative;
+    top: -10em;*/
+}
+
+.pw-content {
+    position: relative;
+    top: 550px;
+}

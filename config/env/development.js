@@ -32,6 +32,12 @@ module.exports = {
     clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
     callbackURL: '/api/auth/facebook/callback'
   },
+  twilio: {
+    accountSid: 'AC1b703b4f4f07d1927c31acaf2d4ec83f',
+    authToken: '25f054aac6df3cbc8547da7f8a808191',
+    from:'+19133534144', //The Twilio number you've bought or configured
+    to:'+19139578834' //The number you would like to send messages to for testing
+  },
   twitter: {
     clientID: process.env.TWITTER_KEY || 'CONSUMER_KEY',
     clientSecret: process.env.TWITTER_SECRET || 'CONSUMER_SECRET',

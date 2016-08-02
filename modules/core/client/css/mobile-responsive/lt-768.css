@@ -391,7 +391,7 @@
 	}
 
 	.f-class {
-		margin-left: 2em;
+		margin-left: 0;
 	}
 	section#sw {
 	    padding-left: .5em;
@@ -508,7 +508,48 @@
 	    margin-left: -.2em;
 	    text-shadow: none;
 	}
+	div#share-window {
+	    background: gainsboro;
+	    padding: 2em 3em;
+	    margin: 1em;
+	    width: 65%;
+	}
+	.f2 {
+		font-size: 1.4em;
+		font-weight: 600;
+		line-height: 15px;
+		margin: .7em 0 .2em;
+	}
+	label.sms-form-label {
+	    margin-left: 3em;
+	}
+	.sms-form-input {
+		height: 2em;
+	}
 		
+	.sms-form-button {
+		position: relative;
+		left: -2em;
+		margin-top: .75em;
+	}
+
+
+	.share-resource {
+		padding: .1em 1.2em;
+	}
+
+	.show-sms-response.ng-binding {
+	    margin-top: 1.25em;
+	    margin-left: 3em;
+	}
+
+	div#phone-mob {
+	    font-size: .75em;
+	    margin-top: .75em;
+	    margin-bottom: 1em;
+	}
+
+
 }	
 
 @media (min-width: 735px) {
