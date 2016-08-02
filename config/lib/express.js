@@ -37,8 +37,8 @@ module.exports.initLocalVariables = function (app) {
     app.locals.secure = config.secure.ssl;
   }
   // app.locals.googleMapsApiKey = config.app.googleMapsApiKey;
-  app.locals.twilioAccountSid = config.twilio.accountSid;
-  app.locals.twilioAuthToken = config.twilio.authToken;
+  // app.locals.twilioAccountSid = config.twilio.accountSid;
+  // app.locals.twilioAuthToken = config.twilio.authToken;
   app.locals.googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY;
   app.locals.googleMapsApiServerKey = config.app.googleMapsApiServerKey;
   app.locals.keywords = config.app.keywords;
@@ -53,11 +53,7 @@ module.exports.initLocalVariables = function (app) {
   console.log("omg");
   console.log(app.locals.googleMapsApiKey);
   console.log(process.env.GOOGLE_MAPS_API_KEY);
-  console.log("unutma!!!!");
-  console.log("twilioAccountSid");
-  console.log(app.locals.twilioAccountSid);
-  console.log("unutamam!!");
-  console.log(app.locals.twilioAuthToken);
+
 
   // Passing the request url to environment locals
   app.use(function (req, res, next) {
