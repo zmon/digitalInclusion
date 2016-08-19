@@ -11,7 +11,7 @@ body {
     color: rgba(255,255,255,.95);
     background-color: rgba(255,255,255,.5);
     background-image: url(https://www.transparenttextures.com/patterns/robots.png);
-    box-shadow: inset 0 0 60px #000000;
+    box-shadow: inset 0 0 360px #000000;
     /* background-image: url("https://www.transparenttextures.com/patterns/black-thread.png"); */
     background: #c2e59c;
     background: -webkit-linear-gradient(to left, #c2e59c , #64b3f4);

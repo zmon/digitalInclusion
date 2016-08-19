@@ -5,10 +5,11 @@
 	    border: 1px solid transparent;
 	    color: #8c943a;
 	    border-radius: 4px 4px 0 0;
-	    font-size: .55em;
-	    font-weight: 400;
-	    letter-spacing: 0.05em;
+	    font-size: .5725em;
+	    font-weight: 900;
+	    letter-spacing: 0.2em;
 	    color: #353533;
+	    color: #585858;
 	    font-family: Georgia;
 	}
 	
@@ -705,7 +706,8 @@
     /* background: linear-gradient(to left, #c2e59c , #64b3f4); */
     /* background: #83a4d4; */
     background: -webkit-linear-gradient(to left, #83a4d4 , #b6fbff);
-    background: linear-gradient(#83a4d4,#83a4d4);
+    border-radius: 200px;
+    background: linear-gradient(#9ca8bb,#d1d9e4);
 }
 	.table-wrapper {
 	    -webkit-overflow-scrolling: touch;

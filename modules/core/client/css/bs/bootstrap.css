@@ -4637,7 +4637,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   /* letter-spacing: .3em; */
   font-size: .85em;
   font-weight: 900;
-  font-family: 'Harmattan';
+  text-shadow: 1px 1px 8px black;
+  font-family: Georgia;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
