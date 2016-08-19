@@ -1,3 +1,31 @@
+@font-face {
+    font-family: DinLight;
+    src: url(fonts/dinlight.ttf);
+}
+
+.gradient-pattern {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 320px;
+  height: 320px;
+  border: none;
+  font: normal 1px/normal Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: -webkit-linear-gradient(90deg, rgba(255,0,102,0) 20%, rgba(255,0,102,0.0980392) 20%, rgba(255,0,102,0.0980392) 40%, rgba(255,0,102,0.2) 40%, rgba(255,0,102,0.2) 60%, rgba(255,0,102,0.4) 60%, rgba(255,0,102,0.4) 80%, rgba(255,0,102,0.6) 80%), -webkit-linear-gradient(180deg, rgba(255,0,102,0) 20%, rgba(255,0,102,0.0980392) 20%, rgba(255,0,102,0.0980392) 40%, rgba(255,0,102,0.2) 40%, rgba(255,0,102,0.2) 60%, rgba(255,0,102,0.4) 60%, rgba(255,0,102,0.4) 80%, rgba(255,0,102,0.6) 80%), rgb(255, 204, 0);
+  background: -moz-linear-gradient(0deg, rgba(255,0,102,0) 20%, rgba(255,0,102,0.0980392) 20%, rgba(255,0,102,0.0980392) 40%, rgba(255,0,102,0.2) 40%, rgba(255,0,102,0.2) 60%, rgba(255,0,102,0.4) 60%, rgba(255,0,102,0.4) 80%, rgba(255,0,102,0.6) 80%), -moz-linear-gradient(-90deg, rgba(255,0,102,0) 20%, rgba(255,0,102,0.0980392) 20%, rgba(255,0,102,0.0980392) 40%, rgba(255,0,102,0.2) 40%, rgba(255,0,102,0.2) 60%, rgba(255,0,102,0.4) 60%, rgba(255,0,102,0.4) 80%, rgba(255,0,102,0.6) 80%), rgb(255, 204, 0);
+  background: linear-gradient(0deg, rgba(255,0,102,0) 20%, rgba(255,0,102,0.0980392) 20%, rgba(255,0,102,0.0980392) 40%, rgba(255,0,102,0.2) 40%, rgba(255,0,102,0.2) 60%, rgba(255,0,102,0.4) 60%, rgba(255,0,102,0.4) 80%, rgba(255,0,102,0.6) 80%), linear-gradient(-90deg, rgba(255,0,102,0) 20%, rgba(255,0,102,0.0980392) 20%, rgba(255,0,102,0.0980392) 40%, rgba(255,0,102,0.2) 40%, rgba(255,0,102,0.2) 60%, rgba(255,0,102,0.4) 60%, rgba(255,0,102,0.4) 80%, rgba(255,0,102,0.6) 80%), rgb(255, 204, 0);
+  background-position: auto auto;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
 .c-form-input {
     background: #f3f3f3;
     border: 1px solid #cfd2d1;
@@ -10,14 +38,7 @@ background: #283048; /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #283048 , #859398); /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #283048 , #859398); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.c-form-label {
-    color: #838483;
-    font-weight: 300;
-    font-family: Georgia;
-    text-align: center;
-    margin-left: 1.5em;
-    text-shadow: none;
-}
+
 
 .up-10 {
     position: relative;
@@ -66,8 +87,8 @@ h1.c-sat{
     /* Using the custom font we've included in the HTML tab: */
     /* font-family: Satisfy, cursive; */
     font-weight:normal;
-    font-size:24px;
-    padding-top: 60px;
+    font-size: 18px;
+    padding-top: 50px;
 }
 
 .padding-3050 {
@@ -78,13 +99,15 @@ form.c-modal-form {
     margin: 0 0 2em 0;
     overflow: hidden;
     background: #f3f3f3;
-    height: 45em;
-    border: 1px solid #575857;
+    border-radius: 6px;
+    height: 640px;
+    border: 1px solid #030821;
     padding-top: .3em;
 }
 
 .left-7 {
-    margin-left: 16em;
+    margin-left: 10em;
+    margin-top: .75em;
 }
 
 .c-button {
@@ -705,6 +728,7 @@ text-shadow: 4px 4px 1px #300000;
         }
 
 
+
 .c-loader {
  height: 6em;
  margin: 6em 0px 0px -4em;
@@ -760,15 +784,15 @@ text-shadow: 4px 4px 1px #300000;
  form.c-hell {
     margin: 0 0 8em 0;
     background: whitesmoke;
-    background: #ECE9E6; /* fallback for old browsers */
+    /* background: #ECE9E6; */ /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #ECE9E6 , #d6d5d5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: linear-gradient(to left, #ECE9E6 , #e6e6e6); */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     width: 50%;
     padding: 5em 6em;
     margin-left: 25%;
-    font-family: Georgia;
+    font-family: Harmattan;
     position: relative;
-    box-shadow: 0 0 40px black;
+    box-shadow: 0 0 3px #4e4e4e;
     top: -4.5em;
 }
 

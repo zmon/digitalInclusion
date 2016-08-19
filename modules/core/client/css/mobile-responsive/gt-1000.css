@@ -12,7 +12,23 @@
 	    box-shadow: 0 0 12px #3e3e3e;
 	    top: -1.5em;
 	}
-
+	#main {
+	    border-radius: .1em;
+	    outline: 0;
+	    background-color: #eaeaea;
+	    background-image: url(https://www.transparenttextures.com/patterns/brilliant.png);
+	    border: 1px solid #3c3434;
+	    box-shadow: 0 0 0 1px #d2d2d2,inset 0 0 100px #eaeaea,0 0 2.5px #757575, 0 0 10px #dedede, inset 0 0 7px ivory;
+	    /* background: none; */
+	    /* background: transparent; */
+	    /* box-shadow: none; */
+	    top: -8em;
+	    position: relative;
+	    padding-top: 12.6em;
+	    height: 45.5em;
+	    border: none;
+	    border-radius: 18px;
+	}
 	span#training-day-user {
    		margin-left: 1.8em;
 	    color: #c58000;
@@ -134,14 +150,18 @@
 	    margin-right: 2px;
 	    line-height: 1.42857143;
 	    border: 1px solid transparent;
-	    color: #e5efc0;
-	    letter-spacing: .1pc;
+	    color: #393c2e;
+	    color: #010a01;
+	    letter-spacing: .15pc;
 	    text-shadow: 0 0 10px #716e04;
-	    font-weight: 900;
-	    /* text-shadow: none; */
+	    font-weight: 500;
+	    text-shadow: none;
 	    border-radius: 4px 4px 0 0;
 	    font-size: .56em;
 	    font-family: 'Raleway';
+	    font-family: DinLight;
+	    font-family: Georgia;
+	    padding-top: 12px;
 	}
 	input#pac-input {
 	    position: relative;
@@ -167,12 +187,12 @@
 	    background: silver;
 	    background: radial-gradient(#c7e2ff,#b8d4e6,#b4cdd6);
 	    border: none;
-	
 	    background: background: #ADD100; /* fallback for old browsers */
 	    background: -webkit-linear-gradient(to left, #ADD100 , #7B920A); /* Chrome 10-25, Safari 5.1-6 */
 	    background: linear-gradient(to left, #eaecdb , #c1c5ac); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	    border-radius: 18px;
 	    height: 610px;
-	    box-shadow: 0 0 5px #afafaf, inset 0 0 200px #90928c, 0 0 0 1px #b5b5b5, 0 0 6px #8c8c8c;
+	    box-shadow: 0 0 2px #cccccc, inset 0 0 200px #90928c, 0 0 3px #a0a0a0, 0 0 5px #6d6d6d;
 	}
 
 	.row.butane {
@@ -204,7 +224,7 @@
 	}
 
 	p#headerP {
-	    margin-top: -3.75em;
+	    margin-top: -7.05em;
 	}
 
 	ul.alt {
@@ -224,7 +244,7 @@
 	    width: 64em;
 	    max-width: calc(100% - -.4em);
 	    margin: 0 auto;
-	    top: -8.4em;
+	    top: -6.4em;
 	    background: #b0b990;
 	    box-shadow: inset 0 0 200px #e2eff1, 0 0 1px #5a5959;
 	    border: 1px double #747879;
@@ -244,9 +264,22 @@
 	    z-index: 99999;
 	    background: linear-gradient(#eef2f3,#dfe6ea);
 	    background: #E0EAFC; /* fallback for old browsers */
-	    background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3); /* Chrome 10-25, Safari 5.1-6 */
-	    box-shadow: none;
-	    background: linear-gradient(to left, #6e7b92 , #CFDEF3, #CFDEF3,#6e7b92); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	     /* Chrome 10-25, Safari 5.1-6 */
+	    box-shadow: 0 0 3px #191919, inset 0 0 100px #d4d4d4;
+	    border-radius: 18px;
+	    background: linear-gradient(to left, #f0f5ff , #eaf3ff, #ebf3ff,#f5f8ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	    background: #e43a15; /* fallback for old browsers */
+	     /* Chrome 10-25, Safari 5.1-6 */
+	     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	     /* fallback for old browsers */
+	     /* Chrome 10-25, Safari 5.1-6 */
+	     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	     /* fallback for old browsers */
+	     /* Chrome 10-25, Safari 5.1-6 */
+	     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	    background: #ECE9E6; /* fallback for old browsers */
+	    background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
+	    background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	}
 
 	.row.butane {
@@ -261,18 +294,33 @@
 	    background: -webkit-linear-gradient(to left, #83a4d4 , #b6fbff);
 	    background: linear-gradient(#83a4d4,#83a4d4);
 	}
-
+	.c-form-label {
+    color: #838483;
+    font-weight: 300;
+    position: relative;
+    font-family: Harmattan;
+    top: -.5em;
+    text-align: center;
+    margin-left: -1em;
+    text-shadow: none;
+}
 	.row.butane {
 	    /* height: 186.5px; */
-	    box-shadow: inset 0 0 250px black;
-	    background: none;
+	    box-shadow: inset 0 0 150px #fffffb;
+	    background: #f1f1f1;
 	    /* border-bottom: none; */
-	    background: url("https://www.transparenttextures.com/patterns/black-thread.png");
+	    /* background: url("https://www.transparenttextures.com/patterns/black-thread.png"); */
 	    display: inherit;
-	    background: linear-gradient(to left, #c2e59c , #64b3f4);
-	    background: #83a4d4;
+	    /* background: linear-gradient(to left, #c2e59c , #64b3f4); */
+	    /* background: #83a4d4; */
+	    border-radius: 18px;
+	    border-bottom-right-radius: 0;
+	    border: none;
+	    outline: none;
+	    border-bottom-left-radius: 0;
 	    background: -webkit-linear-gradient(to left, #83a4d4 , #b6fbff);
-	    background: linear-gradient(#83a4d4,#83a4d4);
+	    /* background: linear-gradient(#83a4d4,#83a4d4); */
+	    /* background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAQ0lE…8R+4+IoL3HswM1N0TEchM3HtBVTUrzIydpKqzcs7Bzg++WR+Le2A33AAAAABJRU5ErkJggg==') repeat; */
 	}
 }
 

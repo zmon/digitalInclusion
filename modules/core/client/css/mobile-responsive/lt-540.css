@@ -1,0 +1,22 @@
+@media (max-width: 540px) {
+	section#customMap {
+    height: 600px;
+    border-left: 1px solid #626f64;
+    border-right: 1px solid #637766;
+    box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
+    border: 2px solid #676f03;
+    box-shadow: 0 0 1px #c8d473, 0 0 30px gray;
+    margin-top: 17.3em;
+    margin-bottom: 2.7em;
+    width: 98.9%;
+    margin-right: 29.2em;
+    border: 20px solid black;
+    margin-left: .125em;
+    border: none;
+    border-top: 1px solid #2d2d00;
+    border: 1px solid #7b7b76;
+    border-radius: 12px;
+    border: 6.5px solid #252d14;
+    border: 6.5px solid #969696;
+}
+}

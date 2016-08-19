@@ -76,6 +76,9 @@ exports.locate = function(req, res) {
  * Create a place
  */
 exports.create = function (req, res) {
+  console.log("create");
+  // var bl = checkForExisting(req.body.title, req.body.readableAddress);
+  // console.log(bl);
   var place = new Place(req.body);
   console.log("creating place");
   
@@ -96,8 +99,100 @@ exports.create = function (req, res) {
   });
 };
 
+// var existing = [];
+
+function checkForExisting(title, addr) {
+
+  console.log("checkForExisting");
+  console.log(title);
+  console.log(addr);
+  var title = title;
+  var addr = addr;
+  var result = [];
+  // var addr = "not in db"
+
+  // Place.find().
+  Place.find().where('readableAddress').equals(addr).exec(function(err,place) {
+    console.log('Place.find()');
+    // var res = {};
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      console.log("korkoru");
+      console.log(place.length);
+      var num = place.length;
+      var boolean = read(num);
+      console.log("boolean");
+      console.log(boolean);
+      // return boolean;
+      result.push(boolean);
+      console.log(result);
+      return res.json(result);
+      // return result;
+    }
+  });
+}
+
+
+function read(number) {
+  console.log("read");
+  console.log(number);
+  if (number >= 1) {
+    console.log("gte 1");
+    return true;
+  } else {
+
+    console.log("not gte 1");
+    return false;
+  }
+}
+
+
+
+exports.search = function (req, res) {
+  console.log("search(req, res)");
+  console.log(req.body);
+  var title = req.body.title;
+  var addr = req.body.readableAddress;
+  console.log(title);
+  console.log(addr);
+  var result = [];
+  Place.find().where('readableAddress').equals(addr).exec(function(err,place) {
+    console.log('inside exports.search   >>>  Place.find()');
+    // var res = {};
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      console.log("inside -- korkoru");
+      console.log(place.length);
+      var num = place.length;
+      var boolean = read(num);
+      console.log("boolean");
+      console.log(boolean);
+      // return boolean;
+      result.push(boolean);
+      console.log(result);
+      return res.json(result[0]);
+      // return result;
+      // return result;
+    }
+  });
+  // res.json(req.place);
+};
+
+
+
+
+
+
+
 exports.find = function (req, res) {
   console.log("finding");
+  checkForExisting(req.body.title, req.body.readableAddress);
 
   if (isNaN(req.body.zip)) {
     // get isps
@@ -194,6 +289,18 @@ exports.placeByQuery = function (req, res, next, query) {
 exports.read = function (req, res) {
   res.json(req.place);
 };
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Update a place

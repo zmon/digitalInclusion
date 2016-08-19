@@ -71,6 +71,8 @@
 	    background: -webkit-linear-gradient(to left, #4b6cb7 , #182848);
 	    background: linear-gradient(to left, #182848, #4b6cb7);
 	    background: -webkit-linear-gradient(to left, #C04848 , #480048);
+	    background: linear-gradient(to left, #464343 ,#9fa07e, #dcdeb2,#9fa07e, #524e4e);
+	    box-shadow: 0 0 15px #130909;
 	}
 
 	ul.actions.fit.small.lower-btns {

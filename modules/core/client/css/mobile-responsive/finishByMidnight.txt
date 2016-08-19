@@ -1,18 +1,4 @@
 
-
-
-
-1, 1, 1, 1, 1, 1, 1, 1
-
-1, 1, 1
-1, 1, 1, 1, 1, 1, 1, 1, 1
-
-
-
-what can i do in just under 2 hours??
-
-
-
 pm2 start process.[json|yml] --env production
 
 
@@ -26,8 +12,6 @@ printing pages
 
 
 
-
-directions
 sharing resources 
 crud
 auth-protected routes
@@ -51,3 +35,8 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 https://www.google.com/maps/dir//4928+Main+Street,+Kansas+City,+MO+64112/@39.0374,-94.5875,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x87c0efbc1225668b:0x1bbd092f4ee9f253!2m2!1d-94.5874594!2d39.0373724
 
 https://www.google.com/maps/dir/current+location/Sydney+Opera+House,+Sydney+Opera+House,+Bennelong+Point,+Sydney+NSW+2000,+Australia/
+
+
+
+problems in ranges
+1080  to 1100

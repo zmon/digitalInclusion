@@ -4057,10 +4057,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #ace634;
+  color: #415616;
   text-shadow: 0 0 10px whitesmoke;
   cursor: default;
-  background: transparent;
+  text-shadow: none;
+  background: #f5ffe2;
   border: 1px solid #ddd;
   margin-top: .3em;
   padding-top: .925em;
@@ -4068,7 +4069,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border: 1px solid #ace634;
   box-shadow: 0 0 145px #e8ff90;
   border-top-left-radius: .5em;
-  box-shadow: inset 0 0 145px olive, 0 0 14px olivedrab;
+  box-shadow: inset 0 0 55px #ffffdf, 0 0 1px olivedrab;
   /* border-bottom-color: transparent; */
   border-top-right-radius: .5em;
   border-radius: 1.5em;
@@ -4631,7 +4632,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
   /* color: #ffffff; */
-  color: #f7fddf;
+  color: #ffffff;
+  text-shadow: 0 0 12px #7b7b7b;
   /* letter-spacing: .3em; */
   font-size: .85em;
   font-weight: 900;
@@ -4649,17 +4651,19 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > li > a {
   color: #fbfbfb;
   font-size: .7em;
+  text-shadow: 0 0 2px #464646;
   font-weight: 600;
   text-align: justify;
   font-size: smaller;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: black;
+  color: #f7e7e7;
+  text-shadow: 0 0 1px #404040;
   background-color: rgb(228, 228, 228);
   background: #757F9A; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #757F9A , #D7DDE8); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #757F9A , #D7DDE8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to left, #b0b9d2 , #D7DDE8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 99.5%;
   font-size: small;
   padding-left: .8em;
@@ -5986,13 +5990,16 @@ button.close {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid #999;
-  border: 2px solid rgba(54, 56, 3, 0.82);
+  border: none;
   border-radius: 6px;
   background: radial-gradient(#dbdcc0,#e0ddb8);
   padding-top: 1em;
   outline: 0;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+  background: #283048; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #283048 , #859398); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #bfc2ce , #b1b1b1,#fbfeff,#b1b1b1, #c7c8cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .modal-backdrop {
   position: fixed;
@@ -6019,20 +6026,24 @@ button.close {
   margin-top: -2px;
 }
 .modal-title {
+  position: relative;
+  top: .8em;
   margin: 0;
   line-height: 1.42857143;
-  color: #f7fde2;
-  letter-spacing: .05em;
-  font-size: 1.25em;
+  color: #303133;
+  letter-spacing: .2em;
+  font-size: 1.425em;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   text-shadow: 1px 1px #989797;
+  text-shadow: none;
 }
 .modal-body {
   position: relative;
   padding: 15px;
   padding-top: 2em;
   border: none;
+  height: 680px;
   outline: none;
 }
 .modal-footer {
@@ -6064,7 +6075,10 @@ button.close {
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-    box-shadow: inset 0 0 200px #4e4e45;
+    box-shadow: inset 0 0 200px #4e4e45, 0 0 0 1px #030821;
+    background: linear-gradient(to left, #ECE9E6 , #FFFFFF, #ECE9E6);
+    box-shadow: 0 0 3px #191919, inset 0 0 100px #d4d4d4;
+    font-family: Harmattan;
   }
   .modal-sm {
     width: 300px;

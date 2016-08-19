@@ -3,8 +3,21 @@
 	#header p {
 	    color: #4a4a4a;
 	    position: relative;
-	    top: -16.3em;
-	    font-size: .95em;
+	    top: -24.7em;
+	    font-size: .8em;
+	    letter-spacing: normal;
+	}
+	
+	ul.actions.fit.small {
+		margin-left: -0.5em;
+		width: calc(100% + -29.5em);
+		min-width: 150px;
+		position: relative;
+		margin-top: -.04em;
+		/* margin-left: 1em; */
+		left: 23.8%;
+		top: -.2em;
 	}
 
+	
 }

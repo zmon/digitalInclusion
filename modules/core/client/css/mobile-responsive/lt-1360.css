@@ -1,0 +1,22 @@
+
+
+
+@media (max-width: 1360px) {
+	section.meta-w-form {
+		background: #464646;
+		left: -2.65em;
+		padding: 1em .1em 1em 4em;
+		position: absolute;
+		height: 9.7em;
+		border-radius: 9px;
+		/* border-bottom-left-radius: 6px; */
+		/* border-bottom-right-radius: 6px; */
+		top: -2.2em;
+		border: 1px solid #b3b3b3;
+		box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a;
+		width: 232%;
+		box-shadow: inset 0 0 160px #cacaca, 0 0 0 1px #5a5a5a;
+		background: linear-gradient(to left, #d9d9da , #d2d2d2,#dcdcdc);
+	}
+
+}

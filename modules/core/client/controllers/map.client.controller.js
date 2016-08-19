@@ -242,7 +242,7 @@ setTimeout(function(){
 
 	    function recenterMap(latlng) {
 
-        removeAllMapData();
+        // removeAllMapData();
   			// $scope.map.setZoom(13);
         $scope.zoomIn();
   			$scope.map.setCenter(latlng);
@@ -299,8 +299,8 @@ setTimeout(function(){
         $scope.zipSearchError = false;
 	      // console.log(masterZips);
         var valid = validZipcode(zipcode);
-        console.log("valid?");
-        console.log(valid);
+        // console.log("valid?");
+        // console.log(valid);
 
         if (valid) {
           var zc = zcPosition.getZcPosition(zipcode);
@@ -841,6 +841,10 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
         document.getElementById('address-mob').innerText = json.address1;
         document.getElementById('city-mob').innerText = json.city;
         document.getElementById('state-mob').innerText = json.state;
+
+        var html = document.getElementById('html');
+        console.log("html");
+        console.log(html);
              
         if (typeof json.primaryCategory != 'undefined') {
           document.getElementById('primaryCategory-mob').innerText = categoryIconText(json.primaryCategory);

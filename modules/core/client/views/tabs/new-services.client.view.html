@@ -50,7 +50,7 @@ $('label').click(function() {
                                   <!-- <h3 class="custom-form-header">1. Basic Information</h3> -->
                                   <div class="form-section-custom">
                                     <div class="form-group" show-errors>
-                                      <label class="control-label" for="title">* Name</label>
+                                      <label class="control-label" for="title">Name *</label>
                                       <input name="title" type="text" ng-model="vm.place.title" id="title" class="form-control">
                                       <div ng-messages="vm.form.placeForm.title.$error" role="alert">
                                         <p class="help-block error-text" ng-message="required">Place title is required.</p>
@@ -58,7 +58,7 @@ $('label').click(function() {
                                     </div>
                                     
                                     <div class="form-group" show-errors>
-                                      <label class="control-label" for="phone">* Phone</label>
+                                      <label class="control-label" for="phone">Phone *</label>
                                       <input name="phone" type="text" ng-model="vm.place.phone" id="phone" class="form-control">
                                       <div ng-messages="vm.form.placeForm.phone.$error" role="alert">
                                         <p class="help-block error-text" ng-message="required">Place phone number is required.</p>
@@ -66,7 +66,7 @@ $('label').click(function() {
                                     </div>
                                     
                                     <div class="form-group" show-errors>
-                                      <label class="control-label" for="url">Website</label>
+                                      <label class="control-label" for="url">Website (<em>optional</em>)</label>
                                       <input name="url" type="text" ng-model="vm.place.url" id="url" class="form-control">
                                     </div>
 
@@ -83,12 +83,10 @@ $('label').click(function() {
                                    
                                     
 
-                                  </div>
-                                  <!-- <h3 class="custom-form-header"></h3> -->
-                                  <div class="form-section-custom">
+          
                                     
                                     <div class="form-group" show-errors>
-                                      <label class="control-label" for="address1">Address Line 1</label>
+                                      <label class="control-label" for="address1">Address *</label>
                                       <input name="address1" type="text" ng-model="vm.place.address1">
 
 
@@ -100,30 +98,25 @@ $('label').click(function() {
                                       <input name="address2" type="text" ng-model="vm.place.address2" id="address2" class="form-control">
                                     </div>
                                     <div class="form-group" show-errors>
-                                      <label class="control-label" for="city">City</label>
+                                      <label class="control-label" for="city">City *</label>
                                       <input name="city" type="text" ng-model="vm.place.city" id="city" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label" for="state">State</label>
+                                      <label class="control-label" for="state">State *</label>
                                       <select name="state" ng-model="vm.place.state" id="state" class="form-control">
                                         <option value="MO">Missouri</option>
                                         <option value="KS">Kansas</option>
                                       </select>
                                     </div>
                                     <div class="form-group" show-errors>
-                                      <label class="control-label" for="zip">Zip Code</label>
+                                      <label class="control-label" for="zip">Zip Code *</label>
                                       <input name="zip" type="text" ng-model="vm.place.zip" id="zip" class="form-control">
                                     </div>
 
-                                    
-                                  </div>
-
-                                  <!-- <h3 class="custom-form-header"></h3> -->
-
-                                  <div class="form-section-custom">
+                 
 
                                     <div class="form-group" show-errors>
-                                      <label class="control-label" for="categories">Select all services offered (choose all that apply from list)</label>
+                                      <label class="control-label" for="categories">Select all services offered (choose all that apply from list) *</label>
                               
                                       <select selector
                                         multi="true"
@@ -135,7 +128,7 @@ $('label').click(function() {
 
 
                                     <div class="form-group">
-                                      <label class="control-label" for="primaryCategory">Select a primary service category (choose one)</label>
+                                      <label class="control-label" for="primaryCategory">Select a primary service category (choose one) *</label>
                                       <select selector
                                         model="vm.place.primaryCategory"
                                         id="primaryCategory"
@@ -148,7 +141,7 @@ $('label').click(function() {
                            
 
                                     <div class="form-group">
-                                      <label class="control-label" for="description">Description</label>
+                                      <label class="control-label" for="description">Description (<em>optional</em>)</label>
                                       <textarea name="description" data-ng-model="vm.place.description" id="description" class="form-control" cols="30" rows="4"></textarea>
                                     </div> 
 

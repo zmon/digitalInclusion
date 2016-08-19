@@ -1,0 +1,41 @@
+.color-box {
+	/*background: pink;*/
+	border: 2px solid black;
+	height: 150px;
+	background: inherit;
+	width: 150px;
+	margin-left:	120px;
+}
+
+/* descending max-widths */
+/* ascending min-widths */
+
+
+@media (max-width: 500px) {
+	.color-box {
+		background: pink;
+	}
+}
+
+/* 40px off */
+
+@media (max-width: 400px) {
+	.color-box {
+		background: lavender;
+	}
+}
+
+/* turns yellow at 606  */
+
+@media (min-width: 551px) {
+	.color-box {
+		background: yellow;
+	}
+}
+
+/* 715  */
+@media (min-width: 651px) {
+	.color-box {
+		background: green;
+	}
+}

@@ -97,11 +97,10 @@
 	    margin-top: -3em;
 	}
 	section.meta-w-form {
-	 
-	    height: 4em;
-	    width: 100%;
-	    top: -2em;
-	    left: -.51em;
+	 height: 4em;
+	 width: 100%;
+	 top: 17.6em;
+	 left: -.51em;
 	}
 	#footer > * {
 	    width: 70%;
@@ -161,6 +160,20 @@
 	    /* box-shadow: 0 0 1px #909090, 0 0 1px #1a222d, 0 0 1px #a0a0a0, 0 0 1px #313129; */
 	    box-shadow: none;
 	    border: none;
+	}
+	#header p.mobile-p {
+		position: relative;
+		top: -12em;
+		position: relative;
+		left: -.1em;
+		top: -45.1em;
+	}
+	.panel-title {
+	    margin-top: 0;
+	    margin-bottom: 0;
+	    font-size: 16px;
+	    margin-bottom: .075em;
+	    color: inherit;
 	}
 }
 

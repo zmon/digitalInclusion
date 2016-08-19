@@ -43,6 +43,7 @@
 .codrops-top span.right a {
 	float: left;
 	display: block;
+	visibility: hidden;
 }
 
 
