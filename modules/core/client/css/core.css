@@ -160,25 +160,26 @@ div#info-wrapper {
 }
 
 #sw {
-    display:none;
+    display: none;
     position: absolute;
     left: 80.75%;
     height: 422px;
     width: 9.5em;
     background: radial-gradient(#e1ecf5,#e4eef1,#dff6ff);
+    background: white;
     clear: both;
     border: 1px solid #a9a9ad;
-    box-shadow: 0 0 0 1px #9bbbba;
+    box-shadow: 0 0 0 1px #c5c5c5;
     border-left: .2em solid gray;
-    top: -53px;
+    top: -54px;
     border-left: 1px solid #070a0a;
     /* border-left: none; */
     border-right: none;
     margin-left: 0;
     /* box-shadow: 0 0 0 3px gray; */
     padding: 0 0 2em 0;
-  }
-  
+    border: 12px solid #efefef;
+}
 section#add-resources {
     margin-left: 5%;
     padding-right: 7em;

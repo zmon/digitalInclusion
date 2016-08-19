@@ -46,11 +46,10 @@
 	    margin-top: -3em;
 	}
 	section.meta-w-form {
-	 
-	    height: 4em;
-	    width: 100%;
-	    top: 17em;
-	    left: -.51em;
+	 height: 4em;
+	 width: 100%;
+	 top: 18em;
+	 left: .51em;
 	}
 	#footer > * {
 	    width: 70%;
@@ -110,5 +109,8 @@
 	    /* box-shadow: 0 0 1px #909090, 0 0 1px #1a222d, 0 0 1px #a0a0a0, 0 0 1px #313129; */
 	    box-shadow: none;
 	    border: none;
+	}
+	#header h1 {
+	    left: -.6em;
 	}
 }

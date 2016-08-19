@@ -57,7 +57,9 @@
 	#header {
 	    padding: 1.4em 2em 0.1em 2em;
 	}
-
+	#header h1 {
+	    left: -.5em;
+	}
 	section#customMap {
 	    height: 600px;
 	    border-left: 1px solid #626f64;

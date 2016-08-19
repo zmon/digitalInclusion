@@ -72,8 +72,8 @@
 	    background: none;
 	    height: 4em;
 	    width: 100%;
-	    top: 17.2em;
-	    left: -1.75em;
+	    top: 17.8em;
+	    left: -.25em;
 	}
 	#main input[type="submit"], #main input[type="reset"], #main input[type="button"], #main button, #main .button {
 		/* background-color: #f5f5f5; */
@@ -181,13 +181,15 @@
 		padding-right: 6em;
 		padding-left: 6em;
 		width: 130.95%;
-		left: .24em;
+		left: 2.4em;
 		width: 420px;
 		border-radius: 24px;
 		/* border-top-left-radius: 20px; */
 		/* border-bottom-left-radius: 70px; */
 		/* border-top-right-radius: 20px; */
 		border-right: none;
+		border: 2.5px solid #dedede;
+		border-radius: 8px;
 	}
 	#header h1.mobile-h1 {
 		height: 40.83em;

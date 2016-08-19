@@ -24,23 +24,23 @@
 	}
 
 	section#customMap {
-		height: 600px;
-		border-left: 1px solid #626f64;
-		border-right: 1px solid #637766;
-		box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
-		border: 2px solid #676f03;
-		box-shadow: 0 0 1px #c8d473;
-		margin-top: 15.55em;
-		margin-bottom: 2.7em;
-		width: 110.1%;
-		padding-right: 8em;
-		margin-left: .1em;
-		border: none;
-		border-top: 1px solid #2d2d00;
-		border: 1px solid #7b7b76;
-		border-radius: 8px;
-		border: 1.5px solid #252d14;
-	}
+    height: 600px;
+    border-left: 1px solid #626f64;
+    border-right: 1px solid #637766;
+    box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
+    border: 2px solid #676f03;
+    box-shadow: 0 0 1px #c8d473;
+    margin-top: 15.55em;
+    margin-bottom: 2.7em;
+    width: 105.1%;
+    padding-right: 8em;
+    margin-left: .1em;
+    border: none;
+    border-top: 1px solid #2d2d00;
+    border: 1px solid #7b7b76;
+    border-radius: 8px;
+    border: 2.5px solid #757575;
+}
 	.sh-up {
 		position: relative;
 		top: -3.5em;
@@ -50,9 +50,9 @@
 	#header p {
 		color: #37382e;
 		position: relative;
-		top: -7.6em;
-		left: 2em;
-		font-size: .85em;
+		top: -9.5em;
+		left: 4.4em;
+		font-size: .75em;
 	}
 	section.meta-w-form {
 	    background: none;
@@ -141,7 +141,7 @@
 	 height: 4em;
 	 width: 100%;
 	 top: 18em;
-	 left: -.2em;
+	 left: 1em;
 	}
 	#footer > * {
 	    width: 70%;
@@ -222,12 +222,19 @@
 	}*/
 
 	div#share-window {
-	    background: gainsboro;
-	    padding: 1em 2em;
+	    background: #f9f9f9;
+	    padding: .25em 1.5em;
 	    margin: 1em;
-	    width: 65%;
+	    width: 84%;
 	}
-
+	#main input[type=text], #main input[type=password], #main input[type=email], #main select, #main textarea {
+		background: rgba(245, 251, 255, 0.99);
+		border-color: #bdced4;
+		height: 2em;
+		border-radius: 10px;
+		width: 140px;
+		margin-left: 40px;
+	}
 	.row.butane {
 	    /* border: 2px solid red; */
 	    margin-left: .01em;
@@ -278,8 +285,11 @@
 
 @media (max-width: 499px) {
 	h1#headerH1 {
-	    margin-left: -3.1em;
-	    width: 130.5%;
+	    margin-left: -.199em;
+	    width: 110.5%;
+	    font-size: .951em;
+	    padding-top: .951em;
+	    margin-bottom: 1em;
 	}
 }
 

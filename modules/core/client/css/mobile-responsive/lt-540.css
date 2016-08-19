@@ -1,5 +1,5 @@
 @media (max-width: 540px) {
-	section#customMap {
+    section#customMap {
     height: 600px;
     border-left: 1px solid #626f64;
     border-right: 1px solid #637766;
@@ -8,10 +8,10 @@
     box-shadow: 0 0 1px #c8d473, 0 0 30px gray;
     margin-top: 15.13em;
     margin-bottom: 2.7em;
-    width: 102.9%;
+    width: 100.9%;
     margin-right: 29.2em;
     border: 20px solid black;
-    margin-left: .125em;
+    margin-left: -.0125em;
     border: none;
     border-top: 1px solid #2d2d00;
     border: 1px solid #7b7b76;

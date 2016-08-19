@@ -3,20 +3,20 @@
 	    width: 12em;
 	}*/
 	.nav-tabs {
-		border: none;
-		border-radius: .125em;
-		box-shadow: inset 0 0 0 300px #ffffff, 0 0 0 1px #c7cec7, 0 0 3px #3c3c3c;
-		opacity: 1;
-		padding: .65em .125em .15em 5.85em;
-		position: relative;
-		width: 119%;
-		box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a;
-		top: -6.4em;
-		height: 2.8em;
-		border-radius: 21px;
-		left: -3.5em;
-		background: linear-gradient(to left, #f3f0df , #fffeeb, #eae8d8 );
-		box-shadow: inset 0 0 85px #e2ecc6, 0 0 0 1px #868686, 0 0 3px #353535;
+	    border: none;
+	    border-radius: .125em;
+	    box-shadow: inset 0 0 0 300px #ffffff, 0 0 0 1px #c7cec7, 0 0 3px #3c3c3c;
+	    opacity: 1;
+	    padding: .65em .125em .15em 5em;
+	    position: relative;
+	    width: 119%;
+	    box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a;
+	    top: -6.4em;
+	    height: 2.8em;
+	    border-radius: 64px;
+	    left: -4.25em;
+	    background: linear-gradient(to left, #f3f0df , #fffeeb, #eae8d8 );
+	    box-shadow: inset 0 0 85px #e2ecc6, 0 0 0 1px #868686, 0 0 3px #353535;
 	}
 	#main {
 	    border-radius: .1em;
@@ -118,6 +118,7 @@
 	    border: 1px solid transparent;
 	    color: gray;
 	    border-radius: 4px 4px 0 0;
+	    margin-top: -.3em;
 	    color: #798061;
 	    letter-spacing: .1pc;
 	    padding-bottom: 10px;
@@ -129,6 +130,7 @@
 	    width: calc(50% - 2em);
 	    margin-left: 12em;
 	    font-size: .9em;
+	        border-radius: 64px;
 	}
 
 	main#main-page {
@@ -211,7 +213,26 @@
 	    margin-top: -1em;
 	    margin-right: .05em;
 	}
-		
+	#footer {
+	    display: -moz-flex;
+	    display: -webkit-flex;
+	    display: -ms-flex;
+	    display: flex;
+	    -moz-flex-wrap: wrap;
+	    position: relative;
+	    text-align: center;
+	    width: 100%;
+	    left: 17.5em;
+	    top: -70em;
+	    font-size: .7em;
+	    color: black;
+	    -webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	    padding: 5em 5em 3em 5em;
+	    /* width: calc(100% + 2em); */
+	    margin: 0;
+	}
 /*
 	a.button.special.fit.small.fit-cx {
 	    width: 12em;
@@ -410,7 +431,7 @@
 	main#main-page {
 	    position: relative;
 	    top: -9.4em;
-	    margin-left: -5em;
+	    margin-left: -2.5em;
 	    width: 40.5em;
 	    background: radial-gradient(#929292,#868484,#9e9677,#a09a80,#929187);
 	    outline: none;
@@ -420,11 +441,10 @@
 	    border: none;
 	    background: background: #ADD100;
 	    background: -webkit-linear-gradient(to left, #ADD100 , #7B920A);
-	    background: linear-gradient(to left, #eaecdb , #c1c5ac);
+	    background: linear-gradient(to left, #eaecdb , #d7d8d0);
 	    height: 610px;
-	    box-shadow: 0 0 5px #afafaf, inset 0 0 200px #90928c, 0 0 0 1px #b5b5b5, 0 0 6px #8c8c8c;
+	    box-shadow: 0 0 5px #afafaf, inset 0 0 200px #d6d6d6, 0 0 0 1px #b5b5b5, 0 0 6px #8c8c8c;
 	}
-
 	.row.butane {
 	    margin-left: .01em;
 	    margin-bottom: .1em;

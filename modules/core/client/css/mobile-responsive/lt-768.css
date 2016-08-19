@@ -7,20 +7,21 @@
 		font-weight: 700;
 		letter-spacing: normal;
 		background: steelblue;
-		margin-top: 1.6em;
+		margin-top: 1.5em;
 		box-shadow: 0 0 1px #e4e4e4, 0 0 1px #615711, 0 0 1px #505050, inset 0 0 100px #d0d0d0, inset 0 0 100px #a0a0a0;
 		padding-top: .945em;
 		padding-bottom: 3em;
 		color: #464646;
 		height: 13.5em;
-		background: #C02425; /* fallback for old browsers */
-		background: -webkit-linear-gradient(to left, #C02425 , #F0CB35); /* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(to left, #b72b2b , #ffd631, #bd3838); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-		background: #DAE2F8; /* fallback for old browsers */
-		background: -webkit-linear-gradient(to left, #DAE2F8 , #D6A4A4); /* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(#d9dee0 , #d6d6d6, #d4d6de ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-		border: 10px solid #dedede;
+		background: #C02425;
+		background: -webkit-linear-gradient(to left, #C02425 , #F0CB35);
+		background: linear-gradient(to left, #b72b2b , #ffd631, #bd3838);
+		background: #DAE2F8;
+		background: -webkit-linear-gradient(to left, #DAE2F8 , #D6A4A4);
+		background: linear-gradient(#d9dee0 , #d6d6d6, #d4d6de );
+		border: 3.5px solid #dedede;
 		border-radius: 8px;
+		margin-top: 2.4em;
 	}
 	li.realign {
 		position: relative;
@@ -383,9 +384,9 @@
 
 	#main .button.special, #main button.special, #main input[type=button].special, #main input[type=reset].special, #main input[type=submit].special {
 	    background-color: #a9f6fb;
-	    color: #1a461a!important;
+	    color: #145858!important;
 	    text-shadow: 0 0 12px #aeeeff;
-	    box-shadow: 0 0 0 1px limegreen, 0 0 5px black;
+	    box-shadow: 0 0 0 1px cyan, 0 0 5px black;
 	    border-radius: 12px;
 	    border: 1px solid #bdf8ff;
 	    padding-top: .3em;
@@ -627,11 +628,35 @@
 	    margin-right: -60px;
 	    border: none;
 	    outline: none;
+	    left: .2em;
+	    top: .62em;
+	    position: relative;
+	    display: initial;
+	    box-shadow: none;
+	}
+}
+
+@media (min-width: 767px) {
+	button.navbar-toggle {
+	    width: 4px;
+	    /* height: 12px; */
+	    margin-right: -60px;
+	    border: none;
+	    outline: none;
+	    left: 42em;
+	    top: 2.262em;
+	    position: relative;
+	    display: initial;
 	    box-shadow: none;
 	}
 }
 
 @media (min-width: 769px) {
+	button.navbar-toggle {
+	
+		display: none;
+	
+	}
 	.hide-guest-menu {
 		display: none;
 	}

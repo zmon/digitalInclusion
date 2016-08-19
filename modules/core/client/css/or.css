@@ -26,8 +26,7 @@ body {
     background-image: url('/modules/core/client/img/blueprint-white.svg');
     background-size: 30px 30px;
     /* border: 12px solid whitesmoke; */
-    /* background: none #272725; */
-    background-position: center center;
+    box-shadow: none;
 }
 
 body {}

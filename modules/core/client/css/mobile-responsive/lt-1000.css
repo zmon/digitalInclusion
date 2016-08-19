@@ -56,17 +56,19 @@
 	    cursor: default;
 	    background: transparent;
 	    border: 1px solid #ddd;
-	    margin-top: .2em;
-	    padding-top: .65em;
+	    margin-top: -.375em;
+	    padding-top: 1.3em;
+	    padding-bottom: 2.364em;
 	    height: 2.8em;
-	    border: 1px solid #eef32b;
+	    border: 1px solid #5e6108;
 	    box-shadow: 0 0 145px #e8ff90;
 	    border-top-left-radius: .5em;
 	    box-shadow: inset 0 0 145px olive, 0 0 4px olivedrab;
 	    /* border-bottom-color: transparent; */
 	    box-shadow: inset 0 0 145px #c5c556, 0 0 4px #92b941, 0 0 1px black;
+	    box-shadow: none;
 	    border-top-right-radius: .5em;
-	    border-radius: 1.5em;
+	    border-radius: 24px;
 	    /* text-shadow: none; */
 	}
 	div#placeAddress {
@@ -459,7 +461,7 @@
 	
 	.nav-tabs {
 	    border: none;
-	    border-radius: 16px;
+	    border-radius: 64px;
 	    box-shadow:     box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a;
 	    opacity: 1;
 	    padding: .315em .125em .315em .5em;
@@ -496,20 +498,19 @@
 	    width: 13em;
 	    left: 11.9em;
 	    /* background: none; */
-	    background:   background: #BA5370; /* fallback for old browsers */
-	    background: -webkit-linear-gradient(to left, #BA5370 , #F4E2D8); /* Chrome 10-25, Safari 5.1-6 */
-	    /* background: linear-gradient(to left, #F4E2D8, #F4E2D8); */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	    background: background: #BA5370;
+	    background: -webkit-linear-gradient(to left, #BA5370 , #F4E2D8);
+	    /* background: linear-gradient(to left, #F4E2D8, #F4E2D8); */
 	    /* background: linear-gradient(to left, #f3e9e3, #fff7f2); */
-	    box-shadow: inset 0 0 39px #cccccc, 0 0 1px black;
+	    box-shadow: inset 0 0 39px #e4e4e4, 0 0 1px black;
 	    border: .5px solid #40351a;
 	    margin-top: -.25em;
 	    margin-right: .25em;
-	    border-radius: 4px;
+	    border-radius: 8px;
 	    font-family: Georgia;
 	    background: #fffcf8;
-	    border: 1px solid #c3beb3;
+	    border: none;
 	}
-
 	.move-up {
 	    position: relative;
 	    top: 1.7em;
@@ -609,36 +610,36 @@
 	}
 
 	#main .button.special, #main button.special, #main input[type=button].special, #main input[type=reset].special, #main input[type=submit].special {
-		background-color: #d3ffdf;
-		color: #ace634!important;
-		text-shadow: none;
-		box-shadow: 0 0 0 1px #70e840,1px 1px 1px #3c3b3b,1px 1px 1px #675a3a, 0 0 19px #33c10f, inset 0 0 50px limegreen;
-		border-radius: 12px;
-		border: 1px solid #bdf8ff;
-		padding-top: .25em;
-		text-shadow: none;
-		box-shadow: inset 0 0 145px olive, 0 0 6px olivedrab;
-		letter-spacing: .5px;
-		margin: 0 auto;
-		font-size: .875em;
-		/* padding: 0; */
-		width: 113px;
-		display: block;
-		height: 26px;
-		/* background-color: #ffffff; */
-		border: 1px solid #ace634;
-		color: #ffffff;
-		font-family: DinLight;
-		text-transform: capitalize;
-		text-shadow: black;
-		text-rendering: optimizeLegibility;
-		font-weight: 300;
-		-webkit-border-radius: 3px;
-		border-radius: 9px;
-		-webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
-		font-weight: 900;
+	    background-color: #d3ffdf;
+	    color: #006565!important;
+	    text-shadow: none;
+	    box-shadow: 0 0 0 1px #70e840,1px 1px 1px #3c3b3b,1px 1px 1px #675a3a, 0 0 19px #33c10f, inset 0 0 50px limegreen;
+	    border-radius: 12px;
+	    border: 1px solid #bdf8ff;
+	    padding-top: .25em;
+	    text-shadow: none;
+	    box-shadow: inset 0 0 145px #3fffff, 0 0 5px cyan;
+	    letter-spacing: .5px;
+	    margin: 0 auto;
+	    font-size: .875em;
+	    /* padding: 0; */
+	    width: 113px;
+	    display: block;
+	    height: 26px;
+	    /* background-color: #ffffff; */
+	    border: 1px solid cyan;
+	    color: #ffffff;
+	    font-family: DinLight;
+	    text-transform: capitalize;
+	    text-shadow: black;
+	    text-rendering: optimizeLegibility;
+	    font-weight: 300;
+	    -webkit-border-radius: 3px;
+	    border-radius: 9px;
+	    -webkit-transition: all 0.3s ease-in-out;
+	    -moz-transition: all 0.3s ease-in-out;
+	    transition: all 0.3s ease-in-out;
+	    font-weight: 900;
 	}
 
 	form.pure-form.angr {
@@ -745,8 +746,8 @@
 	    position: relative;
 	    text-align: center;
 	    width: 150%;
-	    left: .002em;
-	    top: -37em;
+	    left: -5em;
+	    top: -32em;
 	    font-size: .7em;
 	    color: black;
 	    -webkit-flex-wrap: wrap;

@@ -1,0 +1,23 @@
+@media (max-width: 420px) {
+	h1#headerH1 {
+	    margin-left: -.199em;
+	    width: 110.5%;
+	    font-size: .85em;
+	    padding-top: .461em;
+	}
+	section#customMap {
+
+		width: 105.91%;
+
+	}
+	#header p {
+		color: #37382e;
+		position: relative;
+		top: -8.05em;
+		left: 4.4em;
+		font-size: .75em;
+	}
+	section.meta-w-form {
+		top: 18.7em;
+	}
+}

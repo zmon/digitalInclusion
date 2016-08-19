@@ -1,49 +1,50 @@
-@media (max-width: 480px) {
-	ul.actions.fit.small {
-	    margin-left: -0.5em;
-	    width: calc(100% + -28em);
-	    min-width: 150px;
+@media (max-width: 500px) {
+	form.c-hell {
+	    margin: 0 0 2em 0;
+	    background: whitesmoke;
+	    width: 99.9%;
+	    padding: 5em 6em;
+	    margin-left: .025%;
 	    position: relative;
-	    margin-top: -1.4em;
-	    /* margin-left: 1em; */
-	    left: 26.5%;
-	    top: -.7em;
+	    top: -5em;
 	}
-}
-
-@media (max-width: 480px) {
-
-	section.meta-w-form {
-	    background: none;
-	    height: 4em;
-	    width: 100%;
-	}
-
-	.row.butane {
-	    /* border: 2px solid red; */
-	    margin-left: .01em;
-	    margin-bottom: .1em;
-	    margin-top: 4.5em;
-	    height: 6em;
+	input[type="text"], input[type="password"], input[type="email"], select, textarea {
+	    -moz-appearance: none;
+	    -webkit-appearance: none;
+	    -ms-appearance: none;
+	    appearance: none;
+	    border-radius: 8px;
+	    border: solid 1px;
+	    color: inherit;
+	    display: block;
+	    outline: 0;
+	    padding: 0 1em;
+	    text-decoration: none;
+	    width: 200%;
 	    position: relative;
-	    top: -9.5em;
-	    /* width: 20em; */
-	    left: 4.6em;
-	    background: linear-gradient(#83a4d4,#83a4d4);
-	    border-bottom: 1px solid black;
-	    border-top: 1px solid black;
-	    /* box-shadow: 0 0 1px #909090, 0 0 1px #1a222d, 0 0 1px #a0a0a0, 0 0 1px #313129; */
-	    box-shadow: inset 0 0 250px black;
-	    border: none;
-	    background: none;
-	    box-shadow: none;
+	    left: -4.2em;
 	}
-
-	ul.actions.fit.small.lower-btns {
+	#footer {
+	    display: -moz-flex;
+	    display: -webkit-flex;
+	    display: -ms-flex;
+	    display: flex;
+	    -moz-flex-wrap: wrap;
 	    position: relative;
-	    top: -2.6em;
+	    text-align: center;
+	    width: 150%;
+	    left: -5.5em;
+	    top: -30em;
+	    font-size: .7em;
+	    color: black;
+	    -webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	    padding: 5em 5em 3em 5em;
+	    /* width: calc(100% + 2em); */
+	    margin: 0;
 	}
-		form.pure-form.angr {
+	form.pure-form.angr {
 	    background: whitesmoke;
 	    width: 96%;
 	    box-shadow: 0 0 1px black;
@@ -60,7 +61,7 @@
 	    background: none;
 	    margin-top: -.04em;
 	    /* margin-left: 1em; */
-	    left: 1.25em;
+	    left: 1.5em;
 	    top: -1.5em;
 	}
 
@@ -97,10 +98,11 @@
 	    margin-top: -3em;
 	}
 	section.meta-w-form {
-	 height: 4em;
-	 width: 100%;
-	 top: 17.6em;
-	 left: -.51em;
+	 
+	    height: 4em;
+	    width: 100%;
+	    /*top: -2em;*/
+	    left: -.51em;
 	}
 	#footer > * {
 	    width: 70%;
@@ -143,7 +145,37 @@
 	    /* width: calc(100% + 2em); */
 	    margin: 0;
 	}
-
+	#main .button.special, #main button.special, #main input[type=button].special, #main input[type=reset].special, #main input[type=submit].special {
+	    background-color: #a9f6fb;
+	    color: #1d5a1a!important;
+	    text-shadow: none;
+	    box-shadow: 0 0 0 1px #e1e1ff,1px 1px 1px #3c3b3b,1px 1px 1px #675a3a;
+	    border-radius: 12px;
+	    border: 1px solid #bdf8ff;
+	    padding-top: .3em;
+	    margin: 0 auto 0 -.3em;
+	    width: 116px;
+	    font-size: .9em;
+	    margin-left: -.51em;
+	    height: 27px;
+	    padding-top: .2em;
+	    position: relative;
+	    left: -6.473em;
+	    /* padding: 1.25rem 2.5rem; */
+	    display: block;
+	    font-family: DinLight;
+	    background-color: #88ce83;
+	    border: 1px solid rgb(25, 121, 54);
+	    border: 1px solid cyan;
+	    color: #ffffff;
+	    font-weight: 300;
+	    -webkit-border-radius: 3px;
+	    border-radius: 24px;
+	    -webkit-transition: all 0.3s ease-in-out;
+	    -moz-transition: all 0.3s ease-in-out;
+	    transition: all 0.3s ease-in-out;
+	    font-weight: 900;
+	}
 	.row.butane {
 	    /* border: 2px solid red; */
 	    margin-left: .01em;
@@ -152,8 +184,8 @@
 	    height: 6.5em;
 	    position: relative;
 	    top: -9.75em;
-	    width: 64.25%;
-	    left: 5em;
+	    width: 61.75%;
+	    left: 5.5em;
 	    background: none;
 	    border-bottom: 1px solid black;
 	    border-top: 1px solid black;
@@ -161,34 +193,7 @@
 	    box-shadow: none;
 	    border: none;
 	}
-	#header p.mobile-p {
-		position: relative;
-		top: -12em;
-		position: relative;
-		left: -.1em;
-		top: -45.1em;
-	}
-	#header p {
-	    color: #48473e;
-	    position: relative;
-	    top: -10.5em;
-	    /*font-size: .6825em;*/
-	}
-	.panel-title {
-	    margin-top: 0;
-	    margin-bottom: 0;
-	    font-size: 16px;
-	    margin-bottom: .075em;
-	    color: inherit;
-	}
-	section#customMap {
-
-	    width: 104.49%;
-
-
-	    width: 102.69%;
-
+	#header h1 {
+	    left: -.6em;
 	}
 }
-
-

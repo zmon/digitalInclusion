@@ -1,0 +1,46 @@
+@media (max-width: 400px) {
+	h1#headerH1 {
+	    margin-left: -.199em;
+	    width: 119.5%;
+	    font-size: .9em;
+	    padding-top: .61em;
+	    left: -1.5em;
+	}
+	section#customMap {
+	    width: 108.291%;
+	    margin-top: 16.1em;
+	}
+	#header p {
+	    color: #37382e;
+	    position: relative;
+	    top: -9.5em;
+	    left: 3em;
+	    font-size: .75em;
+	}
+	section.meta-w-form {
+	    height: 4em;
+	    width: 100%;
+	    top: 18.8em;
+	    left: -.51em;
+	}
+	#footer {
+	    display: -moz-flex;
+	    display: -webkit-flex;
+	    display: -ms-flex;
+	    display: flex;
+	    -moz-flex-wrap: wrap;
+	    position: relative;
+	    text-align: center;
+	    width: 150%;
+	    left: -6em;
+	    top: -35.81em;
+	    font-size: .7em;
+	    color: black;
+	    -webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	    padding: 5em 5em 3em 5em;
+	    /* width: calc(100% + 2em); */
+	    margin: 0;
+	}
+}

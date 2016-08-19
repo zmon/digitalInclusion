@@ -159,6 +159,7 @@
 	    border-radius: 4px 4px 0 0;
 	    font-size: .56em;
 	    font-family: 'Raleway';
+	    margin-bottom: 1.5px;
 	    font-family: DinLight;
 	    font-family: Georgia;
 	    padding-top: 12px;
@@ -193,6 +194,7 @@
 	    border-radius: 18px;
 	    height: 610px;
 	    box-shadow: 0 0 2px #cccccc, inset 0 0 200px #90928c, 0 0 3px #a0a0a0, 0 0 5px #6d6d6d;
+	    box-shadow: none;
 	}
 
 	.row.butane {

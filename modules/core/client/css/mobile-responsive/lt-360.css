@@ -14,29 +14,29 @@
 	}
 
 	#header p {
-    color: #4a4a4a;
-    position: relative;
-    top: -19em;
-    left: 1.52em;
-    font-size: .95em;
-}
+	    color: #4a4a4a;
+	    position: relative;
+	    top: -11.2em;
+	    left: 2.3em;
+	    font-size: .85em;
+	}
 	#header h1 {
 	    margin: 0 0 0.25em 0;
 	    font-weight: 700;
 	    letter-spacing: normal;
 	    background: #dfe9ff;
 	    margin-top: 1.75em;
-	    border: 1px solid #4e555a;
-	    box-shadow: 0 0 1px #505050, inset 0 0 20px #d7edff;
+	    border: 1px solid #d2d2d2;
+	    box-shadow: 0 0 1px #505050, inset 0 0 200px #dedede;
 	    padding-top: .5em;
 	    padding-bottom: 3em;
 	    position: relative;
 	    height: 9.5em;
 	    left: -2.1em;
-	    top: -4em;
-	    width: 13.5em;
+	    top: -7.65em;
+	    background: linear-gradient(#d9dee0 , #d6d6d6, #d4d6de );
+	    width: 22.25em;
 	}
-
 	.row.butane {
 	    /* border: 2px solid red; */
 	    margin-left: .01em;
@@ -77,7 +77,7 @@
 
 	ul.actions.fit.small.lower-btns {
 	    position: relative;
-	    top: -2.6em;
+	    top: -2.9em;
 	}
 		form.pure-form.angr {
 	    background: whitesmoke;
@@ -133,11 +133,10 @@
 	    margin-top: -3em;
 	}
 	section.meta-w-form {
-	 
 	    height: 4em;
 	    width: 100%;
-	    top: -2em;
-	    left: -.51em;
+	    top: 15.1em;
+	    left: .75em;
 	}
 	#footer > * {
 	    width: 70%;
@@ -210,6 +209,15 @@
 	    /* margin-left: 1em; */
 	    left: -2.6em;
 	    top: -1.5em;
+	}
+
+	header#header {
+		margin-top: 1.15em;
+	}
+	section#customMap {
+	    width: 108.1%;
+	    margin-top: 12.91em;
+	    margin-left: -.1em;
 	}
 }
 

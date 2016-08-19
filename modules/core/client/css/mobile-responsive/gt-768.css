@@ -1,0 +1,8 @@
+@media (min-width: 769px) {
+	.custom-dd-toggle {
+		display: none;
+	}
+	.navbar-toggle {
+		display: none;
+	}
+}

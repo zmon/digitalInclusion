@@ -1,0 +1,9 @@
+@media (max-width: 380px) {
+	#header p {
+	    color: #37382e;
+	    position: relative;
+	    top: -8.5em;
+	    left: 3em;
+	    font-size: .75em;
+	}
+}

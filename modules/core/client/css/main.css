@@ -3492,7 +3492,7 @@
       padding-top: .2em;
       margin: 0 auto;
       display: block;
-      border: 1px solid #c5c5c5;
+      border: none;
       border-radius: 8px;
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
@@ -3704,7 +3704,7 @@
     }
 
     #main > .main {
-      padding: 5em 5em 3em 5em ;
+      padding: 5em 2.5em 3em 2.5em;
       border-top: solid 1px #dddddd;
     }
 
@@ -3758,7 +3758,7 @@
     @media screen and (max-width: 980px) {
 
       #main > .main {
-        padding: 4em 3em 2em 3em ;
+        padding: 4.4em 3em 2em 3em;
       }
 
         #main > .main > .image.main:first-child {
@@ -3825,6 +3825,7 @@
       box-shadow: inset 0 0 600px #6f6f6f;
       background: -webkit-linear-gradient(to left, #8e9eab , #eef2f3); /* Chrome 10-25, Safari 5.1-6 */
       background: linear-gradient(to left,  #8e9eab , #c3d9de,#8e9eab ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      box-shadow: none;
   }
   #footer {
     display: -moz-flex;
