@@ -56,5 +56,11 @@
 	    box-shadow: 0 0 2px black, inset 0 0 60px #b1b184;
 	    background: linear-gradient(to left, #f3f0df , #fffeeb, #eae8d8 );
 	    box-shadow: 0 0 2px black, inset 0 0 60px #dadabe;
+	    box-shadow: 0 0 4px #464646;
+	    border-radius: 170px;
+	    background: linear-gradient(#d9dee0 , #d6d6d6, #d4d6de );
+	    border: 2px solid #efefef;
+	    border-left: none;
+	    border-right: none;
 	}
 }

@@ -149,7 +149,7 @@
 	    background-color: #a9f6fb;
 	    color: #1d5a1a!important;
 	    text-shadow: none;
-	    box-shadow: 0 0 0 1px #55ab32,1px 1px 1px #3c3b3b,1px 1px 1px #675a3a;
+	    box-shadow: 0 0 0 1px #e1e1ff,1px 1px 1px #3c3b3b,1px 1px 1px #675a3a;
 	    border-radius: 12px;
 	    border: 1px solid #bdf8ff;
 	    padding-top: .3em;
@@ -166,6 +166,7 @@
 	    font-family: DinLight;
 	    background-color: #88ce83;
 	    border: 1px solid rgb(25, 121, 54);
+	    border: 1px solid cyan;
 	    color: #ffffff;
 	    font-weight: 300;
 	    -webkit-border-radius: 3px;
