@@ -1,0 +1,43 @@
+@media (max-width: 340px) {
+	section.meta-w-form {
+	    height: 4em;
+	    width: 100%;
+	    top: 15.3em;
+	    left: -.485em;
+	}
+	#header h1 {
+	    margin: 0 0 0.25em 0;
+	    font-weight: 700;
+	    letter-spacing: normal;
+	    background: #dfe9ff;
+	    margin-top: 1.75em;
+	    border: 1px solid #d2d2d2;
+	    box-shadow: 0 0 1px #505050, inset 0 0 200px #dedede;
+	    padding-top: .5em;
+	    padding-bottom: 3em;
+	    position: relative;
+	    height: 10.5em;
+	    left: -2.3em;
+	    top: -7.65em;
+	    background: linear-gradient(#d9dee0 , #d6d6d6, #d4d6de );
+	    width: 19.5em;
+	}
+	main#main-page {
+	    width: 123.6%;
+	}
+	section#customMap {
+	    width: 109.99991%;
+	    margin-top: 12.791em;
+	    margin-left: 0;
+	    border: 2.5px solid #dadada;
+	    /* border-top: none; */
+	    box-shadow: 0 0 5px #717171, 0 0 0 1px #e8e8e8;
+	}
+	#header p {
+	    color: #4a4a4a;
+	    position: relative;
+	    top: -11.2em;
+	    left: 1.2em;
+	    font-size: .85em;
+	}
+}

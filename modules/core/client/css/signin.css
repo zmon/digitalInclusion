@@ -49,4 +49,6 @@
     /* background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png"); */ /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     background: linear-gradient(to left, #2b2a0f ,#6b6d35, #fbffa3,#6b6d35, #2b2a0f);
     /* box-shadow: 0 0 15px #424242; */
+    box-shadow: inset 0 0 20px #4b4c07, 0 0 1px #5a5959, 0 0 3px black;
+    background: linear-gradient(to left, #383838 , #737711,#cbd23b,#737711, #3c3c3c);
 }
