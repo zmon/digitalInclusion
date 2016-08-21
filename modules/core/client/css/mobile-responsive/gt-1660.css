@@ -63,9 +63,10 @@
 		display: inline-block;
 		height: 626px;
 		border: 1px solid #e2e2e2;
+		box-shadow: none;
 		font-weight: 400;
 		position: relative;
-		box-shadow: 0 0 12px #3e3e3e;
+		box-shadow: none;
 		top: -1.5em;
 	}
 	.f-desc {
@@ -78,6 +79,10 @@
 	    font-size: .575em;
 	    border: 1px solid gainsboro;
 	    background: #ececec;
+	    max-height: 220px;
+	    overflow-x: hidden;
+	    overflow-y:scroll;
+	    margin-top: 1.5em;
 	}
 	form.pure-form.rangr {
 	    background: whitesmoke;
@@ -375,9 +380,11 @@
 	    height: 639px;
 	    width: 9.2em;
 	    background: radial-gradient(#e1ecf5,#e4eef1,#dff6ff);
+	    background: white;
 	    clear: both;
 	    border-top: 4px solid #c0d8dc;
 	    box-shadow: 0 0 0 1px #9bbbba, 0 0 0 2px #bdefef, 0 0 5px black;
+	    box-shadow: none;
 	    border-left: .2em solid gray;
 	    top: -1px;
 	    border-left: 1px solid #070a0a;

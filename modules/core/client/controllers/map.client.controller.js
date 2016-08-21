@@ -419,7 +419,7 @@ setTimeout(function(){
 	    function getIcon(category) {
 	      if (category === "computers-access") {
 	       // return "modules/core/client/img/computerAccess.png";
-         return "modules/core/client/img/monitor-1.svg";
+         return "modules/core/client/img/computerAccess.png";
 	      } else if (category === "training-day") {
 	       return "modules/core/client/img/userOrange.png";
 	      } else if (category === "training-night") {
