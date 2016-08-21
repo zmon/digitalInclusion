@@ -21,10 +21,10 @@
     background: #efefe7;
     position: absolute;
     top: -.20em;
-    height: 28.0em;
+    height: 36.0em;
     left: 1.2em;
     z-index: 99999;
-    /*width: 90%;*/
+    /* width: 90%; */
     outline: 10px solid #d8d8d8;
     border: 1px solid black;
     margin: 0 14px 0 14px;
@@ -351,11 +351,12 @@ section#first {
 }
 
 .links {
-  color: #0d2940;
-  font-weight: 500;
-  letter-spacing: normal;
-  letter-spacing: 1.2px;
-  text-decoration: underline;
+    color: #0d2940;
+    font-weight: 500;
+    color: #005faf;
+    letter-spacing: normal;
+    letter-spacing: 1.2px;
+    text-decoration: underline;
 }
 
 .links:hover {

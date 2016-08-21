@@ -2,6 +2,14 @@
 	/*a.button.fit.small.fit-cx {
 	    width: 12em;
 	}*/
+	h1.tab-head {
+	    position: relative;
+	    top: -5em;
+	}
+	p.tab-p {
+	    position: relative;
+	    top: -10.5em;
+	}
 	.nav-tabs {
 	    border: none;
 	    border-radius: .125em;
@@ -11,7 +19,7 @@
 	    position: relative;
 	    width: 119%;
 	    box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a;
-	    top: -6.4em;
+	    top: -10.4em;
 	    height: 2.8em;
 	    border-radius: 64px;
 	    left: -4.25em;
@@ -96,6 +104,7 @@
 	    height: 50em;
 	    position: relative;
 	    top: -7em;
+	    padding-left: 2.4em;
 	    background: radial-gradient(#eff6ff,#f5ffe5);
 	    box-shadow: inset 0 0 800px #eef3e5, inset 0 0 0 800px #dce6c8, 0 0 0 1px #baccba, 0 0 10px black;
 	    /* padding-left: .1em; */
@@ -106,10 +115,12 @@
 
 
 	#header p {
-	    font-size: .65em;
+	    font-size: .75em;
 	    letter-spacing: -0.025em;
 	    color: #545353;
-	    margin-top: -7.5em;
+	    margin-top: -.-5em;
+	    position: relative;
+	    top: -7.5em;
 	}
 
 	.nav-tabs > li > a {
@@ -163,11 +174,35 @@
 	    margin-left: 1em;
 	}
 
+	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	    color: #638a13;
+	    /* color: #c7ffbf; */
+	    /* text-shadow: 0 0 10px whitesmoke; */
+	    cursor: default;
+	    background: olive;
+	    border: 1px solid #ddd;
+	    margin-top: .1em;
+	    margin-bottom: .2em;
+	    padding-top: .79925em;
+	    height: 3.2em;
+	    border: 1px solid #638a13;
+	    box-shadow: 0 0 145px #e8ff90;
+	    border-top-left-radius: .5em;
+	    box-shadow: inset 0 0 85px olive, 0 0 4px olivedrab;
+	    /* border-bottom-color: transparent; */
+	    border-top-right-radius: .5em;
+	    border-radius: 1.5em;
+	    box-shadow: inset 0 0 55px #ffffdf, 0 0 1px olivedrab;
+	    background: #f5ffe2;
+	    text-shadow: none;
+	}
+
 	#wrapper {
 		box-shadow: inset 0 0 200px #e2eff1, 0 0 1px #5a5959;
 		height: 52.5em;
 		background: linear-gradient(#eef2f3,#dfe6ea);
 		box-shadow: none;
+		padding-top: 4.3em;
 		background: linear-gradient(to left, #6e7b92 , #CFDEF3, #CFDEF3,#6e7b92);
 		box-shadow: 0 0 3px #191919, inset 0 0 100px #d4d4d4;
 		background: linear-gradient(to left, #ECE9E6 , #FFFFFF);
@@ -194,7 +229,7 @@
 
 	ul.actions.fit.small {
 	    margin-left: -5.5em;
-	    width: calc(80% + -9.5em);
+	    width: calc(80% + -5.95em);
 	    margin-top: -1.25em;
 	}
 
@@ -245,22 +280,10 @@
 	    height: 880px;
 	}
 
-	section#rcMap {
-	    height: 400px;
-	    width: 100%;
-	    border: 1px solid #b5b5b5;
-	    margin-top: .62em;
-	    margin-bottom: 3em;
-	    box-shadow: 0 0 1px #c1c1c1;
-	    border: 1px solid #bbbaba;
-	    box-shadow: 0 0 1px #ececec;
-	    border: 1px solid #cecece;
-	}
-
 	ul.actions.fit.small {
 	    margin-left: -4em;
-	    width: calc(100% + -12.5em);
-	    margin-top: -1.24em;
+	    width: calc(100% + -9.5em);
+	    margin-top: -.924em;
 	}
 
 	table td {
@@ -396,6 +419,8 @@
 	p#headerP {
 		margin-top: -3.95em;
 		margin-bottom: 6em;
+		top: -3.995em;
+		font-size: .7em;
 	}
 
 	header .sh-up {
@@ -499,7 +524,7 @@
 	    display: block;
 	    border: 1px solid rgba(86, 85, 85, .3);
 	    border: 1px solid #c7c7c7;
-	    border-radius: 8px;
+	    border-radius: 24px;
 	    -webkit-transition: all 0.3s ease-in-out;
 	    -moz-transition: all 0.3s ease-in-out;
 	    transition: all 0.3s ease-in-out;
@@ -519,26 +544,38 @@
 	    /* font-size: 2.0rem; */
 	    /* padding: 0; */
 	    width: 136px;
-	    height: 29px;
+	    height: 25px;
 	    display: block;
 	    /* background-color: #ffffff; */
 	    border: 1px solid rgb(123, 154, 120);
 	    color: #ffffff;
 	    font-weight: 300;
 	    -webkit-border-radius: 3px;
-	    border-radius: 8px;
+	    border-radius: 24px;
 	    -webkit-transition: all 0.3s ease-in-out;
 	    -moz-transition: all 0.3s ease-in-out;
 	    transition: all 0.3s ease-in-out;
 	    font-weight: 600;
+	    color: #145858!important;
+	    text-shadow: 0 0 12px #aeeeff;
+	    box-shadow: 0 0 0 1px cyan, 0 0 5px black;
+	    border: 1px solid transparent;
 	}
-
+	#main {
+		margin-left: -2.35em;
+	}
+	#wrapper {
+		padding-top: .4em;
+	}
+	.nav-tabs {
+		top: -6.8em;
+	}
 	.table-wrapper {
 		-webkit-overflow-scrolling: touch;
 		position: relative;
 		overflow-x: auto;
 		padding: .7em 1.5em 0 2.85em;
-		top: -.1em;
+		top: .15em;
 		border: none;
 		height: 6.85em;
 		width: 16.5em;
@@ -548,4 +585,9 @@
 		margin-top: -1em;
 		margin-right: .05em;
 	}
+	li.realign {
+	    position: relative;
+	    left: -10.1em;
+	}
+
 }
