@@ -13,21 +13,21 @@
 	    top: -1.5em;
 	}
 	#main {
-	    border-radius: .1em;
-	    outline: 0;
-	    background-color: #eaeaea;
-	    background-image: url(https://www.transparenttextures.com/patterns/brilliant.png);
-	    border: 1px solid #3c3434;
-	    box-shadow: 0 0 0 1px #d2d2d2,inset 0 0 100px #eaeaea,0 0 2.5px #757575, 0 0 10px #dedede, inset 0 0 7px ivory;
-	    /* background: none; */
-	    /* background: transparent; */
-	    /* box-shadow: none; */
-	    top: -8em;
-	    position: relative;
-	    padding-top: 12.6em;
-	    height: 40.5em;
-	    border: none;
-	    border-radius: 18px;
+		border-radius: .1em;
+		outline: 0;
+		background-color: #eaeaea;
+		background-image: url(https://www.transparenttextures.com/patterns/brilliant.png);
+		border: 1px solid #3c3434;
+		box-shadow: 0 0 0 1px #d2d2d2,inset 0 0 100px #eaeaea,0 0 2.5px #757575, 0 0 10px #dedede, inset 0 0 7px ivory;
+		/* background: none; */
+		/* background: transparent; */
+		/* box-shadow: none; */
+		top: -8em;
+		position: relative;
+		padding-top: 12.6em;
+		height: 45em;
+		border: none;
+		border-radius: 18px;
 	}
 	span#training-day-user {
    		margin-left: 1.8em;
@@ -64,6 +64,12 @@
 	div#placeCategory {
 		margin-top: 1.5em;
 		font-size: .55em;
+	}
+	.myButton {
+
+	    position: relative;
+	    left: -7em;
+
 	}
 	div#placeHours {
 		font-size: .5em;
@@ -238,8 +244,8 @@
 	    left: -10.8em;
 	}
 	li.realign {
-	    position: relative;
-	    left: -8em;
+		position: relative;
+		left: -8.9em;
 	}
 
 	#wrapper {
@@ -332,6 +338,6 @@
 @media (min-width: 1200px) {
 	li.realign {
 	    position: relative;
-	    left: -11em;
+	    left: -11.7em;
 	}
 }

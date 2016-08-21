@@ -31,7 +31,8 @@
 	    margin-left: 0;
 	    border: 2.5px solid #dadada;
 	    /* border-top: none; */
-	    box-shadow: 0 0 5px #717171, 0 0 0 1px #e8e8e8;
+	    border: none;
+	    box-shadow: 0 0 15px #353535;
 	}
 	#header p {
 	    color: #4a4a4a;

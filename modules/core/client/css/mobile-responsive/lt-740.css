@@ -3,11 +3,11 @@
 	#header p {
 	    color: #4a4a4a;
 	    position: relative;
-	    top: -12.7em;
-	    font-size: .8em;
-	    letter-spacing: normal;
+	    top: -14.4em;
+	    font-size: .75em;
+	    letter-spacing: .993px;
 	}
-	
+		
 	ul.actions.fit.small {
 		margin-left: -0.5em;
 		width: calc(100% + -29.5em);

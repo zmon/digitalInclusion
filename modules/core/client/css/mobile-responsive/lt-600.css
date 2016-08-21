@@ -8,7 +8,7 @@
 		box-shadow: 0 0 1px #c8d473, 0 0 30px gray;
 		margin-top: 15.8177703em;
 		margin-bottom: 2.7em;
-		width: 97.848%;
+		width: 96.9%;
 		margin-right: 29.2em;
 		border: 20px solid black;
 		margin-left: .01em;
@@ -29,13 +29,14 @@
 	#header h1 {left: 1.74em;top: -3.15em;}
 
 	section.meta-w-form {
-	    background: yellow;
-	    background: none;
-	    height: 4em;
-	    width: 100%;
-	    top: 18.3em;
-	    left: -.375em;
+		background: yellow;
+		background: none;
+		height: 4em;
+		width: 100%;
+		top: 18.3em;
+		left: -.375em;
 	}
+	
 	#header p {
 		color: #48473e;
 		position: relative;

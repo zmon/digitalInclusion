@@ -1,0 +1,19 @@
+@media (max-width: 310px) {
+
+
+	#header h1 {
+
+	    left: -3.05em;
+
+	}
+
+	section#customMap {
+	    width: 105.5%;
+	    margin-left: .1em;
+	}
+	section.meta-w-form {
+
+	    left: -1.4em;
+	}
+
+}

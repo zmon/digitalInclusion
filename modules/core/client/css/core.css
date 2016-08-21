@@ -353,7 +353,8 @@ section#first {
 .links {
     color: #0d2940;
     font-weight: 500;
-    color: #005faf;
+    color: #ecf6ff;
+    text-shadow: 1px 1px 5px black;
     letter-spacing: normal;
     letter-spacing: 1.2px;
     text-decoration: underline;
@@ -480,4 +481,4 @@ form.pure-form.rangr {
     margin-top: 2em;
     margin-left: 17em;
     padding: 1em 3em 0 1em;
-}
+}2

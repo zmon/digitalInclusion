@@ -3997,7 +3997,7 @@ input#pac-input {
     padding-top: 2.6em;
     background-color: #eaeaea;
     box-shadow: 0 0 0 1px #d2d2d2,inset 0 0 100px #eaeaea,0 0 2.5px #757575, 0 0 10px #dedede, inset 0 0 7px ivory;
-    height: 43.5em;
+    height: 38.1em;
     border: none;
     border-radius: 18px;
 }
@@ -4283,4 +4283,8 @@ a#searchButton {
 button.btn.btn-primary.slide-again {
     position: relative;
     top: -5em;
+}
+
+.mkinvs {
+  margin-left: 0;
 }

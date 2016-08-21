@@ -38,7 +38,7 @@
 	    padding: 1em .1em 1em .14em;
 	    position: relative;
 	    height: 5.5em;
-	    left: .8em;
+	    left: -.8em;
 	    width: 100%;
 	    top: -2.4em;
 	    border: 1px solid #1f1703;
@@ -53,6 +53,7 @@
 	    height: 4em;
 	    width: 60%;
 	}
+
 
 	#header {
 	    padding: 1.4em 2em 0.1em 2em;
