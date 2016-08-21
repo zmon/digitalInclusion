@@ -820,18 +820,18 @@
 	    padding: .2em .2em;
 	    width: 90%;
 	}
-	.glyphicon {
-		position: relative;
-		top: .9px;
-		left: .4px;
-		display: inline-block;
-		font-family: 'Glyphicons Halflings';
-		font-style: normal;
-		font-weight: 100;
-		line-height: 1;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
+.glyphicon {
+    position: relative;
+    top: -10.9px;
+    left: -6px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 100;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 	
 
 }

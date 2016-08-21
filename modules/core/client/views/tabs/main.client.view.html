@@ -273,16 +273,17 @@ window.addEventListener('DOMContentLoaded', init, false);
                 <div id="placeCategory" class="f1 f-class"></div>
                 <!-- <address> -->
                   <div id="placeTitle" class="f2 f-class"></div>
-                  <span id="placePhone" class="f-class"></span>
-                 <div id="placeAddress" class="f3 f-class"></div>
+                  <a ng-href="callNumber()"><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>
+                 
                   
                 <div class="cist">
+                  <div id="placeAddress" class="f3 f-class"></div>
                   <span id="placeCity" class="f3 f-class"></span>
                   <span id="placeState" class="f3"></span><br>
                   <span id="placeZip" class="f3 f-class"></span>
                   
                 </div>
-                <a id="map-directions" target="_blank" class="view-dir" href="">Get directions</a>
+                <a id="map-directions" target="_blank" class="view-dir" href=""><i class="fa fa-bus"></i> Get directions</a>
                 
 
                 
@@ -305,7 +306,7 @@ window.addEventListener('DOMContentLoaded', init, false);
                 <div id="placeHours" class="f-class"></div>
                 <!-- <button class="btn btn-primary" ng-print print-element-id="printThisElement"><i class="fa fa-print"></i> Print</button> -->
                 <!-- ng-click="printPage()"  -->
-                <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i> Print description with map</a>
+                <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a>
                 <div class="f4 f-class f-desc" id="placeDescription"></div>
                 <div class="f-class" id="placeUrl"></div>
                

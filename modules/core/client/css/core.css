@@ -163,7 +163,7 @@ div#info-wrapper {
     display: none;
     position: absolute;
     left: 80.75%;
-    height: 422px;
+    height: 420px;
     width: 9.5em;
     background: radial-gradient(#e1ecf5,#e4eef1,#dff6ff);
     background: white;
@@ -178,7 +178,8 @@ div#info-wrapper {
     margin-left: 0;
     /* box-shadow: 0 0 0 3px gray; */
     padding: 0 0 2em 0;
-    border: 12px solid #efefef;
+    padding: 1em .4em;
+    border: 3px solid #efefef;
 }
 section#add-resources {
     margin-left: 5%;

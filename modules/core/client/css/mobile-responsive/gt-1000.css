@@ -1,17 +1,5 @@
 @media (min-width: 1001px) {
-	div#info-wrapper {
-	    background: #f3f3f3;
-	    border: 1px solid #bbbaba;
-	    /* box-shadow: inset 0 0 100px #f3f3f3; */
-	    width: 98%;
-	    display: inline-block;
-	    height: 416px;
-	    border: 1px solid #e2e2e2;
-	    font-weight: 400;
-	    position: relative;
-	    box-shadow: 0 0 12px #3e3e3e;
-	    top: -1.5em;
-	}
+	
 	#main {
 		border-radius: .1em;
 		outline: 0;
@@ -35,35 +23,59 @@
 	    font-size: 1.2em;
 	}
 
-#wrapper{
-   background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQIW2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEqRgDDwAAAABJRU5ErkJggg==') repeat;
-}
+	#wrapper{
+	   background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQIW2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEqRgDDwAAAABJRU5ErkJggg==') repeat;
+	}
 
 	a.pure-button.x-small-custom {
-		font-size: .5em;
-		position: relative;
-		top: -1.5em;
+	    font-size: .5em;
+	    position: relative;
+	    top: -20.5em;
+	    margin-left: .95em;
+	    width: 100px;
 	}
 	a#map-directions {
-    color: steelblue;
-    font-size: .7em;
-    position: relative;
-    line-height: 1px;
-    top: -2em;
-}
+		color: steelblue;
+		font-size: .6em;
+		position: relative;
+		line-height: 1px;
+		top: -18.7em;
+	}
 	div#placeAddress {
-		margin-top: .4em;
+		margin-top: .84em;
+		position: relative;
+		top: .8em;
+		left:	.6em;
 	}
 	.f3 {
 		font-size: .7em;
 	}
+		
 	span#placeZip {
 		position: relative;
 		top: -1em;
 	}
 	div#placeCategory {
-		margin-top: 1.5em;
-		font-size: .55em;
+	    margin-top: .95em;
+	    font-size: .55em;
+	    width: 10em;
+	    line-height: 10px;
+	    margin-left: 1.9em;
+	    margin-bottom: 2.02em;
+	}
+	div.cist {
+		border-bottom: none;
+/* 		border-bottom: 1px solid lightgray; */
+		margin: 2.3em .1em 6em .1em;
+
+
+	}
+	i.fa.fa-phone {
+	    position: relative;
+	    top: -3.35em;
+	    left: -.2em;
+	    color: darkgreen;
+	    font-size: .8em;
 	}
 	.myButton {
 
@@ -72,26 +84,62 @@
 
 	}
 	div#placeHours {
-		font-size: .5em;
-		line-height: 10px;
-		margin-left: 1.5em;
-		text-align: justify;
+    font-size: .47em;
+    line-height: 10px;
+    margin-left: .22em;
+    letter-spacing: .6px;
+    text-align: center;
+    position: relative;
+    width: 97%;
+    top: -23.85em;
+    padding: .8em 1.35em;
+    border-bottom: none;
+}
+	.f2 {
+		font-size: .9em;
+		font-weight: 600;
+		line-height: 15px;
+		letter-spacing: .5px;
+		margin: .7em 0 .2em;
+	}
+	div#placeTitle {
+		font-size: .8em;
+		background: #fffef8;
+		/*     	border: 2px solid lightgray; */
+		/* 		border-bottom: 1px solid lightgray; */
+		border-right: none;
+		border-left:none;
+		box-shadow: 0 0 .5px black;
 		position: relative;
-		width: 80%;
-		top: -2.3em;
+		top: -.74em;
+		padding: 1em 0 2.4em 0;
 	}
-		.f2 {
-	    font-size: .9em;
-	    font-weight: 600;
-	    line-height: 15px;
-	    margin: .7em 0 .2em;
+	div#info-wrapper {
+		background: none;
+		border: none;
+		/* box-shadow: inset 0 0 100px #f3f3f3; */
+		width: 98%;
+		display: inline-block;
+		height: 36px;
+/* 		border: 1px solid #e2e2e2; */
+		font-weight: 400;
+		position: relative;
+		box-shadow: none;
+		top: -2.5em;
+		color: black;
+		font-family: DinLight;
 	}
+	
 	.cist {
 		position: relative;
-		top: -.5em;
+		top: -4.35em;
 	}
 	span#placePhone {
-	    font-size: .7em;
+		font-size: .7em;
+		text-decoration: underline;
+		color: #0b5d77;
+		position: relative;
+		top: -3.94em;
 	}
 	#winCtrl {
 	    display: inline;
@@ -115,10 +163,12 @@
 	    text-align: start;
 	    margin-left: .3em;
 	    width: 95%;
+	    position: relative;
+	    top: -14.75em;
 	    line-height: 11px;
 	    font-size: .6em;
-	    border: 1px solid gainsboro;
-	    background: #ececec;
+	    border: none;
+	    background: none;
 	}
 	.row.butane {
 	    margin-left: .01em;
