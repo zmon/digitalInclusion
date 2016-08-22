@@ -650,6 +650,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
     		$scope.smsResponse = true;
     		$scope.sms.to = '';
     		$scope.sms.responseStatus = res;
+    		document.getElementById('share-window').style.display="none";
     	}
     }
 
