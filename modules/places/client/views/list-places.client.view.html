@@ -3,7 +3,7 @@
     <h1>Locations</h1>
   </div>
   <div class="list-group" ng-show="showNormal">
-    <a ng-click="sortAlphabetical()" class="basic-link">Sort by alphabetical</a>
+    <a ng-click="sortAlphabetical()" class="basic-link">Sort by alphabetical</a> ｜ <a ng-click="missingZips()">Sort by missing zip</a>
     <a ng-repeat="place in vm.places" ui-sref="places.view({ placeId: place._id })" class="list-group-item" ng-click="scrollToTop()">
       <!-- <small class="list-group-item-text">
         Posted on
@@ -30,7 +30,25 @@
       <h4 class="list-group-item-heading in-block" ng-bind="place.title"></h4> <span class="inline" ng-bind="place.readableAddress"></span><br>Zip: <span ng-bind="place.zip"></span><br>
       <!-- Phone: <span ng-bind="place.phone"></span> -->
 
-      
+
+      <!-- <p class="list-group-item-text" ng-bind="place._id"></p> -->
+      <a class="list-group-item-heading" ng-href="/places/{{place._id}}">Edit</a>
+    </a>
+  </div>
+  <div class="list-group" ng-show="showMissing">
+   <!--  <a ng-click="sortAlphabetical()" class="basic-link">Sort by alphabetical</a> -->
+    <a ng-repeat="place in missingPlaces" ui-sref="places.view({ placeId: place._id })" class="list-group-item" ng-click="scrollToTop()">
+    <!--   <small class="list-group-item-text">
+
+        <span ng-bind="place.created | date:'mediumDate'"></span>
+
+        <span ng-if="place.user" ng-bind="place.user.displayName"></span>
+        <span ng-if="!place.user">Site Admin</span><br>
+      </small> -->
+      <h4 class="list-group-item-heading in-block" ng-bind="place.title"></h4> <span class="inline" ng-bind="place.readableAddress"></span><br>Zip: <span ng-bind="place.zip"></span><br>
+      <!-- Phone: <span ng-bind="place.phone"></span> -->
+
+
       <!-- <p class="list-group-item-text" ng-bind="place._id"></p> -->
       <a class="list-group-item-heading" ng-href="/places/{{place._id}}">Edit</a>
     </a>

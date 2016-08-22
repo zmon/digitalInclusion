@@ -29,6 +29,7 @@
 
     vm.places = PlacesService.query();
     $scope.alphabeticalPlaces = [];
+    $scope.missingPlaces = [];
 
     // var ln = vm.places.length;
     // var i;
@@ -48,10 +49,12 @@
 
     
     $scope.showAlpha = false;
+    $scope.showMissing = false;
     $scope.showNormal = true;
 
     $scope.resetResults = function() {
       $scope.showAlpha = false;
+      $scope.showMissing = false;
       $scope.showNormal = true;
     }
 
@@ -60,14 +63,27 @@
       var i;
       for (i=0;i<l;i++) {
         if (typeof arr[i].phone != 'undefined') {
-          
+
         }
       }
     }
 
+    $scope.missingZips = function() {
+      console.log("missingZips");
+      console.log();
+      $scope.showNormal = false;
+      $scope.showMissing = true;
+      var ln = vm.places.length;
+      var i;
+      for (i=0;i<ln;i++) {
+        $scope.missingPlaces.push(vm.places[i]);
+      }
+     
+    }
+
     $scope.sortAlphabetical = function() {
-       console.log("alphabeticalPlaces");
-    console.log($scope.alphabeticalPlaces);
+      console.log("alphabeticalPlaces");
+      console.log($scope.alphabeticalPlaces);
       $scope.showNormal = false;
       $scope.showAlpha = true;
       console.log("sortAlphabetical()");
