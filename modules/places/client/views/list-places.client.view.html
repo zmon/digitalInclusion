@@ -2,8 +2,24 @@
   <div class="page-header">
     <h1>Locations</h1>
   </div>
-  <div class="list-group">
+  <div class="list-group" ng-show="showNormal">
+    <a ng-click="sortAlphabetical()" class="basic-link">Sort by alphabetical</a>
     <a ng-repeat="place in vm.places" ui-sref="places.view({ placeId: place._id })" class="list-group-item" ng-click="scrollToTop()">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="place.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="place.user" ng-bind="place.user.displayName"></span>
+        <span ng-if="!place.user">Site Admin</span><br>
+      </small>
+      <h4 class="list-group-item-heading in-block" ng-bind="place.title"></h4> <span class="inline" ng-bind="place.readableAddress"></span>
+      <!-- <p class="list-group-item-text" ng-bind="place._id"></p> -->
+      <a class="list-group-item-heading" ng-href="/places/{{place._id}}">Edit</a>
+    </a>
+  </div>
+  <div class="list-group" ng-show="showAlpha">
+   <!--  <a ng-click="sortAlphabetical()" class="basic-link">Sort by alphabetical</a> -->
+    <a ng-repeat="place in alphabeticalPlaces" ui-sref="places.view({ placeId: place._id })" class="list-group-item" ng-click="scrollToTop()">
       <small class="list-group-item-text">
         Posted on
         <span ng-bind="place.created | date:'mediumDate'"></span>

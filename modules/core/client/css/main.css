@@ -4288,3 +4288,22 @@ button.btn.btn-primary.slide-again {
 .mkinvs {
   margin-left: 0;
 }
+
+.basic-link:hover {
+  cursor: pointer;
+
+}
+.basic-link {
+  color: steelblue;
+  text-decoration: underline;
+  display: block;
+}
+
+a#mob-map-directions {
+  width: 100px;
+}
+
+.neg24 {
+  position: relative;
+  top: -24em;
+}

@@ -149,7 +149,7 @@ window.addEventListener('DOMContentLoaded', init, false);
       
           <span>
             <div id="wrapMobileWindow">
-              <a id="closeWindow" ng-click="closeMobileWindow()">
+              <a id="closeWindow" ng-click="closeMobileWindow(); closeSmsForm(); resetCustomMap();">
                 <div id="mobileWindowBg"></div>
               </a>
            <!--    <div id="wrapExitM">
@@ -163,22 +163,25 @@ window.addEventListener('DOMContentLoaded', init, false);
                 
                 <div id="title-mob" class="f2 f-class"></div>
                 <div id="phone-mob" class=""></div>
-                <div id="address-mob" class="address-mobile"></div>
+                <i class="fa fa-map-marker"></i><div id="address-mob" class="address-mobile"></div>
                 <div id="city-mob" class="address-mobile"></div>
                 <div id="state-mob" class="address-mobile"></div>
                 <div id="zip-mob" class="address-mobile"></div>
-                <div id="hours-mob" class=""></div>
-                <a class="pure-button share-resource" ng-click="openSmsForm()">Share with friend</a>
+                <a id="mob-map-directions" href="" target="_blank" class="basic-link">Get directions</a>
+                <div id="hours-mobily" class="hours-mobile"></div>
+                <a class="pure-button share-resource" ng-click="openSmsForm()"><i class="fa fa-share-square-o"></i> Share with friend</a>
+                <div class="show-sms-response" ng-show="smsResponse">{{sms.responseStatus}} <i class="fa fa-check"></i></div>
                 <div id="share-window" ng-show="smsFormOpen">
                   
 
 
 
                   <form id="sendSmsForm" class="pure-form">
+                    <a ng-click="closeSmsForm()" id="closeSms"><i class="fa fa-remove"></i></a>
                     <fieldset>
                         <div class="pure-control-group">
                             <label for="phone" class="sms-form-label">Enter phone number (913 or 816 only) </label>
-                            <input name="to" ng-model="sms.to" class="sms-form-input" type="text">
+                            <input id="qode" name="to" ng-model="sms.to" class="sms-form-input" type="text">
                         </div>
 
                         <div class="pure-controls">
@@ -190,7 +193,7 @@ window.addEventListener('DOMContentLoaded', init, false);
 
                         </div>
 
-                        <div class="show-sms-response" ng-show="smsResponse">{{sms.responseStatus}}</div>
+                        <!-- <div class="show-sms-response" ng-show="smsResponse">{{sms.responseStatus}}</div> -->
                     </fieldset>
                   </form>
                 </div>
@@ -283,7 +286,7 @@ window.addEventListener('DOMContentLoaded', init, false);
                   <span id="placeZip" class="f3 f-class"></span>
                   
                 </div>
-                <a id="map-directions" target="_blank" class="view-dir" href=""><i class="fa fa-bus"></i> Get directions</a>
+                <a id="map-directions" target="_blank" class="view-dir pure-button" href=""><i class="fa fa-bus"></i> Get directions</a>
                 
 
                 

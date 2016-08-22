@@ -12,6 +12,13 @@
 	    color: #585858;
 	    font-family: Georgia;
 	}
+	i.fa.fa-bus {
+	    margin-right: .3em;
+	}
+	i.fa.fa-phone {
+	    color: darkgreen;
+	    font-size: .75em;
+	}
 	p.tab-p {
 	    position: relative;
 	    top: -4.5em;
@@ -28,6 +35,18 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
+	.glyphicon {
+	    position: relative;
+	    /* top: -20px; */
+	    left: 35px;
+	    display: inline-block;
+	    font-family: 'Glyphicons Halflings';
+	    font-style: normal;
+	    font-weight: normal;
+	    line-height: 1;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	}
 	#header h1 {
 	    margin: .4em 0.25em 4em 0;
 	    font-weight: 600;
@@ -41,13 +60,15 @@
 		font-size: .5em;
 		position: relative;
 		top: -1.5em;
+		width: 85px;
 	}
 	a#map-directions {
-	    color: steelblue;
-	    font-size: .7em;
-	    position: relative;
-	    line-height: 1px;
-	    top: -2em;
+		color: steelblue;
+		font-size: .57em;
+		position: relative;
+		line-height: 1px;
+		top: -2.7em;
+		width: 85px;
 	}
 	.myButton {
 	    -moz-box-shadow: inset 0px 1px 0px 0px #cf866c;
@@ -112,6 +133,8 @@
 	}
 	div#placeAddress {
 		margin-top: .4em;
+		position: relative;
+		top: .84em;
 	}
 	.f3 {
 		font-size: .7em;
@@ -124,16 +147,22 @@
 	   background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGD4z8DAwMgABXAGNgGwSgwVAFbmAgXxvZSoAAAAAElFTkSuQmCC') repeat;
 	}
 	div#placeCategory {
-		margin-top: 1.5em;
-		font-size: .55em;
+		margin-top: .85em;
+		font-size: .625em;
+		margin-left: 2em;
+		width: 10em;
+		line-height: 11px;
+	}
+	div#placeTitle {
+		letter-spacing: .75px;
 	}
 	div#placeHours {
-		font-size: .5em;
+		font-size: .55em;
 		line-height: 10px;
-		margin-left: 1.5em;
-		text-align: justify;
+		margin-left: 3.25em;
+		text-align: left;
 		position: relative;
-		width: 80%;
+		width: 70%;
 		top: -2.3em;
 	}
 		.f2 {
@@ -146,10 +175,17 @@
 		position: relative;
 		top: -.5em;
 	}
-	span#placePhone {
-	    font-size: .7em;
-	}
 	
+	span#placePhone {
+		font-size: .7em;
+		letter-spacing: .64px;
+		font-weight: 500;
+		color: #2e5375;
+		position: relative;
+		margin-left: .3em;
+		top: -.1em;
+	}
+
 	section#queryForm {
 	    position: relative;
 	    top: .25em;
@@ -161,15 +197,15 @@
 /*}
 */
 	.f-desc {
-	    border: none;
-	    padding: .5em 1em;
-	    text-align: start;
-	    margin-left: .3em;
-	    width: 95%;
-	    line-height: 11px;
-	    font-size: .6em;
-	    border: 1px solid gainsboro;
-	    background: #ececec;
+		border: none;
+		padding: .5em 1em;
+		text-align: start;
+		margin-left: .3em;
+		width: 95%;
+		line-height: 11px;
+		font-size: .6em;
+		border: none;
+		background: none;
 	}
 
 	.fm-zip {
@@ -477,6 +513,8 @@
 	    top: -1.7em;
 	    padding-left: 1em;
 	    padding-right: .25em;
+	    color: black;
+	    font-family: DinLight;
 	    overflow-y: scroll;
 	}
 }

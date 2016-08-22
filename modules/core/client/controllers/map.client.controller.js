@@ -86,6 +86,7 @@ var list = {};
 
 
      var svgW  = angular.element(document.getElementById("svgWrap"));
+     var ngCm  = angular.element(document.getElementById("customMap"));
     
 
     setTimeout(function() {
@@ -704,7 +705,17 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
     	$scope.smsFormOpen = true;
     }
 
+    var cm = document.getElementById('customMap');
+    var clone = cm.cloneNode(true);
+    var cyClone = cm.cloneNode(true);
+
+    $scope.closeSmsForm = function() {
+    	console.log("closeSmsForm()");
+    	$scope.smsFormOpen = false;
+    }
+
     function setPlaceData(json) {
+
       // var addrStr = json.address1 + ", " + json.city
 
             $scope.undefined = {};
@@ -743,7 +754,9 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
      var url = base + destination + coords;
      // console.log(url);
      var anchorTag = document.getElementById('map-directions');
+     var mobAnchorTag = document.getElementById('mob-map-directions');
      anchorTag.href=url;
+     mobAnchorTag.href = url;
      // console.log(anchorTag);
       // /4928+Main+Street,+Kansas+City,+MO+64112/@39.0374,-94.5875,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x87c0efbc1225668b:0x1bbd092f4ee9f253!2m2!1d-94.5874594!2d39.0373724
 
@@ -787,8 +800,6 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 	      	console.log($scope.printableMap);
 
 		}
-
-
 
 
 
@@ -841,10 +852,12 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
         document.getElementById('address-mob').innerText = json.address1;
         document.getElementById('city-mob').innerText = json.city;
         document.getElementById('state-mob').innerText = json.state;
-
+        var hrsMob = document.getElementById('hours-mobily');
         var html = document.getElementById('html');
-        console.log("html");
-        console.log(html);
+        console.log("setMobileInfoWindowData");
+        console.log(hrsMob);
+        console.log(json);
+        // hrsMob.innerText=json.hours;
              
         if (typeof json.primaryCategory != 'undefined') {
           document.getElementById('primaryCategory-mob').innerText = categoryIconText(json.primaryCategory);
@@ -855,8 +868,11 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
         if (typeof json.zip != "undefined") {
           document.getElementById('zip-mob').innerText = json.zip;           
         }
-        if (typeof json.hours != "undefined") {
-          document.getElementById('hours-mob').innerText = json.hours;
+        if (typeof json.hoursOpen != "undefined") {
+          
+          hrsMob.innerText = json.hoursOpen;
+          console.log("hours-mob");
+          console.log(hrsMob);
         }
         if (typeof json.description != "undefined") {
           document.getElementById('description-mob').innerText = json.description;
@@ -866,7 +882,35 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
         }
       }
 
+      function moveUp(el, em) {
+      	console.log("moveUp");
+      	console.log(el);
+      	console.log(em);
+      	var n = "-" + em + "em";
+      	el.style.top = n;
+      }
 
+      function stretchMap() {
+      	console.log("ngCm");
+      	console.log(ngCm);
+      	console.log("cm");
+      	console.log(cm);
+      	// var orig = ng.
+    
+
+
+      	cm.style.top = "-28em";
+
+
+
+      	// ngCm.addClass("neg24");
+      	// cm.addClass("neg24");
+      	// cm.style.top = "-24em";
+      	// cm.style.height = "1200px";
+      }
+      $scope.resetCustomMap = function() {
+      	cm.style.top = "-4.6em";
+      }
 
 	   function addListener(json, marker) {
 
@@ -905,6 +949,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
           if (c <= 768) {
             console.log("c <= 768");
+            stretchMap();
           } else {
             console.log("c > 768");
           }

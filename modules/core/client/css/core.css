@@ -7,15 +7,15 @@
   overflow: hidden;
 }
 #mobileWindowBg {
-  height: 99em;
-  width: 102%;
-  background: black;
-  position: fixed;
-  top: -40em;
-  z-index: 99999;
-  overflow-x: hidden;
-  left: -.53em;
-  opacity: .765;
+    height: 99em;
+    width: 102%;
+    background: black;
+    position: fixed;
+    top: -40em;
+    z-index: 99999;
+    overflow-x: hidden;
+    left: -.53em;
+    opacity: .6765;
 }
 #trix {
     background: #efefe7;
@@ -32,7 +32,7 @@
     padding: 1em 0 0 1em;
     color: black;
     overflow: hidden;
-    font-family: Harmattan;
+    font-family: DinLight;
 }
 div#wrapMobileWindow {
     display: none;

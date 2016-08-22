@@ -26,7 +26,7 @@
 	    -moz-osx-font-smoothing: grayscale;
 	}
 	i.fa.fa-print {
-	    font-size: 1.5em;
+		font-size: 1.15em;
 	}
 	.f-desc {
 	    border: none;
@@ -51,11 +51,11 @@
 	    margin-bottom: 2.02em;
 	}
 	i.fa.fa-phone {
-	    position: relative;
-	    top: -2.57em;
-	    left: -.2em;
-	    color: darkgreen;
-	    font-size: .8em;
+		position: relative;
+		top: -2.95em;
+		left: -.2em;
+		color: darkgreen;
+		font-size: .7em;
 	}
 	span#placePhone {
 		font-size: .7em;
@@ -451,6 +451,13 @@
 		background: linear-gradient(to left, #e6e6e6 , #ececec,#f3f3f3);
 		background: white;
 		border: none;
+	}
+	a.pure-button.x-small-custom {
+	    font-size: .625em;
+	    position: relative;
+	    top: -16.7em;
+	    margin-left: -.35em;
+	    width: 108px;
 	}
 
 	#wrapper {

@@ -144,9 +144,10 @@
 	 left: 1em;
 	}
 	#footer > * {
-	    width: 70%;
-	    margin-left: 4.5em;
-	    margin-bottom: 3em;
+		width: 70%;
+		margin-left: 4.5em;
+		margin-bottom: 3em;
+		z-index: -1;
 	}
 
 	form.chello {
@@ -225,10 +226,15 @@
 	}*/
 
 	div#share-window {
-	    background: #f9f9f9;
-	    padding: .25em 1.5em;
-	    margin: 1em;
-	    width: 84%;
+		background: #f9f9f9;
+		padding: 1em 1.5em;
+		margin: 1em;
+		width: 175px;
+		position: relative;
+		left: -1em;
+		top: -1.1em;
+		padding-left: 2.5em;
+		background: none;
 	}
 	#main input[type=text], #main input[type=password], #main input[type=email], #main select, #main textarea {
 		background: rgba(245, 251, 255, 0.99);

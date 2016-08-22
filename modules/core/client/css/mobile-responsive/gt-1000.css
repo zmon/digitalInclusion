@@ -17,6 +17,9 @@
 		border: none;
 		border-radius: 18px;
 	}
+	i.fa.fa-bus {
+	    margin-right: .4em;
+	}
 	span#training-day-user {
    		margin-left: 1.8em;
 	    color: #c58000;
@@ -28,14 +31,14 @@
 	}
 
 	a.pure-button.x-small-custom {
-	    font-size: .5em;
-	    position: relative;
-	    top: -20.5em;
-	    margin-left: .95em;
-	    width: 100px;
+		font-size: .625em;
+		position: relative;
+		top: -16.7em;
+		margin-left: -.35em;
+		width: 92px;
 	}
 	a#map-directions {
-		color: steelblue;
+		color: #0c375a;
 		font-size: .6em;
 		position: relative;
 		line-height: 1px;
@@ -71,11 +74,11 @@
 
 	}
 	i.fa.fa-phone {
-	    position: relative;
-	    top: -3.35em;
-	    left: -.2em;
-	    color: darkgreen;
-	    font-size: .8em;
+		position: relative;
+		top: -3.95em;
+		left: -.2em;
+		color: darkgreen;
+		font-size: .7em;
 	}
 	.myButton {
 
