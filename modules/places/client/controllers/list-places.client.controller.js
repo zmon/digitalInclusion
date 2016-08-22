@@ -76,8 +76,14 @@
       var ln = vm.places.length;
       var i;
       for (i=0;i<ln;i++) {
-        $scope.missingPlaces.push(vm.places[i]);
+        console.log(vm.places[i].zip);
+        if (typeof vm.places[i].zip === 'undefined') {
+          $scope.missingPlaces.push(vm.places[i]);
+        }
+        
       }
+      console.log("ladida");
+      console.log($scope.missingPlaces);
      
     }
 
