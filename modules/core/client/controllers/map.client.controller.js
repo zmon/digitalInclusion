@@ -1336,14 +1336,65 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
         
 	    }
 
+
+
       function onGeolocationError() {
         console.log("onGeolocationError");
-        console.log(libertyMemorial);
-        var position = { 
+        
+        getGoogleGeolocation();
+        // console.log("planB");
+        // console.log($scope.planB);
+        
+      }
+
+      function successCallback(res) {
+      	console.log("successCallback");
+      	console.log(res.data.location);
+      	var loc = res.data.location;
+      	console.log('loc');
+      	console.log(loc);
+      	var position = { 
+                          coords: { latitude: loc.lat, longitude: loc.lng }
+                        };
+        console.log("position");
+        console.log(position);
+        $scope.showMap(position);
+      }
+
+      function errorCallback(res) {
+      	console.log("errorCallback");
+      	console.log(res);
+      	console.log(libertyMemorial);
+      	// var position = { 
+       //                    coords: { latitude: libertyMemorial[0], longitude: libertyMemorial[1] }
+       //                  };
+       //  $scope.showMap(position);
+      }
+      
+      function getGoogleGeolocation() {
+      	var base = "https://www.googleapis.com/geolocation/v1/geolocate?key=";
+      	var apiKey = "AIzaSyCC-reO4jDrH1PqVkRX7qp5t4PQMWoBmls";
+      	var url = base + apiKey;
+      	// YOUR_API_KEY
+      	var body = {considerIp: true};
+	    // $http.post(url, body).success(function(data) {
+	  		// backupGeolocationCallback(data);
+	    // });
+	    $http.post(url, body).then(successCallback, errorCallback);
+
+      }
+
+      function backupGeolocationCallback(res) {
+      	console.log("backupGeolocationCallback");
+      	console.log(res.location);
+      	$scope.planB = res.location;
+      	var position = { 
                           coords: { latitude: libertyMemorial[0], longitude: libertyMemorial[1] }
                         };
         $scope.showMap(position);
       }
+
+
 
 	    $scope.showError = function (error) {
         onGeolocationError();
@@ -1558,7 +1609,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 	        var bounds = $scope.map.getBounds();
 	      });
 	        
-	      $scope.$apply();
+	      // $scope.$apply();
 	    };
 
    getLocation();
