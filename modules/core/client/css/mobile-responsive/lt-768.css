@@ -600,7 +600,11 @@
 		margin-top: .75em;
 	}
 
-
+	a#phone-mob {
+	    color: #05487b;
+	    font-size: .925em;
+	    margin-left: .4em;
+	}
 	.share-resource {
 		padding: .1em 1.2em;
 	}
@@ -619,6 +623,9 @@
 	    font-size: .75em;
 	    margin-top: .75em;
 	    margin-bottom: 1em;
+	    display: inline;
+	    color: #086392;
+	    margin-left: .5em;
 	}
 	a#closeSms {
 	    position: absolute;

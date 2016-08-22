@@ -848,6 +848,28 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 	    }
 	  }
 
+	  // <a href="tel:+16085551212">Phone me!</a>
+
+	  function regexCleanNumber(num) {
+	  	return num.replace(/[^0-9]+/g, '');
+	  }
+
+	  function formatClickable(phoneNumber) {
+	  	console.log("formatClickable");
+	  	var a = "tel:+1";
+	  	console.log("before");
+	  	console.log(phoneNumber);
+
+
+	  	var b = regexCleanNumber(phoneNumber);
+	  	// var c = 
+
+	  	console.log("after");
+	  	console.log(b);
+	  	console.log("result");
+	  	console.log(a + b);
+	  	return (a + b);
+	  }
 
       function setMobileInfoWindowData(json) {
         document.getElementById('address-mob').innerText = json.address1;
@@ -879,7 +901,11 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
           document.getElementById('description-mob').innerText = json.description;
         }
         if (typeof json.phone != "undefined") {
-          document.getElementById('phone-mob').innerText = json.phone;              
+        	var hrefNum = formatClickable(json.phone);
+        	console.log("hrefNum");
+        	console.log(hrefNum);
+        	document.getElementById('phone-mob').href = hrefNum;
+            document.getElementById('phone-mob').innerText = json.phone;              
         }
       }
 
@@ -911,6 +937,11 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
       }
       $scope.resetCustomMap = function() {
       	cm.style.top = "-4.6em";
+      }
+
+      var mobilePhoneTag = document.getElementById('phone-mob');
+      var setToClickable = function() {
+
       }
 
 	   function addListener(json, marker) {
@@ -951,6 +982,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
           if (c <= 768) {
             console.log("c <= 768");
             stretchMap();
+
           } else {
             console.log("c > 768");
           }
