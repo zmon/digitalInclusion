@@ -12,7 +12,7 @@
         <span ng-if="place.user" ng-bind="place.user.displayName"></span>
         <span ng-if="!place.user">Site Admin</span><br>
       </small> -->
-      <h4 class="list-group-item-heading in-block" ng-bind="place.title"></h4> <span class="inline" ng-bind="place.readableAddress"></span>
+      <h4 class="list-group-item-heading in-block" ng-bind="place.title"></h4> <span class="inline" ng-bind="place.readableAddress"></span><br>Zip: <span ng-bind="place.zip"></span><br>
       <!-- <p class="list-group-item-text" ng-bind="place._id"></p> -->
       <a class="list-group-item-heading" ng-href="/places/{{place._id}}">Edit</a>
     </a>
@@ -27,7 +27,10 @@
         <span ng-if="place.user" ng-bind="place.user.displayName"></span>
         <span ng-if="!place.user">Site Admin</span><br>
       </small> -->
-      <h4 class="list-group-item-heading in-block" ng-bind="place.title"></h4> <span class="inline" ng-bind="place.readableAddress"></span><br>Zip: <span ng-bind="place.zip"></span><br>Phone: <span ng-bind="place.phone"></span>
+      <h4 class="list-group-item-heading in-block" ng-bind="place.title"></h4> <span class="inline" ng-bind="place.readableAddress"></span><br>Zip: <span ng-bind="place.zip"></span><br>
+      <!-- Phone: <span ng-bind="place.phone"></span> -->
+
+      
       <!-- <p class="list-group-item-text" ng-bind="place._id"></p> -->
       <a class="list-group-item-heading" ng-href="/places/{{place._id}}">Edit</a>
     </a>

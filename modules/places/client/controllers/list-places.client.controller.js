@@ -55,6 +55,16 @@
       $scope.showNormal = true;
     }
 
+    function setInvisibility(arr) {
+      var l = arr.length;
+      var i;
+      for (i=0;i<l;i++) {
+        if (typeof arr[i].phone != 'undefined') {
+          
+        }
+      }
+    }
+
     $scope.sortAlphabetical = function() {
        console.log("alphabeticalPlaces");
     console.log($scope.alphabeticalPlaces);
