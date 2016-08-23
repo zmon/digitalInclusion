@@ -10,16 +10,20 @@
     <form name="vm.form.placeForm" class="form-horizontal" ng-submit="vm.save(vm.form.placeForm.$valid)" novalidate>
       <fieldset>
         <!-- <h1 class="custom-form-header">New Map Location</h1> -->
+
         <h4 class="custom-form-header">1. Place Details</h4>
         <div class="form-section-custom">
           <div class="form-group" show-errors>
             <label class="control-label" for="zip">Zip Code</label>
             <input name="zip" type="text" ng-model="vm.place.zip" id="zip" class="form-control" placeholder="Zip Code">
           </div>
+           <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.place._id ? 'Update' : 'Create'}}</button>
+        </div>
           
           <div class="form-group" show-errors>
             <label class="control-label" for="phone">Phone *</label>
-            <input name="phone" type="text" ng-model="vm.place.phone" id="phone" class="form-control" placeholder="Phone" required>
+            <input name="phone" type="text" ng-model="vm.place.phone" id="phone" class="form-control" placeholder="Phone">
             <div ng-messages="vm.form.placeForm.phone.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Place phone number is required.</p>
             </div>
@@ -204,9 +208,9 @@
           <label class="control-label" for="content">Content</label>
           <textarea name="content" data-ng-model="vm.place.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
         </div> -->
-        <div class="form-group">
+       <!--  <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.place._id ? 'Update' : 'Create'}}</button>
-        </div>
+        </div> -->
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>
         </div>
