@@ -4264,7 +4264,11 @@ h2.comment-header-custom {
   margin-left: .3em;
 }
 
-
+.fruStr {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
 
 a#searchButton {
     background: #a5a2a2;

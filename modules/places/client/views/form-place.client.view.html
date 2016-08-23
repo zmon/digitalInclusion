@@ -1,76 +1,3 @@
-<!-- <section class="view-page">
-  <div class="page-header">
-    <h1>{{vm.place._id ? vm.place.title : 'New Place'}}</h1>
-  </div>
-  <div class="col-md-12">
-    <form name="vm.form.placeForm" class="form-horizontal" ng-submit="vm.save(vm.form.placeForm.$valid)" novalidate>
-      <fieldset>
-        <h3 class="custom-form-header">Location Details</h3>
-        <div class="form-section-custom">
-          <div class="form-group" show-errors>
-            <label class="control-label" for="title">Title or Name</label>
-            <input name="title" type="text" ng-model="vm.place.title" id="title" class="form-control" placeholder="Title" required>
-            <div ng-messages="vm.form.placeForm.title.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Place title is required.</p>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label" for="wifi">WiFi Available?</label>
-            <input type="checkbox" name="wifi" ng-model="vm.place.wifi" id="wifi" value="true">
-
-          </div>
-        </div>
-        <h3 class="custom-form-header">Address</h3>
-        <div class="form-section-custom">
-          
-          <div class="form-group" show-errors>
-            <label class="control-label" for="address1">Address Line 1 (required)</label>
-            <input name="address1" type="text" ng-model="vm.place.address1" id="address1" class="form-control" placeholder="Address 1" required>
-            <div ng-messages="vm.form.placeForm.address1.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Address is required.</p>
-            </div>
-          </div>
-          <div class="form-group" show-errors>
-            <label class="control-label" for="address2">Address Line 2 (optional)</label>
-            <input name="address2" type="text" ng-model="vm.place.address2" id="address2" class="form-control" placeholder="Address 2">
-          </div>
-          <div class="form-group">
-            <label class="control-label" for="state">State</label>
-            <select name="state" ng-model="vm.place.state" id="state" class="form-control">
-              <option value="MO">Missouri</option>
-              <option value="KS">Kansas</option>
-            </select>
-          </div>
-          <hr>
-          <div class="form-group" show-errors>
-            <label class="control-label" for="readableAddress">Readable Address (for display in infowindow)</label>
-            <input name="readableAddress" type="text" ng-model="vm.place.readableAddress" id="readableAddress" class="form-control" placeholder="Readable Address">
-          </div>
-          <div class="form-group">
-            <label><input type="checkbox" id="cbox1" value="first_checkbox"> This is the first checkbox</label>
-            <label for="cbox2"><input type="checkbox" id="cbox2" value="second_checkbox"> This is the second checkbox</label>
-          </div>
-        </div>
-
-
-
-         <div class="form-group">
-          <label class="control-label" for="content">Content</label>
-          <textarea name="content" data-ng-model="vm.place.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
-        </div> 
-        <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.place._id ? 'Update' : 'Create'}}</button>
-        </div>
-        <div ng-show="vm.error" class="text-danger">
-          <strong ng-bind="vm.error"></strong>
-        </div>
-      </fieldset>
-    </form>
-  </div>
-</section>
- --> 
- 
-
 <section class="view-page">
  <!--  <div class="page-header">
     <h1>Edit</h1>
@@ -82,66 +9,80 @@
   <div class="col-md-12">
     <form name="vm.form.placeForm" class="form-horizontal" ng-submit="vm.save(vm.form.placeForm.$valid)" novalidate>
       <fieldset>
-        <h3 class="custom-form-header">1. Basic Information</h3>
+        <!-- <h1 class="custom-form-header">New Map Location</h1> -->
+        <h4 class="custom-form-header">1. Place Details</h4>
         <div class="form-section-custom">
           <div class="form-group" show-errors>
-            <label class="control-label" for="title">* Name</label>
-            <input name="title" type="text" ng-model="vm.place.title" id="title" class="form-control" placeholder="Title" required>
-            <div ng-messages="vm.form.placeForm.title.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Place title is required.</p>
-            </div>
+            <label class="control-label" for="zip">Zip Code</label>
+            <input name="zip" type="text" ng-model="vm.place.zip" id="zip" class="form-control" placeholder="Zip Code">
           </div>
           
           <div class="form-group" show-errors>
-            <label class="control-label" for="phone">* Phone</label>
+            <label class="control-label" for="phone">Phone *</label>
             <input name="phone" type="text" ng-model="vm.place.phone" id="phone" class="form-control" placeholder="Phone" required>
             <div ng-messages="vm.form.placeForm.phone.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Place phone number is required.</p>
             </div>
           </div>
+
           <div class="form-group" show-errors>
-            <label class="control-label" for="url">Website</label>
+            <label class="control-label" for="title">Name *</label>
+            <input name="title" type="text" ng-model="vm.place.title" id="title" class="form-control" placeholder="Title" required>
+            <div ng-messages="vm.form.placeForm.title.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Place title is required.</p>
+            </div>
+          </div>
+
+            <div class="form-group" show-errors>
+            <label class="control-label" for="address1">Address Line 1</label>
+            <input name="address1" type="text" ng-model="vm.place.address1" id="address1" class="form-control" placeholder="Address 1" required>
+            <div ng-messages="vm.form.placeForm.address1.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Address is required.</p>
+            </div>
+          </div>
+          <div class="form-group" show-errors>
+            <label class="control-label" for="address2">Address Line 2 (optional)</label>
+            <input name="address2" type="text" ng-model="vm.place.address2" id="address2" class="form-control" placeholder="Address 2">
+          </div>
+          <div class="form-group" show-errors>
+            <label class="control-label" for="city">City</label>
+            <input name="city" type="text" ng-model="vm.place.city" id="city" class="form-control" placeholder="City">
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="state">State</label>
+            <select name="state" ng-model="vm.place.state" id="state" class="form-control">
+              <option value="MO">Missouri</option>
+              <option value="KS">Kansas</option>
+            </select>
+          </div>
+          
+          <div class="form-group" show-errors>
+            <label class="control-label" for="url">Website URL</label>
             <input name="url" type="text" ng-model="vm.place.url" id="url" class="form-control" placeholder="Website Address">
           </div>
 
-          <div class="form-group" show-errors>
+          <div class="form-group">
+            <label class="control-label" for="description">Description</label>
+            <textarea name="description" data-ng-model="vm.place.description" id="description" class="form-control" cols="30" rows="4" placeholder="Description"></textarea>
+          </div> 
+          <!-- <div class="form-group" show-errors>
             <label class="control-label" for="locationType">Location Type</label>
-            <!-- <select name="locationType" ng-model="vm.place.locationType" id="locationType" class="form-control">
+            <select name="locationType" ng-model="vm.place.locationType" id="locationType" class="form-control">
               <option value="library">Library</option>
               <option value="community-center">Community Center</option>
               <option value="restaurant">Restaurant</option>
               <option value="coffee-shop">Coffee Shop</option>
               <option value="shopping-mall">Shopping Mall</option>
-            </select> -->
+            </select>
             <select selector
               name="locationType"
               model="vm.place.locationType"
               options="locationTypes"
               value-attr="value"></select>
           </div>
-
-          <div class="form-group" show-errors>
-            <label class="control-label" for="categories">Categories</label>
-            <!-- <input name="categories" type="text" ng-model="vm.place.categories" id="categories" class="form-control" placeholder="Categories"> -->
-            <select selector
-              name="categories"
-              multi="true"
-              model="vm.place.categories"
-              options="categoryOptions"
-              value-attr="value"></select>
-          </div>
-
-          <div class="form-group">
-            <label class="control-label" for="primaryCategory">Primary Category</label>
-            <!-- <input name="primaryCategory" type="text" ng-model="vm.place.primaryCategory" id="primaryCategory" class="form-control" placeholder="Primary Category"> -->
-            <select selector
-              name="primaryCategory"
-              model="vm.place.primaryCategory"
-              options="categoryOptions"
-              value-attr="value"></select>
-          </div>
-
-          
+ -->
+         
+        
           <!-- <div class="checkbox">
             <label class="control-label" for="wifi"><input type="checkbox" name="wifi" ng-model="vm.place.wifi" id="wifi">WiFi Available?</label>
           </div>
@@ -169,40 +110,35 @@
             </label>
           </div> -->
         </div>
-        <h3 class="custom-form-header">2. Address</h3>
+        <h3 class="custom-form-header">Services & Terms</h3>
         <div class="form-section-custom">
-          
-          <div class="form-group" show-errors>
-            <label class="control-label" for="address1">Address Line 1</label>
-            <input name="address1" type="text" ng-model="vm.place.address1" id="address1" class="form-control" placeholder="Address 1" required>
-            <div ng-messages="vm.form.placeForm.address1.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Address is required.</p>
-            </div>
-          </div>
-          <div class="form-group" show-errors>
-            <label class="control-label" for="address2">Address Line 2 (optional)</label>
-            <input name="address2" type="text" ng-model="vm.place.address2" id="address2" class="form-control" placeholder="Address 2">
-          </div>
-          <div class="form-group" show-errors>
-            <label class="control-label" for="city">City</label>
-            <input name="city" type="text" ng-model="vm.place.city" id="city" class="form-control" placeholder="City">
-          </div>
-          <div class="form-group">
-            <label class="control-label" for="state">State</label>
-            <select name="state" ng-model="vm.place.state" id="state" class="form-control">
-              <option value="MO">Missouri</option>
-              <option value="KS">Kansas</option>
-            </select>
-          </div>
-          <div class="form-group" show-errors>
-            <label class="control-label" for="zip">Zip Code</label>
-            <input name="zip" type="text" ng-model="vm.place.zip" id="zip" class="form-control" placeholder="Zip Code">
+             <div class="form-group" show-errors>
+            <label class="control-label" for="categories">Services</label>
+       <!--      <input name="categories" type="text" ng-model="vm.place.categories" id="categories" class="form-control" placeholder="Categories"> -->
+            <select selector
+              name="categories"
+              multi="true"
+              model="vm.place.categories"
+              options="categoryOptions"
+              value-attr="value"></select>
           </div>
 
           <div class="form-group">
+            <label class="control-label" for="primaryCategory">Primary Service Category</label>
+            <!-- <input name="primaryCategory" type="text" ng-model="vm.place.primaryCategory" id="primaryCategory" class="form-control" placeholder="Primary Category"> -->
+            <select selector
+              name="primaryCategory"
+              model="vm.place.primaryCategory"
+              options="categoryOptions"
+              value-attr="value"></select>
+          </div>
+
+          
+
+         <!--  <div class="form-group">
             <label class="control-label" for="location">Location</label>
             <input name="location" type="text" ng-model="vm.place.location" id="location" class="form-control" placeholder="Location">
-          </div>
+          </div> -->
 
           <!-- <div class="form-group">
             <label class="control-label" for="latlng">LatLng</label>
@@ -212,30 +148,19 @@
          
           <!-- <hr> -->
          
-       
-        </div>
 
-        <h3 class="custom-form-header">3. Map Data</h3>
-        <div class="form-section-custom">
-           <div class="form-group" show-errors>
+           <!-- <div class="form-group" show-errors>
             <label class="control-label" for="readableAddress">Readable Address</label>
             <input name="readableAddress" type="text" ng-model="vm.place.readableAddress" id="readableAddress" class="form-control" placeholder="Readable Address">
-          </div>
+          </div> -->
 
-          <div class="form-group">
-            <label class="control-label" for="description">Description</label>
-            <textarea name="description" data-ng-model="vm.place.description" id="description" class="form-control" cols="30" rows="4" placeholder="Description"></textarea>
-          </div> 
 
-          <div class="form-group">
+        <!--   <div class="form-group">
             <label class="control-label" for="caption">Caption or Tagline</label>
             <input name="caption" type="text" ng-model="vm.place.caption" id="caption" class="form-control" placeholder="Caption">
             
-          </div>
-        </div>
-
-        <h3 class="custom-form-header">4. Services & Terms</h3>
-        <div class="form-section-custom">
+          </div> -->
+ 
           
           <!-- <div class="form-group" show-errors>
             <label class="control-label" for="">Location offers one or more of following (check all that apply):</label>
@@ -261,13 +186,13 @@
             
           </div>
 
-          <div class="form-group">
+         <!--  <div class="form-group">
             <label class="control-label" for="wifi">WiFi Available?</label>
             <select name="wifi" ng-model="vm.place.wifi" id="wifi" class="form-control">
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
-          </div>
+          </div> -->
 
        
         </div>

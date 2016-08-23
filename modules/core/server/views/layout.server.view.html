@@ -162,6 +162,7 @@ table td {
     position: relative;
     top: -.5em;
 }*/
+
   </style>
   <!-- <link rel="stylesheet" href="/modules/core/client/css/overrides.css"/> -->
   
@@ -237,6 +238,7 @@ table td {
   <link rel="stylesheet" href="/modules/core/client/css/mobile-responsive/gt-1660.css"/>
 
 <link rel="stylesheet" href="/modules/core/client/css/mobile-responsive/test.css"/>
+<link rel="stylesheet" href="/modules/core/client/css/crabs.css"/>
 
 <link rel="stylesheet" href="/modules/core/client/css/or.css"/>
 <link rel="stylesheet" href="/modules/core/client/css/ngPrint.css"/>
@@ -361,6 +363,12 @@ a.pure-button.pure-button-primary.sms-form-button {
     display: none;
   }
 }
+
+ #main.fruStr {
+        background: none;
+    border: none;
+    box-shadow: none;
+  }
 </style>
 
 <link rel="stylesheet" href="/modules/core/client/css/hacks.css"/>
@@ -414,7 +422,7 @@ a.pure-button.pure-button-primary.sms-form-button {
   {% endif %}
 
 
-  <script src="https://maps.googleapis.com/maps/api/js?key={{process.env.GOOGLE_MAPS_API_KEY}}&libraries=geometry&callback=onGoogleReady" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key={{process.env.GOOGLE_MAPS_API_KEY}}&libraries=geometry,geocoding&callback=onGoogleReady" async defer></script>
 
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqZ_zfcyUUJDi6OuXq4QYpkdHPeaqFkms&libraries=geometry&callback=onGoogleReady" async defer></script> -->
 

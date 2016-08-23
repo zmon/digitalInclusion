@@ -21,6 +21,9 @@ module.exports = function (app) {
   app.route('/api/places/location')
     .post(places.match);
 
+  app.route('/api/places/zip')
+    .get(places.identify);
+
   app.route('/api/places/search')
     .post(places.search);
 

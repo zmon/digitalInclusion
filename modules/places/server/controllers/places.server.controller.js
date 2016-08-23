@@ -187,6 +187,38 @@ exports.search = function (req, res) {
 
 
 
+  exports.identify = function(req, res) {
+    var places = function(o) {return o};
+    console.log("identify");
+    var result = [];
+    // Place.find().sort('zip').exec(function (err, places) {
+    //   if (err) {
+    //     return res.status(400).send({
+    //       message: errorHandler.getErrorMessage(err)
+    //     });
+    //   } else {
+    //     res.json(places);
+    //   }
+    // });
+    Place.find().where('zip').equals('').exec(function(err,place) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        console.log("place matches:");
+        var num = place.length;
+        console.log(num);
+        console.log("place");
+        console.log(place.length);
+        console.log("stone");
+        console.log(result);
+        result.push(place);
+        return res.json(place);
+      }
+    });
+  };
+
 
 
 
@@ -239,7 +271,6 @@ exports.find = function (req, res) {
   };
 
 
-  
 
 
 
@@ -309,7 +340,7 @@ exports.read = function (req, res) {
 exports.update = function (req, res) {
   console.log("update **");
   console.log("req.body.location");
-  console.log(req.body.location.lat);
+  console.log(req.body);
   // var loc = req.body.location;
   // console.log(loc);
 
@@ -326,7 +357,7 @@ exports.update = function (req, res) {
   place.title = req.body.title;
   place.url = req.body.url;
   place.caption = req.body.caption;
-  place.category = req.body.category;
+  // place.categories = req.body.categories;
   place.description = req.body.description;
   place.address1 = req.body.address1;
   place.address2 = req.body.address2;

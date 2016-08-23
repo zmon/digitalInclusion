@@ -1,5 +1,5 @@
 <header id="header">
-	<h1 class="tab-head">Add Service</h1>
+	<h1 class="tab-head th-serv">Add Service</h1>
 	<p class="tab-p">Choose type of service you would like to add to map</p>
 </header>
 <script type="text/javascript">
@@ -25,7 +25,7 @@ $('label').click(function() {
   $("." + el.attr("class") + ":last").remove();
 }); 
 </script>
-<div id="main" class="row mkinvs">
+<div id="main" class="row mkinvs fruStr">
 	<section id="content" class="main">
 		<!-- <h2>Map Categories</h2> -->
 		<section id="add-resources" ng-controller="ModalController">							
@@ -199,7 +199,7 @@ $('label').click(function() {
 
 
     <ul class="alt">
-            <li><a ng-click="newLocation();" class="myButton">New Location</a></li>
+            <li><a ng-click="newLocation();" class="myButton">New Map Location</a></li>
 <!--             <a class="lks" ng-click="newLocation();">New Location</a></li>
  -->    </ul>
 

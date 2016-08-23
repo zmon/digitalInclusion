@@ -259,7 +259,7 @@ setTimeout(function(){
 
 
       function setPageHeightLong() {
-        mainPageEl.style.height = "800px";
+        mainPageEl.style.height = "683px";
         document.getElementById('wrapper').style.height = "1024px";
         setTimeout(function(){
             console.log("timeout");

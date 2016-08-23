@@ -351,11 +351,12 @@ section#first {
   top: .41em;
 }
 
+
 .links {
     color: #0d2940;
     font-weight: 500;
-    color: #ecf6ff;
-    text-shadow: 1px 1px 5px black;
+    color: #085ba5;
+    text-shadow: 1px 1px 2.5px #34a6f7;
     letter-spacing: normal;
     letter-spacing: 1.2px;
     text-decoration: underline;
