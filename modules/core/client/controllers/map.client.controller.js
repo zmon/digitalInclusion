@@ -25,6 +25,7 @@ var list = {};
 
     $scope.smsFormOpen = false;
 
+
     var libertyMemorial = [39.081009, -94.585944];
     var eighteenthAndVine = [39.091804, -94.562090];
 
@@ -426,7 +427,7 @@ setTimeout(function(){
 	      } else if (category === "training-night") {
 	       return "modules/core/client/img/userBlue.png";
 	      } else if (category === "wifi-free") {
-          return "modules/core/client/img/wifi-free.svg";
+          return "modules/core/client/img/wifi-free-2.svg";
 	       // return "modules/core/client/img/wifiFree-2.png";
 	      } else if (category === "wifi-customer") {
           return "modules/core/client/img/wifi-purchase.svg";
@@ -715,8 +716,75 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
     	$scope.smsFormOpen = false;
     }
 
-    function setPlaceData(json) {
+    $scope.resetIwIcon = function() {
+    	$scope.showImgFw = false;
+	    $scope.showImgCw = false;
+	    $scope.showImgDt = false;
+	    $scope.showImgNt = false;
+	    $scope.showImgCr = false;
+	    $scope.showImgCa = false;
+    }
 
+    function setInfoWinIcon(str) {
+    	if (str === "wifi-free") {
+    		// $scope.showImgFw = false;
+		    $scope.showImgCw = false;
+		    $scope.showImgDt = false;
+		    $scope.showImgNt = false;
+		    $scope.showImgCr = false;
+		    $scope.showImgCa = false;
+    		$scope.showImgFw = true;
+    	} else if (str === "wifi-customer") {
+    		$scope.showImgFw = false;
+		    // $scope.showImgCw = false;
+		    $scope.showImgDt = false;
+		    $scope.showImgNt = false;
+		    $scope.showImgCr = false;
+		    $scope.showImgCa = false;
+    		$scope.showImgCw = true;
+    	} else if (str === "training-day") {
+    		$scope.showImgFw = false;
+	    $scope.showImgCw = false;
+	    // $scope.showImgDt = false;
+	    $scope.showImgNt = false;
+	    $scope.showImgCr = false;
+	    $scope.showImgCa = false;
+    		$scope.showImgDt = true;
+    	} else if (str === "training-night") {
+    		$scope.showImgFw = false;
+	    $scope.showImgCw = false;
+	    $scope.showImgDt = false;
+	    // $scope.showImgNt = false;
+	    $scope.showImgCr = false;
+	    $scope.showImgCa = false;
+    		$scope.showImgNt = true;
+    	} else if (str === "computers-retail") {
+    		$scope.showImgFw = false;
+	    $scope.showImgCw = false;
+	    $scope.showImgDt = false;
+	    $scope.showImgNt = false;
+	    // $scope.showImgCr = false;
+	    $scope.showImgCa = false;
+    		$scope.showImgCr = true;
+    	} else if (str === "computers-access") {
+    		$scope.showImgFw = false;
+	    $scope.showImgCw = false;
+	    $scope.showImgDt = false;
+	    $scope.showImgNt = false;
+	    $scope.showImgCr = false;
+	    // $scope.showImgCa = false;
+    		$scope.showImgCa = true;
+    	}
+    }
+
+    function setPlaceData(json) {
+    	$scope.showImgFw = false;
+	    $scope.showImgCw = false;
+	    $scope.showImgDt = false;
+	    $scope.showImgNt = false;
+	    $scope.showImgCr = false;
+	    $scope.showImgCa = false;
+    	
       // var addrStr = json.address1 + ", " + json.city
 
             $scope.undefined = {};
@@ -727,6 +795,21 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
              document.getElementById('placeState').innerText = json.state;
              
       if (typeof json.primaryCategory != 'undefined') {
+      	setInfoWinIcon(json.primaryCategory);
+      	console.log("****Chcek");
+      	console.log(json.primaryCategory);
+      	// var newimg = document.createElement('img');
+      	// newimg.addClass('infowindow-img');
+      	// var iw = angular.element(document.getElementById('info-wrapper'));
+      	// var iw = document.getElementById('info-wrapper');
+      	// iw.prepend(newimg);
+      	// var ico = document.getElementById('infowindow-img');
+      	// console.log("");
+      	// console.log("ico");
+      	// console.log(ico);
+      	// console.log("iw");
+      	// console.log(iw);
+      	// console.log("newimg");
         document.getElementById('placeCategory').innerText = categoryIconText(json.primaryCategory);
       }
       if (typeof json.title != 'undefined') {
@@ -962,6 +1045,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 
 	      google.maps.event.addListener(marker, 'click', function() {
+	      	// $scope.resetIwIcon();
        		setPlaceData(json);
        		setPrintWindow(json);
           setMobileInfoWindowData(json);
@@ -1297,6 +1381,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 	    }
 
 	    function removeWindow() {
+
 	      sideWindowElement.style.display = "none";
 	      mapCanvasElement.style.width = "100%";
         if (innerWidth < 768) {
@@ -1492,17 +1577,25 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 
       function zoomEnter() {
+      	setTimeout(function(){
+            // console.log("timeout");
+            $scope.map.setZoom(10);
+        }, 600);
+        setTimeout(function(){
+            // console.log("timeout");
+            $scope.map.setZoom(11);
+        }, 600);
+        setTimeout(function(){
+            // console.log("timeout");
+            $scope.map.setZoom(12);
+        }, 600);
+        setTimeout(function(){
+            // console.log("timeout");
+            $scope.map.setZoom(13);
+        }, 600);
         setTimeout(function(){
             // console.log("timeout");
             $scope.map.setZoom(14);
-        }, 200);
-        setTimeout(function(){
-            // console.log("timeout");
-            $scope.map.setZoom(15);
-        }, 400);
-        setTimeout(function(){
-            // console.log("timeout");
-            $scope.map.setZoom(16);
         }, 800);
       }
 
@@ -1524,7 +1617,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 	      $scope.mapOptions = {
 	        center: {lat: $scope.lat, lng: $scope.lng},
-	        zoom: 14,
+	        zoom: 9,
           navigationControlOptions: {
             style: google.maps.NavigationControlStyle.SMALL
           },
