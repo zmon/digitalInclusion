@@ -19,7 +19,7 @@
 		position: relative;
 		width: 120.5%;
 		box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a;
-		top: -10.4em;
+		top: -9.6em;
 		height: 2.8em;
 		border-radius: 4px;
 		left: -6.2em;
@@ -27,22 +27,22 @@
 		box-shadow: inset 0 0 85px #e2ecc6, 0 0 0 1px #868686, 0 0 3px #353535;
 	}
 	#main {
-	    border-radius: .1em;
-	    outline: 0;
-	    background-color: #eaeaea;
-	    background-image: url(https://www.transparenttextures.com/patterns/brilliant.png);
-	    border: 1px solid #3c3434;
-	    box-shadow: 0 0 0 1px #d2d2d2,inset 0 0 100px #eaeaea,0 0 2.5px #757575, 0 0 10px #dedede, inset 0 0 7px ivory;
-	    box-shadow: none;
-	    /* background: none; */
-	    background: transparent;
-	    /* box-shadow: none; */
-	    top: -15.5em;
-	    position: relative;
-	    padding-top: 12.6em;
-	    height: 43.5em;
-	    border: none;
-	    border-radius: 18px;
+		border-radius: .1em;
+		outline: 0;
+		background-color: #eaeaea;
+		background-image: url(https://www.transparenttextures.com/patterns/brilliant.png);
+		border: 1px solid #3c3434;
+		box-shadow: 0 0 0 1px #d2d2d2,inset 0 0 100px #eaeaea,0 0 2.5px #757575, 0 0 10px #dedede, inset 0 0 7px ivory;
+		box-shadow: none;
+		/* background: none; */
+		background: transparent;
+		/* box-shadow: none; */
+		top: -16.5em;
+		position: relative;
+		padding-top: 12.6em;
+		height: 43.5em;
+		border: none;
+		border-radius: 18px;
 	}
 	.f2 {
 	    font-size: .9em;
@@ -104,31 +104,31 @@
 	}
 
 	#wrapper {
-	    width: 74em;
-	    max-width: calc(100% - .1em);
-	    margin: 0 auto;
-	    height: 50em;
-	    position: relative;
-	    top: -7em;
-	    padding-left: 2.4em;
-	    background: radial-gradient(#eff6ff,#f5ffe5);
-	    box-shadow: inset 0 0 800px #eef3e5, inset 0 0 0 800px #dce6c8, 0 0 0 1px #baccba, 0 0 10px black;
-	    /* padding-left: .1em; */
-	    border: none;
-	    box-shadow: none;
-	    background: linear-gradient(to left, #6e7b92 , #CFDEF3, #CFDEF3,#6e7b92);
+		width: 74em;
+		max-width: calc(100% - .1em);
+		margin: 0 auto;
+		height: 50em;
+		position: relative;
+		top: -8.5em;
+		padding-left: 2.4em;
+		background: radial-gradient(#eff6ff,#f5ffe5);
+		box-shadow: inset 0 0 800px #eef3e5, inset 0 0 0 800px #dce6c8, 0 0 0 1px #baccba, 0 0 10px black;
+		/* padding-left: .1em; */
+		border: none;
+		box-shadow: none;
+		background: linear-gradient(to left, #6e7b92 , #CFDEF3, #CFDEF3,#6e7b92);
 	}
 
 
 	#header p {
-	    font-size: .75em;
-	    letter-spacing: -0.025em;
-	    color: #545353;
-	    margin-top: -.-5em;
-	    position: relative;
-	    top: -7.5em;
+		font-size: .75em;
+		letter-spacing: -0.025em;
+		color: #545353;
+		margin-top: -.-5em;
+		position: relative;
+		top: -8.2em;
+		left: -7em;
 	}
-
 	.nav-tabs > li > a {
 		margin-right: 2px;
 		line-height: 1.42857143;
@@ -168,8 +168,8 @@
 		height: 610px;
 		border-radius: 18px;
 		box-shadow: 0 0 2px #2d2c2c, inset 0 0 200px #90928c, 0 0 0 1px #a0a0a0, 0 0 2px #444444;
+		box-shadow: none;
 	}
-
 	a.lks {
 	    color: cornflowerblue;
 	    color: #557692;
@@ -187,11 +187,13 @@
 		cursor: default;
 		background: olive;
 		border: 1px solid #ddd;
-		margin-top: .1em;
+		margin-top: .05em;
 		margin-bottom: .2em;
-		padding-top: .45em;
+		padding-top: .25em;
+		font-size: .75em;
 		height: 3.2em;
 		border: 1px solid #638a13;
+		letter-spacing: .6px;
 		box-shadow: 0 0 145px #e8ff90;
 		border-top-left-radius: .5em;
 		box-shadow: inset 0 0 85px olive, 0 0 4px olivedrab;
@@ -203,7 +205,19 @@
 		border: none;
 		text-shadow: none;
 	}
-
+	.nav > li > a:hover, .nav > li > a:focus {
+	    text-decoration: none;
+	    background-color: #c9e269;
+	    text-shadow: 0 0 20px #ffffff;
+	    color: #848439;
+	    box-shadow: none;
+	    background: transparent;
+	    border-radius: 1.5em;
+	    text-decoration: underline;
+	    padding-top: .5em;
+	    margin-top: .125em;
+	    height: 3.2em;
+	}
 	#wrapper {
 		box-shadow: inset 0 0 200px #e2eff1, 0 0 1px #5a5959;
 		height: 52.5em;
@@ -282,8 +296,18 @@
 		font-weight: 600;
 		letter-spacing: 1.9px;
 		font-size: 16px;
-		top: -11.4em;
+		top: -10.4em;
 		font-family: Georgia;
+	}
+	#header h1 {
+	    margin: .4em 0.25em 4em 0;
+	    font-weight: 600;
+	    letter-spacing: 1.9px;
+	    font-size: 16px;
+	    left: -14.49em;
+	    width: 71.2em;
+	    top: -12.225em;
+	    font-family: Georgia;
 	}
 	#footer {
 	    display: -moz-flex;

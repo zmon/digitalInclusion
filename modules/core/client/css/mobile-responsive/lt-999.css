@@ -18,7 +18,7 @@
 		background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
 		/* border-color: transparent; */
 		border: none;
-		border-radius: 0;
+		border-radius: 2px;
 		background: #8e9eab;
 		background: -webkit-linear-gradient(to left, #8e9eab , #eef2f3);
 		z-index: 99999;
