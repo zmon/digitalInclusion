@@ -1,0 +1,30 @@
+@media (max-width: 760px) {
+	html, body {
+	    max-width: 760px;
+	    max-height: 1150px;
+	    overflow:hidden;
+	}
+	body {
+
+	}
+	#footer {
+
+	    
+
+	}
+	#header h1 {
+		margin-top: 2.2em;
+	}
+	#header p {
+	
+	}
+	main#main-page {
+		width: 124.5%;
+	}
+	section#customMap {
+	width: 88.2%;
+	}
+	ul.actions.fit.small {
+	     left: 30%;
+	}
+}

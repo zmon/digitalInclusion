@@ -1,0 +1,33 @@
+@media (max-width: 660px) {
+	html, body {
+	    max-width: 660px;
+	    max-height: 1024px;
+	}
+	body {
+
+	}
+	#footer {
+
+	    
+
+	}
+	#header h1 {
+	
+	}
+	#header p {
+	
+	}
+	main#main-page {
+		width: 124.5%;
+	}
+	section#customMap {
+	
+	}
+	ul.actions.fit.small {
+	     left: 22.5%;
+	}
+	ul.actions.fit.small.lower-btns {
+	    position: relative;
+	    top: -1.8em;
+	}
+}

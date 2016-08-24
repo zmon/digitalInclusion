@@ -1,0 +1,34 @@
+@media (max-width: 400px) {
+	html, body {
+	    max-width: 400px;
+	    max-height: 960px;
+	}
+	body {
+
+	}
+	#footer {
+
+	    
+
+	}
+	#header h1 {
+		    margin-top: -1.5em;
+		    left: -1.6em;
+		    padding-top: 1.25em;
+	}
+	#header p {
+		top: -10.7em;
+    margin-left: 1.1em;
+	}
+	main#main-page {
+		
+	}
+	section#customMap {
+		    margin-top: 14.7em;
+		    width: 104.75%;
+	}
+	ul.actions.fit.small {
+	 	left: 12.5%;
+    margin-top: .85em;
+	}
+}

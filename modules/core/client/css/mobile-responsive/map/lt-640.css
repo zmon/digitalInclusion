@@ -1,0 +1,47 @@
+@media (max-width: 640px) {
+	html, body {
+	    max-width: 640px;
+	    max-height: 1024px;
+	}
+	body {
+
+	}
+	section.meta-w-form {
+
+	    top: 16.8em;
+	}
+	#footer {
+
+	    
+
+	}
+	ul.actions.fit.small li {
+
+	    left: -.8em;
+	}
+	#header h1 {
+		margin-top: -.6em;
+		margin-bottom: 2em;
+		left: 2.5em;
+		background: linear-gradient(#f4f9fb , #ececec, #e8e9ea );
+	    border: none;
+	    box-shadow: 0 0 0 1px #e4e4e4, 0 0 5px #29250c, 0 0 1px #232323, inset 0 0 100px #efefef, inset 0 0 100px #d6d3d3;
+	    border-radius:6px;
+	}
+	#header p {
+		top: -13.8em;
+	}
+	main#main-page {
+		width: 124.5%;
+	}
+	section#customMap {
+		    width: 94.25%;
+	}
+	ul.actions.fit.small {
+	 	    left: 14%;
+	}
+	ul.actions.fit.small.lower-btns {
+	    position: relative;
+	    top: -3em;
+	}
+}

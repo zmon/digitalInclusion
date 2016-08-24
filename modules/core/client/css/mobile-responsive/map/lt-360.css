@@ -9,6 +9,7 @@
 		margin-top: 11.7em;
 		margin-bottom: 2.7em;
 		width: 109.9%;
+		width: 107.9%;
 		padding-right: 8em;
 		margin-left: 0;
 		border: none;
@@ -16,6 +17,15 @@
 		border: 1px solid #7b7b76;
 		border-radius: 6px;
 		border: none;
+	}
+	#footer > * {
+
+	    margin-left: 4.5em;
+	
+	}
+	
+	ul.actions.fit.small {
+	    left: -12%;
 	}
 	main#main-page {
 
@@ -26,7 +36,7 @@
 	    color: #4a4a4a;
 	    position: relative;
 	    top: -12.1em;
-	    left: 2.3em;
+	   left: 1.9em;
 	    font-size: .85em;
 	}
 	#header h1 {
@@ -42,7 +52,7 @@
 	    padding-bottom: 3em;
 	    position: relative;
 	    height: 9.5em;
-	    left: -2.6em;
+	        left: -2.15em;
 	    top: -8.4em;
 	    background: linear-gradient(#d9dee0 , #d6d6d6, #d4d6de );
 	    width: 22.25em;
@@ -51,6 +61,10 @@
 
 	    height: 25px;
 
+	}
+	section.meta-w-form {
+	    top: 14em;
+	    left: 1.1em;
 	}
 	#main .button.special, #main button.special, #main input[type=button].special, #main input[type=reset].special, #main input[type=submit].special {
 	    height: 25px;

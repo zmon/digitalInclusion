@@ -357,10 +357,10 @@ section#first {
 .links {
     color: #0d2940;
     font-weight: 600;
-    color: #15e6e0;
-    text-shadow: 1px 1px 2.5px #0f5180;
+    color: #63b1af;
+    text-shadow: 1px 1px .5px #0c212f;
     letter-spacing: normal;
-    letter-spacing: 1.2px;
+    letter-spacing: .2px;
     text-decoration: underline;
 }
 .links:hover {

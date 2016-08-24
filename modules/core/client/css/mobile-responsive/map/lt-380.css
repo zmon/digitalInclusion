@@ -1,0 +1,49 @@
+@media (max-width: 380px) {
+	html, body {
+	    max-width: 380px;
+	    max-height: 960px;
+	}
+	body {
+
+	}
+	body {
+		box-shadow: inset 0 0 200px black;
+	}
+	#footer {
+
+	    
+
+	}
+	/*section.meta-w-form {
+	    position: relative;
+	    left: .225em;
+	}*/
+	#header h1 {
+	padding-top: 1.4em;
+	left: -1.4em;
+	}
+	#header p {
+		position: relative;
+    top: -9.3em;
+    top: -10.5em;
+    margin-left: .6em;
+	}
+	main#main-page {
+		
+	}
+	section#customMap {
+		    width: 106.5%;
+	}
+	ul.actions.fit.small {
+	 left: 10.5%;
+	}
+	ul.actions.fit.small.lower-btns {
+	    position: relative;
+	    top: -3em;
+	}
+	ul.actions.fit.small li.realign {
+	    position:relative;
+	    left: -.75em;
+
+	}
+}
