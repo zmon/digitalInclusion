@@ -1397,28 +1397,28 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
       }
 
 	    var resizeMap = function() {
-        var cWidth = getCurrentWidth();
-        console.log("resize map");
-        console.log(cWidth);
-        if (cWidth <= 768) {
-          $scope.mobileMod = true;
-          headerToggleId.style.display = "none";
-          mobileWindowElement.style.display = "initial";
-          $window.scrollTo(0,0);
-          hideOverflow(html);
-          var diff = (cWidth - 38);
+	        var cWidth = getCurrentWidth();
+	        console.log("resize map");
+	        console.log(cWidth);
+	        if (cWidth <= 768) {
+	          $scope.mobileMod = true;
+	          headerToggleId.style.display = "none";
+	          mobileWindowElement.style.display = "initial";
+	          $window.scrollTo(0,0);
+	          hideOverflow(html);
+	          var diff = (cWidth - 38);
 
 
 
-          var x = diff + "px";
-          document.getElementById('trix').style.width = x;
-        } else {
-          mapCanvasElement.style.width = "80%";
-          mapCanvasElement.style.borderRight = "1px solid #4e4e4e";
-          sideWindowElement.style.display = "initial";
-        }
-	      
-        
+	          var x = diff + "px";
+	          document.getElementById('trix').style.width = x;
+	        } else {
+	          mapCanvasElement.style.width = "75%";
+	          mapCanvasElement.style.borderRight = "1px solid #4e4e4e";
+	          sideWindowElement.style.display = "initial";
+	        }
+		      
+	        
 	    }
 
 

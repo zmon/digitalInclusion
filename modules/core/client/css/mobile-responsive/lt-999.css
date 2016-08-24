@@ -1,29 +1,29 @@
 @media (max-width: 999px) {
 	#wrapper {
-	    width: 64em;
-	    max-width: calc(100% - -.4em);
-	    margin: 0 auto;
-	    top: -5.0em;
-	    background: #b0b990;
-	    box-shadow: inset 0 0 200px #e2eff1, 0 0 1px #5a5959;
-	    border: 1px double #747879;
-	    /* background: radial-gradient(lightgrey,black); */
-	    min-height: 760px;
-	    /* background: radial-gradient(#eff6ff,#d3d8de); */
-	    /* border-right: none; */
-	    /* border-left: none; */
-	    border-radius: 18px;
-	    height: 54em;
-	    outline: none;
-	    background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
-	    /* border-color: transparent; */
-	    border: none;
-	    background: #8e9eab;
-	    background: -webkit-linear-gradient(to left, #8e9eab , #eef2f3);
-	    z-index: 99999;
-	    background: linear-gradient(#eef2f3,#dfe6ea);
+		width: 64em;
+		max-width: calc(100% - -.4em);
+		margin: 0 auto;
+		top: -7em;
+		background: #b0b990;
+		box-shadow: inset 0 0 200px #e2eff1, 0 0 1px #5a5959;
+		border: 1px double #747879;
+		/* background: radial-gradient(lightgrey,black); */
+		min-height: 760px;
+		/* background: radial-gradient(#eff6ff,#d3d8de); */
+		/* border-right: none; */
+		/* border-left: none; */
+		border-radius: 18px;
+		height: 54em;
+		outline: none;
+		background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+		/* border-color: transparent; */
+		border: none;
+		border-radius: 0;
+		background: #8e9eab;
+		background: -webkit-linear-gradient(to left, #8e9eab , #eef2f3);
+		z-index: 99999;
+		background: linear-gradient(#eef2f3,#dfe6ea);
 	}
-
 	ul.nav.nav-tabs {
 	    position: relative;
 	    top: -5.841em;

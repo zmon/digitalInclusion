@@ -3144,15 +3144,14 @@
       font-size: 16px;
       font-family: Georgia;
     }
-
-    #header p {
+  #header p {
       font-size: .7em;
       letter-spacing: 0.15em;
       color: #545454;
+      top: -8em;
       font-weight: 500;
-    
       font-family: Georgia;
-    }
+  }
 
     #header.alt {
       padding: 7em 5em 4em 5em ;
@@ -4000,6 +3999,8 @@ input#pac-input {
     height: 38.1em;
     border: none;
     border-radius: 18px;
+    position: relative;
+    top: -4.5em;
 }
 #main .button.special, #main button.special, #main input[type=submit].special, #main input[type=reset].special, #main input[type=button].special {
     background-color: #a6dfff;

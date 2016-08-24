@@ -296,19 +296,21 @@ section#toggleButtons {
 }
 
 main#main-page {
-  position: relative;
-  top: -4em;
-  margin-left: .3em;
-  background: radial-gradient(#929292,#868484,#9e9677,#a09a80,#929187);
-  /*outline: 1px solid #9c9c9c;*/
-  box-shadow: inset 0 0 400px #afb7b9;
-  background: silver;
-  background: radial-gradient(#ebf0ff,#bedbf9,#8ac1e4,#9fc3d0);
-  box-shadow: 0 0 5px #383838;
-  border-radius: 10px;
-  background: none;
-  box-shadow: 0 0 5px #383838, inset 0 0 200px #cfd5d6, 0 0 0 1px #d4d4d4;
-  box-shadow: none;
+    position: relative;
+    left: -2.9em;
+    top: -6.1em;
+    width: 115.5%;
+    margin-left: .3em;
+    background: radial-gradient(#929292,#868484,#9e9677,#a09a80,#929187);
+    /* outline: 1px solid #9c9c9c; */
+    box-shadow: inset 0 0 400px #afb7b9;
+    background: silver;
+    background: radial-gradient(#ebf0ff,#bedbf9,#8ac1e4,#9fc3d0);
+    box-shadow: 0 0 5px #383838;
+    border-radius: 10px;
+    background: none;
+    box-shadow: 0 0 5px #383838, inset 0 0 200px #cfd5d6, 0 0 0 1px #d4d4d4;
+    box-shadow: none;
 }
 
 section#first {
@@ -354,14 +356,13 @@ section#first {
 
 .links {
     color: #0d2940;
-    font-weight: 500;
-    color: #085ba5;
-    text-shadow: 1px 1px 2.5px #34a6f7;
+    font-weight: 600;
+    color: #15e6e0;
+    text-shadow: 1px 1px 2.5px #0f5180;
     letter-spacing: normal;
     letter-spacing: 1.2px;
     text-decoration: underline;
 }
-
 .links:hover {
   cursor: pointer;
 }

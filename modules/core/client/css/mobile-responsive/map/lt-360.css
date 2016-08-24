@@ -1,0 +1,64 @@
+@media (max-width: 360px) {
+	section#customMap {
+		height: 414px;
+		border-left: 1px solid #626f64;
+		border-right: 1px solid #637766;
+		box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
+		border: 2px solid #676f03;
+		box-shadow: 0 0 1px #c8d473, 0 0 10px black;
+		margin-top: 11.7em;
+		margin-bottom: 2.7em;
+		width: 109.9%;
+		padding-right: 8em;
+		margin-left: 0;
+		border: none;
+		border-top: 1px solid #2d2d00;
+		border: 1px solid #7b7b76;
+		border-radius: 6px;
+		border: none;
+	}
+	main#main-page {
+
+	    width: 121.96%;
+	
+	}
+	#header p {
+	    color: #4a4a4a;
+	    position: relative;
+	    top: -12.1em;
+	    left: 2.3em;
+	    font-size: .85em;
+	}
+	#header h1 {
+	    margin: 0 0 0.25em 0;
+	    font-weight: 700;
+	    letter-spacing: normal;
+	    background: #dfe9ff;
+	    border-radius:6px;
+	    margin-top: 1.75em;
+	    border: 1px solid #d2d2d2;
+	    box-shadow: 0 0 1px #505050, inset 0 0 200px #dedede;
+	    padding-top: .5em;
+	    padding-bottom: 3em;
+	    position: relative;
+	    height: 9.5em;
+	    left: -2.6em;
+	    top: -8.4em;
+	    background: linear-gradient(#d9dee0 , #d6d6d6, #d4d6de );
+	    width: 22.25em;
+	}
+	#main input[type="submit"], #main input[type="reset"], #main input[type="button"], #main button, #main .button {
+
+	    height: 25px;
+
+	}
+	#main .button.special, #main button.special, #main input[type=button].special, #main input[type=reset].special, #main input[type=submit].special {
+	    height: 25px;
+	}
+	ul.actions.fit.small li {
+	    padding: 0 0 0 .7em;
+	    width: 130px;
+	    font-size: .75em;
+	    left: -1em;
+	}
+}
