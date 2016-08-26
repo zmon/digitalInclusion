@@ -1,14 +1,33 @@
 @media (min-width: 769px) {
-
+	.nav > li > a:hover, .nav > li > a:focus {
+	    text-shadow: 0 0 1px #FFFF8D;
+	    color: #9E9E9E;
+	}
+	.nav-tabs > li > a {
+	    color: #616161;
+	    text-decoration: none;
+	    /*margin-top: -.735em;*/
+	}
+	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	    color: #424242;
+	    text-decoration: none;
+	    letter-spacing: .125pc;
+	}
 	.navbar-inverse .navbar-brand {
 	    color: #212121;
 	    text-shadow: none;
-	    letter-spacing: .35em;
+	    letter-spacing: .15pc;
+	    font-size: 1em;
+	    text-decoration: none;
 	    font-family: "Source Sans Pro", Helvetica, sans-serif;
 	}
 	.nav-tabs {
 	    background: #E0E0E0;
 	    box-shadow: 0 6px 6px -3px rgba(0,0,0,.2),0 10px 14px 1px rgba(0,0,0,.14),0 4px 18px 3px rgba(0,0,0,.12);
+	   
+    	height: 2em;
+    	border: 1px solid gray;
+    	border-radius: 2px;
 	}
 
 	section.meta-w-form {
@@ -18,8 +37,12 @@
 	#header h1 {
 	    background-image: url('/modules/core/client/img/az_subtle.png');
 	    background: #F5F5F5;
+	    letter-spacing: .125pc;
+	    font-family: "Source Sans Pro", Helvetica, sans-serif;
 	}
-
+	button#e2, button#e1, button#e3, button#e4 {
+	    border: 1px solid lightgray;
+	}
 	.row.butane {
 		background: #FAFAFA;
 	    box-shadow: 0 6px 6px -3px rgba(0,0,0,.2),0 10px 14px 1px rgba(0,0,0,.14),0 4px 18px 3px rgba(0,0,0,.12);
@@ -42,4 +65,12 @@
 	.md-button {
 		background: #FFFFFF;
 	}
+}
+
+#buttons-wrapper ul li button.special {
+  background: #C8E6C9;
+}
+
+#buttons-wrapper ul li button.special span.ng-scope {
+  color: #59665A;
 }
