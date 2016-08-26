@@ -1,11 +1,52 @@
-<header id="header" class="headerId">
+<!-- <header id="header" class="headerId">
 	<h1 class="mobile-h1 tab-head extra-head th-serv">Internet at Home</h1>
 	<p class="mobile-p tab-p">Service Providers</p>
-</header>
+</header> -->
 <div id="main">
+
 	<section id="content" class="main isp-main" ng-controller="InternetController">
-<!-- 		<h2></h2> -->
-		<script type="text/ng-template" id="group-template.html">
+
+		<div ng-cloak layout-gt-sm="row" layout="column" class="pg-ctrl">
+  <div flex-gt-sm="50" flex>
+    <!-- <md-toolbar layout="row" class="md-hue-3">
+      <div class="md-toolbar-tools">
+        <p class="center-txt">1</p>
+      </div>
+    </md-toolbar> -->
+    <md-content id="ispMdContent">
+      <md-list flex>
+        <md-subheader class="md-no-sticky">Local Internet Service Providers</md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="isp in isps" ng-click="null">
+    
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ isp.title }}</h3>
+            <h4>{{ isp.readableAddress }}</h4>
+            <p>{{ isp.phone }}</p>
+            <a ng-href="{{isp.url}}" target="_blank">Visit website</a>
+          </div>
+        </md-list-item>
+        
+       
+        <md-divider ></md-divider>
+      <!--   <md-subheader class="md-no-sticky">Classes</md-subheader>
+        <md-list-item class="md-2-line" ng-repeat="phone in phones">
+          <md-icon md-svg-icon="{{phone.options.icon}}" ng-if="phone.options.icon" ng-class="{'md-avatar-icon': phone.options.avatarIcon}"></md-icon>
+          <img ng-src="{{phone.options.face}}?25" class="md-avatar" alt="{{phone.options.face}}"
+               ng-if="phone.options.face"/>
+          <div class="md-list-item-text" ng-class="{'md-offset': phone.options.offset }">
+            <h3> {{ phone.number }} </h3>
+            <p> {{ phone.type }} </p>
+          </div>
+          <md-button class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" ng-if="phone.options.actionIcon" aria-label="call">
+            <md-icon md-svg-icon="{{phone.options.actionIcon}}"></md-icon>
+          </md-button>
+        </md-list-item> -->
+      </md-list>
+    </md-content>
+  </div>
+  <md-divider></md-divider>
+  </div>
+		<!-- <script type="text/ng-template" id="group-template.html">
 		    <div class="panel-heading">
 		      <h4 class="panel-title" style="color:#fa39c3">
 		        <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
@@ -22,13 +63,15 @@
 		<uib-accordion close-others="oneAtATime" class="override-accordion">
 			<div uib-accordion-group class="panel-default" heading="{{i.title}}" ng:repeat="i in isps">
 
-		<!-- 		<span class="isp-details">ISP Details:</span><br> -->
+		
 			<br>
 				<strong>{{i.title}}</strong><br>
 		        {{i.readableAddress}}<br>
+		        {{i.word}}<br>
 		        <a class="isp-links" ng-href="{{i.url}}">Visit website</a><br><br>
 		    </div>
-		</uib-accordion>
+		</uib-accordion> -->
 	</section>
+
 </div>
-<!-- <section ng-include="'/modules/core/client/views/footer.client.view.html'"></section>	 -->
+

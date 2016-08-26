@@ -27,13 +27,13 @@
   top: 0;
 }
 .button span {
-  width: 72%;
-  line-height: inherit;
-  font-size: 22px;
-  text-transform: uppercase;
-  left: 0;
-  -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
-  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+    width: 100%;
+    line-height: inherit;
+    font-size: 14px;
+    text-transform: uppercase;
+    left: 0;
+    -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .button span:after {
   content: '';
@@ -41,8 +41,8 @@
   width: 2px;
   height: 70%;
   position: absolute;
-  top: 15%;
-  right: -1px;
+  /*top: 15%;*/
+  /*right: -1px;*/
 }
 .button .icon {
   width: 28%;

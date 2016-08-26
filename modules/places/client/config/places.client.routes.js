@@ -25,7 +25,7 @@
       })
       .state('places.create', {
         url: '/create',
-        templateUrl: 'modules/places/client/views/form-place.client.view.html',
+        templateUrl: 'modules/places/client/views/create-place.client.view.html',
         controller: 'PlacesController',
         controllerAs: 'vm',
         resolve: {

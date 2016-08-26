@@ -26,4 +26,8 @@
 	ul.actions.fit.small {
 	 
 	}
+	div#buttons-wrapper {
+    top: 4.5em;
+    left: 11.4em;
+}
 }

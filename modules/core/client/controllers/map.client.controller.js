@@ -613,7 +613,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 		}
 
-
+	$scope.swImagePath = "/modules/core/client/img/wifi-free.svg";
 
     $scope.mobileWindowOpen = false;
     var innerWidth = $window.innerWidth;
@@ -1155,6 +1155,94 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 
 
+	    var placesService = new google.maps.places.PlacesService($scope.map);
+
+	    $scope.getPlaceDetails = function(place) {
+	    	placesService.getDetails({
+	          placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
+	        }, function(place, status) {
+	          if (status === google.maps.places.PlacesServiceStatus.OK) {
+	          	console.log("google.maps.places.PlacesServiceStatus.OK");
+	            // var marker = new google.maps.Marker({
+	            //   map: map,
+	            //   position: place.geometry.location
+	            // });
+	            // google.maps.event.addListener(marker, 'click', function() {
+	            //   infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+	            //     'Place ID: ' + place.place_id + '<br>' +
+	            //     place.formatted_address + '</div>');
+	            //   infowindow.open(map, this);
+	            // });
+	          }
+	        });
+	    }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1287,13 +1375,23 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 	      markers = [];
 	    }
 
+	    // function resetCss(elm, boolean) {
+	    //   if (boolean) {
+	    //     elm.removeClass('button normal fit small');
+	    //     elm.addClass('button special fit small');
+	    //   } else {
+	    //     elm.removeClass('button special fit small');
+	    //     elm.addClass('button normal fit small');
+	    //   }
+	    // }
+
 	    function resetCss(elm, boolean) {
 	      if (boolean) {
-	        elm.removeClass('button normal fit small');
-	        elm.addClass('button special fit small');
+	        elm.removeClass('normal');
+	        elm.addClass('special');
 	      } else {
-	        elm.removeClass('button special fit small');
-	        elm.addClass('button normal fit small');
+	        elm.removeClass('special');
+	        elm.addClass('normal');
 	      }
 	    }
 
@@ -1538,12 +1636,14 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 	    var initFreeWifiButton = function () {
 	    	// console.log("initFreeWifiButton");
-	    	e1.removeClass('button normal fit small') && e1.addClass('button special fit small');
-
+	    	// e1.removeClass('button normal fit small') && e1.addClass('button special fit small');
+	    	e1.removeClass('normal') && e1.addClass('special');
 	    }
 
-	    var inactiveCss = new RegExp('button normal fit small');
-        var activeCss = new RegExp('button special fit small');
+	    // var inactiveCss = new RegExp('button normal fit small');
+     //    var activeCss = new RegExp('button special fit small');
+     var inactiveCss = new RegExp('normal');
+        var activeCss = new RegExp('special');
 
 
 

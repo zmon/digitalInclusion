@@ -27,6 +27,8 @@
 	        var category = place.primaryCategory;
 	        if (category === "isp") {
 	           // list.access.push(place);
+             console.log(place);
+             place.word = "the bird";
 	           $scope.isps.push(place);
 	        } 
 	      }
@@ -37,16 +39,16 @@
 
 	  
 
-	  	function getIsps(array) {
-	  		var i;
-	  		var l = array.length;
+	  	// function getIsps(array) {
+	  	// 	var i;
+	  	// 	var l = array.length;
 
-	  		for (i=0;i<l;i++) {
-	  			if (array[i].primaryCategory === "isp") {
-	  				$scope.isps.push(array[i]);
-	  			}
-	  		}
-	  	}
+	  	// 	for (i=0;i<l;i++) {
+	  	// 		if (array[i].primaryCategory === "isp") {
+	  	// 			$scope.isps.push(array[i]);
+	  	// 		}
+	  	// 	}
+	  	// }
 
    
   }

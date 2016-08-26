@@ -3144,15 +3144,15 @@
       font-size: 16px;
       font-family: Georgia;
     }
-  #header p {
-      font-size: .7em;
-      letter-spacing: 0.15em;
-      color: #545454;
-      top: -8em;
-      font-weight: 500;
-      font-family: Georgia;
-  }
-
+#header p {
+    font-size: .7em;
+    letter-spacing: 0.15em;
+    color: #545454;
+    top: -8em;
+    font-weight: 500;
+    font-family: Georgia;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
     #header.alt {
       padding: 7em 5em 4em 5em ;
     }
@@ -4312,3 +4312,66 @@ a#mob-map-directions {
   position: relative;
   top: -24em;
 }
+
+
+
+
+
+
+
+
+button#e1 {
+    width: 175px;
+    float: left;
+    display: inline;
+}
+button#e2 {
+    width: 175px;
+    display: inline;
+    float: left;
+}
+button#e3 {
+    width: 175px;
+    display: inline;
+    float: right;
+}
+button#e4 {
+    width: 175px;
+    float: right;
+    display: inline;
+
+}
+
+ul#alt-buttons-top {
+    /*background: pink;*/
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    margin: 0;
+    float: left;
+    clear: both;
+}
+
+ul#alt-buttons-bottom {
+    /*background: orange;*/
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    float: right;
+        position: relative;
+    left: -.775em;
+    margin: 0;
+}
+
+
+
+
+#buttons-wrapper ul li button.special {
+    background: lightblue;
+}
+
+
+
+
+
+

@@ -1,7 +1,4 @@
-<header id="header">
-	<h1 class="tab-head th-serv">Add Service</h1>
-	<p class="tab-p">Choose type of service you would like to add to map</p>
-</header>
+
 <script type="text/javascript">
   
 
@@ -25,14 +22,26 @@ $('label').click(function() {
   $("." + el.attr("class") + ":last").remove();
 }); 
 </script>
-<div id="main" class="row mkinvs fruStr">
+
+
+
+<!-- <main ng-controller="ModalController"> -->
+
+<div class="row mkinvs fruStr">
 	<section id="content" class="main">
 		<!-- <h2>Map Categories</h2> -->
-		<section id="add-resources" ng-controller="ModalController">							
+		<section id="add-resources" ng-controller="ModalController">	
+
 			<!-- <h3 class="pad-list">Alternate</h3> -->
-					
+			<header id="new-service-button">
+<!--  <h1 class="tab-head th-serv">Add Service</h1>
+  <p class="tab-p">Choose type of service you would like to add to map</p> -->
+   <md-button class="md-raised md-button new-service-button" ng-click="newLocation();">
+            Add New Place to Map
+       </md-button>
+</header> 
 			<div class="container">
-		
+
                     
 
                     <script type="text/ng-template" id="newLocationModal.html">
@@ -198,12 +207,16 @@ $('label').click(function() {
 
 
 
-    <ul class="alt">
+<!--     <ul class="alt">
             <li><a ng-click="newLocation();" class="myButton">New Map Location</a></li>
-<!--             <a class="lks" ng-click="newLocation();">New Location</a></li>
- -->    </ul>
-
-
+   </ul>
+ -->
+      <!--   <ul class="alt">
+            <li><a ng-click="newLocation();" class="">New Map Location</a></li>
+        </ul> -->
+       <!--  <md-button class="md-raised md-button new-service-button" ng-click="newLocation();">
+            Add New Place to Map
+       </md-button> -->
 
 				
 			</div>
@@ -212,3 +225,5 @@ $('label').click(function() {
 	</section>
 </div>
 <!-- <section ng-include="'/modules/core/client/views/footer.client.view.html'"></section>	 -->
+
+<!-- </main> -->

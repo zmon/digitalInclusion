@@ -1,16 +1,75 @@
-<section class="view-page">
+<!-- <section layout="row" class="icondemoFontIconsWithLigatures" ng-cloak>
+  <section class="view-page">
+    <div flex="30" layout="column" class="boxWithHeight" layout-padding>
+      flex="30"
+      <section flex="40">
+         <div class="page-header">
+          <h1 ng-bind="vm.place.title"></h1>
+        </div>
+      </section>
+      <section flex>
+        <a class="btn btn-primary" ui-sref="places.edit({ placeId: vm.place._id })">
+          <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn btn-primary" ng-click="vm.remove()">
+          <i class="glyphicon glyphicon-trash"></i>
+        </a>
+      </section>
+    </div>
+    <div flex layout="column" class="boxWithHeight" layout-padding>
+      <p class="lead" ng-bind="vm.place.title"></p>
+      <p class="lead lead-again" ng-bind="vm.place.readableAddress"></p>
+      <section flex="70">
+        <pre>
+
+            {
+              _id: {{ place._id }}, 
+              created: {{ vm.place.created }}, 
+              __v: {{vm.place.__v}},      
+              title: {{ vm.place.title }},
+              phone: {{vm.place.phone}},
+              readableAddress: {{ vm.place.readableAddress }},
+              locationType: {{vm.place.locationType}},
+              address1: {{vm.place.address1}},        
+              address2: {{vm.place.address2}},
+              city: {{vm.place.city}},
+              state: {{vm.place.state}},
+              zip: {{vm.place.zip}},
+              location: {{ vm.place.location }},
+              latlng: {{ vm.place.latlng }},
+              url: {{vm.place.url}},
+              description: {{vm.place.description}},
+              caption: {{ vm.place.caption }},
+              hoursOpen: {{vm.place.hoursOpen}},
+              courseSchedule: {{ vm.place.courseSchedule }},
+              wifi: {{vm.place.wifi}},
+              categories: {{vm.place.categories}},
+              primaryCategory: {{vm.place.primaryCategory}}
+            }
+        </pre>
+      </section>
+      <section flex="20">flex="20"</section>
+      <section flex >flex </section>
+    </div>
+  </section>
+</section>
+ -->
+
+<section class="view-page md-whiteframe-11dp">
   <div class="page-header">
     <h1 ng-bind="vm.place.title"></h1>
   </div>
   <div class="pull-right">
-    <a class="btn btn-primary" ui-sref="places.edit({ placeId: vm.place._id })">
-      <i class="glyphicon glyphicon-edit"></i>
+    <a class="btn" ui-sref="places.edit({ placeId: vm.place._id })">
+      <!-- <i class="glyphicon glyphicon-edit"></i> -->
+      <i class="material-icons">edit</i>
     </a>
-    <a class="btn btn-primary" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
+    <a class="btn" ng-click="vm.remove()">
+      <i class="material-icons">delete</i>
+      <!-- <i class="glyphicon glyphicon-trash"></i> -->
     </a>
   </div>
-  <small>
+  <!-- <small>
     <em class="text-muted">
       Posted on
       <span ng-bind="vm.place.created | date:'mediumDate'"></span>
@@ -18,10 +77,21 @@
       <span ng-if="vm.place.user" ng-bind="vm.place.user.displayName"></span>
       <span ng-if="!vm.place.user">Site Admin</span>
     </em>
-  </small>
-  <p class="lead" ng-bind="vm.place.title"></p>
-  <p class="lead lead-again" ng-bind="vm.place.readableAddress"></p>
+  </small> -->
+<!-- <h1 class="md-display-3">{{vm.place.title}}</h1> -->
+<span class="md-subhead">Address: </span><h3 class="md-title inline-h1">{{vm.place.address1}}</h3><br>
+<span class="md-subhead">City: </span><h3 class="md-title inline-h1">{{vm.place.city}}</h3><br>
+<span class="md-subhead">State: </span><h3 class="md-title inline-h1">{{vm.place.state}}</h3><br>
+<span class="md-subhead">Zip: </span><h3 class="md-title inline-h1">{{vm.place.zip}}</h3><br>
+<span class="md-subhead">Phone: </span><h3 class="md-title inline-h1">{{vm.place.phone}}</h3><br>
+<span class="md-subhead">Services: {{vm.place.services}}</span><br>
 
+<!-- <i class="material-icons">face</i> -->
+  <!-- <p class="lead" ng-bind="vm.place.title"></p> -->
+  <!-- <p class="lead lead-again" ng-bind="vm.place.readableAddress"></p> -->
+    <!-- <google-map latitude="vm.place.location[0].lat" longitude="vm.place.location[0].lng"></google-map> -->
+<!-- 
+<div class="md-whiteframe-11dp">
   <pre>
 
       {
@@ -49,5 +119,5 @@
         primaryCategory: {{vm.place.primaryCategory}}
       }
   </pre>
-
+  </div> -->
 </section>

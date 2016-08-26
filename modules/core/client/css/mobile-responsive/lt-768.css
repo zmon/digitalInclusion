@@ -2,6 +2,56 @@
 
 
 @media (max-width: 768px) {
+	md-content#ispMdContent {
+	    display: block;
+	    position: relative;
+	    overflow: auto;
+	    padding-left: 10em;
+	    top: 30em;
+	    height: 30em;
+	    left: -6em;
+	    -webkit-overflow-scrolling: touch;
+	}
+
+	div#buttons-wrapper {
+		position: absolute;
+		left: 11em;
+		width: 22.4em;
+		margin: 0;
+		padding: 0;
+		top: 5.75em;
+		z-index: 99999;
+		border: none;
+	}
+
+	button#e1 {
+	    width: 155px;
+	    float: left;
+	    display: inline;
+	}
+	button#e2 {
+	    width: 155px;
+	    display: inline;
+	    float: left;
+	}
+	button#e3 {
+	    width: 155px;
+	    display: inline;
+	    float: right;
+	}
+	button#e4 {
+	    width: 155px;
+	    float: right;
+	    display: inline;
+
+	}
+
+	.pg-ctrl {
+	    position: relative;
+	    top: 25em;
+	    margin-left: -3em;
+	}
+	
 	div#hours-mobily {
 		margin-top: .75em;
 		margin-bottom: .35em;
@@ -40,6 +90,7 @@
 		background: linear-gradient(#f4f9fb , #ececec, #e8e9ea );
 		border: 2.5px solid #dadada;
 		box-shadow: 0 0 0 1px #e4e4e4, 0 0 5px #29250c, 0 0 1px #232323, inset 0 0 100px #efefef, inset 0 0 100px #d6d3d3;
+		box-shadow: 0 9px 11px -5px rgba(0,0,0,.2),0 18px 28px 2px rgba(0,0,0,.14),0 7px 34px 6px rgba(0,0,0,.12);
 		border-radius: 8px;
 		border-radius: 4px;
 		border: .5px solid #2a2d0f;

@@ -4,7 +4,7 @@
 	    max-height: 960px;
 	}
 	body {
-
+		box-shadow: inset 0 0 200px black;
 	}
 	body {
 		box-shadow: inset 0 0 200px black;
@@ -14,13 +14,18 @@
 	    
 
 	}
+	#buttons-wrapper ul li button span.ng-scope {
+	    position: relative;
+	    top: -.4em;
+	}
 	/*section.meta-w-form {
 	    position: relative;
 	    left: .225em;
 	}*/
 	#header h1 {
-	padding-top: 1.4em;
-	left: -1.4em;
+	    padding-top: 1.4em;
+	    left: -1.4em;
+	    letter-spacing: .9px;
 	}
 	#header p {
 		position: relative;
@@ -45,5 +50,21 @@
 	    position:relative;
 	    left: -.75em;
 
+	}
+	div#buttons-wrapper {
+	    top: 4.3em;
+	    left: 2.475em;
+	    width: 20.5em;
+	}
+	button#e2, button#e1, button#e3, button#e4 {
+	    min-height: 26px;
+	    padding-top: 0;
+	    font-size: 8.5px;
+	    width: 130px;
+	    max-height: 32px;
+	}
+	ul#alt-buttons-bottom {
+	    position: relative;
+	    left: -2.4em;
 	}
 }

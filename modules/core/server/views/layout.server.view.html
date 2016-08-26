@@ -122,11 +122,11 @@ button.button.normal.sign {
       #target {
         width: 345px;
       }
-      .button {
+/*      .button {
     position: relative;
     top: 2.7em;
 }
-
+*/
 
 
 @media (min-width: 1660px) {
@@ -252,6 +252,8 @@ table td {
 
 
 
+<link rel="stylesheet" type="text/css" href="/modules/core/client/css/am/layouts.css"/>
+<link rel="stylesheet" href="/modules/core/client/css/hacks.css"/>
 
 
 <link rel="stylesheet" href="/modules/core/client/css/mobile-responsive/test.css"/>
@@ -348,6 +350,12 @@ table td {
   <link rel="stylesheet" type="text/css" href="/modules/core/client/css/tmp/animate.css"/>
   <link rel="stylesheet" type="text/css" href="/modules/core/client/css/angular-motion.css"/>
   <!-- <link rel="stylesheet" type="text/css" href="/modules/core/client/css/material-ui.css"/> -->
+
+
+
+  <link rel="stylesheet" type="text/css" href="/modules/core/client/css/md/material-design-color-palette.css"/>
+
+
   <style>
 input {
 
@@ -443,20 +451,44 @@ a.pure-button.pure-button-primary.sms-form-button {
     padding-bottom: .5em;
     border-radius: 4px;
 }
-@media (min-width: 769px) {
+@media (min-width: 1281px) {
+  #header h1 {
+    background-image: url('/modules/core/client/img/az_subtle.png');
+  }
   #wrapper {
 
     background-image: url('/modules/core/client/img/cream_pixels.png');
+    background: white;
   }
   /*#main {
     box-shadow: 0 0 5px #929292;
   } */
 }
+md-toolbar.md-default-theme.md-hue-3:not(.md-menu-toolbar), md-toolbar.md-hue-3:not(.md-menu-toolbar) {
+    background-color: rgb(43, 60, 150);
+    color: rgba(0,0,0,0.87);
+    text-align: center;
+}
+</style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="/modules/core/client/css/pr.css"/>
+
+
+<style>
+  .carddemoBasicUsage .card-media {
+  background-color: #999999; }
 
 </style>
 
-<link rel="stylesheet" href="/modules/core/client/css/hacks.css"/>
-<link rel="stylesheet" type="text/css" href="/modules/core/client/css/pr.css"/>
+<link rel="stylesheet" type="text/css" href="/modules/core/client/css/md/extra-hacks.css"/>
+<link rel="stylesheet" type="text/css" href="/modules/core/client/css/am/angular-material.css"/>
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/modules/core/client/css/production.css"/>
 </head>
 
 <body class="ng-cloak">
@@ -483,9 +515,9 @@ a.pure-button.pure-button-primary.sms-form-button {
   <span>
     <div ng-include="'/modules/comments/client/views/leave-feedback.client.view.hmtl'"></div>
   </span>
-  <span ng-controller="HomeController">
+<!--   <span ng-controller="HomeController">
   <section ng-include="'/modules/core/client/views/footer.client.view.html'"></section>
-  </span>
+  </span> -->
 
   <!--Embedding The User Object-->
   <script type="text/javascript">
@@ -506,7 +538,7 @@ a.pure-button.pure-button-primary.sms-form-button {
   {% endif %}
 
 
-  <script src="https://maps.googleapis.com/maps/api/js?key={{process.env.GOOGLE_MAPS_API_KEY}}&libraries=geometry,geocoding&callback=onGoogleReady" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key={{process.env.GOOGLE_MAPS_API_KEY}}&libraries=geometry,geocoding,places&callback=onGoogleReady" async defer></script>
 
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqZ_zfcyUUJDi6OuXq4QYpkdHPeaqFkms&libraries=geometry&callback=onGoogleReady" async defer></script> -->
 
@@ -520,6 +552,7 @@ a.pure-button.pure-button-primary.sms-form-button {
   <script src="/lib/angular-aria/angular-aria.js"></script>
   <script src="/lib/angular-material/angular-material.js"></script>
   <script src="/modules/core/client/lib/svg-assets-cache.js"></script>
+  <script src="/modules/core/client/lib/colors.js"></script>
   <script src="/modules/core/client/lib/angular-selector.js"></script>
   <script src="/modules/core/client/lib/tabs.js"></script>
   <script src="/modules/core/client/lib/event.js"></script>

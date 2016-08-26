@@ -1,5 +1,10 @@
 @media (min-width: 1001px) {
-	
+	div#buttons-wrapper {
+	    position: absolute;
+	    top: 11.1em;
+	    left: 7em;
+	    z-index: 99999;
+	}
 	#main {
 		border-radius: .1em;
 		outline: 0;
@@ -139,12 +144,13 @@
 		/* box-shadow: inset 0 0 100px #f3f3f3; */
 		width: 98%;
 		display: inline-block;
-		height: 36px;
-/* 		border: 1px solid #e2e2e2; */
+		height: 613px;
+		/* border: 1px solid #e2e2e2; */
 		font-weight: 400;
 		position: relative;
 		box-shadow: none;
-		top: -2.5em;
+		box-shadow: 0 7px 8px -4px rgba(0,0,0,.2),0 12px 17px 2px rgba(0,0,0,.14),0 5px 22px 4px rgba(0,0,0,.12);
+		top: -1.5em;
 		color: black;
 		font-family: DinLight;
 	}
@@ -161,21 +167,20 @@
 		top: -3.94em;
 	}
 	#winCtrl {
-	    display: inline;
-	    z-index: 99999;
-	    position: relative;
-	    top: -.5em;
-	    color: #443101;
-	    left: 4.5em;
-	    background: none;
-	    border-radius: 5em;
-	    border-color: black;
-	    border: none;
-	    height: 10em;
-	    width: 10em;
+		display: inline;
+		z-index: 99999;
+		position: relative;
+		top: -.5em;
+		color: #443101;
+		left: 7.5em;
+		background: none;
+		border-radius: 5em;
+		border-color: black;
+		border: none;
+		height: 10em;
+		width: 10em;
 	}
-/*}
-*/
+
 	.f-desc {
 	    border: none;
 	    padding: .5em 1em;
@@ -276,19 +281,15 @@
 		box-shadow: none;
 	}
 	.row.butane {
-	    margin-left: .01em;
-	    margin-bottom: .1em;
-	    margin-top: .05em;
-	    top: .002em;
-	    padding-top: 3.15em;
-	    padding-right: .5em;
-	     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-	    box-shadow: inset 0 0 200px #ffffe8;
-	    background: #fafbee;
-	     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-	     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-	     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-	    border-bottom: 1px solid #6d6d66;
+		margin-left: -.01em;
+		margin-bottom: .1em;
+		margin-top: .05em;
+		top: -.38em;
+		padding-top: 3.75em;
+		padding-right: .5em;
+		box-shadow: inset 0 0 200px #ffffe8;
+		background: #fafbee;
+		border-bottom: 1px solid #6d6d66;
 	}
 
 	section#queryForm {

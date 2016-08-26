@@ -38,6 +38,9 @@
       { value: "Shopping Mall", label: "Shopping Mall"}
     ];
 
+    $scope.lt768 = false;
+    $scope.gt768 = false;
+
     // <select name="locationType" ng-model="vm.place.locationType" id="locationType" class="form-control">
     //   <option value="library">Library</option>
     //   <option value="community-center">Community Center</option>
@@ -51,6 +54,21 @@
     console.log("after");
     console.log(vm.place);
     // console.log(place);
+
+    function getCurrentWidth() {
+      // console.log("getCurrentWidth");
+      // console.log($window.innerWidth);
+      return $window.innerWidth;
+    }
+
+
+    $scope.pageWidth = getCurrentWidth();
+
+    if ($scope.pageWidth < 768) {
+      $scope.lt768 = true;
+    } else if ($scope.pageWidth >= 768) {
+      $scope.gt768 = true;
+    }
     
 
     $scope.retail = new Boolean();

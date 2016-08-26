@@ -8,15 +8,23 @@
   // Setting HTML5 Location Mode
   angular
     .module(app.applicationModuleName)
-    .config(bootstrapConfig);
+    .config(bootstrapConfig)
+    .config(function($mdThemingProvider) {
+        $mdThemingProvider.generateThemesOnDemand(true);
+        $mdThemingProvider.theme('altTheme')
+        .primaryPalette('indigo')
+        .accentPalette('orange');
+    });
 
-  function bootstrapConfig($locationProvider, $httpProvider) {
+  function bootstrapConfig($locationProvider, $httpProvider, $mdThemingProvider) {
     $locationProvider.html5Mode(true).hashPrefix('!');
-
+    console.log("$mdThemingProvider");
+    console.log($mdThemingProvider);
+    
     $httpProvider.interceptors.push('authInterceptor');
   }
 
-  bootstrapConfig.$inject = ['$locationProvider', '$httpProvider'];
+  bootstrapConfig.$inject = ['$locationProvider', '$httpProvider', '$mdThemingProvider'];
 
   // Then define the init function for starting up the application
   angular.element(document).ready(init);

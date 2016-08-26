@@ -1,4 +1,29 @@
 @media (max-width: 1000px) {
+	button#e1, button#e2, button#e3, button#e4 {
+		font-size: 10px;
+		width: 145px;
+		min-height: 30px;
+	}
+	button#e3, button#e4 {
+		position: relative;
+		top: -.7em;
+	}
+	div#buttons-wrapper {
+    position: absolute;
+    top: 9.5em;
+    left: 5em;
+    z-index: 99999;
+}
+	div#buttons-wrapper ul li button span.ng-scope {
+	    position: relative;
+	    top: -.2em;
+	}
+	ul#alt-buttons-bottom {
+
+	    position: relative;
+	    left: -1.2em;
+
+	}
 	.nav-tabs > li > a {
 		margin-right: 2px;
 		line-height: 1.42857143;

@@ -22,11 +22,13 @@
 	    font-weight: 700;
 	    letter-spacing: normal;
 	    background: #dfe9ff;
-	    border-radius: 6px;
+	    border-radius: 4px;
 	    margin-top: 1.75em;
 	    border: 1px solid #d2d2d2;
 	    box-shadow: 0 0 1px #505050, inset 0 0 200px #dedede;
 	    padding-top: .5em;
+
+    padding-top: .95em;
 	    padding-bottom: 3em;
 	    position: relative;
 	    height: 9.5em;
@@ -38,13 +40,24 @@
 	#header p {
 	    color: #4a4a4a;
 	    position: relative;
-	    top: -11.1em;
+	    top: -11.8em;
 	    left: 2.3em;
 	    left: 1.5em;
 	    font-size: .85em;
 	}
 	main#main-page {
 	    width: 123.75%;
+	}
+	ul#alt-buttons-bottom {
+	    position: relative;
+	    left: -3.8em;
+	}
+	button#e2, button#e1, button#e3, button#e4 {
+	    min-height: 26px;
+	    padding-top: 0;
+	    font-size: 8.5px;
+	    width: 120px;
+	    max-height: 32px;
 	}
 	section#customMap {
 	    height: 414px;

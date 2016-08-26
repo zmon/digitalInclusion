@@ -4636,15 +4636,16 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   border-color: #0c0c04;
 }
 .navbar-inverse .navbar-brand {
-  color: #9d9d9d;
-  /* color: #ffffff; */
-  color: #ffffff;
-  text-shadow: 0 0 12px #7b7b7b;
-  /* letter-spacing: .3em; */
-  font-size: .85em;
-  font-weight: 900;
-  text-shadow: 1px 1px 8px black;
-  font-family: Georgia;
+    color: #9d9d9d;
+    /* color: #ffffff; */
+    color: #034969;
+    text-shadow: 0 0 12px #7b7b7b;
+    /* letter-spacing: .3em; */
+    font-size: .85em;
+    font-weight: 900;
+    text-shadow: 1px 1px 8px black;
+    text-shadow: none;
+    font-family: Georgia;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {

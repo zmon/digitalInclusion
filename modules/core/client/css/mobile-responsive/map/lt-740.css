@@ -27,4 +27,8 @@
 	ul.actions.fit.small {
 	 left: 28%;
 	}
+	div#buttons-wrapper {
+    top: 4.5em;
+    left: 11.9em;
+}
 }

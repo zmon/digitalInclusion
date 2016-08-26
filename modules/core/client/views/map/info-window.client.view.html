@@ -1,0 +1,29 @@
+ <section id="sw" class="full-side sidewin-ctrl pt-page-rotateSidesIn">       
+              <div id="wrapExit">
+                <a id="winCtrl" ng-click="removeWindow()" class="rmv">
+                   <span id="rmv-glyph" class="glyphicon glyphicon-remove-circle"></span>
+                </a>
+              </div>
+              <div id="info-wrapper" class="slide-pop.ng-enter">
+                <img class="infowindow-img" src="/modules/core/client/img/wifi-free-2.svg" ng-show="showImgFw">
+                <img class="infowindow-img" src="/modules/core/client/img/wifi-purchase.svg" ng-show="showImgCw">
+                <img class="infowindow-img" src="/modules/core/client/img/user-orange2.png" ng-show="showImgDt">
+                <img class="infowindow-img" src="/modules/core/client/img/user-blue2.png" ng-show="showImgNt">
+                <img class="infowindow-img" src="/modules/core/client/img/computerRetail.png" ng-show="showImgCr">
+                <img class="infowindow-img" src="/modules/core/client/img/computerAccess.png" ng-show="showImgCa">
+                <div id="placeCategory" class="f1 f-class"></div>
+                  <div id="placeTitle" class="f2 f-class"></div>
+                  <a href=""><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
+                <div class="cist">
+                  <div id="placeAddress" class="f3 f-class"></div>
+                  <span id="placeCity" class="f3 f-class"></span>
+                  <span id="placeState" class="f3"></span><br>
+                  <span id="placeZip" class="f3 f-class"></span>   
+                </div>
+                <a id="map-directions" target="_blank" class="view-dir pure-button" href=""><i class="fa fa-bus"></i> Get directions</a>
+                <div id="placeHours" class="f-class"></div>
+                <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a>
+                <div class="f4 f-class f-desc" id="placeDescription"></div>
+                <div class="f-class" id="placeUrl"></div>
+              </div>
+            </section>

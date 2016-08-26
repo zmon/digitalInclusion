@@ -32,6 +32,20 @@
 
 window.addEventListener('DOMContentLoaded', init, false);
   </script> -->
+
+
+  <div id="buttons-wrapper">
+    <ul id="alt-buttons-top"">
+      <li><md-button id="e1" ng-click="toggleWifiMarkers(); switchToggleState()" class="md-raised md-ink-ripple">Free WiFi</md-button></li>
+      <li><md-button id="e3" ng-click="toggleComputersMarkers();" class="md-raised md-ink-ripple">Public Computers</md-button></li>
+    </ul>
+
+    <ul id="alt-buttons-bottom">
+      <li><md-button id="e2" ng-click="toggleTrainingMarkers();" class="md-raised md-button md-ink-ripple">Computer Training</md-button></li>
+      <li><md-button id="e4" ng-click="toggleRefurbsMarkers();" class="md-raised md-button md-ink-ripple">Low Cost Computers</md-button></li>
+    </ul>
+  </div>
+
 <div id="main" class="fix-height">
   <section id="first" class="main special bg-wrapper">
     <main id="main-page">
@@ -40,23 +54,21 @@ window.addEventListener('DOMContentLoaded', init, false);
         <div class="col-md-1"></div>
         <div class="col-md-5">
           <section class="meta-w-form">
-            <!-- <ul class="actions fit small upper-btns" ng-show="showMapControls">
-              <li><a ng-click="toggleWifiMarkers(); switchToggleState()" id="e1" href="#" class="button normal fit small">Free WiFi</a></li>
-              <li class="realign"><a ng-click="toggleComputersMarkers();" id="e3" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Public Computers</a></li>
-            </ul>
-            <ul class="actions fit small lower-btns" ng-show="showMapControls">
-              <li><a id="e2" ng-click="toggleTrainingMarkers();" href="#" class="button normal fit small pt-page-rotateRoomRightIn">Computer Training</a></li>
-              <li class="realign"><a id="e4" ng-click="toggleRefurbsMarkers();" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Low Cost Computers</a></li>
-            </ul> -->
+         
+
+       
+<!-- 
             <ul class="actions fit small upper-btns">
+
               <li><a ng-click="toggleWifiMarkers(); switchToggleState()" id="e1" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Free WiFi</a></li>
+
               <li class="realign"><a ng-click="toggleComputersMarkers();" id="e3" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Public Computers</a></li>
             </ul>
             <ul class="actions fit small lower-btns">
               <li><a id="e2" ng-click="toggleTrainingMarkers();" href="#" class="button normal fit small pt-page-rotateRoomRightIn">Computer Training</a>
               </li>
               <li class="realign"><a id="e4" ng-click="toggleRefurbsMarkers();" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Low Cost Computers</a></li>
-            </ul>
+            </ul> -->
           </section>
         </div>
         <div class="col-md-1"></div>
@@ -264,67 +276,116 @@ window.addEventListener('DOMContentLoaded', init, false);
             </main>
           </section>
 
-            <section id="sw" class="full-side sidewin-ctrl pt-page-rotateSidesIn">
-              
-                <div id="wrapExit">
-                  <a id="winCtrl" ng-click="removeWindow()" class="rmv">
-                     <span id="rmv-glyph" class="glyphicon glyphicon-remove-circle"></span>
-
-                  </a>
-                </div>
-
-
+            <section id="sw" class="full-side sidewin-ctrl pt-page-rotateSidesIn">       
+              <div id="wrapExit">
+                <a id="winCtrl" ng-click="removeWindow()" class="rmv">
+                   <span id="rmv-glyph" class="glyphicon glyphicon-remove-circle"></span>
+                </a>
+              </div>
               <div id="info-wrapper" class="slide-pop.ng-enter">
-                <!-- <div id="infowindow-img"></div> -->
-                <img class="infowindow-img" src="/modules/core/client/img/wifi-free-2.svg" ng-show="showImgFw">
+
+
+                <md-content class="md-padding" layout-xs="column" layout="row">
+                  <div flex-xs flex-gt-xs="100" layout="column">
+
+
+                    <md-card id="hacksalot" md-theme="dark-blue" md-theme-watch>
+
+                      <md-card-header id="defaultGray">
+                        <md-card-avatar>
+                          <img ng-src="{{swImagePath}}" class="md-card-image sw-icon" alt="">
+                          <!-- <md-icon class="md-avatar-icon" md-svg-icon="img/icons/menu.svg"></md-icon> -->
+                        </md-card-avatar>
+                        <md-card-header-text>
+                          <span class="md-title"><span class="md-subhead"><div id="placeCategory" class="f1 f-class"></div></span></span>
+                          <!-- <span class="md-subhead">subhead</span> -->
+                        </md-card-header-text>
+                      </md-card-header>
+                      <md-divider id="top-divider"></md-divider>
+                      <!-- <img ng-src="{{timeImagePath}}" class="md-card-image" alt="Washed Out"> -->
+                      <md-whiteframe class="md-whiteframe-4dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="85" layout layout-align="center center">
+                        
+                        <md-card-title>
+                          <md-card-title-text>
+                            <!-- <span class="md-headline">Card with image</span> -->
+                            <span class="md-subhead"><div id="placeCategory" class="f1 f-class"></div></span>
+                          </md-card-title-text>
+                          <!-- <md-card-title-media>
+                            <div class="md-media-sm card-media"></div>
+                          </md-card-title-media> -->
+                        </md-card-title>
+                        <!-- <span>.md-whiteframe-4dp</span> -->
+                      </md-whiteframe>
+                      <md-card-content>
+                        <div id="placeTitle" class="f2 f-class"></div>
+                        <a href=""><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
+                        <div class="cist">
+                          <span id="ihAddress" class="info-heading">Address</span>
+                          <div id="placeAddress" class="f3 f-class"></div>
+                          <span id="placeCity" class="f3 f-class"></span>
+                          <span id="placeState" class="f3"></span><br>
+                          <span id="placeZip" class="f3 f-class"></span>   
+                        </div>
+                        <a id="map-directions" target="_blank" class="view-dir pure-button" href=""><i class="fa fa-bus"></i> Get directions</a>
+                        
+
+                        <span id="ihHours" class="info-heading">Hours</span>
+                        <div id="placeHours" class="f-class"></div>
+                        <md-divider id="bottom-divider"></md-divider>
+                        <span id="ihDescription" class="info-heading">Description</span>
+                        
+                        <!-- <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a> -->
+                        <div class="f4 f-class f-desc" id="placeDescription"></div>
+                        <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a>
+                        <div class="f-class" id="placeUrl">Visit website</div>
+                      </md-card-content>
+            <!--           <md-card-actions layout="row" layout-align="end center">
+                        <md-button>Action 1</md-button>
+                        <md-button>ultrachic
+                          
+
+                        </md-button>
+                      </md-card-actions> -->
+                    </md-card>
+                   
+                   <!--  <div layout layout-padding layout-align="center end" style="height:200px">
+                      <md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>
+                    </div> -->
+                  </div>
+                </md-content>
+
+
+
+
+
+
+
+
+
+
+
+
+       <!--          <img class="infowindow-img" src="/modules/core/client/img/wifi-free-2.svg" ng-show="showImgFw">
                 <img class="infowindow-img" src="/modules/core/client/img/wifi-purchase.svg" ng-show="showImgCw">
                 <img class="infowindow-img" src="/modules/core/client/img/user-orange2.png" ng-show="showImgDt">
                 <img class="infowindow-img" src="/modules/core/client/img/user-blue2.png" ng-show="showImgNt">
                 <img class="infowindow-img" src="/modules/core/client/img/computerRetail.png" ng-show="showImgCr">
                 <img class="infowindow-img" src="/modules/core/client/img/computerAccess.png" ng-show="showImgCa">
-
-
-
                 <div id="placeCategory" class="f1 f-class"></div>
-                <!-- <address> -->
                   <div id="placeTitle" class="f2 f-class"></div>
-                  <a href=""><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>
-                 
-                  
+                  <a href=""><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
                 <div class="cist">
                   <div id="placeAddress" class="f3 f-class"></div>
                   <span id="placeCity" class="f3 f-class"></span>
                   <span id="placeState" class="f3"></span><br>
-                  <span id="placeZip" class="f3 f-class"></span>
-                  
+                  <span id="placeZip" class="f3 f-class"></span>   
                 </div>
                 <a id="map-directions" target="_blank" class="view-dir pure-button" href=""><i class="fa fa-bus"></i> Get directions</a>
-                
-
-                
-
-
-                  
-                <!-- </address> -->
-
-               <!--  <address>
-                  <strong>Full Name</strong><br>
-                  <a href="mailto:#">first.last@example.com</a>
-                </address>
-                 -->
-                
-                
-         
-
-                
-         <!--         <a ng-click="getDirections(addr, city, state, zip)" class="f6 lnk-hov">View directions on Google Maps</a><br> -->
                 <div id="placeHours" class="f-class"></div>
-                <!-- <button class="btn btn-primary" ng-print print-element-id="printThisElement"><i class="fa fa-print"></i> Print</button> -->
-                <!-- ng-click="printPage()"  -->
                 <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a>
                 <div class="f4 f-class f-desc" id="placeDescription"></div>
-                <div class="f-class" id="placeUrl"></div>
-               
+                <div class="f-class" id="placeUrl"></div> -->
+
 
               </div>
             </section>
@@ -363,53 +424,8 @@ window.addEventListener('DOMContentLoaded', init, false);
           </div>
 
         </div>
-      
-       <!--  <div class="row map-row">
-    
-          <div class="col-xs-12 col-sm-12 col-md-12 col-md-12">
-
-            <section id="rcMap" class="fullmap">
-
-            </section>
-      
-            
-
-            <section id="sw" class="full-side sidewin-ctrl">
-              <a id="winCtrl" ng-click="removeWindow()" class="rmv">
-                 <span id="rmv-glyph" class="glyphicon glyphicon-remove"></span>
-              </a>
-              <div id="info-wrapper">
-             
-                <div id="placeCategory" class="f1"></div>
-              
-                <div id="placeTitle" class="f2"></div>
-               
-                <div id="placePhone"></div>
-                <div id="placeAddress" class="f3"></div>
-         
-
-                <div>
-                <span id="placeCity" class="f3"></span>, <span id="placeState" class="f3"></span><span id="placeZip" class="f3"></span></div>
-                 <a ng-click="getDirections(addr, city, state, zip)" class="f6 lnk-hov">View directions on Google Maps</a><br>
-                <div id="placeHours"></div>
-
-                <div class="f4" id="placeDescription"></div>
-   
-                <div id="placeUrl"></div>
-              </div>
-            </section>
-       
-
-          </div>
-
-        </div>
-
- -->
-
       </main>
     </section>    
   </div>
-  
 </div>
-
 </span>

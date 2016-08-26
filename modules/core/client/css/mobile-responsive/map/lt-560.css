@@ -4,7 +4,7 @@
 	    max-height: 1024px;
 	}
 	body {
-
+		box-shadow: inset 0 0 200px black;
 	}
 	#footer {
 
@@ -26,4 +26,8 @@
 	ul.actions.fit.small {
 	     left: .75%;
 	}
+	div#buttons-wrapper {
+    top: 3.1em;
+    left: 6.3em;
+}
 }
