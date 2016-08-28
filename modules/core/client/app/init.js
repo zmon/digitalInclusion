@@ -18,8 +18,8 @@
 
   function bootstrapConfig($locationProvider, $httpProvider, $mdThemingProvider) {
     $locationProvider.html5Mode(true).hashPrefix('!');
-    console.log("$mdThemingProvider");
-    console.log($mdThemingProvider);
+    // console.log("$mdThemingProvider");
+    // console.log($mdThemingProvider);
     
     $httpProvider.interceptors.push('authInterceptor');
   }

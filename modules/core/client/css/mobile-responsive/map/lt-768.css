@@ -1,12 +1,12 @@
 @media (max-width: 768px) {
 	section#customMap {
-		height: 565px;
+		height: 615px;
 		border-left: 1px solid #626f64;
 		border-right: 1px solid #637766;
 		box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
 		border: 2px solid #676f03;
 		box-shadow: 0 0 1px #c8d473, 0 0 10px black;
-		margin-top: 13.75em;
+		margin-top: 12.35em;
 		margin-bottom: 2.7em;
 		width: 99.5%;
 		padding-right: 8em;
@@ -20,7 +20,85 @@
 	}
 	main#main-page {
 	    
-	    margin-left: 0;
-
+	    margin-left: -.6em;
+	        width: 114%;
 	}
+	.navbar-fixed-top, .navbar-fixed-bottom {
+	    top: -2em;
+	}
+	div#mobServiceOverlay {
+	    height: 9.69em;
+	    position: fixed;
+	    top: 45.2em;
+	    left: -.1em;
+	    z-index: 99999;
+	    width: 101%;
+	    background: #ECEFF1;
+	    border: none;
+	    border-top: 3px double #b7b7b7;
+	    border-bottom: 3px double #b7b7b7;
+	    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2),0 24px 38px 3px rgba(0,0,0,.14),0 9px 46px 8px rgba(0,0,0,.12);
+	    /* border-top: 3px double #607D8B; */
+	}
+
+	#trix {
+		margin: 0 14px 0 24px;
+	}
+
+	a#exit-service-overlay.fa-close {
+	    position: absolute;
+	    left: 47em;
+	    top: .1em;
+	    border: none;
+	    color: #212121;
+	    text-decoration: none;
+	}
+
+	div#mobServiceOverlay a:hover {
+	   cursor: pointer;
+	}
+
+	a#exit-fd {
+	    float: right;
+	    margin-top: -.8em;
+	    margin-right: .15em;
+	    z-index: 99999;
+	    text-decoration: none;
+	    font-size: 1.25em;
+	}
+
+	#soTitle {
+		font-size: 1.1em;
+		font-weight: 700;
+		margin-top: .35em;
+		color: #000000;
+		opacity: .87;
+	}
+
+	#soPhone {
+		margin-top: -.35em;
+		color: #000000;
+		opacity: .87;
+	}
+	#soCategoryPrime{
+		font-size: .7em;
+		color: #000000;
+		opacity: .54;
+	}
+
+	#soAddress{
+		font-size: .8em;
+		color: #000000;
+		opacity: .54;
+	}
+
+	#soHours {
+	    font-size: .7em;
+	    margin-top: 1.25em;
+	    line-height: 13px;
+	    color: #000000;
+		opacity: .54;
+	}
+
+
 }

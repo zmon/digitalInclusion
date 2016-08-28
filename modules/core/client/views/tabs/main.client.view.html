@@ -1,431 +1,460 @@
 <span ng-controller="MapController">
-<header id="header" class="pt-page-moveFromLeftFade">  
-  <h1 id="headerH1" class="sh-up c-sat">Map of Free Services</h1>
-  <p id="headerP" class="sh-up">Greater Kansas City</p>
-</header>
+  <header id="header" class="pt-page-moveFromLeftFade">  
+    <h1 id="headerH1" class="sh-up c-sat">Map of Free Services</h1>
+    <p id="headerP" class="sh-up">Greater Kansas City</p>
+  </header>
 
 
-<!-- <section id="map-veil" class="veil am-flip-x">
-  <div id="spinWrapper" ng-app="angularSpinners"> -->
-    <!-- <spinner name="mapSpinner" class="bg-black" show="loading" img-src="/modules/core/client/img/loaders/loader-blue.png"></spinner> -->
-  
-<!--   <div class="c-loader" >
-      <svg width="48" height="48" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <path d="M 150,0 a 150,150 0 0,1 106.066,256.066 l -35.355,-35.355 a -100,-100 0 0,0 -70.711,-170.711 z" fill="#76f19a">
-          <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 150 150" to="360 150 150" begin="0s" dur=".75s" fill="freeze" repeatCount="indefinite"></animateTransform>
-        </path>
-      </svg>
-  </div>
-  </div>
-</section>
- -->
+  <!-- <section id="map-veil" class="veil am-flip-x">
+    <div id="spinWrapper" ng-app="angularSpinners"> -->
+      <!-- <spinner name="mapSpinner" class="bg-black" show="loading" img-src="/modules/core/client/img/loaders/loader-blue.png"></spinner> -->
+    
+  <!--   <div class="c-loader" >
+        <svg width="48" height="48" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <path d="M 150,0 a 150,150 0 0,1 106.066,256.066 l -35.355,-35.355 a -100,-100 0 0,0 -70.711,-170.711 z" fill="#76f19a">
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 150 150" to="360 150 150" begin="0s" dur=".75s" fill="freeze" repeatCount="indefinite"></animateTransform>
+          </path>
+        </svg>
+    </div>
+    </div>
+  </section>
+   -->
 
 
-<!--   <script>
-  var init = function() {
-  var card = document.getElementById('card');
-  
-  document.getElementById('flip').addEventListener( 'click', function(){
-    card.toggleClassName('flipped');
-  }, false);
-};
+  <!--   <script>
+    var init = function() {
+    var card = document.getElementById('card');
+    
+    document.getElementById('flip').addEventListener( 'click', function(){
+      card.toggleClassName('flipped');
+    }, false);
+  };
 
-window.addEventListener('DOMContentLoaded', init, false);
-  </script> -->
+  window.addEventListener('DOMContentLoaded', init, false);
+    </script> -->
 
 
-  <div id="buttons-wrapper">
-    <ul id="alt-buttons-top"">
-      <li><md-button id="e1" ng-click="toggleWifiMarkers(); switchToggleState()" class="md-raised md-ink-ripple">Free WiFi</md-button></li>
-      <li><md-button id="e3" ng-click="toggleComputersMarkers();" class="md-raised md-ink-ripple">Public Computers</md-button></li>
-    </ul>
+    <div id="buttons-wrapper">
+      <ul id="alt-buttons-top"">
+        <li><md-button id="e1" ng-click="toggleWifiMarkers(); switchToggleState()" class="md-raised md-ink-ripple">Free WiFi</md-button></li>
+        <li><md-button id="e3" ng-click="toggleComputersMarkers();" class="md-raised md-ink-ripple">Public Computers</md-button></li>
+      </ul>
 
-    <ul id="alt-buttons-bottom">
-      <li><md-button id="e2" ng-click="toggleTrainingMarkers();" class="md-raised md-button md-ink-ripple">Computer Training</md-button></li>
-      <li><md-button id="e4" ng-click="toggleRefurbsMarkers();" class="md-raised md-button md-ink-ripple">Low Cost Computers</md-button></li>
-    </ul>
-  </div>
+      <ul id="alt-buttons-bottom">
+        <li><md-button id="e2" ng-click="toggleTrainingMarkers();" class="md-raised md-button md-ink-ripple">Computer Training</md-button></li>
+        <li><md-button id="e4" ng-click="toggleRefurbsMarkers();" class="md-raised md-button md-ink-ripple">Low Cost Computers</md-button></li>
+      </ul>
+    </div>
 
-<div id="main" class="fix-height">
-  <section id="first" class="main special bg-wrapper">
-    <main id="main-page">
-      <div class="row butane c-dar">
+  <div id="main" class="fix-height">
+    <section id="first" class="main special bg-wrapper">
+      <main id="main-page">
+        <div class="row butane c-dar">
 
-        <div class="col-md-1"></div>
-        <div class="col-md-5">
-          <section class="meta-w-form">
+          <div class="col-md-1"></div>
+          <div class="col-md-5">
+            <section class="meta-w-form">
+           
+
          
+  <!-- 
+              <ul class="actions fit small upper-btns">
 
-       
-<!-- 
-            <ul class="actions fit small upper-btns">
+                <li><a ng-click="toggleWifiMarkers(); switchToggleState()" id="e1" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Free WiFi</a></li>
 
-              <li><a ng-click="toggleWifiMarkers(); switchToggleState()" id="e1" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Free WiFi</a></li>
+                <li class="realign"><a ng-click="toggleComputersMarkers();" id="e3" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Public Computers</a></li>
+              </ul>
+              <ul class="actions fit small lower-btns">
+                <li><a id="e2" ng-click="toggleTrainingMarkers();" href="#" class="button normal fit small pt-page-rotateRoomRightIn">Computer Training</a>
+                </li>
+                <li class="realign"><a id="e4" ng-click="toggleRefurbsMarkers();" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Low Cost Computers</a></li>
+              </ul> -->
+            </section>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-5">
 
-              <li class="realign"><a ng-click="toggleComputersMarkers();" id="e3" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Public Computers</a></li>
-            </ul>
-            <ul class="actions fit small lower-btns">
-              <li><a id="e2" ng-click="toggleTrainingMarkers();" href="#" class="button normal fit small pt-page-rotateRoomRightIn">Computer Training</a>
-              </li>
-              <li class="realign"><a id="e4" ng-click="toggleRefurbsMarkers();" href="#" class="button normal fit small pt-page-rotateRoomLeftIn">Low Cost Computers</a></li>
-            </ul> -->
-          </section>
+
+            <legend class="table-wrapper pt-page-rotateSlideIn">
+           
+
+              <table class="legend-table">
+                <thead>
+                  <tr>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody class="tbody-legend">
+                  <tr>
+                    <td class="rbor">
+                      <!-- <i class="fa fa-wifi fa-2x" aria-hidden="true"></i> Public<br>WiFi -->
+                    <img class="small-img" src="modules/core/client/img/wifi-free.svg"> Public<br>WiFi
+
+                    </td>
+
+                    <td class="toleft">
+                      <!-- <span id="training-day-user" class="glyphicon glyphicon-user"></span> -->
+                     <!-- Training<br>(daytime). -->
+                    <img class="small-img" src="modules/core/client/img/user-orange2.png"> Training<br>(daytime)
+
+                    </td>
+                  </tr>
+                  <tr class="ffh">
+                    <td class="move-up rbor"><img class="small-img" src="modules/core/client/img/wifi-purchase.svg"> Customer<br>WiFi</td>
+                    <td class="toleft move-up"><img class="small-img" src="modules/core/client/img/user-blue2.png"> Training<br>(after 6pm)</td>
+                  </tr>
+                </tbody>
+              </table>
+    
+            </legend>
+          </div>
         </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-5">
 
+        <div class="row data-row">
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <div id="kv" class="emp">
 
-          <legend class="table-wrapper pt-page-rotateSlideIn">
-         
-
-            <table class="legend-table">
-              <thead>
-                <tr>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody class="tbody-legend">
-                <tr>
-                  <td class="rbor">
-                    <!-- <i class="fa fa-wifi fa-2x" aria-hidden="true"></i> Public<br>WiFi -->
-                  <img class="small-img" src="modules/core/client/img/wifi-free.svg"> Public<br>WiFi
-
-                  </td>
-
-                  <td class="toleft">
-                    <!-- <span id="training-day-user" class="glyphicon glyphicon-user"></span> -->
-                   <!-- Training<br>(daytime). -->
-                  <img class="small-img" src="modules/core/client/img/user-orange2.png"> Training<br>(daytime)
-
-                  </td>
-                </tr>
-                <tr class="ffh">
-                  <td class="move-up rbor"><img class="small-img" src="modules/core/client/img/wifi-purchase.svg"> Customer<br>WiFi</td>
-                  <td class="toleft move-up"><img class="small-img" src="modules/core/client/img/user-blue2.png"> Training<br>(after 6pm)</td>
-                </tr>
-              </tbody>
-            </table>
-  
-          </legend>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="row data-row">
-        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-          <div id="kv" class="emp">
+        <div class="row">
+              
+          <div class="col-md-1"></div>
+          <div class="col-md-6">
+          <section id="queryForm" ng-include="'modules/places/client/views/search-map.client.view.html'"></section>
+
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-2">
 
           </div>
         </div>
-      </div>
-
-      <div class="row">
-            
-        <div class="col-md-1"></div>
-        <div class="col-md-6">
-        <section id="queryForm" ng-include="'modules/places/client/views/search-map.client.view.html'"></section>
-
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-2">
-
-        </div>
-      </div>
 
 
-      <div class="row map-row">
-    
-          <div id="printArea" class="col-xs-12 col-sm-12 col-md-12 col-md-12">
-            <div id="svgWrap" ng-show="loading" class="pt-page-moveFromLeft">
-              <div id="onloadSpinner" class="c-loader">        
-                <img src="/modules/core/client/img/loaders/puff.svg" />
-              </div>
-              <h4 class="absolutePos">Loading Map</h4>
-            </div>
-              <!-- <input id="pac-input" class="controls" type="text" placeholder="Search by Zip"> -->
-          
-           <section id="customMap" class="vis-on pt-page-rotateUnfoldBottom">
-
-           </section>
-
-           <div id="zipSearchError" class="pt-page-rotateRoomLeftIn">
-
-           <a ng-click="closeErrorWindow()" class="make-vis">
-
-           <span class="glyphicon glyphicon-remove"></span>
-
-           </a><br>
-          {{zipSearchErrorMessage}}
-
-           </div>
-           <!-- <div id="zipSearchError" ng-show="ZipSearchError"></div> -->
+        <div class="row map-row">
       
-          <span>
-            <div id="wrapMobileWindow">
-              <a id="closeWindow" ng-click="closeMobileWindow(); closeSmsForm(); resetCustomMap();">
-                <div id="mobileWindowBg"></div>
+            <div id="printArea" class="col-xs-12 col-sm-12 col-md-12 col-md-12">
+              <div id="svgWrap" ng-show="loading" class="pt-page-moveFromLeft">
+                <div id="onloadSpinner" class="c-loader">        
+                  <img src="/modules/core/client/img/loaders/puff.svg" />
+                </div>
+                <h4 class="absolutePos">Loading Map</h4>
+              </div>
+                <!-- <input id="pac-input" class="controls" type="text" placeholder="Search by Zip"> -->
+            
+             <section id="customMap" class="vis-on pt-page-rotateUnfoldBottom"></section>
+
+
+            <div id="zipSearchError" class="pt-page-rotateRoomLeftIn">
+              <a ng-click="closeErrorWindow()" class="make-vis">
+                <span class="glyphicon glyphicon-remove"></span>
               </a>
-           <!--    <div id="wrapExitM">
-                  <a id="winCtrlM" ng-click="removeWindowM()" class="rmv">
-                     <span id="rmv-glyph" class="glyphicon glyphicon-remove"></span>
-                  </a>
-              </div> -->
-              <section id="trix" class="pt-page-rotateSidesIn">
-               
-                <div id="primaryCategory-mob" class="f1 f-class"></div>
-                
-                <div id="title-mob" class="f2 f-class"></div>
-                <!-- <a ng-click="" href=""><i class="fa fa-phone"></i><div id="phone-mob" class=""></div></a><br> -->
-                <span><i class="fa fa-phone"></i> <a id="phone-mob" class="" href=""></a></span><br>
-
-                <i class="fa fa-map-marker"></i><div id="address-mob" class="address-mobile"></div>
-                <div id="city-mob" class="address-mobile"></div>
-                <div id="state-mob" class="address-mobile"></div>
-                <div id="zip-mob" class="address-mobile"></div>
-                <a id="mob-map-directions" href="" target="_blank" class="basic-link">Get directions</a>
-                <div id="hours-mobily" class="hours-mobile"></div>
-                <a class="pure-button share-resource" ng-click="openSmsForm()"><i class="fa fa-share-square-o"></i> Share with friend</a>
-                <div class="show-sms-response" ng-show="smsResponse">{{sms.responseStatus}} <i class="fa fa-check"></i></div>
-                <div id="share-window" ng-show="smsFormOpen">
-                  
-
-
-
-                  <form id="sendSmsForm" class="pure-form">
-                    <a ng-click="closeSmsForm()" id="closeSms"><i class="fa fa-remove"></i></a>
-                    <fieldset>
-                        <div class="pure-control-group">
-                            <label for="phone" class="sms-form-label">Enter phone number (913 or 816 only) </label>
-                            <input id="qode" name="to" ng-model="sms.to" class="sms-form-input" type="text">
-                        </div>
-
-                        <div class="pure-controls">
-                           <!--  <label for="cb" class="pure-checkbox">
-                                <input id="cb" type="checkbox"> I've read the terms and conditions
-                            </label> -->
-
-                            <a class="pure-button pure-button-primary sms-form-button" ng-click="setSmsSettings(sms.to)">Send</a>
-
-                        </div>
-
-                        <!-- <div class="show-sms-response" ng-show="smsResponse">{{sms.responseStatus}}</div> -->
-                    </fieldset>
-                  </form>
-                </div>
-
-
-                <div id="description-mob" class=""></div>
-
-
-
-   
-              <!-- <div id="mobile-info-window" class="slide-pop">
-        
-                <div id="placeCategoryM" class="f1 f-class"></div>
-                
-                <div id="placeTitleM" class="f2 f-class"></div>
-   
-                <div id="placePhoneM" class="f-class"></div>
-                <div id="placeAddressM" class="f3 f-class"></div>
-         
-
-               <div>
-                <span id="placeCityM" class="f3 f-class"></span>, <span id="placeState" class="f3"></span><span id="placeZip" class="f3 f-class"></span></div>
-                <div id="placeHoursM" class="f-class"></div>
-             
-                <div class="f4 f-class" id="placeDescriptionM"></div>
-          
-                <div class="f-class" id="placeUrlM"></div>
-              </div> -->
-              
-              </section>
+              <br>
+              {{zipSearchErrorMessage}}
             </div>
-           </span>
-           
-           <section id="printableWindow" class="vis-off">
-             
-            <section id="printableMap" class=""></section>
-            <main class="pw-content">
-              <p class="pw-info">Location: </p><br>
-              <div class="pw-row-up">
-                <div id="title-print" class="print-win"></div><p> - </p>
-                <div id="primaryCategory-print" class="print-win"></div><br>
-                <div class="pw-row-phone">
-                  <div id="phone-print" class="print-win"></div>
-                </div><br>
-                <div class="print-window-row">              
-                  <div id="address-print" class="print-win"></div><p>, </p>
-                  <div id="city-print" class="print-win"></div><p>, </p>
-                  <div id="state-print" class="print-win"></div><p> </p>
-                  <div id="zip-print" class="print-win"></div> 
-                </div><br>
+             <!-- <div id="zipSearchError" ng-show="ZipSearchError"></div> -->
+        
+            <span>
+
+
+
+
+
+
+              <div id="mobServiceOverlay" md-swipe-up="overlayUp()" class="pt-page-flipInRight">
+              <!-- <div id="mobServiceOverlay" ng-show="soActive" md-swipe-right="onSwipeRight()" md-swipe-up="onSwipeUp()" md-swipe-down="onSwipeDown()"> -->
+              <md-card id="overlay-data-window">
+                <!-- <p id="soCategoryPrime" class="mSo"></p>
+                <p id="soTitle" class="mSo"></p> -->
+                <md-caption id="soCategoryPrime" class="md-primary"></md-caption>
+                <md-headline id="soTitle" class="md-primary"></md-headline>
+                <span class="inline"><i class="fa fa-phone inline"></i> <a href="" id="soPhone" class="md-primary inline" href=""></a></span>
+
+                <!-- <md-title id="soPhone" class="md-primary"></md-title> -->
+                <!-- <span id="soPhone" class="mSo"></span> -->
+                <md-subhead id="soAddress" class="md-primary"></md-subhead>
+                <md-subhead id="soHours" class="md-primary"></md-subhead>
+              </md-card>
+              <a id="exit-service-overlay" ng-click="closeServiceOverlay()" class="fa fa-close"></a>
               </div>
-              <div class="pw-group-rows-up">
-                <div class="pw-row-hours">
-                  <p class="pw-info">Hours: </p>
-                  <div class="pw-row-up">
-                    <div id="hours-print" class="print-win"></div>
+
+
+
+
+
+
+
+
+
+
+              <div id="wrapMobileWindow">
+                <a id="closeWindow" ng-click="closeMobileWindow(); closeSmsForm(); resetCustomMap();">
+                  <div id="mobileWindowBg"></div>
+                </a>
+             <!--    <div id="wrapExitM">
+                    <a id="winCtrlM" ng-click="removeWindowM()" class="rmv">
+                       <span id="rmv-glyph" class="glyphicon glyphicon-remove"></span>
+                    </a>
+                </div> -->
+                <section id="trix" class="pt-page-rotateSidesIn" md-swipe-down="closeFullDescription();">
+                  <a id="exit-fd" ng-click="closeFullDescription()" class="fa fa-close"></a>
+                 
+                  <div id="primaryCategory-mob" class="f1 f-class"></div>
+                  
+                  <div id="title-mob" class="f2 f-class"></div>
+                  <!-- <a ng-click="" href=""><i class="fa fa-phone"></i><div id="phone-mob" class=""></div></a><br> -->
+                  <span><i class="fa fa-phone"></i> <a id="phone-mob" class="" href=""></a></span><br>
+
+                  <i class="fa fa-map-marker"></i><div id="address-mob" class="address-mobile"></div>
+                  <div id="city-mob" class="address-mobile"></div>
+                  <div id="state-mob" class="address-mobile"></div>
+                  <div id="zip-mob" class="address-mobile"></div>
+                  <a id="mob-map-directions" href="" target="_blank" class="basic-link">Get directions</a>
+                  <div id="hours-mobily" class="hours-mobile"></div>
+                  <a class="pure-button share-resource" ng-click="openSmsForm()"><i class="fa fa-share-square-o"></i> Share with friend</a>
+                  <div class="show-sms-response" ng-show="smsResponse">{{sms.responseStatus}} <i class="fa fa-check"></i></div>
+                  <div id="share-window" ng-show="smsFormOpen">
+                    
+
+
+
+                    <form id="sendSmsForm" class="pure-form">
+                      <a ng-click="closeSmsForm()" id="closeSms"><i class="fa fa-remove"></i></a>
+                      <fieldset>
+                          <div class="pure-control-group">
+                              <label for="phone" class="sms-form-label">Enter phone number (913 or 816 only) </label>
+                              <input id="qode" name="to" ng-model="sms.to" class="sms-form-input" type="text">
+                          </div>
+
+                          <div class="pure-controls">
+                             <!--  <label for="cb" class="pure-checkbox">
+                                  <input id="cb" type="checkbox"> I've read the terms and conditions
+                              </label> -->
+
+                              <a class="pure-button pure-button-primary sms-form-button" ng-click="setSmsSettings(sms.to)">Send</a>
+
+                          </div>
+
+                          <!-- <div class="show-sms-response" ng-show="smsResponse">{{sms.responseStatus}}</div> -->
+                      </fieldset>
+                    </form>
                   </div>
-                </div><br>
-                <div class="pw-row-description">
-                  <p class="pw-info">Description: </p><br>
-                  <div class="pw-row-up">
-                    <div id="description-print" class="print-win"></div>
+
+
+                  <div id="description-mob" class=""></div>
+
+
+
+     
+                <!-- <div id="mobile-info-window" class="slide-pop">
+          
+                  <div id="placeCategoryM" class="f1 f-class"></div>
+                  
+                  <div id="placeTitleM" class="f2 f-class"></div>
+     
+                  <div id="placePhoneM" class="f-class"></div>
+                  <div id="placeAddressM" class="f3 f-class"></div>
+           
+
+                 <div>
+                  <span id="placeCityM" class="f3 f-class"></span>, <span id="placeState" class="f3"></span><span id="placeZip" class="f3 f-class"></span></div>
+                  <div id="placeHoursM" class="f-class"></div>
+               
+                  <div class="f4 f-class" id="placeDescriptionM"></div>
+            
+                  <div class="f-class" id="placeUrlM"></div>
+                </div> -->
+                
+                </section>
+              </div>
+             </span>
+             
+             <section id="printableWindow" class="vis-off">
+               
+              <section id="printableMap" class=""></section>
+              <main class="pw-content">
+                <p class="pw-info">Location: </p><br>
+                <div class="pw-row-up">
+                  <div id="title-print" class="print-win"></div><p> - </p>
+                  <div id="primaryCategory-print" class="print-win"></div><br>
+                  <div class="pw-row-phone">
+                    <div id="phone-print" class="print-win"></div>
+                  </div><br>
+                  <div class="print-window-row">              
+                    <div id="address-print" class="print-win"></div><p>, </p>
+                    <div id="city-print" class="print-win"></div><p>, </p>
+                    <div id="state-print" class="print-win"></div><p> </p>
+                    <div id="zip-print" class="print-win"></div> 
+                  </div><br>
+                </div>
+                <div class="pw-group-rows-up">
+                  <div class="pw-row-hours">
+                    <p class="pw-info">Hours: </p>
+                    <div class="pw-row-up">
+                      <div id="hours-print" class="print-win"></div>
+                    </div>
+                  </div><br>
+                  <div class="pw-row-description">
+                    <p class="pw-info">Description: </p><br>
+                    <div class="pw-row-up">
+                      <div id="description-print" class="print-win"></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </main>
-          </section>
+              </main>
+            </section>
 
-            <section id="sw" class="full-side sidewin-ctrl pt-page-rotateSidesIn">       
-              <div id="wrapExit">
-                <a id="winCtrl" ng-click="removeWindow()" class="rmv">
-                   <span id="rmv-glyph" class="glyphicon glyphicon-remove-circle"></span>
-                </a>
-              </div>
-              <div id="info-wrapper" class="slide-pop.ng-enter">
-
-
-                <md-content class="md-padding" layout-xs="column" layout="row">
-                  <div flex-xs flex-gt-xs="100" layout="column">
+              <section id="sw" class="full-side sidewin-ctrl pt-page-rotateSidesIn">       
+                <div id="wrapExit">
+                  <a id="winCtrl" ng-click="removeWindow()" class="rmv">
+                     <span id="rmv-glyph" class="glyphicon glyphicon-remove-circle"></span>
+                  </a>
+                </div>
+                <div id="info-wrapper" class="slide-pop.ng-enter">
 
 
-                    <md-card id="hacksalot" md-theme="dark-blue" md-theme-watch>
+                  <md-content class="md-padding" layout-xs="column" layout="row">
+                    <div flex-xs flex-gt-xs="100" layout="column">
 
-                      <md-card-header id="defaultGray">
-                        <md-card-avatar>
-                          <img ng-src="{{swImagePath}}" class="md-card-image sw-icon" alt="">
-                          <!-- <md-icon class="md-avatar-icon" md-svg-icon="img/icons/menu.svg"></md-icon> -->
-                        </md-card-avatar>
-                        <md-card-header-text>
-                          <span class="md-title"><span class="md-subhead"><div id="placeCategory" class="f1 f-class"></div></span></span>
-                          <!-- <span class="md-subhead">subhead</span> -->
-                        </md-card-header-text>
-                      </md-card-header>
-                      <md-divider id="top-divider"></md-divider>
-                      <!-- <img ng-src="{{timeImagePath}}" class="md-card-image" alt="Washed Out"> -->
-                      <md-whiteframe class="md-whiteframe-4dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="85" layout layout-align="center center">
-                        
-                        <md-card-title>
-                          <md-card-title-text>
-                            <!-- <span class="md-headline">Card with image</span> -->
-                            <span class="md-subhead"><div id="placeCategory" class="f1 f-class"></div></span>
-                          </md-card-title-text>
-                          <!-- <md-card-title-media>
-                            <div class="md-media-sm card-media"></div>
-                          </md-card-title-media> -->
-                        </md-card-title>
-                        <!-- <span>.md-whiteframe-4dp</span> -->
-                      </md-whiteframe>
-                      <md-card-content>
-                        <div id="placeTitle" class="f2 f-class"></div>
-                        <a href=""><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
-                        <div class="cist">
-                          <span id="ihAddress" class="info-heading">Address</span>
-                          <div id="placeAddress" class="f3 f-class"></div>
-                          <span id="placeCity" class="f3 f-class"></span>
-                          <span id="placeState" class="f3"></span><br>
-                          <span id="placeZip" class="f3 f-class"></span>   
-                        </div>
-                        <a id="map-directions" target="_blank" class="view-dir pure-button" href=""><i class="fa fa-bus"></i> Get directions</a>
-                        
 
-                        <span id="ihHours" class="info-heading">Hours</span>
-                        <div id="placeHours" class="f-class"></div>
-                        <md-divider id="bottom-divider"></md-divider>
-                        <span id="ihDescription" class="info-heading">Description</span>
-                        
-                        <!-- <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a> -->
-                        <div class="f4 f-class f-desc" id="placeDescription"></div>
-                        <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a>
-                        <div class="f-class" id="placeUrl">Visit website</div>
-                      </md-card-content>
-            <!--           <md-card-actions layout="row" layout-align="end center">
-                        <md-button>Action 1</md-button>
-                        <md-button>ultrachic
+                      <md-card id="hacksalot" md-theme="dark-blue" md-theme-watch>
+
+                        <md-card-header id="defaultGray">
+                          <md-card-avatar>
+                            <img ng-src="{{swImagePath}}" class="md-card-image sw-icon" alt="">
+                            <!-- <md-icon class="md-avatar-icon" md-svg-icon="img/icons/menu.svg"></md-icon> -->
+                          </md-card-avatar>
+                          <md-card-header-text>
+                            <span class="md-title"><span class="md-subhead"><div id="placeCategory" class="f1 f-class"></div></span></span>
+                            <!-- <span class="md-subhead">subhead</span> -->
+                          </md-card-header-text>
+                        </md-card-header>
+                        <md-divider id="top-divider"></md-divider>
+                        <!-- <img ng-src="{{timeImagePath}}" class="md-card-image" alt="Washed Out"> -->
+                        <md-whiteframe class="md-whiteframe-4dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="85" layout layout-align="center center">
+                          
+                          <md-card-title>
+                            <md-card-title-text>
+                              <!-- <span class="md-headline">Card with image</span> -->
+                              <span class="md-subhead"><div id="placeCategory" class="f1 f-class"></div></span>
+                            </md-card-title-text>
+                            <!-- <md-card-title-media>
+                              <div class="md-media-sm card-media"></div>
+                            </md-card-title-media> -->
+                          </md-card-title>
+                          <!-- <span>.md-whiteframe-4dp</span> -->
+                        </md-whiteframe>
+                        <md-card-content>
+                          <div id="placeTitle" class="f2 f-class"></div>
+                          <a href=""><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
+                          <div class="cist">
+                            <span id="ihAddress" class="info-heading">Address</span>
+                            <div id="placeAddress" class="f3 f-class"></div>
+                            <span id="placeCity" class="f3 f-class"></span>
+                            <span id="placeState" class="f3"></span><br>
+                            <span id="placeZip" class="f3 f-class"></span>   
+                          </div>
+                          <a id="map-directions" target="_blank" class="view-dir pure-button" href=""><i class="fa fa-bus"></i> Get directions</a>
                           
 
-                        </md-button>
-                      </md-card-actions> -->
-                    </md-card>
-                   
-                   <!--  <div layout layout-padding layout-align="center end" style="height:200px">
-                      <md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>
-                    </div> -->
+                          <span id="ihHours" class="info-heading">Hours</span>
+                          <div id="placeHours" class="f-class"></div>
+                          <md-divider id="bottom-divider"></md-divider>
+                          <span id="ihDescription" class="info-heading">Description</span>
+                          
+                          <!-- <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a> -->
+                          <div class="f4 f-class f-desc" id="placeDescription"></div>
+                          <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a>
+                          <div class="f-class" id="placeUrl">Visit website</div>
+                        </md-card-content>
+              <!--           <md-card-actions layout="row" layout-align="end center">
+                          <md-button>Action 1</md-button>
+                          <md-button>ultrachic
+                            
+
+                          </md-button>
+                        </md-card-actions> -->
+                      </md-card>
+                     
+                     <!--  <div layout layout-padding layout-align="center end" style="height:200px">
+                        <md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>
+                      </div> -->
+                    </div>
+                  </md-content>
+
+
+
+
+
+
+
+
+
+
+
+
+         <!--          <img class="infowindow-img" src="/modules/core/client/img/wifi-free-2.svg" ng-show="showImgFw">
+                  <img class="infowindow-img" src="/modules/core/client/img/wifi-purchase.svg" ng-show="showImgCw">
+                  <img class="infowindow-img" src="/modules/core/client/img/user-orange2.png" ng-show="showImgDt">
+                  <img class="infowindow-img" src="/modules/core/client/img/user-blue2.png" ng-show="showImgNt">
+                  <img class="infowindow-img" src="/modules/core/client/img/computerRetail.png" ng-show="showImgCr">
+                  <img class="infowindow-img" src="/modules/core/client/img/computerAccess.png" ng-show="showImgCa">
+                  <div id="placeCategory" class="f1 f-class"></div>
+                    <div id="placeTitle" class="f2 f-class"></div>
+                    <a href=""><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
+                  <div class="cist">
+                    <div id="placeAddress" class="f3 f-class"></div>
+                    <span id="placeCity" class="f3 f-class"></span>
+                    <span id="placeState" class="f3"></span><br>
+                    <span id="placeZip" class="f3 f-class"></span>   
                   </div>
-                </md-content>
+                  <a id="map-directions" target="_blank" class="view-dir pure-button" href=""><i class="fa fa-bus"></i> Get directions</a>
+                  <div id="placeHours" class="f-class"></div>
+                  <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a>
+                  <div class="f4 f-class f-desc" id="placeDescription"></div>
+                  <div class="f-class" id="placeUrl"></div> -->
 
 
-
-
-
-
-
-
-
-
-
-
-       <!--          <img class="infowindow-img" src="/modules/core/client/img/wifi-free-2.svg" ng-show="showImgFw">
-                <img class="infowindow-img" src="/modules/core/client/img/wifi-purchase.svg" ng-show="showImgCw">
-                <img class="infowindow-img" src="/modules/core/client/img/user-orange2.png" ng-show="showImgDt">
-                <img class="infowindow-img" src="/modules/core/client/img/user-blue2.png" ng-show="showImgNt">
-                <img class="infowindow-img" src="/modules/core/client/img/computerRetail.png" ng-show="showImgCr">
-                <img class="infowindow-img" src="/modules/core/client/img/computerAccess.png" ng-show="showImgCa">
-                <div id="placeCategory" class="f1 f-class"></div>
-                  <div id="placeTitle" class="f2 f-class"></div>
-                  <a href=""><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
-                <div class="cist">
-                  <div id="placeAddress" class="f3 f-class"></div>
-                  <span id="placeCity" class="f3 f-class"></span>
-                  <span id="placeState" class="f3"></span><br>
-                  <span id="placeZip" class="f3 f-class"></span>   
                 </div>
-                <a id="map-directions" target="_blank" class="view-dir pure-button" href=""><i class="fa fa-bus"></i> Get directions</a>
-                <div id="placeHours" class="f-class"></div>
-                <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a>
-                <div class="f4 f-class f-desc" id="placeDescription"></div>
-                <div class="f-class" id="placeUrl"></div> -->
+              </section>
+        
 
+           <!--    <div id="directions-panel" class="pt-page-rotateUnfoldLeft">
+                <h4 id="show-start">
+                    Starting location:<br>{{directions.origin.startAddress}}
+                </h4>
+                <h4 id="show-dest">
+                {{}}
+                </h4>
+                <ul id="step-array">
+                  <li ng-repeat="direction in directions" class="dir-steps">
 
+                    {{direction.html_instructions}}
+                    
+                  </li>
+                </ul>
               </div>
-            </section>
-      
 
-         <!--    <div id="directions-panel" class="pt-page-rotateUnfoldLeft">
-              <h4 id="show-start">
-                  Starting location:<br>{{directions.origin.startAddress}}
-              </h4>
-              <h4 id="show-dest">
-              {{}}
-              </h4>
-              <ul id="step-array">
-                <li ng-repeat="direction in directions" class="dir-steps">
 
-                  {{direction.html_instructions}}
+              <section id="directions">
+
+                <div ng-repeat="step in steps" ng-animate=" 'animate' ">
+
+                </div>
+                 
+
+                <div ng-repeat="direction in directions" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
                   
-                </li>
-              </ul>
+                </div>  
+              </section>
+          -->
+
             </div>
 
-
-            <section id="directions">
-
-              <div ng-repeat="step in steps" ng-animate=" 'animate' ">
-
-              </div>
-               
-
-              <div ng-repeat="direction in directions" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
-                
-              </div>  
-            </section>
-        -->
-
           </div>
-
-        </div>
-      </main>
-    </section>    
+        </main>
+      </section>    
+    </div>
   </div>
-</div>
 </span>

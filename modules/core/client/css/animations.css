@@ -49,6 +49,11 @@
 	animation: moveFromBottom .6s ease both;
 }
 
+.pt-page-moveFromBottomSlowly {
+	-webkit-animation: moveFromBottom 2.6s ease both;
+	animation: moveFromBottom 2.6s ease both;
+}
+
 /* fade */
 
 .pt-page-fade {
@@ -115,6 +120,10 @@
 .pt-page-moveToBottomEasing {
 	-webkit-animation: moveToBottom .7s ease-in-out both;
 	animation: moveToBottom .7s ease-in-out both;
+}
+.toBottomEasingSlow {
+	-webkit-animation: moveToBottom 2.0s ease-in-out both;
+	animation: moveToBottom 2.0s ease-in-out both;
 }
 
 /********************************* keyframes **************************************/
@@ -497,6 +506,12 @@
 	transform-origin: 50% 100%;
 	-webkit-animation: rotatePullBottom .5s both ease;
 	animation: rotatePullBottom .5s both ease;
+}
+.pt-page-rotatePullBottom-Custom {
+	-webkit-transform-origin: 0% 100%;
+	transform-origin: 0% 100%;
+	-webkit-animation: rotatePullBottom .25s both ease;
+	animation: rotatePullBottom .25s both ease;
 }
 
 /* fold */

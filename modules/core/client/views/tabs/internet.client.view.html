@@ -2,12 +2,12 @@
 	<h1 class="mobile-h1 tab-head extra-head th-serv">Internet at Home</h1>
 	<p class="mobile-p tab-p">Service Providers</p>
 </header> -->
-<div id="main">
+<!-- <div id="main"> -->
 
-	<section id="content" class="main isp-main" ng-controller="InternetController">
-
-		<div ng-cloak layout-gt-sm="row" layout="column" class="pg-ctrl">
-  <div flex-gt-sm="50" flex>
+	<!-- <section id="content" class="main isp-main" ng-controller="InternetController"> -->
+<section class="isp-main" ng-controller="InternetController">
+	<div ng-cloak layout-gt-sm="row" layout="column" class="pg-ctrl">
+    <div flex-gt-sm="80" flex>
     <!-- <md-toolbar layout="row" class="md-hue-3">
       <div class="md-toolbar-tools">
         <p class="center-txt">1</p>
@@ -15,7 +15,8 @@
     </md-toolbar> -->
     <md-content id="ispMdContent">
       <md-list flex>
-        <md-subheader class="md-no-sticky">Local Internet Service Providers</md-subheader>
+        <md-headline class="md-no-sticky">Local Internet Service Providers</md-headline>
+
         <md-list-item class="md-3-line" ng-repeat="isp in isps" ng-click="null">
     
           <div class="md-list-item-text" layout="column">
@@ -27,7 +28,7 @@
         </md-list-item>
         
        
-        <md-divider ></md-divider>
+       
       <!--   <md-subheader class="md-no-sticky">Classes</md-subheader>
         <md-list-item class="md-2-line" ng-repeat="phone in phones">
           <md-icon md-svg-icon="{{phone.options.icon}}" ng-if="phone.options.icon" ng-class="{'md-avatar-icon': phone.options.avatarIcon}"></md-icon>
@@ -44,8 +45,8 @@
       </md-list>
     </md-content>
   </div>
-  <md-divider></md-divider>
-  </div>
+  <!-- <md-divider></md-divider> -->
+  <!-- </div> -->
 		<!-- <script type="text/ng-template" id="group-template.html">
 		    <div class="panel-heading">
 		      <h4 class="panel-title" style="color:#fa39c3">

@@ -3,11 +3,11 @@
 
   angular
     .module('core')
-    .controller('TestController', TestController);
+    .controller('SwipeController', SwipeController);
 
-  TestController.$inject = ['$scope', '$window'];
+  SwipeController.$inject = ['$scope', '$window'];
 
-  function TestController($scope, $window) {
+  function SwipeController($scope, $window) {
 
     $scope.onSwipeLeft = function(ev) {
       alert('You swiped left!!');

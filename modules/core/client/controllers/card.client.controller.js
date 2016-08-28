@@ -25,8 +25,8 @@
 
   angular
     .module('core').config(function($mdThemingProvider) {
-    	console.log("le card reader {{{{{{{{{{{{{         $mdThemingProvider");
-    	console.log($mdThemingProvider);
+    	// console.log("le card reader {{{{{{{{{{{{{         $mdThemingProvider");
+    	// console.log($mdThemingProvider);
 	  $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
 	  $mdThemingProvider.theme('dark-orange').backgroundPalette('orange').dark();
 	  $mdThemingProvider.theme('dark-purple').backgroundPalette('deep-purple').dark();
@@ -35,8 +35,8 @@
 
   angular
   	.module('core').config(['$mdIconProvider', function($mdIconProvider) {
-  		console.log("$mdIconProvider");
-  		console.log($mdIconProvider);
+  		// console.log("$mdIconProvider");
+  		// console.log($mdIconProvider);
 	  $mdIconProvider.icon('md-toggle-arrow', 'img/icons/toggle-arrow.svg', 48);
 	}])
 }());

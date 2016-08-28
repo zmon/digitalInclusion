@@ -14,7 +14,7 @@
     $scope.timeImagePath = '/modules/core/client/img/washedout.png';
 
     $scope.scrollUp = function($window) {
-      console.log("LLLL");
+      // console.log("LLLL");
       $location.path('authentication/signin');
       $window.scrollTo(0,0);
 
@@ -25,11 +25,11 @@
 
   angular
     .module('core').config(function($mdThemingProvider) {
-      console.log("plus plus         $mdThemingProvider");
-      console.log($mdThemingProvider);
+      // console.log("plus plus         $mdThemingProvider");
+      // console.log($mdThemingProvider);
       var darkBlue =  $mdThemingProvider.theme('dark-blue');
-      console.log("darkBlue");
-      console.log(darkBlue);
+      // console.log("darkBlue");
+      // console.log(darkBlue);
     $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
     $mdThemingProvider.theme('dark-orange').backgroundPalette('orange').dark();
     $mdThemingProvider.theme('dark-purple').backgroundPalette('deep-purple').dark();
@@ -38,8 +38,8 @@
 
   angular
     .module('core').config(['$mdIconProvider', function($mdIconProvider) {
-      console.log("$mdIconProvider");
-      console.log($mdIconProvider);
+      // console.log("$mdIconProvider");
+      // console.log($mdIconProvider);
     $mdIconProvider.icon('md-toggle-arrow', 'img/icons/toggle-arrow.svg', 48);
   }])
   // console.log("home.client.controller - 1");

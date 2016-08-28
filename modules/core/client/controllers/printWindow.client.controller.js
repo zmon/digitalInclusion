@@ -14,8 +14,8 @@
 
 
 		$scope.showPm = function(position) {
-			console.log("showPm");
-			console.log($scope);
+			// console.log("showPm");
+			// console.log($scope);
 			var latLng = [position[0], position[1]];
 
 	      	$scope.pmOptions = {

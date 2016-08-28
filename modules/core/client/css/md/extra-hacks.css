@@ -136,3 +136,54 @@ md-toolbar {
   .md-toolbar-tools {
     height: 48px;
     max-height: 48px; } }
+
+
+
+
+.mSo {
+    line-height: 14px;
+    margin: 0;
+}
+
+
+
+
+
+.swipedemoBasicUsage .demo-swipe {
+  padding: 20px 10px; }
+.swipedemoBasicUsage .no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+
+#header p.mSo {
+    position: relative;
+    top: .75em;
+}
+
+
+
+md-card#overlay-data-window {
+    width: 50%;
+    height: 8.8em;
+    border: 1px solid #BDBDBD;
+    padding: 0 .4em .4em .4em;
+    margin: .3em auto;
+}
+
+
+
+
+/*section#customMap {
+    border: 0;
+    box-shadow: 0 8px 9px -5px rgba(0,0,0,.2),0 15px 22px 2px rgba(0,0,0,.14),0 6px 28px 5px rgba(0,0,0,.12);
+    border-radius: 2px;
+    border-bottom: 3px double #ccc;
+    position: fixed;
+    top: 2.8em;
+    border-top: 3px double #ccc;
+}*/

@@ -6,10 +6,20 @@
 	.nav-tabs > li > a {
 	    color: #616161;
 	    text-decoration: none;
+	    color: black;
+    	opacity: .59;
 	    /*margin-top: -.735em;*/
 	}
+	section#customMap {
+		box-shadow:none;
+	}
+	main#main-page {
+		background: none;
+	}
 	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-	    color: #424242;
+	    color: #212121;
+	    opacity: .9;
+    	color: black;
 	    text-decoration: none;
 	    letter-spacing: .125pc;
 	}
@@ -17,35 +27,51 @@
 	    color: #212121;
 	    text-shadow: none;
 	    letter-spacing: .15pc;
-	    font-size: 1em;
+	    font-size: 1.3em;
 	    text-decoration: none;
 	    font-family: "Source Sans Pro", Helvetica, sans-serif;
 	}
 	.nav-tabs {
 	    background: #E0E0E0;
-	    box-shadow: 0 6px 6px -3px rgba(0,0,0,.2),0 10px 14px 1px rgba(0,0,0,.14),0 4px 18px 3px rgba(0,0,0,.12);
-	   
-    	height: 2em;
-    	border: 1px solid gray;
-    	border-radius: 2px;
+	    background: #e1e5e6;
+	    box-shadow: 0 1px 8px 0 rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.12);
+	    height: 2.2em;
+	    box-shadow: none;
+	    border: 1px solid #a5a5a5;
+	    border-radius: 2px;
+	    border-left: none;
+	    border-right: none;
+	    border-bottom: 3px double #BBBFC0;
+	    border: 1px solid #a5a5a5;
+	    border: none;
 	}
-
 	section.meta-w-form {
-		background-image: url('/modules/core/client/img/ps_neutral.png');
+	    background: #ECEFF1;
+	    border: 1px solid #e0e0e0;`
+	    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+	    box-shadow: none;
 	}
-
 	#header h1 {
-	    background-image: url('/modules/core/client/img/az_subtle.png');
-	    background: #F5F5F5;
+	    background: radial-gradient(#ececec, #e8e9ea, #f4f9fb );
 	    letter-spacing: .125pc;
+	    height: 8.5em;
+	    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+	    border-bottom: 3px double #e1e7e8;
+	    border-bottom: 3px double #ccc;
+	    border-bottom: 2px solid #ccc;
 	    font-family: "Source Sans Pro", Helvetica, sans-serif;
+	    box-shadow: 0 10px 13px -6px rgba(0,0,0,.2),0 21px 33px 3px rgba(0,0,0,.14),0 8px 40px 7px rgba(0,0,0,.12);
+	    box-shadow: 0 1px 5px 0 rgba(99, 99, 99, 0.2),0 2px 2px 0 rgba(86, 86, 86, 0.14),0 3px 1px -2px rgba(121, 121, 121, 0.12);
 	}
 	button#e2, button#e1, button#e3, button#e4 {
 	    border: 1px solid lightgray;
 	}
+	
+
 	.row.butane {
-		background: #FAFAFA;
-	    box-shadow: 0 6px 6px -3px rgba(0,0,0,.2),0 10px 14px 1px rgba(0,0,0,.14),0 4px 18px 3px rgba(0,0,0,.12);
+	    background: #EEEEEE;
+    	box-shadow: none;
+    	border-bottom: 3px double #c7c7c7;
 	}
 
 	md-card#hacksalot {
@@ -57,7 +83,9 @@
 	}
 	.navbar {
 		box-shadow: 0 6px 6px -3px rgba(0,0,0,.2),0 10px 14px 1px rgba(0,0,0,.14),0 4px 18px 3px rgba(0,0,0,.12);
-	    background: #C6C6C6;
+	    background: #E0E0E0;
+	    /*background: #9E9E9E;*/
+    	box-shadow: 0 1px 5px 0 rgba(99, 99, 99, 0.2),0 2px 2px 0 rgba(86, 86, 86, 0.14),0 3px 1px -2px rgba(121, 121, 121, 0.12);
 	}
 	html {
 		background: #DBDBDB;
@@ -65,12 +93,178 @@
 	.md-button {
 		background: #FFFFFF;
 	}
+
+
+	.codrops-top {
+		background-image: url('/modules/core/client/img/ps_neutral.png');
+	}
+
+	#wrapper {
+	    box-shadow: 0 10px 13px -6px rgba(0,0,0,.2),0 21px 33px 3px rgba(0,0,0,.14),0 8px 40px 7px rgba(0,0,0,.12);
+	    background: #FBFBFB;
+	    box-shadow: 0 1px 5px 0 rgba(99, 99, 99, 0.2),0 2px 2px 0 rgba(86, 86, 86, 0.14),0 3px 1px -2px rgba(121, 121, 121, 0.12);
+	    padding-top: 9.5em;
+	    border: 4px double #ccc;
+	}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.codrops-top {
+    background: #fff;
+    background: rgba(195, 195, 190, 0.1);
+    text-transform: uppercase;
+    position: fixed;
+    width: 100%;
+    height: 14px;
+    font-size: 0.6em;
+    box-shadow: inset 0 0 17px #c1c1c1;
+    line-height: 2.2;
+    z-index: 50000;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.table-wrapper {
+	border-radius: 2px;
 }
 
 #buttons-wrapper ul li button.special {
-  background: #C8E6C9;
+  background: #424242;
 }
 
 #buttons-wrapper ul li button.special span.ng-scope {
-  color: #59665A;
+  color: #EEEEEE;
 }
+
+#ispMdContent md-list md-list-item button.md-no-style.md-button.md-ink-ripple {
+    box-shadow: none;
+}
+
+
+md-divider#md-divider {
+	width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+	.codrops-top {
+	    background: #E0E0E0;
+	    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 1px 0 rgba(0,0,0,.007),0 2px 1px -1px rgba(0,0,0,.06);
+	}
+	.codrops-top {
+		background-image: url('/modules/core/client/img/ps_neutral.png');
+	}
+	button#e2, button#e1, button#e3, button#e4 {
+	    background: #FAFAFA;
+	}
+	.navbar-inverse .navbar-toggle {
+	    border-color: #757575;
+	}
+	.navbar-inverse .navbar-brand {
+	    color: #212121;
+	    font-size: 1em;
+	    text-decoration: none;
+	     letter-spacing: .125pc; 
+	    font-family: "Source Sans Pro", Helvetica, sans-serif;
+	}
+	.navbar {
+			background: #E0E0E0;
+		    box-shadow: 0 1px 8px 0 rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.12);
+	}
+	#header p {
+		color: #424242;
+	}
+	#header h1 {
+		box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 5px 8px 0 rgba(0,0,0,.14),0 1px 14px 0 rgba(0,0,0,.12);
+		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		letter-spacing:.08pc;
+		color: #212121;
+		border: 3px double #BDBDBD;
+	}
+	section#customMap {
+	    border: 0;
+	    box-shadow: 0 8px 9px -5px rgba(0,0,0,.2),0 15px 22px 2px rgba(0,0,0,.14),0 6px 28px 5px rgba(0,0,0,.12);
+	    border-radius: 2px;
+	    border-bottom: 3px double #ccc;
+	    border-top: 3px double #ccc;
+	}
+	.navbar-inverse .navbar-toggle .icon-bar {
+	    background-color: #212121;
+	}
+
+	.navbar-inverse .navbar-nav > li > a {
+	    color: white;
+	    font-size: .7em;
+	    color: black;
+	    opacity: .7;
+	    text-decoration: none;
+	    text-shadow: 1px 1px 2px black;
+	    text-shadow: none;
+	    font-weight: 600;
+	    text-align: justify;
+	    font-size: smaller;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

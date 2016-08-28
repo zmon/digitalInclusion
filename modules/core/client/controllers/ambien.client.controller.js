@@ -12,11 +12,11 @@ var list = {};
 
 	angular
 		.module('core.map')
-		.controller('NapController', NapController);
+		.controller('MapController', MapController);
 		
-	NapController.$inject = ['$scope', '$window', '$timeout', '$http', '$location', 'zipcode', 'PlacesService', 'zcPosition'];
+	MapController.$inject = ['$scope', '$window', '$timeout', '$http', '$location', 'zipcode', 'PlacesService', 'zcPosition'];
 
-	function NapController($scope, $window, $timeout, $http, $location, zipcode, PlacesService, zcPosition) {
+	function MapController($scope, $window, $timeout, $http, $location, zipcode, PlacesService, zcPosition) {
 
 	    var browser = $window.navigator.appCodeName;
 	    console.log(">>anybodyhome<<")
@@ -472,6 +472,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 var mSo = angular.element(document.getElementById('mobServiceOverlay'));
 mSo = mSo[0];
+mSo.style.display="none";
 console.log("mSo");
 console.log(mSo);
 
@@ -683,9 +684,7 @@ console.log(mSo);
     $scope.onSwipeRight = function(ev) {
       alert('You swiped right!!');
     };
-    $scope.onSwipeUp = function(ev) {
-      alert('You swiped up!!');
-    };
+
     $scope.onSwipeDown = function(ev) {
       alert('You swiped down!!');
     };
@@ -750,12 +749,7 @@ console.log(mSo);
    
 
     function setPlaceData(json) {
-    	$scope.showImgFw = false;
-	    $scope.showImgCw = false;
-	    $scope.showImgDt = false;
-	    $scope.showImgNt = false;
-	    $scope.showImgCr = false;
-	    $scope.showImgCa = false;
+
     	
       // var addrStr = json.address1 + ", " + json.city
 
@@ -920,8 +914,50 @@ console.log(mSo);
 	  	return (a + b);
 	  }
 
-	  function setServiceOverlayData(json) {
 
+
+
+
+	    var placesService = new google.maps.places.PlacesService($scope.map);
+
+	    console.log("placesService");
+	    console.log(placesService);
+
+	    $scope.getPlaceDetails = function(place) {
+	    	placesService.getDetails({
+	          placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
+	        }, function(place, status) {
+	          if (status === google.maps.places.PlacesServiceStatus.OK) {
+	          	// console.log("google.maps.places.PlacesServiceStatus.OK");
+	            // var marker = new google.maps.Marker({
+	            //   map: map,
+	            //   position: place.geometry.location
+	            // });
+	            // google.maps.event.addListener(marker, 'click', function() {
+	            //   infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+	            //     'Place ID: ' + place.place_id + '<br>' +
+	            //     place.formatted_address + '</div>');
+	            //   infowindow.open(map, this);
+	            // });
+	          }
+	        });
+	    }
+
+
+
+	  function setOverlayData(json) {
+	  	console.log("setOverlayData");
+	  	// console.log(formatClickable(json.phone));
+	  	var href = formatClickable(json.phone);
+	  	document.getElementById('soPhone').href = href;
+	  	document.getElementById('soHours').innerText = json.hoursOpen;
+	  	document.getElementById('soCategoryPrime').innerText = categoryIconText(json.primaryCategory);
+	  	 // = json.primaryCategory;
+	  	document.getElementById('soAddress').innerText = json.readableAddress; 
+	  	document.getElementById('soTitle').innerText = json.title;
+	  	document.getElementById('soPhone').innerText = json.phone;
+	  	// document.getElementById('').innerText = json.state; 
+	  	// document.getElementById('').innerText = json. 
 	  }
 
       function setMobileInfoWindowData(json) {
@@ -964,18 +1000,43 @@ console.log(mSo);
       	el.style.top = n;
       }
 
+      $scope.cmTopSetting;
+
       function stretchMap() {
-      	console.log("ngCm");
-      	console.log(ngCm);
-      	console.log("cm");
-      	console.log(cm);
+      	// console.log("ngCm");
+      	// console.log("ngCm.css")
+      	// console.log(ngCm.css());
+      	// console.log("ngCm.attr");
+      	// console.log(ngCm.attr);
+      	// console.log("ngCm.contents");
+      	// console.log(ngCm.contents);
+      	// console.log("ngCm.data");
+      	// console.log(ngCm.data);
+      	// console.log("ngCm.detach");
+      	// console.log(ngCm.detach);
+      	// console.log("ngCm.replaceWith");
+      	// console.log(ngCm.replaceWith);
+
+
+
+
+
+
+
+
+
+
+      	// console.log("cm");
+      	// console.log(cm);
       	// var orig = ng.
     
 
 
       	cm.style.top = "-28em";
 
-
+      function resetMapHeight(w) {
+      	// if ()
+      }
 
       	// ngCm.addClass("neg24");
       	// cm.addClass("neg24");
@@ -1006,23 +1067,33 @@ console.log(mSo);
 
            //  el.primaryCategory.innerText = categoryIconText(json.primaryCategory);
            //  el.title.innerText = json.title;
-
+          var overlay = angular.element(document.getElementById('mobServiceOverlay'));
 
 	      google.maps.event.addListener(marker, 'click', function() {
 	      	// $scope.resetIwIcon();
        		setPlaceData(json);
        		setPrintWindow(json);
+       		setOverlayData(json);
           	setMobileInfoWindowData(json);
             var c = getCurrentWidth();
             console.log(c);
 
             if (c <= 768) {
           	  console.log('less than 768');
-          	  $scope.soActive = true;
-              stretchMap();
+          	  console.log("get paid $$$$$$$$$$$");
 
-            } else {
-    
+          	  $scope.soActive = true;
+          	  cm.style.height = "480px";
+          	  mSo.style.display="initial";
+          	  overlay.addClass('pinker');
+          	  // document.getElementById('mobServiceOverlay').addClass('pinker');
+              // stretchMap();
+
+            } 
+
+            if (c <= 768 && c <= 360) {
+    			console.log("$$ test $$ test $$ test $$ test");
+    			cm.style.height = "360px";
             }
 
 	        resizeMap();	
@@ -1107,29 +1178,6 @@ console.log(mSo);
 
 
 
-
-
-	    var placesService = new google.maps.places.PlacesService($scope.map);
-
-	    $scope.getPlaceDetails = function(place) {
-	    	placesService.getDetails({
-	          placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
-	        }, function(place, status) {
-	          if (status === google.maps.places.PlacesServiceStatus.OK) {
-	          	// console.log("google.maps.places.PlacesServiceStatus.OK");
-	            // var marker = new google.maps.Marker({
-	            //   map: map,
-	            //   position: place.geometry.location
-	            // });
-	            // google.maps.event.addListener(marker, 'click', function() {
-	            //   infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-	            //     'Place ID: ' + place.place_id + '<br>' +
-	            //     place.formatted_address + '</div>');
-	            //   infowindow.open(map, this);
-	            // });
-	          }
-	        });
-	    }
 
         
 
@@ -1443,34 +1491,85 @@ console.log(mSo);
 	    }
       var html = document.getElementsByTagName('html')[0];
      
+      var overlayX = document.getElementById('exit-service-overlay');
+
+
+      $scope.closeServiceOverlay = function() {
+      	// if (cWidth > 600) {
+      		console.log("clickServiceOverlay()");
+      		document.getElementById('mobServiceOverlay').style.display = "none";
+
+      	// }
+      	cm.style.height = "615px";
+      }
 
       function hideOverflow(element) {
         element.style.overflowY = "hidden";
       }
 
-	    var resizeMap = function() {
-	        var cWidth = getCurrentWidth();
-	       
-	        if (cWidth <= 768) {
-	          $scope.mobileMod = true;
-	          headerToggleId.style.display = "none";
-	          mobileWindowElement.style.display = "initial";
-	          $window.scrollTo(0,0);
-	          hideOverflow(html);
-	          var diff = (cWidth - 38);
+
+      $scope.fdDown = function() {
+
+      }
 
 
 
-	          var x = diff + "px";
-	          document.getElementById('trix').style.width = x;
-	        } else {
-	          mapCanvasElement.style.width = "75%";
-	          mapCanvasElement.style.borderRight = "1px solid #4e4e4e";
-	          sideWindowElement.style.display = "initial";
-	        }
-		      
-	        
-	    }
+   	 var resizeMap = function() {
+        var cWidth = getCurrentWidth();
+       
+        if (cWidth <= 768) {
+          // $scope.mobileMod = true;
+          // headerToggleId.style.display = "none";
+          // mobileWindowElement.style.display = "initial";
+          // $window.scrollTo(0,0);
+          // hideOverflow(html);
+          // var diff = (cWidth - 38);
+          // var x = diff + "px";
+          // document.getElementById('trix').style.width = x;
+
+          // console.log(cWidth + " is less than 768");
+        } else {
+          mapCanvasElement.style.width = "75%";
+          mapCanvasElement.style.borderRight = "1px solid #4e4e4e";
+          sideWindowElement.style.display = "initial";
+        }
+	      
+        
+   	 }
+
+   	 $scope.closeFullDescription = function() {
+   	 	headerToggleId.style.display = "initial";
+   	 	cm.style.top = "-4.6em";
+	  	mobileWindowElement.style.display = "none";
+	  }
+
+
+   	 $scope.overlayUp = function(ev) {
+      // alert('You swiped up!!');
+      	stretchMap();
+      	var c = getCurrentWidth();
+      	$scope.mobileMod = true;
+        headerToggleId.style.display = "none";
+     	mobileWindowElement.style.display = "initial";
+     	$window.scrollTo(0,0);
+        hideOverflow(html);
+        var diff = (c - 38);
+        var x = diff + "px";
+        document.getElementById('trix').style.width = x;
+     };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1693,21 +1792,12 @@ console.log(mSo);
 			    $timeout(6000, loadMarkersOnInit(true), true)
 			    initFreeWifiButton()
 			    setWifiMarkers()
-
-
-
-
-
-
 				
 		  });
 
 
-          google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-
-
-				
-		  });
+    //       google.maps.event.addListenerOnce($scope.map, 'idle', function(){				
+		  // });
 
 
 
@@ -1730,7 +1820,8 @@ console.log(mSo);
 
 	      $scope.clearAll = function() {
 	      	clearAll();
-	      }
+	      } 
+
 
 	     
 	      var center;

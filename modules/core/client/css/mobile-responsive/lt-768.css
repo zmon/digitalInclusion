@@ -6,24 +6,24 @@
 	    display: block;
 	    position: relative;
 	    overflow: auto;
-	    padding-left: 10em;
-	    top: 30em;
+	    padding-left: .001em;
+	    top: -7em;
 	    height: 30em;
-	    left: -6em;
+	    width: 190%;
+	    margin-left: -3em;
+	    left: -7em;
 	    -webkit-overflow-scrolling: touch;
 	}
-
 	div#buttons-wrapper {
-		position: absolute;
-		left: 11em;
-		width: 22.4em;
-		margin: 0;
-		padding: 0;
-		top: 5.75em;
-		z-index: 99999;
-		border: none;
+	    position: absolute;
+	    left: 12em;
+	    width: 22.4em;
+	    margin: 0;
+	    padding: 0;
+	    top: 3.6em;
+	    z-index: 99999;
+	    border: none;
 	}
-
 	button#e1 {
 	    width: 155px;
 	    float: left;
@@ -95,7 +95,7 @@
 		border-radius: 4px;
 		border: .5px solid #2a2d0f;
 		border: none;
-		margin-top: 3.5em;
+		margin-top: .75em;
 	}
 	li.realign {
 		position: relative;

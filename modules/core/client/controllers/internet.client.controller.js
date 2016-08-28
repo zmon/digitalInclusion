@@ -27,7 +27,7 @@
 	        var category = place.primaryCategory;
 	        if (category === "isp") {
 	           // list.access.push(place);
-             console.log(place);
+             // console.log(place);
              place.word = "the bird";
 	           $scope.isps.push(place);
 	        } 
