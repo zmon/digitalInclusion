@@ -34,10 +34,15 @@
 	}
 
 	div#mobServiceOverlay {
-
-	    top: 35.5em;
+		    text-align: center;
+	        top: 27.5em;
 
 	    /* border-top: 3px double #607D8B; */
+	}
+	#trix {
+		    top: -2.3em;
+    height: 32.0em;
+    left: .62em;
 	}
 	md-card#overlay-data-window {
 	    width: 70%;
@@ -45,7 +50,9 @@
 	    border: 1px solid #BDBDBD;
 	    padding: 0 .1em .1em .1em;
 	    margin: .01em auto;
+	    text-align: center;
 	}
+
 	#soTitle {
 	    font-size: 1.1em;
 	    font-weight: 700;

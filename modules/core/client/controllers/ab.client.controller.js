@@ -1076,10 +1076,12 @@ console.log(mSo);
 
             if (c <= 768) {
           	  console.log('less than 768');
-          	  console.log("get paid $$$$$$$$$$$");
+        
 
           	  $scope.soActive = true;
-          	  cm.style.height = "480px";
+          	  cm.style.height = "360px";
+          	  console.log("set cm.style.height");
+    			console.log(cm.style.height);
           	  mSo.style.display="initial";
           	  overlay.addClass('pinker');
           	  // document.getElementById('mobServiceOverlay').addClass('pinker');
@@ -1089,7 +1091,9 @@ console.log(mSo);
 
             if (c <= 768 && c <= 360) {
     			console.log("$$ test $$ test $$ test $$ test");
-    			cm.style.height = "360px";
+    			cm.style.height = "240px";
+    			console.log("set cm.style.height");
+    			console.log(cm.style.height);
             }
 
 	        resizeMap();	

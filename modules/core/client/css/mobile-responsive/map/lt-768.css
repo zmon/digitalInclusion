@@ -47,10 +47,12 @@
 
 	a#exit-service-overlay.fa-close {
 	    position: absolute;
-	    left: 47em;
-	    top: .1em;
+	    left: 23.6em;
+	    border: 3px solid red;
+	    top: .2em;
 	    border: none;
 	    color: #212121;
+	    z-index: 99999;
 	    text-decoration: none;
 	}
 
