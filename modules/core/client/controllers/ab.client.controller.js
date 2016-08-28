@@ -12,17 +12,13 @@ var list = {};
 
 	angular
 		.module('core.map')
-		.controller('MapController', MapController);
+		.controller('AbController', AbController);
 		
-	MapController.$inject = ['$scope', '$window', '$timeout', '$http', '$location', 'zipcode', 'PlacesService', 'zcPosition'];
+	AbController.$inject = ['$scope', '$window', '$timeout', '$http', '$location', 'zipcode', 'PlacesService', 'zcPosition'];
 
-	function MapController($scope, $window, $timeout, $http, $location, zipcode, PlacesService, zcPosition) {
+	function AbController($scope, $window, $timeout, $http, $location, zipcode, PlacesService, zcPosition) {
 
-	    var browser = $window.navigator.appCodeName;
-	    console.log(">>anybodyhome<<")
-
-
-	   
+	    var browser = $window.navigator.appCodeName;   
 	    var zipcodes = zipcode.getZipcodes();
 	    var libertyMemorial = [39.081009, -94.585944];
 	    var eighteenthAndVine = [39.091804, -94.562090];

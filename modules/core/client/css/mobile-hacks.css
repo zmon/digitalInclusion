@@ -5,7 +5,7 @@
 	}
 	.navbar {
 	    top: 0;
-	    top: -.2em;
+	    top: -2em;
 	}
 	#header h1{
 		top: -9.25em;
@@ -20,22 +20,22 @@
 	#header p {
 	    color: #4a4a4a;
 	    position: relative;
-	    top: -15.4em;
+	    top: -17.4em;
 	    left: 3.9em;
 	    font-size: .7em;
 	}
 	div#buttons-wrapper {
-	    top: 1.5em;
+	    top: -1em;
 	    left: 2.05em;
 	    width: 22em;
 	}
 	section#customMap {
-	    margin-top: 10.05em;
+	    margin-top: 8.55em;
 	}
 
 	div#mobServiceOverlay {
 
-	    top: 38.2em;
+	    top: 35.5em;
 
 	    /* border-top: 3px double #607D8B; */
 	}
@@ -53,4 +53,28 @@
 	    color: #000000;
 	    opacity: .87;
 	}
+	.navbar-inverse .navbar-toggle {
+	    border-color: #757575;
+	    position: relative;
+	    top: .65em;
+	    /* margin-top: 1.6em; */
+	    left: .5em;
+	}
+	.navbar-inverse .navbar-brand {
+	    color: #212121;
+	    font-size: 1.35em;
+	    text-decoration: none;
+	    position: relative;
+	    top: .25em;
+	    letter-spacing: .125pc;
+	    font-family: "Source Sans Pro", Helvetica, sans-serif;
+	}
+	#header h1 {
+	    top: -10.85em;
+	    height: 8em;
+	    line-height: 13px;
+	    padding: 0;
+	    padding-top: .2em;
+	}
+
 }
