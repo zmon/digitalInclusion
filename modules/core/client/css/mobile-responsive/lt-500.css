@@ -199,4 +199,8 @@
 	#header h1 {
 	    left: -.6em;
 	}
+	#header p {
+	    top: -11.5em;
+
+	}
 }

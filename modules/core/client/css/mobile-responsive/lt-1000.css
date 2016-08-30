@@ -1,4 +1,5 @@
 @media (max-width: 1000px) {
+
 	button#e1, button#e2, button#e3, button#e4 {
 		font-size: 10px;
 		width: 145px;
@@ -23,6 +24,10 @@
 	    position: relative;
 	    left: -1.2em;
 
+	}
+	#new-service-button {
+	    position: relative;
+	    left: 15em;
 	}
 	.nav-tabs > li > a {
 		margin-right: 2px;
@@ -73,7 +78,7 @@
 	    -webkit-font-smoothing: antialiased;
 	    -moz-osx-font-smoothing: grayscale;
 	}
-	#header h1 {
+	/*#header h1 {
 	    margin: .4em 0.25em 4em 0;
 	    font-weight: 600;
 	    top: -5.39em;
@@ -81,7 +86,25 @@
 	    letter-spacing: 1.29px;
 	    font-size: 16px;
 	    font-family: Georgia;
-	}
+	    top: -4.6em;
+    left: -6em;
+    width: 45em;
+	}*/
+#header h1 {
+    margin: .4em 0.25em 4em 0;
+    font-weight: 600;
+    top: -5.39em;
+    padding-top: .6em;
+    position: relative;
+    height: 3.3em;
+    letter-spacing: 1.29px;
+    font-size: 16px;
+    font-family: Georgia;
+    top: -5.4em;
+    left: -3.2em;
+    width: 45em;
+}
+
 	a.pure-button.x-small-custom {
 		font-size: .5em;
 		position: relative;
@@ -247,7 +270,10 @@
 	}
 
 
-
+	#header p {
+		position: relative;
+		top: -9.2em;
+	}
 
 
 	ul.actions.fit.small {
@@ -306,6 +332,12 @@
 		border-bottom: .5px solid #423906;
 		border-top: 1.5px solid #5d5b51;
 		border-top: none;
+	}
+
+	button#e2, button#e1, button#e3, button#e4 {
+
+	    width: 145px;
+	
 	}
 
 	#sw {

@@ -8,5 +8,12 @@
 	.eo-serv {
 		display: none;
 	}
-	
+	.md-button {
+		margin: 3px 8px;
+	}
+	#new-service-button {
+    position: relative;
+    left: 10em;
+    top: 7em;
+}
 }

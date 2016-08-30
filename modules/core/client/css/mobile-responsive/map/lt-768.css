@@ -6,7 +6,7 @@
 		box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
 		border: 2px solid #676f03;
 		box-shadow: 0 0 1px #c8d473, 0 0 10px black;
-		margin-top: 12.35em;
+		margin-top: 12.7em;
 		margin-bottom: 2.7em;
 		width: 99.5%;
 		padding-right: 8em;
@@ -18,6 +18,17 @@
 		border: none;
 		
 	}
+	md-card#overlay-data-window {
+	    width: 50%;
+	    height: 11em;
+	    border: 1px solid #BDBDBD;
+	    padding: 0 .4em .4em .4em;
+	    margin: .3em auto;
+	    border: 3px double #E0E0E0;
+	    text-align: center;
+	    background: #F5F5F5;
+	}
+
 	main#main-page {
 	    
 	    margin-left: -.6em;
@@ -27,9 +38,9 @@
 	    top: -2em;
 	}
 	div#mobServiceOverlay {
-	    height: 9.69em;
+	    height: 12em;
 	    position: fixed;
-	    top: 45.2em;
+	    top: 37.4em;
 	    left: -.1em;
 	    z-index: 99999;
 	    width: 101%;
@@ -47,7 +58,7 @@
 
 	a#exit-service-overlay.fa-close {
 	    position: absolute;
-	    left: 23.6em;
+	    left: 35.15em;
 	    border: 3px solid red;
 	    top: .2em;
 	    border: none;

@@ -2792,9 +2792,8 @@
       font-family: 'Source Sans Pro';
       text-align: justify;
       text-shadow: none;
-      font-size: .9em;
-      letter-spacing: .71px;
-    }
+      font-size: 1em;
+      letter-spacing: .0125pc;    }
 
     table th {
       font-size: 0.9em;

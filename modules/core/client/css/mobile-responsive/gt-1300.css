@@ -1,0 +1,7 @@
+@media (min-width: 1300px) {
+	.nav-tabs {
+		left: -18em;
+		padding-left: 17.5em;
+		width: 175%;
+	}
+}

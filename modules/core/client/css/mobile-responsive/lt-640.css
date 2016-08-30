@@ -53,7 +53,7 @@
 	    padding-bottom: 3em;
 	    box-shadow: 0 0 1px #615711, 0 0 1px #505050, inset 0 0 200px #2f2e26, inset 0 0 150px black;
 	    background: linear-gradient(to left, #3a3f42 , #795d5d, #31343c );
-	    height: 9.5em;
+	    height: 8em;
 	    border-radius: 8px;
 	    background: linear-gradient(#d9dee0 , #ececec, #efefef );
 	    background: whitesmoke;
@@ -165,10 +165,10 @@
 		background: steelblue;
 		margin-top: -.9341em;
 		box-shadow: 0 0 1px #e4e4e4, 0 0 1px #615711, 0 0 1px #505050, inset 0 0 100px #d0d0d0, inset 0 0 100px #a0a0a0;
-		padding-top: .945em;
+		padding-top: .5em;
 		padding-bottom: 3em;
 		color: #464646;
-		height: 9.83em;
+		height: 8em;
 		background: #C02425;
 		background: -webkit-linear-gradient(to left, #C02425 , #F0CB35);
 		background: linear-gradient(to left, #b72b2b , #ffd631, #bd3838);

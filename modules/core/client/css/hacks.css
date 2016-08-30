@@ -229,7 +229,7 @@ a.btn {
 
 #new-service-button {
     position: relative;
-    left: -15em;
+    /*left: -15em;*/
 }
 
 form.c-mob-modal-form {
@@ -318,6 +318,3 @@ md-card md-card-header#blueGray {
   background: #B0BEC5;
 }
 
-
-
-.pinker {background: pink;}

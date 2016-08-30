@@ -26,7 +26,7 @@
 		box-shadow: none;
 	}
 	.nav-tabs {
-		padding: .1em .125em .1em 4.5em;
+		padding: .1em .125em .1em 14em;
 	}
 	.nav > li > a:hover, .nav > li > a:focus {
 	    text-decoration: none;
@@ -38,11 +38,12 @@
 	    padding-top: 1.225em;
 	    text-decoration: underline;
 	    font-weight: 700;
-	    margin-top: .25em;
+	    margin-top: -.35em;
 	    height: 3.2em;
 	}
 	#header h1 {
 		width: 64.01em;
+		    width: 63.5em;
 	}
 	section.meta-w-form {
 		background: #464646;
@@ -53,7 +54,7 @@
 		border-radius: 9px;
 		/* border-bottom-left-radius: 6px; */
 		/* border-bottom-right-radius: 6px; */
-		top: -2.42em;
+		    top: -2.65em;
 		border: 1px solid #e2e2e2;
 		box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a;
 		width: 234.4%;
@@ -76,18 +77,20 @@
 	}
 	.row.butane {
 		width: 1023px;
+		    width: 1015px;
 	}
 	.nav-tabs {
-		padding: .265em .125em .01em 5.35em;
+		padding: .265em .125em .01em 14em;
 	}
 	div#buttons-wrapper {
 	    
-	    left: 10.5em;
+	    left: 11.5em;
 	
 	}
 	section#customMap {
 
 	    width: 1023px;
+	    width: 1015px;
 
 	}
 }

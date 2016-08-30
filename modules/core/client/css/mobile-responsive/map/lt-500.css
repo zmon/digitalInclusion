@@ -11,8 +11,14 @@
 	    
 
 	}
+
+	#header p {
+	    top: -11.5em;
+
+	}
 	#header h1 {
 		left: -1.45em;
+		width: 24em;
 		border-radius: 2px;
 	}
 	#header p {
@@ -23,12 +29,13 @@
 	}
 	section#customMap {
 		    width: 98.75%;
+		    margin-top: 14em;
 	}
 	ul.actions.fit.small {
 	     left: 15%;
 	}
 	div#buttons-wrapper {
-    top: 3.1em;
+    top: 2.6em;
     left: 4.5em;
 }
 }

@@ -5,10 +5,15 @@
 	    left: 7em;
 	    z-index: 99999;
 	}
+	#new-service-button {
+	    position: relative;
+	    left: 15em;
+	    top: 10em;
+	}
 		div#buttons-wrapper {
 	    position: absolute;
-	    top: 6em;
-	    left: 9.5em;
+	    top: 6.6em;
+	    left: 9.8em;
 	    z-index: 99999;
 	}
 	#main {
@@ -45,7 +50,7 @@
 		border-radius: 2px;
 		/* border-bottom-left-radius: 6px; */
 		/* border-bottom-right-radius: 6px; */
-		top: -2.2em;
+		top: -2.5em;
 		border: 1px solid #e2e2e2;
 		box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a;
 		width: 164.4%;
@@ -250,14 +255,16 @@
 		font-family: DinLight;
 		font-family: Georgia;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		padding-top: 15px;
+		padding-top: 18px;
 	}
 	input#pac-input {
 	    position: relative;
 	    left: 7.5em;
 	    top: -1.5em;
 	}
-
+	table td {
+		text-indent: -1.35em;
+	}
 	#header {
 	    padding: 1em 4em 8em 4em;
 	}
@@ -266,8 +273,10 @@
 	    padding: .7em 0 1.75em 0;
 	    left: -8em;
 	    border-bottom: 3px double gray;
-	    width: 59.1em;
-	    top: -4.4em;
+	    width: 58.5em;
+	        width: 58.65em;
+	    top: -4.55em;
+	    height: 4em;
 	}
 	section#first {
 	    height: 870px;
@@ -308,7 +317,7 @@
 
 	section#queryForm {
 	    position: relative;
-	    top: -7.15em;
+	    top: -8.5em;
 	    left: 1.25em;
 	    height: 3em;
 	}
@@ -380,7 +389,7 @@
 		outline: none;
 		border: none;
 		/* box-shadow: inset 0 0 65px #3a4035, 0 0 6px #656464; */
-		top: -5.5em;
+		top: -4.5em;
 		left: -2em;
 		background: #e4efe4;
 		background: -webkit-linear-gradient(to left, #C9FFBF , #FFAFBD);
@@ -434,7 +443,7 @@
     top: -2.2em;
     left: -4.35em;
     border-radius: 0;
-    width: 946px;
+    width: 938px;
     border-bottom-right-radius: 0;
     border: none;
     outline: none;
@@ -446,6 +455,7 @@
 	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
  
 	      margin-top: -.35em;
+	      margin-top: -.01em;
 
 	}
 	#sw {
@@ -473,6 +483,10 @@
 	li.realign {
 	    left: -13.7em;
 	}
+
+	.navbar {
+		    top: -1em;
+	}
 	.nav-tabs {
 	  
 	    padding: .265em .125em .01em 2em;
@@ -480,13 +494,23 @@
 	}
 
 	.nav > li > a:hover, .nav > li > a:focus {
-	    margin-top: -.575em;
+	    margin-top: -.2575em;
 	}
 
 	section#customMap {
-		height: 620px;
-		top: -6.7em;
-	    width: 946px;
+		height: 653px;
+		top: -6.85em;
+	    width: 938px;
 	    left: -4.3em;
+	}
+	button.md-button span.ng-scope {
+	    position: relative;
+	    top: -.35em;
+	}
+	.nav-tabs {
+		left: -11.5em;
+		padding-left: 12em;
+    	width: 80em;
+    	    top: -5.5em;
 	}
 }

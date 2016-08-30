@@ -194,7 +194,7 @@
 		margin-top: -.35em;
 		margin-bottom: .2em;
 		padding-top: .275em;
-		font-size: .725em;
+		font-size: .72em;
 		height: 3.2em;
 		border: 1px solid #638a13;
 		letter-spacing: .6px;
@@ -220,6 +220,7 @@
 		text-decoration: underline;
 		padding-top: .5em;
 		margin-top: -.05em;
+		margin-top: -.4em;
 		height: 3.2em;
 	}
 	#wrapper {
@@ -312,13 +313,15 @@
 		font-weight: 600;
 		letter-spacing: 1.9px;
 		font-size: 16px;
-		left: -14.49em;
-		width: 71.2em;
+		left: -14.55em;
+		width: 71.3em;
 		border: 1px solid gray;
 		top: -9em;
 		border-bottom: 3px double gray;
 		font-family: Georgia;
+		border-color: #ccc;
 		padding: .99em 0 1.6em 0;
+		width: 70.75em;
 	}
 	#footer {
 	    display: -moz-flex;
@@ -341,33 +344,45 @@
 	    margin: 0;
 	}
 	.row.butane {
-		top: -1.3em;
+		top: -1.1em;
 		width: 1139px;
+		    width: 1131px;
 		left: -.05em;
 		height: 240px;
 		border-radius: 0;
 		margin-left: 0;
 		border-right: 1px solid gray;
 		border-left: 1px solid gray;
+		border-color:#ccc;
+		width: 1132px;
+    left: -.1em;
 	}
 	div#buttons-wrapper {
 		left: 9em;
 		top: 5.825em;
 	}
 	section#customMap {
-	    top: -2.65em;
+	    top: .575em;
 	    position: relative;
 	    border-bottom: 1px solid gray;
-	    top: -1.8em;
-    left: .03em;
-    width: 1137px;
+	    top: -.9em;
+    left: -.05em;
+    width: 1130px;
+        border-color: #ccc;
+    border-top: 1px solid #ccc;
 	    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2),0 12px 17px 2px rgba(0,0,0,.14),0 5px 22px 4px rgba(0,0,0,.12);
 	}
 	.nav-tabs {
 		position: absolute;
 		width: 100%;
 		left: -.001em;
-		top: -4.2em;
+		top: -7.2em;
+		    position: absolute;
+    width: 160%;
+    left: -16em;
+    top: -7.8em;
+    padding-left: 18em;
+    padding-top: .75em;
 	}
 	.legend-table {
 		width: 16.75em;
@@ -390,9 +405,9 @@
 	table td {
 
 	    line-height: 6px;
-	    font-size: .85em;
+	    font-size: 1em;
 	    letter-spacing: .71px;
-
+	    text-indent: -1.15em;
 	    text-indent: -1.4em;
 	    /* font-size: .85em; */
 	    /* letter-spacing: .71px; */

@@ -27,7 +27,10 @@
 	 	left: 13%;
 	}	
 	div#buttons-wrapper {
-    top: 3.1em;
-    left: 5em;
-}
+	    top: 3.1em;
+	    left: 5em;
+	}
+	a#exit-service-overlay.fa-close {
+	    left: 22.85em;
+	}
 }
