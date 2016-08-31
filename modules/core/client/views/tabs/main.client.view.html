@@ -320,53 +320,57 @@
 
                       <md-card id="hacksalot" md-theme="dark-blue" md-theme-watch>
 
-                        <md-card-header id="defaultGray">
-                          <md-card-avatar>
-                            <img ng-src="{{swImagePath}}" class="md-card-image sw-icon" alt="">
-                            <!-- <md-icon class="md-avatar-icon" md-svg-icon="img/icons/menu.svg"></md-icon> -->
-                          </md-card-avatar>
-                          <md-card-header-text>
-                            <span class="md-title"><span class="md-subhead"><div id="placeCategory" class="f1 f-class"></div></span></span>
-                            <!-- <span class="md-subhead">subhead</span> -->
-                          </md-card-header-text>
-                        </md-card-header>
-                        <md-divider id="top-divider"></md-divider>
-                        <!-- <img ng-src="{{timeImagePath}}" class="md-card-image" alt="Washed Out"> -->
-                        <md-whiteframe class="md-whiteframe-4dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="85" layout layout-align="center center">
-                          
-                          <md-card-title>
-                            <md-card-title-text>
-                              <!-- <span class="md-headline">Card with image</span> -->
-                              <span class="md-subhead"><div id="placeCategory" class="f1 f-class"></div></span>
-                            </md-card-title-text>
-                            <!-- <md-card-title-media>
-                              <div class="md-media-sm card-media"></div>
-                            </md-card-title-media> -->
-                          </md-card-title>
-                          <!-- <span>.md-whiteframe-4dp</span> -->
-                        </md-whiteframe>
+                        
+
+
                         <md-card-content>
-                          <div id="placeTitle" class="f2 f-class"></div>
-                          <a href=""><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
-                          <div class="cist">
-                            <span id="ihAddress" class="info-heading">Address</span>
-                            <div id="placeAddress" class="f3 f-class"></div>
-                            <span id="placeCity" class="f3 f-class"></span>
-                            <span id="placeState" class="f3"></span><br>
-                            <span id="placeZip" class="f3 f-class"></span>   
-                          </div>
-                          <a id="map-directions" target="_blank" class="view-dir pure-button" href=""><i class="fa fa-bus"></i> Get directions</a>
                           
 
-                          <span id="ihHours" class="info-heading">Hours</span>
-                          <div id="placeHours" class="f-class"></div>
-                          <md-divider id="bottom-divider"></md-divider>
-                          <span id="ihDescription" class="info-heading">Description</span>
+                          <div class="cest">
+                            <span id="categoryBanner">
+                            <img id="imgPath" src="" class="md-card-image simg" alt="">
+                            <!-- <img ng-src="{{swImagePath}}" class="md-card-image simg" alt=""> -->
+                            <div id="placeCategory" class="f1 f-class"></div>
+                            </span>
+
+
+                            <div id="placeTitle" class="f2 f-class"></div>
+                          <a href=""><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
+                            <div id="placeAddress" class="f3 f-class"></div>
+                         <!--    <span id="placeCity" class="f3 f-class"></span>
+                            <span id="placeState" class="f3"></span><br>
+                            <span id="placeZip" class="f3 f-class"></span><br> -->
+                             <a id="map-directions" target="_blank" class="view-dir" href=""> View directions on Google maps</a>
+
+                            <!-- <div id="placeHours" class="f-class"></div>    -->
+                            <p id="hrsHead">Operating hours:</p>
+                            <aside id="opHours">
+                              Sunday: <p id="opSun" class="opDay"></p><br>
+                              Monday: <p id="opMon" class="opDay"></p><br>
+                              Tuesday: <p id="opTue" class="opDay"></p><br>
+                              Wednesday: <p id="opWed" class="opDay"></p><br>
+                              Thursday: <p id="opThu" class="opDay"></p><br>
+                              Friday: <p id="opFri" class="opDay"></p><br>
+                              Saturday: <p id="opSat" class="opDay"></p>
+                            </aside>
+                            <aside id="opHoursNA">Not available</aside>
+                            <!-- <a class="f-class" id="placeUrl">Website</a> -->
+
+                            <p id="dscHead">Description:</p>
+                                  <div class="f4 f-class f-desc" id="placeDescription"></div>
+                          <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a><br>
+                          
+                          </div>
+                         
+                          
+
+                          <!-- <span id="ihHours" class="info-heading">Hours</span> -->
+                          
+                          <!-- <md-divider id="bottom-divider"></md-divider> -->
+                          <!-- <span id="ihDescription" class="info-heading">Description</span> -->
                           
                           <!-- <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a> -->
-                          <div class="f4 f-class f-desc" id="placeDescription"></div>
-                          <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a>
-                          <div class="f-class" id="placeUrl">Visit website</div>
+                    
                         </md-card-content>
               <!--           <md-card-actions layout="row" layout-align="end center">
                           <md-button>Action 1</md-button>

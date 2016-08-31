@@ -16,28 +16,31 @@
 	}
 	#buttons-wrapper ul li button span.ng-scope {
 	    position: relative;
-	    top: -.4em;
+	    top: -4.4em;
 	}
 	/*section.meta-w-form {
 	    position: relative;
 	    left: .225em;
 	}*/
 	#header h1 {
-	    padding-top: 1.4em;
-	    left: -1.4em;
+	    padding-top: .4em;
+	    height: 8em;
+	    left: -3.9em;
+	    width: 25em;
 	    letter-spacing: .9px;
 	}
 	#header p {
 		position: relative;
-    top: -9.3em;
-    top: -10.5em;
+    top: -8.6em;
+
     margin-left: .6em;
+
 	}
 	main#main-page {
 		
 	}
 	section#customMap {
-		    width: 106.5%;
+		    width: 109.5%;
 	}
 	ul.actions.fit.small {
 	 left: 10.5%;
@@ -52,7 +55,7 @@
 
 	}
 	div#buttons-wrapper {
-	    top: 4.3em;
+	    top: .8em;
 	    left: 2.475em;
 	    width: 20.5em;
 	}

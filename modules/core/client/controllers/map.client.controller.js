@@ -1022,10 +1022,10 @@ console.log(mSo);
               stretchMap();
 
             } else {
-    
+    			resizeMap();
             }
 
-	        resizeMap();	
+	        // resizeMap();	
 	        findActive();
 	
 	        var lat = json.location[0].lat;
@@ -1463,8 +1463,8 @@ console.log(mSo);
 
 	          var x = diff + "px";
 	          document.getElementById('trix').style.width = x;
-	        } else {
-	          mapCanvasElement.style.width = "75%";
+	        } else if (cWidth > 768) {
+	          cm.style.width = "25%";
 	          mapCanvasElement.style.borderRight = "1px solid #4e4e4e";
 	          sideWindowElement.style.display = "initial";
 	        }

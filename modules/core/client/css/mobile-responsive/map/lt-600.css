@@ -14,10 +14,11 @@
 	}
 
 	#header h1 {
-    margin-top: -1.65em;
-    left: -2.2em;
-    width: 33em;
-}
+	    margin-top: -2.35em;
+	    left: -2.2em;
+	    width: 33em;
+	    left: -1.85em;
+	}
 	#header p {
 		top: -12em;
 		margin-left: .95em;
@@ -27,13 +28,13 @@
 	}
 	section#customMap {
 		margin-top: 13.35em;
-		    width: 96%;
+		    width: 98.9%;
 	}
 	ul.actions.fit.small {
 	 left: 10%;
 	}
 	div#buttons-wrapper {
-    top: 2.8em;
-    left: 7.4em;
-}
+	    top: 1.8em;
+	    left: 7.4em;
+	}
 }

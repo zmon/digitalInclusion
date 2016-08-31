@@ -15,29 +15,43 @@
 		padding-top: .75em;
 	}
 	#header h1 {
-
-    width: 43em;
-}
+	    width: 37em;
+	    height: 8.75em;
+	}
 	#header p {
-		position: relative;
-    top: -12em;
+	    position: relative;
+	    top: -10.2em;
 	}
 	#header h1 {
 
-        margin: 1.1em auto 0 auto;
-    width: 36em;
+    left: -2.5em;
 }
 	main#main-page {
 		width: 124.5%;
 	}
 	section#customMap {
-		width: 90.4%;
+		width: 92.5%;
 	}
 	ul.actions.fit.small {
 	 left: 28%;
 	}
 	div#buttons-wrapper {
-    top: 3.45em;
+    top: 2em;
     left: 11.9em;
+	}
 }
+
+@media (max-width: 730px) {
+	#header h1 {
+
+	}
+	#header p {
+
+	}
+	div#buttons-wrapper {
+
+	}
+	section#customMap {
+		
+	}
 }

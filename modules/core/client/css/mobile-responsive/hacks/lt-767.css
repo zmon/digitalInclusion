@@ -1,5 +1,20 @@
 @media (max-width: 767px) {
 	.navbar {
-		top: 0;
+		top: -1em;
+	}
+	#header h1 {
+		    margin-top: .6em;
+    margin-left: .55em;
+	}
+	button.navbar-toggle {
+
+	    left: .2em;
+	    top: .5em;
+	
+	}
+	div#mobServiceOverlay {
+
+	    top: 36.5em;
+	
 	}
 }

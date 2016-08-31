@@ -14,8 +14,13 @@
 	    
 
 	}
+	div#buttons-wrapper {
+    /* top: 3.5em; */
+	    left: 7.5em;
+	}
 	#header h1 {
 		width: 33em;
+		    left: -1.2em;
 	}
 	#header p {
 	
@@ -24,7 +29,7 @@
 		width: 124.5%;
 	}
 	section#customMap {
-		width: 96%;
+		width: 98%;
 	}
 	ul.actions.fit.small {
 	     left: 12.7%;

@@ -6,7 +6,7 @@
 		box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
 		border: 2px solid #676f03;
 		box-shadow: 0 0 1px #c8d473, 0 0 10px black;
-		margin-top: 12.7em;
+		margin-top: 13.3em;
 		margin-bottom: 2.7em;
 		width: 99.5%;
 		padding-right: 8em;
@@ -16,6 +16,7 @@
 		border: 1px solid #7b7b76;
 		border-radius: 8px;
 		border: none;
+		    left: .15em;
 		
 	}
 	md-card#overlay-data-window {
@@ -30,27 +31,27 @@
 	}
 
 	main#main-page {
-	    
-	    margin-left: -.6em;
-	        width: 114%;
-	}
+    margin-left: -1.8em;
+    width: 115.9%;
+}
 	.navbar-fixed-top, .navbar-fixed-bottom {
-	    top: -2em;
+	        top: -2.92em;
 	}
-	div#mobServiceOverlay {
-	    height: 12em;
-	    position: fixed;
-	    top: 37.4em;
-	    left: -.1em;
-	    z-index: 99999;
-	    width: 101%;
-	    background: #ECEFF1;
-	    border: none;
-	    border-top: 3px double #b7b7b7;
-	    border-bottom: 3px double #b7b7b7;
-	    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2),0 24px 38px 3px rgba(0,0,0,.14),0 9px 46px 8px rgba(0,0,0,.12);
-	    /* border-top: 3px double #607D8B; */
-	}
+div#mobServiceOverlay {
+    height: 11.7em;
+    position: fixed;
+    top: 36.25em;
+    left: 1.2em;
+    z-index: 99999;
+    width: 95%;
+    background: #ECEFF1;
+    border: none;
+    border-top: 3px double #b7b7b7;
+    border-bottom: 3px double #b7b7b7;
+    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2),0 24px 38px 3px rgba(0,0,0,.14),0 9px 46px 8px rgba(0,0,0,.12);
+    /* border-top: 3px double #607D8B; */
+    border: none;
+}
 
 	#trix {
 		margin: 0 14px 0 24px;

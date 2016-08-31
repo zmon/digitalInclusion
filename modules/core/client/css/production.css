@@ -54,23 +54,24 @@
 	    border: 1px solid #e0e0e0;
 	    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
 	    box-shadow: none;
+	    border-radius: 2px;
 	}
-	#header h1 {
-	    background: radial-gradient(#ececec, #e8e9ea, #f4f9fb );
-	    letter-spacing: .125pc;
-	    /*height: 8.5em;*/
-	    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
-	    border-bottom: 3px double #e1e7e8;
-	    border-bottom: 3px double #ccc;
-	    border-bottom: 1px solid #ccc;
-	    background: #F5F5F5;
-	    font-family: "Source Sans Pro", Helvetica, sans-serif;
-	    box-shadow: 0 10px 13px -6px rgba(0,0,0,.2),0 21px 33px 3px rgba(0,0,0,.14),0 8px 40px 7px rgba(0,0,0,.12);
-	    box-shadow: 0 1px 5px 0 rgba(99, 99, 99, 0.2),0 2px 2px 0 rgba(86, 86, 86, 0.14),0 3px 1px -2px rgba(121, 121, 121, 0.12);
-	    box-shadow: none;
-	    background: background: #e1e5e6;
-	        background: #e1e5e6;
-	}
+#header h1 {
+    background: radial-gradient(#ececec, #e8e9ea, #f4f9fb );
+    letter-spacing: .125pc;
+    /* height: 8.5em; */
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+    border-bottom: 3px double #e1e7e8;
+    border-bottom: 3px double #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #F5F5F5;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    box-shadow: 0 10px 13px -6px rgba(0,0,0,.2),0 21px 33px 3px rgba(0,0,0,.14),0 8px 40px 7px rgba(0,0,0,.12);
+    box-shadow: 0 1px 5px 0 rgba(99, 99, 99, 0.2),0 2px 2px 0 rgba(86, 86, 86, 0.14),0 3px 1px -2px rgba(121, 121, 121, 0.12);
+    box-shadow: none;
+    background: background: #e1e5e6;
+    background: #eceeef;
+}
 	button#e2, button#e1, button#e3, button#e4 {
 	    border: 1px solid lightgray;
 	    min-height: 28px;
@@ -88,15 +89,21 @@
 	        background: #FAFAFA;
     	box-shadow: none;
     	border-bottom: 3px double #c7c7c7;
-    	    border-bottom: 1px solid #c7c7c7;
+    	    border: none;
 	}
 
 	md-card#hacksalot {
-	    background: #FAFAFA;
-	    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
+		font-family: "Source Sans Pro", Helvetica, sans-serif;
+    background: #FAFAFA;
+    box-shadow: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
 	}
 	md-card md-card-header#defaultGray {
 	    background: #F5F5F5;
+	  	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+
 	}
 	.navbar {
 		box-shadow: 0 6px 6px -3px rgba(0,0,0,.2),0 10px 14px 1px rgba(0,0,0,.14),0 4px 18px 3px rgba(0,0,0,.12);
@@ -132,7 +139,12 @@
 }
 
 
-
+div#info-wrapper {
+    background-image: url('/modules/core/client/img/ps_neutral.png');
+    background: none;
+    border: none;
+    box-shadow: none;
+}
 
 
 
@@ -255,7 +267,7 @@ button.md-button.new-service-button span.ng-scope {
 	    box-shadow: 0 8px 9px -5px rgba(0,0,0,.2),0 15px 22px 2px rgba(0,0,0,.14),0 6px 28px 5px rgba(0,0,0,.12);
 	    border-radius: 2px;
 	    border-bottom: 3px double #ccc;
-	    border-top: 3px double #ccc;
+	    border: 1px solid #ccc;
 	}
 	.navbar-inverse .navbar-toggle .icon-bar {
 	    background-color: #212121;
@@ -277,16 +289,32 @@ button.md-button.new-service-button span.ng-scope {
 }
 
 
+div#mobServiceOverlay {
+	border: 1px solid #ccc;
+}
+
+#header h1 {
+	border-bottom: 1px solid #ccc;
+}
+
+
+/*
 
 
 
+div#mobServiceOverlay {
+	    background: none;
+    box-shadow: none;
+    border: none;
+}
 
 
+*/
+section#customMap{border-top: 3px double gainsboro;}
+div.cest a {
+    text-decoration: none;
+    font-weight: 900;
+    color: #2a94bf;
+}
 
-
-
-
-
-
-
-
+html, body {max-height: 1200px;}

@@ -25,17 +25,18 @@
 		background: linear-gradient(#eef2f3,#dfe6ea);
 	}
 	ul.nav.nav-tabs {
-	    position: relative;
-	    top: -5.841em;
-	    left: -1.8em;
-	    padding-left: 3.9983em;
-	    width: 106.5%;
-	    border-radius: 18px;
-	    /* background: linear-gradient(to left, #f3f0df , #fffeeb, #eae8d8 ); */
-	    background: #fffffb;
-	    box-shadow: 0 0 2px #545454, inset 0 0 20px #ececec;
-	}
-
+    position: relative;
+    top: -7.5em;
+    left: -7.8em;
+    padding-left: 13.5em;
+    width: 126.5%;
+    border-radius: 2px;
+    /* background: linear-gradient(to left, #f3f0df , #fffeeb, #eae8d8 ); */
+    background: #fffffb;
+    box-shadow: 0 0 2px #545454, inset 0 0 20px #ececec;
+    background: #F5F5F5;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+}
 	.sh-up {
 	    margin-top: -5.27em;
 	}

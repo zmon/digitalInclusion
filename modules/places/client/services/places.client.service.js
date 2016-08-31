@@ -16,6 +16,28 @@
       }
     });
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }());
 
 angular.module('places.services').factory('findPlacesByZipService', function($http) {

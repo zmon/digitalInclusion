@@ -24,7 +24,7 @@
 		width: 124.5%;
 	}
 	section#customMap {
-		    width: 91%;
+		    width: 93.8%;
 
 	}	
 	ul.actions.fit.small {
@@ -32,12 +32,27 @@
 	}
 	div#buttons-wrapper {
     /*top: 4.5em;*/
-    left: 10.2em;
+	    left: 10.2em;
+	}
+	#header h1 {
+	    padding-top: .75em;
+	    left: -3.7em;
+	    /*width: 36em;*/
+	    margin: .15em auto .1em auto;
+	}
 }
-#header h1 {
-    padding-top: .75em;
-    left: -1.6em;
-    width: 36em;
-    margin: 1.1em auto 0 auto;
-}
+
+@media (max-width: 670px) {
+	#header h1 {
+		left: -4.1em;
+	}
+	#header p {
+
+	}
+	div#buttons-wrapper {
+
+	}
+	section#customMap {
+		
+	}
 }

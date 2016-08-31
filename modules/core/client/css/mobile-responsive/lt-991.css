@@ -1,0 +1,45 @@
+@media (max-width: 991px) {
+	#header h1 {
+		width: 45em;
+	}
+	ul.nav.nav-tabs {
+ 
+	    top: -7.5em;
+	    left: -11.8em;
+	    padding-left: 10.5em;
+	    width: 169.5%;
+	  
+	}
+
+	.row.butane {
+		/* border: 2px solid red; */
+	
+		position: relative;
+		top: -.3em;
+
+	}
+
+	section#customMap {
+    top: -7.35em;
+    width: 44.9em;
+}
+	div#buttons-wrapper {
+
+	    top: 4.8em;
+	    left: 2.85em;
+
+	}
+	section.meta-w-form {
+	    left: -4em;
+	    top: -6em;
+	    width: 41.2em;
+	}
+	.table-wrapper {
+
+	    top: -7.6em;
+
+	    width: 13em;
+	    left: 17.49em;
+	
+	}
+}

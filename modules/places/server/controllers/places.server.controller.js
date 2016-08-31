@@ -149,7 +149,13 @@ function read(number) {
   }
 }
 
+exports.gsearch = function (req, res) {
+  console.log("gsearch(req, res)");
+  console.log(req.body);
 
+  var result = [];
+
+};
 
 exports.search = function (req, res) {
   console.log("search(req, res)");

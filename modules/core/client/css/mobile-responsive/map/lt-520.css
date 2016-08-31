@@ -12,7 +12,7 @@
 
 	}
 	#header h1 {
-		left: -1em;
+		left: -.1em;
 	}
 	#header p {
 	
@@ -21,13 +21,13 @@
 		width: 124.5%;
 	}
 	section#customMap {
-		width: 98%;
+		width: 101.5%;
 	}
 	ul.actions.fit.small {
 	 	left: 13%;
 	}	
 	div#buttons-wrapper {
-	    top: 3.1em;
+	    top: 2.1em;
 	    left: 5em;
 	}
 	a#exit-service-overlay.fa-close {

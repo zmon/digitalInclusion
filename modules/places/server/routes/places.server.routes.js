@@ -27,6 +27,9 @@ module.exports = function (app) {
   app.route('/api/places/search')
     .post(places.search);
 
+  app.route('/api/places/google')
+    .post(places.gsearch);
+
   app.route('/api/places/query')
     .post(places.find);
   // Single place routes

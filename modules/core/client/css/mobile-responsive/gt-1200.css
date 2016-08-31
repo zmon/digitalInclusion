@@ -68,13 +68,14 @@
 	li.realign {
 	    left: -16.7em;
 	}	
-	#sw {
-
-	    left: 75.9%;
-
-	    width: 14em;
-
-	}
+#sw {
+    left: 57.5%;
+    width: 28.85em;
+    top: -6.75em;
+    box-shadow: none;
+    background: none;
+    border: none;
+}
 	.row.butane {
 		width: 1023px;
 		    width: 1015px;

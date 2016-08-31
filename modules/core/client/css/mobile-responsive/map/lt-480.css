@@ -12,19 +12,19 @@
 
 	}
 	#header h1 {
-		    left: -1em;
-		    margin-top: -1.6em;
-		    width: 20em;
+		  left: -1.55em;
+    margin-top: -2.6em;
+    width: 26em;
 	}
 	#header p {
-		    top: -12.6em;
-		    margin-left: -.4em;
+		      top: -11.4em;
+    margin-left: 2.4em;
 	}
 	main#main-page {
 		width: 124.5%;
 	}
 	section#customMap {
-		width: 99.75%;
+		width: 101.5%;
     margin-top: 14em;
 	}
 	ul.actions.fit.small {
@@ -32,7 +32,7 @@
 	}
 
 	div#buttons-wrapper {
-	    top: 2.8em;
+	    top: 1.8em;
 	    left: 3.75em;
 	}
 	button#e2, button#e1, button#e3, button#e4 {

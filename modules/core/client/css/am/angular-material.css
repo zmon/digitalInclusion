@@ -918,7 +918,8 @@ md-card {
         padding-top: 0;
         font-size: 14px; }
       md-card md-card-title md-card-title-text:only-child .md-subhead {
-        padding-top: 12px; }
+        padding-top: 12px;
+        }
     md-card md-card-title md-card-title-media {
       margin-top: -8px; }
       md-card md-card-title md-card-title-media .md-media-sm {
@@ -1343,7 +1344,7 @@ md-content {
   display: block;
   position: relative;
   overflow: auto;
-  padding-left: 12em;
+  padding-left: 0;
   -webkit-overflow-scrolling: touch;
   }
   md-content[md-scroll-y] {

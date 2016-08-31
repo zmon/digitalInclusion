@@ -743,23 +743,48 @@ console.log(mSo);
     }
 
    
+    // function matchtoImage(category) {
+    // 	if (category === "wifi-free") {
+    // 		return "/modules/core/client/img/wifi-free.svg";
+    // 	} else if (category === "wifi-customer") {
+    // 		return "/modules/core/client/img/wifi-customer.svg";
+    // 	} else if (category === "computers-retail") {
+    // 		return "/modules/core/client/img/computerRetail.png";
+    // 	} else if (category === "computers-access") {
+    // 		return "/modules/core/client/img/";
+    // 	} else if (category === "training-day") {
+    // 		return "/modules/core/client/img/user-orange2.png";
+    // 	} else if (category === "training-night") {
+    // 		return "/modules/core/client/img/user-blue2.png";
+    // 	}
+    // }
 
     function setPlaceData(json) {
 
     	
       // var addrStr = json.address1 + ", " + json.city
+      var imgPath = document.getElementById('imgPath');
 
             $scope.undefined = {};
+            var urlTag = document.getElementById('placeUrl');
             // $scope.missing 
              // document.getElementById('placeCategory').innerText = categoryIconText(json.primaryCategory);             
-             document.getElementById('placeAddress').innerText = json.address1;
-             document.getElementById('placeCity').innerText = json.city;
-             document.getElementById('placeState').innerText = json.state;
+             document.getElementById('placeAddress').innerText = json.readableAddress;
+             // document.getElementById('placeCity').innerText = json.city;
+             // document.getElementById('placeState').innerText = json.state;
              
       if (typeof json.primaryCategory != 'undefined') {
       	// setInfoWinIcon(json.primaryCategory);
+      		var pc = json.primaryCategory;
+      		console.log("pc&&");
+      		console.log(pc);
       		var iconPath = "/modules/client/core/img/win/" + json.primaryCategory + ".png";
       		console.log(iconPath);
+      		// imgPath.src = "/modules/core/client/img/wifi-free.svg";
+      		var path = getIcon(json.primaryCategory);
+      		console.log("path")
+      		console.log(path);
+      		imgPath.src = path;
       	// var newimg = document.createElement('img');
       	// newimg.addClass('infowindow-img');
       	// var iw = angular.element(document.getElementById('info-wrapper'));
@@ -772,13 +797,21 @@ console.log(mSo);
       	// console.log("iw");
       	// console.log(iw);
       	// console.log("newimg");
+
         document.getElementById('placeCategory').innerText = categoryIconText(json.primaryCategory);
       }
       if (typeof json.title != 'undefined') {
         document.getElementById('placeTitle').innerText = json.title;
       }
       if (typeof json.zip != "undefined") {
-        document.getElementById('placeZip').innerText = json.zip;           
+        // document.getElementById('placeZip').innerText = json.zip;           
+      }
+      if (typeof json.url != "undefined") {
+      	// console.log("tf");
+      	// urlTag.href = "http://" + json.url;
+      	// urlTag.innerText = json.url;
+      	// console.log(urlTag);
+        // document.getElementById('placeZip').innerText = json.zip;           
       }
       if (typeof json.hours != "undefined") {
         document.getElementById('placeHours').innerText = json.hours;
@@ -817,7 +850,7 @@ console.log(mSo);
       // console.log(string);
     }
 
-
+    
 
 
 
@@ -914,13 +947,17 @@ console.log(mSo);
 
 
 
-	    var placesService = new google.maps.places.PlacesService($scope.map);
+	    var ps = new google.maps.places.PlacesService($scope.map);
 
-	    console.log("placesService");
-	    console.log(placesService);
+
+	    console.log("psw");
+	    console.log(ps);
+
+
+	    // ps.search()
 
 	    $scope.getPlaceDetails = function(place) {
-	    	placesService.getDetails({
+	    	ps.getDetails({
 	          placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
 	        }, function(place, status) {
 	          if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -1048,13 +1085,101 @@ console.log(mSo);
 
       }
 
+
+    // var placeSearch = new PlaceSearch(config.apiKey, config.outputFormat);
+    // var placeDetailsRequest = new PlaceDetailsRequest(config.apiKey, config.outputFormat);
+
+    // var parameters = {
+    //     location: [-33.8670522, 151.1957362],
+    //     types: "doctor"
+    // };
+
+    // placeSearch(parameters, function (error, response) {
+    //     if (error) throw error;
+    //     placeDetailsRequest({reference: response.results[0].reference}, function (error, response) {
+    //         if (error) throw error;
+    //         assert.equal(response.status, "OK", "Place details request response status is OK");
+    //     });
+    // });
+
+
+		function setRequestParams(json) {
+	  		console.log("setRequestParams");
+	  		console.log(json);
+	  		return {
+	  			location: [json.location[0].lat, json.location[0].lng],
+	  			radius: 10000
+	  		}
+	  	}
+
+	  	function psCallback(res) {
+	  		console.log("psCalback");
+	  		console.log(res);
+	  	}
+
+// $http.post('/api/places/query', body).success(function(data) {
+          
+//             callback(data);
+//           });
+// https://maps.googleapis.com/maps/api/place/textsearch/output?parameters
+	  	function manualSearch(params) {
+	  		// var a = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location=";
+	  		
+	  		var a = "https://maps.googleapis.com/maps/api/place/nearbysearch/";
+	  		var b = "&location=" + params.location[0] + "," + params.location[1];
+	  		var c = "&radius=" + params.radius + "&";
+	  		var d;
+	  		var e = "key=AIzaSyCC-reO4jDrH1PqVkRX7qp5t4PQMWoBmls";
+	  		var url = a + b + c + e;
+	  		console.log("url");
+	  		console.log(url);
+	  		$http.get(url).success(function(response) {
+	  			console.log("looky here");
+	  			console.log(response.statusCode);
+	  			psCallback(response);
+
+	  		})
+	  		// $http.g
+	  	}
+	  	// https://maps.googleapis.com/maps/api/place/radarsearch/json?location=51.503186,-0.126446&radius=5000&type=museum&key=YOUR_API_KEY
+	  	// https://maps.googleapis.com/maps/api/place/radarsearch/json?location=39.0349374,-94.5835498&radius=1000&key=AIzaSyBqZ_zfcyUUJDi6OuXq4QYpkdHPeaqFkms
+
+
+
+	  	function stripDay(day, str) {
+	    	// return day.replace(/day/)
+	    	console.log("stripDay");
+	    	console.log(day);
+	    	console.log(str);
+	    	if (day === "sunday") {
+	    		console.log("++sunday");
+	    		return str.replace(/Sunday/, "");
+	    		// return str.replace(/Sunday\s/, "");
+	    	} else if (day === "monday") {
+	    		return str.replace(/Monday/, "");
+	    	} else if (day === "tuesday") {
+	    		return str.replace(/Tuesday/, "");
+	    	} else if (day === "wednesday") {
+	    		return str.replace(/Wednesday/, "");
+	    	} else if (day === "thursday") {
+	    		return str.replace(/Thursday/, "");
+	    	} else if (day === "friday") {
+	    		return str.replace(/Friday/, "");
+	    	} else if (day === "saturday") {
+	    		return str.replace(/Saturday/, "");
+	    	}
+	    }
+
+	    function rws(str) {
+	    	return str.replace(/\s/, "");
+	    }
 	   function addListener(json, marker) {
 
         // console.log("adding listener");
         //   console.log(browser);
 
           var userDevice = browser;
-
+           
            // var el = {};
            //    el.primaryCategory = document.getElementById('placeCategory');
            //    el.title = document.getElementById('placeTitle');
@@ -1067,6 +1192,17 @@ console.log(mSo);
 
 	      google.maps.event.addListener(marker, 'click', function() {
 	      	// $scope.resetIwIcon();
+	      	// console.log("click");
+	      	// var goog = setRequestParams(json);
+	      	// console.log("fu");
+	      	// console.log(goog);
+	      	// var request = manualSearch(goog);
+	      	// console.log(request)
+
+
+
+
+
        		setPlaceData(json);
        		setPrintWindow(json);
        		setOverlayData(json);
@@ -1083,7 +1219,7 @@ console.log(mSo);
           	  console.log("set cm.style.height");
     			console.log(cm.style.height);
           	  mSo.style.display="initial";
-          	  overlay.addClass('pinker');
+          	 
           	  // document.getElementById('mobServiceOverlay').addClass('pinker');
               // stretchMap();
 
@@ -1136,8 +1272,85 @@ console.log(mSo);
 	        var ico = getIcon(json.primaryCategory);
 
 	        $scope.currentCategory = ico;
+	        var ho = json.hoursOpen[0];
+	        console.log("ho");
+	        console.log(ho);
+
+	           var hypSun = document.getElementById('opSun');
+	         var hypMon = document.getElementById('opMon');
+	         var hypTue = document.getElementById('opTue');
+	         var hypWed = document.getElementById('opWed');
+	         var hypThu = document.getElementById('opThu');
+	         var hypFri = document.getElementById('opFri');
+	         var hypSat = document.getElementById('opSat');
+
+	        // var sunday = new RegExp(/Sunday\s(\d|\d\d)AM.(\d|\d\d)PM/);
+	        var sunday = new RegExp(/Sunday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        var monday = new RegExp(/Monday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        var tuesday = new RegExp(/Tuesday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        var wednesday = new RegExp(/Wednesday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        var thursday = new RegExp(/Thursday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        var friday = new RegExp(/Friday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        var saturday = new RegExp(/Saturday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+
+	        // console.log("sunnday");
+	        // console.log(sunday);
 
 
+
+	         if (typeof ho != "undefined") {
+	         	document.getElementById('opHours').style.display = "block";
+	         	document.getElementById('opHoursNA').style.display = "none";
+	         	   var sun = ho.match(sunday);
+		           var mon = ho.match(monday);
+		           var tue = ho.match(tuesday);
+		           var wed = ho.match(wednesday);
+		           var thu = ho.match(thursday);
+		           var fri = ho.match(friday);
+		           var sat = ho.match(saturday);
+		           var weekHours = {
+		           	sun: rws(stripDay('sunday', sun[0])), 
+		           	mon: rws(stripDay('monday', mon[0])),
+		           	tue: rws(stripDay('tuesday', tue[0])),
+		           	wed: rws(stripDay('wednesday', wed[0])),
+		           	thu: rws(stripDay('thursday', thu[0])),
+		           	fri: rws(stripDay('friday', fri[0])),
+		           	sat: rws(stripDay('saturday', sat[0]))
+		           }
+		           hypSun.style.display = "inline";
+	         	hypMon.style.display = "inline";
+	         	hypTue.style.display = "inline";
+	         	hypWed.style.display = "inline";
+	         	hypThu.style.display = "inline";
+	         	hypFri.style.display = "inline";
+	         	hypSat.style.display = "inline";
+		           hypSun.innerText = weekHours.sun;
+		           hypMon.innerText = weekHours.mon;
+		           hypTue.innerText = weekHours.tue;
+		           hypWed.innerText = weekHours.wed;
+		           hypThu.innerText = weekHours.thu;
+		           hypFri.innerText = weekHours.fri;
+		           hypSat.innerText = weekHours.sat;
+
+	         } else if (typeof ho === "undefined") {
+	         	// hypSun.style.display = "none";
+	         	// hypMon.style.display = "none";
+	         	// hypTue.style.display = "none";
+	         	// hypWed.style.display = "none";
+	         	// hypThu.style.display = "none";
+	         	// hypFri.style.display = "none";
+	         	// hypSat.style.display = "none";
+	         	// document.getElementById('opHours').style.lineHeight = "12px";
+	         	document.getElementById('opHours').style.display = "none";
+	         	document.getElementById('opHoursNA').style.display = "block";
+	         }
+
+
+	      
+	       
+       	console.log(weekHours);
+           // console.log(test[0]);
+          
 	        $scope.selected = {};
 	        $scope.selected.hoursOpen = json.hoursOpen;
 	        $scope.selected.zip = json.zip;
@@ -1150,11 +1363,11 @@ console.log(mSo);
 	        document.getElementById('placeTitle').textContent = json.title;
 	        descriptor.textContent = desc;
 	        document.getElementById('placePhone').textContent = json.phone;
-	        $scope.addr = document.getElementById('placeAddress').textContent = json.address1;
-	        $scope.city = document.getElementById('placeCity').textContent = json.city;
-	        $scope.state = document.getElementById('placeState').textContent = json.state;
-	        $scope.zip = document.getElementById('placeZip').textContent = json.zip;
-	        document.getElementById('placeHours').textContent = json.hoursOpen;
+	        $scope.addr = document.getElementById('placeAddress').textContent = json.readableAddress;
+	        // $scope.city = document.getElementById('placeCity').textContent = json.city;
+	        // $scope.state = document.getElementById('placeState').textContent = json.state;
+	        // $scope.zip = document.getElementById('placeZip').textContent = json.zip;
+	        // document.getElementById('placeHours').textContent = json.hoursOpen;
           
 	      });
 	    }
@@ -1262,17 +1475,17 @@ console.log(mSo);
 
 	    function categoryIconText(str) {
 	    	if (str === "wifi-free") {
-	    		return "Free Public WiFi ";
+	    		return "Free public wifi ";
 	    	} else if (str === "wifi-customer") {
-	    		return "Free WiFi with purchase ";
+	    		return "Free wifi with purchase ";
 	    	} else if (str === "computers-access") {
- 				return "Public Access Computers ";
+ 				return "Public access computers ";
 	    	} else if (str === "computers-retail") {
-	    		return "Low Cost or Refurbished Computers "
+	    		return "Low cost or refurbished computers "
 	    	} else if (str === "training-day") {
-	    		return "Offers Daytime Training ";
+	    		return "Daytime training courses";
 	    	} else if (str === "training-night") {
-	    		return "Offers Evening Training ";
+	    		return "Evening training courses";
 	    	} else if (str === "isp") {
 	    		return "Internet Service Provider ";
 	    	}
@@ -1529,8 +1742,8 @@ console.log(mSo);
 
           // console.log(cWidth + " is less than 768");
         } else {
-          mapCanvasElement.style.width = "75%";
-          mapCanvasElement.style.borderRight = "1px solid #4e4e4e";
+          mapCanvasElement.style.width = "65%";
+          mapCanvasElement.style.borderRight = "1px solid #ccc";
           sideWindowElement.style.display = "initial";
         }
 	      
@@ -1690,7 +1903,6 @@ console.log(mSo);
      //    var activeCss = new RegExp('button special fit small');
      var inactiveCss = new RegExp('normal');
         var activeCss = new RegExp('special');
-
 
 
       $scope.currentlyHighlightedButtons = [];
