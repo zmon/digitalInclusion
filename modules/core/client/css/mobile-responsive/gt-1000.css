@@ -109,7 +109,7 @@
 }
 aside#opHoursNA {
     position: relative;
-    font-size: .8em;
+    font-size: .75em;
     top: -7em;
 }
 #header p#hrsHead {
@@ -226,7 +226,7 @@ div#placeCategory {
     box-shadow: 0 0 .5px #adadad;
 }
 	div#placeTitle {
-font-size: 1.3em;
+font-size: 1em;
     background: #fffef8;
     background: none;
     /* border: 2px solid lightgray; */
@@ -236,7 +236,7 @@ font-size: 1.3em;
     box-shadow: 0 0 .5px black;
     position: relative;
     box-shadow: none;
-    top: -1.2em;
+    top: -3em;
     padding: 1em 0 2.4em 0;
 	}
 	div#info-wrapper {
@@ -282,16 +282,16 @@ font-size: 1.3em;
 		width: 10em;
 	}
 
-	.f-desc {
+.f-desc {
     border: none;
-    padding: .5em 10em;
+    padding: .5em 7em;
     text-align: start;
-    margin-left: 1em;
+    margin-left: 0.65em;
     width: 95%;
     position: relative;
-    top: -9.5em;
-    line-height: 11px;
-    font-size: .6em;
+    top: -7em;
+    line-height: 13px;
+    font-size: .75em;
     border: none;
     background: none;
 }

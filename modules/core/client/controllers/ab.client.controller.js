@@ -742,63 +742,27 @@ console.log(mSo);
 	    $scope.showImgCa = false;
     }
 
-   
-    // function matchtoImage(category) {
-    // 	if (category === "wifi-free") {
-    // 		return "/modules/core/client/img/wifi-free.svg";
-    // 	} else if (category === "wifi-customer") {
-    // 		return "/modules/core/client/img/wifi-customer.svg";
-    // 	} else if (category === "computers-retail") {
-    // 		return "/modules/core/client/img/computerRetail.png";
-    // 	} else if (category === "computers-access") {
-    // 		return "/modules/core/client/img/";
-    // 	} else if (category === "training-day") {
-    // 		return "/modules/core/client/img/user-orange2.png";
-    // 	} else if (category === "training-night") {
-    // 		return "/modules/core/client/img/user-blue2.png";
-    // 	}
-    // }
+
 
     function setPlaceData(json) {
 
-    	
-      // var addrStr = json.address1 + ", " + json.city
-      var imgPath = document.getElementById('imgPath');
+		console.log("setPlaceData");
+		console.log(json);
+        var imgPath = document.getElementById('imgPath');
 
-            $scope.undefined = {};
-            var urlTag = document.getElementById('placeUrl');
-            // $scope.missing 
-             // document.getElementById('placeCategory').innerText = categoryIconText(json.primaryCategory);             
-             document.getElementById('placeAddress').innerText = json.readableAddress;
+        $scope.undefined = {};
+        var urlTag = document.getElementById('placeUrl');
+            
+        document.getElementById('placeAddress').innerText = json.readableAddress;
              // document.getElementById('placeCity').innerText = json.city;
              // document.getElementById('placeState').innerText = json.state;
              
       if (typeof json.primaryCategory != 'undefined') {
-      	// setInfoWinIcon(json.primaryCategory);
       		var pc = json.primaryCategory;
-      		console.log("pc&&");
-      		console.log(pc);
       		var iconPath = "/modules/client/core/img/win/" + json.primaryCategory + ".png";
-      		console.log(iconPath);
-      		// imgPath.src = "/modules/core/client/img/wifi-free.svg";
       		var path = getIcon(json.primaryCategory);
-      		console.log("path")
-      		console.log(path);
       		imgPath.src = path;
-      	// var newimg = document.createElement('img');
-      	// newimg.addClass('infowindow-img');
-      	// var iw = angular.element(document.getElementById('info-wrapper'));
-      	// var iw = document.getElementById('info-wrapper');
-      	// iw.prepend(newimg);
-      	// var ico = document.getElementById('infowindow-img');
-      	// console.log("");
-      	// console.log("ico");
-      	// console.log(ico);
-      	// console.log("iw");
-      	// console.log(iw);
-      	// console.log("newimg");
-
-        document.getElementById('placeCategory').innerText = categoryIconText(json.primaryCategory);
+            document.getElementById('placeCategory').innerText = categoryIconText(json.primaryCategory);
       }
       if (typeof json.title != 'undefined') {
         document.getElementById('placeTitle').innerText = json.title;
@@ -816,14 +780,12 @@ console.log(mSo);
       if (typeof json.hours != "undefined") {
         document.getElementById('placeHours').innerText = json.hours;
       }
-      if (typeof json.description != "undefined") {
-        document.getElementById('placeDescription').innerText = json.description;
-      }
+      
       if (typeof json.phone != "undefined") {
         document.getElementById('placePhone').innerText = json.phone;              
       } 
 
-
+     document.getElementById('placeDescription').innerText = setDescription(json.description);
      var addrStr = json.readableAddress;
 
      var base = "https://www.google.com/maps/dir//";
@@ -841,6 +803,20 @@ console.log(mSo);
 
             // el.primaryCategory.innerText = categoryIconText(json.primaryCategory);
             // el.title.innerText = json.title;
+    }
+
+    function setDescription(str) {
+    
+    	var strLng = str.length;
+
+      if (str < 1) {
+      		document.getElementById('placeDescription').style.textAlign = "center";
+    		return "Not available";
+        // document.getElementById('placeDescription').innerText = str + "??";
+      } else if (strLng >= 1) {
+      	document.getElementById('placeDescription').style.textAlign = "left";
+      	return str;
+      }
     }
 
     function addressToUrlString(str) {
@@ -947,34 +923,7 @@ console.log(mSo);
 
 
 
-	    var ps = new google.maps.places.PlacesService($scope.map);
 
-
-	    console.log("psw");
-	    console.log(ps);
-
-
-	    // ps.search()
-
-	    $scope.getPlaceDetails = function(place) {
-	    	ps.getDetails({
-	          placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
-	        }, function(place, status) {
-	          if (status === google.maps.places.PlacesServiceStatus.OK) {
-	          	// console.log("google.maps.places.PlacesServiceStatus.OK");
-	            // var marker = new google.maps.Marker({
-	            //   map: map,
-	            //   position: place.geometry.location
-	            // });
-	            // google.maps.event.addListener(marker, 'click', function() {
-	            //   infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-	            //     'Place ID: ' + place.place_id + '<br>' +
-	            //     place.formatted_address + '</div>');
-	            //   infowindow.open(map, this);
-	            // });
-	          }
-	        });
-	    }
 
 
 
@@ -1036,33 +985,7 @@ console.log(mSo);
       $scope.cmTopSetting;
 
       function stretchMap() {
-      	// console.log("ngCm");
-      	// console.log("ngCm.css")
-      	// console.log(ngCm.css());
-      	// console.log("ngCm.attr");
-      	// console.log(ngCm.attr);
-      	// console.log("ngCm.contents");
-      	// console.log(ngCm.contents);
-      	// console.log("ngCm.data");
-      	// console.log(ngCm.data);
-      	// console.log("ngCm.detach");
-      	// console.log(ngCm.detach);
-      	// console.log("ngCm.replaceWith");
-      	// console.log(ngCm.replaceWith);
 
-
-
-
-
-
-
-
-
-
-      	// console.log("cm");
-      	// console.log(cm);
-      	// var orig = ng.
-    
 
 
       	cm.style.top = "-28em";
@@ -1086,21 +1009,7 @@ console.log(mSo);
       }
 
 
-    // var placeSearch = new PlaceSearch(config.apiKey, config.outputFormat);
-    // var placeDetailsRequest = new PlaceDetailsRequest(config.apiKey, config.outputFormat);
-
-    // var parameters = {
-    //     location: [-33.8670522, 151.1957362],
-    //     types: "doctor"
-    // };
-
-    // placeSearch(parameters, function (error, response) {
-    //     if (error) throw error;
-    //     placeDetailsRequest({reference: response.results[0].reference}, function (error, response) {
-    //         if (error) throw error;
-    //         assert.equal(response.status, "OK", "Place details request response status is OK");
-    //     });
-    // });
+   
 
 
 		function setRequestParams(json) {
@@ -1148,11 +1057,8 @@ console.log(mSo);
 
 	  	function stripDay(day, str) {
 	    	// return day.replace(/day/)
-	    	console.log("stripDay");
-	    	console.log(day);
-	    	console.log(str);
+	    	
 	    	if (day === "sunday") {
-	    		console.log("++sunday");
 	    		return str.replace(/Sunday/, "");
 	    		// return str.replace(/Sunday\s/, "");
 	    	} else if (day === "monday") {
@@ -1173,42 +1079,21 @@ console.log(mSo);
 	    function rws(str) {
 	    	return str.replace(/\s/, "");
 	    }
+
+
 	   function addListener(json, marker) {
 
-        // console.log("adding listener");
-        //   console.log(browser);
-
           var userDevice = browser;
-           
-           // var el = {};
-           //    el.primaryCategory = document.getElementById('placeCategory');
-           //    el.title = document.getElementById('placeTitle');
-           //    el.phone = document.getElementById('placePhone');
-           //    el.address = document.getElementById('placeAddress');
-
-           //  el.primaryCategory.innerText = categoryIconText(json.primaryCategory);
-           //  el.title.innerText = json.title;
           var overlay = angular.element(document.getElementById('mobServiceOverlay'));
 
 	      google.maps.event.addListener(marker, 'click', function() {
-	      	// $scope.resetIwIcon();
-	      	// console.log("click");
-	      	// var goog = setRequestParams(json);
-	      	// console.log("fu");
-	      	// console.log(goog);
-	      	// var request = manualSearch(goog);
-	      	// console.log(request)
-
-
-
-
 
        		setPlaceData(json);
        		setPrintWindow(json);
        		setOverlayData(json);
           	setMobileInfoWindowData(json);
+
             var c = getCurrentWidth();
-            console.log(c);
 
             if (c <= 768) {
           	  console.log('less than 768');
@@ -1216,8 +1101,6 @@ console.log(mSo);
 
           	  $scope.soActive = true;
           	  cm.style.height = "360px";
-          	  console.log("set cm.style.height");
-    			console.log(cm.style.height);
           	  mSo.style.display="initial";
           	 
           	  // document.getElementById('mobServiceOverlay').addClass('pinker');
@@ -1260,21 +1143,20 @@ console.log(mSo);
 	        var html = "<a ng-href='" + target +"'>" + "Visit website" + "</a>";
 	        var container = document.getElementById('info-wrapper');
 	        var desc = json.description;
-	        var descriptor = document.getElementById('placeDescription');
+	        var description = document.getElementById('placeDescription');
 	        var l = desc.length;
-	        if (l < 42 || l === null) {
-	          descriptor.style.textAlign = "center";
-	        } else {
-	          descriptor.style.textAlign = "justify";
-	        }
+	        // if (l < 42 || l === null) {
+	        //   placeDescription.style.textAlign = "center";
+	        // } else {
+	        //   placeDescription.style.textAlign = "justify";
+	        // }
 
 	        var catDom = document.getElementById('placeCategory');
 	        var ico = getIcon(json.primaryCategory);
 
 	        $scope.currentCategory = ico;
 	        var ho = json.hoursOpen[0];
-	        console.log("ho");
-	        console.log(ho);
+	
 
 	           var hypSun = document.getElementById('opSun');
 	         var hypMon = document.getElementById('opMon');
@@ -1348,7 +1230,7 @@ console.log(mSo);
 
 	      
 	       
-       	console.log(weekHours);
+     
            // console.log(test[0]);
           
 	        $scope.selected = {};
@@ -1361,7 +1243,13 @@ console.log(mSo);
 
 	        document.getElementById('placeCategory').textContent = categoryIconText(json.primaryCategory);
 	        document.getElementById('placeTitle').textContent = json.title;
-	        descriptor.textContent = desc;
+	        // placeDescription.textContent = desc;
+	        // if (typeof desc != "undefined") {
+	        // 	console.log()
+	        // 	placeDescription.innerText = desc + "???";
+	        // } else if (typeof desc === "undefined") {
+	        // 	placeDescription.innerText = "Not available";
+	        // }
 	        document.getElementById('placePhone').textContent = json.phone;
 	        $scope.addr = document.getElementById('placeAddress').textContent = json.readableAddress;
 	        // $scope.city = document.getElementById('placeCity').textContent = json.city;
@@ -1371,7 +1259,7 @@ console.log(mSo);
           
 	      });
 	    }
-
+// json.title != 'undefined'
 
 
 
