@@ -29,8 +29,7 @@ module.exports.initLocalVariables = function (app) {
   // Setting application local variables
   app.locals.title = config.app.title;
   app.locals.description = config.app.description;
-  console.log("checking app settings");
-  console.log(config.app);
+
   // console.log("config secure");
   // console.log(config);
   if (config.secure && config.secure.ssl === true) {
@@ -50,9 +49,7 @@ module.exports.initLocalVariables = function (app) {
   app.locals.logo = config.logo;
   app.locals.favicon = config.favicon;
 
-  console.log("omg");
-  console.log(app.locals.googleMapsApiKey);
-  console.log(process.env.GOOGLE_MAPS_API_KEY);
+
 
 
   // Passing the request url to environment locals
