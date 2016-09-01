@@ -22,9 +22,18 @@ var list = {};
 	    var zipcodes = zipcode.getZipcodes();
 	    var libertyMemorial = [39.081009, -94.585944];
 	    var eighteenthAndVine = [39.091804, -94.562090];
-
+	    $scope.activeSpot = {
+	    	marker: null, 
+	    	meta: null
+	    }
 
 	    $scope.smsFormOpen = false;
+	    $scope.toggle = {
+	    	wifi: true,
+	    	access: false,
+	    	training: false,
+	    	retail: false
+	    }
 	    $scope.markers     =  { 
                                wifi: { 
                                		  free: [], 
@@ -185,17 +194,37 @@ setTimeout(function(){
       function isStateActive(buttonType) {
 
       }
+
+
+      function showZipResultsOnly() {
+
+      }
+
+      function resetToggleState(category) {
+      	if (category === "wifi-free" || category === "wifi-customer") {
+      		resetCss(e1, true);
+      	} else if (category === "computers-retail") {
+      		resetCss(e4,true);
+      	} else if (category === "computers-access") {
+      		resetCss(e3,true);
+      	} else if (category === "training-day" || category === "training-night") {
+      		resetCss(e2, true);
+      	}
+      }
 	    
 
 	    function callback(data) {
 
 
-
+	    console.log("callback(data)");
+	    console.log(data);
 	      var i;
 	      var length = data.length;
 	      resetToNormal();
 	      for (i = 0; i < length; i++) {
 	        var place = data[i];
+	        console.log(place);
+	        resetToggleState(place.primaryCategory);
           // console.log(place);
 	        createMarker(place);
 	      }
@@ -246,6 +275,24 @@ setTimeout(function(){
             // console.log("timeout");
             $scope.map.setZoom(15);
         }, 100);
+      }
+
+
+      function clearMap() {
+      	var a = $scope.markers.wifi.free.length;
+      	var b = $scope.markers.wifi.customer.length;
+      	console.log(a);
+      	console.log(b);
+      	var i;
+      	var u;
+
+      	for (i=0;i<a;i++) {
+      		$scope.markers.wifi.free[i].setMap(null);
+      	}
+      	for (u=0;u<b;u++) {
+      		$scope.markers.wifi.customer[u].setMap(null);
+      	}
+
       }
 
 
@@ -306,53 +353,54 @@ setTimeout(function(){
 
 	    $scope.searchByZip = function(zipcode) {
 	      resetForm();
-        $scope.zipSearchError = false;
+	      clearMap();
+        	$scope.zipSearchError = false;
 	      // console.log(masterZips);
-        var valid = validZipcode(zipcode);
+        	var valid = validZipcode(zipcode);
         // console.log("valid?");
         // console.log(valid);
 
-        if (valid) {
-          var zc = zcPosition.getZcPosition(zipcode);
-          var goTo = new google.maps.LatLng(zc[0], zc[1]);
-          recenterMap(goTo);
-          setPageHeightLong();
-          var body = {zip: zipcode};
-          $http.post('/api/places/query', body).success(function(data) {
-          
-            callback(data);
-          });
-        } else {
-          $scope.zipSearchError = true;
-          zse.style.display = "block";
-          $scope.zipSearchErrorMessage = "Error: Not a valid zipcode";
-          return recenterMap($scope.currentLocation);
-        }
+	        if (valid) {
+	          var zc = zcPosition.getZcPosition(zipcode);
+	          var goTo = new google.maps.LatLng(zc[0], zc[1]);
+	          recenterMap(goTo);
+	          setPageHeightLong();
+	          var body = {zip: zipcode};
+	          $http.post('/api/places/query', body).success(function(data) {
+	          
+	            callback(data);
+	          });
+	        } else {
+	          $scope.zipSearchError = true;
+	          zse.style.display = "block";
+	          $scope.zipSearchErrorMessage = "Error: Not a valid zipcode";
+	          return recenterMap($scope.currentLocation);
+	        }
 
-	      // var ll = checkForZip(zipcode);
-        
+		      // var ll = checkForZip(zipcode);
+	        
 
-	    }
+		  }
 
-	    $scope.place = {
-	      zip: ""
-	    }
+		    $scope.place = {
+		      zip: ""
+		    }
 
-	    function resetForm() {
-	      $scope.place.zip = '';
-	    };
-
-
-	    var callMethod = function() {
-	       // console.log("search results");
-	       // console.log($scope.searchResults);
-	    };
+		    function resetForm() {
+		      $scope.place.zip = '';
+		    };
 
 
-	    var counter = 0;
-	    function incrementToLimit(num) {
-	      // console.log(num + " reaching limit =>" + limit);
-	    }
+		    var callMethod = function() {
+		       // console.log("search results");
+		       // console.log($scope.searchResults);
+		    };
+
+
+		    var counter = 0;
+		    function incrementToLimit(num) {
+		      // console.log(num + " reaching limit =>" + limit);
+		    }
 
 	    
 
@@ -502,18 +550,44 @@ console.log(mSo);
 
 
 			var color = getColor(category);
-			var spot = new google.maps.Marker({
+			// $scope.activeSpot;
+			// $scope.activeSpot = new google.maps.Marker({
+			// 					    position: latLng,
+			// 					    icon: {
+			// 					      path: google.maps.SymbolPath.CIRCLE,
+			// 					      scale: 13, 
+			// 					      anchor: new google.maps.Point(.4, 1.6),
+			// 					      strokeColor: color,
+			// 					      strokeWeight: 1.5
+			// 	  			       },
+			// 	          		    map: $scope.map
+			// 				 	   })
+			if (category === "computers-access") {
+				var scaleN = 15;
+			} else if (category === "computers-retail") {
+				var scaleN = 14;
+			}
+			 else {
+				var scaleN = 13;
+			}
+			$scope.activeSpot = {
+				marker: new google.maps.Marker({
 								    position: latLng,
 								    icon: {
 								      path: google.maps.SymbolPath.CIRCLE,
-								      scale: 13, 
+								      scale: scaleN, 
 								      anchor: new google.maps.Point(.4, 1.6),
 								      strokeColor: color,
 								      strokeWeight: 1.5
 				  			       },
 				          		    map: $scope.map
-							 	   })
-			$scope.activeSpot = spot;
+							 	   }),
+				meta: {
+					primaryCategory: category
+				}
+			} 
+			// $scope.activeSpotMeta = {};
+			// $scope.activeSpot = spot;
 	
 
 
@@ -528,10 +602,10 @@ console.log(mSo);
 		}
 
 		function findActive() {
-			if ($scope.activeSpot == null) {
+			if ($scope.activeSpot.marker == null) {
 				
 			} else {
-				$scope.activeSpot.setMap(null);
+				$scope.activeSpot.marker.setMap(null);
 			}
 			
 		}
@@ -749,7 +823,8 @@ console.log(mSo);
 		console.log("setPlaceData");
 		console.log(json);
         var imgPath = document.getElementById('imgPath');
-
+        var hrs = json.hoursOpen[0];
+			setHours(hrs);
         $scope.undefined = {};
         var urlTag = document.getElementById('placeUrl');
             
@@ -777,9 +852,9 @@ console.log(mSo);
       	// console.log(urlTag);
         // document.getElementById('placeZip').innerText = json.zip;           
       }
-      if (typeof json.hours != "undefined") {
-        document.getElementById('placeHours').innerText = json.hours;
-      }
+      // if (typeof json.hoursOpen != "undefined") {
+      //   document.getElementById('placeHours').innerText = json.hoursOpen;
+      // }
       
       if (typeof json.phone != "undefined") {
         document.getElementById('placePhone').innerText = json.phone;              
@@ -818,6 +893,10 @@ console.log(mSo);
       	return str;
       }
     }
+
+
+
+
 
     function addressToUrlString(str) {
       // console.log("addressToUrlString");
@@ -1079,6 +1158,110 @@ console.log(mSo);
 	    function rws(str) {
 	    	return str.replace(/\s/, "");
 	    }
+	    function removeColon(str) {
+	    	console.log("removeColon");
+	    	console.log(str);
+	    	return str.replace(/^(:)/, "");
+	    }
+	    function setHours(hrs) {
+
+	    	console.log("setHours");
+	    	console.log(hrs);
+
+	    	
+
+	    	if (typeof hrs === "undefined") {
+	    		// console.log("undefined");
+	    		var num = 0;
+	    	} else {
+	    		var num = hrs.length;
+	    	}
+
+
+	    	console.log("numb");
+	    	console.log(num);
+
+	    	if (num === 0) {
+	    		document.getElementById('opHours').style.display = "none";
+	         	document.getElementById('opHoursNA').style.display = "block";
+	    	} else if (num >=1) {
+	    		console.log("num >= 1");
+	    		console.log(hrs);
+
+
+		    	var hypSun = document.getElementById('opSun');
+		         var hypMon = document.getElementById('opMon');
+		         var hypTue = document.getElementById('opTue');
+		         var hypWed = document.getElementById('opWed');
+		         var hypThu = document.getElementById('opThu');
+		         var hypFri = document.getElementById('opFri');
+		         var hypSat = document.getElementById('opSat');
+
+		        var sunday = new RegExp(/Sunday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var monday = new RegExp(/Monday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var tuesday = new RegExp(/Tuesday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var wednesday = new RegExp(/Wednesday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var thursday = new RegExp(/Thursday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var friday = new RegExp(/Friday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var saturday = new RegExp(/Saturday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+
+		         // if (typeof hrs != "undefined") {
+		         	document.getElementById('opHours').style.display = "block";
+		         	document.getElementById('opHoursNA').style.display = "none";
+		         	   var sun = hrs.match(sunday);
+			           var mon = hrs.match(monday);
+			           var tue = hrs.match(tuesday);
+			           var wed = hrs.match(wednesday);
+			           var thu = hrs.match(thursday);
+			           var fri = hrs.match(friday);
+			           var sat = hrs.match(saturday);
+			           console.log('sun');
+			           console.log(sun);
+			           var weekHours = {
+			           	sun: rws(stripDay('sunday', sun[0])), 
+			           	mon: rws(stripDay('monday', mon[0])),
+			           	tue: rws(stripDay('tuesday', tue[0])),
+			           	wed: rws(stripDay('wednesday', wed[0])),
+			           	thu: rws(stripDay('thursday', thu[0])),
+			           	fri: rws(stripDay('friday', fri[0])),
+			           	sat: rws(stripDay('saturday', sat[0]))
+			           }
+			           console.log("before");
+			           console.log(weekHours);
+
+			           var wtf = removeColon(weekHours.sun);
+			           console.log('wtf');
+			           console.log(wtf);
+			           console.log("after");
+			           console.log(weekHours);
+			           hypSun.style.display = "inline";
+		         	hypMon.style.display = "inline";
+		         	hypTue.style.display = "inline";
+		         	hypWed.style.display = "inline";
+		         	hypThu.style.display = "inline";
+		         	hypFri.style.display = "inline";
+		         	hypSat.style.display = "inline";
+			           hypSun.innerText = removeColon(weekHours.sun);
+			           hypMon.innerText = removeColon(weekHours.sun);
+			           hypTue.innerText = removeColon(weekHours.sun);
+			           hypWed.innerText = removeColon(weekHours.sun);
+			           hypThu.innerText =removeColon(weekHours.sun);
+			           hypFri.innerText = removeColon(weekHours.sun);
+			           hypSat.innerText = removeColon(weekHours.sun);
+
+		         // } 
+
+		         // else if (typeof hrs === "undefined") {
+		
+		         // 	document.getElementById('opHours').style.display = "none";
+		         // 	document.getElementById('opHoursNA').style.display = "block";
+		         // } 
+
+	         }
+
+	    }
+
+
 
 
 	   function addListener(json, marker) {
@@ -1087,7 +1270,8 @@ console.log(mSo);
           var overlay = angular.element(document.getElementById('mobServiceOverlay'));
 
 	      google.maps.event.addListener(marker, 'click', function() {
-
+	      	console.log("^^^^check assumptions");
+	      	console.log(json.hoursOpen);
        		setPlaceData(json);
        		setPrintWindow(json);
        		setOverlayData(json);
@@ -1155,77 +1339,67 @@ console.log(mSo);
 	        var ico = getIcon(json.primaryCategory);
 
 	        $scope.currentCategory = ico;
-	        var ho = json.hoursOpen[0];
+	        
+
+	        //  var hypSun = document.getElementById('opSun');
+	        //  var hypMon = document.getElementById('opMon');
+	        //  var hypTue = document.getElementById('opTue');
+	        //  var hypWed = document.getElementById('opWed');
+	        //  var hypThu = document.getElementById('opThu');
+	        //  var hypFri = document.getElementById('opFri');
+	        //  var hypSat = document.getElementById('opSat');
+
+	        // var sunday = new RegExp(/Sunday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        // var monday = new RegExp(/Monday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        // var tuesday = new RegExp(/Tuesday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        // var wednesday = new RegExp(/Wednesday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        // var thursday = new RegExp(/Thursday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        // var friday = new RegExp(/Friday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        // var saturday = new RegExp(/Saturday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+
+	        //  if (typeof hrs != "undefined" && hrs != null) {
+	        //  	document.getElementById('opHours').style.display = "block";
+	        //  	document.getElementById('opHoursNA').style.display = "none";
+	        //  	   var sun = hrs.match(sunday);
+		       //     var mon = hrs.match(monday);
+		       //     var tue = hrs.match(tuesday);
+		       //     var wed = hrs.match(wednesday);
+		       //     var thu = hrs.match(thursday);
+		       //     var fri = hrs.match(friday);
+		       //     var sat = hrs.match(saturday);
+		       //     var weekHours = {
+		       //     	sun: rws(stripDay('sunday', sun[0])), 
+		       //     	mon: rws(stripDay('monday', mon[0])),
+		       //     	tue: rws(stripDay('tuesday', tue[0])),
+		       //     	wed: rws(stripDay('wednesday', wed[0])),
+		       //     	thu: rws(stripDay('thursday', thu[0])),
+		       //     	fri: rws(stripDay('friday', fri[0])),
+		       //     	sat: rws(stripDay('saturday', sat[0]))
+		       //     }
+		       //     hypSun.style.display = "inline";
+	        //  	hypMon.style.display = "inline";
+	        //  	hypTue.style.display = "inline";
+	        //  	hypWed.style.display = "inline";
+	        //  	hypThu.style.display = "inline";
+	        //  	hypFri.style.display = "inline";
+	        //  	hypSat.style.display = "inline";
+		       //     hypSun.innerText = weekHours.sun;
+		       //     hypMon.innerText = weekHours.mon;
+		       //     hypTue.innerText = weekHours.tue;
+		       //     hypWed.innerText = weekHours.wed;
+		       //     hypThu.innerText = weekHours.thu;
+		       //     hypFri.innerText = weekHours.fri;
+		       //     hypSat.innerText = weekHours.sat;
+
+	        //  } else if (typeof hrs === "undefined") {
 	
-
-	           var hypSun = document.getElementById('opSun');
-	         var hypMon = document.getElementById('opMon');
-	         var hypTue = document.getElementById('opTue');
-	         var hypWed = document.getElementById('opWed');
-	         var hypThu = document.getElementById('opThu');
-	         var hypFri = document.getElementById('opFri');
-	         var hypSat = document.getElementById('opSat');
-
-	        // var sunday = new RegExp(/Sunday\s(\d|\d\d)AM.(\d|\d\d)PM/);
-	        var sunday = new RegExp(/Sunday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
-	        var monday = new RegExp(/Monday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
-	        var tuesday = new RegExp(/Tuesday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
-	        var wednesday = new RegExp(/Wednesday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
-	        var thursday = new RegExp(/Thursday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
-	        var friday = new RegExp(/Friday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
-	        var saturday = new RegExp(/Saturday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
-
-	        // console.log("sunnday");
-	        // console.log(sunday);
-
-
-
-	         if (typeof ho != "undefined") {
-	         	document.getElementById('opHours').style.display = "block";
-	         	document.getElementById('opHoursNA').style.display = "none";
-	         	   var sun = ho.match(sunday);
-		           var mon = ho.match(monday);
-		           var tue = ho.match(tuesday);
-		           var wed = ho.match(wednesday);
-		           var thu = ho.match(thursday);
-		           var fri = ho.match(friday);
-		           var sat = ho.match(saturday);
-		           var weekHours = {
-		           	sun: rws(stripDay('sunday', sun[0])), 
-		           	mon: rws(stripDay('monday', mon[0])),
-		           	tue: rws(stripDay('tuesday', tue[0])),
-		           	wed: rws(stripDay('wednesday', wed[0])),
-		           	thu: rws(stripDay('thursday', thu[0])),
-		           	fri: rws(stripDay('friday', fri[0])),
-		           	sat: rws(stripDay('saturday', sat[0]))
-		           }
-		           hypSun.style.display = "inline";
-	         	hypMon.style.display = "inline";
-	         	hypTue.style.display = "inline";
-	         	hypWed.style.display = "inline";
-	         	hypThu.style.display = "inline";
-	         	hypFri.style.display = "inline";
-	         	hypSat.style.display = "inline";
-		           hypSun.innerText = weekHours.sun;
-		           hypMon.innerText = weekHours.mon;
-		           hypTue.innerText = weekHours.tue;
-		           hypWed.innerText = weekHours.wed;
-		           hypThu.innerText = weekHours.thu;
-		           hypFri.innerText = weekHours.fri;
-		           hypSat.innerText = weekHours.sat;
-
-	         } else if (typeof ho === "undefined") {
-	         	// hypSun.style.display = "none";
-	         	// hypMon.style.display = "none";
-	         	// hypTue.style.display = "none";
-	         	// hypWed.style.display = "none";
-	         	// hypThu.style.display = "none";
-	         	// hypFri.style.display = "none";
-	         	// hypSat.style.display = "none";
-	         	// document.getElementById('opHours').style.lineHeight = "12px";
-	         	document.getElementById('opHours').style.display = "none";
-	         	document.getElementById('opHoursNA').style.display = "block";
-	         }
+	        //  	document.getElementById('opHours').style.display = "none";
+	        //  	document.getElementById('opHoursNA').style.display = "block";
+	        //  } else if (hrs === null) {
+	        //  	console.log("hrs === null")
+	        //  	document.getElementById('opHours').style.display = "none";
+	        //  	document.getElementById('opHoursNA').style.display = "block";
+	        //  }
 
 
 	      
@@ -1429,6 +1603,9 @@ console.log(mSo);
 	      console.log("clearWifiMarkers");
 	      var freeWifiSpots     = $scope.markers.wifi.free;
 	      var customerWifiSpots = $scope.markers.wifi.customer;
+	      if($scope.activeSpot.marker != null && ($scope.activeSpot.meta.primaryCategory === "wifi-customer" || $scope.activeSpot.meta.primaryCategory === "wifi-free")) {
+	      	$scope.activeSpot.marker.setMap(null);
+	      }
 	      var i;
 	      var n;
 	      var l = freeWifiSpots.length; 
@@ -1447,6 +1624,9 @@ console.log(mSo);
 	      console.log('clearTrainingMarkers');
 	      var dayCourses = $scope.markers.training.day;
 	      var nightCourses = $scope.markers.training.night;
+	      if($scope.activeSpot.marker != null && ($scope.activeSpot.meta.primaryCategory === "training-day" || $scope.activeSpot.meta.primaryCategory === "training-night")) {
+	      	$scope.activeSpot.marker.setMap(null);
+	      }
 	      for (var i = 0; i < dayCourses.length; i++) {
 	        dayCourses[i].setMap(null);
 	      }
@@ -1459,9 +1639,13 @@ console.log(mSo);
 
 	    function clearAccessMarkers() {
 	      console.log("clearAccessMarkers");
+	      
+	      if($scope.activeSpot.marker != null && $scope.activeSpot.meta.primaryCategory === "computers-access") {
+	      	$scope.activeSpot.marker.setMap(null);
+	      }
 	      var markers = $scope.markers.computers.access;
 	      var i;
-	      var length = $scope.markers.length;
+	      var length = markers.length;
 	      for (i=0; i<length; i++) {
 	        markers[i].setMap(null);
 	      }
@@ -1470,8 +1654,13 @@ console.log(mSo);
 
 	    function clearRetailMarkers() {
 	      var markers = $scope.markers.computers.retail;
+	      console.log("clearRetailMarkers");
+	      console.log(markers);
+	      if($scope.activeSpot.marker != null && $scope.activeSpot.meta.primaryCategory === "computers-retail") {
+	      	$scope.activeSpot.marker.setMap(null);
+	      }
 	      var i; 
-	      var length = $scope.markers.length;
+	      var length = markers.length;
 	      for (i=0;i<length;i++){
 	        markers[i].setMap(null);
 	      }
@@ -1501,25 +1690,28 @@ console.log(mSo);
 	    $scope.trainingVisibility =false;
 	    $scope.toggleTrainingMarkers = function() {
 	      if ($scope.trainingVisibility) {
-	        resetCss(e2, true);
-	        setTrainingMarkers();
-	        $scope.trainingVisibility = false;
-	      } else {
 	        resetCss(e2, false);
 	        clearTrainingMarkers();
+	        $scope.trainingVisibility = false;
+	      } else {
+	        resetCss(e2, true);
+	        setTrainingMarkers();
 	        $scope.trainingVisibility = true;
 	      }
 	    }
 
 	    $scope.computersVisibility = false;
 	    $scope.toggleComputersMarkers = function() {
+	    	console.log("check boolean toggle");
+	    	console.log($scope.toggle.access);
 	      if ($scope.computersVisibility) {
-	        resetCss(e3, true);
-	        setAccessMarkers();
-	        $scope.computersVisibility = false;
-	      } else {
 	        resetCss(e3, false);
 	        clearAccessMarkers();
+	        $scope.computersVisibility = false;
+	      } else {
+	        resetCss(e3, true);
+	        // clearAccessMarkers();
+	        setAccessMarkers();
 	        $scope.computersVisibility = true;
 	      }
 	    }
@@ -1541,12 +1733,12 @@ console.log(mSo);
 	    $scope.refurbsVisibility = false;
 	    $scope.toggleRefurbsMarkers = function() {
 	      if ($scope.refurbsVisibility) {
-	        resetCss(e4, true);
-	        setRetailMarkers();
-	        $scope.refurbsVisibility = false;
-	      } else {
 	        resetCss(e4, false);
 	        clearRetailMarkers();
+	        $scope.refurbsVisibility = false;
+	      } else {
+	        resetCss(e4, true);
+	        setRetailMarkers();
 	        $scope.refurbsVisibility = true;
 	      }
 	    }
@@ -1581,10 +1773,54 @@ console.log(mSo);
 	        return $scope.error == "";
 	    }
 
-	    function removeWindow() {
 
+
+	    function fixMapWidth(width) {
+	    	console.log("fixMapWidth");
+	    	console.log(width);
+
+	    	var mw = cm.style.width;
+	    	console.log(mw);
+	   	  	if (width <= 768) {
+	        	console.log("1. 0 to 768");
+	          // $scope.mobileMod = true;
+	          // headerToggleId.style.display = "none";
+	          // mobileWindowElement.style.display = "initial";
+	          // $window.scrollTo(0,0);
+	          // hideOverflow(html);
+	          // var diff = (cWidth - 38);
+	          // var x = diff + "px";
+	          // document.getElementById('trix').style.width = x;
+
+	          // console.log(cWidth + " is less than 768");
+	        } else if (width > 768 && width < 1000) {
+	        	console.log("2. 768 to 1000");
+	        	cm.style.width = "719px";
+	        } else if (width >= 1000 && width < 1200) {
+	        	console.log("3. 1000 to 1200");
+	    		cm.style.width = "939px";
+	        } else if (width >= 1200 && width < 1280) {
+	        	console.log("4. 1200 to 1280");
+	   			cm.style.width = "1017px";
+	        } else if (width >= 1280 && width < 1660) {
+	        	console.log("5. 1280 to 1660");
+	        	cm.style.width = "1140px";
+	        } else if (width >= 1660 && width < 1680) {
+	        	console.log("6. 1280 to 1660");
+	        	cm.style.width = "1130px";
+	        } else if (width >= 1680) {
+	        	console.log("7. 1660 to infinity");
+	        	cm.style.width = "1130px";
+	        }
+	
+	    }
+	   
+
+	    function removeWindow() {
+	    	var c = getCurrentWidth();
 	      sideWindowElement.style.display = "none";
-	      mapCanvasElement.style.width = "100%";
+	      mapCanvasElement.style.width = resetMapWidth(c);
+	      // cm.style.width = "100%";
         if (innerWidth < 768) {
             $scope.mobileWindowOpen = false;
         }
@@ -1617,8 +1853,9 @@ console.log(mSo);
 
    	 var resizeMap = function() {
         var cWidth = getCurrentWidth();
-       
-        if (cWidth <= 768) {
+        var c = getCurrentWidth();
+        if (c <= 768) {
+        	console.log("1. 0 to 768");
           // $scope.mobileMod = true;
           // headerToggleId.style.display = "none";
           // mobileWindowElement.style.display = "initial";
@@ -1629,14 +1866,84 @@ console.log(mSo);
           // document.getElementById('trix').style.width = x;
 
           // console.log(cWidth + " is less than 768");
-        } else {
-          mapCanvasElement.style.width = "65%";
-          mapCanvasElement.style.borderRight = "1px solid #ccc";
-          sideWindowElement.style.display = "initial";
+        } else if (c > 768 && c < 1000) {
+        	console.log("2. 768 to 1000");
+        	mapCanvasElement.style.width = "65%";
+            mapCanvasElement.style.borderRight = "1px solid #ccc";
+            sideWindowElement.style.display = "initial";
+        } else if (c >= 1000 && c < 1200) {
+        	console.log("3. 1000 to 1200");
+        	mapCanvasElement.style.width = "65%";
+            mapCanvasElement.style.borderRight = "1px solid #ccc";
+            sideWindowElement.style.display = "initial";
+        } else if (c >= 1200 && c < 1280) {
+        	console.log("4. 1200 to 1280");
+        	mapCanvasElement.style.width = "65%";
+            mapCanvasElement.style.borderRight = "1px solid #ccc";
+            sideWindowElement.style.display = "initial";
+        } else if (c >= 1280 && c < 1660) {
+        	console.log("5. 1280 to 1660");
+        	mapCanvasElement.style.width = "800px";
+            mapCanvasElement.style.borderRight = "1px solid #ccc";
+            sideWindowElement.style.display = "initial";
+        } else if (c >= 1660 && c < 1680) {
+        	console.log("6. 1280 to 1660");
+        	mapCanvasElement.style.width = "65%";
+            mapCanvasElement.style.borderRight = "1px solid #ccc";
+            sideWindowElement.style.display = "initial";
+        } else if (c >= 1680) {
+        	console.log("7. 1660 to infinity");
+        	mapCanvasElement.style.width = "65%";
+            mapCanvasElement.style.borderRight = "1px solid #ccc";
+            sideWindowElement.style.display = "initial";
         }
+
+
+
+
+        // else {
+        //   mapCanvasElement.style.width = "65%";
+        //   mapCanvasElement.style.borderRight = "1px solid #ccc";
+        //   sideWindowElement.style.display = "initial";
+        // }
 	      
         
    	 }
+
+
+   	  function resetMapWidth(width) {
+   	  	if (width <= 768) {
+        	console.log("1. 0 to 768");
+          // $scope.mobileMod = true;
+          // headerToggleId.style.display = "none";
+          // mobileWindowElement.style.display = "initial";
+          // $window.scrollTo(0,0);
+          // hideOverflow(html);
+          // var diff = (cWidth - 38);
+          // var x = diff + "px";
+          // document.getElementById('trix').style.width = x;
+
+          // console.log(cWidth + " is less than 768");
+        } else if (width > 768 && width < 1000) {
+        	console.log("2. 768 to 1000");
+        	cm.style.width = "719px";
+        } else if (width >= 1000 && width < 1200) {
+        	console.log("3. 1000 to 1200");
+    		cm.style.width = "939px";
+        } else if (width >= 1200 && width < 1280) {
+        	console.log("4. 1200 to 1280");
+   			cm.style.width = "1017px";
+        } else if (width >= 1280 && width < 1660) {
+        	console.log("5. 1280 to 1660");
+        	cm.style.width = "1140px";
+        } else if (width >= 1660 && width < 1680) {
+        	console.log("6. 1280 to 1660");
+        	cm.style.width = "1130px";
+        } else if (width >= 1680) {
+        	console.log("7. 1660 to infinity");
+        	cm.style.width = "1130px";
+        }
+	  }
 
    	 $scope.closeFullDescription = function() {
    	 	headerToggleId.style.display = "initial";
@@ -1935,6 +2242,8 @@ console.log(mSo);
 	      });
  
 	      google.maps.event.addDomListener(window, 'resize', function() {
+	      	var c = getCurrentWidth();
+	      	fixMapWidth(c);
 	     
 	        $scope.map.setCenter(center);
 	        var bounds = $scope.map.getBounds();

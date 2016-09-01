@@ -12,8 +12,13 @@
 		margin: 3px 8px;
 	}
 	#new-service-button {
-    position: relative;
-    left: 10em;
-    top: 7em;
-}
+	    position: relative;
+	    left: 10em;
+	    top: 7em;
+	}
+	img#imgPath {
+	    width: 6%;
+	    position: relative;
+	    left: -3.5em;
+	}
 }

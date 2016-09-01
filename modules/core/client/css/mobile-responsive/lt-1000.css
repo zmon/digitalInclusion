@@ -73,17 +73,18 @@ div#buttons-wrapper {
 		padding-right: 0;
 	}
 	.glyphicon {
-	    position: relative;
-	    /* top: -20px; */
-	    left: 35px;
-	    display: inline-block;
-	    font-family: 'Glyphicons Halflings';
-	    font-style: normal;
-	    font-weight: normal;
-	    line-height: 1;
-	    -webkit-font-smoothing: antialiased;
-	    -moz-osx-font-smoothing: grayscale;
-	}
+    position: relative;
+    /* top: -20px; */
+    left: 8.5em;
+    top: 2em;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 	/*#header h1 {
 	    margin: .4em 0.25em 4em 0;
 	    font-weight: 600;
@@ -111,10 +112,13 @@ div#buttons-wrapper {
     left: -6.05em;
     width: 58.75em;
 }
+md-card#hacksalot {
+    height: 600px;
+}
 	a.pure-button.x-small-custom {
 		font-size: .5em;
 		position: relative;
-		top: -1.5em;
+		top: 2.5em;
 		width: 85px;
 	}
 	a#map-directions {
@@ -122,7 +126,7 @@ div#buttons-wrapper {
 		font-size: .57em;
 		position: relative;
 		line-height: 1px;
-		top: -2.7em;
+		top: .8em;
 		width: 85px;
 	}
 	.myButton {
@@ -202,12 +206,16 @@ div#buttons-wrapper {
 	   background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGD4z8DAwMgABXAGNgGwSgwVAFbmAgXxvZSoAAAAAElFTkSuQmCC') repeat;
 	}
 	div#placeCategory {
-		margin-top: .85em;
-		font-size: .625em;
-		margin-left: 2em;
-		width: 10em;
-		line-height: 11px;
-	}
+    margin-top: .85em;
+    font-size: .625em;
+    margin-left: 2em;
+    position: relative;
+    width: 20em;
+    top: -2.5em;
+    left: 9em;
+    text-align: left;
+    line-height: 11px;
+}
 	div#placeTitle {
 		letter-spacing: .75px;
 	}
@@ -253,7 +261,7 @@ div#buttons-wrapper {
 */
 	.f-desc {
 		border: none;
-		padding: .5em 1em;
+		padding: .5em 9em;
 		text-align: start;
 		margin-left: .3em;
 		width: 95%;
@@ -324,25 +332,45 @@ div#buttons-wrapper {
 		border-right: none;
 		text-align: center;
 	}
-section#customMap {
-    height: 608px;
-    border-left: 1px solid #626f64;
-    border-right: 1px solid #637766;
-    box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
-    border: 2px solid #676f03;
-    /* box-shadow: 0 0 50px black; */
-    margin-top: 1.3em;
-    left: -4.4em;
-    margin-bottom: -2.7em;
-    border: none;
-    top: -6.35em;
-    width: 44.85em;
-        width: 58.65em;
-    border-bottom: .5px solid #423906;
-    border-top: 1.5px solid #5d5b51;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-}
+
+	aside#opHours {
+	    font-size: .7em;
+	    line-height: 13px;
+	}
+
+	aside#opHours p.opDay {
+	    top: -.1em;
+	}
+	#header p#dscHead {
+		position: relative;
+	    top: 2.5em;
+	    letter-spacing: normal;
+	}
+	section#customMap {
+	    height: 637px;
+	    border-left: 1px solid #626f64;
+	    border-right: 1px solid #637766;
+	    box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
+	    border: 2px solid #676f03;
+	    /* box-shadow: 0 0 50px black; */
+	    margin-top: 1.3em;
+	    left: -4.4em;
+	    margin-bottom: -2.7em;
+	    border: none;
+	    top: -6.35em;
+	    width: 44.85em;
+	        width: 58.65em;
+	    border-bottom: .5px solid #423906;
+	    border-top: 1.5px solid #5d5b51;
+	    border-top: 1px solid #ccc;
+	    border-bottom: 1px solid #ccc;
+	}
+
+
+	#header p#hrsHead {
+	    top: 1.8em;
+	        letter-spacing: normal;
+	}
 
 	button#e2, button#e1, button#e3, button#e4 {
 
@@ -372,10 +400,10 @@ section#customMap {
     border-bottom: 4px solid #c0d8dc;
     font-family: Georgia;
     border: none;
-    top: -3em;
+    top: -4.2em;
     box-shadow: none;
     background: none;
-    margin-left: 0;
+    margin-left: -2.3em;
     /* box-shadow: 0 0 0 3px gray; */
     padding: 0 0 2em 0;
 }
@@ -571,13 +599,13 @@ section#customMap {
 	    left: -8em;
 	}
 
-	div#info-wrapper {
+div#info-wrapper {
     background: #f3f3f3;
     border: 1px solid #bbbaba;
     /* box-shadow: inset 0 0 100px #f3f3f3; */
-    width: 125%;
+    width: 119%;
     display: inline-block;
-    height: 600px;
+    height: 638px;
     border: 1px solid #e2e2e2;
     font-weight: 400;
     position: relative;
@@ -586,9 +614,14 @@ section#customMap {
     padding-left: 1em;
     padding-right: .25em;
     color: black;
-    font-family: DinLight;
-    overflow-y: scroll;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    overflow-y: hidden;
 }
+
+	img#imgPath {
+	    width: 8%;
+	}
+
 }
 
 

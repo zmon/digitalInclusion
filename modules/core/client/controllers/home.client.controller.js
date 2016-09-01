@@ -21,6 +21,22 @@
     }
     
     // spinnerService.show('mapSpinner');
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
 
   angular

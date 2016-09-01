@@ -237,7 +237,7 @@ font-size: 1em;
     position: relative;
     box-shadow: none;
     top: -3em;
-    padding: 1em 0 2.4em 0;
+    padding: 1em 1em 2.4em 1em;
 	}
 	div#info-wrapper {
     background: none;
