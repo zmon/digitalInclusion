@@ -15,15 +15,15 @@
     </md-toolbar> -->
     <md-content id="ispMdContent">
       <md-list flex>
-        <md-headline class="md-no-sticky">Local Internet Service Providers</md-headline>
+        <md-headline id="isp-header" class="md-no-sticky">Local Internet Service Providers</md-headline>
 
         <md-list-item class="md-3-line" ng-repeat="isp in isps" ng-click="null">
     
           <div class="md-list-item-text" layout="column">
-            <h3>{{ isp.title }}</h3>
-            <h4>{{ isp.readableAddress }}</h4>
+            <h3 class="isp-title">{{ isp.title }}</h3>
+            <h4 class="isp-address">{{ isp.readableAddress }}</h4>
             <p>{{ isp.phone }}</p>
-            <a ng-href="{{isp.url}}" target="_blank">Visit website</a>
+            <a ng-href="{{isp.url}}" target="_blank" class="inks">Website</a>
           </div>
         </md-list-item>
         

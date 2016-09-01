@@ -2986,10 +2986,11 @@ select[multiple].input-lg {
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {
-    padding-top: 7px;
-    margin-bottom: 0;
-    font-weight: 400;
-    text-align: left;
+      padding-top: 7px;
+      margin-bottom: 0;
+      font-weight: 400;
+      text-align: left;
+      font-size: .8em;
   }
 }
 .form-horizontal .has-feedback .form-control-feedback {
@@ -3065,9 +3066,10 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: #333;
-  background-color: #fff;
-  border-color: #ccc;
+    color: #333;
+    background-color: #FAFAFA;
+    border-color: #BDBDBD;
+    box-shadow: 1px 1px 1px #e0e0e0;
 }
 .btn-default:focus,
 .btn-default.focus {
@@ -4314,7 +4316,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   height: 50px;
-  padding: 15px 15px;
+     padding: 10px 15px 15px 15px;
   color: white;
   font-size: 18px;
   line-height: 20px;
@@ -6035,17 +6037,17 @@ button.close {
   margin-top: -2px;
 }
 .modal-title {
-  position: relative;
-  top: .8em;
-  margin: 0;
-  line-height: 1.42857143;
-  color: #303133;
-  letter-spacing: .2em;
-  font-size: 1.425em;
-  text-align: center;
-  font-weight: 400;
-  text-shadow: 1px 1px #989797;
-  text-shadow: none;
+    position: relative;
+    top: .8em;
+    margin: 0;
+    line-height: 1.42857143;
+    color: #303133;
+    letter-spacing: .125pc;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 400;
+    text-shadow: 1px 1px #989797;
+    text-shadow: none;
 }
 .modal-body {
   position: relative;
@@ -6083,11 +6085,12 @@ button.close {
     margin: 30px auto;
   }
   .modal-content {
-    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-    box-shadow: inset 0 0 200px #4e4e45, 0 0 0 1px #030821;
-    background: linear-gradient(to left, #ECE9E6 , #FFFFFF, #ECE9E6);
-    box-shadow: 0 0 3px #191919, inset 0 0 100px #d4d4d4;
-    font-family: Harmattan;
+      -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+      box-shadow: inset 0 0 200px #4e4e45, 0 0 0 1px #030821;
+      background: linear-gradient(to left, #ECE9E6 , #FFFFFF, #ECE9E6);
+      box-shadow: 0 0 1px #191919, inset 0 0 100px #d4d4d4;
+      font-family: "Source Sans Pro", Helvetica, sans-serif;
+      background: #EEEEEE;
   }
   .modal-sm {
     width: 300px;

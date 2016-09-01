@@ -21,4 +21,46 @@
 	    position: relative;
 	    left: -3.5em;
 	}
+	section.isp-main.ng-scope {
+	    position: absolute;
+	    top: 12em;
+	}
+	#isp-header {
+		position: relative;
+		top: -1em;
+	    color: black;
+	    opacity: .888;
+	    text-decoration: underline;
+	}
+	md-content#ispMdContent {
+	    padding-top: 1em;
+	}
+	a.inks {
+	    color: #00626b;
+	    font-size: .8em;
+	    margin-top: -.5em;
+	}
+	h3.isp-title {
+		margin-bottom: .3em;
+		font-size: 1.1em;
+	}
+	
+	div.md-list-item-inner div.md-list-item-text h4.isp-address.ng-binding {
+	    margin-top: .4em;
+	    font-size: .9em;
+	}
+	#header p.tab-p {
+	    top: 7em;
+	}
+
+	div#fix-flex button.md-raised.md-button.md-button.md-ink-ripple {
+	    background: #E0E0E0;
+	    padding: .01em 2em 1em 2em;
+	}
+	#fix-flex {
+	    margin-left: 0;
+	    position: absolute;
+	    left: 20em;
+	    top: 10em;
+	}
 }

@@ -4,6 +4,10 @@
 	    position: relative;
 	    left: -11.7em;
 	}
+	section.isp-main.ng-scope {
+	
+	    left: 10em;
+	}
 	main#main-page {
 		position: relative;
 		top: -16.4em;
@@ -50,7 +54,7 @@
 		left: -3.7em;
 		padding: 1em .1em 1em 4em;
 		position: absolute;
-		height: 9.9em;
+		height: 9em;
 		border-radius: 9px;
 		/* border-bottom-left-radius: 6px; */
 		/* border-bottom-right-radius: 6px; */

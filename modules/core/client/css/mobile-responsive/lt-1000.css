@@ -165,7 +165,7 @@ md-card#hacksalot {
 		background: transparent;
 		border-radius: 1.5em;
 		padding-top: .85em;
-		margin-top: .1em;
+		    margin-top: .2em;
 		text-shadow: none;
 		height: 3em;
 	}
@@ -175,7 +175,7 @@ md-card#hacksalot {
 	    cursor: default;
 	    background: transparent;
 	    border: 1px solid #ddd;
-	    margin-top: -.375em;
+	        margin-top: -.225em;
 	    padding-top: 1.35em;
 	    padding-bottom: 2.364em;
 	    height: 2.8em;

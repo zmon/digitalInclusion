@@ -318,3 +318,8 @@ md-card md-card-header#blueGray {
   background: #B0BEC5;
 }
 
+
+
+#fix-flex {
+  margin-left: -3em;
+}

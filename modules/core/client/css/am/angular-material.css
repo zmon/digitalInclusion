@@ -9,7 +9,7 @@ html, body {
   color: rgba(0, 0, 0, 0.87);
   position: relative;
   background: #FAFAFA;
-  background: #EEEEEE;
+  /* background: #EEEEEE; */
   box-shadow: none;
   }
 
@@ -706,7 +706,8 @@ button.md-button::-moz-focus-inner {
     padding: 0;
     background: none; }
   .md-button.md-raised:not([disabled]) {
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
+    box-shadow: 0 1px 1px 0 rgba(175, 175, 175, 0.21);
+    }
   .md-button.md-icon-button {
     margin: 0 6px;
     height: 40px;
@@ -2781,14 +2782,15 @@ md-list-item.md-3-line > .md-no-style {
     md-list-item.md-2-line > .md-no-style .md-list-item-text h3,
     md-list-item.md-3-line .md-list-item-text h3,
     md-list-item.md-3-line > .md-no-style .md-list-item-text h3 {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 400;
       letter-spacing: 0.010em;
       margin: 0 0 0px 0;
       line-height: 1.2em;
       overflow: hidden;
       white-space: nowrap;
-      text-overflow: ellipsis; }
+      text-overflow: ellipsis;
+      }
     md-list-item.md-2-line .md-list-item-text h4,
     md-list-item.md-2-line > .md-no-style .md-list-item-text h4,
     md-list-item.md-3-line .md-list-item-text h4,
@@ -2836,7 +2838,10 @@ md-list-item.md-2-line > .md-no-style {
 md-list-item.md-3-line,
 md-list-item.md-3-line > .md-no-style {
   height: auto;
-  min-height: 88px; }
+  opacity: .96;
+  color: black;
+  min-height: 88px;
+  }
   md-list-item.md-3-line.md-long-text,
   md-list-item.md-3-line > .md-no-style.md-long-text {
     margin: 1.6em; }

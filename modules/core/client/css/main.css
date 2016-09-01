@@ -1845,6 +1845,8 @@
     color: #40402d;
     text-shadow: none;
     font-weight: 600;
+    opacity: .7;
+    color: black;
   }
 
   blockquote {
@@ -2239,7 +2241,7 @@
   input[type="email"],
   select,
   textarea {
-    background: #f3f3f3;
+    background: #FAFAFA;
     border-color: rgba(255, 255, 255, 0.35);
     border: 1px solid #cfd2d1;
     color: black;
@@ -4157,12 +4159,12 @@ body {
   /* box-shadow: inset 0 0 100px #d4d2d2, inset 0 0 400px #bfb8b8, inset 0 0 400px #fdfdff, inset 0 0 400px #e5f4ff, 0 0 0 1px black, 0 0 10px black; */
 }
 .form-section-custom {
-  padding: 3em 6em;
-  background: #f3f3f3;
-  border: 1px solid #cfd2d1;
-  box-shadow: 0 0 3px #d5e8de, inset 0 0 200px ivory;
-  margin-bottom: 1.5em;
-  width: 103%;
+    padding: 3em 6em;
+    background: #F5F5F5;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 1.5em;
+    width: 103%;
 }
 
 .custom-form-header {
@@ -4358,7 +4360,7 @@ ul#alt-buttons-bottom {
     padding: 0;
     float: right;
         position: relative;
-    left: -.775em;
+    left: -1.2em;
     margin: 0;
 }
 
