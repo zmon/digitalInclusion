@@ -12,7 +12,7 @@ module.exports = {
     certificate: './config/sslcerts/getonlinekc.org.chained.crt',
     caBundle: './config/sslcerts/getonlinekc_org.ca-bundle'
   },
-  port: 8556,
+  port: 443,
   // Binding to 127.0.0.1 is safer in production.
   host: process.env.HOST || '127.0.0.1',
   db: {
