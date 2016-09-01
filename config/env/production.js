@@ -12,9 +12,9 @@ module.exports = {
     certificate: './config/sslcerts/getonlinekc.org.chained.crt',
     caBundle: './config/sslcerts/getonlinekc_org.ca-bundle'
   },
-  port: 443,
+  port: 8556,
   // Binding to 127.0.0.1 is safer in production.
-  host: process.env.HOST || '0.0.0.0',
+  host: process.env.HOST || '127.0.0.1',
   db: {
     uri: 'mongodb://localhost/digital-inclusion-production' || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean',
     options: {
