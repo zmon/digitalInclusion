@@ -14,9 +14,9 @@ var list = {};
 		.module('core.map')
 		.controller('AbController', AbController);
 		
-	AbController.$inject = ['$scope', '$window', '$timeout', '$http', '$location', 'zipcode', 'PlacesService', 'zcPosition'];
+	AbController.$inject = ['$scope', '$window', '$timeout', '$http', '$location', 'zipcode', 'PlacesService', 'zcPosition', 'getPlacesService'];
 
-	function AbController($scope, $window, $timeout, $http, $location, zipcode, PlacesService, zcPosition) {
+	function AbController($scope, $window, $timeout, $http, $location, zipcode, PlacesService, zcPosition, getPlacesService) {
 
 	    var browser = $window.navigator.appCodeName;   
 	    var zipcodes = zipcode.getZipcodes();
@@ -116,13 +116,46 @@ var list = {};
     
     	var vm = this;
 
-      // var allPlaces = PlacesService.query();
-	      $scope.places = $http.get('/api/places').success(function(data){
-	        sortResponses(data);
-	      }).error(function(err) {
-	        console.log(err);
-	        return err;
-	      });
+      // $scope.places = PlacesService.query();
+
+
+      $scope.places = getPlacesService.getPlaces(function(places) {
+
+              // caption: info.caption
+                    // map_icon_label: '<span class="map-icon map-icon-cafe mil-green"></span>'
+                    // map_icon_label: '<span class="map-icon map-icon-point-of-interest"></span>'
+              
+            $scope.places = places;
+            console.log("places");
+            console.log(places);
+    		sortResponses(places);
+        
+           
+        });
+
+
+      console.log($scope.places);
+      // var qtyP = $scope.places.length;
+      // var e;
+      // for (e=0;e<qtyP;e++) {
+      // 	sortResponses($scope.places[e]);
+      // }
+      // .success(function(data) {
+      // 	sortResponses(data);
+      // }).error(function(err) {
+      // 	console.log(err);
+      // 	return err;
+      // });
+
+
+
+    
+	      // $scope.places = $http.get('/api/places').success(function(data){
+	      //   sortResponses(data);
+	      // }).error(function(err) {
+	      //   console.log(err);
+	      //   return err;
+	      // });
 
 
       function sortResponses(places) {
@@ -1284,17 +1317,17 @@ console.log(mSo);
 	   	var a = getCurrentWidth();
 	   	var b = document.querySelector("#customMap").getBoundingClientRect().height;
 	   	var c = document.querySelector('#lavie').getBoundingClientRect().height;
-	   	console.log("b");
+	   	// console.log("b");
 	   	// console.log(b);
-	   	console.log(b);
-	   	console.log('c');
-	   	console.log(c);
+	   	// console.log(b);
+	   	// console.log('c');
+	   	// console.log(c);
 	   	var d = (b - c);
 	   	var e = (d / 2);
-	   	console.log("d");
-	   	console.log(d);
-	   	console.log("e");
-	   	console.log(e);
+	   	// console.log("d");
+	   	// console.log(d);
+	   	// console.log("e");
+	   	// console.log(e);
 	   	document.querySelector('#lavie').style.top = e + "px";
 	   	document.querySelector('#rmv-glyph').style.top = e + "px";
 	   	// angular.element(document.getElementById('lavie')).addClass('pt-page-flipInTop');
@@ -1366,10 +1399,10 @@ console.log(mSo);
             } 
 
             if (c <= 768 && c <= 360) {
-    			console.log("$$ test $$ test $$ test $$ test");
+   
     			cm.style.height = "240px";
-    			console.log("set cm.style.height");
-    			console.log(cm.style.height);
+    			// console.log("set cm.style.height");
+    			// console.log(cm.style.height);
             }
             
 	        resizeMap();
@@ -1857,13 +1890,13 @@ console.log(mSo);
 
 
 	    function fixMapWidth(width) {
-	    	console.log("fixMapWidth");
-	    	console.log(width);
+	    	// console.log("fixMapWidth");
+	    	// console.log(width);
 
 	    	var mw = cm.style.width;
 	    	console.log(mw);
 	   	  	if (width <= 768) {
-	        	console.log("1. 0 to 768");
+	        	// console.log("1. 0 to 768");
 	          // $scope.mobileMod = true;
 	          // headerToggleId.style.display = "none";
 	          // mobileWindowElement.style.display = "initial";
@@ -1875,40 +1908,40 @@ console.log(mSo);
 
 	          // console.log(cWidth + " is less than 768");
 	        } else if (width > 768 && width < 1000 && !sidePanelOpen) {
-	        	console.log("2. 768 to 1000 -- sidePanelOpen=false");
+	        	// console.log("2. 768 to 1000 -- sidePanelOpen=false");
 	        	cm.style.width = "719px";
 	        } else if (width > 768 && width < 1000 && sidePanelOpen) {
-	        	console.log("2. 768 to 1000 -- sidePanelOpen=true");
+	        	// console.log("2. 768 to 1000 -- sidePanelOpen=true");
 	        	cm.style.width = "65%";
 	        } else if (width >= 1000 && width < 1200 && !sidePanelOpen) {
-	        	console.log("3. 1000 to 1200");
+	        	// console.log("3. 1000 to 1200");
 	    		cm.style.width = "939px";
 	        } else if (width >= 1000 && width < 1200 && sidePanelOpen) {
-	        	console.log("3. 1000 to 1200");
+	        	// console.log("3. 1000 to 1200");
 	    		cm.style.width = "65%";
 	        } else if (width >= 1200 && width < 1280 && !sidePanelOpen) {
-	        	console.log("4. 1200 to 1280");
+	        	// console.log("4. 1200 to 1280");
 	   			cm.style.width = "1017px";
 	        } else if (width >= 1200 && width < 1280 && sidePanelOpen) {
-	        	console.log("4. 1200 to 1280");
+	        	// console.log("4. 1200 to 1280");
 	   			cm.style.width = "65%";
 	        } else if (width >= 1280 && width < 1660 && !sidePanelOpen) {
-	        	console.log("5. 1280 to 1660");
+	        	// console.log("5. 1280 to 1660");
 	        	cm.style.width = "1140px";
 	        } else if (width >= 1280 && width < 1660 && sidePanelOpen) {
-	        	console.log("5. 1280 to 1660");
+	        	// console.log("5. 1280 to 1660");
 	        	cm.style.width = "800px";
 	        } else if (width >= 1660 && width < 1680 && !sidePanelOpen) {
-	        	console.log("6. 1280 to 1660");
+	        	// console.log("6. 1280 to 1660");
 	        	cm.style.width = "1130px";
 	        } else if (width >= 1660 && width < 1680 && sidePanelOpen) {
-	        	console.log("6. 1280 to 1660");
+	        	// console.log("6. 1280 to 1660");
 	        	cm.style.width = "65%";
 	        } else if (width >= 1680 && !sidePanelOpen) {
-	        	console.log("7. 1660 to infinity");
+	        	// console.log("7. 1660 to infinity");
 	        	cm.style.width = "1130px";
 	        } else if (width >= 1680 && sidePanelOpen) {
-	        	console.log("7. 1660 to infinity");
+	        	// console.log("7. 1660 to infinity");
 	        	cm.style.width = "65%";
 	        }
 	

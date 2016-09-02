@@ -19,25 +19,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }());
 
 angular.module('places.services').factory('findPlacesByZipService', function($http) {
@@ -51,5 +32,18 @@ angular.module('places.services').factory('findPlacesByZipService', function($ht
 
   return {
     findPlacesByZip: findPlacesByZip
+  };
+});
+
+
+angular.module('places.services').factory('getPlacesService', function($http) {
+  var getPlaces = function(callback) {
+    $http.get('/api/places').success(function(data) {
+      callback(data);
+    });
+  };
+
+  return {
+    getPlaces: getPlaces
   };
 });
