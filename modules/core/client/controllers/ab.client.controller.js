@@ -193,7 +193,11 @@ $scope.thisBounds;
 		console.log("5 seconds");
 		console.log($scope.markers.wifi.free.length);
 		console.log($scope.markers.wifi.customer.length);
-
+		var a = $scope.markers.wifi.free.length;
+		var b = $scope.markers.wifi.customer.length;
+		if (a===0) {
+			setWifiMarkers();
+		}
 	}, 5000);
 
 
