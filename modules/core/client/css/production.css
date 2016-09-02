@@ -1,6 +1,7 @@
 @media (min-width: 769px) {
 	.nav > li > a:hover, .nav > li > a:focus {
     text-shadow: 0 0 1px #151515;
+    text-shadow: 0 0 4px #a59a9a;
     color: #000000;
 }
 	.nav-tabs > li > a {
@@ -27,7 +28,7 @@
 	    color: #212121;
 	    text-shadow: none;
 	    letter-spacing: .15pc;
-	    font-size: 1.3em;
+	    font-size: 1.1em;
 	        color: #3c3c3c;
 	    text-decoration: none;
 	        opacity: .64;
@@ -50,17 +51,20 @@
 	    background: #E0E0E0;
 	        background: #F5F5F5;
     	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
-		    box-shadow: 0 1px 3px 0 rgba(0,0,0,.06),0 1px 1px 0 rgba(0,0,0,.06),0 2px 1px -1px rgba(0,0,0,.06);
+		    box-shadow: 0 1px 3px 0 rgba(0,0,0,.06),0 1px 1px 0 rgba(0,0,0,.06),0 2px 1px -1px rgba(0,0,0,.16);
 		        background: linear-gradient(to left, #ececec,#f3f3f3, #ececec);
 	}
 	section.meta-w-form {
     background: #EEEEEE;
     background: #FBFBFB;
     border: 3px double #dadada;
+    border: 1px solid #dadada;
     box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
-    box-shadow: none;
+    /*box-shadow: none;*/
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 4px 0 rgba(0,0,0,.12);
     border-radius: 2px;
     background: linear-gradient(to left, #ececec , #f5f5f5,#f3f3f3, #f5f5f5, #ececec);
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.1),0 4px 5px 0 rgba(0,0,0,.07),0 1px 2px 0 rgba(0,0,0,.06);
 }
 #header h1 {
     background: radial-gradient(#ececec, #e8e9ea, #f4f9fb );
@@ -93,24 +97,26 @@ button#e2, button#e1, button#e3, button#e4 {
 		background: #F5F5F5;
 	}
 	.row.butane {
-	    background: #EEEEEE;
-	    background: #F5F5F5;
+/*	    background: #EEEEEE;
+	    background: #F5F5F5;*/
 	    /*background: #ECECEC;*/
-	    box-shadow: none;
-	    border-bottom: 3px double #c7c7c7;
+	    /*box-shadow: none;*/
+/*	    border-bottom: 3px double #c7c7c7;
 	    border: none;
 	        border-bottom: 1px solid #ccc;
+	        box-shadow: 0 1px 2px -1px rgba(0,0,0,.2),0 1px 2px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.32);
+	        background: #f3f3f3;
+    box-shadow: 0 0 0 1px #e6e6e6;
+        box-shadow: 0 1px 2px -1px rgba(148, 148, 148, 0.2),0 1px 2px 0 rgba(158, 158, 158, 0.14),0 1px 3px 0 rgba(0,0,0,.32);*/
 	    /*border-top: 1px solid #dcdcdc;*/
 	}
 
 	md-card#hacksalot {
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
-    background: #FAFAFA;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    background: transparent;
     box-shadow: none;
-    border-bottom: none;
-    border-right: none;
-    border-left: none;
-	}
+    border: none;
+}
 	md-card md-card-header#defaultGray {
 	    background: #F5F5F5;
 	  	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
@@ -121,7 +127,7 @@ button#e2, button#e1, button#e3, button#e4 {
 	    background: #E0E0E0;
 	    /*background: #9E9E9E;*/
     	box-shadow: 0 1px 5px 0 rgba(99, 99, 99, 0.2),0 2px 2px 0 rgba(86, 86, 86, 0.14),0 3px 1px -2px rgba(121, 121, 121, 0.12);
-    	box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 1px 0 rgba(0,0,0,.1),0 2px 1px -1px rgba(0,0,0,.1);
+    	    box-shadow: 0 1px 3px 0 rgba(162, 162, 162, 0.1),0 1px 1px 0 rgba(0,0,0,.1),0 2px 1px -1px rgba(0,0,0,.1);
 	}
 	html {
 		background: #DBDBDB;
@@ -325,6 +331,7 @@ div#mobServiceOverlay {
 */
 section#customMap{
 	    border-top: none;
+	    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 1px 0 rgba(0,0,0,.32);
 }
 div.cest a {
     text-decoration: none;
@@ -333,3 +340,6 @@ div.cest a {
 }
 
 /*html, body {max-height: 1200px;}*/
+
+
+div.cest {border: 3px double #E5E5E2;}

@@ -706,7 +706,7 @@ button.md-button::-moz-focus-inner {
     padding: 0;
     background: none; }
   .md-button.md-raised:not([disabled]) {
-    box-shadow: 0 1px 1px 0 rgba(175, 175, 175, 0.21);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.41);
     }
   .md-button.md-icon-button {
     margin: 0 6px;
@@ -935,6 +935,9 @@ md-card {
   md-card md-card-content {
     display: block;
     padding: 16px;
+    position: relative;
+    padding-left: 0;
+    /* left: 22px; */
     }
     md-card md-card-content > p:first-child {
       margin-top: 0; }
@@ -23411,4 +23414,4 @@ md-tooltip {
 
 @media print {
   .hide-print:not(.show-print):not(.show) {
-    display: none !important; }   
+    display: none !importan       

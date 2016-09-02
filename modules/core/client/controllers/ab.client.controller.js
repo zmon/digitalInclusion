@@ -1122,8 +1122,8 @@ console.log(mSo);
 	  		console.log("url");
 	  		console.log(url);
 	  		$http.get(url).success(function(response) {
-	  			console.log("looky here");
-	  			console.log(response.statusCode);
+	  			// console.log("looky here");
+	  			// console.log(response.statusCode);
 	  			psCallback(response);
 
 	  		})
@@ -1159,8 +1159,8 @@ console.log(mSo);
 	    	return str.replace(/\s/, "");
 	    }
 	    function removeColon(str) {
-	    	console.log("removeColon");
-	    	console.log(str);
+	    	// console.log("removeColon");
+	    	// console.log(str);
 	    	return str.replace(/^(:)/, "");
 	    }
 	    function setHours(hrs) {
@@ -1178,15 +1178,15 @@ console.log(mSo);
 	    	}
 
 
-	    	console.log("numb");
-	    	console.log(num);
+	    	// console.log("numb");
+	    	// console.log(num);
 
 	    	if (num === 0) {
 	    		document.getElementById('opHours').style.display = "none";
 	         	document.getElementById('opHoursNA').style.display = "block";
 	    	} else if (num >=1) {
-	    		console.log("num >= 1");
-	    		console.log(hrs);
+	    		// console.log("num >= 1");
+	    		// console.log(hrs);
 
 
 		    	var hypSun = document.getElementById('opSun');
@@ -1226,14 +1226,14 @@ console.log(mSo);
 			           	fri: rws(stripDay('friday', fri[0])),
 			           	sat: rws(stripDay('saturday', sat[0]))
 			           }
-			           console.log("before");
-			           console.log(weekHours);
+			           // console.log("before");
+			           // console.log(weekHours);
 
 			           var wtf = removeColon(weekHours.sun);
-			           console.log('wtf');
-			           console.log(wtf);
-			           console.log("after");
-			           console.log(weekHours);
+			           // console.log('wtf');
+			           // console.log(wtf);
+			           // console.log("after");
+			           // console.log(weekHours);
 			           hypSun.style.display = "inline";
 		         	hypMon.style.display = "inline";
 		         	hypTue.style.display = "inline";
@@ -1262,7 +1262,40 @@ console.log(mSo);
 	    }
 
 
+	   function setWindowCss() {
+	   	
+	  
+	   	console.log("setWindowCss");
 
+	   	var a = getCurrentWidth();
+	   	var b = document.querySelector("#customMap").getBoundingClientRect().height;
+	   	var c = document.querySelector('#lavie').getBoundingClientRect().height;
+	   	console.log("b");
+	   	// console.log(b);
+	   	console.log(b);
+	   	console.log('c');
+	   	console.log(c);
+	   	var d = (b - c);
+	   	var e = (d / 2);
+	   	console.log("d");
+	   	console.log(d);
+	   	console.log("e");
+	   	console.log(e);
+	   	document.querySelector('#lavie').style.top = e + "px";
+	   	document.querySelector('#rmv-glyph').style.top = e + "px";
+	   	// angular.element(document.getElementById('lavie')).addClass('pt-page-flipInTop');
+	   	// console.log("b.scrollHeight");
+	   	// console.log(b.scrollHeight);
+	   	// console.log("b.clientHeight");
+	   	// console.log(b.clientHeight);
+
+
+
+
+
+
+
+	   }
 
 	   function addListener(json, marker) {
 
@@ -1270,8 +1303,14 @@ console.log(mSo);
           var overlay = angular.element(document.getElementById('mobServiceOverlay'));
 
 	      google.maps.event.addListener(marker, 'click', function() {
-	      	console.log("^^^^check assumptions");
-	      	console.log(json.hoursOpen);
+	      	// console.log("^^^^check assumptions");
+	      	// console.log(json.hoursOpen);
+
+
+
+
+
+
        		setPlaceData(json);
        		setPrintWindow(json);
        		setOverlayData(json);
@@ -1298,8 +1337,9 @@ console.log(mSo);
     			console.log("set cm.style.height");
     			console.log(cm.style.height);
             }
-
-	        resizeMap();	
+            
+	        resizeMap();
+	        // setWindowCss();	
 	        findActive();
 	
 	        var lat = json.location[0].lat;

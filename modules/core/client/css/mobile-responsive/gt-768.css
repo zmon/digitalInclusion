@@ -16,22 +16,24 @@
 	    left: 10em;
 	    top: 7em;
 	}
-	img#imgPath {
-	    width: 6%;
-	    position: relative;
-	    left: -3.5em;
-	}
+img#imgPath {
+    width: 5%;
+    position: relative;
+    left: -.25em;
+    top: .3em;
+}
 	section.isp-main.ng-scope {
 	    position: absolute;
 	    top: 12em;
 	}
 	#isp-header {
-		position: relative;
-		top: -1em;
-	    color: black;
-	    opacity: .888;
-	    text-decoration: underline;
-	}
+    position: relative;
+    top: -1.8em;
+    color: black;
+    font-size: .95em;
+    opacity: .888;
+    text-decoration: underline;
+}
 	md-content#ispMdContent {
 	    padding-top: 1em;
 	}
@@ -62,5 +64,12 @@
 	    position: absolute;
 	    left: 20em;
 	    top: 10em;
+	}
+	.row.butane {
+
+
+		box-shadow: none;
+    border: none;
+    background: none;
 	}
 }

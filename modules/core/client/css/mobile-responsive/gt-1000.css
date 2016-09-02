@@ -92,21 +92,21 @@
 	}
 
 	a.pure-button.x-small-custom {
-		font-size: .625em;
-		position: relative;
-		top: -5em;
-		margin-left: -.35em;
-		width: 92px;
-	}
-	aside#opHours {
-    font-size: .6em;
+    font-size: .625em;
+    position: relative;
+    top: .5em;
+    margin-left: -.35em;
+    width: 200px;
+}
+aside#opHours {
+    font-size: .7em;
     text-align: left;
     position: relative;
     top: -6em;
     margin: 0 auto 0 11em;
     line-height: 12px;
-        top: -9em;
-    margin: 0 auto 0 12.5em;
+    top: -7.5em;
+    margin: 0 auto 0 8em;
 }
 aside#opHoursNA {
     position: relative;
@@ -116,12 +116,18 @@ aside#opHoursNA {
 #header p#hrsHead {
     letter-spacing: normal;
     position: relative;
-    top: -6em;
+    top: -3.6em;
+    width: 50px;
+    left: 1.8em;
+    line-height: 10px;
 }
 #header p#dscHead {
     letter-spacing: normal;
     position: relative;
-    top: -6em;
+    top: -3.6em;
+    width: 50px;
+    left: 1.8em;
+    line-height: 10px;
 }
 aside#opHours p.opDay {
     font-size: .9em;
@@ -166,8 +172,9 @@ div#placeCategory {
     margin-left: 3.3em;
     margin-bottom: 2.02em;
     position: relative;
-    top: -4.75em;
-    left: 2em;
+    top: -4.5em;
+    text-align: left;
+    left: 5em;
     font-size: .7em;
 }
 	div.cist {
@@ -212,7 +219,7 @@ div#placeCategory {
 .cest {
     border-bottom: none;
     /* border-bottom: 1px solid lightgray; */
-    margin: 0 1.83em 1em 1.83em;
+    margin: 0 2.83em 1em 2.83em;
     background: #F5F5F5;
     border: 1px solid #ccc;
     background: #fffefb;
@@ -225,6 +232,10 @@ div#placeCategory {
     top: 1.4em;
     border-left: none;
     box-shadow: 0 0 .5px #adadad;
+        left: 8px;
+    top: 0;
+    margin-top: -.9em;
+        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 15px 0 rgba(0,0,0,.22),0 1px 8px 0 rgba(0,0,0,.2);
 }
 	div#placeTitle {
 font-size: 1em;
@@ -290,11 +301,12 @@ font-size: 1em;
     margin-left: 0.65em;
     width: 95%;
     position: relative;
-    top: -7em;
+    top: -7.5em;
     line-height: 13px;
     font-size: .75em;
     border: none;
     background: none;
+        top: -6.62em;
 }
 	.row.butane {
 	    margin-left: .01em;
@@ -372,7 +384,15 @@ font-size: 1em;
 	section#first {
 	    height: 870px;
 	}
-
+	.legend-table {
+    width: 17em;
+    font-size: .7em;
+    border: none;
+    position: relative;
+    left: 2.8em;
+    top: -.4em;
+    background: transparent;
+}
 	main#main-page {
 		position: relative;
 		top: -16.4em;
@@ -594,7 +614,7 @@ font-size: 1em;
 	    margin-top: -.2575em;
 	}
 section#customMap {
-    height: 662px;
+        height: 672px;
     top: -6.99em;
     width: 938px;
     left: -4.3em;
@@ -635,6 +655,8 @@ section#customMap {
 	    background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3);
 	    /* background: linear-gradient(to left, #dfe6f5 , #eff4fb); */
 	    border-radius: 8px;
+	    box-shadow: 0 0 0 1px #e6e6e6;
+	        top: .05em;
 	}
 	section.isp-main.ng-scope {
 	
@@ -649,5 +671,9 @@ section#customMap {
     top: 15em;
 }
 
-
+	.row.butane {
+		box-shadow: 0 1px 2px -1px rgba(148, 148, 148, 0.2),0 1px 2px 0 rgba(158, 158, 158, 0.14),0 1px 3px 0 rgba(0,0,0,.32);
+		    background: #f3f3f3;
+		        border-bottom: 1px solid #ccc;
+	}
 }
