@@ -188,16 +188,25 @@ var list = {};
 
 $scope.thisBounds;
 
-setTimeout(function(){
-              // console.log("..");
-              // console.log(svgW[0]);
-              svgW.removeClass("vis-off");
-              svgW.addClass("vis-on");
-              $scope.loading = false;
-                 var cMap = angular.element(document.getElementById("customMap"));
 
-          cMap.removeClass("vis-off");
-          cMap.addClass('vis-on')
+	setTimeout(function() {
+		console.log("5 seconds");
+		console.log($scope.markers.wifi.free.length);
+		console.log($scope.markers.wifi.customer.length);
+
+	}, 5000);
+
+
+
+setTimeout(function(){
+
+      svgW.removeClass("vis-off");
+      svgW.addClass("vis-on");
+      $scope.loading = false;
+         var cMap = angular.element(document.getElementById("customMap"));
+
+  cMap.removeClass("vis-off");
+  cMap.addClass('vis-on')
 }, 2000);
 
 
