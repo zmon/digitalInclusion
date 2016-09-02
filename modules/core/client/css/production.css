@@ -95,8 +95,10 @@ button#e2, button#e1, button#e3, button#e4 {
 		
 	.table-wrapper{
 		background: #F5F5F5;
+		box-shadow: 0 0 0 1px #e6e6e6;
 	}
 	.row.butane {
+		box-shadow: 0 1px 2px -1px rgba(148, 148, 148, 0.2),0 1px 2px 0 rgba(158, 158, 158, 0.14),0 1px 3px 0 rgba(0,0,0,.32);
 /*	    background: #EEEEEE;
 	    background: #F5F5F5;*/
 	    /*background: #ECECEC;*/
@@ -342,4 +344,9 @@ div.cest a {
 /*html, body {max-height: 1200px;}*/
 
 
-div.cest {border: 3px double #E5E5E2;}
+div.cest {
+	border: 3px double #E5E5E2;
+	    background: #fffefb;
+	box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 15px 0 rgba(0,0,0,.22),0 1px 8px 0 rgba(0,0,0,.2);
+
+}

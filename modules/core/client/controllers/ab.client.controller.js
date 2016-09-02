@@ -69,7 +69,7 @@ var list = {};
       $scope.bool = false
       $scope.soActive = false;
 
-
+      var sidePanelOpen = false;
 
       var headerToggleId = document.getElementById('headerToggleId');
 
@@ -816,7 +816,19 @@ console.log(mSo);
 	    $scope.showImgCa = false;
     }
 
+    function fixDescriptionHeight(str) {
+		var html = document.getElementById('placeDescription');
+        var len = str.length;
 
+        if (len >= 280) {
+        	console.log("description too long");
+        	html.style.maxHeight = "180px";
+        	html.style.overflowY = "scroll";
+        } else if (len < 280) {
+        	console.log("short description");
+        	html.style.overflowY = "hidden";
+        }
+    }
 
     function setPlaceData(json) {
 
@@ -886,9 +898,11 @@ console.log(mSo);
 
       if (str < 1) {
       		document.getElementById('placeDescription').style.textAlign = "center";
+      		document.getElementById('placeDescription').style.overflowY = "hidden";
     		return "Not available";
         // document.getElementById('placeDescription').innerText = str + "??";
       } else if (strLng >= 1) {
+      	fixDescriptionHeight(str);
       	document.getElementById('placeDescription').style.textAlign = "left";
       	return str;
       }
@@ -1291,11 +1305,24 @@ console.log(mSo);
 
 
 
+	   }
 
-
-
+	   function resetWindowTopCss() {
 
 	   }
+
+
+	   function isDesktopView() {
+	   	var c = getCurrentWidth();
+	   	if (c <= 768) {
+	   		return false;
+	   	} else if (c > 768) {
+	   		return true;
+	   	}
+	   }
+
+
+
 
 	   function addListener(json, marker) {
 
@@ -1307,8 +1334,15 @@ console.log(mSo);
 	      	// console.log(json.hoursOpen);
 
 
+	      	if (isDesktopView()) {
+	      		console.log("itt's a vport") 
+	      		sidePanelOpen = true;
 
-
+	      	} else {
+	      		console.log("is not vport")
+	      	}
+	 
+	      	
 
 
        		setPlaceData(json);
@@ -1339,7 +1373,7 @@ console.log(mSo);
             }
             
 	        resizeMap();
-	        // setWindowCss();	
+	        setWindowCss();	
 	        findActive();
 	
 	        var lat = json.location[0].lat;
@@ -1359,6 +1393,7 @@ console.log(mSo);
 				recenterToMarker();
     		}
 
+    		
 
 
 	        var anchor = new google.maps.MVCObject();
@@ -1369,6 +1404,12 @@ console.log(mSo);
 	        var desc = json.description;
 	        var description = document.getElementById('placeDescription');
 	        var l = desc.length;
+
+	        // if (l > 280) {
+	        // 	console.log("description too long");
+	        // 	description.style.maxHeight = "180px";
+	        // 	description.style.overflowY = "scroll";
+	        // }
 	        // if (l < 42 || l === null) {
 	        //   placeDescription.style.textAlign = "center";
 	        // } else {
@@ -1833,37 +1874,59 @@ console.log(mSo);
 	          // document.getElementById('trix').style.width = x;
 
 	          // console.log(cWidth + " is less than 768");
-	        } else if (width > 768 && width < 1000) {
-	        	console.log("2. 768 to 1000");
+	        } else if (width > 768 && width < 1000 && !sidePanelOpen) {
+	        	console.log("2. 768 to 1000 -- sidePanelOpen=false");
 	        	cm.style.width = "719px";
-	        } else if (width >= 1000 && width < 1200) {
+	        } else if (width > 768 && width < 1000 && sidePanelOpen) {
+	        	console.log("2. 768 to 1000 -- sidePanelOpen=true");
+	        	cm.style.width = "65%";
+	        } else if (width >= 1000 && width < 1200 && !sidePanelOpen) {
 	        	console.log("3. 1000 to 1200");
 	    		cm.style.width = "939px";
-	        } else if (width >= 1200 && width < 1280) {
+	        } else if (width >= 1000 && width < 1200 && sidePanelOpen) {
+	        	console.log("3. 1000 to 1200");
+	    		cm.style.width = "65%";
+	        } else if (width >= 1200 && width < 1280 && !sidePanelOpen) {
 	        	console.log("4. 1200 to 1280");
 	   			cm.style.width = "1017px";
-	        } else if (width >= 1280 && width < 1660) {
+	        } else if (width >= 1200 && width < 1280 && sidePanelOpen) {
+	        	console.log("4. 1200 to 1280");
+	   			cm.style.width = "65%";
+	        } else if (width >= 1280 && width < 1660 && !sidePanelOpen) {
 	        	console.log("5. 1280 to 1660");
 	        	cm.style.width = "1140px";
-	        } else if (width >= 1660 && width < 1680) {
+	        } else if (width >= 1280 && width < 1660 && sidePanelOpen) {
+	        	console.log("5. 1280 to 1660");
+	        	cm.style.width = "800px";
+	        } else if (width >= 1660 && width < 1680 && !sidePanelOpen) {
 	        	console.log("6. 1280 to 1660");
 	        	cm.style.width = "1130px";
-	        } else if (width >= 1680) {
+	        } else if (width >= 1660 && width < 1680 && sidePanelOpen) {
+	        	console.log("6. 1280 to 1660");
+	        	cm.style.width = "65%";
+	        } else if (width >= 1680 && !sidePanelOpen) {
 	        	console.log("7. 1660 to infinity");
 	        	cm.style.width = "1130px";
+	        } else if (width >= 1680 && sidePanelOpen) {
+	        	console.log("7. 1660 to infinity");
+	        	cm.style.width = "65%";
 	        }
 	
 	    }
 	   
 
 	    function removeWindow() {
-	    	var c = getCurrentWidth();
-	      sideWindowElement.style.display = "none";
-	      mapCanvasElement.style.width = resetMapWidth(c);
+	    	  var c = getCurrentWidth();
+		      sideWindowElement.style.display = "none";
+		      mapCanvasElement.style.width = resetMapWidth(c);
 	      // cm.style.width = "100%";
-        if (innerWidth < 768) {
-            $scope.mobileWindowOpen = false;
-        }
+	          if (innerWidth <= 768) {
+	            $scope.mobileWindowOpen = false;
+	          } else if (innerWidth > 768) {
+	          	 sidePanelOpen = false;
+	          }
+
+	         
 
 	    }
       var html = document.getElementsByTagName('html')[0];
@@ -1891,7 +1954,11 @@ console.log(mSo);
 
 
 
+
+
    	 var resizeMap = function() {
+   	 	console.log("resizeMap()");
+   	 	console.log(sidePanelOpen);
         var cWidth = getCurrentWidth();
         var c = getCurrentWidth();
         if (c <= 768) {

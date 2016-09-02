@@ -1,56 +1,101 @@
 @media (min-width: 1281px) {
-md-card#hacksalot {
-    background: white;
-    height: 598px;
-    border: 3px double gainsboro;
-    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
-    position: relative;
-    left: .573em;
-    top: .75em;
-    height: 620px;
-    width: 370px;
-    width: 270px;
-    overflow: hidden;
-}
-	.cest {
-	    left: -47px;
-	    width: 260px;
-	    margin-top: -.8995em;
+	md-card#hacksalot {
+	    background: white;
+	    height: 598px;
+	    border: 3px double gainsboro;
+	    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
+	    position: relative;
+	    left: -1.5em;
+	    top: .75em;
+	    height: 620px;
+	    width: 320px;
+	    overflow: hidden;
 	}
+	div.cest {
+	    left: -20px;
+    	width: 280px;
+	   
+   	 	margin-top: -.9em;
+	}
+	aside#opHoursNA {
+	    position: relative;
+	    font-size: .65em;
+	    top: -6.5em;
+	}
+	#header p#hrsHead {
+	    font-size: .6em;
+	    line-height: 11px;
+	    top: -2.8em;
+	    left: 1.3em;
+	}
+	#header p#dscHead {
+	    top: -3.3em;
+	    font-size: .6em;
+	    left: 1.3em;
+	}
+
 	div#placeTitle {
-    font-size: .8em;
-    background: #fffef8;
-    background-color: #EEEEEE;
-    /* border: 2px solid lightgray; */
-    /* border-bottom: 1px solid lightgray; */
-    border-right: none;
-    border-left: none;
-    box-shadow: 0 0 .5px black;
+	    font-size: .85em;
+	    background: #fffef8;
+	    /* background-color: #EEEEEE; */
+	    /* border: 2px solid lightgray; */
+	    /* border-bottom: 1px solid lightgray; */
+	    border-right: none;
+	    border-left: none;
+	    box-shadow: 0 0 .5px black;
+	    position: relative;
+	    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+	    top: 2.4em;
+	    box-shadow: none;
+	    border: none;
+	    padding: 1em .5em 2.4em .5em;
+	    width: 94.7%;
+	    margin-left: .3em;
+	    margin-bottom: 2em;
+	}
+	img#imgPath {
+    width: 6%;
     position: relative;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
-    top: -3.14em;
-    box-shadow: none;
-    border: 1px solid #ccc;
-    padding: 1em .5em 2.4em .5em;
-    width: 94.7%;
-    margin-left: .3em;
-    margin-bottom: 2em;
+    left: .55em;
+    top: -.1em;
 }
-div#buttons-wrapper {
-    position: absolute;
-    left: 13em;
-    width: 18.9em;
-    margin: 0;
-    padding: 0;
-    top: 5.9em;
-    z-index: 99999;
-    left: 14.2em;
-    border: none;
-}
+	aside#opHours {
+	    font-size: .625em;
+	    text-align: left;
+	    position: relative;
+	    top: -6em;
+	    margin: 0 auto 0 11em;
+	    line-height: 12px;
+	    top: -6.5em;
+	    margin: 0 auto 0 7.5em;
+	}
+	div#buttons-wrapper {
+	    position: absolute;
+	    left: 13em;
+	    width: 18.9em;
+	    margin: 0;
+	    padding: 0;
+	    top: 5.9em;
+	    z-index: 99999;
+	    left: 14.2em;
+	    border: none;
+	}
+	div#placeAddress {
+	    margin-top: .84em;
+	    position: relative;
+	    top: -3.3em;
+	    font-size: .7em;
+	    width: 12em;
+	    margin: .84em auto 0 auto;
+	}
+	a#map-directions {
+	
+	    top: -4.5em;
+	}
 	.glyphicon {
 	    position: relative;
-	    top: 6.5px;
-	    left: -7.25px;
+	        top: 8px;
+    left: -26px;
 	    display: inline-block;
 	    font-family: 'Glyphicons Halflings';
 	    font-style: normal;
@@ -66,22 +111,24 @@ div#buttons-wrapper {
 	    border: none;
 	    padding: .5em 1em;
 	    text-align: start;
-	    margin-left: .3em;
-	    width: 95%;
+	    margin-left: 6.2em;
+	    width: 60%;
 	    position: relative;
-	    top: -17.5em;
+	    top: -6.1em;
 	    line-height: 11px;
-	    font-size: .55em;
+	    font-size: .65em;
 	    border: none;
 	    background: none;
 	}
-	div#placeCategory {
+div#placeCategory {
     margin-top: .95em;
     font-size: .62em;
-    width: 10em;
+    width: 20em;
     line-height: 10px;
+    background: none;
     margin-top: -4.9em;
-    margin-left: 5.4em;
+    top: 3.2em;
+    margin-left: 3em;
     margin-bottom: 0;
 }
 	#new-service-button {
@@ -91,17 +138,17 @@ div#buttons-wrapper {
 	}
 	i.fa.fa-phone {
     position: relative;
-    top: -8.5em;
+    top: -2.5em;
     left: -.2em;
     color: darkgreen;
     font-size: .7em;
 }
-	span#placePhone {
-    font-size: .7em;
+span#placePhone {
+    font-size: .725em;
     text-decoration: underline;
     color: #0b5d77;
     position: relative;
-    top: -8.5em;
+    top: -2.5em;
 }
 	.nav > li > a:hover, .nav > li > a:focus {
 	    text-decoration: none;
@@ -321,7 +368,7 @@ div#buttons-wrapper {
 	  width: 65px;
 	}
 	section#customMap {
-	    height: 617px;
+	    height: 620px;
 	    border-left: 1px solid #626f64;
 	    border-right: 1px solid #637766;
 	    box-shadow: 0 1px 0px 0px #f0f3cb, 0 -1px 0px 0px #7e806f, 4px 0 6px -4px rgba(77, 87, 95, 0.6), -4px 0 5px -2px rgba(52, 58, 68, 0.7);
@@ -336,7 +383,7 @@ div#buttons-wrapper {
 	    border-bottom-right-radius: 2px;
 	    border-bottom-left-radius: 2px;
 	    left: .05em;
-	    width: 1136px;
+	    width: 1138px;
 	    position: relative;
 	    border-bottom: none;
 	    top: -1.45em;
@@ -594,9 +641,9 @@ section.meta-w-form {
 	a.pure-button.x-small-custom {
 	    font-size: .625em;
 	    position: relative;
-	    top: -16.7em;
-	    margin-left: -.35em;
-	    width: 108px;
+	    top: 1.5em;
+	    margin-left: -.01em;
+	    width: 200px;
 	}
 
 	#wrapper {
@@ -616,7 +663,7 @@ section.meta-w-form {
 	    width: 1153px;
 	    width: 1139px;
 	    border-bottom-left-radius: 0;
-	        top: -1.975em;
+	    top: -1.975em;
 	    /* background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAQ0lE…8R+4+IoL3HswM1N0TEchM3HtBVTUrzIydpKqzcs7Bzg++WR+Le2A33AAAAABJRU5ErkJggg==') repeat; */
 	}
 

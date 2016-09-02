@@ -8,6 +8,15 @@
 	
 	    left: 10em;
 	}
+	md-card#hacksalot {
+		height: 670px;
+	}
+	img#imgPath {
+	    width: 5%;
+	    position: relative;
+	    left: -.55em;
+	    top: .31em;
+	}
 	main#main-page {
 		position: relative;
 		top: -16.4em;
@@ -72,14 +81,14 @@
 	li.realign {
 	    left: -16.7em;
 	}	
-#sw {
-    left: 58.3%;
-    width: 27em;
-    top: -6.3em;
-    box-shadow: none;
-    background: none;
-    border: none;
-}
+	#sw {
+	    left: 58.3%;
+	    width: 27em;
+	    top: -6.3em;
+	    box-shadow: none;
+	    background: none;
+	    border: none;
+	}
 	.row.butane {
 		width: 1023px;
 		    width: 1015px;
@@ -92,10 +101,24 @@
 	    left: 11.5em;
 	
 	}
+	.glyphicon {
+		position: relative;
+		    left: 32px;
+	}
+	div.cest {
+		margin-top: -.1em;
+		left: 16px;
+	}
 	section#customMap {
 
 	    width: 1023px;
 	    width: 1015px;
 
+	}
+	.f-desc {
+		overflow-x: hidden;
+	    padding: .5em 5em;
+	    width: 85%;
+	    margin-left: 3em;
 	}
 }

@@ -153,11 +153,10 @@
 	        border-radius: 64px;
 	}
 	md-card#hacksalot {
-
 	    width: 370px;
-	  
+	    left: -.75em;
+	    top: -.9em;
 	}
-
 	main#main-page {
 		position: relative;
 		top: -10em;
@@ -196,7 +195,7 @@
 		background: olive;
 		border: 1px solid #ddd;
 
-		margin-top: -.35em;
+		margin-top: -.2em;
 		margin-bottom: .2em;
 		padding-top: .275em;
 		font-size: .72em;
@@ -246,7 +245,7 @@
 		position: absolute;
 		height: 10.25em;
 		border-radius: 2px;
-		top: -2.675em;
+		top: -2.45em;
 		border: 1px solid #b7b5b1;
 		box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a;
 		width: 175.5%;
@@ -361,23 +360,25 @@
 		border-left: 1px solid gray;
 		border-color:#ccc;
 		width: 1132px;
-    left: -.1em;
+		    margin-top: -.1em;
+    	left: -.1em;
 	}
 	div#buttons-wrapper {
-		left: 9em;
-		top: 5.825em;
+		left: 11.5em;
+		top: 6.2em;
 	}
 	section#customMap {
-	    top: .575em;
-	    position: relative;
-	    border-bottom: 1px solid gray;
-	    top: -.9em;
+    top: .575em;
+    position: relative;
+    border-bottom: 1px solid gray;
+    top: -.6em;
     left: -.05em;
+    height: 668px;
     width: 1130px;
-        border-color: #ccc;
+    border-color: #ccc;
     border-top: 1px solid #ccc;
-	    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2),0 12px 17px 2px rgba(0,0,0,.14),0 5px 22px 4px rgba(0,0,0,.12);
-	}
+    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2),0 12px 17px 2px rgba(0,0,0,.14),0 5px 22px 4px rgba(0,0,0,.12);
+}
 	.nav-tabs {
 		position: absolute;
 		width: 100%;
@@ -386,7 +387,7 @@
 		    position: absolute;
     width: 160%;
     left: -16em;
-    top: -7.8em;
+        top: -4.5em;
     padding-left: 18em;
     padding-top: .75em;
 	}
@@ -401,7 +402,7 @@
 	section#queryForm {
 	    position: relative;
 	    top: -5.95em;
-	    left: .5em;
+	    left: 6.5em;
 	    height: 3em;
 	}
 	.move-up {
@@ -418,8 +419,14 @@
 	    /* font-size: .85em; */
 	    /* letter-spacing: .71px; */
 	}
-/*
-	a.button.special.fit.small.fit-cx {
-	    width: 12em;
-	}*/
+
+	div.cest {
+	    left: 20px;
+	    width: 290px;
+	    margin-top: -.9em;
+	}
+
+	div#placeTitle {
+		top: 4em;
+	}
 }

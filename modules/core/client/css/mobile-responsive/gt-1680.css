@@ -8,10 +8,10 @@
 	    margin-top: .55em;
 	}
 	div#buttons-wrapper {
-	    left: 10em;
-	    top: 4.7em;
-	    width: 16em;
-	}
+    left: 10.5em;
+    top: 5.1em;
+    width: 16em;
+}
 	#main input[type=text], #main input[type=password], #main input[type=email], #main select, #main textarea {
     background: rgba(245, 251, 255, 0.99);
     border-color: #bdced4;
@@ -164,21 +164,21 @@
 	    background: linear-gradient(to left, #8e9eab , #c3d9de,#8e9eab );
 	}
 	section#customMap {
-			height: 640px;
-			border-left: 1px solid #626f64;
-			border-right: 1px solid #637766;
-			box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
-			border: 2px solid #676f03;
-			margin-top: 1.24em;
-			margin-bottom: -2.7em;
-			border: none;
-			border-bottom: none;
-			border-top: none;
-			top: -4.15em;
-			position: relative;
-			    left: .05em;
+    height: 646px;
+    border-left: 1px solid #626f64;
+    border-right: 1px solid #637766;
+    box-shadow: 0 1px 0px 0px #5c6116, 0 -1px 0px 0px #7e806f, 8px 0 10px -4px rgba(77, 87, 95, 0.6), -8px 0 10px -4px rgba(52, 58, 68, 0.7);
+    border: 2px solid #676f03;
+    margin-top: 1.24em;
+    margin-bottom: -2.7em;
+    border: none;
+    border-bottom: none;
+    border-top: none;
+    top: -4em;
+    position: relative;
+    left: .05em;
     width: 1128px;
-		}
+}
 
 	main#main-page {
 		position: relative;
@@ -410,5 +410,15 @@
 	}
 	section.isp-main.ng-scope {
 	   	left: 7em;
+	}
+	md-card#hacksalot {
+		left: -.65em;
+	    height: 646px;
+
+	}
+	div.cest {
+	    left: 8px;
+	    /*width: 290px;*/
+	    margin-top: -.75em;
 	}
 }
