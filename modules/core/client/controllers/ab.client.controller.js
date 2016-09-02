@@ -550,8 +550,7 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 var mSo = angular.element(document.getElementById('mobServiceOverlay'));
 mSo = mSo[0];
 mSo.style.display="none";
-console.log("mSo");
-console.log(mSo);
+
 
 
 		// function addBounce 

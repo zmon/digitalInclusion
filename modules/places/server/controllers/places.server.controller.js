@@ -420,8 +420,30 @@ exports.delete = function (req, res) {
  * List of Places
  */
 exports.list = function (req, res) {
+  console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+  console.log("        .              .          .          .");
+  console.log("        .              .          .          .");
+  console.log("        .              .          .          .");
+  console.log("        .              .          .          .");
+  console.log("        .              .          .          .");
+  console.log("exports.list");
+  console.log("        .              .          .          .");
+  console.log("req");
+  console.log(req.body);
+  console.log("        .              .          .          .");
+  console.log("        .              .          .          .");
+  // console.log("res");
+  // console.log(res);
+  console.log("        .              .          .          .");
+  console.log("        .              .          .          .");
+  console.log("        .              .          .          .");
+  console.log("        .              .          .          .");
+  console.log("        .              .          .          .");
+  console.log("**********************************************");
   Place.find().sort('-created').populate('user', 'displayName').exec(function (err, places) {
     if (err) {
+      console.log("######err########err########errr#######err");
+      console.log(errorHandler.getErrorMessage(err));
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
