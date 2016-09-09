@@ -16,8 +16,11 @@
 		border: 1px solid #7b7b76;
 		border-radius: 8px;
 		border: none;
-		    left: .15em;
+		    left: .05em;
 		
+	}
+	#header h1 {
+		left: 0;
 	}
 	md-card#overlay-data-window {
 	    width: 50%;

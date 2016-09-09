@@ -1,7 +1,7 @@
 apps:
   - script   : server.js
-    instances: 4
-    exec_mode: cluster
+    instances: 1
+    exec_mode: fork
     watch  : true
     env:
       NODE_ENV: production

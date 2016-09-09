@@ -1370,7 +1370,9 @@ mSo.style.display="none";
 
 
 	   function addListener(json, marker) {
-
+	   	// console.log("addListener");
+	   	// console.table(json);
+	  
           var userDevice = browser;
           var overlay = angular.element(document.getElementById('mobServiceOverlay'));
 

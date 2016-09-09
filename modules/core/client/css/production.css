@@ -151,6 +151,10 @@ button#e2, button#e1, button#e3, button#e4 {
 	    border: 4px double #ccc;
 	}
 
+	#header h1 {
+	border-top: none;
+	border-bottom: 1px solid #ccc;
+}
 
 
 
@@ -302,7 +306,9 @@ button.md-button.new-service-button span.ng-scope {
 	    text-align: justify;
 	    font-size: smaller;
 	}
-
+	body {
+    background: #BDBDBD;
+}
 }
 
 
@@ -310,10 +316,6 @@ div#mobServiceOverlay {
 	border: 1px solid #ccc;
 }
 
-#header h1 {
-	border-top: none;
-	border-bottom: 1px solid #ccc;
-}
 
 
 

@@ -23,7 +23,13 @@
     // spinnerService.show('mapSpinner');
 
 
-   
+
+      var a = $window.innerWidth;
+      var html = document.querySelector("#header");
+      var b = html.innerWidth;
+      console.log("setLeftValue");
+      console.log(a);
+      console.log(b);
 
 
 
