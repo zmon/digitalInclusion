@@ -12,23 +12,28 @@ var list = {};
 
 	angular
 		.module('core.map')
-		.controller('NapController', NapController);
+		.controller('MapController', MapController);
 		
-	NapController.$inject = ['$scope', '$window', '$timeout', '$http', '$location', 'zipcode', 'PlacesService', 'zcPosition'];
+	MapController.$inject = ['$scope', '$window', '$timeout', '$http', '$location', 'zipcode', 'PlacesService', 'zcPosition', 'getPlacesService'];
 
-	function NapController($scope, $window, $timeout, $http, $location, zipcode, PlacesService, zcPosition) {
+	function MapController($scope, $window, $timeout, $http, $location, zipcode, PlacesService, zcPosition, getPlacesService) {
 
-	    var browser = $window.navigator.appCodeName;
-	    console.log(">>anybodyhome<<")
-
-
-	   
+	    var browser = $window.navigator.appCodeName;   
 	    var zipcodes = zipcode.getZipcodes();
 	    var libertyMemorial = [39.081009, -94.585944];
 	    var eighteenthAndVine = [39.091804, -94.562090];
-
+	    $scope.activeSpot = {
+	    	marker: null, 
+	    	meta: null
+	    }
 
 	    $scope.smsFormOpen = false;
+	    $scope.toggle = {
+	    	wifi: true,
+	    	access: false,
+	    	training: false,
+	    	retail: false
+	    }
 	    $scope.markers     =  { 
                                wifi: { 
                                		  free: [], 
@@ -64,7 +69,7 @@ var list = {};
       $scope.bool = false
       $scope.soActive = false;
 
-
+      var sidePanelOpen = false;
 
       var headerToggleId = document.getElementById('headerToggleId');
 
@@ -111,13 +116,46 @@ var list = {};
     
     	var vm = this;
 
-      // var allPlaces = PlacesService.query();
-	      $scope.places = $http.get('/api/places').success(function(data){
-	        sortResponses(data);
-	      }).error(function(err) {
-	        console.log(err);
-	        return err;
-	      });
+      // $scope.places = PlacesService.query();
+
+
+      $scope.places = getPlacesService.getPlaces(function(places) {
+
+              // caption: info.caption
+                    // map_icon_label: '<span class="map-icon map-icon-cafe mil-green"></span>'
+                    // map_icon_label: '<span class="map-icon map-icon-point-of-interest"></span>'
+              
+            $scope.places = places;
+            console.log("places");
+            console.log(places);
+    		sortResponses(places);
+        
+           
+        });
+
+
+      console.log($scope.places);
+      // var qtyP = $scope.places.length;
+      // var e;
+      // for (e=0;e<qtyP;e++) {
+      // 	sortResponses($scope.places[e]);
+      // }
+      // .success(function(data) {
+      // 	sortResponses(data);
+      // }).error(function(err) {
+      // 	console.log(err);
+      // 	return err;
+      // });
+
+
+
+    
+	      // $scope.places = $http.get('/api/places').success(function(data){
+	      //   sortResponses(data);
+	      // }).error(function(err) {
+	      //   console.log(err);
+	      //   return err;
+	      // });
 
 
       function sortResponses(places) {
@@ -150,16 +188,29 @@ var list = {};
 
 $scope.thisBounds;
 
-setTimeout(function(){
-              // console.log("..");
-              // console.log(svgW[0]);
-              svgW.removeClass("vis-off");
-              svgW.addClass("vis-on");
-              $scope.loading = false;
-                 var cMap = angular.element(document.getElementById("customMap"));
 
-          cMap.removeClass("vis-off");
-          cMap.addClass('vis-on')
+	setTimeout(function() {
+		console.log("5 seconds");
+		console.log($scope.markers.wifi.free.length);
+		console.log($scope.markers.wifi.customer.length);
+		var a = $scope.markers.wifi.free.length;
+		var b = $scope.markers.wifi.customer.length;
+		if (a===0) {
+			setWifiMarkers();
+		}
+	}, 5000);
+
+
+
+setTimeout(function(){
+
+      svgW.removeClass("vis-off");
+      svgW.addClass("vis-on");
+      $scope.loading = false;
+         var cMap = angular.element(document.getElementById("customMap"));
+
+  cMap.removeClass("vis-off");
+  cMap.addClass('vis-on')
 }, 2000);
 
 
@@ -189,17 +240,37 @@ setTimeout(function(){
       function isStateActive(buttonType) {
 
       }
+
+
+      function showZipResultsOnly() {
+
+      }
+
+      function resetToggleState(category) {
+      	if (category === "wifi-free" || category === "wifi-customer") {
+      		resetCss(e1, true);
+      	} else if (category === "computers-retail") {
+      		resetCss(e4,true);
+      	} else if (category === "computers-access") {
+      		resetCss(e3,true);
+      	} else if (category === "training-day" || category === "training-night") {
+      		resetCss(e2, true);
+      	}
+      }
 	    
 
 	    function callback(data) {
 
 
-
+	    console.log("callback(data)");
+	    console.log(data);
 	      var i;
 	      var length = data.length;
 	      resetToNormal();
 	      for (i = 0; i < length; i++) {
 	        var place = data[i];
+	        console.log(place);
+	        resetToggleState(place.primaryCategory);
           // console.log(place);
 	        createMarker(place);
 	      }
@@ -250,6 +321,24 @@ setTimeout(function(){
             // console.log("timeout");
             $scope.map.setZoom(15);
         }, 100);
+      }
+
+
+      function clearMap() {
+      	var a = $scope.markers.wifi.free.length;
+      	var b = $scope.markers.wifi.customer.length;
+      	console.log(a);
+      	console.log(b);
+      	var i;
+      	var u;
+
+      	for (i=0;i<a;i++) {
+      		$scope.markers.wifi.free[i].setMap(null);
+      	}
+      	for (u=0;u<b;u++) {
+      		$scope.markers.wifi.customer[u].setMap(null);
+      	}
+
       }
 
 
@@ -310,53 +399,54 @@ setTimeout(function(){
 
 	    $scope.searchByZip = function(zipcode) {
 	      resetForm();
-        $scope.zipSearchError = false;
+	      clearMap();
+        	$scope.zipSearchError = false;
 	      // console.log(masterZips);
-        var valid = validZipcode(zipcode);
+        	var valid = validZipcode(zipcode);
         // console.log("valid?");
         // console.log(valid);
 
-        if (valid) {
-          var zc = zcPosition.getZcPosition(zipcode);
-          var goTo = new google.maps.LatLng(zc[0], zc[1]);
-          recenterMap(goTo);
-          setPageHeightLong();
-          var body = {zip: zipcode};
-          $http.post('/api/places/query', body).success(function(data) {
-          
-            callback(data);
-          });
-        } else {
-          $scope.zipSearchError = true;
-          zse.style.display = "block";
-          $scope.zipSearchErrorMessage = "Error: Not a valid zipcode";
-          return recenterMap($scope.currentLocation);
-        }
+	        if (valid) {
+	          var zc = zcPosition.getZcPosition(zipcode);
+	          var goTo = new google.maps.LatLng(zc[0], zc[1]);
+	          recenterMap(goTo);
+	          setPageHeightLong();
+	          var body = {zip: zipcode};
+	          $http.post('/api/places/query', body).success(function(data) {
+	          
+	            callback(data);
+	          });
+	        } else {
+	          $scope.zipSearchError = true;
+	          zse.style.display = "block";
+	          $scope.zipSearchErrorMessage = "Error: Not a valid zipcode";
+	          return recenterMap($scope.currentLocation);
+	        }
 
-	      // var ll = checkForZip(zipcode);
-        
+		      // var ll = checkForZip(zipcode);
+	        
 
-	    }
+		  }
 
-	    $scope.place = {
-	      zip: ""
-	    }
+		    $scope.place = {
+		      zip: ""
+		    }
 
-	    function resetForm() {
-	      $scope.place.zip = '';
-	    };
-
-
-	    var callMethod = function() {
-	       // console.log("search results");
-	       // console.log($scope.searchResults);
-	    };
+		    function resetForm() {
+		      $scope.place.zip = '';
+		    };
 
 
-	    var counter = 0;
-	    function incrementToLimit(num) {
-	      // console.log(num + " reaching limit =>" + limit);
-	    }
+		    var callMethod = function() {
+		       // console.log("search results");
+		       // console.log($scope.searchResults);
+		    };
+
+
+		    var counter = 0;
+		    function incrementToLimit(num) {
+		      // console.log(num + " reaching limit =>" + limit);
+		    }
 
 	    
 
@@ -472,8 +562,8 @@ var mapVeil = angular.element(document.getElementById("map-veil"));
 
 var mSo = angular.element(document.getElementById('mobServiceOverlay'));
 mSo = mSo[0];
-console.log("mSo");
-console.log(mSo);
+mSo.style.display="none";
+
 
 
 		// function addBounce 
@@ -505,18 +595,44 @@ console.log(mSo);
 
 
 			var color = getColor(category);
-			var spot = new google.maps.Marker({
+			// $scope.activeSpot;
+			// $scope.activeSpot = new google.maps.Marker({
+			// 					    position: latLng,
+			// 					    icon: {
+			// 					      path: google.maps.SymbolPath.CIRCLE,
+			// 					      scale: 13, 
+			// 					      anchor: new google.maps.Point(.4, 1.6),
+			// 					      strokeColor: color,
+			// 					      strokeWeight: 1.5
+			// 	  			       },
+			// 	          		    map: $scope.map
+			// 				 	   })
+			if (category === "computers-access") {
+				var scaleN = 15;
+			} else if (category === "computers-retail") {
+				var scaleN = 14;
+			}
+			 else {
+				var scaleN = 13;
+			}
+			$scope.activeSpot = {
+				marker: new google.maps.Marker({
 								    position: latLng,
 								    icon: {
 								      path: google.maps.SymbolPath.CIRCLE,
-								      scale: 13, 
+								      scale: scaleN, 
 								      anchor: new google.maps.Point(.4, 1.6),
 								      strokeColor: color,
 								      strokeWeight: 1.5
 				  			       },
 				          		    map: $scope.map
-							 	   })
-			$scope.activeSpot = spot;
+							 	   }),
+				meta: {
+					primaryCategory: category
+				}
+			} 
+			// $scope.activeSpotMeta = {};
+			// $scope.activeSpot = spot;
 	
 
 
@@ -531,10 +647,10 @@ console.log(mSo);
 		}
 
 		function findActive() {
-			if ($scope.activeSpot == null) {
+			if ($scope.activeSpot.marker == null) {
 				
 			} else {
-				$scope.activeSpot.setMap(null);
+				$scope.activeSpot.marker.setMap(null);
 			}
 			
 		}
@@ -683,9 +799,7 @@ console.log(mSo);
     $scope.onSwipeRight = function(ev) {
       alert('You swiped right!!');
     };
-    $scope.onSwipeUp = function(ev) {
-      alert('You swiped up!!');
-    };
+
     $scope.onSwipeDown = function(ev) {
       alert('You swiped down!!');
     };
@@ -747,60 +861,63 @@ console.log(mSo);
 	    $scope.showImgCa = false;
     }
 
-   
+    function fixDescriptionHeight(str) {
+		var html = document.getElementById('placeDescription');
+        var len = str.length;
+
+        if (len >= 280) {
+        	console.log("description too long");
+        	html.style.maxHeight = "180px";
+        	html.style.overflowY = "scroll";
+        } else if (len < 280) {
+        	console.log("short description");
+        	html.style.overflowY = "hidden";
+        }
+    }
 
     function setPlaceData(json) {
-    	$scope.showImgFw = false;
-	    $scope.showImgCw = false;
-	    $scope.showImgDt = false;
-	    $scope.showImgNt = false;
-	    $scope.showImgCr = false;
-	    $scope.showImgCa = false;
-    	
-      // var addrStr = json.address1 + ", " + json.city
 
-            $scope.undefined = {};
-            // $scope.missing 
-             // document.getElementById('placeCategory').innerText = categoryIconText(json.primaryCategory);             
-             document.getElementById('placeAddress').innerText = json.address1;
-             document.getElementById('placeCity').innerText = json.city;
-             document.getElementById('placeState').innerText = json.state;
+		console.log("setPlaceData");
+		console.log(json);
+        var imgPath = document.getElementById('imgPath');
+        var hrs = json.hoursOpen[0];
+			setHours(hrs);
+        $scope.undefined = {};
+        var urlTag = document.getElementById('placeUrl');
+            
+        document.getElementById('placeAddress').innerText = json.readableAddress;
+             // document.getElementById('placeCity').innerText = json.city;
+             // document.getElementById('placeState').innerText = json.state;
              
       if (typeof json.primaryCategory != 'undefined') {
-      	// setInfoWinIcon(json.primaryCategory);
+      		var pc = json.primaryCategory;
       		var iconPath = "/modules/client/core/img/win/" + json.primaryCategory + ".png";
-      		console.log(iconPath);
-      	// var newimg = document.createElement('img');
-      	// newimg.addClass('infowindow-img');
-      	// var iw = angular.element(document.getElementById('info-wrapper'));
-      	// var iw = document.getElementById('info-wrapper');
-      	// iw.prepend(newimg);
-      	// var ico = document.getElementById('infowindow-img');
-      	// console.log("");
-      	// console.log("ico");
-      	// console.log(ico);
-      	// console.log("iw");
-      	// console.log(iw);
-      	// console.log("newimg");
-        document.getElementById('placeCategory').innerText = categoryIconText(json.primaryCategory);
+      		var path = getIcon(json.primaryCategory);
+      		imgPath.src = path;
+            document.getElementById('placeCategory').innerText = categoryIconText(json.primaryCategory);
       }
       if (typeof json.title != 'undefined') {
         document.getElementById('placeTitle').innerText = json.title;
       }
       if (typeof json.zip != "undefined") {
-        document.getElementById('placeZip').innerText = json.zip;           
+        // document.getElementById('placeZip').innerText = json.zip;           
       }
-      if (typeof json.hours != "undefined") {
-        document.getElementById('placeHours').innerText = json.hours;
+      if (typeof json.url != "undefined") {
+      	// console.log("tf");
+      	// urlTag.href = "http://" + json.url;
+      	// urlTag.innerText = json.url;
+      	// console.log(urlTag);
+        // document.getElementById('placeZip').innerText = json.zip;           
       }
-      if (typeof json.description != "undefined") {
-        document.getElementById('placeDescription').innerText = json.description;
-      }
+      // if (typeof json.hoursOpen != "undefined") {
+      //   document.getElementById('placeHours').innerText = json.hoursOpen;
+      // }
+      
       if (typeof json.phone != "undefined") {
         document.getElementById('placePhone').innerText = json.phone;              
       } 
 
-
+     document.getElementById('placeDescription').innerText = setDescription(json.description);
      var addrStr = json.readableAddress;
 
      var base = "https://www.google.com/maps/dir//";
@@ -820,6 +937,26 @@ console.log(mSo);
             // el.title.innerText = json.title;
     }
 
+    function setDescription(str) {
+    
+    	var strLng = str.length;
+
+      if (str < 1) {
+      		document.getElementById('placeDescription').style.textAlign = "center";
+      		document.getElementById('placeDescription').style.overflowY = "hidden";
+    		return "Not available";
+        // document.getElementById('placeDescription').innerText = str + "??";
+      } else if (strLng >= 1) {
+      	fixDescriptionHeight(str);
+      	document.getElementById('placeDescription').style.textAlign = "left";
+      	return str;
+      }
+    }
+
+
+
+
+
     function addressToUrlString(str) {
       // console.log("addressToUrlString");
       // console.log(str);
@@ -827,7 +964,7 @@ console.log(mSo);
       // console.log(string);
     }
 
-
+    
 
 
 
@@ -920,8 +1057,27 @@ console.log(mSo);
 	  	return (a + b);
 	  }
 
-	  function setServiceOverlayData(json) {
 
+
+
+
+
+
+
+
+	  function setOverlayData(json) {
+	  	console.log("setOverlayData");
+	  	// console.log(formatClickable(json.phone));
+	  	var href = formatClickable(json.phone);
+	  	document.getElementById('soPhone').href = href;
+	  	document.getElementById('soHours').innerText = json.hoursOpen;
+	  	document.getElementById('soCategoryPrime').innerText = categoryIconText(json.primaryCategory);
+	  	 // = json.primaryCategory;
+	  	document.getElementById('soAddress').innerText = json.readableAddress; 
+	  	document.getElementById('soTitle').innerText = json.title;
+	  	document.getElementById('soPhone').innerText = json.phone;
+	  	// document.getElementById('').innerText = json.state; 
+	  	// document.getElementById('').innerText = json. 
 	  }
 
       function setMobileInfoWindowData(json) {
@@ -964,18 +1120,17 @@ console.log(mSo);
       	el.style.top = n;
       }
 
+      $scope.cmTopSetting;
+
       function stretchMap() {
-      	console.log("ngCm");
-      	console.log(ngCm);
-      	console.log("cm");
-      	console.log(cm);
-      	// var orig = ng.
-    
+
 
 
       	cm.style.top = "-28em";
 
-
+      function resetMapHeight(w) {
+      	// if ()
+      }
 
       	// ngCm.addClass("neg24");
       	// cm.addClass("neg24");
@@ -991,41 +1146,281 @@ console.log(mSo);
 
       }
 
+
+   
+
+
+		function setRequestParams(json) {
+	  		console.log("setRequestParams");
+	  		console.log(json);
+	  		return {
+	  			location: [json.location[0].lat, json.location[0].lng],
+	  			radius: 10000
+	  		}
+	  	}
+
+	  	function psCallback(res) {
+	  		console.log("psCalback");
+	  		console.log(res);
+	  	}
+
+// $http.post('/api/places/query', body).success(function(data) {
+          
+//             callback(data);
+//           });
+// https://maps.googleapis.com/maps/api/place/textsearch/output?parameters
+	  	function manualSearch(params) {
+	  		// var a = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location=";
+	  		
+	  		var a = "https://maps.googleapis.com/maps/api/place/nearbysearch/";
+	  		var b = "&location=" + params.location[0] + "," + params.location[1];
+	  		var c = "&radius=" + params.radius + "&";
+	  		var d;
+	  		var e = "key=AIzaSyCC-reO4jDrH1PqVkRX7qp5t4PQMWoBmls";
+	  		var url = a + b + c + e;
+	  		console.log("url");
+	  		console.log(url);
+	  		$http.get(url).success(function(response) {
+	  			// console.log("looky here");
+	  			// console.log(response.statusCode);
+	  			psCallback(response);
+
+	  		})
+	  		// $http.g
+	  	}
+	  	// https://maps.googleapis.com/maps/api/place/radarsearch/json?location=51.503186,-0.126446&radius=5000&type=museum&key=YOUR_API_KEY
+	  	// https://maps.googleapis.com/maps/api/place/radarsearch/json?location=39.0349374,-94.5835498&radius=1000&key=AIzaSyBqZ_zfcyUUJDi6OuXq4QYpkdHPeaqFkms
+
+
+
+	  	function stripDay(day, str) {
+	    	// return day.replace(/day/)
+	    	
+	    	if (day === "sunday") {
+	    		return str.replace(/Sunday/, "");
+	    		// return str.replace(/Sunday\s/, "");
+	    	} else if (day === "monday") {
+	    		return str.replace(/Monday/, "");
+	    	} else if (day === "tuesday") {
+	    		return str.replace(/Tuesday/, "");
+	    	} else if (day === "wednesday") {
+	    		return str.replace(/Wednesday/, "");
+	    	} else if (day === "thursday") {
+	    		return str.replace(/Thursday/, "");
+	    	} else if (day === "friday") {
+	    		return str.replace(/Friday/, "");
+	    	} else if (day === "saturday") {
+	    		return str.replace(/Saturday/, "");
+	    	}
+	    }
+
+	    function rws(str) {
+	    	return str.replace(/\s/, "");
+	    }
+	    function removeColon(str) {
+	    	// console.log("removeColon");
+	    	// console.log(str);
+	    	return str.replace(/^(:)/, "");
+	    }
+	    function setHours(hrs) {
+
+	    	console.log("setHours");
+	    	console.log(hrs);
+
+	    	
+
+	    	if (typeof hrs === "undefined") {
+	    		// console.log("undefined");
+	    		var num = 0;
+	    	} else {
+	    		var num = hrs.length;
+	    	}
+
+
+	    	// console.log("numb");
+	    	// console.log(num);
+
+	    	if (num === 0) {
+	    		document.getElementById('opHours').style.display = "none";
+	         	document.getElementById('opHoursNA').style.display = "block";
+	    	} else if (num >=1) {
+	    		// console.log("num >= 1");
+	    		// console.log(hrs);
+
+
+		    	var hypSun = document.getElementById('opSun');
+		         var hypMon = document.getElementById('opMon');
+		         var hypTue = document.getElementById('opTue');
+		         var hypWed = document.getElementById('opWed');
+		         var hypThu = document.getElementById('opThu');
+		         var hypFri = document.getElementById('opFri');
+		         var hypSat = document.getElementById('opSat');
+
+		        var sunday = new RegExp(/Sunday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var monday = new RegExp(/Monday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var tuesday = new RegExp(/Tuesday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var wednesday = new RegExp(/Wednesday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var thursday = new RegExp(/Thursday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var friday = new RegExp(/Friday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var saturday = new RegExp(/Saturday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+
+		         // if (typeof hrs != "undefined") {
+		         	document.getElementById('opHours').style.display = "block";
+		         	document.getElementById('opHoursNA').style.display = "none";
+		         	   var sun = hrs.match(sunday);
+			           var mon = hrs.match(monday);
+			           var tue = hrs.match(tuesday);
+			           var wed = hrs.match(wednesday);
+			           var thu = hrs.match(thursday);
+			           var fri = hrs.match(friday);
+			           var sat = hrs.match(saturday);
+			           console.log('sun');
+			           console.log(sun);
+			           var weekHours = {
+			           	sun: rws(stripDay('sunday', sun[0])), 
+			           	mon: rws(stripDay('monday', mon[0])),
+			           	tue: rws(stripDay('tuesday', tue[0])),
+			           	wed: rws(stripDay('wednesday', wed[0])),
+			           	thu: rws(stripDay('thursday', thu[0])),
+			           	fri: rws(stripDay('friday', fri[0])),
+			           	sat: rws(stripDay('saturday', sat[0]))
+			           }
+			           // console.log("before");
+			           // console.log(weekHours);
+
+			           var wtf = removeColon(weekHours.sun);
+			           // console.log('wtf');
+			           // console.log(wtf);
+			           // console.log("after");
+			           // console.log(weekHours);
+			           hypSun.style.display = "inline";
+		         	hypMon.style.display = "inline";
+		         	hypTue.style.display = "inline";
+		         	hypWed.style.display = "inline";
+		         	hypThu.style.display = "inline";
+		         	hypFri.style.display = "inline";
+		         	hypSat.style.display = "inline";
+			           hypSun.innerText = removeColon(weekHours.sun);
+			           hypMon.innerText = removeColon(weekHours.sun);
+			           hypTue.innerText = removeColon(weekHours.sun);
+			           hypWed.innerText = removeColon(weekHours.sun);
+			           hypThu.innerText =removeColon(weekHours.sun);
+			           hypFri.innerText = removeColon(weekHours.sun);
+			           hypSat.innerText = removeColon(weekHours.sun);
+
+		         // } 
+
+		         // else if (typeof hrs === "undefined") {
+		
+		         // 	document.getElementById('opHours').style.display = "none";
+		         // 	document.getElementById('opHoursNA').style.display = "block";
+		         // } 
+
+	         }
+
+	    }
+
+
+	   function setWindowCss() {
+	   	
+	  
+	   	console.log("setWindowCss");
+
+	   	var a = getCurrentWidth();
+	   	var b = document.querySelector("#customMap").getBoundingClientRect().height;
+	   	var c = document.querySelector('#lavie').getBoundingClientRect().height;
+	   	// console.log("b");
+	   	// console.log(b);
+	   	// console.log(b);
+	   	// console.log('c');
+	   	// console.log(c);
+	   	var d = (b - c);
+	   	var e = (d / 2);
+	   	// console.log("d");
+	   	// console.log(d);
+	   	// console.log("e");
+	   	// console.log(e);
+	   	document.querySelector('#lavie').style.top = e + "px";
+	   	document.querySelector('#rmv-glyph').style.top = e + "px";
+	   	// angular.element(document.getElementById('lavie')).addClass('pt-page-flipInTop');
+	   	// console.log("b.scrollHeight");
+	   	// console.log(b.scrollHeight);
+	   	// console.log("b.clientHeight");
+	   	// console.log(b.clientHeight);
+
+
+
+	   }
+
+	   function resetWindowTopCss() {
+
+	   }
+
+
+	   function isDesktopView() {
+	   	var c = getCurrentWidth();
+	   	if (c <= 768) {
+	   		return false;
+	   	} else if (c > 768) {
+	   		return true;
+	   	}
+	   }
+
+
+
+
 	   function addListener(json, marker) {
-
-        // console.log("adding listener");
-        //   console.log(browser);
-
+	   	// console.log("addListener");
+	   	// console.table(json);
+	  
           var userDevice = browser;
-
-           // var el = {};
-           //    el.primaryCategory = document.getElementById('placeCategory');
-           //    el.title = document.getElementById('placeTitle');
-           //    el.phone = document.getElementById('placePhone');
-           //    el.address = document.getElementById('placeAddress');
-
-           //  el.primaryCategory.innerText = categoryIconText(json.primaryCategory);
-           //  el.title.innerText = json.title;
-
+          var overlay = angular.element(document.getElementById('mobServiceOverlay'));
 
 	      google.maps.event.addListener(marker, 'click', function() {
-	      	// $scope.resetIwIcon();
+	      	// console.log("^^^^check assumptions");
+	      	// console.log(json.hoursOpen);
+
+
+	      	if (isDesktopView()) {
+	      		console.log("itt's a vport") 
+	      		sidePanelOpen = true;
+
+	      	} else {
+	      		console.log("is not vport")
+	      	}
+	 
+	      	
+
+
        		setPlaceData(json);
        		setPrintWindow(json);
+       		setOverlayData(json);
           	setMobileInfoWindowData(json);
+
             var c = getCurrentWidth();
-            console.log(c);
 
             if (c <= 768) {
           	  console.log('less than 768');
+        
+
           	  $scope.soActive = true;
-              stretchMap();
+          	  cm.style.height = "360px";
+          	  mSo.style.display="initial";
+          	 
+          	  // document.getElementById('mobServiceOverlay').addClass('pinker');
+              // stretchMap();
 
-            } else {
-    			resizeMap();
+            } 
+
+            if (c <= 768 && c <= 360) {
+   
+    			cm.style.height = "240px";
+    			// console.log("set cm.style.height");
+    			// console.log(cm.style.height);
             }
-
-	        // resizeMap();	
+            
+	        resizeMap();
+	        setWindowCss();	
 	        findActive();
 	
 	        var lat = json.location[0].lat;
@@ -1045,6 +1440,7 @@ console.log(mSo);
 				recenterToMarker();
     		}
 
+    		
 
 
 	        var anchor = new google.maps.MVCObject();
@@ -1053,20 +1449,92 @@ console.log(mSo);
 	        var html = "<a ng-href='" + target +"'>" + "Visit website" + "</a>";
 	        var container = document.getElementById('info-wrapper');
 	        var desc = json.description;
-	        var descriptor = document.getElementById('placeDescription');
+	        var description = document.getElementById('placeDescription');
 	        var l = desc.length;
-	        if (l < 42 || l === null) {
-	          descriptor.style.textAlign = "center";
-	        } else {
-	          descriptor.style.textAlign = "justify";
-	        }
+
+	        // if (l > 280) {
+	        // 	console.log("description too long");
+	        // 	description.style.maxHeight = "180px";
+	        // 	description.style.overflowY = "scroll";
+	        // }
+	        // if (l < 42 || l === null) {
+	        //   placeDescription.style.textAlign = "center";
+	        // } else {
+	        //   placeDescription.style.textAlign = "justify";
+	        // }
 
 	        var catDom = document.getElementById('placeCategory');
 	        var ico = getIcon(json.primaryCategory);
 
 	        $scope.currentCategory = ico;
+	        
+
+	        //  var hypSun = document.getElementById('opSun');
+	        //  var hypMon = document.getElementById('opMon');
+	        //  var hypTue = document.getElementById('opTue');
+	        //  var hypWed = document.getElementById('opWed');
+	        //  var hypThu = document.getElementById('opThu');
+	        //  var hypFri = document.getElementById('opFri');
+	        //  var hypSat = document.getElementById('opSat');
+
+	        // var sunday = new RegExp(/Sunday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        // var monday = new RegExp(/Monday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        // var tuesday = new RegExp(/Tuesday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        // var wednesday = new RegExp(/Wednesday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        // var thursday = new RegExp(/Thursday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        // var friday = new RegExp(/Friday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+	        // var saturday = new RegExp(/Saturday\s(Closed|(\d|\d\d)AM.(\d|\d\d)PM)/);
+
+	        //  if (typeof hrs != "undefined" && hrs != null) {
+	        //  	document.getElementById('opHours').style.display = "block";
+	        //  	document.getElementById('opHoursNA').style.display = "none";
+	        //  	   var sun = hrs.match(sunday);
+		       //     var mon = hrs.match(monday);
+		       //     var tue = hrs.match(tuesday);
+		       //     var wed = hrs.match(wednesday);
+		       //     var thu = hrs.match(thursday);
+		       //     var fri = hrs.match(friday);
+		       //     var sat = hrs.match(saturday);
+		       //     var weekHours = {
+		       //     	sun: rws(stripDay('sunday', sun[0])), 
+		       //     	mon: rws(stripDay('monday', mon[0])),
+		       //     	tue: rws(stripDay('tuesday', tue[0])),
+		       //     	wed: rws(stripDay('wednesday', wed[0])),
+		       //     	thu: rws(stripDay('thursday', thu[0])),
+		       //     	fri: rws(stripDay('friday', fri[0])),
+		       //     	sat: rws(stripDay('saturday', sat[0]))
+		       //     }
+		       //     hypSun.style.display = "inline";
+	        //  	hypMon.style.display = "inline";
+	        //  	hypTue.style.display = "inline";
+	        //  	hypWed.style.display = "inline";
+	        //  	hypThu.style.display = "inline";
+	        //  	hypFri.style.display = "inline";
+	        //  	hypSat.style.display = "inline";
+		       //     hypSun.innerText = weekHours.sun;
+		       //     hypMon.innerText = weekHours.mon;
+		       //     hypTue.innerText = weekHours.tue;
+		       //     hypWed.innerText = weekHours.wed;
+		       //     hypThu.innerText = weekHours.thu;
+		       //     hypFri.innerText = weekHours.fri;
+		       //     hypSat.innerText = weekHours.sat;
+
+	        //  } else if (typeof hrs === "undefined") {
+	
+	        //  	document.getElementById('opHours').style.display = "none";
+	        //  	document.getElementById('opHoursNA').style.display = "block";
+	        //  } else if (hrs === null) {
+	        //  	console.log("hrs === null")
+	        //  	document.getElementById('opHours').style.display = "none";
+	        //  	document.getElementById('opHoursNA').style.display = "block";
+	        //  }
 
 
+	      
+	       
+     
+           // console.log(test[0]);
+          
 	        $scope.selected = {};
 	        $scope.selected.hoursOpen = json.hoursOpen;
 	        $scope.selected.zip = json.zip;
@@ -1077,16 +1545,23 @@ console.log(mSo);
 
 	        document.getElementById('placeCategory').textContent = categoryIconText(json.primaryCategory);
 	        document.getElementById('placeTitle').textContent = json.title;
-	        descriptor.textContent = desc;
+	        // placeDescription.textContent = desc;
+	        // if (typeof desc != "undefined") {
+	        // 	console.log()
+	        // 	placeDescription.innerText = desc + "???";
+	        // } else if (typeof desc === "undefined") {
+	        // 	placeDescription.innerText = "Not available";
+	        // }
 	        document.getElementById('placePhone').textContent = json.phone;
-	        $scope.addr = document.getElementById('placeAddress').textContent = json.address1;
-	        $scope.city = document.getElementById('placeCity').textContent = json.city;
-	        $scope.state = document.getElementById('placeState').textContent = json.state;
-	        $scope.zip = document.getElementById('placeZip').textContent = json.zip;
-	        document.getElementById('placeHours').textContent = json.hoursOpen;
+	        $scope.addr = document.getElementById('placeAddress').textContent = json.readableAddress;
+	        // $scope.city = document.getElementById('placeCity').textContent = json.city;
+	        // $scope.state = document.getElementById('placeState').textContent = json.state;
+	        // $scope.zip = document.getElementById('placeZip').textContent = json.zip;
+	        // document.getElementById('placeHours').textContent = json.hoursOpen;
           
 	      });
 	    }
+// json.title != 'undefined'
 
 
 
@@ -1106,30 +1581,6 @@ console.log(mSo);
 
 
 
-
-
-
-	    var placesService = new google.maps.places.PlacesService($scope.map);
-
-	    $scope.getPlaceDetails = function(place) {
-	    	placesService.getDetails({
-	          placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
-	        }, function(place, status) {
-	          if (status === google.maps.places.PlacesServiceStatus.OK) {
-	          	// console.log("google.maps.places.PlacesServiceStatus.OK");
-	            // var marker = new google.maps.Marker({
-	            //   map: map,
-	            //   position: place.geometry.location
-	            // });
-	            // google.maps.event.addListener(marker, 'click', function() {
-	            //   infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-	            //     'Place ID: ' + place.place_id + '<br>' +
-	            //     place.formatted_address + '</div>');
-	            //   infowindow.open(map, this);
-	            // });
-	          }
-	        });
-	    }
 
         
 
@@ -1214,17 +1665,17 @@ console.log(mSo);
 
 	    function categoryIconText(str) {
 	    	if (str === "wifi-free") {
-	    		return "Free Public WiFi ";
+	    		return "Free public wifi ";
 	    	} else if (str === "wifi-customer") {
-	    		return "Free WiFi with purchase ";
+	    		return "Free wifi with purchase ";
 	    	} else if (str === "computers-access") {
- 				return "Public Access Computers ";
+ 				return "Public access computers ";
 	    	} else if (str === "computers-retail") {
-	    		return "Low Cost or Refurbished Computers "
+	    		return "Low cost or refurbished computers "
 	    	} else if (str === "training-day") {
-	    		return "Offers Daytime Training ";
+	    		return "Daytime training courses";
 	    	} else if (str === "training-night") {
-	    		return "Offers Evening Training ";
+	    		return "Evening training courses";
 	    	} else if (str === "isp") {
 	    		return "Internet Service Provider ";
 	    	}
@@ -1280,6 +1731,9 @@ console.log(mSo);
 	      console.log("clearWifiMarkers");
 	      var freeWifiSpots     = $scope.markers.wifi.free;
 	      var customerWifiSpots = $scope.markers.wifi.customer;
+	      if($scope.activeSpot.marker != null && ($scope.activeSpot.meta.primaryCategory === "wifi-customer" || $scope.activeSpot.meta.primaryCategory === "wifi-free")) {
+	      	$scope.activeSpot.marker.setMap(null);
+	      }
 	      var i;
 	      var n;
 	      var l = freeWifiSpots.length; 
@@ -1298,6 +1752,9 @@ console.log(mSo);
 	      console.log('clearTrainingMarkers');
 	      var dayCourses = $scope.markers.training.day;
 	      var nightCourses = $scope.markers.training.night;
+	      if($scope.activeSpot.marker != null && ($scope.activeSpot.meta.primaryCategory === "training-day" || $scope.activeSpot.meta.primaryCategory === "training-night")) {
+	      	$scope.activeSpot.marker.setMap(null);
+	      }
 	      for (var i = 0; i < dayCourses.length; i++) {
 	        dayCourses[i].setMap(null);
 	      }
@@ -1310,9 +1767,13 @@ console.log(mSo);
 
 	    function clearAccessMarkers() {
 	      console.log("clearAccessMarkers");
+	      
+	      if($scope.activeSpot.marker != null && $scope.activeSpot.meta.primaryCategory === "computers-access") {
+	      	$scope.activeSpot.marker.setMap(null);
+	      }
 	      var markers = $scope.markers.computers.access;
 	      var i;
-	      var length = $scope.markers.length;
+	      var length = markers.length;
 	      for (i=0; i<length; i++) {
 	        markers[i].setMap(null);
 	      }
@@ -1321,8 +1782,13 @@ console.log(mSo);
 
 	    function clearRetailMarkers() {
 	      var markers = $scope.markers.computers.retail;
+	      console.log("clearRetailMarkers");
+	      console.log(markers);
+	      if($scope.activeSpot.marker != null && $scope.activeSpot.meta.primaryCategory === "computers-retail") {
+	      	$scope.activeSpot.marker.setMap(null);
+	      }
 	      var i; 
-	      var length = $scope.markers.length;
+	      var length = markers.length;
 	      for (i=0;i<length;i++){
 	        markers[i].setMap(null);
 	      }
@@ -1352,25 +1818,28 @@ console.log(mSo);
 	    $scope.trainingVisibility =false;
 	    $scope.toggleTrainingMarkers = function() {
 	      if ($scope.trainingVisibility) {
-	        resetCss(e2, true);
-	        setTrainingMarkers();
-	        $scope.trainingVisibility = false;
-	      } else {
 	        resetCss(e2, false);
 	        clearTrainingMarkers();
+	        $scope.trainingVisibility = false;
+	      } else {
+	        resetCss(e2, true);
+	        setTrainingMarkers();
 	        $scope.trainingVisibility = true;
 	      }
 	    }
 
 	    $scope.computersVisibility = false;
 	    $scope.toggleComputersMarkers = function() {
+	    	console.log("check boolean toggle");
+	    	console.log($scope.toggle.access);
 	      if ($scope.computersVisibility) {
-	        resetCss(e3, true);
-	        setAccessMarkers();
-	        $scope.computersVisibility = false;
-	      } else {
 	        resetCss(e3, false);
 	        clearAccessMarkers();
+	        $scope.computersVisibility = false;
+	      } else {
+	        resetCss(e3, true);
+	        // clearAccessMarkers();
+	        setAccessMarkers();
 	        $scope.computersVisibility = true;
 	      }
 	    }
@@ -1392,12 +1861,12 @@ console.log(mSo);
 	    $scope.refurbsVisibility = false;
 	    $scope.toggleRefurbsMarkers = function() {
 	      if ($scope.refurbsVisibility) {
-	        resetCss(e4, true);
-	        setRetailMarkers();
-	        $scope.refurbsVisibility = false;
-	      } else {
 	        resetCss(e4, false);
 	        clearRetailMarkers();
+	        $scope.refurbsVisibility = false;
+	      } else {
+	        resetCss(e4, true);
+	        setRetailMarkers();
 	        $scope.refurbsVisibility = true;
 	      }
 	    }
@@ -1432,45 +1901,237 @@ console.log(mSo);
 	        return $scope.error == "";
 	    }
 
-	    function removeWindow() {
 
-	      sideWindowElement.style.display = "none";
-	      mapCanvasElement.style.width = "100%";
-        if (innerWidth < 768) {
-            $scope.mobileWindowOpen = false;
-        }
+
+	    function fixMapWidth(width) {
+	    	// console.log("fixMapWidth");
+	    	// console.log(width);
+
+	    	var mw = cm.style.width;
+	    	console.log(mw);
+	   	  	if (width <= 768) {
+	        	// console.log("1. 0 to 768");
+	          // $scope.mobileMod = true;
+	          // headerToggleId.style.display = "none";
+	          // mobileWindowElement.style.display = "initial";
+	          // $window.scrollTo(0,0);
+	          // hideOverflow(html);
+	          // var diff = (cWidth - 38);
+	          // var x = diff + "px";
+	          // document.getElementById('trix').style.width = x;
+
+	          // console.log(cWidth + " is less than 768");
+	        } else if (width > 768 && width < 1000 && !sidePanelOpen) {
+	        	// console.log("2. 768 to 1000 -- sidePanelOpen=false");
+	        	cm.style.width = "719px";
+	        } else if (width > 768 && width < 1000 && sidePanelOpen) {
+	        	// console.log("2. 768 to 1000 -- sidePanelOpen=true");
+	        	cm.style.width = "65%";
+	        } else if (width >= 1000 && width < 1200 && !sidePanelOpen) {
+	        	// console.log("3. 1000 to 1200");
+	    		cm.style.width = "939px";
+	        } else if (width >= 1000 && width < 1200 && sidePanelOpen) {
+	        	// console.log("3. 1000 to 1200");
+	    		cm.style.width = "65%";
+	        } else if (width >= 1200 && width < 1280 && !sidePanelOpen) {
+	        	// console.log("4. 1200 to 1280");
+	   			cm.style.width = "1017px";
+	        } else if (width >= 1200 && width < 1280 && sidePanelOpen) {
+	        	// console.log("4. 1200 to 1280");
+	   			cm.style.width = "65%";
+	        } else if (width >= 1280 && width < 1660 && !sidePanelOpen) {
+	        	// console.log("5. 1280 to 1660");
+	        	cm.style.width = "1140px";
+	        } else if (width >= 1280 && width < 1660 && sidePanelOpen) {
+	        	// console.log("5. 1280 to 1660");
+	        	cm.style.width = "800px";
+	        } else if (width >= 1660 && width < 1680 && !sidePanelOpen) {
+	        	// console.log("6. 1280 to 1660");
+	        	cm.style.width = "1130px";
+	        } else if (width >= 1660 && width < 1680 && sidePanelOpen) {
+	        	// console.log("6. 1280 to 1660");
+	        	cm.style.width = "65%";
+	        } else if (width >= 1680 && !sidePanelOpen) {
+	        	// console.log("7. 1660 to infinity");
+	        	cm.style.width = "1130px";
+	        } else if (width >= 1680 && sidePanelOpen) {
+	        	// console.log("7. 1660 to infinity");
+	        	cm.style.width = "65%";
+	        }
+	
+	    }
+	   
+
+	    function removeWindow() {
+	    	  var c = getCurrentWidth();
+		      sideWindowElement.style.display = "none";
+		      mapCanvasElement.style.width = resetMapWidth(c);
+	      // cm.style.width = "100%";
+	          if (innerWidth <= 768) {
+	            $scope.mobileWindowOpen = false;
+	          } else if (innerWidth > 768) {
+	          	 sidePanelOpen = false;
+	          }
+
+	         
 
 	    }
       var html = document.getElementsByTagName('html')[0];
      
+      var overlayX = document.getElementById('exit-service-overlay');
+
+
+      $scope.closeServiceOverlay = function() {
+      	// if (cWidth > 600) {
+      		console.log("clickServiceOverlay()");
+      		document.getElementById('mobServiceOverlay').style.display = "none";
+
+      	// }
+      	cm.style.height = "615px";
+      }
 
       function hideOverflow(element) {
         element.style.overflowY = "hidden";
       }
 
-	    var resizeMap = function() {
-	        var cWidth = getCurrentWidth();
-	       
-	        if (cWidth <= 768) {
-	          $scope.mobileMod = true;
-	          headerToggleId.style.display = "none";
-	          mobileWindowElement.style.display = "initial";
-	          $window.scrollTo(0,0);
-	          hideOverflow(html);
-	          var diff = (cWidth - 38);
+
+      $scope.fdDown = function() {
+
+      }
 
 
 
-	          var x = diff + "px";
-	          document.getElementById('trix').style.width = x;
-	        } else if (cWidth > 768) {
-	          cm.style.width = "25%";
-	          mapCanvasElement.style.borderRight = "1px solid #4e4e4e";
-	          sideWindowElement.style.display = "initial";
-	        }
-		      
-	        
-	    }
+
+
+   	 var resizeMap = function() {
+   	 	console.log("resizeMap()");
+   	 	console.log(sidePanelOpen);
+        var cWidth = getCurrentWidth();
+        var c = getCurrentWidth();
+        if (c <= 768) {
+        	console.log("1. 0 to 768");
+          // $scope.mobileMod = true;
+          // headerToggleId.style.display = "none";
+          // mobileWindowElement.style.display = "initial";
+          // $window.scrollTo(0,0);
+          // hideOverflow(html);
+          // var diff = (cWidth - 38);
+          // var x = diff + "px";
+          // document.getElementById('trix').style.width = x;
+
+          // console.log(cWidth + " is less than 768");
+        } else if (c > 768 && c < 1000) {
+        	console.log("2. 768 to 1000");
+        	mapCanvasElement.style.width = "65%";
+            mapCanvasElement.style.borderRight = "1px solid #ccc";
+            sideWindowElement.style.display = "initial";
+        } else if (c >= 1000 && c < 1200) {
+        	console.log("3. 1000 to 1200");
+        	mapCanvasElement.style.width = "65%";
+            mapCanvasElement.style.borderRight = "1px solid #ccc";
+            sideWindowElement.style.display = "initial";
+        } else if (c >= 1200 && c < 1280) {
+        	console.log("4. 1200 to 1280");
+        	mapCanvasElement.style.width = "65%";
+            mapCanvasElement.style.borderRight = "1px solid #ccc";
+            sideWindowElement.style.display = "initial";
+        } else if (c >= 1280 && c < 1660) {
+        	console.log("5. 1280 to 1660");
+        	mapCanvasElement.style.width = "800px";
+            mapCanvasElement.style.borderRight = "1px solid #ccc";
+            sideWindowElement.style.display = "initial";
+        } else if (c >= 1660 && c < 1680) {
+        	console.log("6. 1280 to 1660");
+        	mapCanvasElement.style.width = "65%";
+            mapCanvasElement.style.borderRight = "1px solid #ccc";
+            sideWindowElement.style.display = "initial";
+        } else if (c >= 1680) {
+        	console.log("7. 1660 to infinity");
+        	mapCanvasElement.style.width = "65%";
+            mapCanvasElement.style.borderRight = "1px solid #ccc";
+            sideWindowElement.style.display = "initial";
+        }
+
+
+
+
+        // else {
+        //   mapCanvasElement.style.width = "65%";
+        //   mapCanvasElement.style.borderRight = "1px solid #ccc";
+        //   sideWindowElement.style.display = "initial";
+        // }
+	      
+        
+   	 }
+
+
+   	  function resetMapWidth(width) {
+   	  	if (width <= 768) {
+        	console.log("1. 0 to 768");
+          // $scope.mobileMod = true;
+          // headerToggleId.style.display = "none";
+          // mobileWindowElement.style.display = "initial";
+          // $window.scrollTo(0,0);
+          // hideOverflow(html);
+          // var diff = (cWidth - 38);
+          // var x = diff + "px";
+          // document.getElementById('trix').style.width = x;
+
+          // console.log(cWidth + " is less than 768");
+        } else if (width > 768 && width < 1000) {
+        	console.log("2. 768 to 1000");
+        	cm.style.width = "719px";
+        } else if (width >= 1000 && width < 1200) {
+        	console.log("3. 1000 to 1200");
+    		cm.style.width = "939px";
+        } else if (width >= 1200 && width < 1280) {
+        	console.log("4. 1200 to 1280");
+   			cm.style.width = "1017px";
+        } else if (width >= 1280 && width < 1660) {
+        	console.log("5. 1280 to 1660");
+        	cm.style.width = "1140px";
+        } else if (width >= 1660 && width < 1680) {
+        	console.log("6. 1280 to 1660");
+        	cm.style.width = "1130px";
+        } else if (width >= 1680) {
+        	console.log("7. 1660 to infinity");
+        	cm.style.width = "1130px";
+        }
+	  }
+
+   	 $scope.closeFullDescription = function() {
+   	 	headerToggleId.style.display = "initial";
+   	 	cm.style.top = "-4.6em";
+	  	mobileWindowElement.style.display = "none";
+	  }
+
+
+   	 $scope.overlayUp = function(ev) {
+      // alert('You swiped up!!');
+      	stretchMap();
+      	var c = getCurrentWidth();
+      	$scope.mobileMod = true;
+        headerToggleId.style.display = "none";
+     	mobileWindowElement.style.display = "initial";
+     	$window.scrollTo(0,0);
+        hideOverflow(html);
+        var diff = (c - 38);
+        var x = diff + "px";
+        document.getElementById('trix').style.width = x;
+     };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1593,7 +2254,6 @@ console.log(mSo);
         var activeCss = new RegExp('special');
 
 
-
       $scope.currentlyHighlightedButtons = [];
 
 
@@ -1693,21 +2353,12 @@ console.log(mSo);
 			    $timeout(6000, loadMarkersOnInit(true), true)
 			    initFreeWifiButton()
 			    setWifiMarkers()
-
-
-
-
-
-
 				
 		  });
 
 
-          google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-
-
-				
-		  });
+    //       google.maps.event.addListenerOnce($scope.map, 'idle', function(){				
+		  // });
 
 
 
@@ -1730,7 +2381,8 @@ console.log(mSo);
 
 	      $scope.clearAll = function() {
 	      	clearAll();
-	      }
+	      } 
+
 
 	     
 	      var center;
@@ -1744,6 +2396,8 @@ console.log(mSo);
 	      });
  
 	      google.maps.event.addDomListener(window, 'resize', function() {
+	      	var c = getCurrentWidth();
+	      	fixMapWidth(c);
 	     
 	        $scope.map.setCenter(center);
 	        var bounds = $scope.map.getBounds();
