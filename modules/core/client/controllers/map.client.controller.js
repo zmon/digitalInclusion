@@ -126,15 +126,40 @@ var list = {};
                     // map_icon_label: '<span class="map-icon map-icon-point-of-interest"></span>'
               
             $scope.places = places;
-            console.log("places");
-            console.log(places);
+            // console.log("Places:");
+            // console.log(places);
     		sortResponses(places);
         
-           
+            fixPlaceData(places);
         });
 
+      function incrementByOne(int) {
+      	return (int + 1);
+      }
 
-      console.log($scope.places);
+      var initialCount = 0;
+      
+      function countPlaces() {
+      	
+      	
+      }
+
+      function fixPlaceData(places) {
+      	console.log("Log fixPlaceData(places)");
+      	var l = places.length;
+      	var i;
+
+      	for (i=0;i<l;i++) {
+      		if (places[i].primaryCategory === "computers-access") {
+      			console.log(places[i]._id);
+      			console.log(places[i].title);
+      		
+      			console.log(places[i].hoursOpen);
+      		}
+      		
+      	}
+      }
+
       // var qtyP = $scope.places.length;
       // var e;
       // for (e=0;e<qtyP;e++) {
@@ -1222,8 +1247,13 @@ mSo.style.display="none";
 	    	// console.log(str);
 	    	return str.replace(/^(:)/, "");
 	    }
-	    function setHours(hrs) {
 
+
+	    function getHoursOpen() {
+
+	    }
+
+	    function setHours(hrs) {
 	    	console.log("setHours");
 	    	console.log(hrs);
 
@@ -1249,64 +1279,74 @@ mSo.style.display="none";
 
 
 		    	var hypSun = document.getElementById('opSun');
-		         var hypMon = document.getElementById('opMon');
-		         var hypTue = document.getElementById('opTue');
-		         var hypWed = document.getElementById('opWed');
-		         var hypThu = document.getElementById('opThu');
-		         var hypFri = document.getElementById('opFri');
-		         var hypSat = document.getElementById('opSat');
+		        var hypMon = document.getElementById('opMon');
+		        var hypTue = document.getElementById('opTue');
+		        var hypWed = document.getElementById('opWed');
+		        var hypThu = document.getElementById('opThu');
+		        var hypFri = document.getElementById('opFri');
+		        var hypSat = document.getElementById('opSat');
 
-		        var sunday = new RegExp(/Sunday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
-		        var monday = new RegExp(/Monday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
-		        var tuesday = new RegExp(/Tuesday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
-		        var wednesday = new RegExp(/Wednesday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
-		        var thursday = new RegExp(/Thursday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
-		        var friday = new RegExp(/Friday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
-		        var saturday = new RegExp(/Saturday(\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM)/);
+		        var sunday = new RegExp(/Sunday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
+		        var monday = new RegExp(/Monday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
+		        var tuesday = new RegExp(/Tuesday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
+		        var wednesday = new RegExp(/Wednesday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
+		        var thursday = new RegExp(/Thursday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
+		        var friday = new RegExp(/Friday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
+		        var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
 
 		         // if (typeof hrs != "undefined") {
-		         	document.getElementById('opHours').style.display = "block";
-		         	document.getElementById('opHoursNA').style.display = "none";
-		         	   var sun = hrs.match(sunday);
-			           var mon = hrs.match(monday);
-			           var tue = hrs.match(tuesday);
-			           var wed = hrs.match(wednesday);
-			           var thu = hrs.match(thursday);
-			           var fri = hrs.match(friday);
-			           var sat = hrs.match(saturday);
+		        document.getElementById('opHours').style.display = "block";
+		        document.getElementById('opHoursNA').style.display = "none";
+		        var sun = hrs.match(sunday);
+			    var mon = hrs.match(monday);
+			    var tue = hrs.match(tuesday);
+			    var wed = hrs.match(wednesday);
+			    var thu = hrs.match(thursday);
+			    var fri = hrs.match(friday);
+			    var sat = hrs.match(saturday);
 			           console.log('sun');
 			           console.log(sun);
-			           var weekHours = {
-			           	sun: rws(stripDay('sunday', sun[0])), 
-			           	mon: rws(stripDay('monday', mon[0])),
-			           	tue: rws(stripDay('tuesday', tue[0])),
-			           	wed: rws(stripDay('wednesday', wed[0])),
-			           	thu: rws(stripDay('thursday', thu[0])),
-			           	fri: rws(stripDay('friday', fri[0])),
-			           	sat: rws(stripDay('saturday', sat[0]))
+
+			           if (sun != null) {
+			           	var weekHours = {
+				           	sun: rws(stripDay('sunday', sun[0])), 
+				           	mon: rws(stripDay('monday', mon[0])),
+				           	tue: rws(stripDay('tuesday', tue[0])),
+				           	wed: rws(stripDay('wednesday', wed[0])),
+				           	thu: rws(stripDay('thursday', thu[0])),
+				           	fri: rws(stripDay('friday', fri[0])),
+				           	sat: rws(stripDay('saturday', sat[0]))
+				           }
+			           } else {
+			           	console.log("sun === null");
+			           	console.log()
+			           	console.log("places");
+					   console.log(places);
+					   console.log("$scope.places");
+					   console.log($scope.places);
 			           }
+			           
 			           // console.log("before");
 			           // console.log(weekHours);
 
-			           var wtf = removeColon(weekHours.sun);
-			           // console.log('wtf');
-			           // console.log(wtf);
-			           // console.log("after");
-			           // console.log(weekHours);
+			           var wt = removeColon(weekHours.sun);
+			           console.log("removeColon(weekHours.sun");
+					   console.log(wt);
+
 			           hypSun.style.display = "inline";
-		         	hypMon.style.display = "inline";
-		         	hypTue.style.display = "inline";
-		         	hypWed.style.display = "inline";
-		         	hypThu.style.display = "inline";
-		         	hypFri.style.display = "inline";
-		         	hypSat.style.display = "inline";
+			           hypMon.style.display = "inline";
+			           hypTue.style.display = "inline";
+			           hypWed.style.display = "inline";
+			           hypThu.style.display = "inline";
+			           hypFri.style.display = "inline";
+			           hypSat.style.display = "inline";
 			           hypSun.innerText = removeColon(weekHours.sun);
-			           hypMon.innerText = removeColon(weekHours.sun);
-			           hypTue.innerText = removeColon(weekHours.sun);
-			           hypWed.innerText = removeColon(weekHours.sun);
-			           hypThu.innerText =removeColon(weekHours.sun);
-			           hypFri.innerText = removeColon(weekHours.sun);
-			           hypSat.innerText = removeColon(weekHours.sun);
+			           hypMon.innerText = removeColon(weekHours.mon);
+			           hypTue.innerText = removeColon(weekHours.tue);
+			           hypWed.innerText = removeColon(weekHours.wed);
+			           hypThu.innerText =removeColon(weekHours.thu);
+			           hypFri.innerText = removeColon(weekHours.fri);
+			           hypSat.innerText = removeColon(weekHours.sat);
 
 		         // } 
 

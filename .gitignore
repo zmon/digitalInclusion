@@ -41,6 +41,9 @@ _site/
 *.swp
 logs/
 build/
+data/
+dump/
+remainingIssues.txt
 
 # Sublime editor
 # ==============
