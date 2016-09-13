@@ -1,4 +1,9 @@
 @media (min-width: 1001px) {
+	div#windowWrapper {
+	    border: 2px solid #d4d4d4;
+	    margin: 16px 16px 0 16px;
+	    background: #F5F5F5;
+	}
 	div#buttons-wrapper {
 	    position: absolute;
 	    top: 11.1em;
@@ -70,6 +75,10 @@
 	    color: #c58000;
 	    font-size: 1.2em;
 	}
+	span.daySpan {
+    font-size: .8em;
+    letter-spacing: .04pc;
+}
 	section.meta-w-form {
 		background: #464646;
 		 left: 4.75em;
@@ -94,7 +103,7 @@
 	a.pure-button.x-small-custom {
     font-size: .625em;
     position: relative;
-    top: .5em;
+    top: -5em;
     margin-left: -.35em;
     width: 200px;
 }
@@ -105,8 +114,8 @@ aside#opHours {
     top: -6em;
     margin: 0 auto 0 11em;
     line-height: 12px;
-    top: -7.5em;
-    margin: 0 auto 0 8em;
+    top: -8em;
+    margin: 0 auto 0 9.6em;
 }
 aside#opHoursNA {
     position: relative;
@@ -118,15 +127,15 @@ aside#opHoursNA {
     position: relative;
     top: -3.6em;
     width: 50px;
-    left: 1.8em;
-    line-height: 10px;
+    left: 2.8em;
+    line-height: 14px;
 }
 #header p#dscHead {
     letter-spacing: normal;
     position: relative;
-    top: -3.6em;
+    top: -5.8em;
     width: 50px;
-    left: 1.8em;
+    left: 2.6em;
     line-height: 10px;
 }
 aside#opHours p.opDay {
@@ -143,15 +152,20 @@ aside#opHours p.opDay {
 }
 	a#map-directions {
 		color: #0c375a;
-		font-size: .6em;
+		font-size: .675em;
 		position: relative;
 		line-height: 1px;
-		top: -7.7em;
+		top: -7.1em;
+		top: -8.95em;
+	}
+	div.cest a#phoneNumb {
+	    position: relative;
+	    top: -.4em;
 	}
 	div#placeAddress {
 		margin-top: .84em;
     position: relative;
-    top: -6em;
+    top: -7.5em;
     font-size: .8em;
     width: 12em;
     margin: .84em auto 0 auto;
@@ -164,6 +178,10 @@ aside#opHours p.opDay {
 		position: relative;
 		top: -1em;
 	}
+	span#hrsdsc {
+    position: relative;
+    top: -2.7em;
+}
 div#placeCategory {
     margin-top: 3.5em;
     font-size: .55em;
@@ -186,7 +204,7 @@ div#placeCategory {
 	}
 	i.fa.fa-phone {
 	position: relative;
-    top: -5.75em;
+    top: -6.75em;
     left: -.2em;
     color: darkgreen;
     font-size: .8em;
@@ -231,7 +249,7 @@ div#placeCategory {
 	    border-right: none;
 	    border: none;
 	    position: relative;
-	    padding-bottom: 2em;
+	    padding-bottom: 1.25em;
 	    top: 1.4em;
 	    border-left: none;
 	    box-shadow: 0 0 .5px #adadad;
@@ -241,7 +259,7 @@ div#placeCategory {
 	        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 15px 0 rgba(0,0,0,.22),0 1px 8px 0 rgba(0,0,0,.2);
 	}
 	div#placeTitle {
-font-size: 1em;
+    font-size: .92em;
     background: #fffef8;
     background: none;
     /* border: 2px solid lightgray; */
@@ -251,9 +269,10 @@ font-size: 1em;
     box-shadow: 0 0 .5px black;
     position: relative;
     box-shadow: none;
-    top: -3em;
+    top: -4.2em;
+    argin-bottom: -1.3em;
     padding: 1em 1em 2.4em 1em;
-	}
+}
 	div#info-wrapper {
     background: none;
     border: none;
@@ -276,7 +295,7 @@ font-size: 1em;
 		top: -5.35em;
 	}
 	span#placePhone {
-	font-size: .85em;
+	font-size: .84em;
     text-decoration: underline;
     color: #0b5d77;
     position: relative;
@@ -301,15 +320,16 @@ font-size: 1em;
     border: none;
     padding: .5em 7em;
     text-align: start;
-    margin-left: 0.65em;
+    margin-left: 4.1em;
     width: 95%;
     position: relative;
-    top: -7.5em;
+    top: -8em;
     line-height: 13px;
-    font-size: .75em;
+    font-size: .725em;
     border: none;
     background: none;
-        top: -6.62em;
+        top: -9em;
+            left: 4px;
 }
 	.row.butane {
 	    margin-left: .01em;
@@ -350,6 +370,7 @@ font-size: 1em;
 		color: #393c2e;
 		color: #010a01;
 		letter-spacing: .15pc;
+		    letter-spacing: .08pc;
 		text-shadow: 0 0 10px #716e04;
 		font-weight: 500;
 		text-shadow: none;
@@ -369,7 +390,7 @@ font-size: 1em;
 	    top: -1.5em;
 	}
 	table td {
-		text-indent: -1.35em;
+		text-indent: -1.75em;
 	}
 	#header {
 	    padding: 1em 4em 8em 4em;
@@ -643,7 +664,7 @@ section#customMap {
 	    left: -1.9em;
 	    box-shadow: 0 0 0 1px #d4d4d4;
 	    background: white;
-	    margin-top: -1.25em;
+	    margin-top: -1em;
 	    margin-right: .02em;
 	    background: #ddd6f3;
 	    background: -webkit-linear-gradient(to left, #ddd6f3 , #faaca8);

@@ -289,6 +289,7 @@
                           
 
                           <div class="cest" id="lavie">
+                            <div id="windowWrapper">
                             <span id="categoryBanner">
                             <img id="imgPath" src="" class="md-card-image simg" alt="">
                             <!-- <img ng-src="{{swImagePath}}" class="md-card-image simg" alt=""> -->
@@ -297,7 +298,7 @@
 
 
                             <div id="placeTitle" class="f2 f-class"></div>
-                          <a href=""><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
+                            <a href="" id="phoneNumb"><i class="fa fa-phone"></i> <span id="placePhone" class="f-class"></span></a>  
                             <div id="placeAddress" class="f3 f-class"></div>
                          <!--    <span id="placeCity" class="f3 f-class"></span>
                             <span id="placeState" class="f3"></span><br>
@@ -305,24 +306,28 @@
                              <a id="map-directions" target="_blank" class="view-dir" href=""> View directions on Google maps</a>
 
                             <!-- <div id="placeHours" class="f-class"></div>    -->
-                            <p id="hrsHead">Operating hours:</p>
-                            <aside id="opHours">
-                              Sunday: <p id="opSun" class="opDay"></p><br>
-                              Monday: <p id="opMon" class="opDay"></p><br>
-                              Tuesday: <p id="opTue" class="opDay"></p><br>
-                              Wednesday: <p id="opWed" class="opDay"></p><br>
-                              Thursday: <p id="opThu" class="opDay"></p><br>
-                              Friday: <p id="opFri" class="opDay"></p><br>
-                              Saturday: <p id="opSat" class="opDay"></p>
-                            </aside>
-                            <aside id="opHoursNA">Not available</aside>
-                            <!-- <a class="f-class" id="placeUrl">Website</a> -->
+                            <span id="hrsdsc">
+                              <p id="hrsHead">Operating hours:</p>
+                              <aside id="opHours">
+                                <span class="daySpan">Sunday:</span> <p id="opSun" class="opDay"></p><br>
+                                <span class="daySpan">Monday:</span> <p id="opMon" class="opDay"></p><br>
+                                <span class="daySpan">Tuesday:</span> <p id="opTue" class="opDay"></p><br>
+                                <span class="daySpan">Wednesday:</span> <p id="opWed" class="opDay"></p><br>
+                                <span class="daySpan">Thursday:</span> <p id="opThu" class="opDay"></p><br>
+                                <span class="daySpan">Friday:</span> <p id="opFri" class="opDay"></p><br>
+                                <span class="daySpan">Saturday:</span> <p id="opSat" class="opDay"></p>
+                              </aside>
+                              <aside id="opHoursNA">Not available</aside>
+                              <!-- <a class="f-class" id="placeUrl">Website</a> -->
 
-                            <p id="dscHead">Description:</p>
-                                  <div class="f4 f-class f-desc" id="placeDescription"></div>
-                          <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map</a><br>
-                          
+                              <p id="dscHead">Description:</p>
+                              <div class="f4 f-class f-desc" id="placeDescription"></div>
+                              <a class="pure-button x-small-custom" ng-print print-element-id="printableWindow"><i class="fa fa-print"></i><br>Print description<br> with map
+                              </a>
+                              <br>
+                            </span>
                           </div>
+                        </div>
                          
                           
 

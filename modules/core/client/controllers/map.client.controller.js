@@ -130,7 +130,7 @@ var list = {};
             // console.log(places);
     		sortResponses(places);
         
-            fixPlaceData(places);
+            // fixPlaceData(places);
         });
 
       function incrementByOne(int) {
@@ -150,7 +150,7 @@ var list = {};
       	var i;
 
       	for (i=0;i<l;i++) {
-      		if (places[i].primaryCategory === "computers-access") {
+      		if (places[i].primaryCategory === "training-day" || places[i].primaryCategory === "training-night") {
       			console.log(places[i]._id);
       			console.log(places[i].title);
       		
@@ -1286,13 +1286,13 @@ mSo.style.display="none";
 		        var hypFri = document.getElementById('opFri');
 		        var hypSat = document.getElementById('opSat');
 
-		        var sunday = new RegExp(/Sunday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
-		        var monday = new RegExp(/Monday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
-		        var tuesday = new RegExp(/Tuesday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
-		        var wednesday = new RegExp(/Wednesday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
-		        var thursday = new RegExp(/Thursday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
-		        var friday = new RegExp(/Friday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
-		        var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM)/);
+var sunday = new RegExp(/Sunday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM|\s(\d|\d\d):(\d\d)PM.(\d|\d\d):(\d\d)PM)/);
+var monday = new RegExp(/Monday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM|\s(\d|\d\d):(\d\d)PM.(\d|\d\d):(\d\d)PM)/);
+var tuesday = new RegExp(/Tuesday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM|\s(\d|\d\d):(\d\d)PM.(\d|\d\d):(\d\d)PM)/);
+var wednesday = new RegExp(/Wednesday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM|\s(\d|\d\d):(\d\d)PM.(\d|\d\d):(\d\d)PM)/);
+var thursday = new RegExp(/Thursday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM|\s(\d|\d\d):(\d\d)PM.(\d|\d\d):(\d\d)PM)/);
+var friday = new RegExp(/Friday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM|\s(\d|\d\d):(\d\d)PM.(\d|\d\d):(\d\d)PM)/);
+var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM|:\s(\d|\d\d):(\d\d).(\d|\d\d):(\d\d)|\s(\d|\d\d):(\d\d)AM.(\d|\d\d):(\d\d)PM|:\s(\d)AM.(\d)PM|\s(\d|\d\d):(\d\d)PM.(\d|\d\d):(\d\d)PM)/);
 
 		         // if (typeof hrs != "undefined") {
 		        document.getElementById('opHours').style.display = "block";
@@ -1365,21 +1365,39 @@ mSo.style.display="none";
 	   	
 	  
 	   	console.log("setWindowCss");
+	   	var maxHeight = document.querySelector("#customMap").clientHeight;
+	   	var val = (maxHeight - 60) + "px";
+	   	console.log("maxHeight val");
+	   	console.log(val);
 
+	   	document.querySelector('#lavie').style.maxHeight = val;
+
+	   	var lvHeight = document.querySelector("#lavie").clientHeight;
+	   	console.log("lavie height");
+	   	console.log(lvHeight);
 	   	var a = getCurrentWidth();
 	   	var b = document.querySelector("#customMap").getBoundingClientRect().height;
 	   	var c = document.querySelector('#lavie').getBoundingClientRect().height;
 	   	// console.log("b");
 	   	// console.log(b);
 	   	// console.log(b);
-	   	// console.log('c');
-	   	// console.log(c);
+	   	console.log('c');
+	   	console.log(c);
+	   	var val2 = (c - 8) + "px";
+	   	console.log("val2");
+	   	console.log(val2);
+	   	var ww = document.querySelector("#windowWrapper");
+	   	// ww.style.maxHeight = val2;
+	   	var wwh = ww.clientHeight;
+	   	console.log("wwh");
+	   	console.log(wwh);
 	   	var d = (b - c);
 	   	var e = (d / 2);
 	   	// console.log("d");
 	   	// console.log(d);
 	   	// console.log("e");
 	   	// console.log(e);
+	   	
 	   	document.querySelector('#lavie').style.top = e + "px";
 	   	document.querySelector('#rmv-glyph').style.top = e + "px";
 	   	// angular.element(document.getElementById('lavie')).addClass('pt-page-flipInTop');
@@ -1419,14 +1437,16 @@ mSo.style.display="none";
 	      google.maps.event.addListener(marker, 'click', function() {
 	      	// console.log("^^^^check assumptions");
 	      	// console.log(json.hoursOpen);
-
+	      	var mapHtml = document.querySelector("#customMap");
+	      	console.log("mapHtml");
+	      	console.log(mapHtml.clientHeight);
 
 	      	if (isDesktopView()) {
-	      		console.log("itt's a vport") 
+	      		
 	      		sidePanelOpen = true;
 
 	      	} else {
-	      		console.log("is not vport")
+	      	
 	      	}
 	 
 	      	

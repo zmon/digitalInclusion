@@ -1,4 +1,8 @@
 @media (min-width: 769px) {
+	div#windowWrapper {
+	    border: 2px solid #eeeeee;
+	    margin: 1em 1em;
+	}
 	.custom-dd-toggle {
 		display: none;
 	}

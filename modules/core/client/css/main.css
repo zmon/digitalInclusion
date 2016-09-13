@@ -2795,7 +2795,10 @@
       text-align: justify;
       text-shadow: none;
       font-size: 1em;
-      letter-spacing: .0125pc;    }
+      letter-spacing: .0125pc; 
+      font-size: .825em;
+    letter-spacing: .05pc;
+         }
 
     table th {
       font-size: 0.9em;
@@ -3147,7 +3150,7 @@
     }
 #header p {
     font-size: .7em;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.08em;
     color: #545454;
     top: -8em;
     font-weight: 500;

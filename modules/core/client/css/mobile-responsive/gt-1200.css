@@ -116,9 +116,11 @@
 
 	}
 	.f-desc {
-		overflow-x: hidden;
+	    overflow-x: hidden;
 	    padding: .5em 5em;
-	    width: 85%;
-	    margin-left: 3em;
+	    width: 90%;
+	    top: -10.15em;
+	    font-size: .635em;
+	    margin-left: 5.2em;
 	}
 }

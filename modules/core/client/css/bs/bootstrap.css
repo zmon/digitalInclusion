@@ -4068,7 +4068,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-top: .3em;
     text-decoration: underline;
     /* font-size: .7em; */
-    padding-top: .8em;
+    padding-top: .7em;
     height: 3.2em;
     border: 1px solid #618419;
     box-shadow: 0 0 145px #e8ff90;
@@ -4081,6 +4081,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     border: none;
     /* text-shadow: none; */
     font-weight: 700;
+    font-size: .75em;
 }
 .nav-tabs.nav-justified {
   width: 100%;

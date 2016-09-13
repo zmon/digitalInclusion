@@ -2,6 +2,18 @@
 	/*a.button.fit.small.fit-cx {
 	    width: 12em;
 	}*/
+	aside#opHours p.opDay {
+	    position: relative;
+	    top: .01em;
+	    margin-left: 2.8em;
+
+	}
+	aside#opHours {
+	 	    margin: 0 auto 0 8.75em;
+	    top: -7.45em;
+	  
+	}
+
 	h1.tab-head {
 	    position: relative;
 	    top: -5em;
@@ -53,9 +65,19 @@
 	}
 	.toleft {
 		position: relative;
-		left: 1.1em;
+		left: -1.51em;
 		padding-right: .1em;
 		line-height: 6px;
+	}
+	.rbor {
+	    /* border-right: 1px solid gainsboro; */
+	    padding-left: .01em;
+	    padding-right: .7em;
+	}
+	aside#opHoursNA {
+	    position: relative;
+	    font-size: .55em;
+	    top: -6.5em;
 	}
 	div#info-wrapper {
 		background: #f3f3f3;
@@ -72,20 +94,34 @@
 		box-shadow: none;
 		top: -1.5em;
 	}
+	aside#opHours span.daySpan {
+	    color: #000000;
+	    opacity: .775;
+	    font-size: .8em;
+	    letter-spacing: .042pc;
+	}
+	#header p#hrsHead {
+		left: 1.8em;
+	}
+	#header p#dscHead {
+		    top: -5.3em;
+    font-size: .6em;
+    left: 1.8em;
+	}
 	.f-desc {
 	    border: none;
 	    padding: .5em 1em;
 	    text-align: start;
-	    margin-left: 1.15em;
-	    width: 85%;
-	    line-height: 16px;
+	    margin-left: 7.5em;
+	    width: 55%;
+	    line-height: 13px;
 	    font-size: .575em;
-	    border: 1px solid gainsboro;
-	    background: #ececec;
+	    border: none;
+	    background: none;
 	    max-height: 220px;
 	    overflow-x: hidden;
-	    overflow-y:scroll;
-	    margin-top: 1.5em;
+	    overflow-y: scroll;
+	    margin-top: -2.6em;
 	}
 	form.pure-form.rangr {
 	    background: whitesmoke;
@@ -138,12 +174,12 @@
 		color: gray;
 		border-radius: 4px 4px 0 0;
 
-		margin-top: -1.25em;
+		margin-top: -1.3em;
 		color: #3e442c;
 		letter-spacing: .125pc;
 		padding-bottom: 10px;
 		text-shadow: none;
-		font-size: .7em;
+		font-size: .6em;
 	}
 
 	#footer > * {
@@ -291,12 +327,12 @@
 	.table-wrapper {
 		-webkit-overflow-scrolling: touch;
 		position: relative;
-		overflow-x: auto;
+		overflow-x: hidden;
 		padding: .7em 1.5em 0 2.85em;
-		top: .05em;
+		top: .65em;
 		border: none;
-		height: 6.85em;
-		width: 16.5em;
+		height: 6.1em;
+		width: 14em;
 		border-radius: 2px;
 		left: -3em;
 		box-shadow: 0 0 2px #797979;
@@ -365,20 +401,20 @@
 	}
 	div#buttons-wrapper {
 		left: 11.5em;
-		top: 6.2em;
+		top: 6.7em;
 	}
 	section#customMap {
-    top: .575em;
-    position: relative;
-    border-bottom: 1px solid gray;
-    top: -.6em;
-    left: -.05em;
-    height: 668px;
-    width: 1130px;
-    border-color: #ccc;
-    border-top: 1px solid #ccc;
-    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2),0 12px 17px 2px rgba(0,0,0,.14),0 5px 22px 4px rgba(0,0,0,.12);
-}
+	    top: .575em;
+	    position: relative;
+	    border-bottom: 1px solid gray;
+	    top: -.6em;
+	    left: -.05em;
+	    height: 668px;
+	    width: 1130px;
+	    border-color: #ccc;
+	    border-top: 1px solid #ccc;
+	    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2),0 12px 17px 2px rgba(0,0,0,.14),0 5px 22px 4px rgba(0,0,0,.12);
+	}
 	.nav-tabs {
 		position: absolute;
 		width: 100%;
@@ -412,7 +448,7 @@
 	table td {
 
 	    line-height: 6px;
-	    font-size: 1em;
+	    font-size: .81em;
 	    letter-spacing: .71px;
 	    text-indent: -1.15em;
 	    text-indent: -1.4em;
@@ -427,6 +463,7 @@
 	}
 
 	div#placeTitle {
-		top: 4em;
+		top: 2.65em;
+    font-size: .9em;
 	}
 }
