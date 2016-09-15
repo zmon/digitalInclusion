@@ -1,4 +1,66 @@
 @media (min-width: 1001px) {
+
+	ul#alt-buttons-bottom {
+	    /* background: orange; */
+	    list-style: none;
+	    display: inline-block;
+	    padding: 0;
+	    float: right;
+	    position: relative;
+	    left: -.95em;
+	    margin: 0;
+	}
+
+	.move-up {
+    position: relative;
+    top: .85em;
+}
+	span.zline {
+	    position: relative;
+	    left: -.225em;
+	}
+	span.uline {
+	    position: relative;
+	    left: -2px;
+	}
+
+	span.bline {
+	    position: relative;
+	    left: .15em;
+	}
+
+	i.legend-icon-b {
+		 position: relative;
+	    top: .5em;
+	    left: -.35em;
+	}
+
+	i.legend-icon-a {
+	    position: relative;
+	    top: .5em;
+	    left: -.5em;
+	}
+
+	table td {
+	    padding: 1.25em .2em 1.25em .2em;
+	    border: none;
+	    font-weight: 600;
+	    line-height: 12px;
+	    font-family: 'Source Sans Pro';
+	    text-align: justify;
+	    text-shadow: none;
+	    font-size: 1em;
+	    letter-spacing: .0125pc;
+	    font-size: .95em;
+	    letter-spacing: .025pc;
+	    		text-indent: -.7em;
+	}
+
+
+
+
+
+
 	div#windowWrapper {
 	    border: 2px solid #d4d4d4;
 	    margin: 16px 16px 0 16px;
@@ -48,7 +110,8 @@
 	    top: 6.6em;
 	    left: 9.8em;
 	    z-index: 99999;
-	    left: 11.2em;
+	    left: 12.5em;
+	    left: 12.45em;
 	}
 	#main {
 	    border-radius: .1em;
@@ -81,17 +144,17 @@
 }
 	section.meta-w-form {
 		background: #464646;
-		 left: 4.75em;
+		 left: 7.2em;
 		padding: 1em .1em 1em 4em;
 		position: absolute;
-		height: 9em;
+		height: 8.85em;
 		border-radius: 2px;
 		/* border-bottom-left-radius: 6px; */
 		/* border-bottom-right-radius: 6px; */
 		top: -2.5em;
 		border: 1px solid #e2e2e2;
 		box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a;
-		width: 164.4%;
+		width: 145%;
 		box-shadow: inset 0 0 5px gainsboro, inset 0 0 160px #efefef, 0 0 0 1px #f7f7f7, 0 0 5px black;
 		background: linear-gradient(to left, #e6e6e6 , #ececec,#f3f3f3);
 		background: white;
@@ -378,7 +441,7 @@ div#placeCategory {
 		font-size: .675em;
 		font-family: 'Raleway';
 		margin-bottom: 1.5px;
-		margin-top: -.925em;
+		margin-top: -.6em;
 		font-family: DinLight;
 		font-family: Georgia;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -390,12 +453,14 @@ div#placeCategory {
 	    top: -1.5em;
 	}
 	table td {
-		text-indent: -1.75em;
+
 	}
 	#header {
 	    padding: 1em 4em 8em 4em;
 	}
-
+	#header p {
+		top: -6.8em;
+	}
 	#header h1 {
 	    padding: .97em 0 1.75em 0;
 	    left: -8em;
@@ -404,6 +469,9 @@ div#placeCategory {
 	        width: 58.65em;
 	    top: -4.55em;
 	    height: 4em;
+	    position: relative;
+    top: .4em;
+    top: -3.75em;
 	}
 	section#first {
 	    height: 870px;
@@ -413,7 +481,7 @@ div#placeCategory {
     font-size: .7em;
     border: none;
     position: relative;
-    left: 2.8em;
+    left: 2.1em;
     top: -.4em;
     background: transparent;
 }
@@ -452,7 +520,7 @@ div#placeCategory {
 
 	section#queryForm {
 	    position: relative;
-	    top: -8.05em;
+	    top: -8.5em;
 	    left: 1.25em;
 	    height: 3em;
 	}
@@ -568,7 +636,7 @@ div#placeCategory {
 	}
 	button.md-button.special span.ng-scope {
     position: relative;
-    top: -.4em;
+    top: -.64em;
 }
 .row.butane {
     /* height: 186.5px; */
@@ -596,6 +664,8 @@ div#placeCategory {
  
 	      margin-top: -.35em;
 	      margin-top: -.01em;
+	      margin-top: .13em;
+    font-size: .775em;
 
 	}
 #sw {
@@ -638,50 +708,54 @@ div#placeCategory {
 	    margin-top: -.2575em;
 	}
 section#customMap {
-        height: 672px;
+        height: 675px;
     top: -6.99em;
     width: 938px;
+
+    width: 944px;
     left: -4.3em;
 }
 	button.md-button span.ng-scope {
 	    position: relative;
-	    top: -.35em;
+	    top: -.6em;
+
 	}
 	.nav-tabs {
 		left: -11.5em;
 		padding-left: 12em;
     	width: 80em;
     	    top: -5.5em;
+    	    top: -6.75em;
 	}
 	.table-wrapper {
-	    -webkit-overflow-scrolling: touch;
-	    position: relative;
-	    overflow: hidden;
-	    padding: .95em .82em 0 1.4em;
-	    top: .25em;
-	    border: none;
-	    width: 14.5em;
-	    left: -1.9em;
-	    box-shadow: 0 0 0 1px #d4d4d4;
-	    background: white;
-	    margin-top: -1em;
-	    margin-right: .02em;
-	    background: #ddd6f3;
-	    background: -webkit-linear-gradient(to left, #ddd6f3 , #faaca8);
-	    background: linear-gradient(to left, #ddd6f3 , #faaca8);
-	    background: #EFEFBB;
-	    background: -webkit-linear-gradient(to left, #EFEFBB , #D4D3DD);
-	    background: linear-gradient(to left, #EFEFBB , #D4D3DD);
-	    background: #ECE9E6;
-	    background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF);
-	    background: #f3f3f3;
-	    /* background: #E0EAFC; */
-	    background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3);
-	    /* background: linear-gradient(to left, #dfe6f5 , #eff4fb); */
-	    border-radius: 8px;
-	    box-shadow: 0 0 0 1px #e6e6e6;
-	        top: .05em;
-	}
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    overflow: hidden;
+    padding: .95em .82em 0 1.4em;
+    top: .25em;
+    border: none;
+    width: 14em;
+    left: -3.6em;
+    box-shadow: 0 0 0 1px #d4d4d4;
+    background: white;
+    margin-top: -1em;
+    margin-right: .02em;
+    background: #ddd6f3;
+    background: -webkit-linear-gradient(to left, #ddd6f3 , #faaca8);
+    background: linear-gradient(to left, #ddd6f3 , #faaca8);
+    background: #EFEFBB;
+    background: -webkit-linear-gradient(to left, #EFEFBB , #D4D3DD);
+    background: linear-gradient(to left, #EFEFBB , #D4D3DD);
+    background: #ECE9E6;
+    background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF);
+    background: #f3f3f3;
+    /* background: #E0EAFC; */
+    background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3);
+    /* background: linear-gradient(to left, #dfe6f5 , #eff4fb); */
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px #e6e6e6;
+    top: -.05em;
+}
 	section.isp-main.ng-scope {
 	
 	    left: 7em;

@@ -76,7 +76,7 @@
 	    width: 18.9em;
 	    margin: 0;
 	    padding: 0;
-	    top: 5.9em;
+	    top: 5.5em;
 	    z-index: 99999;
 	    left: 14.2em;
 	    border: none;
@@ -223,6 +223,13 @@ span#placePhone {
 	    left: -7em;
 
 	}
+
+	ul#alt-buttons-bottom {
+	    /* background: orange; */
+	  
+	    left: -2.95em;
+	  
+	}
 	/*test*/
 	.nav-tabs {
 	    border: none;
@@ -233,7 +240,7 @@ span#placePhone {
 	    position: relative;
 	    width: 138.65%;
 	    box-shadow: inset 0 0 50px black, 0 0 0 1px #5a5a5a;
-	    top: -13.6em;
+	    top: -14.6em;
 	    /* height: 3.2em; */
 	    border-radius: 2px;
 	    left: -10.725em;
@@ -262,9 +269,9 @@ span#placePhone {
     position: relative;
     overflow-x: hidden;
     padding: .5em 1.5em 0 .85em;
-    top: .85em;
+    top: -.05em;
     border: none;
-    width: 13.5em;
+    width: 12.85em;
     left: -3.2em;
       box-shadow: 0 0 2px #ababab;
     background: white;
@@ -373,7 +380,7 @@ span#placePhone {
 	  width: 65px;
 	}
 	section#customMap {
-	    height: 620px;
+	    height: 627px;
 	    border-left: 1px solid #626f64;
 	    border-right: 1px solid #637766;
 	    box-shadow: 0 1px 0px 0px #f0f3cb, 0 -1px 0px 0px #7e806f, 4px 0 6px -4px rgba(77, 87, 95, 0.6), -4px 0 5px -2px rgba(52, 58, 68, 0.7);
@@ -388,13 +395,17 @@ span#placePhone {
 	    border-bottom-right-radius: 2px;
 	    border-bottom-left-radius: 2px;
 	    left: .05em;
-	    width: 1138px;
+	    width: 1144px;
 	    position: relative;
 	    border-bottom: none;
 	    top: -1.45em;
 	}
 
+	table td {
+	   
+	    font-size: .85em;
 
+	}
 
 section#queryForm {
     position: relative;
@@ -402,7 +413,7 @@ section#queryForm {
     left: 6em;
     height: 3em;
     width: 20em;
-    top: -6.5em;
+    top: -7.5em;
 }
 	#sw {
     display: none;
@@ -432,7 +443,7 @@ section#queryForm {
 	    left: -2.55em;
 	    padding: 1em .1em 1em 4em;
 	    position: absolute;
-	    height: 9.25em;
+	    height: 8.1em;
 	    top: -2.3em;
 	    border-radius: 8px;
 	    border: 1px solid #ababab;
@@ -626,7 +637,7 @@ section.meta-w-form {
     left: 7.35em;
     padding: 1em .1em 1em 4em;
     position: absolute;
-    height: 9.7em;
+    height: 8.1em;
     border-radius: 2px;
     /* border-bottom-left-radius: 6px; */
     /* border-bottom-right-radius: 6px; */

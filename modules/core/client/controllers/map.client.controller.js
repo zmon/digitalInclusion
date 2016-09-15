@@ -1989,31 +1989,31 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 	        	cm.style.width = "65%";
 	        } else if (width >= 1000 && width < 1200 && !sidePanelOpen) {
 	        	// console.log("3. 1000 to 1200");
-	    		cm.style.width = "939px";
+	    		cm.style.width = "944px";
 	        } else if (width >= 1000 && width < 1200 && sidePanelOpen) {
 	        	// console.log("3. 1000 to 1200");
 	    		cm.style.width = "65%";
 	        } else if (width >= 1200 && width < 1280 && !sidePanelOpen) {
 	        	// console.log("4. 1200 to 1280");
-	   			cm.style.width = "1017px";
+	   			cm.style.width = "1022px";
 	        } else if (width >= 1200 && width < 1280 && sidePanelOpen) {
 	        	// console.log("4. 1200 to 1280");
 	   			cm.style.width = "65%";
 	        } else if (width >= 1280 && width < 1660 && !sidePanelOpen) {
 	        	// console.log("5. 1280 to 1660");
-	        	cm.style.width = "1140px";
+	        	cm.style.width = "1144px";
 	        } else if (width >= 1280 && width < 1660 && sidePanelOpen) {
 	        	// console.log("5. 1280 to 1660");
 	        	cm.style.width = "800px";
 	        } else if (width >= 1660 && width < 1680 && !sidePanelOpen) {
 	        	// console.log("6. 1280 to 1660");
-	        	cm.style.width = "1130px";
+	        	cm.style.width = "1135px";
 	        } else if (width >= 1660 && width < 1680 && sidePanelOpen) {
 	        	// console.log("6. 1280 to 1660");
 	        	cm.style.width = "65%";
 	        } else if (width >= 1680 && !sidePanelOpen) {
 	        	// console.log("7. 1660 to infinity");
-	        	cm.style.width = "1130px";
+	        	cm.style.width = "1135px";
 	        } else if (width >= 1680 && sidePanelOpen) {
 	        	// console.log("7. 1660 to infinity");
 	        	cm.style.width = "65%";
