@@ -900,6 +900,206 @@ mSo.style.display="none";
         }
     }
 
+    function setIconLeftValue(category) {
+    	console.log("setIconLeftValue");
+    	console.log(category);
+    	var width = getCurrentWidth();
+    	var icon = document.getElementById('imgPath');
+    	var text = document.getElementById('placeCategory');
+    	var i = icon.style.left;
+    	var t = text.style.left;
+    	console.log("width is " + width);
+    	if (width <= 768) {
+
+        } else if (width > 768 && width < 1000) {
+        	if (category === "wifi-customer") {
+        		// console.log("width >= 1680 : wifi-customer");
+        	} else if (category === "wifi-free") {
+        		
+        	} else if (category === "training-day") {
+
+        	} else if (category === "training-night") {
+
+        	} else if (category === "computers-retail") {
+
+        	} else if (category === "computers-access") {
+        		
+        	}
+        // } else if (width > 768 && width < 1000) {
+        	
+        } else if (width >= 1000 && width < 1200) {
+        	if (category === "wifi-customer") {
+        		// console.log("width >= 1680 : wifi-customer");
+        	} else if (category === "wifi-free") {
+        		
+        	} else if (category === "training-day") {
+
+        	} else if (category === "training-night") {
+
+        	} else if (category === "computers-retail") {
+
+        	} else if (category === "computers-access") {
+        		
+        	}
+        // } else if (width >= 1000 && width < 1200) {
+        	
+        } else if (width >= 1200 && width < 1280) {
+        	if (category === "wifi-customer") {
+        		// console.log("width >= 1680 : wifi-customer");
+        	} else if (category === "wifi-free") {
+        		
+        	} else if (category === "training-day") {
+
+        	} else if (category === "training-night") {
+
+        	} else if (category === "computers-retail") {
+
+        	} else if (category === "computers-access") {
+        		
+        	}
+        // } else if (width >= 1200 && width < 1280) {
+        	
+        } else if (width >= 1280 && width < 1660) {
+        	if (category === "wifi-customer") {
+        		console.log("width >= 1280 : wifi-customer");
+        		text.style.left = "6.5em";
+        		text.style.top = "2em";
+        		icon.style.left = "1.35em";
+        		icon.style.width = "5%";
+        		icon.style.top = "-.425em";
+        	} else if (category === "wifi-free") {
+        		console.log("width >= 1280 : wifi-free");
+        		text.style.left = "7.5em";
+        		text.style.top = "2.1em";
+        		icon.style.width = "5%";
+        		icon.style.left = "1.85em";
+        		icon.style.top = "-.42em";
+        	} else if (category === "training-day") {
+        		console.log("width >= 1280 : training-day");
+        		text.style.left = "6.5em";
+        		text.style.top = "1.9em";
+        		icon.style.left = "1.35em";
+        		icon.style.top = "-.425em";
+        		icon.style.width = "5%";
+        	} else if (category === "training-night") {
+        		console.log("width >= 1280 : training-night");
+        		text.style.left = "6.5em";
+        		text.style.top = "1.9em";
+        		icon.style.width = "5%";
+        		icon.style.left = "1.35em";
+        		icon.style.top = "-.425em";
+        	} else if (category === "computers-retail") {
+        		console.log("width >= 1280 : computers-retail");
+        		text.style.left = "3.5em";
+        		text.style.top = "1.95em";
+        		icon.style.width = "4.25%";
+        		icon.style.left = ".1em";
+        		icon.style.top = "-.375em";
+        	} else if (category === "computers-access") {
+        		console.log("width >= 1280 : computers-access");
+        		text.style.left = "6em";
+        		text.style.top = "2.15em";
+        		icon.style.left = "1.05em";
+        		icon.style.top = "-.3em";
+        		icon.style.width = "4.25%";
+        	}
+        // } else if (width >= 1280 && width < 1660) {
+        	
+        } else if (width >= 1660 && width < 1680) {
+        	if (category === "wifi-customer") {
+        		console.log("width >= 1660 : wifi-customer");
+        		text.style.left = "5.75em";
+        		text.style.top = "2.65em";
+        		icon.style.left = "1.35em";
+        		icon.style.width = "5%";
+        		icon.style.top = "-.325em";
+        	} else if (category === "wifi-free") {
+      			console.log("width >= 1660 : wifi-free");
+      			text.style.left = "7.5em";
+        		text.style.top = "2.65em";
+        		icon.style.width = "5%";
+        		icon.style.left = "2.3em";
+        		icon.style.top = "-.35em";  		
+        	} else if (category === "training-day") {
+        		console.log("width >= 1660 : training-day");
+        		text.style.left = "6.5em";
+        		text.style.top = "1.9em";
+        		icon.style.left = "1.35em";
+        		icon.style.top = "-.425em";
+        		icon.style.width = "5%";	
+        	} else if (category === "training-night") {
+        		console.log("width >= 1660 : training-night");
+        		text.style.left = "6.5em";
+        		text.style.top = "1.9em";
+        		icon.style.width = "5%";
+        		icon.style.left = "1.35em";
+        		icon.style.top = "-.425em";
+        	} else if (category === "computers-retail") {
+        		console.log("width >= 1660 : computers-retail");
+        		text.style.left = "3.5em";
+        		text.style.top = "1.95em";
+        		icon.style.width = "4.25%";
+        		icon.style.left = ".1em";
+        		icon.style.top = "-.375em";
+        	} else if (category === "computers-access") {
+       			console.log("width >= 1660 : computers-access");
+       			text.style.left = "6em";
+        		text.style.top = "2.15em";
+        		icon.style.left = "1.05em";
+        		icon.style.top = "-.3em";
+        		icon.style.width = "4.25%";
+        	}
+        // } else if (width >= 1660 && width < 1680) {
+        	
+        } else if (width >= 1680) {
+        	if (category === "wifi-customer") {
+        		console.log("width >= 1680 : wifi-customer");
+        		text.style.left = "6.5em";
+        		text.style.top = "2em";
+        		icon.style.left = "1.35em";
+        		icon.style.width = "5%";
+        		icon.style.top = "-.425em";
+        	} else if (category === "wifi-free") {
+        		console.log("width >= 1680 : wifi-free");
+        		text.style.left = "7.5em";
+        		text.style.top = "2.1em";
+        		icon.style.width = "5%";
+        		icon.style.left = "1.85em";
+        		icon.style.top = "-.42em";
+        	} else if (category === "training-day") {
+        		console.log("width >= 1680 : training-day");
+        		text.style.left = "6.5em";
+        		text.style.top = "1.9em";
+        		icon.style.left = "1.35em";
+        		icon.style.top = "-.425em";
+        		icon.style.width = "5%";
+        	} else if (category === "training-night") {
+        		console.log("width >= 1680 : training-night");
+        		text.style.left = "6.5em";
+        		text.style.top = "1.9em";
+        		icon.style.width = "5%";
+        		icon.style.left = "1.35em";
+        		icon.style.top = "-.425em";
+        	} else if (category === "computers-retail") {
+        		console.log("width >= 1680 : computers-retail");
+        		text.style.left = "3.5em";
+        		text.style.top = "1.95em";
+        		icon.style.width = "4.25%";
+        		icon.style.left = ".1em";
+        		icon.style.top = "-.375em";
+
+        	} else if (category === "computers-access") {
+        		console.log("width >= 1680 : computers-access");
+        		text.style.left = "6em";
+        		text.style.top = "2.15em";
+        		icon.style.left = "1.05em";
+        		icon.style.top = "-.3em";
+        		icon.style.width = "4.25%";
+        	}
+        }
+
+    }
+
     function setPlaceData(json) {
 
 		console.log("setPlaceData");
@@ -919,6 +1119,7 @@ mSo.style.display="none";
       		var iconPath = "/modules/client/core/img/win/" + json.primaryCategory + ".png";
       		var path = getIcon(json.primaryCategory);
       		imgPath.src = path;
+      		setIconLeftValue(json.primaryCategory);
             document.getElementById('placeCategory').innerText = categoryIconText(json.primaryCategory);
       }
       if (typeof json.title != 'undefined') {
@@ -1091,7 +1292,7 @@ mSo.style.display="none";
 
 
 	  function setOverlayData(json) {
-	  	console.log("setOverlayData");
+	  	// console.log("setOverlayData");
 	  	// console.log(formatClickable(json.phone));
 	  	var href = formatClickable(json.phone);
 	  	document.getElementById('soPhone').href = href;
@@ -1254,8 +1455,8 @@ mSo.style.display="none";
 	    }
 
 	    function setHours(hrs) {
-	    	console.log("setHours");
-	    	console.log(hrs);
+	    	// console.log("setHours");
+	    	// console.log(hrs);
 
 	    	
 
@@ -1318,20 +1519,20 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 				           	sat: rws(stripDay('saturday', sat[0]))
 				           }
 			           } else {
-			           	console.log("sun === null");
-			           	console.log()
-			           	console.log("places");
-					   console.log(places);
-					   console.log("$scope.places");
-					   console.log($scope.places);
+			     //       	console.log("sun === null");
+			     //       	console.log()
+			     //       	console.log("places");
+					   // console.log(places);
+					   // console.log("$scope.places");
+					   // console.log($scope.places);
 			           }
 			           
 			           // console.log("before");
 			           // console.log(weekHours);
 
 			           var wt = removeColon(weekHours.sun);
-			           console.log("removeColon(weekHours.sun");
-					   console.log(wt);
+			     //       console.log("removeColon(weekHours.sun");
+					   // console.log(wt);
 
 			           hypSun.style.display = "inline";
 			           hypMon.style.display = "inline";
@@ -2064,12 +2265,12 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 
 
    	 var resizeMap = function() {
-   	 	console.log("resizeMap()");
-   	 	console.log(sidePanelOpen);
+   	 	// console.log("resizeMap()");
+   	 	// console.log(sidePanelOpen);
         var cWidth = getCurrentWidth();
         var c = getCurrentWidth();
         if (c <= 768) {
-        	console.log("1. 0 to 768");
+        	// console.log("1. 0 to 768");
           // $scope.mobileMod = true;
           // headerToggleId.style.display = "none";
           // mobileWindowElement.style.display = "initial";
@@ -2081,33 +2282,34 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
 
           // console.log(cWidth + " is less than 768");
         } else if (c > 768 && c < 1000) {
-        	console.log("2. 768 to 1000");
+        	// console.log("2. 768 to 1000");
         	mapCanvasElement.style.width = "65%";
             mapCanvasElement.style.borderRight = "1px solid #ccc";
             sideWindowElement.style.display = "initial";
         } else if (c >= 1000 && c < 1200) {
-        	console.log("3. 1000 to 1200");
+        	// console.log("3. 1000 to 1200");
         	mapCanvasElement.style.width = "65%";
             mapCanvasElement.style.borderRight = "1px solid #ccc";
             sideWindowElement.style.display = "initial";
         } else if (c >= 1200 && c < 1280) {
-        	console.log("4. 1200 to 1280");
+        	// console.log("4. 1200 to 1280");
         	mapCanvasElement.style.width = "65%";
             mapCanvasElement.style.borderRight = "1px solid #ccc";
             sideWindowElement.style.display = "initial";
         } else if (c >= 1280 && c < 1660) {
-        	console.log("5. 1280 to 1660");
+        	// console.log("5. 1280 to 1660");
         	mapCanvasElement.style.width = "800px";
             mapCanvasElement.style.borderRight = "1px solid #ccc";
             sideWindowElement.style.display = "initial";
         } else if (c >= 1660 && c < 1680) {
-        	console.log("6. 1280 to 1660");
+        	// console.log("6. 1280 to 1660");
         	mapCanvasElement.style.width = "65%";
             mapCanvasElement.style.borderRight = "1px solid #ccc";
             sideWindowElement.style.display = "initial";
         } else if (c >= 1680) {
-        	console.log("7. 1660 to infinity");
+        	// console.log("7. 1660 to infinity");
         	mapCanvasElement.style.width = "65%";
+
             mapCanvasElement.style.borderRight = "1px solid #ccc";
             sideWindowElement.style.display = "initial";
         }
@@ -2154,8 +2356,8 @@ var saturday = new RegExp(/Saturday(:\sClosed|\sClosed|\s(\d|\d\d)AM.(\d|\d\d)PM
         	console.log("6. 1280 to 1660");
         	cm.style.width = "1130px";
         } else if (width >= 1680) {
-        	console.log("7. 1660 to infinity");
-        	cm.style.width = "1130px";
+        	console.log("7. 1680 to infinity");
+        	cm.style.width = "1135px";
         }
 	  }
 

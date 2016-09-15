@@ -3150,6 +3150,7 @@
     }
 #header p {
     font-size: .7em;
+        font-size: .55em;
     letter-spacing: 0.08em;
     color: #545454;
     top: -8em;

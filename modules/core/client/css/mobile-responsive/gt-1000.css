@@ -1,5 +1,27 @@
 @media (min-width: 1001px) {
 
+
+	aside#opHours p#opSun {
+		margin-left: 4.4em;
+	}
+	aside#opHours p#opMon {
+		margin-left: 4.3em;
+	}
+	aside#opHours p#opTue {
+		margin-left: 4em;
+	}
+	aside#opHours p#opWed {
+		margin-left: 2.5em;
+	}
+	aside#opHours p#opThu {
+		margin-left: 3.65em;
+	}
+	aside#opHours p#opFri {
+		margin-left: 5.15em;
+	}
+	aside#opHours p#opSat {
+		margin-left: 3.9em;
+	}
 	ul#alt-buttons-bottom {
 	    /* background: orange; */
 	    list-style: none;
@@ -8,7 +30,7 @@
 	    float: right;
 	    position: relative;
 	    left: -.95em;
-	    margin: 0;
+	    margin:  0;
 	}
 
 	.move-up {
@@ -62,7 +84,7 @@
 
 
 	div#windowWrapper {
-	    border: 2px solid #d4d4d4;
+	    border: 1px solid #d4d4d4;
 	    margin: 16px 16px 0 16px;
 	    background: #F5F5F5;
 	}
@@ -164,11 +186,11 @@
 	}
 
 	a.pure-button.x-small-custom {
-    font-size: .625em;
+    font-size: .55em;
     position: relative;
     top: -5em;
     margin-left: -.35em;
-    width: 200px;
+    width: 120px;
 }
 aside#opHours {
     font-size: .7em;
@@ -188,15 +210,15 @@ aside#opHoursNA {
 #header p#hrsHead {
     letter-spacing: normal;
     position: relative;
-    top: -3.6em;
+    top: -5.4em;
     width: 50px;
     left: 2.8em;
-    line-height: 14px;
+    line-height: 12px;
 }
 #header p#dscHead {
     letter-spacing: normal;
     position: relative;
-    top: -5.8em;
+    top: -7.8em;
     width: 50px;
     left: 2.6em;
     line-height: 10px;
@@ -243,7 +265,7 @@ aside#opHours p.opDay {
 	}
 	span#hrsdsc {
     position: relative;
-    top: -2.7em;
+    top: -2.2em;
 }
 div#placeCategory {
     margin-top: 3.5em;
@@ -392,6 +414,7 @@ div#placeCategory {
     border: none;
     background: none;
         top: -9em;
+    opacity: .68;
             left: 4px;
 }
 	.row.butane {

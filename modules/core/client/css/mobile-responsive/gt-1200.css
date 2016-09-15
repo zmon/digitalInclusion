@@ -1,5 +1,27 @@
 
 @media (min-width: 1200px) {
+
+	aside#opHours p#opSun {
+		margin-left: 2.4em;
+	}
+	aside#opHours p#opMon {
+		margin-left: 2.3em;
+	}
+	aside#opHours p#opTue {
+		margin-left: 2em;
+	}
+	aside#opHours p#opWed {
+		margin-left: .5em;
+	}
+	aside#opHours p#opThu {
+		margin-left: 1.65em;
+	}
+	aside#opHours p#opFri {
+		margin-left: 3.15em;
+	}
+	aside#opHours p#opSat {
+		margin-left: 1.9em;
+	}
 	li.realign {
 	    position: relative;
 	    left: -11.7em;
@@ -17,6 +39,13 @@
 	    left: -.55em;
 	    top: .31em;
 	}
+	span#placePhone {
+    font-size: .84em;
+    text-decoration: underline;
+    color: #0b5d77;
+    position: relative;
+    top: -6.5em;
+}
 	main#main-page {
 		position: relative;
 		top: -16.4em;

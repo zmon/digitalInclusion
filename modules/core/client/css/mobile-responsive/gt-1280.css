@@ -1,4 +1,40 @@
 @media (min-width: 1281px) {
+	aside#opHours p#opSun {
+		margin-left: 2.4em;
+	}
+	aside#opHours p#opMon {
+		margin-left: 2.3em;
+	}
+	aside#opHours p#opTue {
+		margin-left: 2em;
+	}
+	aside#opHours p#opWed {
+		margin-left: .5em;
+	}
+	aside#opHours p#opThu {
+		margin-left: 1.65em;
+	}
+	aside#opHours p#opFri {
+		margin-left: 3.15em;
+	}
+	aside#opHours p#opSat {
+		margin-left: 1.9em;
+	}
+	span#placePhone {
+    font-size: .84em;
+    text-decoration: underline;
+    color: #0b5d77;
+    position: relative;
+    top: -6.55em;
+}
+
+i.fa.fa-phone {
+    position: relative;
+    top: -8.33em;
+    left: -.2em;
+    color: darkgreen;
+    font-size: .65em;
+}
 	md-card#hacksalot {
 	    background: white;
 	    height: 598px;
@@ -11,6 +47,10 @@
 	    width: 320px;
 	    overflow: hidden;
 	}
+	span#hrsdsc {
+    position: relative;
+    top: -1.9em;
+}
 	div.cest {
 	    left: -20px;
     	width: 280px;
@@ -23,14 +63,14 @@
 	    top: -6.5em;
 	}
 	#header p#hrsHead {
-	    font-size: .6em;
-	    line-height: 14px;
-	    top: -2.8em;
-	    left: 1.3em;
-	}
+    font-size: .55em;
+    line-height: 12px;
+    top: -2.4em;
+    left: 1.3em;
+}
 	#header p#dscHead {
-	    top: -3.3em;
-	    font-size: .6em;
+	    top: -5.2em;
+	    font-size: .55em;
 	    left: 1.3em;
 	}
 
@@ -46,7 +86,7 @@
 	    box-shadow: 0 0 .5px black;
 	    position: relative;
 	    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
-	    top: 2.4em;
+	    top: 1.4em;
 	    box-shadow: none;
 	    border: none;
 	    padding: 1em .5em 2.4em .5em;
@@ -84,17 +124,15 @@
 	div#placeAddress {
 	    margin-top: .84em;
 	    position: relative;
-	    top: -3.3em;
+	    top: -4.95em;
 	    font-size: .7em;
 	    width: 12em;
 	    margin: .84em auto 0 auto;
 	}
 	a#map-directions {
-	
-	    top: -4.5em;
-	    top: -3.9em;
-    font-size: .625em;
-	}
+    top: -7.4em;
+    font-size: .55em;
+}
 	.glyphicon {
 	    position: relative;
 	        top: 8px;
@@ -111,21 +149,21 @@
 		font-size: 1.15em;
 	}
 	.f-desc {
-	    border: none;
-	    padding: .5em 1em;
-	    text-align: start;
-	    margin-left: 6.2em;
-	    width: 60%;
-	    position: relative;
-	    top: -6.4em;
-	    line-height: 11.5px;
-	    font-size: .625em;
-	    border: none;
-	    background: none;
-	}
+    border: none;
+    padding: .5em 1em;
+    text-align: start;
+    margin-left: 6.2em;
+    width: 60%;
+    position: relative;
+    top: -8.4em;
+    line-height: 13px;
+    font-size: .575em;
+    border: none;
+    background: none;
+}
 div#placeCategory {
     margin-top: .95em;
-    font-size: .62em;
+    font-size: .55em;
     width: 20em;
     line-height: 10px;
     background: none;
@@ -141,17 +179,21 @@ div#placeCategory {
 	}
 	i.fa.fa-phone {
     position: relative;
-    top: -2.5em;
+    top: -2.95em;
     left: -.2em;
     color: darkgreen;
-    font-size: .7em;
+    font-size: .6em;
 }
 span#placePhone {
     font-size: .71em;
     text-decoration: underline;
-    color: #0b5d77;
+        color: #033342;
     position: relative;
     top: -2.5em;
+}
+div.cest a#phoneNumb {
+    position: relative;
+    top: -1em;
 }
 	.nav > li > a:hover, .nav > li > a:focus {
 	    text-decoration: none;
@@ -655,11 +697,11 @@ section.meta-w-form {
 	
 
 	a.pure-button.x-small-custom {
-	    font-size: .625em;
+	    font-size: .5em;
 	    position: relative;
 	    top: -1.5em;
 	    margin-left: -.01em;
-	    width: 200px;
+	    width: 120px;
 	}
 
 	#wrapper {
