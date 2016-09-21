@@ -1,5 +1,8 @@
 [DigitalInclusion](https://getonlinekc.org/)
 
+Give [http://learn.mean.io/](http://learn.mean.io/) install instructions to load requirements before 
+following these instructions.
+
 ## Prerequisites
 Make sure you have installed all of the following prerequisites on your development machine:
 * Git - [Download & Install Git](https://git-scm.com/downloads). OSX and Linux machines typically have this already installed.
